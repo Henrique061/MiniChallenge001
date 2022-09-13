@@ -1,0 +1,16 @@
+{
+    "id": 26,
+    "nome": "Machado de Batalha",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d8",
+        "tipo": "Cortante"
+    },
+    "peso": 2.0,
+    "propriedades": "Versátil (1d10)"
+}

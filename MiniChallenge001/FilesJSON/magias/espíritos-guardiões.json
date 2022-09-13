@@ -1,0 +1,15 @@
+{
+    "id": 142,
+    "nome": "ESPÍRITOS GUARDIÕES",
+    "nivel": 3,
+    "classes": [
+        "Clérigo"
+    ],
+    "escola": "Conjuração",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal (4,5 metros deraio)",
+    "componentes": "Verbal, Somático, Material (umsímbolosagrado)",
+    "duracao": "Concentração, até 10 minutos",
+    "descricao": "Você evoca espíritos para protege-lo. Eles flutuam a seu redor, a uma distância de 4,5 metros, pela duração. Se você for bom ou neutro, as formas espectraisdeles aparenta ser angelicalou feérica (à sua escolha). Sevocê for mau, eles pareceram demoníacos. Quando você conjura essa magia,você pode designar qualquer quantidade decriaturas que você possa ver para não serem afetadas por ela.O deslocamento de uma criatura afetada éreduzido à metade na área e, quando a criatura entrar na área pela primeira vez num turno ou começar seu turno nela,ela deve realizar um teste de resistência de Sabedoria. Se falhar na resistência, a criatura sofrerá 3d8 de dano radiante (se você for bom ou neutro) ou 3d8 de dano necrótico(sevocê for mau). Com um sucesso na resistência, a criatura sofre metade desse dano. Em Níveis Superiores. Quando você conjurar essa magia usando um espaço de magia de 4°nível ou superior, o dano aumenta em 1d8 para cada nível do espaço acima do 3°."
+}

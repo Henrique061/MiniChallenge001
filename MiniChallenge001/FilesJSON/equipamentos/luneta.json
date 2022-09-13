@@ -1,0 +1,12 @@
+{
+    "id": 55,
+    "nome": "Luneta",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1000,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Objetos vistos através de uma luneta são ampliados até o dobro do seu tamanho."
+}

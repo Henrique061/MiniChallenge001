@@ -1,0 +1,16 @@
+{
+    "id": 25,
+    "nome": "Machado Grande",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 30,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d12",
+        "tipo": "Cortante"
+    },
+    "peso": 3.5,
+    "propriedades": "Pesada, duas mãos"
+}

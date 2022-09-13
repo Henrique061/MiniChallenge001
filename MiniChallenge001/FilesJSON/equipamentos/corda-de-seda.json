@@ -1,0 +1,12 @@
+{
+    "id": 25,
+    "nome": "Corda de seda (15 metros)",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "peso": 2.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

@@ -1,0 +1,17 @@
+{
+    "id": 148,
+    "nome": "FALAR COM ANIMAIS",
+    "nivel": 1,
+    "classes": [
+        "Bardo",
+        "Druida",
+        "Patrulheiro"
+    ],
+    "escola": "Adivinhação",
+    "ritual": true,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal",
+    "componentes": "Verbal, Somático",
+    "duracao": "10 minutos",
+    "descricao": "Você adquire a habilidade de compreender e se comunicar verbalmente com bestas, pela duração. O conhecimento e consciência de muitas bestas é limitado pela inteligência delas mas, no mínimo, as bestas poderão dar informações a você sobre os locais e monstros próximos, incluindo tudo que eles possam perceber ou tenham percebido no dia anterior. Você pode tentar persuadir uma besta a lhe prestar um favor, à critério do Mestre."
+}

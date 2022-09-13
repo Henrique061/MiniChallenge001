@@ -1,0 +1,16 @@
+{
+    "id": 7,
+    "nome": "Maça",
+    "tipo": "Simples",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d6",
+        "tipo": "Concussão"
+    },
+    "peso": 2.0,
+    "propriedades": "Nenhuma"
+}

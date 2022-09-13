@@ -1,0 +1,12 @@
+{
+    "id": 94,
+    "nome": "Tenda para duas pessoas",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "peso": 10.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

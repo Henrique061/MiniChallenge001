@@ -1,0 +1,12 @@
+{
+    "id": 54,
+    "nome": "Livro",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "peso": 2.5,
+    "quantidade": 1,
+    "descricao": "Um livro pode conter poesia, relatos históricos, informações relativas a um campo particular de sabedoria, diagramas e notas sobre engenhocas gnômicas , ou qualquer outra coisa que possa ser representada usando texto ou imagens. Um livro com magias é um grimório, também descrito nessa seção."
+}

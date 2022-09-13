@@ -1,0 +1,16 @@
+{
+    "id": 16,
+    "nome": "Cimitarra",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d6",
+        "tipo": "Cortante"
+    },
+    "peso": 1.5,
+    "propriedades": "Acuidade, leve"
+}

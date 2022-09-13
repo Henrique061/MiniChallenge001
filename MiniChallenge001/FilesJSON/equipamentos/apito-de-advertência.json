@@ -1,0 +1,12 @@
+{
+    "id": 9,
+    "nome": "Apito de advertência",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

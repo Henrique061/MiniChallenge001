@@ -1,0 +1,12 @@
+{
+    "id": 77,
+    "nome": "Porta virotes",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Esse estojo de madeira pode armazenar até 20 virotes de besta."
+}

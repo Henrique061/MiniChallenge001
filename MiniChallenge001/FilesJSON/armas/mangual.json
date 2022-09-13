@@ -1,0 +1,16 @@
+{
+    "id": 28,
+    "nome": "Mangual",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d8",
+        "tipo": "Concussão"
+    },
+    "peso": 1.0,
+    "propriedades": "Nenhuma"
+}

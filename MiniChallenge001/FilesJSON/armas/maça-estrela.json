@@ -1,0 +1,16 @@
+{
+    "id": 24,
+    "nome": "Maça Estrela",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 15,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d8",
+        "tipo": "Perfurante"
+    },
+    "peso": 2.0,
+    "propriedades": "Nenhuma"
+}

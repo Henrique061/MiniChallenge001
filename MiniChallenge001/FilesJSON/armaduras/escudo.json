@@ -1,0 +1,15 @@
+{
+    "id": 13,
+    "nome": "Escudo",
+    "tipo": "Escudo",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "valorCA": 2,
+    "modCA": -1,
+    "forca": -1,
+    "desv_furtividade": false,
+    "peso": 3.0,
+    "descricao": "Sem descrição"
+}

@@ -1,0 +1,12 @@
+{
+    "id": 79,
+    "nome": "Rações de viagem",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Prata"
+    },
+    "peso": 1.0,
+    "quantidade": 1,
+    "descricao": "Rações de viajem consistem em alimentos desidratados adequados para viagens longas, incluindo carne seca, frutas secas, bolachas e nozes."
+}

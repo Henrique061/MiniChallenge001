@@ -1,0 +1,18 @@
+{
+    "id": 61,
+    "nome": "COMPREENDER IDIOMAS",
+    "nivel": 1,
+    "classes": [
+        "Bardo",
+        "Bruxo",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Adivinhação",
+    "ritual": true,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal",
+    "componentes": "Verbal, Somático, Material (um pitada de fuligem e sal)",
+    "duracao": "1 hora",
+    "descricao": "Pela duração, você compreende o significado literal de qualquer idioma falado que você ouvir. Você também compreende qualquer idioma escrito que vir, mas você deve tocar a superfície onde as palavras estão escritas. Leva, aproximadamente, 1 minuto para ler uma página de texto. Essa magia não decifra mensagens secretas em textos ou glifos, como um selo arcano, que não seja parte de um idioma escrito."
+}

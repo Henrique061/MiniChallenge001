@@ -1,0 +1,11 @@
+{
+    "id": 10,
+    "nome": "Ferramentas de pedreiro",
+    "tipo": "Ferramenta de artesão",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "peso": 4.0,
+    "descricao": "Essas ferramentas especiais incluem os itens necessários para executar um ofício ou profissão. Proficiência com um conjunto de ferramentas de artesão permite adicionar o bônus de proficiência para quaisquer testes de habilidade que você fizer usando as ferramentas de seu ofício. Cada tipo de ferramentas de artesão requer uma proficiência em separado."
+}

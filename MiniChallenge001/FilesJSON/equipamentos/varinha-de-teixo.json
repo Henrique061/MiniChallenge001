@@ -1,0 +1,12 @@
+{
+    "id": 41,
+    "nome": "Varinha de teixo",
+    "categoria": "Foco Druídico",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Um foco druídico pode ser um ramo de visco ou azevinho, uma varinha ou cetro de teixo ou de outra madeira especial, um cajado esculpido de uma árvore viva, ou um totem adornado com penas, peles, ossos e dentes de animais sagrados. Um druida pode usar tal objeto como um foco de conjuração, conforme descrito no capítulo 10."
+}

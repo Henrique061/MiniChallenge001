@@ -40,6 +40,10 @@ struct ContentView: View {
             }
             Text("Select an item")
         }
+        
+        .onAppear {
+            print("Começou o app")
+        }
     }
 
     private func addItem() {

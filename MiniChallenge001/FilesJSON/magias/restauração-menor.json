@@ -1,0 +1,19 @@
+{
+    "id": 287,
+    "nome": "RESTAURAÇÃO MENOR",
+    "nivel": 2,
+    "classes": [
+        "Bardo",
+        "Clérigo",
+        "Druida",
+        "Paladino",
+        "Patrulheiro"
+    ],
+    "escola": "Abjuração",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático",
+    "duracao": "Instantânea",
+    "descricao": "Você toca uma criatura e pode, ou acabar com uma doença ou uma condição que a esteja afligindo. A condição pode ser cega, surda, paralisada ou envenenada."
+}

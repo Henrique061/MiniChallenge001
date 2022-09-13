@@ -1,0 +1,12 @@
+{
+    "id": 86,
+    "nome": "Sabão",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Cobre"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

@@ -1,0 +1,12 @@
+{
+    "id": 74,
+    "nome": "Píton",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Cobre"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

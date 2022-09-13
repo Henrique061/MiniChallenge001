@@ -1,0 +1,18 @@
+{
+    "id": 231,
+    "nome": "PALAVRA DE PODER MATAR",
+    "nivel": 9,
+    "classes": [
+        "Bardo",
+        "Bruxo",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Encantamento",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "18 metros",
+    "componentes": "Verbal",
+    "duracao": "Instantânea",
+    "descricao": "Você profere uma palavra de poder que pode compelir uma criatura que você possa ver, dentro do alcance, a morrer instantaneamente. Se o alvo escolhido estiver com 100 pontos de vida ou menos, ele morre. Do contrário, essa magia não produz efeito."
+}

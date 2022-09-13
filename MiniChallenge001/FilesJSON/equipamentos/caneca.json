@@ -1,0 +1,12 @@
+{
+    "id": 19,
+    "nome": "Caneca",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Cobre"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

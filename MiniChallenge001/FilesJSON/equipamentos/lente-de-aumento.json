@@ -1,0 +1,12 @@
+{
+    "id": 53,
+    "nome": "Lente de aumento",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 100,
+        "tipo": "Ouro"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Essa lente permite ver pequenos objetos mais de perto. Ela também é útil como um substituto da pederneira e isqueiro para acender fogo. Usar uma lupa para acender fogo necessita de luz tão brilhante como a luz do sol para focar, um pavio e cerca de 5 minutos. Uma lente de aumento concede vantagem em qualquer teste de habilidade feito para avaliar ou inspecionar um item que é pequeno ou muito detalhado."
+}

@@ -1,0 +1,11 @@
+{
+    "id": 37,
+    "nome": "Kit de venenos",
+    "tipo": "Kit de venenos",
+    "preco": {
+        "quantidade": 50,
+        "tipo": "Ouro"
+    },
+    "peso": 1.0,
+    "descricao": "O kit de venenos inclui os frascos, produtos químicos e outros equipamentos necessários para a criação de venenos. Proficiência com esse kit permite adicionar o bônus de proficiência para quaisquer testes de habilidade que você fizer para criar ou utilizar venenos."
+}

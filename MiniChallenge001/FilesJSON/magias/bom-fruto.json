@@ -1,0 +1,16 @@
+{
+    "id": 42,
+    "nome": "BOM FRUTO",
+    "nivel": 1,
+    "classes": [
+        "Druida",
+        "Patrulheiro"
+    ],
+    "escola": "Transmutação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático, Material (um raminho de visco)",
+    "duracao": "Instantânea",
+    "descricao": "Até dez frutos aparecem na sua mão e são infundidos com magia pela duração. Uma criatura pode usar sua ação para comer um fruto. Comer um fruto restaura 1 ponto de vida e um fruto produz nutrientes suficientes para sustentar uma criatura por um dia. Os frutos perdem seu potencial se não forem consumidos dentro de 24 horas da conjuração dessa magia."
+}

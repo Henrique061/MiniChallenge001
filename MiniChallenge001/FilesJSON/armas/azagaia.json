@@ -1,0 +1,16 @@
+{
+    "id": 2,
+    "nome": "Azagaia",
+    "tipo": "Simples",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Prata"
+    },
+    "dano": {
+        "dano": "1d6",
+        "tipo": "Perfurante"
+    },
+    "peso": 1.0,
+    "propriedades": "Arremesso (distância  9/36)"
+}

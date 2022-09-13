@@ -1,0 +1,15 @@
+{
+    "id": 5,
+    "nome": "Camisão de Malha",
+    "tipo": "Média",
+    "preco": {
+        "quantidade": 30,
+        "tipo": "Ouro"
+    },
+    "valorCA": 13,
+    "modCA": 2,
+    "forca": -1,
+    "desv_furtividade": false,
+    "peso": 10.0,
+    "descricao": "Feito de anéis de metal intercalados, um camisão de cota de malha é usado entre as camadas de roupa. Essa armadura oferece proteção modesta para a parte superior do corpo de quem a usa e permite que o som dos anéis de metal, friccionados uns contra os outros, sejam amortecidos pelas camadas exteriores."
+}

@@ -1,0 +1,12 @@
+{
+    "id": 80,
+    "nome": "Robes",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 2.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

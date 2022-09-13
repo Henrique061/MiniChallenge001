@@ -1,0 +1,12 @@
+{
+    "id": 70,
+    "nome": "Pedra de amolar",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Cobre"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

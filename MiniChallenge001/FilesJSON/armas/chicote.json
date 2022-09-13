@@ -1,0 +1,16 @@
+{
+    "id": 17,
+    "nome": "Chicote",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d4",
+        "tipo": "Cortante"
+    },
+    "peso": 1.5,
+    "propriedades": "Acuidade, alcance"
+}

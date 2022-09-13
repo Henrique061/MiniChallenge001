@@ -1,0 +1,15 @@
+{
+    "id": 7,
+    "nome": "Peitoral",
+    "tipo": "Média",
+    "preco": {
+        "quantidade": 400,
+        "tipo": "Ouro"
+    },
+    "valorCA": 14,
+    "modCA": 2,
+    "forca": -1,
+    "desv_furtividade": false,
+    "peso": 10.0,
+    "descricao": "A armadura peitoral é constituída por um peitoral de metal usado com couro flexível em seu interior. Embora ele deixe as pernas e braços do usuário relativamente desprotegidos, essa armadura fornece boa proteção para seus órgãos vitais, deixando quem a usa relativamente sem restrições."
+}

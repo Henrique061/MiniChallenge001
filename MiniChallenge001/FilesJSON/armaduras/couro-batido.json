@@ -1,0 +1,15 @@
+{
+    "id": 3,
+    "nome": "Couro Batido",
+    "tipo": "Leve",
+    "preco": {
+        "quantidade": 45,
+        "tipo": "Ouro"
+    },
+    "valorCA": 12,
+    "modCA": 0,
+    "forca": -1,
+    "desv_furtividade": false,
+    "peso": 6.5,
+    "descricao": "Feita de couro resistente, mas flexível, a armadura de couro batido é reforçada com rebites ou cravos."
+}

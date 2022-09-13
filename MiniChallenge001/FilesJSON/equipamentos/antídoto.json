@@ -1,0 +1,12 @@
+{
+    "id": 8,
+    "nome": "Antídoto (vidro)",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 50,
+        "tipo": "Ouro"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Uma criatura que beber o líquido desse vidro tem vantagem em testes de resistência contra venenos por 1 hora. O antídoto não confere nenhum benefício para mortos-vivos ou constructos."
+}

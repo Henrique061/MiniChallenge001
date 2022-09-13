@@ -1,0 +1,12 @@
+{
+    "id": 46,
+    "nome": "Crimorio",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 50,
+        "tipo": "Ouro"
+    },
+    "peso": 1.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

@@ -1,0 +1,12 @@
+{
+    "id": 75,
+    "nome": "Poção de cura",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 50,
+        "tipo": "Ouro"
+    },
+    "peso": 0.25,
+    "quantidade": 1,
+    "descricao": "Um personagem que beber o líquido vermelho mágico deste frasco recupera 2d4+2 pontos de vida. Beber ou administrar uma poção exige uma ação."
+}

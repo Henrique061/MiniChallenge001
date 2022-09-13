@@ -1,0 +1,18 @@
+{
+    "id": 249,
+    "nome": "PRESTIDIGITAÇÃO",
+    "nivel": 0,
+    "classes": [
+        "Bardo",
+        "Bruxo",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Transmutação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "3 metros",
+    "componentes": "Verbal, Somático",
+    "duracao": "Até 1 hora",
+    "descricao": "Essa magia é um truque mágico simples que conjuradores iniciantes usam para praticar. Você cria um dos seguintes efeitos mágicos dentro do alcance:  Você cria, instantaneamente, um efeito sensorialinofensivo, como uma chuva de faíscas, um sopro devento, notas musicais suaves ou um odor estranho. Você, instantaneamente, acende ou apaga uma vela,uma tocha ou uma pequena fogueira. Você, instantaneamente, limpa ou suja um objeto deaté 1 metro cúbico. Você esfria, esquenta ou melhora o sabor de até 1metro cubico de matéria inorgânica por 1 hora. Você faz uma cor, uma pequena marca ou um símboloaparecer em um objeto ou superfície por 1 hora. Você cria uma bugiganga não-mágica ou uma imagemilusória que caiba na sua mão e que dura até o final doseu próximo turno.Se você conjurar essa magia diversas vezes, você pode ter até três dos seus efeitos não-instantâneos ativos, ao mesmo tempo, e você pode dissipar um desses efeitos com uma ação."
+}

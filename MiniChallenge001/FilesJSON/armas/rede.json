@@ -1,0 +1,16 @@
+{
+    "id": 36,
+    "nome": "Rede",
+    "tipo": "Marcial",
+    "estilo": "Distância",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "Nenhum",
+        "tipo": "Nenhum"
+    },
+    "peso": 1.5,
+    "propriedades": "Especial, arremesso (distância 1,5/4,5)"
+}
