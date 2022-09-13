@@ -10,6 +10,8 @@
 		12FC222428CFCB38001B7E3A /* JSONFilesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */; };
 		12FC222628CFCBEA001B7E3A /* FilesJSON in Resources */ = {isa = PBXBuildFile; fileRef = 12FC222528CFCBEA001B7E3A /* FilesJSON */; };
 		12FC222828D002FB001B7E3A /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC222728D002FB001B7E3A /* JSONObject.swift */; };
+		3D11FB0228D1092B00F6F3A0 /* Arma+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11FB0028D1092B00F6F3A0 /* Arma+CoreDataClass.swift */; };
+		3D11FB0328D1092B00F6F3A0 /* Arma+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11FB0128D1092B00F6F3A0 /* Arma+CoreDataProperties.swift */; };
 		3D9BED1928CFB76000CA1821 /* MiniChallenge001App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED1828CFB76000CA1821 /* MiniChallenge001App.swift */; };
 		3D9BED1B28CFB76000CA1821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED1A28CFB76000CA1821 /* ContentView.swift */; };
 		3D9BED1D28CFB76200CA1821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D9BED1C28CFB76200CA1821 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFilesUtil.swift; sourceTree = "<group>"; };
 		12FC222528CFCBEA001B7E3A /* FilesJSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FilesJSON; sourceTree = "<group>"; };
 		12FC222728D002FB001B7E3A /* JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
+		3D11FB0028D1092B00F6F3A0 /* Arma+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arma+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3D11FB0128D1092B00F6F3A0 /* Arma+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arma+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3D9BED1528CFB76000CA1821 /* MiniChallenge001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge001.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9BED1828CFB76000CA1821 /* MiniChallenge001App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge001App.swift; sourceTree = "<group>"; };
 		3D9BED1A28CFB76000CA1821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 		3D9BED0C28CFB76000CA1821 = {
 			isa = PBXGroup;
 			children = (
+				3D11FB0028D1092B00F6F3A0 /* Arma+CoreDataClass.swift */,
+				3D11FB0128D1092B00F6F3A0 /* Arma+CoreDataProperties.swift */,
 				12FC222528CFCBEA001B7E3A /* FilesJSON */,
 				3D9BED1728CFB76000CA1821 /* MiniChallenge001 */,
 				3D9BED2D28CFB76200CA1821 /* MiniChallenge001Tests */,
@@ -275,7 +281,9 @@
 			files = (
 				3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */,
 				3D9BED1B28CFB76000CA1821 /* ContentView.swift in Sources */,
+				3D11FB0228D1092B00F6F3A0 /* Arma+CoreDataClass.swift in Sources */,
 				3D9BED2528CFB76200CA1821 /* MiniChallenge001.xcdatamodeld in Sources */,
+				3D11FB0328D1092B00F6F3A0 /* Arma+CoreDataProperties.swift in Sources */,
 				12FC222428CFCB38001B7E3A /* JSONFilesUtil.swift in Sources */,
 				12FC222828D002FB001B7E3A /* JSONObject.swift in Sources */,
 				3D9BED1928CFB76000CA1821 /* MiniChallenge001App.swift in Sources */,

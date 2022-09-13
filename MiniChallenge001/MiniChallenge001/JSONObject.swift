@@ -49,17 +49,13 @@ struct Dano: Codable {
     var tipo: TipoDano
 }
 
-struct Arma: CustomItem {
-    static func == (lhs: Arma, rhs: Arma) -> Bool {
-        return lhs.nome == rhs.nome
-    }
-    
-   var id: Int
-   var nome: String
-   var tipo: TipoArma
-   var estilo: EstiloArma
-   var preco: Moeda
-   var dano: Dano
-   var peso: Float
-   var propriedades: String
+struct ArmaJSON: CustomItem {
+    var id: Int
+    var nome: String
+    var tipo: TipoArma
+    var estilo: EstiloArma
+    var preco: Moeda
+    var dano: Dano
+    var peso: Float
+    var propriedades: String
 }
