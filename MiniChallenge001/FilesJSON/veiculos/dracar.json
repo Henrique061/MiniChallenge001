@@ -1,0 +1,9 @@
+{
+    "id": 3,
+    "nome": "Dracar",
+    "preco": {
+        "quantidade": 10000,
+        "tipo": "Ouro"
+    },
+    "velocidade": 5.0
+}

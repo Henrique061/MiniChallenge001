@@ -1,0 +1,9 @@
+{
+    "id": 9,
+    "nome": "Sela Exótica",
+    "preco": {
+        "quantidade": 60,
+        "tipo": "Ouro"
+    },
+    "peso": 20.0
+}

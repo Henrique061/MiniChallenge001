@@ -1,0 +1,12 @@
+{
+    "id": 73,
+    "nome": "Picareta de minerador",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "peso": 5.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

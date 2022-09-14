@@ -1,0 +1,17 @@
+{
+    "id": 175,
+    "nome": "INVISIBILIDADE MAIOR",
+    "nivel": 4,
+    "classes": [
+        "Bardo",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Ilusão",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático",
+    "duracao": "Concentração, até 1 minuto",
+    "descricao": "Você ou uma criatura que você possa tocar, se torna invisível até a magia acabar. Qualquer coisa que o alvo estiver vestindo ou carregando fica invisível enquanto estiver de posse do alvo."
+}

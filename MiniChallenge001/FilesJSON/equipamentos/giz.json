@@ -1,0 +1,12 @@
+{
+    "id": 45,
+    "nome": "Giz (1 peça)",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Cobre"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

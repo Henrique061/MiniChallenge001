@@ -1,0 +1,16 @@
+{
+    "id": 3,
+    "nome": "Bordão",
+    "tipo": "Simples",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Prata"
+    },
+    "dano": {
+        "dano": "1d6",
+        "tipo": "Concussão"
+    },
+    "peso": 2.0,
+    "propriedades": "Versátil (1d8)"
+}

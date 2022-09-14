@@ -1,0 +1,16 @@
+{
+    "id": 22,
+    "nome": "Lança de Montaria",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d12",
+        "tipo": "Perfurante"
+    },
+    "peso": 3.0,
+    "propriedades": "Alcance, especial"
+}

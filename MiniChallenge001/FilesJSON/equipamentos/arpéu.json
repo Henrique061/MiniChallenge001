@@ -1,0 +1,12 @@
+{
+    "id": 12,
+    "nome": "Arpéu",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "peso": 2.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

@@ -1,0 +1,12 @@
+{
+    "id": 98,
+    "nome": "Vela",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Cobre"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Por uma hora, a vela emana luz plena em um raio de 1,5 metro e penumbra por mais 1,5 metro."
+}

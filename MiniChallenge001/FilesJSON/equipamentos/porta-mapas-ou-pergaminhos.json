@@ -1,0 +1,12 @@
+{
+    "id": 76,
+    "nome": "Porta mapas ou pergaminhos",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Esse estojo cilíndrico de couro pode armazenar até 10 folhas de papel enroladas ou 5 folhas de pergaminhos enroladas."
+}

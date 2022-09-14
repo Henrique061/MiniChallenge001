@@ -1,0 +1,12 @@
+{
+    "id": 47,
+    "nome": "Jarra",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 4,
+        "tipo": "Cobre"
+    },
+    "peso": 2.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

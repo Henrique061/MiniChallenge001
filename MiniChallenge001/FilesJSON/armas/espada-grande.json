@@ -1,0 +1,16 @@
+{
+    "id": 19,
+    "nome": "Espada Grande",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 50,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "2d6",
+        "tipo": "Cortante"
+    },
+    "peso": 3.0,
+    "propriedades": "Pesada, duas mãos"
+}

@@ -1,0 +1,12 @@
+{
+    "id": 21,
+    "nome": "Cantil",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Prata"
+    },
+    "peso": 2.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

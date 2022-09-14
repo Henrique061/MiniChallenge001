@@ -1,0 +1,15 @@
+{
+    "id": 6,
+    "nome": "Brunea",
+    "tipo": "Média",
+    "preco": {
+        "quantidade": 50,
+        "tipo": "Ouro"
+    },
+    "valorCA": 14,
+    "modCA": 2,
+    "forca": -1,
+    "desv_furtividade": true,
+    "peso": 22.5,
+    "descricao": "Essa armadura consiste em um casaco e calças (e talvez uma saia separada) de couro coberto com peças sobrepostas de metal, assim como as escamas de peixe. O conjunto inclui manoplas."
+}

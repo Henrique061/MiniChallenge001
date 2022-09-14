@@ -1,0 +1,9 @@
+{
+    "id": 6,
+    "nome": "Veleiro",
+    "preco": {
+        "quantidade": 10000,
+        "tipo": "Ouro"
+    },
+    "velocidade": 3.0
+}

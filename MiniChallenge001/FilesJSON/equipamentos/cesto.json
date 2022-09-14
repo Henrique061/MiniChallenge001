@@ -1,0 +1,12 @@
+{
+    "id": 22,
+    "nome": "Cesto",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 4,
+        "tipo": "Prata"
+    },
+    "peso": 1.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

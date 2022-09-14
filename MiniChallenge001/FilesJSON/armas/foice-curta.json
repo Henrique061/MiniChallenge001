@@ -1,0 +1,16 @@
+{
+    "id": 5,
+    "nome": "Foice Curta",
+    "tipo": "Simples",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d4",
+        "tipo": "Cortante"
+    },
+    "peso": 1.0,
+    "propriedades": "Leve"
+}

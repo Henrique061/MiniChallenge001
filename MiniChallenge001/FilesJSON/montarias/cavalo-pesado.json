@@ -1,0 +1,10 @@
+{
+    "id": 6,
+    "nome": "Cavalo pesado",
+    "preco": {
+        "quantidade": 50,
+        "tipo": "Ouro"
+    },
+    "delocamento": 12.0,
+    "capacidadeCarga": 270.0
+}

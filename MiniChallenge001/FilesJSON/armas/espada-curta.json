@@ -1,0 +1,16 @@
+{
+    "id": 18,
+    "nome": "Espada Curta",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d6",
+        "tipo": "Perfurante"
+    },
+    "peso": 1.0,
+    "propriedades": "Acuidade, leve"
+}

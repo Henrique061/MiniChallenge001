@@ -1,0 +1,9 @@
+{
+    "id": 10,
+    "nome": "Sela Militar",
+    "preco": {
+        "quantidade": 20,
+        "tipo": "Ouro"
+    },
+    "peso": 15.0
+}

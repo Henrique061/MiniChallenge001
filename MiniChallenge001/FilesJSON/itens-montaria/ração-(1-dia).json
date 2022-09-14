@@ -1,0 +1,9 @@
+{
+    "id": 7,
+    "nome": "Ração (1 dia)",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Cobre"
+    },
+    "peso": 5.0
+}

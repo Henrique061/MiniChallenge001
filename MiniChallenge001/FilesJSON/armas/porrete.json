@@ -1,0 +1,16 @@
+{
+    "id": 10,
+    "nome": "Porrete",
+    "tipo": "Simples",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Prata"
+    },
+    "dano": {
+        "dano": "1d4",
+        "tipo": "Concussão"
+    },
+    "peso": 1.0,
+    "propriedades": "Leve"
+}

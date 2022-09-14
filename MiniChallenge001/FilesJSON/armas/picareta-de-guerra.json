@@ -1,0 +1,16 @@
+{
+    "id": 30,
+    "nome": "Picareta de Guerra",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d8",
+        "tipo": "Perfurante"
+    },
+    "peso": 1.0,
+    "propriedades": "Nenhuma"
+}

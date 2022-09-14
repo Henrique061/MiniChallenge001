@@ -1,0 +1,12 @@
+{
+    "id": 60,
+    "nome": "Balas de funda",
+    "categoria": "Munição",
+    "preco": {
+        "quantidade": 3,
+        "tipo": "Cobre"
+    },
+    "peso": 0.75,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

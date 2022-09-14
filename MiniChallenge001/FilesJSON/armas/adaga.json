@@ -1,0 +1,16 @@
+{
+    "id": 1,
+    "nome": "Adaga",
+    "tipo": "Simples",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d4",
+        "tipo": "Perfurante"
+    },
+    "peso": 0.5,
+    "propriedades": "Acuidade, leve, arremesso (distância  6/18)"
+}

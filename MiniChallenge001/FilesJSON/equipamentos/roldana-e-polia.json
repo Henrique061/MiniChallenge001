@@ -1,0 +1,12 @@
+{
+    "id": 81,
+    "nome": "Roldana e polia",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 2.5,
+    "quantidade": 1,
+    "descricao": "Um conjunto de roldanas com um cabo entre elas e um gancho para fixar aos objetos, a roldana e polia permitem içar até quatro vezes o peso que você ergueria normalmente."
+}

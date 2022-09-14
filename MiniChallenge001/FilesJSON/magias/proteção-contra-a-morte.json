@@ -1,0 +1,16 @@
+{
+    "id": 254,
+    "nome": "PROTEÇÃO CONTRA A MORTE",
+    "nivel": 4,
+    "classes": [
+        "Clérigo",
+        "Paladino"
+    ],
+    "escola": "Abjuração",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "",
+    "duracao": "V, S  Duração",
+    "descricao": "Você toca uma criatura e concede a ela uma certa proteção contra a morte. A primeira vez que o alvo cair a 0 pontos de vida, como resultado de ter sofrido dano, o alvo, ao invés disso, cai a 1 ponto de vida e a magia termina. Se a magia ainda estiver funcionando quando o alvo for afetado por um efeito que poderia mata-lo instantaneamente sem causar dano, o efeito, ao invés disso, não funciona no alvo e a magia termina."
+}

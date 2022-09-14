@@ -1,0 +1,11 @@
+{
+    "id": 19,
+    "nome": "Ferramentas de ladrão",
+    "tipo": "Ferramenta de ladrão",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "descricao": "Esse conjunto de ferramentas inclui uma pequena pasta, um conjunto de chaves mestras, um pequeno espelho montado em uma alça de metal, um conjunto de tesouras de lâminas estreitas e um par de alicates. Proficiência com essas ferramentas permite adicionar o bônus de proficiência para quaisquer testes de habilidade que você fizer para desarmar armadilhas ou abrir fechaduras."
+}

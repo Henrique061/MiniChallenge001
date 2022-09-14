@@ -1,0 +1,16 @@
+{
+    "id": 187,
+    "nome": "LOQUACIDADE",
+    "nivel": 8,
+    "classes": [
+        "Bardo",
+        "Bruxo"
+    ],
+    "escola": "Transmutação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal",
+    "componentes": "Verbal",
+    "duracao": "1 hora",
+    "descricao": "Até o fim da magia, quando você realizar um teste de Carisma, você pode substituir o número rolado por você por um 15. Além disso, não importa o que você diga, magias que determinam se você está dizendo a verdade indicarão que você está sendo sincero."
+}

@@ -1,0 +1,15 @@
+{
+    "id": 28,
+    "nome": "AUGÚRIO",
+    "nivel": 2,
+    "classes": [
+        "Clérigo"
+    ],
+    "escola": "Adivinhação",
+    "ritual": true,
+    "tempoConjuracao": "1 minuto",
+    "alcance": "Pessoal",
+    "componentes": "Verbal, Somático, Material (varetas, ossos ou objetossimilarmente marcados valendo, no mínimo, 25 po)",
+    "duracao": "Instantânea",
+    "descricao": "Ao lançar varetas cravejados com gemas, rolar ossos de dragão, puxar cartas ornamentadas ou usar outro tipo de ferramenta de adivinhação, você recebe um pressagio de uma entidade de outro mundo, sobre os resultados de cursos de ação específicos que você planeja tomar nos próximos 30 minutos. O Mestre escolhe dentre os possíveis presságios a seguir: • Êxito , para resultados bons• Fracasso , para resultados maus• Êxito e fracasso , para resultados bons e maus• Nada , para resultados que não são especialmente bonsou ruinsA magia não leva em conta qualquer possível circunstancia que possa mudar o resultado, como a conjuração de magias adicionais ou a perda ou ganho de um companheiro. Se você conjurar a magia duas ou mais vezes antes de completar seu próximo descanso longo, existe uma chance cumulativa de 25 por cento de cada conjuração, depois da primeira que você fez, ter um resultado aleatório. O Mestre faz essa jogada secretamente."
+}

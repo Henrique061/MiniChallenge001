@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "nome": "Acolchoado",
+    "tipo": "Leve",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "valorCA": 11,
+    "modCA": 0,
+    "forca": -1,
+    "desv_furtividade": true,
+    "peso": 4.0,
+    "descricao": "A armadura acolchoada consiste em camadas de panos acolchoados e batidos."
+}

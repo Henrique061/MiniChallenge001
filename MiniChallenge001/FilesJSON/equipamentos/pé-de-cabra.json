@@ -1,0 +1,12 @@
+{
+    "id": 69,
+    "nome": "Pé de cabra",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "peso": 2.5,
+    "quantidade": 1,
+    "descricao": "Usar um pé de cabra concede vantagem nos testes de Força onde uma alavanca possa ser aplicada."
+}

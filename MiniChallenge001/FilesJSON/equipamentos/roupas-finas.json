@@ -1,0 +1,12 @@
+{
+    "id": 85,
+    "nome": "Roupas finas",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 15,
+        "tipo": "Ouro"
+    },
+    "peso": 3.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

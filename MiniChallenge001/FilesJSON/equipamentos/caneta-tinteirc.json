@@ -1,0 +1,12 @@
+{
+    "id": 20,
+    "nome": "Caneta tinteirc",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Cobre"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

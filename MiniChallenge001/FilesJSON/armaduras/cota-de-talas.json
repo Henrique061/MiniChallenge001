@@ -1,0 +1,15 @@
+{
+    "id": 11,
+    "nome": "Cota de Talas",
+    "tipo": "Pesada",
+    "preco": {
+        "quantidade": 200,
+        "tipo": "Ouro"
+    },
+    "valorCA": 17,
+    "modCA": -1,
+    "forca": 15,
+    "desv_furtividade": false,
+    "peso": 30.0,
+    "descricao": "Essa armadura é feita de tiras verticais de metal, rebitadas a um suporte de couro, usadas sobre um preenchimento de pano. Cotas de malha flexíveis protegem as articulações."
+}
