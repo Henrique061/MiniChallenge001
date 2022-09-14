@@ -1,0 +1,16 @@
+{
+    "id": 33,
+    "nome": "Arco Longo",
+    "tipo": "Marcial",
+    "estilo": "Distância",
+    "preco": {
+        "quantidade": 50,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d8",
+        "tipo": "Perfurante"
+    },
+    "peso": 1.0,
+    "propriedades": "Munição (distância 45/180), pesada, duas mãos"
+}

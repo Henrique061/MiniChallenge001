@@ -1,0 +1,16 @@
+{
+    "id": 92,
+    "nome": "CRIAR ALIMENTOS",
+    "nivel": 3,
+    "classes": [
+        "Clérigo",
+        "Paladino"
+    ],
+    "escola": "Conjuração",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "9 metros",
+    "componentes": "Verbal, Somático",
+    "duracao": "Instantânea",
+    "descricao": "Você cria 25 quilos de comida e 100 litros de água no solo ou em um recipiente dentro do alcance, suficiente para sustentar até quinze humanoide ou cinco montarias por 24 horas. A comida é insossa, porém, nutritiva e estraga se não for consumida após 24 horas. A água é limpa e não fica ruim."
+}

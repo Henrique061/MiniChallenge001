@@ -8,14 +8,18 @@
 import CoreData
 
 struct PersistenceController {
+    // singleton que controla o banco
     static let shared = PersistenceController()
 
+    // configuracao para o preview do SwiftUI
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
+        
+        // cria automaticamente 10 exemplos de itens na lista
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newItem = Arma(context: viewContext)
+            newItem.nome = ""
         }
         do {
             try viewContext.save()
@@ -25,17 +29,24 @@ struct PersistenceController {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
+        
         return result
     }()
 
+    // o container que armazena nosso core data
     let container: NSPersistentContainer
 
+    // init para carregar o core data (da para opcionalmente, armazenar numa alocacao de memoria)
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "MiniChallenge001")
+        container = NSPersistentContainer(name: "MiniChallenge001") // name = nome do banco
+        
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+        
+        // previne que as mudancas pelo pai nao deem merge automaticamente
         container.viewContext.automaticallyMergesChangesFromParent = true
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -52,5 +63,18 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+    }
+    
+    // para checar se o contexto tem mudancas para poder salvar.
+    func save() {
+        let context = container.viewContext
+        
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                print("Falha ao salvar os dados (func save() do PersistanceController).")
+            }
+        }
     }
 }

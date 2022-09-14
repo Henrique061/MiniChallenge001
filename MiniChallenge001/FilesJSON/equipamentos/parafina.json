@@ -1,0 +1,12 @@
+{
+    "id": 68,
+    "nome": "Parafina",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Prata"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

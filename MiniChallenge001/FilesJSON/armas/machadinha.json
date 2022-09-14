@@ -1,0 +1,16 @@
+{
+    "id": 8,
+    "nome": "Machadinha",
+    "tipo": "Simples",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d6",
+        "tipo": "Cortante"
+    },
+    "peso": 1.0,
+    "propriedades": "Leve, arremesso (distância  6/18)"
+}

@@ -1,0 +1,16 @@
+{
+    "id": 141,
+    "nome": "ESPADA DE MORDENKAINEN",
+    "nivel": 7,
+    "classes": [
+        "Bardo",
+        "Mago"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1ação",
+    "alcance": "18 metros",
+    "componentes": "Verbal,Somático,Material (espada de platina em miniatura comcabo e pomo decobre ezincovalendo,nomínimo, 250 po)",
+    "duracao": "Concentração, até 1 minuto.",
+    "descricao": "Você cria um planode energia em formatode espada que flutua dentro do alcance. Ela permanece pela duração. Quando a espada aparece, você realiza um ataque com magia contra um alvo, à sua escolha, a1, 5 metroda espada. Seatingir, o alvo sofre 3d10 de dano de energia. Até amagia acabar, você pode usar uma ação bônus, em cada um dos seus turnos, para mover a espada até 6 metros para um local que você possa ver e repetir esse ataque contra o mesmo alvo ou um diferente."
+}

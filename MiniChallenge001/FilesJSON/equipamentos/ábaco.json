@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "nome": "Ábaco",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "peso": 1.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

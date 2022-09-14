@@ -1,0 +1,15 @@
+{
+    "id": 4,
+    "nome": "Gibão de Peles",
+    "tipo": "Média",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "valorCA": 12,
+    "modCA": 2,
+    "forca": -1,
+    "desv_furtividade": false,
+    "peso": 6.0,
+    "descricao": "Um gibão de peles é um armadura bruta consistindo de peles grossas. É comumente usada por tribos bárbaras, humanoides malignos e outros povos que não têm acesso às ferramentas e materiais necessários para criar uma armadura melhor."
+}

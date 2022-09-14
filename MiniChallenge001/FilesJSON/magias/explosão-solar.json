@@ -1,0 +1,17 @@
+{
+    "id": 146,
+    "nome": "EXPLOSÃO SOLAR",
+    "nivel": 8,
+    "classes": [
+        "Druida",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "45 metros",
+    "componentes": "Verbal, Somático, Material (fogo e um pedaço de pedra dosol)",
+    "duracao": "Instantânea",
+    "descricao": "Luz solar brilhante lampeja num raio de 18 metros, centrada num ponto, à sua escolha, dentro do alcance. Cada criatura nessa luz, deve realizar um teste de resistência de Constituição. Com uma falha na resistência, uma criatura sofrerá 12d6 de dano radiante e ficará cega por 1 minuto. Se obtiver sucesso na resistência, ela sofrerá metade desse dano e não ficará cega por essa magia. Mortos-vivos e limos tem desvantagem nos seus testes de resistência. Uma criatura cega por essa magia faz outro teste de resistência de Constituição no final de cada um dos turnos dela. Se obtiver sucesso, ela não estará mais cega. Essa magia dissipa qualquer escuridão na área dela que tenha sido criada por um magia."
+}

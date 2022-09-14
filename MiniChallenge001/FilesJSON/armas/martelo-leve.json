@@ -1,0 +1,16 @@
+{
+    "id": 9,
+    "nome": "Martelo Leve",
+    "tipo": "Simples",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d4",
+        "tipo": "Concussão"
+    },
+    "peso": 1.0,
+    "propriedades": "Leve, arremesso (distância  6/18)"
+}

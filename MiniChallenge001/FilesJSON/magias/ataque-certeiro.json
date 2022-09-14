@@ -1,0 +1,18 @@
+{
+    "id": 26,
+    "nome": "ATAQUE CERTEIRO",
+    "nivel": 0,
+    "classes": [
+        "Bardo",
+        "Bruxo",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Adivinhação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "9 metros",
+    "componentes": "Somático",
+    "duracao": "Concentração, até 1 rodada",
+    "descricao": "Você estende sua mão e aponta o dedo para um alvo no alcance. Sua magia garante a você uma breve intuição sobre as defesas do alvo. No seu próximo turno, você terá vantagem na primeira jogada de ataque contra o alvo, considerando que essa magia não tenha acabado."
+}

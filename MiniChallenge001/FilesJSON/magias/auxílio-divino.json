@@ -1,0 +1,15 @@
+{
+    "id": 34,
+    "nome": "AUXÍLIO DIVINO",
+    "nivel": 1,
+    "classes": [
+        "Paladino"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação bônus",
+    "alcance": "Pessoal",
+    "componentes": "Verbal, Somático",
+    "duracao": "Concentração, até 1 minuto",
+    "descricao": "Sua oração fortalece você com radiação divina. Até o fim da magia, seus ataques com arma causam 1d4 de dano radiante extra ao atingirem."
+}

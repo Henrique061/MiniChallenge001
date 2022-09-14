@@ -1,0 +1,12 @@
+{
+    "id": 89,
+    "nome": "Amuleto",
+    "categoria": "Símbolo Sagrado",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Um símbolo sagrado é a representação de uma divindade ou um panteão. Pode ser um amuleto com o símbolo de uma divindade, um símbolo talhado cuidadosamente ou encrustado como um emblema em um escudo ou até mesmo uma caixa pequena que guarda um fragmento de uma relíquia sagrada. O apêndice B  lista os símbolos comumente associados a muitas divindades no multiverso. Um clérigo ou paladino pode usar um símbolo sagrado como um foco de conjuração, como descrito no capítulo 10. Para usar o símbolo dessa forma, o conjurador precisa segurá-lo em uma mão, usa-lo visivelmente ou hostenta-lo em seu escudo."
+}

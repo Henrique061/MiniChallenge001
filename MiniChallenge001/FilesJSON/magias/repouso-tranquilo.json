@@ -1,0 +1,16 @@
+{
+    "id": 280,
+    "nome": "REPOUSO TRANQUILO",
+    "nivel": 2,
+    "classes": [
+        "Clérigo",
+        "Mago"
+    ],
+    "escola": "Necromancia",
+    "ritual": true,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático, Material (uma pitada de sal e uma peça decobre colocada em cada um dos olhos do corpo, quedevem permanecer ai pela duração)",
+    "duracao": "10 dias",
+    "descricao": "Você toca um corpo ou outros restos mortais. Pela duração, o alvo estará protegido de decomposição e não pode se tornar um morto-vivo. A magia também estende, efetivamente, o limite de tempo para que o alvo seja trazido de volta a vida, já que os dias passados sob a influência dessa magia não contam no tempo limite de tais magias, como reviver os mortos ."
+}

@@ -1,0 +1,16 @@
+{
+    "id": 20,
+    "nome": "Espada Longa",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 15,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d8",
+        "tipo": "Cortante"
+    },
+    "peso": 1.5,
+    "propriedades": "Versátil (1d10)"
+}

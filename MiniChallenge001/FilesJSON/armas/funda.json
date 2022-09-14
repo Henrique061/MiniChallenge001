@@ -1,0 +1,16 @@
+{
+    "id": 14,
+    "nome": "Funda",
+    "tipo": "Simples",
+    "estilo": "Distância",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Prata"
+    },
+    "dano": {
+        "dano": "1d4",
+        "tipo": "Concussão"
+    },
+    "peso": 0.0,
+    "propriedades": "Munição (distância 9/36)"
+}

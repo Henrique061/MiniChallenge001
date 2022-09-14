@@ -1,0 +1,12 @@
+{
+    "id": 61,
+    "nome": "Flechas",
+    "categoria": "Munição",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

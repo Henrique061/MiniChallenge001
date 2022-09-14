@@ -1,0 +1,16 @@
+{
+    "id": 6,
+    "nome": "Lança",
+    "tipo": "Simples",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d6",
+        "tipo": "Perfurante"
+    },
+    "peso": 1.5,
+    "propriedades": "Arremesso (distância  6/18) , versátil (1d8)"
+}

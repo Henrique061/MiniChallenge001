@@ -1,0 +1,12 @@
+{
+    "id": 96,
+    "nome": "Tinta",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

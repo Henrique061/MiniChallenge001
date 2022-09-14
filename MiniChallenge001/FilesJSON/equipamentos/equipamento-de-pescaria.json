@@ -1,0 +1,12 @@
+{
+    "id": 27,
+    "nome": "Equipamento de pescaria",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 2.0,
+    "quantidade": 1,
+    "descricao": "Este kit inclui uma vara de pesca de madeira, linha de seda, boias de cortiça, anzóis de aço, chumbadas, iscas e redes de pesca."
+}

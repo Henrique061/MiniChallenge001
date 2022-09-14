@@ -1,0 +1,12 @@
+{
+    "id": 49,
+    "nome": "Kit de primeiros-socorros",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "peso": 1.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

@@ -1,0 +1,11 @@
+{
+    "id": 30,
+    "nome": "Kit de disfarce",
+    "tipo": "Kit de disfarce",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "peso": 1.5,
+    "descricao": "Essa bolsa de cosméticos, tintura de cabelo e pequenos adereços permite criar disfarces que mudam sua aparência física. Proficiência com este kit permite adicionar o bônus de proficiência para quaisquer testes de habilidade que você fizer para criar um disfarce visual."
+}

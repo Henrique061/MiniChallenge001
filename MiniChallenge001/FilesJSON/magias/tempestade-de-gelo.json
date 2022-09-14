@@ -1,0 +1,17 @@
+{
+    "id": 314,
+    "nome": "TEMPESTADE DE GELO",
+    "nivel": 4,
+    "classes": [
+        "Druida",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "90 metros",
+    "componentes": "Verbal, Somático, Material (um pouco de poeira e algumasgotas de água)",
+    "duracao": "Instantânea",
+    "descricao": "Uma rajada de pedras de gelo batem no chão em um cilindro de 6 metros de raio por 12 metros de altura, centrado num ponto dentro do alcance. Cada criatura no cilindro deve realizar um teste de resistência de Destreza. Uma criatura sofre 2d8 de dano de concussão e 4d6 de dano de frio se falhar na resistência ou metade desse dano se obtiver sucesso. O granizo torna a área da tempestade em terreno difícil até o final do seu próximo turno. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 5° nível ou superior, o dano de concussão aumenta em 1d8 para cada nível do espaço acima do 4°."
+}

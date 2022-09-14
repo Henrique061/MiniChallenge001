@@ -1,0 +1,12 @@
+{
+    "id": 43,
+    "nome": "Frasco",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Cobre"
+    },
+    "peso": 1.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

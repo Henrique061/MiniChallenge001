@@ -1,0 +1,15 @@
+{
+    "id": 10,
+    "nome": "Cota de Malha",
+    "tipo": "Pesada",
+    "preco": {
+        "quantidade": 75,
+        "tipo": "Ouro"
+    },
+    "valorCA": 16,
+    "modCA": -1,
+    "forca": 13,
+    "desv_furtividade": false,
+    "peso": 27.5,
+    "descricao": "Feita de anéis de metal entrelaçados, a cota de malha inclui uma camada de tecido acolchoado usada por baixo da malha de metal para evitar atrito e amortecer o impacto dos golpes. O conjunto inclui manoplas."
+}

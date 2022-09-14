@@ -1,0 +1,17 @@
+{
+    "id": 286,
+    "nome": "RESTAURAÇÃO MAIOR",
+    "nivel": 5,
+    "classes": [
+        "Bardo",
+        "Clérigo",
+        "Druida"
+    ],
+    "escola": "Abjuração",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático, Material (pó de diamante valendo, nomínimo, 100 po, consumido pela magia)",
+    "duracao": "Instantânea",
+    "descricao": "Você imbui uma criatura que você toca, com energia positiva para desfazer um efeito debilitante. Você pode reduzir a exaustão do alvo em um nível ou remover um dos seguintes do alvo:  Um efeito que enfeitice ou petrifique o alvo Uma maldição, incluindo a sintonização do alvo comum item mágico amaldiçoado Qualquer redução a um dos valores de habilidade doalvo Um efeito que esteja reduzindo o máximo de pontos devida do alvo"
+}

@@ -1,0 +1,16 @@
+{
+    "id": 35,
+    "nome": "Besta Pesada",
+    "tipo": "Marcial",
+    "estilo": "Distância",
+    "preco": {
+        "quantidade": 50,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d10",
+        "tipo": "Perfurante"
+    },
+    "peso": 4.5,
+    "propriedades": "Munição (distância 30/120), pesada, recarga, duas mãos"
+}

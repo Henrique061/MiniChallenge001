@@ -1,0 +1,12 @@
+{
+    "id": 82,
+    "nome": "Roupa comuns",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Prata"
+    },
+    "peso": 1.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

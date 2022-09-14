@@ -1,0 +1,15 @@
+{
+    "id": 8,
+    "nome": "Meia-Armadura",
+    "tipo": "Média",
+    "preco": {
+        "quantidade": 750,
+        "tipo": "Ouro"
+    },
+    "valorCA": 15,
+    "modCA": 2,
+    "forca": -1,
+    "desv_furtividade": true,
+    "peso": 20.0,
+    "descricao": "Essa armadura é composta de placas de metal moldadas que cobrem a maior parte do corpo. Ela não inclui proteção para as pernas além de caneleiras fixadas com tiras de couro."
+}

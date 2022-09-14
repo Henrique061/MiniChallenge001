@@ -1,0 +1,11 @@
+{
+    "id": 27,
+    "nome": "Trombeta",
+    "tipo": "Instrumento musical",
+    "preco": {
+        "quantidade": 3,
+        "tipo": "Ouro"
+    },
+    "peso": 1.0,
+    "descricao": "Se você possuir proficiência com um determinado instrumento musical, você pode adicionar seu bônus de proficiência para quaisquer testes de habilidade que fizer para tocar música com o instrumento. Cada tipo de instrumento musical exige uma proficiência em separado."
+}

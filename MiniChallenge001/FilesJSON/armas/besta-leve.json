@@ -1,0 +1,16 @@
+{
+    "id": 12,
+    "nome": "Besta Leve",
+    "tipo": "Simples",
+    "estilo": "Distância",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d8",
+        "tipo": "Perfurante"
+    },
+    "peso": 2.5,
+    "propriedades": "Munição (distância, 24/96), recarga, duas mãos"
+}

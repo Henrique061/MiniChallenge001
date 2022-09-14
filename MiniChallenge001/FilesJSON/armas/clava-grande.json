@@ -1,0 +1,16 @@
+{
+    "id": 4,
+    "nome": "Clava Grande",
+    "tipo": "Simples",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Prata"
+    },
+    "dano": {
+        "dano": "1d8",
+        "tipo": "Concussão"
+    },
+    "peso": 5.0,
+    "propriedades": "Pesada, duas mãos"
+}
