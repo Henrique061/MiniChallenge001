@@ -11,19 +11,20 @@ class JSONFilesUtils {
     
     private static func getFilesURLFromFolder(folder name: String) -> [URL] {
         let paths = Bundle.main.paths(forResourcesOfType: "json", inDirectory: "/FilesJSON/\(name)")
+        print(paths)
         var urls: [URL] = []
         for path in paths {
             let temp = path.split(separator: "/")
-            if let url = Bundle.main.url(forResource: "FilesJSON/\(name)/\(temp[temp.count - 1])", withExtension: nil) {
+            if let url = Bundle.main.url(forResource: "/FilesJSON/\(name)/\(temp[temp.count - 1])", withExtension: nil) {
                 urls.append(url)
             }
         }
         return urls
     }
     
-    public static func getDataFromFiles<T:CustomItem>(folder name: String, decoder: T.Type) -> [CustomItem] {
+    public static func getDataFromFiles<T:Item>(folder name: String, decoder: T.Type) -> [Item] {
         let paths = getFilesURLFromFolder(folder: name)
-        var items: [CustomItem] = []
+        var items: [Item] = []
         for path in paths {
             do {
                 let data = try Data(contentsOf: path)
@@ -36,8 +37,8 @@ class JSONFilesUtils {
         return items
     }
     
-    public static func getDataFromFolders<T:CustomItem>(folderDecoder: [(String, T.Type)]) -> [CustomItem] {
-        var allItems: [CustomItem] = []
+    public static func getDataFromFolders<T:Item>(folderDecoder: [(String, T.Type)]) -> [Item] {
+        var allItems: [Item] = []
         for folder in folderDecoder {
             allItems = allItems + getDataFromFiles(folder: folder.0, decoder: folder.1)
         }

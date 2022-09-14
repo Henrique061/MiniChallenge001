@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12E07FB728D2627600F654BB /* FilesJSON in Sources */ = {isa = PBXBuildFile; fileRef = 12E07FB628D2627600F654BB /* FilesJSON */; };
+		120188DF28D279ED006B420B /* FilesJSON in Resources */ = {isa = PBXBuildFile; fileRef = 12E7E84A28D279670093534C /* FilesJSON */; };
 		12FC222428CFCB38001B7E3A /* JSONFilesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */; };
 		12FC222828D002FB001B7E3A /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC222728D002FB001B7E3A /* JSONObject.swift */; };
 		3D11FB0228D1092B00F6F3A0 /* Arma+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11FB0028D1092B00F6F3A0 /* Arma+CoreDataClass.swift */; };
@@ -42,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12E07FB628D2627600F654BB /* FilesJSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FilesJSON; sourceTree = "<group>"; };
+		12E7E84A28D279670093534C /* FilesJSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FilesJSON; sourceTree = "<group>"; };
 		12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFilesUtil.swift; sourceTree = "<group>"; };
 		12FC222728D002FB001B7E3A /* JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
 		3D11FB0028D1092B00F6F3A0 /* Arma+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arma+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		3D9BED0C28CFB76000CA1821 = {
 			isa = PBXGroup;
 			children = (
-				12E07FB628D2627600F654BB /* FilesJSON */,
+				12E7E84A28D279670093534C /* FilesJSON */,
 				3D9BED1728CFB76000CA1821 /* MiniChallenge001 */,
 				3D9BED2D28CFB76200CA1821 /* MiniChallenge001Tests */,
 				3D9BED3728CFB76200CA1821 /* MiniChallenge001UITests */,
@@ -150,8 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				3DE3796D28D2644D005812C7 /* CoreData */,
-				12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */,
 				12FC222728D002FB001B7E3A /* JSONObject.swift */,
+				12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				120188DF28D279ED006B420B /* FilesJSON in Resources */,
 				3D9BED2028CFB76200CA1821 /* Preview Assets.xcassets in Resources */,
 				3D9BED1D28CFB76200CA1821 /* Assets.xcassets in Resources */,
 			);
@@ -314,7 +315,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE3796F28D2673E005812C7 /* ViewModel.swift in Sources */,
-				12E07FB728D2627600F654BB /* FilesJSON in Sources */,
 				3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */,
 				3D9BED1B28CFB76000CA1821 /* ContentView.swift in Sources */,
 				3D11FB0228D1092B00F6F3A0 /* Arma+CoreDataClass.swift in Sources */,
