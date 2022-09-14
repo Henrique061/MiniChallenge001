@@ -1,0 +1,9 @@
+{
+    "id": 4,
+    "nome": "Carruagem",
+    "preco": {
+        "quantidade": 100,
+        "tipo": "Ouro"
+    },
+    "peso": 300.0
+}

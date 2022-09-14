@@ -1,0 +1,9 @@
+{
+    "id": 2,
+    "nome": "Biga",
+    "preco": {
+        "quantidade": 250,
+        "tipo": "Ouro"
+    },
+    "peso": 50.0
+}

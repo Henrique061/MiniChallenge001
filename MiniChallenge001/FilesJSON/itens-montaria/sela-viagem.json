@@ -1,0 +1,9 @@
+{
+    "id": 11,
+    "nome": "Sela Viagem",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "peso": 12.5
+}

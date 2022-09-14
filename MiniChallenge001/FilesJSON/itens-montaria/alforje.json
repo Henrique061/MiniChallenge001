@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "nome": "Alforje",
+    "preco": {
+        "quantidade": 4,
+        "tipo": "Ouro"
+    },
+    "peso": 4.0
+}

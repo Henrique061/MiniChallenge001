@@ -1,0 +1,10 @@
+{
+    "id": 4,
+    "nome": "Cavalo de guerra",
+    "preco": {
+        "quantidade": 400,
+        "tipo": "Ouro"
+    },
+    "delocamento": 18.0,
+    "capacidadeCarga": 270.0
+}

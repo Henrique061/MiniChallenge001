@@ -1,0 +1,9 @@
+{
+    "id": 4,
+    "nome": "Galera",
+    "preco": {
+        "quantidade": 30000,
+        "tipo": "Ouro"
+    },
+    "velocidade": 6.5
+}
