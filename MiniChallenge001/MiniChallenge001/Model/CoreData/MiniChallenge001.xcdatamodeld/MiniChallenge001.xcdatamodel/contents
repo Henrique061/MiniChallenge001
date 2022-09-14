@@ -10,9 +10,123 @@
         <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="precoTipo" optional="YES" attributeType="String"/>
         <attribute name="propriedades" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tipo" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Armadura" representedClassName="Armadura" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="forca" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="furtividade" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modCA" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String"/>
+        <attribute name="valorCA" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Atributo" representedClassName="Atributo" syncable="YES">
+        <attribute name="carisma" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="constituicao" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="destreza" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="forca" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="inteligencia" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sabedoria" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Equipamento" representedClassName="Equipamento" syncable="YES">
+        <attribute name="capacidade" optional="YES" attributeType="String"/>
+        <attribute name="categoria" optional="YES" attributeType="String"/>
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Ferramenta" representedClassName="Ferramenta" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ItemMontaria" representedClassName="ItemMontaria" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Magia" representedClassName="Magia" syncable="YES">
+        <attribute name="alcance" optional="YES" attributeType="String"/>
+        <attribute name="classes" optional="YES" attributeType="String"/>
+        <attribute name="componentes" optional="YES" attributeType="String"/>
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="duracao" optional="YES" attributeType="String"/>
+        <attribute name="escola" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nivel" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="ritual" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="tempoConj" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Montaria" representedClassName="Montaria" syncable="YES">
+        <attribute name="capCarga" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="deslocamento" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Personagem" representedClassName="Personagem" syncable="YES">
+        <attribute name="foto" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ResistenciaMorte" representedClassName="ResistenciaMorte" syncable="YES">
+        <attribute name="acerto" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="erro" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Status" representedClassName="Status" syncable="YES">
+        <attribute name="classeArmadura" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dadosVida" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="deslocamento" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="iniciativa" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nivel" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ptsVida" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ptsVidaTemporaria" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Veiculo" representedClassName="Veiculo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="velocidade" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
     <elements>
-        <element name="Arma" positionX="-63" positionY="-9" width="128" height="179"/>
+        <element name="Arma" positionX="-422.4881896972656" positionY="-283.6787109375" width="128" height="208"/>
+        <element name="Armadura" positionX="-657.452880859375" positionY="-284.1594848632812" width="128" height="223"/>
+        <element name="Equipamento" positionX="-171.3003234863281" positionY="-268.1261596679688" width="128" height="178"/>
+        <element name="Ferramenta" positionX="-663.9444580078125" positionY="69.234130859375" width="128" height="163"/>
+        <element name="Montaria" positionX="-421.9530334472656" positionY="68.1871337890625" width="128" height="148"/>
+        <element name="ItemMontaria" positionX="-162.839599609375" positionY="78.72589111328125" width="128" height="133"/>
+        <element name="Veiculo" positionX="-425.8060913085938" positionY="342.227294921875" width="128" height="133"/>
+        <element name="Magia" positionX="604.0222778320312" positionY="8.88873291015625" width="128" height="208"/>
+        <element name="Personagem" positionX="117.1014404296875" positionY="-339.463134765625" width="128" height="88"/>
+        <element name="Atributo" positionX="377.116455078125" positionY="-265.0722045898438" width="128" height="148"/>
+        <element name="Status" positionX="370.9209594726562" positionY="13.4517822265625" width="128" height="163"/>
+        <element name="ResistenciaMorte" positionX="612.9152221679688" positionY="-263.0987548828125" width="128" height="88"/>
     </elements>
 </model>
