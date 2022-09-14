@@ -89,8 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				12E07FB628D2627600F654BB /* FilesJSON */,
-				3D11FB0028D1092B00F6F3A0 /* Arma+CoreDataClass.swift */,
-				3D11FB0128D1092B00F6F3A0 /* Arma+CoreDataProperties.swift */,
 				3D9BED1728CFB76000CA1821 /* MiniChallenge001 */,
 				3D9BED2D28CFB76200CA1821 /* MiniChallenge001Tests */,
 				3D9BED3728CFB76200CA1821 /* MiniChallenge001UITests */,
@@ -112,13 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				3D9BED1828CFB76000CA1821 /* MiniChallenge001App.swift */,
-				3D9BED1A28CFB76000CA1821 /* ContentView.swift */,
-				3D9BED1C28CFB76200CA1821 /* Assets.xcassets */,
-				3D9BED2128CFB76200CA1821 /* Persistence.swift */,
-				3D9BED2328CFB76200CA1821 /* MiniChallenge001.xcdatamodeld */,
+				3DE3796C28D26413005812C7 /* View */,
+				3DE3796B28D26400005812C7 /* ViewModel */,
+				3DE3796A28D26391005812C7 /* Model */,
 				3D9BED1E28CFB76200CA1821 /* Preview Content */,
-				12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */,
-				12FC222728D002FB001B7E3A /* JSONObject.swift */,
+				3D9BED1C28CFB76200CA1821 /* Assets.xcassets */,
 			);
 			path = MiniChallenge001;
 			sourceTree = "<group>";
@@ -146,6 +142,42 @@
 				3D9BED3A28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift */,
 			);
 			path = MiniChallenge001UITests;
+			sourceTree = "<group>";
+		};
+		3DE3796A28D26391005812C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DE3796D28D2644D005812C7 /* CoreData */,
+				12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */,
+				12FC222728D002FB001B7E3A /* JSONObject.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DE3796B28D26400005812C7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DE3796C28D26413005812C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D9BED1A28CFB76000CA1821 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DE3796D28D2644D005812C7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3D9BED2128CFB76200CA1821 /* Persistence.swift */,
+				3D11FB0028D1092B00F6F3A0 /* Arma+CoreDataClass.swift */,
+				3D11FB0128D1092B00F6F3A0 /* Arma+CoreDataProperties.swift */,
+				3D9BED2328CFB76200CA1821 /* MiniChallenge001.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
