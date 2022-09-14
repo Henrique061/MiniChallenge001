@@ -1,0 +1,16 @@
+{
+    "id": 31,
+    "nome": "Rapieira",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d8",
+        "tipo": "Perfurante"
+    },
+    "peso": 1.0,
+    "propriedades": "Acuidade"
+}

@@ -1,0 +1,12 @@
+{
+    "id": 18,
+    "nome": "Caixa de fogo",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Prata"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Esse pequeno recipiente detém uma pederneira, isqueiro e um pavio (um pano geralmente seco embebido em óleo) usado para acender uma fogueira. Usá-lo para acender uma tocha – ou qualquer outra coisa exposta a um combustível abundante – leva uma ação. Acender qualquer outro fogo leva 1 minuto"
+}

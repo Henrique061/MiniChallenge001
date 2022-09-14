@@ -1,0 +1,12 @@
+{
+    "id": 62,
+    "nome": "Virotes",
+    "categoria": "Munição",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 0.75,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

@@ -1,0 +1,12 @@
+{
+    "id": 29,
+    "nome": "Esferas (sacola com 1.000)",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 1.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

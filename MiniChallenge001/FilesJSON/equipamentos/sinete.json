@@ -1,0 +1,12 @@
+{
+    "id": 92,
+    "nome": "Sinete",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

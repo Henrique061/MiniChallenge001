@@ -1,0 +1,11 @@
+{
+    "id": 32,
+    "nome": "Kit de herbalismo",
+    "tipo": "Kit de herbalismo",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "peso": 1.5,
+    "descricao": "Esse kit contém uma variedade de instrumentos, como alicates, almofariz e pilão, e bolsas e frascos utilizados pelos herbalistas para criar remédios e poções. Proficiência com este kit permite adicionar o bônus de proficiência para quaisquer testes de habilidade que você fizer para identificar ou aplicar ervas. Além disso, a proficiência com esse kit é necessária para criar antídotos e poções de cura."
+}

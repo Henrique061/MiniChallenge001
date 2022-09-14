@@ -1,0 +1,12 @@
+{
+    "id": 44,
+    "nome": "Garrafa de vidro",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 1.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

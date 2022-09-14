@@ -1,0 +1,15 @@
+{
+    "id": 96,
+    "nome": "CRIAR PASSAGEM",
+    "nivel": 5,
+    "classes": [
+        "Mago"
+    ],
+    "escola": "Transmutação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "9 metros",
+    "componentes": "Verbal, Somático, Material (algumas sementes de gergelim)",
+    "duracao": "1 hora",
+    "descricao": "Uma passagem aparece em um ponto, à sua escolha, que você possa ver em uma superfície de madeira, gesso ou rocha (como um muro, um teto ou um piso) dentro do alcance e permanece pela duração. Você escolhe as dimensões da passagem: até 1,5 metro de largura, 2,10 de altura e 6 metros de profundidade. A passagem não provoca instabilidade na estrutura ao seu redor. Quando a abertura desaparecer, qualquer criatura ou objeto que ainda estiver dentro da passagem criada pela magia é ejetada em segurança para o espaço desocupado mais próximo da superfície onde a magia foi conjurada."
+}

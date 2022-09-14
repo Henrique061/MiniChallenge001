@@ -1,0 +1,12 @@
+{
+    "id": 6,
+    "nome": "Aljava",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Uma aljava pode guardar até 20 flechas."
+}

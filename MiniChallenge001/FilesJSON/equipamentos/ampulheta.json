@@ -1,0 +1,12 @@
+{
+    "id": 7,
+    "nome": "Ampulheta",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

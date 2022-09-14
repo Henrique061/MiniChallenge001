@@ -1,0 +1,15 @@
+{
+    "id": 33,
+    "nome": "AURA MÁGICA DE NYSTUL",
+    "nivel": 2,
+    "classes": [
+        "Mago"
+    ],
+    "escola": "Ilusão",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático, Material (um pequeno quadrado de seda)",
+    "duracao": "24 horas",
+    "descricao": "Você coloca uma ilusão em uma criatura ou objeto que você tocar, então magias de adivinhação revelarão informações falsas sobre ele. O alvo pode ser uma criatura voluntária ou um objeto que não esteja sendo carregado ou vestido por outra criatura. Quando você conjura essa magia, escolha um ou ambos os efeitos seguintes. O efeito permanece pela duração. Se você conjurar essa magia na mesma criatura ou objeto a cada dia por 30 dias, colocando o mesmo efeito nele todas as vezes, a ilusão durará até ser dissipada. Aura Falsa . Você modifica a forma como o alvo aparece para magias e efeitos mágicos, como detectar magia , que detectam auras mágicas. Você pode fazer um objeto não-mágico parecer mágico ou mudar a aura mágica de um objeto para que ela pareça pertencer a outra escola de magia a sua escolha. Quando você usar esse efeito num objeto, você pode fazer a aura falsa aparente a qualquer criatura que manusear o item. Máscara . Você modifica a forma como o alvo aparece para magias e efeitos que detectam tipos de criaturas, como o Sentido Divino do paladino ou o gatilho de um magia símbolo . Você escolhe o tipo de criatura e outras magias e efeitos mágicos consideram o alvo como se ele fosse uma criatura desse tipo ou tendência. AURA SAGRADA8° nível de abjuração Tempo de Conjuração: 1 ação Alcance : Pessoal Componentes : V, S, M (um minúsculo relicário valendo, no mínimo, 1.000 po, contendo uma relíquia sagrada, como um pedaço de tecido do robe de um santo ou um pedaço de pergaminho de um texto religioso) Duração : Concentração, até 1 minuto Luz divina emana de você e adere em uma aureola suave num raio de 9 metros, em volta de você. As criaturas de sua escolha, no raio, quando você conjurar essa magia, emitem penumbra num raio de 1,5 metro e tem vantagem em todos os testes de resistência e as outras criaturas tem desvantagem nas jogadas de ataque contra elas, até a magia acabar. Além disso, quando um corruptor ou morto-vivo atingir uma criatura afetada com um ataque corpo-a-corpo, a aura lampeja com luz plena. O atacante deve ser bem sucedido num teste de resistência de Constituição ou ficara cego até a magia acabar."
+}

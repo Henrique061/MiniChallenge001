@@ -1,0 +1,15 @@
+{
+    "id": 224,
+    "nome": "ORAÇÃO CURATIVA",
+    "nivel": 2,
+    "classes": [
+        "Clérigo"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "10 minutos",
+    "alcance": "9 metros",
+    "componentes": "Verbal",
+    "duracao": "Instantânea",
+    "descricao": "Até seis criaturas, à sua escolha, que você possa ver, dentro do alcance, recuperam uma quantidade de pontos de vida igual a 2d8 + seu modificador de habilidade de conjuração, cada uma. Essa magia não afeta mortos-vivos ou constructos. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 3° nível ou superior, a cura aumenta em 1d8 para cada nível do espaço acima do 2°."
+}

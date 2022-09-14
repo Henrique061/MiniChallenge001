@@ -1,0 +1,12 @@
+{
+    "id": 63,
+    "nome": "Zarabatanas",
+    "categoria": "Munição",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

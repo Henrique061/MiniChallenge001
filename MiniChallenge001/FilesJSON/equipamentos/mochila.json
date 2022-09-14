@@ -1,0 +1,12 @@
+{
+    "id": 59,
+    "nome": "Mochila",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "peso": 2.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

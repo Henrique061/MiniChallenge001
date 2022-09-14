@@ -1,0 +1,17 @@
+{
+    "id": 335,
+    "nome": "ZONA DA VERDADE",
+    "nivel": 2,
+    "classes": [
+        "Bardo",
+        "Clérigo",
+        "Paladino"
+    ],
+    "escola": "Encantamento",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "18 metros",
+    "componentes": "Verbal, Somático",
+    "duracao": "10 minutos",
+    "descricao": "Você cria uma zona mágica protegida contra enganação, numa esfera com 4,5 metros de raio, centrada num ponto, à sua escolha, dentro do alcance. Até a magia acabar, uma criatura que entrar na área da magia pela primeira vez num turno ou começar seu turno nela, deve realizar um teste de resistência de Carisma. Se falhar na resistência, a criatura não poderá mentir deliberadamente enquanto estiver no raio. Você saberá cada criatura que passou ou falhou nesse teste de resistência. Uma criatura afetada está ciente da magia e pode, portanto, evitar responder perguntas as quais ela normalmente responderia com uma mentira. Tais criaturas podem ser evasivas em suas respostas, contanto que permaneçam dentro dos limites da verdade."
+}

@@ -1,0 +1,16 @@
+{
+    "id": 15,
+    "nome": "Alabarda",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 20,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d10",
+        "tipo": "Cortante"
+    },
+    "peso": 3.0,
+    "propriedades": "Pesada, alcance, duas mãos"
+}

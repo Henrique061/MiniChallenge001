@@ -1,0 +1,16 @@
+{
+    "id": 219,
+    "nome": "NUBLAR",
+    "nivel": 2,
+    "classes": [
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Ilusão",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal",
+    "componentes": "Verbal",
+    "duracao": "Concentração, até 1 minuto",
+    "descricao": "Seu corpo se torna turvo, mudando e oscilando para todos que puderem ver você. Pela duração, qualquer criatura terá desvantagem nas jogadas de ataque contra você. Um atacante é imune a esse efeito se não depender de visão, como os que tenham percepção às cegas ou os que puderem ver através de ilusões, como os com visão verdadeira."
+}

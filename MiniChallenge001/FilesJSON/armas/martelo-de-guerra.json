@@ -1,0 +1,16 @@
+{
+    "id": 29,
+    "nome": "Martelo de Guerra",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 15,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d8",
+        "tipo": "Concussão"
+    },
+    "peso": 1.0,
+    "propriedades": "Versátil (1d10)"
+}

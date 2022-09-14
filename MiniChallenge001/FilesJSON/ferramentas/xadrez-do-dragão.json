@@ -1,0 +1,11 @@
+{
+    "id": 36,
+    "nome": "Xadrez do dragão",
+    "tipo": "Kit de jogo",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 0.25,
+    "descricao": "Esse item abrange uma ampla gama de peças de jogo, incluindo dados e baralhos de cartas (para jogos como Três Dragões). Se você for proficiente com um conjunto de jogos, pode adicionar seu bônus de proficiência nos testes de habilidade que realizar usando esse conjunto. Cada tipo de conjunto de jogo exige uma proficiência em separado."
+}

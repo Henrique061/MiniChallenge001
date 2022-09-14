@@ -1,0 +1,19 @@
+{
+    "id": 100,
+    "nome": "CURAR FERIMENTOS",
+    "nivel": 1,
+    "classes": [
+        "Bardo",
+        "Clérigo",
+        "Druida",
+        "Paladino",
+        "Patrulheiro"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático",
+    "duracao": "Instantânea",
+    "descricao": "Uma criatura que você tocar recupera uma quantidade de pontos de vida igual a 1d8 + seu modificador de habilidade de conjuração. Essa magia não produz efeito em mortos-vivos ou constructos. 237 Em Níveis Superiores . Se você conjurar essa magia usando um espaço de magia de 2° nível ou superior, a cura aumenta em 1d8 para cada nível do espaço acima do 1°."
+}

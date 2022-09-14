@@ -1,0 +1,12 @@
+{
+    "id": 5,
+    "nome": "Algibeira",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Uma bolsa de pano ou couro que pode armazenar até 20 munições de funda ou 50 munições de zarabatana, entre outras coisas. Para armazenar componentes de magia, veja bolsa de componentes, também descrita nessa seção."
+}

@@ -1,0 +1,16 @@
+{
+    "id": 262,
+    "nome": "RAIO ARDENTE",
+    "nivel": 2,
+    "classes": [
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "36 metros",
+    "componentes": "Verbal, Somático",
+    "duracao": "Instantânea",
+    "descricao": "Você cria três raios de fogo e os arremessa em alvos dentro do alcance. Você pode arremessa-los em um alvo ou em vários. Realize um ataque à distância com magia para cada raio. Se atingir, o alvo sofrerá 2d6 de dano de fogo. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 3° nível ou superior, você cria um raio adicional para cada nível do espaço acima do 2°."
+}

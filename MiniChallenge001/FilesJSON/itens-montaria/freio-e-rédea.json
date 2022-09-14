@@ -1,0 +1,9 @@
+{
+    "id": 6,
+    "nome": "Freio e rédea",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5
+}

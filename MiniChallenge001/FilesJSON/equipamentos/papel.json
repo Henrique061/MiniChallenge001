@@ -1,0 +1,12 @@
+{
+    "id": 67,
+    "nome": "Papel",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Prata"
+    },
+    "peso": 0.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

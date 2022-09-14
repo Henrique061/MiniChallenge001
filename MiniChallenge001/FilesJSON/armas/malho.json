@@ -1,0 +1,16 @@
+{
+    "id": 27,
+    "nome": "Malho",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "2d6",
+        "tipo": "Concussão"
+    },
+    "peso": 5.0,
+    "propriedades": "Pesada, duas mãos"
+}

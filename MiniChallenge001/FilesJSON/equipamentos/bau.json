@@ -1,0 +1,12 @@
+{
+    "id": 16,
+    "nome": "Bau",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "peso": 12.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

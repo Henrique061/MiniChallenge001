@@ -1,0 +1,10 @@
+{
+    "id": 7,
+    "nome": "Elefante",
+    "preco": {
+        "quantidade": 200,
+        "tipo": "Ouro"
+    },
+    "delocamento": 12.0,
+    "capacidadeCarga": 660.0
+}

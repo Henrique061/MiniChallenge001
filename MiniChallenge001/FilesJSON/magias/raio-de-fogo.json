@@ -1,0 +1,16 @@
+{
+    "id": 264,
+    "nome": "RAIO DE FOGO",
+    "nivel": 0,
+    "classes": [
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "36 metros",
+    "componentes": "Verbal, Somático",
+    "duracao": "Instantânea",
+    "descricao": "Você arremessa um cisco de fogo em uma criatura ou objeto dentro do alcance. Faça um ataque à distância com magia contra o alvo. Se atingir, o alvo sofre 1d10 de dano de fogo. Um objeto inflamável atingido por essa magia, incendeia se não estiver sendo vestido ou carregado. O dano dessa magia aumenta em 1d10 quando você alcança o 5° nível (2d10), 11° nível (3d10) e 17° nível (4d10)."
+}

@@ -1,0 +1,16 @@
+{
+    "id": 289,
+    "nome": "REVIVIFICAR",
+    "nivel": 3,
+    "classes": [
+        "Clérigo",
+        "Paladino"
+    ],
+    "escola": "Necromancia",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático, Material (um diamante no valor de 300 po,consumido pela magia)",
+    "duracao": "Instantânea",
+    "descricao": "Você toca uma criatura que tenha morrido dentro do último minuto. Essa criatura volta a vida com 1 ponto de vida. Essa magia não pode trazer de volta a vida criaturas que tenham morrido de velhice nem pode restaurar quaisquer partes do corpo perdidas."
+}

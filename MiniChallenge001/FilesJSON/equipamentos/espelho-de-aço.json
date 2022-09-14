@@ -1,0 +1,12 @@
+{
+    "id": 30,
+    "nome": "Espelho de aço",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "peso": 0.25,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

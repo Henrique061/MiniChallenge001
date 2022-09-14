@@ -1,0 +1,16 @@
+{
+    "id": 13,
+    "nome": "Dardo",
+    "tipo": "Simples",
+    "estilo": "Distância",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Cobre"
+    },
+    "dano": {
+        "dano": "1d4",
+        "tipo": "Perfurante"
+    },
+    "peso": 0.1,
+    "propriedades": "Acuidade, arremesso (distância 6/18)"
+}

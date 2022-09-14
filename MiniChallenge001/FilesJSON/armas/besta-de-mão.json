@@ -1,0 +1,16 @@
+{
+    "id": 34,
+    "nome": "Besta de Mão",
+    "tipo": "Marcial",
+    "estilo": "Distância",
+    "preco": {
+        "quantidade": 75,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d6",
+        "tipo": "Perfurante"
+    },
+    "peso": 1.5,
+    "propriedades": "Munição (distância 9/36), leve, recarga"
+}

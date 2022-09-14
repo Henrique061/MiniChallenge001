@@ -1,0 +1,15 @@
+{
+    "id": 111,
+    "nome": "DESTRUIÇÃO ESTONTEANTE",
+    "nivel": 4,
+    "classes": [
+        "Paladino"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação bônus",
+    "alcance": "Pessoal",
+    "componentes": "Verbal",
+    "duracao": "Concentração, até 1 minuto",
+    "descricao": "Da próxima vez que você atingir uma criatura com um ataque corpo-a-corpo com arma, antes do fim da magia, sua arma penetra tanto no corpo quanto na mente e o ataque causa 4d6 de dano psíquico adicional ao alvo. O alvo deve realizar um teste de resistência de Sabedoria. Se falhar na resistência, ele terá desvantagem nas jogadas de ataque e testes de habilidade e não poderá efetuar reações até o final do próximo turno dele."
+}

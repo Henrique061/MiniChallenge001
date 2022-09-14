@@ -1,0 +1,12 @@
+{
+    "id": 50,
+    "nome": "Lâmpada",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Uma lâmpada lança luz plena em um raio de 4,5 metros e penumbra por mais 9 metros. Uma vez acesa, a lâmpada queima por 6 horas usando um frasco de óleo (500 ml)."
+}

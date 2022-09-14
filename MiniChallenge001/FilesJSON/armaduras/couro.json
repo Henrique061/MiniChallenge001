@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "nome": "Couro",
+    "tipo": "Leve",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "valorCA": 11,
+    "modCA": 0,
+    "forca": -1,
+    "desv_furtividade": false,
+    "peso": 5.0,
+    "descricao": "O peitoral e as ombreiras da armadura de couro são feitos de couro que foi endurecido após ser fervido em óleo. O resto da armadura é feita de materiais mais macios e mais flexíveis."
+}

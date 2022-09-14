@@ -1,0 +1,11 @@
+{
+    "id": 18,
+    "nome": "Ferramentas de navegação",
+    "tipo": "Ferramenta de navegador",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "peso": 1.0,
+    "descricao": "Esse conjunto de instrumentos é usado para navegação no mar. Proficiência com as ferramentas de navegador permite traçar um curso de navio e seguir cartas de navegação. Além disso, essas ferramentas permitem que você adicione seu bônus de proficiência para qualquer teste de habilidade que fizer para não se perder no mar."
+}

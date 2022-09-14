@@ -1,0 +1,10 @@
+{
+    "id": 5,
+    "nome": "Cavalo de montaria",
+    "preco": {
+        "quantidade": 75,
+        "tipo": "Ouro"
+    },
+    "delocamento": 18.0,
+    "capacidadeCarga": 220.0
+}

@@ -1,0 +1,16 @@
+{
+    "id": 37,
+    "nome": "Zarabatana",
+    "tipo": "Marcial",
+    "estilo": "Distância",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1",
+        "tipo": "Perfurante"
+    },
+    "peso": 0.5,
+    "propriedades": "Munição (distância 7,5/30), recarga"
+}

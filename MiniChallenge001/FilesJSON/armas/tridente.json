@@ -1,0 +1,16 @@
+{
+    "id": 32,
+    "nome": "Tridente",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d6",
+        "tipo": "Perfurante"
+    },
+    "peso": 2.0,
+    "propriedades": "Arremesso (6/18), versátil (1d8)"
+}

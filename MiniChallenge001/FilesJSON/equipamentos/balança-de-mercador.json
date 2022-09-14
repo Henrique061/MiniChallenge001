@@ -1,0 +1,12 @@
+{
+    "id": 13,
+    "nome": "Balança de mercador",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "peso": 1.5,
+    "quantidade": 1,
+    "descricao": "Trata-se de uma pequena balança, pratos e um sortimento adequado de pesos de até 1 kg. Com ela, você pode medir o peso exato de pequenos objetos, como metais preciosos brutos ou bens comerciais, para ajudar a determinar seu valor."
+}

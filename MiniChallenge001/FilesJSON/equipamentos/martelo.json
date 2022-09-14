@@ -1,0 +1,12 @@
+{
+    "id": 58,
+    "nome": "Martelo",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Ouro"
+    },
+    "peso": 1.5,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

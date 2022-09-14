@@ -1,0 +1,16 @@
+{
+    "id": 11,
+    "nome": "Arco Curvo",
+    "tipo": "Simples",
+    "estilo": "Distância",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d6",
+        "tipo": "Perfurante"
+    },
+    "peso": 1.0,
+    "propriedades": "Munição (distância, 24/96), duas mãos"
+}

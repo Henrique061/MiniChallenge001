@@ -1,0 +1,11 @@
+{
+    "id": 29,
+    "nome": "Xilofone",
+    "tipo": "Instrumento musical",
+    "preco": {
+        "quantidade": 25,
+        "tipo": "Ouro"
+    },
+    "peso": 5.0,
+    "descricao": "Se você possuir proficiência com um determinado instrumento musical, você pode adicionar seu bônus de proficiência para quaisquer testes de habilidade que fizer para tocar música com o instrumento. Cada tipo de instrumento musical exige uma proficiência em separado."
+}

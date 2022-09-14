@@ -1,0 +1,12 @@
+{
+    "id": 52,
+    "nome": "Lanterna furta-fogo",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "peso": 1.0,
+    "quantidade": 1,
+    "descricao": "Uma lanterna furta-fogo lança luz plena em um cone de 18 metros e penumbra por mais 18 metros. Uma vez acesa, ela queima por 6 horas usando um frasco de óleo (500 ml)."
+}

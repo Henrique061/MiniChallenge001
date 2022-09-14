@@ -1,0 +1,16 @@
+{
+    "id": 23,
+    "nome": "Lança Longa",
+    "tipo": "Marcial",
+    "estilo": "Corpo a Corpo",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Ouro"
+    },
+    "dano": {
+        "dano": "1d10",
+        "tipo": "Perfurante"
+    },
+    "peso": 4.0,
+    "propriedades": "Pesada, alcance, duas mãos"
+}

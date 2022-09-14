@@ -1,0 +1,12 @@
+{
+    "id": 15,
+    "nome": "Barril",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 2,
+        "tipo": "Ouro"
+    },
+    "peso": 35.0,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

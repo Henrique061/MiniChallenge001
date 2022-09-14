@@ -1,0 +1,9 @@
+{
+    "id": 5,
+    "nome": "Estábulo",
+    "preco": {
+        "quantidade": 5,
+        "tipo": "Prata"
+    },
+    "peso": 0.0
+}

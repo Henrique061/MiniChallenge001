@@ -1,0 +1,12 @@
+{
+    "id": 10,
+    "nome": "Aríete portátil",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 4,
+        "tipo": "Ouro"
+    },
+    "peso": 17.5,
+    "quantidade": 1,
+    "descricao": "Você pode usar um aríete portátil para quebrar portas. Ao fazer isso, você ganha um bônus de +4 no teste de Força. Outra criatura pode ajudá-lo a usar o aríete, o que concede vantagem no teste."
+}

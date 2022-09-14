@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "nome": "Barco de quilha",
+    "preco": {
+        "quantidade": 3000,
+        "tipo": "Ouro"
+    },
+    "velocidade": 1.5
+}

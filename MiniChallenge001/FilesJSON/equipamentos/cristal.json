@@ -1,0 +1,12 @@
+{
+    "id": 35,
+    "nome": "Cristal",
+    "categoria": "Foco Arcano",
+    "preco": {
+        "quantidade": 10,
+        "tipo": "Ouro"
+    },
+    "peso": 0.5,
+    "quantidade": 1,
+    "descricao": "Um foco arcano é um item especial – um orbe, um cristal, um bastão, um cajado especialmente construído, uma varinha de madeira, ou algum it em semelhante – projetado para canalizar o poder de magias arcanas. Um feiticeiro, bruxo ou mago podem usá-lo como um foco de conjuração, conforme descrito no capítulo 10."
+}

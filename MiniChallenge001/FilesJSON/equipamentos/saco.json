@@ -1,0 +1,12 @@
+{
+    "id": 87,
+    "nome": "Saco",
+    "categoria": "Sem Categoria",
+    "preco": {
+        "quantidade": 1,
+        "tipo": "Cobre"
+    },
+    "peso": 0.25,
+    "quantidade": 1,
+    "descricao": "Sem descrição"
+}

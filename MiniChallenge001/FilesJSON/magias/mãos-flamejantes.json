@@ -1,0 +1,16 @@
+{
+    "id": 194,
+    "nome": "MÃOS FLAMEJANTES",
+    "nivel": 1,
+    "classes": [
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal (cone de 4,5 metros)",
+    "componentes": "Verbal, Somático",
+    "duracao": "Instantânea",
+    "descricao": "Enquanto você mantiver suas mãos com os polegares juntos e os dedos abertos, uma fino leque de chamas emerge das pontas dos seus dedos erguidos. Cada criatura num cone de 4,5 metros deve realizar um teste de  257 resistência de Destreza. Uma criatura sofre 3d6 de dano de fogo se falhar no teste, ou metade desse dano se obtiver sucesso. O fogo incendeia qualquer objeto inflamável na área que não esteja sendo vestido ou carregado. Em Níveis Superiores . Se você conjurar essa magia usando um espaço de magia de 2° nível ou superior, o dano aumenta em 1d6 para cada nível do espaço acima do 1°."
+}

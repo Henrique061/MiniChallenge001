@@ -1,0 +1,15 @@
+{
+    "id": 312,
+    "nome": "TELETRANSPORTE POR ÁRVORES",
+    "nivel": 6,
+    "classes": [
+        "Druida"
+    ],
+    "escola": "Conjuração",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "3 metros",
+    "componentes": "Verbal, Somático",
+    "duracao": "1 rodada",
+    "descricao": "Essa magia cria uma ligação mágica entre uma planta inanimada Grande ou maior, dentro do alcance, e outra planta a qualquer distância, no mesmo plano de existência. Você deve ter visto ou tocado a planta de destino, pelo menos uma vez antes. Pela duração, qualquer criatura pode entrar na planta alvo e sair da planta destino usando 1,5 metro de movimento."
+}
