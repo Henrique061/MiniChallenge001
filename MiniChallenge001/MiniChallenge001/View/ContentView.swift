@@ -98,7 +98,7 @@ struct ContentView: View {
             itens += JSONFilesUtils.getDataFromFiles(folder: "magias", decoder: MagiaJSON.self)
             itens += JSONFilesUtils.getDataFromFiles(folder: "montarias", decoder: MontariaJSON.self)
             itens += JSONFilesUtils.getDataFromFiles(folder: "veiculos", decoder: VeiculoAquaticoJSON.self)
-            itens.forEach{item in print(item.nome)}
+            itens.forEach{item in print(item.nome.lowercased().capitalized)}
             print("Fim do início")
         }
     }

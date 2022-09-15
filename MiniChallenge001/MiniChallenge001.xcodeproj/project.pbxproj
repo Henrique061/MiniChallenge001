@@ -8,8 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		120188DF28D279ED006B420B /* FilesJSON in Resources */ = {isa = PBXBuildFile; fileRef = 12E7E84A28D279670093534C /* FilesJSON */; };
+		12BB6C5A28D3A133007053D5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C5928D3A133007053D5 /* Item.swift */; };
+		12BB6C5C28D3A170007053D5 /* Moeda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C5B28D3A170007053D5 /* Moeda.swift */; };
+		12BB6C5F28D3A1FA007053D5 /* ArmaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C5E28D3A1FA007053D5 /* ArmaJSON.swift */; };
+		12BB6C6128D3A223007053D5 /* BugigangaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C6028D3A223007053D5 /* BugigangaJSON.swift */; };
+		12BB6C6328D3A23B007053D5 /* ArmaduraJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C6228D3A23B007053D5 /* ArmaduraJSON.swift */; };
+		12BB6C6528D3A252007053D5 /* EquipamentoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C6428D3A252007053D5 /* EquipamentoJSON.swift */; };
+		12BB6C6728D3A266007053D5 /* FerramentaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C6628D3A266007053D5 /* FerramentaJSON.swift */; };
+		12BB6C6928D3A27B007053D5 /* MagiaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C6828D3A27B007053D5 /* MagiaJSON.swift */; };
+		12BB6C6B28D3A294007053D5 /* MontariaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C6A28D3A294007053D5 /* MontariaJSON.swift */; };
+		12BB6C6D28D3A2AE007053D5 /* EquipamentoMontariaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C6C28D3A2AE007053D5 /* EquipamentoMontariaJSON.swift */; };
+		12BB6C6F28D3A2C8007053D5 /* VeiculoAquaticoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB6C6E28D3A2C8007053D5 /* VeiculoAquaticoJSON.swift */; };
 		12FC222428CFCB38001B7E3A /* JSONFilesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */; };
-		12FC222828D002FB001B7E3A /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC222728D002FB001B7E3A /* JSONObject.swift */; };
 		3D11FB0228D1092B00F6F3A0 /* Arma+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11FB0028D1092B00F6F3A0 /* Arma+CoreDataClass.swift */; };
 		3D11FB0328D1092B00F6F3A0 /* Arma+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11FB0128D1092B00F6F3A0 /* Arma+CoreDataProperties.swift */; };
 		3D9BED1928CFB76000CA1821 /* MiniChallenge001App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED1828CFB76000CA1821 /* MiniChallenge001App.swift */; };
@@ -42,9 +52,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12BB6C5928D3A133007053D5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		12BB6C5B28D3A170007053D5 /* Moeda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moeda.swift; sourceTree = "<group>"; };
+		12BB6C5E28D3A1FA007053D5 /* ArmaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmaJSON.swift; sourceTree = "<group>"; };
+		12BB6C6028D3A223007053D5 /* BugigangaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugigangaJSON.swift; sourceTree = "<group>"; };
+		12BB6C6228D3A23B007053D5 /* ArmaduraJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmaduraJSON.swift; sourceTree = "<group>"; };
+		12BB6C6428D3A252007053D5 /* EquipamentoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipamentoJSON.swift; sourceTree = "<group>"; };
+		12BB6C6628D3A266007053D5 /* FerramentaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FerramentaJSON.swift; sourceTree = "<group>"; };
+		12BB6C6828D3A27B007053D5 /* MagiaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiaJSON.swift; sourceTree = "<group>"; };
+		12BB6C6A28D3A294007053D5 /* MontariaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontariaJSON.swift; sourceTree = "<group>"; };
+		12BB6C6C28D3A2AE007053D5 /* EquipamentoMontariaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipamentoMontariaJSON.swift; sourceTree = "<group>"; };
+		12BB6C6E28D3A2C8007053D5 /* VeiculoAquaticoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeiculoAquaticoJSON.swift; sourceTree = "<group>"; };
 		12E7E84A28D279670093534C /* FilesJSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FilesJSON; sourceTree = "<group>"; };
 		12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFilesUtil.swift; sourceTree = "<group>"; };
-		12FC222728D002FB001B7E3A /* JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
 		3D11FB0028D1092B00F6F3A0 /* Arma+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arma+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3D11FB0128D1092B00F6F3A0 /* Arma+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arma+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3D9BED1528CFB76000CA1821 /* MiniChallenge001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge001.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +107,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12BB6C5D28D3A184007053D5 /* JsonObjects */ = {
+			isa = PBXGroup;
+			children = (
+				12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */,
+				12BB6C5928D3A133007053D5 /* Item.swift */,
+				12BB6C5B28D3A170007053D5 /* Moeda.swift */,
+				12BB6C5E28D3A1FA007053D5 /* ArmaJSON.swift */,
+				12BB6C6028D3A223007053D5 /* BugigangaJSON.swift */,
+				12BB6C6228D3A23B007053D5 /* ArmaduraJSON.swift */,
+				12BB6C6428D3A252007053D5 /* EquipamentoJSON.swift */,
+				12BB6C6628D3A266007053D5 /* FerramentaJSON.swift */,
+				12BB6C6828D3A27B007053D5 /* MagiaJSON.swift */,
+				12BB6C6A28D3A294007053D5 /* MontariaJSON.swift */,
+				12BB6C6C28D3A2AE007053D5 /* EquipamentoMontariaJSON.swift */,
+				12BB6C6E28D3A2C8007053D5 /* VeiculoAquaticoJSON.swift */,
+			);
+			path = JsonObjects;
+			sourceTree = "<group>";
+		};
 		3D9BED0C28CFB76000CA1821 = {
 			isa = PBXGroup;
 			children = (
@@ -150,8 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				3DE3796D28D2644D005812C7 /* CoreData */,
-				12FC222728D002FB001B7E3A /* JSONObject.swift */,
-				12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */,
+				12BB6C5D28D3A184007053D5 /* JsonObjects */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,14 +352,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12BB6C6F28D3A2C8007053D5 /* VeiculoAquaticoJSON.swift in Sources */,
+				12BB6C5F28D3A1FA007053D5 /* ArmaJSON.swift in Sources */,
+				12BB6C5A28D3A133007053D5 /* Item.swift in Sources */,
 				3DE3796F28D2673E005812C7 /* ViewModel.swift in Sources */,
 				3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */,
+				12BB6C6328D3A23B007053D5 /* ArmaduraJSON.swift in Sources */,
 				3D9BED1B28CFB76000CA1821 /* ContentView.swift in Sources */,
 				3D11FB0228D1092B00F6F3A0 /* Arma+CoreDataClass.swift in Sources */,
 				3D9BED2528CFB76200CA1821 /* MiniChallenge001.xcdatamodeld in Sources */,
 				3D11FB0328D1092B00F6F3A0 /* Arma+CoreDataProperties.swift in Sources */,
+				12BB6C6128D3A223007053D5 /* BugigangaJSON.swift in Sources */,
+				12BB6C6928D3A27B007053D5 /* MagiaJSON.swift in Sources */,
 				12FC222428CFCB38001B7E3A /* JSONFilesUtil.swift in Sources */,
-				12FC222828D002FB001B7E3A /* JSONObject.swift in Sources */,
+				12BB6C6B28D3A294007053D5 /* MontariaJSON.swift in Sources */,
+				12BB6C6528D3A252007053D5 /* EquipamentoJSON.swift in Sources */,
+				12BB6C5C28D3A170007053D5 /* Moeda.swift in Sources */,
+				12BB6C6D28D3A2AE007053D5 /* EquipamentoMontariaJSON.swift in Sources */,
+				12BB6C6728D3A266007053D5 /* FerramentaJSON.swift in Sources */,
 				3D9BED1928CFB76000CA1821 /* MiniChallenge001App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

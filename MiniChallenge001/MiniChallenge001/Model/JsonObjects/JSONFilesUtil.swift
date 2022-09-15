@@ -11,7 +11,6 @@ class JSONFilesUtils {
     
     private static func getFilesURLFromFolder(folder name: String) -> [URL] {
         let paths = Bundle.main.paths(forResourcesOfType: "json", inDirectory: "/FilesJSON/\(name)")
-        print(paths)
         var urls: [URL] = []
         for path in paths {
             let temp = path.split(separator: "/")
@@ -35,14 +34,6 @@ class JSONFilesUtils {
             }
         }
         return items
-    }
-    
-    public static func getDataFromFolders<T:Item>(folderDecoder: [(String, T.Type)]) -> [Item] {
-        var allItems: [Item] = []
-        for folder in folderDecoder {
-            allItems = allItems + getDataFromFiles(folder: folder.0, decoder: folder.1)
-        }
-        return allItems
     }
 }
 
