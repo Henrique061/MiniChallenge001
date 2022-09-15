@@ -24,6 +24,7 @@ struct ContentView: View {
 
 
     var body: some View {
+        
 //        NavigationView {
 //            List {
 //                ForEach(items) { item in
@@ -87,6 +88,18 @@ struct ContentView: View {
 //                let aux = arma as! ArmaJSON
 //                print(aux.peso)
 //            }
+            var itens: [Item] = []
+            itens += JSONFilesUtils.getDataFromFiles(folder: "armaduras", decoder: ArmaduraJSON.self)
+            itens += JSONFilesUtils.getDataFromFiles(folder: "armas", decoder: ArmaJSON.self)
+            itens += JSONFilesUtils.getDataFromFiles(folder: "bugiganga", decoder: BugigangaJSON.self)
+            itens += JSONFilesUtils.getDataFromFiles(folder: "equipamentos", decoder: EquipamentoJSON.self)
+            itens += JSONFilesUtils.getDataFromFiles(folder: "ferramentas", decoder: FerramentaJSON.self)
+            itens += JSONFilesUtils.getDataFromFiles(folder: "itens-montaria", decoder: EquipamentoMontariaJSON.self)
+            itens += JSONFilesUtils.getDataFromFiles(folder: "magias", decoder: MagiaJSON.self)
+            itens += JSONFilesUtils.getDataFromFiles(folder: "montarias", decoder: MontariaJSON.self)
+            itens += JSONFilesUtils.getDataFromFiles(folder: "veiculos", decoder: VeiculoAquaticoJSON.self)
+            itens.forEach{item in print(item.nome.lowercased().capitalized)}
+            print("Fim do início")
         }
     }
 
