@@ -36,4 +36,3 @@ class JSONFilesUtils {
         return items
     }
 }
-
