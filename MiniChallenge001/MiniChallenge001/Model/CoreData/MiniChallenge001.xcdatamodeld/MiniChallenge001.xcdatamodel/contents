@@ -10,9 +10,209 @@
         <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="precoTipo" optional="YES" attributeType="String"/>
         <attribute name="propriedades" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tipo" optional="YES" attributeType="String"/>
+        <relationship name="personagem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Personagem" inverseName="armas" inverseEntity="Personagem"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Armadura" representedClassName="Armadura" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="forca" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="furtividade" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modCA" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String"/>
+        <attribute name="valorCA" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Personagem" inverseName="armaduras" inverseEntity="Personagem"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Atributo" representedClassName="Atributo" syncable="YES">
+        <attribute name="carisma" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="constituicao" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="destreza" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="forca" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="inteligencia" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sabedoria" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Bugiganga" representedClassName="Bugiganga" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="valor" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Equipamento" representedClassName="Equipamento" syncable="YES">
+        <attribute name="capacidade" optional="YES" attributeType="String"/>
+        <attribute name="categoria" optional="YES" attributeType="String"/>
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Ferramenta" representedClassName="Ferramenta" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="ItemMontaria" representedClassName="ItemMontaria" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Magia" representedClassName="Magia" syncable="YES">
+        <attribute name="alcance" optional="YES" attributeType="String"/>
+        <attribute name="classes" optional="YES" attributeType="String"/>
+        <attribute name="componentes" optional="YES" attributeType="String"/>
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="duracao" optional="YES" attributeType="String"/>
+        <attribute name="escola" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nivel" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="ritual" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="tempoConj" optional="YES" attributeType="String"/>
+        <relationship name="personagem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Personagem" inverseName="magias" inverseEntity="Personagem"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Montaria" representedClassName="Montaria" syncable="YES">
+        <attribute name="capCarga" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="deslocamento" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Personagem" representedClassName="Personagem" syncable="YES">
+        <attribute name="foto" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <relationship name="armaduras" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Armadura" inverseName="personagem" inverseEntity="Armadura"/>
+        <relationship name="armas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Arma" inverseName="personagem" inverseEntity="Arma"/>
+        <relationship name="atributo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Atributo"/>
+        <relationship name="bugigangas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bugiganga"/>
+        <relationship name="equipamentos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Equipamento"/>
+        <relationship name="ferramentas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ferramenta"/>
+        <relationship name="itensMontaria" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemMontaria"/>
+        <relationship name="magias" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Magia" inverseName="personagem" inverseEntity="Magia"/>
+        <relationship name="montarias" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Montaria"/>
+        <relationship name="resistenciaMorte" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ResistenciaMorte"/>
+        <relationship name="status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Status"/>
+        <relationship name="veiculos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Veiculo"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="ResistenciaMorte" representedClassName="ResistenciaMorte" syncable="YES">
+        <attribute name="acerto" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="erro" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Status" representedClassName="Status" syncable="YES">
+        <attribute name="classeArmadura" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dadosVida" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="deslocamento" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="iniciativa" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nivel" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ptsVida" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ptsVidaTemporaria" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Veiculo" representedClassName="Veiculo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="velocidade" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Arma" positionX="-63" positionY="-9" width="128" height="179"/>
+        <element name="Arma" positionX="-571.8485260009766" positionY="-241.5156860351562" width="128" height="223"/>
+        <element name="Armadura" positionX="-618.1249542236328" positionY="-517.6399536132812" width="128" height="238"/>
+        <element name="Atributo" positionX="582.6971435546875" positionY="75.79998779296869" width="128" height="148"/>
+        <element name="Equipamento" positionX="-432.8404235839844" positionY="-9.983520507812557" width="128" height="178"/>
+        <element name="Ferramenta" positionX="-267.5706787109375" positionY="114.632080078125" width="128" height="163"/>
+        <element name="ItemMontaria" positionX="-100.7137145996094" positionY="219.0221252441406" width="128" height="133"/>
+        <element name="Magia" positionX="676.9669799804688" positionY="-189.0458374023438" width="128" height="223"/>
+        <element name="Montaria" positionX="74.40164184570312" positionY="233.6908569335938" width="128" height="148"/>
+        <element name="Personagem" positionX="73.3035888671875" positionY="-412.8514404296875" width="128" height="268"/>
+        <element name="ResistenciaMorte" positionX="712.6958618164062" positionY="-300.3028564453125" width="128" height="88"/>
+        <element name="Status" positionX="779.119140625" positionY="-502.9588623046875" width="128" height="163"/>
+        <element name="Veiculo" positionX="385.3657836914062" positionY="135.0151977539062" width="128" height="133"/>
+        <element name="Bugiganga" positionX="239.1222686767578" positionY="234.9397583007812" width="128" height="88"/>
     </elements>
 </model>
