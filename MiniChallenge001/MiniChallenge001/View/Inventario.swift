@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-
+// Só para atualizar
 
 struct Inventario: View {
     @State var arr: [String] = Array.init(repeating: "Alguma coisa", count: 15)
