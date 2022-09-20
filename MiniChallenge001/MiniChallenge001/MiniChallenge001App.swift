@@ -23,4 +23,9 @@ struct MiniChallenge001App: App {
             persistenceController.save()
         }
     }
+    struct RecivedView: View {
+        var body: some View {
+            Text("Hello, World!")
+        }
+    }
 }

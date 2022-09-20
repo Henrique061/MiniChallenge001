@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09B5566828D3A844001466B0 /* Inventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5566728D3A843001466B0 /* Inventario.swift */; };
+		09B5566A28D3A8AB001466B0 /* Habilidades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5566928D3A8AB001466B0 /* Habilidades.swift */; };
+		09B5566C28D3A8D7001466B0 /* Combate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5566B28D3A8D7001466B0 /* Combate.swift */; };
+		09B5566E28D3AB5B001466B0 /* Identidade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5566D28D3AB5B001466B0 /* Identidade.swift */; };
+		09B5567028D3AB74001466B0 /* Atributos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5566F28D3AB74001466B0 /* Atributos.swift */; };
+		09B5567228D3D5AE001466B0 /* SheetTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5567128D3D5AE001466B0 /* SheetTabView.swift */; };
 		12E07FB728D2627600F654BB /* FilesJSON in Sources */ = {isa = PBXBuildFile; fileRef = 12E07FB628D2627600F654BB /* FilesJSON */; };
 		12FC222428CFCB38001B7E3A /* JSONFilesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */; };
 		12FC222828D002FB001B7E3A /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC222728D002FB001B7E3A /* JSONObject.swift */; };
@@ -42,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09B5566728D3A843001466B0 /* Inventario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventario.swift; sourceTree = "<group>"; };
+		09B5566928D3A8AB001466B0 /* Habilidades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habilidades.swift; sourceTree = "<group>"; };
+		09B5566B28D3A8D7001466B0 /* Combate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combate.swift; sourceTree = "<group>"; };
+		09B5566D28D3AB5B001466B0 /* Identidade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identidade.swift; sourceTree = "<group>"; };
+		09B5566F28D3AB74001466B0 /* Atributos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atributos.swift; sourceTree = "<group>"; };
+		09B5567128D3D5AE001466B0 /* SheetTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTabView.swift; sourceTree = "<group>"; };
 		12E07FB628D2627600F654BB /* FilesJSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FilesJSON; sourceTree = "<group>"; };
 		12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFilesUtil.swift; sourceTree = "<group>"; };
 		12FC222728D002FB001B7E3A /* JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
@@ -168,6 +180,12 @@
 			isa = PBXGroup;
 			children = (
 				3D9BED1A28CFB76000CA1821 /* ContentView.swift */,
+				09B5566728D3A843001466B0 /* Inventario.swift */,
+				09B5566928D3A8AB001466B0 /* Habilidades.swift */,
+				09B5566B28D3A8D7001466B0 /* Combate.swift */,
+				09B5566D28D3AB5B001466B0 /* Identidade.swift */,
+				09B5566F28D3AB74001466B0 /* Atributos.swift */,
+				09B5567128D3D5AE001466B0 /* SheetTabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,15 +331,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B5566E28D3AB5B001466B0 /* Identidade.swift in Sources */,
 				3DE3796F28D2673E005812C7 /* ViewModel.swift in Sources */,
 				12E07FB728D2627600F654BB /* FilesJSON in Sources */,
+				09B5566A28D3A8AB001466B0 /* Habilidades.swift in Sources */,
 				3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */,
 				3D9BED1B28CFB76000CA1821 /* ContentView.swift in Sources */,
 				3D11FB0228D1092B00F6F3A0 /* Arma+CoreDataClass.swift in Sources */,
 				3D9BED2528CFB76200CA1821 /* MiniChallenge001.xcdatamodeld in Sources */,
+				09B5566828D3A844001466B0 /* Inventario.swift in Sources */,
 				3D11FB0328D1092B00F6F3A0 /* Arma+CoreDataProperties.swift in Sources */,
 				12FC222428CFCB38001B7E3A /* JSONFilesUtil.swift in Sources */,
 				12FC222828D002FB001B7E3A /* JSONObject.swift in Sources */,
+				09B5566C28D3A8D7001466B0 /* Combate.swift in Sources */,
+				09B5567228D3D5AE001466B0 /* SheetTabView.swift in Sources */,
+				09B5567028D3AB74001466B0 /* Atributos.swift in Sources */,
 				3D9BED1928CFB76000CA1821 /* MiniChallenge001App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
