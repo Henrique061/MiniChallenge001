@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Arma" representedClassName="Arma" syncable="YES">
+    <entity name="CDArma" representedClassName="CDArma" syncable="YES">
         <attribute name="danoDado" optional="YES" attributeType="String"/>
         <attribute name="danoTipo" optional="YES" attributeType="String"/>
         <attribute name="estilo" optional="YES" attributeType="String"/>
@@ -9,10 +9,198 @@
         <attribute name="peso" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="proficiencia" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="propriedades" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tipo" optional="YES" attributeType="String"/>
+        <relationship name="inventario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDInventario" inverseName="armas" inverseEntity="CDInventario"/>
+    </entity>
+    <entity name="CDArmadura" representedClassName="CDArmadura" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="forca" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="furtividade" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modCA" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="proficiencia" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String"/>
+        <attribute name="valorCA" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="inventario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDInventario" inverseName="armaduras" inverseEntity="CDInventario"/>
+    </entity>
+    <entity name="CDAtributo" representedClassName="CDAtributo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="proficiencia" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="valor" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="atributos" inverseEntity="CDPersonagem"/>
+    </entity>
+    <entity name="CDBugiganga" representedClassName="CDBugiganga" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="valor" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="inventario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDInventario" inverseName="bugigangas" inverseEntity="CDInventario"/>
+    </entity>
+    <entity name="CDCaracteristica" representedClassName="CDCaracteristica" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="caracteristicas" inverseEntity="CDPersonagem"/>
+    </entity>
+    <entity name="CDCondicao" representedClassName="CDCondicao" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isAtivo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="condicoes" inverseEntity="CDPersonagem"/>
+    </entity>
+    <entity name="CDEquipamento" representedClassName="CDEquipamento" syncable="YES">
+        <attribute name="capacidade" optional="YES" attributeType="String"/>
+        <attribute name="categoria" optional="YES" attributeType="String"/>
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="inventario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDInventario" inverseName="equipamentos" inverseEntity="CDInventario"/>
+    </entity>
+    <entity name="CDFerramenta" representedClassName="CDFerramenta" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="proficiencia" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String"/>
+        <relationship name="inventario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDInventario" inverseName="ferrametas" inverseEntity="CDInventario"/>
+    </entity>
+    <entity name="CDInventario" representedClassName="CDInventario" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="armaduras" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDArmadura" inverseName="inventario" inverseEntity="CDArmadura"/>
+        <relationship name="armas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDArma" inverseName="inventario" inverseEntity="CDArma"/>
+        <relationship name="bugigangas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDBugiganga" inverseName="inventario" inverseEntity="CDBugiganga"/>
+        <relationship name="equipamentos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDEquipamento" inverseName="inventario" inverseEntity="CDEquipamento"/>
+        <relationship name="ferrametas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDFerramenta" inverseName="inventario" inverseEntity="CDFerramenta"/>
+        <relationship name="itensMontaria" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDItemMontaria" inverseName="inventario" inverseEntity="CDItemMontaria"/>
+        <relationship name="montaria" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDMontaria" inverseName="inventario" inverseEntity="CDMontaria"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="inventario" inverseEntity="CDPersonagem"/>
+    </entity>
+    <entity name="CDItemMontaria" representedClassName="CDItemMontaria" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="inventario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDInventario" inverseName="itensMontaria" inverseEntity="CDInventario"/>
+    </entity>
+    <entity name="CDMagia" representedClassName="CDMagia" syncable="YES">
+        <attribute name="alcance" optional="YES" attributeType="String"/>
+        <attribute name="classes" optional="YES" attributeType="String"/>
+        <attribute name="componentes" optional="YES" attributeType="String"/>
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="duracao" optional="YES" attributeType="String"/>
+        <attribute name="escola" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nivel" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="ritual" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="tempoConj" optional="YES" attributeType="String"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="magias" inverseEntity="CDPersonagem"/>
+    </entity>
+    <entity name="CDMontaria" representedClassName="CDMontaria" syncable="YES">
+        <attribute name="capCarga" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="deslocamento" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="inventario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDInventario" inverseName="montaria" inverseEntity="CDInventario"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="montarias" inverseEntity="CDPersonagem"/>
+    </entity>
+    <entity name="CDPericia" representedClassName="CDPericia" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="proficiencia" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="pericias" inverseEntity="CDPersonagem"/>
+    </entity>
+    <entity name="CDPersonagem" representedClassName="CDPersonagem" syncable="YES">
+        <attribute name="antecedente" optional="YES" attributeType="String"/>
+        <attribute name="classe" optional="YES" attributeType="String"/>
+        <attribute name="foto" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="raca" optional="YES" attributeType="String"/>
+        <attribute name="subclasse" optional="YES" attributeType="String"/>
+        <relationship name="atributos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDAtributo" inverseName="personagem" inverseEntity="CDAtributo"/>
+        <relationship name="caracteristicas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDCaracteristica" inverseName="personagem" inverseEntity="CDCaracteristica"/>
+        <relationship name="condicoes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDCondicao" inverseName="personagem" inverseEntity="CDCondicao"/>
+        <relationship name="inventario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDInventario" inverseName="personagem" inverseEntity="CDInventario"/>
+        <relationship name="magias" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDMagia" inverseName="personagem" inverseEntity="CDMagia"/>
+        <relationship name="montarias" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDMontaria" inverseName="personagem" inverseEntity="CDMontaria"/>
+        <relationship name="pericias" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDPericia" inverseName="personagem" inverseEntity="CDPericia"/>
+        <relationship name="resistenciaMorte" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDResistenciaMorte" inverseName="personagem" inverseEntity="CDResistenciaMorte"/>
+        <relationship name="status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDStatus" inverseName="personagem" inverseEntity="CDStatus"/>
+        <relationship name="tesouros" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDTesouro" inverseName="personagem" inverseEntity="CDTesouro"/>
+        <relationship name="veiculos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDVeiculo" inverseName="personagem" inverseEntity="CDVeiculo"/>
+    </entity>
+    <entity name="CDResistenciaMorte" representedClassName="CDResistenciaMorte" syncable="YES">
+        <attribute name="acerto" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="erro" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="resistenciaMorte" inverseEntity="CDPersonagem"/>
+    </entity>
+    <entity name="CDStatus" representedClassName="CDStatus" syncable="YES">
+        <attribute name="classeArmadura" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dadosVida" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="deslocamento" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="iniciativa" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nivel" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ptsVida" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ptsVidaTemporaria" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="status" inverseEntity="CDPersonagem"/>
+    </entity>
+    <entity name="CDTesouro" representedClassName="CDTesouro" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tipoMoeda" optional="YES" attributeType="String"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="tesouros" inverseEntity="CDPersonagem"/>
+    </entity>
+    <entity name="CDVeiculo" representedClassName="CDVeiculo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="precoQtd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precoTipo" optional="YES" attributeType="String"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="velocidade" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="personagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPersonagem" inverseName="veiculos" inverseEntity="CDPersonagem"/>
     </entity>
     <elements>
-        <element name="Arma" positionX="-63" positionY="-9" width="128" height="179"/>
+        <element name="CDArma" positionX="-599.2921295166016" positionY="-173.5743408203124" width="128" height="238"/>
+        <element name="CDArmadura" positionX="-628.4771423339844" positionY="-485.3417358398438" width="128" height="253"/>
+        <element name="CDAtributo" positionX="618.9442138671875" positionY="147.2844848632812" width="128" height="118"/>
+        <element name="CDBugiganga" positionX="-152.2885589599609" positionY="160.8952331542968" width="128" height="103"/>
+        <element name="CDCaracteristica" positionX="276.3325805664062" positionY="-581.4995727539062" width="128" height="89"/>
+        <element name="CDCondicao" positionX="451.79833984375" positionY="-136.6309204101562" width="128" height="103"/>
+        <element name="CDEquipamento" positionX="-689.0878448486328" positionY="93.76965332031244" width="128" height="193"/>
+        <element name="CDFerramenta" positionX="-380.5157775878906" positionY="98.16326904296875" width="128" height="193"/>
+        <element name="CDInventario" positionX="-244.2936248779297" positionY="-582.8077392578125" width="128" height="178"/>
+        <element name="CDItemMontaria" positionX="-105.1468200683594" positionY="-117.0174255371094" width="128" height="148"/>
+        <element name="CDMagia" positionX="695.0817260742188" positionY="-161.8273925781251" width="128" height="223"/>
+        <element name="CDMontaria" positionX="43.23263549804688" positionY="-387.8693237304688" width="128" height="178"/>
+        <element name="CDPericia" positionX="270.55029296875" positionY="-27.810791015625" width="128" height="103"/>
+        <element name="CDPersonagem" positionX="475.4851684570312" positionY="-548.970947265625" width="128" height="313"/>
+        <element name="CDResistenciaMorte" positionX="729.5068969726562" positionY="-299.6557006835938" width="128" height="103"/>
+        <element name="CDStatus" positionX="745.0721435546875" positionY="-560.27392578125" width="128" height="178"/>
+        <element name="CDTesouro" positionX="240.4283447265625" positionY="-166.955078125" width="128" height="89"/>
+        <element name="CDVeiculo" positionX="429.5392456054688" positionY="70.57666015624994" width="128" height="148"/>
     </elements>
 </model>
