@@ -18,8 +18,7 @@ struct PersistenceController {
         
         // cria automaticamente 10 exemplos de itens na lista
         for _ in 0..<10 {
-            let newItem = Arma(context: viewContext)
-            newItem.nome = ""
+            
         }
         do {
             try viewContext.save()
