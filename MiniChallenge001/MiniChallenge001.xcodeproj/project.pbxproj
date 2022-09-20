@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09B5567928DA5EB8001466B0 /* Habilidades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5567328DA5EB6001466B0 /* Habilidades.swift */; };
+		09B5567A28DA5EB8001466B0 /* SheetTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5567428DA5EB6001466B0 /* SheetTabView.swift */; };
+		09B5567B28DA5EB8001466B0 /* Identidade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5567528DA5EB7001466B0 /* Identidade.swift */; };
+		09B5567C28DA5EB8001466B0 /* Atributos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5567628DA5EB7001466B0 /* Atributos.swift */; };
+		09B5567D28DA5EB8001466B0 /* Combate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5567728DA5EB7001466B0 /* Combate.swift */; };
+		09B5567E28DA5EB8001466B0 /* Inventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5567828DA5EB8001466B0 /* Inventario.swift */; };
 		12E07FB728D2627600F654BB /* FilesJSON in Sources */ = {isa = PBXBuildFile; fileRef = 12E07FB628D2627600F654BB /* FilesJSON */; };
 		3D98DE4728DA543900F6F550 /* CDFerramenta+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */; };
 		3D98DE4828DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */; };
@@ -74,6 +80,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09B5567328DA5EB6001466B0 /* Habilidades.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Habilidades.swift; path = ../../../../../View/Habilidades.swift; sourceTree = "<group>"; };
+		09B5567428DA5EB6001466B0 /* SheetTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SheetTabView.swift; path = ../../../../../View/SheetTabView.swift; sourceTree = "<group>"; };
+		09B5567528DA5EB7001466B0 /* Identidade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Identidade.swift; path = ../../../../../View/Identidade.swift; sourceTree = "<group>"; };
+		09B5567628DA5EB7001466B0 /* Atributos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Atributos.swift; path = ../../../../../View/Atributos.swift; sourceTree = "<group>"; };
+		09B5567728DA5EB7001466B0 /* Combate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Combate.swift; path = ../../../../../View/Combate.swift; sourceTree = "<group>"; };
+		09B5567828DA5EB8001466B0 /* Inventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Inventario.swift; path = ../../../../../View/Inventario.swift; sourceTree = "<group>"; };
 		12E07FB628D2627600F654BB /* FilesJSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FilesJSON; sourceTree = "<group>"; };
 		3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -229,6 +241,12 @@
 		3DE3796C28D26413005812C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09B5567628DA5EB7001466B0 /* Atributos.swift */,
+				09B5567728DA5EB7001466B0 /* Combate.swift */,
+				09B5567328DA5EB6001466B0 /* Habilidades.swift */,
+				09B5567528DA5EB7001466B0 /* Identidade.swift */,
+				09B5567828DA5EB8001466B0 /* Inventario.swift */,
+				09B5567428DA5EB6001466B0 /* SheetTabView.swift */,
 				3D9BED1A28CFB76000CA1821 /* ContentView.swift */,
 			);
 			path = View;
@@ -419,22 +437,27 @@
 				3D98DE6A28DA543900F6F550 /* CDMontaria+CoreDataProperties.swift in Sources */,
 				3D98DE6528DA543900F6F550 /* CDPericia+CoreDataClass.swift in Sources */,
 				3D98DE5F28DA543900F6F550 /* CDPersonagem+CoreDataClass.swift in Sources */,
+				09B5567E28DA5EB8001466B0 /* Inventario.swift in Sources */,
 				3DE3796F28D2673E005812C7 /* ViewModel.swift in Sources */,
+				09B5567B28DA5EB8001466B0 /* Identidade.swift in Sources */,
 				3D98DE6028DA543900F6F550 /* CDPersonagem+CoreDataProperties.swift in Sources */,
 				3D98DE4928DA543900F6F550 /* CDAtributo+CoreDataClass.swift in Sources */,
 				3D98DE5728DA543900F6F550 /* CDItemMontaria+CoreDataClass.swift in Sources */,
 				3D98DE5128DA543900F6F550 /* CDInventario+CoreDataClass.swift in Sources */,
+				09B5567D28DA5EB8001466B0 /* Combate.swift in Sources */,
 				3D98DE5628DA543900F6F550 /* CDArmadura+CoreDataProperties.swift in Sources */,
 				12E07FB728D2627600F654BB /* FilesJSON in Sources */,
 				3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */,
 				3D9BED1B28CFB76000CA1821 /* ContentView.swift in Sources */,
 				3D98DE4F28DA543900F6F550 /* CDBugiganga+CoreDataClass.swift in Sources */,
+				09B5567A28DA5EB8001466B0 /* SheetTabView.swift in Sources */,
 				3D98DE6128DA543900F6F550 /* CDStatus+CoreDataClass.swift in Sources */,
 				3D98DE5428DA543900F6F550 /* CDEquipamento+CoreDataProperties.swift in Sources */,
 				3D98DE4C28DA543900F6F550 /* CDCondicao+CoreDataProperties.swift in Sources */,
 				3D98DE4E28DA543900F6F550 /* CDCaracteristica+CoreDataProperties.swift in Sources */,
 				3D98DE5B28DA543900F6F550 /* CDArma+CoreDataClass.swift in Sources */,
 				3D9BED2528CFB76200CA1821 /* MiniChallenge001.xcdatamodeld in Sources */,
+				09B5567928DA5EB8001466B0 /* Habilidades.swift in Sources */,
 				3D98DE5A28DA543900F6F550 /* CDTesouro+CoreDataProperties.swift in Sources */,
 				3D98DE5328DA543900F6F550 /* CDEquipamento+CoreDataClass.swift in Sources */,
 				3D98DE4728DA543900F6F550 /* CDFerramenta+CoreDataClass.swift in Sources */,
@@ -445,6 +468,7 @@
 				3D98DE5E28DA543900F6F550 /* CDMagia+CoreDataProperties.swift in Sources */,
 				3D98DE5828DA543900F6F550 /* CDItemMontaria+CoreDataProperties.swift in Sources */,
 				3D98DE5028DA543900F6F550 /* CDBugiganga+CoreDataProperties.swift in Sources */,
+				09B5567C28DA5EB8001466B0 /* Atributos.swift in Sources */,
 				3D98DE6828DA543900F6F550 /* CDResistenciaMorte+CoreDataProperties.swift in Sources */,
 				3D98DE6228DA543900F6F550 /* CDStatus+CoreDataProperties.swift in Sources */,
 				3D98DE4A28DA543900F6F550 /* CDAtributo+CoreDataProperties.swift in Sources */,
