@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		12E07FB728D2627600F654BB /* FilesJSON in Sources */ = {isa = PBXBuildFile; fileRef = 12E07FB628D2627600F654BB /* FilesJSON */; };
-		12FC222428CFCB38001B7E3A /* JSONFilesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */; };
-		12FC222828D002FB001B7E3A /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC222728D002FB001B7E3A /* JSONObject.swift */; };
 		3D98DE4728DA543900F6F550 /* CDFerramenta+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */; };
 		3D98DE4828DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */; };
 		3D98DE4928DA543900F6F550 /* CDAtributo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */; };
@@ -77,8 +75,6 @@
 
 /* Begin PBXFileReference section */
 		12E07FB628D2627600F654BB /* FilesJSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FilesJSON; sourceTree = "<group>"; };
-		12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFilesUtil.swift; sourceTree = "<group>"; };
-		12FC222728D002FB001B7E3A /* JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
 		3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAtributo+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -218,8 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				3DE3796D28D2644D005812C7 /* CoreData */,
-				12FC222328CFCB38001B7E3A /* JSONFilesUtil.swift */,
-				12FC222728D002FB001B7E3A /* JSONObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -447,14 +441,12 @@
 				3D98DE6428DA543900F6F550 /* CDVeiculo+CoreDataProperties.swift in Sources */,
 				3D98DE5D28DA543900F6F550 /* CDMagia+CoreDataClass.swift in Sources */,
 				3D98DE5228DA543900F6F550 /* CDInventario+CoreDataProperties.swift in Sources */,
-				12FC222428CFCB38001B7E3A /* JSONFilesUtil.swift in Sources */,
 				3D98DE4828DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift in Sources */,
 				3D98DE5E28DA543900F6F550 /* CDMagia+CoreDataProperties.swift in Sources */,
 				3D98DE5828DA543900F6F550 /* CDItemMontaria+CoreDataProperties.swift in Sources */,
 				3D98DE5028DA543900F6F550 /* CDBugiganga+CoreDataProperties.swift in Sources */,
 				3D98DE6828DA543900F6F550 /* CDResistenciaMorte+CoreDataProperties.swift in Sources */,
 				3D98DE6228DA543900F6F550 /* CDStatus+CoreDataProperties.swift in Sources */,
-				12FC222828D002FB001B7E3A /* JSONObject.swift in Sources */,
 				3D98DE4A28DA543900F6F550 /* CDAtributo+CoreDataProperties.swift in Sources */,
 				3D98DE5528DA543900F6F550 /* CDArmadura+CoreDataClass.swift in Sources */,
 				3D9BED1928CFB76000CA1821 /* MiniChallenge001App.swift in Sources */,
