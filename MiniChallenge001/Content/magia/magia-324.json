@@ -1,0 +1,16 @@
+{
+    "id": 324,
+    "nome": "Velocidade",
+    "nivel": 3,
+    "classes": [
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Transmutação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "18 metros",
+    "componentes": "Verbal, Somático, Material (uma raspa de raiz de alcaçuz)",
+    "duracao": "Concentração, até 1 minuto",
+    "descricao": "Escolha uma criatura voluntária que você possa ver, dentro do alcance. Até a magia acabar, o deslocamento do alvo é dobrado, ele ganha +2 de bônus na CA, ele tem vantagem em testes de resistência de Destreza e ganha uma ação adicional em cada um dos turnos dele. A ação pode ser usada apenas para realizar as ações de Ataque (um ataque com arma, apenas), Disparada, Desengajar, Esconder ou Usar um Objeto. Quando a magia acabar, o alvo não poderá se mover ou realizar ações até depois do seu próximo turno, à medida que uma onda de letargia toma conta dele."
+}

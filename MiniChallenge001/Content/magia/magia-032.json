@@ -1,0 +1,15 @@
+{
+    "id": 32,
+    "nome": "Aura de Vitalidade",
+    "nivel": 3,
+    "classes": [
+        "Paladino"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal (9 metros de raio)",
+    "componentes": "Verbal",
+    "duracao": "Concentração, até 1 minuto",
+    "descricao": "Energia curativa irradia de você em uma aura com 9 metros de raio. Até a magia acabar, a aura se move mantendo-se centrada em você. Você pode usar uma ação bônus para fazer com que uma criatura na aura (incluindo você) recupere 2d6 pontos de vida."
+}

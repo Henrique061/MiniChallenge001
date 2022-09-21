@@ -1,0 +1,17 @@
+{
+    "id": 325,
+    "nome": "Ver o Invisível",
+    "nivel": 2,
+    "classes": [
+        "Bardo",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Adivinhação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal",
+    "componentes": "Verbal, Somático, Material (um pouco de talco e um pó deprata polvilhado)",
+    "duracao": "1 hora",
+    "descricao": "Pela duração, você vê criaturas e objetos invisíveis como se eles fossem visíveis e você pode ver no Plano Etéreo. Criaturas e objetos etéreos parecem espectrais e translúcidos."
+}

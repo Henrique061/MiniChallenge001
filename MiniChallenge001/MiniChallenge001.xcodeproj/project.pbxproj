@@ -14,7 +14,9 @@
 		09B5569628DA6156001466B0 /* Identidade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568F28DA6156001466B0 /* Identidade.swift */; };
 		09B5569728DA6156001466B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569028DA6156001466B0 /* ContentView.swift */; };
 		09B5569828DA6156001466B0 /* Combate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569128DA6156001466B0 /* Combate.swift */; };
-		12E07FB728D2627600F654BB /* FilesJSON in Sources */ = {isa = PBXBuildFile; fileRef = 12E07FB628D2627600F654BB /* FilesJSON */; };
+		126AAE1628DAC0A900CF5A2E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126AAE1528DAC0A900CF5A2E /* TestView.swift */; };
+		126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */; };
+		126ABAE328DB38E000CF5A2E /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 126ABAE228DB38E000CF5A2E /* Content */; };
 		3D98DE4728DA543900F6F550 /* CDFerramenta+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */; };
 		3D98DE4828DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */; };
 		3D98DE4928DA543900F6F550 /* CDAtributo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */; };
@@ -87,7 +89,9 @@
 		09B5568F28DA6156001466B0 /* Identidade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identidade.swift; sourceTree = "<group>"; };
 		09B5569028DA6156001466B0 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09B5569128DA6156001466B0 /* Combate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combate.swift; sourceTree = "<group>"; };
-		12E07FB628D2627600F654BB /* FilesJSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FilesJSON; sourceTree = "<group>"; };
+		126AAE1528DAC0A900CF5A2E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonFileUtil.swift; path = MiniChallenge001/Model/JsonFileUtil.swift; sourceTree = SOURCE_ROOT; };
+		126ABAE228DB38E000CF5A2E /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Content; sourceTree = SOURCE_ROOT; };
 		3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAtributo+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -163,10 +167,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		126AA8F828DABD5300CF5A2E /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
 		3D9BED0C28CFB76000CA1821 = {
 			isa = PBXGroup;
 			children = (
-				12E07FB628D2627600F654BB /* FilesJSON */,
+				126ABAE228DB38E000CF5A2E /* Content */,
 				3D9BED1728CFB76000CA1821 /* MiniChallenge001 */,
 				3D9BED2D28CFB76200CA1821 /* MiniChallenge001Tests */,
 				3D9BED3728CFB76200CA1821 /* MiniChallenge001UITests */,
@@ -225,6 +237,7 @@
 		3DE3796A28D26391005812C7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				126AA8F828DABD5300CF5A2E /* Json */,
 				3DE3796D28D2644D005812C7 /* CoreData */,
 			);
 			path = Model;
@@ -248,6 +261,7 @@
 				09B5568F28DA6156001466B0 /* Identidade.swift */,
 				09B5568D28DA6155001466B0 /* Inventario.swift */,
 				09B5568C28DA6155001466B0 /* SheetTabView.swift */,
+				126AAE1528DAC0A900CF5A2E /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -401,6 +415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				126ABAE328DB38E000CF5A2E /* Content in Resources */,
 				3D9BED2028CFB76200CA1821 /* Preview Assets.xcassets in Resources */,
 				3D9BED1D28CFB76200CA1821 /* Assets.xcassets in Resources */,
 			);
@@ -446,7 +461,6 @@
 				3D98DE5728DA543900F6F550 /* CDItemMontaria+CoreDataClass.swift in Sources */,
 				3D98DE5128DA543900F6F550 /* CDInventario+CoreDataClass.swift in Sources */,
 				3D98DE5628DA543900F6F550 /* CDArmadura+CoreDataProperties.swift in Sources */,
-				12E07FB728D2627600F654BB /* FilesJSON in Sources */,
 				3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */,
 				3D98DE4F28DA543900F6F550 /* CDBugiganga+CoreDataClass.swift in Sources */,
 				3D98DE6128DA543900F6F550 /* CDStatus+CoreDataClass.swift in Sources */,
@@ -455,9 +469,11 @@
 				09B5569728DA6156001466B0 /* ContentView.swift in Sources */,
 				3D98DE4E28DA543900F6F550 /* CDCaracteristica+CoreDataProperties.swift in Sources */,
 				3D98DE5B28DA543900F6F550 /* CDArma+CoreDataClass.swift in Sources */,
+				126AAE1628DAC0A900CF5A2E /* TestView.swift in Sources */,
 				3D9BED2528CFB76200CA1821 /* MiniChallenge001.xcdatamodeld in Sources */,
 				3D98DE5A28DA543900F6F550 /* CDTesouro+CoreDataProperties.swift in Sources */,
 				09B5569228DA6156001466B0 /* Habilidades.swift in Sources */,
+				126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */,
 				3D98DE5328DA543900F6F550 /* CDEquipamento+CoreDataClass.swift in Sources */,
 				3D98DE4728DA543900F6F550 /* CDFerramenta+CoreDataClass.swift in Sources */,
 				3D98DE6428DA543900F6F550 /* CDVeiculo+CoreDataProperties.swift in Sources */,

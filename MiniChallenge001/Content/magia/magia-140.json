@@ -1,0 +1,15 @@
+{
+    "id": 140,
+    "nome": "Esfera Resiliente de Otiluke",
+    "nivel": 4,
+    "classes": [
+        "Mago"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "9 metros",
+    "componentes": "Verbal, Somático, Material (uma peça hemisférica de cristaltransparente e uma peça hemisférica que combine degoma arábica)",
+    "duracao": "Concentração, até 1 minuto",
+    "descricao": "Uma esfera de energia brilhante engloba uma criatura ou objeto de tamanho Grande ou menor, dentro do alcance. Uma criatura involuntária deve realizar um teste de resistência de Destreza. Se falhar na resistência, a criatura estará enclausurada pela duração. Nada – nem objetos físicos, energia ou outros efeitos mágicos – pode passar através da barreira, para dentro ou para fora, apesar da criatura na esfera poder respirar lá dentro. A esfera é imune a todos os danos e a criatura ou objeto dentro não pode sofrer dano de ataques ou efeitos originados de fora, nem a criatura dentro da esfera, pode causar dano a nada fora dela. A esfera nãotempesoe é grande o suficienteapenas paraconter acriatura ou objeto dentro. Uma criatura enclausurada podeusar suaaçãoparaempurrar aparede da esfera e, assim, rolar a esfera a metade do deslocamentodacriatura. Similarmente, oglobo pode ser erguidoe movidopor outras criaturas. Amagiadesintegrarlançadanoglobo o destruirá sem causar ferimentos anadadentrodele."
+}
