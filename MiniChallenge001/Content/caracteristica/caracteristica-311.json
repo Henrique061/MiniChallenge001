@@ -1,0 +1,10 @@
+{
+    "id": 311,
+    "nome": "Inimigo Favorito",
+    "classe": "Patrulheiro",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do 1° nível, você tem experiência significativa estudando, rastreando, caçando e, até mesmo, falando com certos tipos de inimigos.\nEscolha um tipo de inimigo favorito: bestas, fadas, humanoide, monstruosidades ou mortos-vivos. Você recebe um bônus de +2 nas jogadas de dano com ataques com arma contra criaturas do tipo escolhido. Além disso, você tem vantagem em testes de Sabedoria (Sobrevivência) para rastrear seus inimigos favoritos, assim como em testes de Inteligência para lembrar informações sobre eles.\nQuando você adquire essa característica, você também aprende um idioma, à sua escolha, que seja falado pelos seus inimigos favoritos, se eles falarem algum."
+}

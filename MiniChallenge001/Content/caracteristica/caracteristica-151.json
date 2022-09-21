@@ -1,0 +1,10 @@
+{
+    "id": 151,
+    "nome": "Fonte de Magia",
+    "classe": "Feiticeiro",
+    "subclasse": null,
+    "nivel": [
+        2
+    ],
+    "descricao": "No 2° nível, você alcança uma profunda fonte de magia dentro de você. Essa fonte é representada pelos pontos de feitiçaria, que permitem que você crie uma variedade de efeitos mágicos.\n\nCONJURAÇÃO FLEXÍVEL\nVocê pode usar seus pontos de feitiçaria para ganhar novos espaços de magia ou sacrificar espaços de magia para ganhar pontos de magia adicionais. Você aprende novas formas de usar seus pontos de feitiçaria quando alcança níveis elevados. Os espaços de magia criados desaparecem ao final de um descanso longo.\nCriando Espaços de Magia: Você pode transformar pontos de fetiçaria disponíveis em um espaço de magia, com uma ação bônus, no seu turno. A tabela Criando Espaços de Magia mostra o custo para criar um espaço de magia de determinado nível. Você não pode criar espaços de magia acima do 5° nível.\n\nCRIANDO ESPAÇOS DE MAGIA\nNível 1 de Espaço de Magia -> Custo de Pontos de Feitiçaria: 2\nNível 2 de Espaço de Magia -> Custo de Pontos de Feitiçaria: 3\nNível 3 de Espaço de Magia -> Custo de Pontos de Feitiçaria: 5\nNível 4 de Espaço de Magia -> Custo de Pontos de Feitiçaria: 6\nNível 5 de Espaço de Magia -> Custo de Pontos de Feitiçaria: 7\n\nConvertendo um Espaço de Magia em Pontos de Feitiçaria: Com uma ação bônus, no seu turno, você pode gastar um espaço de magia disponível e ganhar uma quantidade de pontos de feitiçaria igual ao nível do espaço."
+}

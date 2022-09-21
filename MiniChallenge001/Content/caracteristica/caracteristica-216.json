@@ -1,0 +1,10 @@
+{
+    "id": 216,
+    "nome": "Tradição Arcana",
+    "classe": "Mago",
+    "subclasse": null,
+    "nivel": [
+        2
+    ],
+    "descricao": "Quando alcança o 2° nível, você pode escolher uma Tradição Arcana, moldando sua prática de magia em uma das oito escolas: Abjuração, Adivinhação, Conjuração, Encantamento, Evocação, Ilusão, Necromancia e Transmutação.\nSua escolha confere características no 2° nível e de novo no 6°, 10° e 14° nível."
+}

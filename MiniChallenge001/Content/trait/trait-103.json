@@ -1,0 +1,7 @@
+{
+    "id": 103,
+    "nome": "Ataques Selvagens",
+    "raca": "Meio-Orc",
+    "subraca": null,
+    "descricao": "Quando você atinge um ataque crítico com uma arma corpo-a-corpo, você pode rolar um dos dados de dano da arma mais uma vez e adicioná-lo ao dano extra causado pelo acerto crítico."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 29,
+    "nome": "Fúria Implacável",
+    "classe": "Bárbaro",
+    "subclasse": null,
+    "nivel": [
+        11
+    ],
+    "descricao": "A partir do 11° nível, sua fúria pode manter você lutando independente da gravidade dos seus ferimentos. Se você cair para 0 pontos de vida enquanto estiver em fúria e não morrer, você pode realizar um teste de resistência de Constituição CD 10. Se você for bem sucedido, você volta para 1 ponto de vida ao invés disso.\nCada vez que você utilizar essa característica após a primeira, a CD aumenta em 5. Assim que você terminar um descanso curto ou longo a CD volta para 10."
+}

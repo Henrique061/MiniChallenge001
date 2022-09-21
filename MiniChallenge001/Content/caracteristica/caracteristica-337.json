@@ -1,0 +1,10 @@
+{
+    "id": 337,
+    "nome": "Rajada do Rastreador",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave do Rastreador Subterrâneo",
+    "nivel": [
+        11
+    ],
+    "descricao": "A partir do 11° nível, uma vez em cada um dos seus turnos quando você errar um ataque, você pode realizar outro ataque."
+}

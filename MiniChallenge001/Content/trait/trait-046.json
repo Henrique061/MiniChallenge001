@@ -1,0 +1,7 @@
+{
+    "id": 46,
+    "nome": "Sortudo",
+    "raca": "Halflings",
+    "subraca": null,
+    "descricao": "Quando você obtiver um 1 natural em uma jogada de ataque, teste de habilidade ou teste de resistência, você pode jogar de novo o dado e deve utilizar o novo resultado."
+}

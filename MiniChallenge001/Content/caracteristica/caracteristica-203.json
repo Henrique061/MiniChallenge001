@@ -1,0 +1,10 @@
+{
+    "id": 203,
+    "nome": "Impostor",
+    "classe": "Ladino",
+    "subclasse": "Assassino",
+    "nivel": [
+        13
+    ],
+    "descricao": "No 13° nível, você adquire a habilidade de imitar a fala, escrita e comportamento de outra pessoa, infalivelmente. Você deve gastar pelo menos três horas estudando esses três componentes do comportamento de uma pessoa, ouvindo sua articulação, examinando sua escrita e observando seus maneirismos.\nSeu ardil é imperceptível para um observador casual. Se uma criatura desconfiada suspeitar que algo está errado, você tem vantagem em qualquer teste de Carisma (Enganação) que você fizer para evitar ser detectado."
+}

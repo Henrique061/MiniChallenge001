@@ -1,0 +1,10 @@
+{
+    "id": 225,
+    "nome": "Prodígio",
+    "classe": "Mago",
+    "subclasse": "Escola de Adivinhação",
+    "nivel": [
+        2
+    ],
+    "descricao": "Começando no 2° nível, quando você escolhe essa escola, vislumbres do futuro começam a aparecer em sua consciência. Quando você termina um descanso longo, role dois d20s e anote os números rolados. Você pode substituir qualquer jogada de ataque, teste de resistência ou teste de habilidade feito por você ou por outra criatura que você possa ver por uma das rolagens de premunição. Você deve escolher fazer isso antes da rolagem e você pode substituir uma rolagem dessa forma apenas uma vez por rodada.\nCada rolagem de premonição pode ser usada apenas uma vez. Quando você termina um descanso longo, você perde qualquer rolagem de premonição que não tenha sido usada."
+}

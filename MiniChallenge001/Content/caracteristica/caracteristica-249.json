@@ -1,0 +1,10 @@
+{
+    "id": 249,
+    "nome": "Transmutação Instruída",
+    "classe": "Mago",
+    "subclasse": "Escola de Transmutação",
+    "nivel": [
+        2
+    ],
+    "descricao": "Quando você escolhe essa escola no 2° nível, o ouro e o tempo que você precisa gastar para copiar uma magia da escola de transmutação em seu grimório é reduzido à metade."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 283,
+    "nome": "Cura Pelas Mãos",
+    "classe": "Paladino",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Seu toque abençoado pode curar ferimentos. Você tem um poço de poder curativo que se enche quando você realiza um descanso longo. Com esse poço, você pode restaurar um número total de pontos de vida igual ao seu nível de paladino x 5.\nCom uma ação, você pode tocar uma criatura e sugar poder do seu poço para restaurar um número de pontos de vida da criatura, até o máximo de pontos restantes no poço.\nAlternativamente, você pode gastar 5 pontos de cura do seu poço de cura para curar o alvo de uma doença ou neutralizar um veneno que o esteja afetando. Você pode curar múltiplas doenças e neutralizar múltiplos venenos com um único uso de Cura pelas Mãos, gastando pontos de vida separadamente para cada um.\nEssa característica não gera nenhum efeito em mortos-vivos e constructos."
+}

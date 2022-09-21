@@ -1,0 +1,10 @@
+{
+    "id": 54,
+    "nome": "Perícia Inigualável",
+    "classe": "Bardo",
+    "subclasse": "Colégio do Conhecimento",
+    "nivel": [
+        14
+    ],
+    "descricao": "A partir do 14° nível, quando você fizer um teste de habilidade, você pode gastar um uso de Inspiração de Bardo. Role o dado de Inspiração de Bardo e adicione o número rolado ao seu teste de habilidade. Você pode escolher fazer isso depois de rolar o dado do teste de habilidade, mas antes do Mestre dizer se foi bem ou mal sucedido."
+}

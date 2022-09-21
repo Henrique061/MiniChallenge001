@@ -1,0 +1,10 @@
+{
+    "id": 327,
+    "nome": "Defesa da Besta Superior",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave da Besta",
+    "nivel": [
+        15
+    ],
+    "descricao": "A partir do 15° nível, sempre que um atacante que seu companheiro puder ver atingi-lo com um ataque, ele pode usar a reação dele para reduzir o dano desse ataque à metade."
+}

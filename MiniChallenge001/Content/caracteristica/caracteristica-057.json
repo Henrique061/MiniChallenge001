@@ -1,0 +1,10 @@
+{
+    "id": 57,
+    "nome": "Ataque Extra",
+    "classe": "Bardo",
+    "subclasse": "Colégio da Bravura",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, você pode atacar duas vezes, ao invés de uma, sempre que você realizar a ação de Ataque no seu turno."
+}

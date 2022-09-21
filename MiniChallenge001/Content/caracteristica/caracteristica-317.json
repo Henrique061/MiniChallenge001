@@ -1,0 +1,10 @@
+{
+    "id": 317,
+    "nome": "Pés Rápidos",
+    "classe": "Patrulheiro",
+    "subclasse": null,
+    "nivel": [
+        8
+    ],
+    "descricao": "Começando no 8° nível, você pode usar a ação de Disparada como uma ação bônus no seu turno."
+}

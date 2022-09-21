@@ -1,0 +1,10 @@
+{
+    "id": 278,
+    "nome": "Manto de Sombras",
+    "classe": "Monge",
+    "subclasse": "Caminho da Sombra",
+    "nivel": [
+        11
+    ],
+    "descricao": "No 11° nível, você aprendeu a se tornar um com as sombras. Quando você estiver em uma área de penumbra ou escuridão, você pode usar sua ação para se tornar invisível. Você permanece invisível até realizar um ataque, conjurar uma magia ou se for para uma área de luz plena."
+}

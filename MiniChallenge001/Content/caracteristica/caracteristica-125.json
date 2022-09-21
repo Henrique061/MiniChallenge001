@@ -1,0 +1,10 @@
+{
+    "id": 125,
+    "nome": "Filho da Tormenta",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Tempestade",
+    "nivel": [
+        17
+    ],
+    "descricao": "A partir do 17° nível, você adquire deslocamento de voo igual a seu deslocamento de caminhada contanto que você não esteja no subterrâneo ou em local fechado."
+}

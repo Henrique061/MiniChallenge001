@@ -1,0 +1,10 @@
+{
+    "id": 80,
+    "nome": "Domínio Divino",
+    "classe": "Clérigo",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Escolha um domínio relacionado à sua divindade: Conhecimento, Enganação, Guerra, Luz, Natureza, Tempestade ou Vida. Essa escolha, realizada no 1° nível, concede magias de domínio e outras características. Ela também concede a você outras formas de utilizar seu Canalizar Divindade quando você ganhá-lo no 2° nível, bem como outros benefícios no 6°, 8° e 17° níveis."
+}

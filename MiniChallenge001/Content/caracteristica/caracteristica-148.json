@@ -1,0 +1,10 @@
+{
+    "id": 148,
+    "nome": "Forma Selvagem de Elemental",
+    "classe": "Druida",
+    "subclasse": "Círculo da Lua",
+    "nivel": [
+        10
+    ],
+    "descricao": "No 10° nível, você pode gastar dois usos da sua Forma Selvagem, ao mesmo tempo, para se transformar em um elemental da água, elemental do ar, elemental do fogo ou elemental da terra."
+}

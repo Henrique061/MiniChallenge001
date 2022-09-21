@@ -1,0 +1,10 @@
+{
+    "id": 184,
+    "nome": "Estudioso da Guerra",
+    "classe": "Guerreiro",
+    "subclasse": "Mestre de Batalha",
+    "nivel": [
+        3
+    ],
+    "descricao": "No 3° nível, você ganha proficiência com um tipo de ferramenta de artesão, à sua escolha."
+}

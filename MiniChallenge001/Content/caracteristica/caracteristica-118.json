@@ -1,0 +1,10 @@
+{
+    "id": 118,
+    "nome": "Senhor da Natureza",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Natureza",
+    "nivel": [
+        17
+    ],
+    "descricao": "A partir do 17° nível, você ganha a habilidade de comandar animais e criaturas-planta. Enquanto a criatura estiver enfeitiçada pela sua característica Enfeitiçar Animais e Plantas, você pode usar uma ação bônus no seu turno para dizer verbalmente o que cada uma dessas criaturas devem fazer no próximo turno delas."
+}

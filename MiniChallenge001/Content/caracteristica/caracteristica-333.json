@@ -1,0 +1,10 @@
+{
+    "id": 333,
+    "nome": "Batedor do Subterrâneo",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave do Rastreador Subterrâneo",
+    "nivel": [
+        3
+    ],
+    "descricao": "No 3° nível, você domina a arte da emboscada. No seu primeiro turno durante o combate, você ganha +3 metros de bônus no seu deslocamento e, se você usar a ação de Ataque nesse turno, você pode realizar um ataque adicional.\nVocê também é especialista em evitar criaturas que contam com visão no escuro. Tais criaturas não ganham qualquer benefício quando tentarem detectar você em condições de escuridão ou penumbra. Além disso, quando o Mestre determina se você pode se esconder de uma criatura, tal criatura não ganham qualquer benefício devido a visão no escuro dela."
+}

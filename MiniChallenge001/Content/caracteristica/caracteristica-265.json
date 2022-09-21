@@ -1,0 +1,10 @@
+{
+    "id": 265,
+    "nome": "Mente Tranquila",
+    "classe": "Monge",
+    "subclasse": null,
+    "nivel": [
+        7
+    ],
+    "descricao": "A partir do 7° nível, você pode usar sua ação para terminar um efeito em si mesmo, que esteja lhe enfeitiçando ou amedrontando."
+}

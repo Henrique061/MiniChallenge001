@@ -1,0 +1,10 @@
+{
+    "id": 144,
+    "nome": "Santuário Natural",
+    "classe": "Druida",
+    "subclasse": "Círculo da Terra",
+    "nivel": [
+        14
+    ],
+    "descricao": "A partir do 14° nível, as criaturas do mundo natural sentem sua ligação com a natureza e hesitarão em atacar você. Quando uma besta ou planta atacar você, essa criatura deverá fazer um teste de resistência de Sabedoria contra uma CD igual a das suas magias de druida. Em uma falha, a criatura deve escolher um alvo diferente ou o ataque erra automaticamente. Em um sucesso, a criatura se torna imune a esse efeito por 24 horas.\nA criatura está ciente deste efeito antes de resolver atacar você."
+}

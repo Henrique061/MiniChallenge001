@@ -1,0 +1,14 @@
+{
+    "id": 334,
+    "nome": "Magia do Rastreador Subterrâneo",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave do Rastreador Subterrâneo",
+    "nivel": [
+        3,
+        5,
+        9,
+        13,
+        17
+    ],
+    "descricao": "A partir do 3° nível, você ganha visão no escuro com um alcance de 27 metros. Você também ganha acesso a magias adicionais no 3°, 5°, 9°, 13° e 17° níveis. Uma vez que tenha adquirido uma magia de rastreador subterrâneo, ela conta como uma magia de patrulheiro para você, mas não conta na quantidade de magias de patrulheiro que você conhece.\n\nMAGIAS DO RASTREADOR DO SUBTERRÂNEO\nNível 3 de Patrulheiro -> Disfarçar-se\nNível 5 de Patrulheiro -> Truque de Corda\nNível 9 de Patrulheiro -> Glifo de Vigilância\nNível 13 de Patrulheiro -> Invisibilidade Maior\nNível 17 de Patrulheiro -> Similaridade"
+}

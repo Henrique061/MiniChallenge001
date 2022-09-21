@@ -1,0 +1,10 @@
+{
+    "id": 66,
+    "nome": "Presença Feérica",
+    "classe": "Bruxo",
+    "subclasse": "A Arquifada",
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do 1° nível, seu patrono concede a você a habilidade de projetar a sedução e temeridade da presença da fada. Com uma ação, você pode fazer com que cada criatura num cubo de 3 metros centrado em você, faça um teste de resistência de Sabedoria com uma CD igual a de sua magia de bruxo. As criaturas que falharem no teste ficaram enfeitiçadas ou amedrontadas por você (à sua escolha) até o início do seu próximo turno.\nQuando você usar essa característica, você não poderá utilizá-la novamente antes de realizar um descanso curto ou longo."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 36,
+    "nome": "Retaliação",
+    "classe": "Bárbaro",
+    "subclasse": "Caminho Furioso",
+    "nivel": [
+        14
+    ],
+    "descricao": "A partir do 14° nível, quando você sofrer dano de uma criatura que esteja a até 1,5 metro de você, você pode usar sua reação para realizar um ataque corpo-a-corpo com arma contra essa criatura."
+}

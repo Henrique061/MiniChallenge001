@@ -1,0 +1,10 @@
+{
+    "id": 81,
+    "nome": "Magias de Domínio",
+    "classe": "Clérigo",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Cada domínio tem uma lista de magias - as magias de domínio - que você adquire nos níveis especificados pelo seu domínio. Quando você ganha uma magia de domínio, você sempre a tem preparada, e essa magia não conta no número de magias que você pode preparar a cada dia.\nSe você tem uma magia de domínio que não aparece na lista de magias de clérigo, mesmo assim ela é uma magia de clérigo para você."
+}

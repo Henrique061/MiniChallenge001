@@ -1,0 +1,10 @@
+{
+    "id": 104,
+    "nome": "Avatar da Batalha",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Guerra",
+    "nivel": [
+        17
+    ],
+    "descricao": "A partir do 17° nível, você ganha resistência a dano de concussão, cortante e perfurante de ataques não-mágicos."
+}

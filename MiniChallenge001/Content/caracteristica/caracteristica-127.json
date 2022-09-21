@@ -1,0 +1,10 @@
+{
+    "id": 127,
+    "nome": "Proficiência Adicional",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Vida",
+    "nivel": [
+        1
+    ],
+    "descricao": "Quando você escolhe este domínio no 1° nível, você ganha proficiência com armaduras pesadas."
+}

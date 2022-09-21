@@ -1,0 +1,10 @@
+{
+    "id": 105,
+    "nome": "Magias do Domínio da Luz",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Luz",
+    "nivel": [
+        1
+    ],
+    "descricao": "Magias de Domínio desta subclasse:\nNível 1 de Clérigo -> Mãos Flamejantes, Fogo das Fadas.\nNível 3 de Clérigo -> Esfera Flamejante, Raio Ardente.\nNível 5 de Clérigo -> Luz do Dia, Bola de Fogo.\nNível 7 de Clérigo -> Guardião da Fé, Muralha de Fogo.\nNível 9 de Clérigo -> Coluna de Chamas, Vidência."
+}

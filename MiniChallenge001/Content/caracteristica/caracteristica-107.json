@@ -1,0 +1,10 @@
+{
+    "id": 107,
+    "nome": "Labareda Protetora",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Luz",
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do 1° nível, você pode interpor luz divina entre você e uma criatura atacante. Quando você for atacado por uma criatura a até 9 metros de você que você pode ver, você pode usar sua reação para impor desvantagem na jogada de ataque, causando labaredas de luz na frente do atacante antes dele atingir ou errar. Um atacante que não puder ser cegado é imune a essa característica.\nVocê pode usar essa característica um número de vezes igual ao seu modificador de Sabedoria (mínimo uma vez). Você recupera todos os usos gastos após terminar um descanso longo."
+}

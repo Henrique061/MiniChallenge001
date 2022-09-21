@@ -1,0 +1,10 @@
+{
+    "id": 71,
+    "nome": "Benção do Obscuro",
+    "classe": "Bruxo",
+    "subclasse": "O Corruptor",
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do 1° nível, quando você reduzir uma criatura hostil a 0 pontos de vida, você ganha uma quantidade de pontos de vida temporários igual ao seu modificador de Carisma + seu nível de bruxo (mínimo 1)."
+}

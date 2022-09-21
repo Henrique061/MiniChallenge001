@@ -1,0 +1,11 @@
+{
+    "id": 289,
+    "nome": "Aura de Proteção",
+    "classe": "Paladino",
+    "subclasse": null,
+    "nivel": [
+        6,
+        18
+    ],
+    "descricao": "A partir do 6° nível, sempre que você ou uma criatura amigável a até 3 metros de você tiver que fazer um teste de resistência, aquela criatura ganha um bônus no seu teste de proteção igual a seu modificador de Carisma (com um bônus mínimo de +1). Você deve estar consciente para garantir esse bônus.\nNo 18° nível, o alcance dessa aura aumenta para 9 metros."
+}

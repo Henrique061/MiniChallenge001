@@ -1,0 +1,10 @@
+{
+    "id": 193,
+    "nome": "Esquiva Sobrenatural",
+    "classe": "Ladino",
+    "subclasse": null,
+    "nivel": [
+        5
+    ],
+    "descricao": "A partir do 5° nível, quando um inimigo que você possa ver o acerta com um ataque, você pode usar sua reação para reduzir pela metade o dano sofrido."
+}

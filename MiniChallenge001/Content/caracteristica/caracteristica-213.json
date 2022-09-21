@@ -1,0 +1,10 @@
+{
+    "id": 213,
+    "nome": "Trapaceiro Versátil",
+    "classe": "Ladino",
+    "subclasse": "Trapaceiro Arcano",
+    "nivel": [
+        13
+    ],
+    "descricao": "No 13° nível, você ganha a habilidade de distrair alvos com suas mãos mágicas. Com uma ação bônus, no seu turno, você pode designar uma criatura a até 1,5 metro da mão espectral criada por essa magia. Fazer isso, lhe concede vantagem nas jogadas de ataque contra essa criatura até o final do turno."
+}

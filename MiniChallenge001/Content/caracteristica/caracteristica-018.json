@@ -1,0 +1,10 @@
+{
+    "id": 18,
+    "nome": "Conjuração",
+    "classe": "Paladino",
+    "subclasse": null,
+    "nivel": [
+        2
+    ],
+    "descricao": "Você pode conjurar magias da sua lista de magias e truques."
+}

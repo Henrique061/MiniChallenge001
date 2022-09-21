@@ -1,0 +1,10 @@
+{
+    "id": 99,
+    "nome": "Proficiência Adicional",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Guerra",
+    "nivel": [
+        1
+    ],
+    "descricao": "No 1° nível, você adquire proficiência em armas marciais e em armaduras pesadas."
+}

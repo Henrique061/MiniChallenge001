@@ -1,0 +1,10 @@
+{
+    "id": 51,
+    "nome": "Proficiência Adicional",
+    "classe": "Bardo",
+    "subclasse": "Colégio do Conhecimento",
+    "nivel": [
+        3
+    ],
+    "descricao": "Quando você se junta ao Colégio do Conhecimento no 3° nível, você ganha proficiência em três perícias, à sua escolha."
+}

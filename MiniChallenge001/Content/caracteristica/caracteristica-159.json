@@ -1,0 +1,10 @@
+{
+    "id": 159,
+    "nome": "Surto de Magia Selvagem",
+    "classe": "Feiticeiro",
+    "subclasse": "Magia Selvagem",
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do momento que você escolhe essa origem, no 1° nível, sua conjuração pode liberar surtos de magia selvagem. Imediatamente após você conjurar uma magia de feiticeiro de 1° nível ou superior, o Mestre pode solicitar que você role um d20. Se você rolar um 1, role na tabela Surto de Magia Selvagem para criar um efeito mágico aleatório. Um surto só pode ocorrer uma vez por turno. Se o efeito de um surto for uma magia, ela é muito selvagem para ser afetada por Metamagia. Se ela normalmente exige concentração, nesse caso não será necessário; a magia permanece por sua duração total."
+}

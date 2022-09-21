@@ -1,0 +1,10 @@
+{
+    "id": 230,
+    "nome": "Conjuração Menor",
+    "classe": "Mago",
+    "subclasse": "Escola de Conjuração",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, quando você escolhe essa escola, você pode usar sua ação para conjurar até um objeto inanimado em sua mão ou no chão, em um espaço desocupado que você possa ver, a até 3 metros de você. Esse objeto não pode ter mais de 90 centímetros de largura nem pesar mais de 5 quilos e sua forma deve ser de um objeto não-mágico que você tenha visto. O objeto é visivelmente mágico, emanando penumbra a 1,5 metro.\nO objeto desaparece depois de 1 hora, quando você usa essa característica novamente ou se ele sofrer qualquer dano."
+}

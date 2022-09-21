@@ -1,0 +1,10 @@
+{
+    "id": 157,
+    "nome": "Asas de Dragão",
+    "classe": "Feiticeiro",
+    "subclasse": "Linhagem Dracônica",
+    "nivel": [
+        14
+    ],
+    "descricao": "No 14° nível, você adquire a habilidade de brotar um par de asas de dragão das suas costas, ganhando deslocamento de voo igual ao seu deslocamento atual. Você pode criar essas asas com uma ação bônus, no seu turno. Elas duram até que você as dissipe, com uma ação bônus no seu turno.\nVocê não pode manifestar suas asas quando estiver vestindo uma armadura, a não ser que a armadura seja feita para acomodá-las, e roupas que não forem feitas para se acomodar às suas asas devem ser destruídas quando você manifestá-las."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 189,
+    "nome": "Ataque Furtivo",
+    "classe": "Ladino",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do 1° nível, você sabe como atacar sutilmente e explorar a distração de seus inimigos. Uma vez por turno, você pode adicionar 1d6 nas jogadas de dano contra qualquer criatura que acertar, desde que tenha vantagem nas jogadas de ataque. O ataque deve ser com uma arma de acuidade ou à distância.\nVocê não precisa ter vantagem nas jogadas de ataque se outro inimigo do seu alvo estiver a 1,5 metro de distância dele, desde que este inimigo não esteja incapacitado e você não tenha desvantagem nas jogadas de ataque.\nA quantidade de dano extra aumenta conforme você ganha níveis nessa classe."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 308,
+    "nome": "Vingador Implacável",
+    "classe": "Paladino",
+    "subclasse": "Juramento de Vingança",
+    "nivel": [
+        7
+    ],
+    "descricao": "No 7° nível, seu foco sobrenatural ajuda você a impedir a fuga de um inimigo. Quando você atinge uma criatura com um ataque de oportunidade, você pode se mover até metade do seu deslocamento, imediatamente depois do ataque e como parte da mesma reação. Esse movimento não provoca ataques de oportunidade."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 191,
+    "nome": "Ação Ardilosa",
+    "classe": "Ladino",
+    "subclasse": null,
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, seu pensamento rápido e agilidade faz você se mover e agir rapidamente. Você pode usar uma ação bônus durante cada um de seus turnos em combate. Esta ação pode ser usada somente para Disparada, Desengajar ou Esconder."
+}

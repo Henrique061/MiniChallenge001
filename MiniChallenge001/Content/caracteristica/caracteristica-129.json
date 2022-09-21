@@ -1,0 +1,10 @@
+{
+    "id": 129,
+    "nome": "Canalizar Divindade: Preservar a Vida",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Vida",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, você pode usar seu Canalizar Divindade para curar os feridos.\nComo uma ação, você usa seu símbolo sagrado para invocar energia que pode recuperar um total de 5 vezes seu nível de clérigo em pontos de vida. Você escolhe quaisquer criaturas a até 9 metros de você e divide esses pontos entre elas. Essa característica só pode curar as criaturas a até metade de seu máximo de pontos de vida. Você não pode usar essa característica em um morto-vivo ou constructo."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 220,
+    "nome": "Proteção Arcana",
+    "classe": "Mago",
+    "subclasse": "Escola de Abjuração",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, você pode tecer a magia a sua volta para proteção. Quando você conjura uma magia de abjuração de 1° nível ou superior, você pode, simultaneamente, usar uma vertente do poder da magia para criar uma proteção mágica em si mesmo, que dura até você terminar um descanso longo. A proteção tem pontos de vida iguais ao dobro do seu nível de mago + seu modificador de Inteligência. Sempre que você sofrer dano, a proteção sofrerá o dano no lugar. Se o dano reduzir a proteção a 0 pontos de vida, você sofre qualquer dano remanescente.\nQuando a proteção estiver com 0 pontos de vida, ela não poderá mais absorver dano, mas a mágica permanece. Toda vez que você conjurar uma magia de abjuração de 1° nível ou superior, a proteção recupera um número de pontos de vida igual ao dobro do nível da magia.\nUma vez que você tenha criado a proteção, você não pode criá-la novamente até terminar um descanso longo."
+}

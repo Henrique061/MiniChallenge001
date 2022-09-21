@@ -1,0 +1,10 @@
+{
+    "id": 210,
+    "nome": "Conjuração",
+    "classe": "Ladino",
+    "subclasse": "Trapaceiro Arcano",
+    "nivel": [
+        3
+    ],
+    "descricao": "Quando você alcançar o 3° nível, você adquire a habilidade de conjurar magias da lista de magias do Mago."
+}

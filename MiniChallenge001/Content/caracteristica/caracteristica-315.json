@@ -1,0 +1,10 @@
+{
+    "id": 315,
+    "nome": "Consciência Primitiva",
+    "classe": "Patrulheiro",
+    "subclasse": null,
+    "nivel": [
+        3
+    ],
+    "descricao": "A partir do 3° nível, sua maestria do conhecimento de patrulheiro permite que você estabeleça um poderoso elo com bestas e com a terra ao seu redor.\nVocê possui uma habilidade inata de se comunicar com bestas e elas consideram você como um espírito semelhante. Através de sons e gestos, você pode comunicar ideias simples a bestas como uma ação e pode compreender seu ânimo e intenção básicos. Você aprende o estado emocional dela, suas necessidades imediatas (como comida e abrigo) e ações que você pode tomar (se aplicável) para persuadi-la a não atacar.\nVocê não pode usar essa habilidade contra uma criatura que você tenha atacado nos últimos 10 minutos.\nAlém disso, você pode sintonizar seus sentidos para determinar se algum dos seus inimigos favoritos está espreitando nas redondezas. Ao passar 1 minuto ininterrupto em concentração (como se estivesse se concentrando em uma magia), você pode sentir se algum dos seus inimigos favoritos está presente a até 8 quilometros de você. Essa característica revela qual dos seus inimigos favoritos está presente, a quantidade deles e a direção e distância aproximadas dessas criaturas (em quilometros) de você.\nSe houverem múltiplos grupos de seus inimigos favoritos no alcance, você descobre essas informações de cada grupo."
+}

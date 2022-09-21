@@ -1,0 +1,10 @@
+{
+    "id": 65,
+    "nome": "Lista de Magia Expandida",
+    "classe": "Bruxo",
+    "subclasse": "A Arquifada",
+    "nivel": [
+        1
+    ],
+    "descricao": "A Arquifada permite que você escolha magias de uma lista expandida quando você for aprender magias de bruxo. As seguintes magias são adicionadas a sua lista de magias de bruxo:\nNível 1 de magia -> Fogo das Fadas, Sono.\nNível 2 de magia -> Acalmar Emoções, Força Fantasmagórica.\nNível 3 de magia -> Piscar, Ampliar Plantas.\nNível 4 de magia -> Dominar Besta, Invisibilidade Maior.\nNível 5 de magia -> Dominar Pessoa, Similaridade."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 98,
+    "nome": "Magias do Domínio da Guerra",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Guerra",
+    "nivel": [
+        1
+    ],
+    "descricao": "Magias de Domínio desta subclasse:\nNível 1 de Clérigo -> Auxílio Divino, Escudo da Fé.\nNível 3 de Clérigo -> Arma Mágica, Arma Espiritual.\nNível 5 de Clérigo -> Manto do Cruzado, Espíritos Guardiões.\nNível 7 de Clérigo -> Movimentação Livre, Pele de Pedra.\nNível 9 de Clérigo -> Coluna de Chamas, Imobilizar Monstro."
+}

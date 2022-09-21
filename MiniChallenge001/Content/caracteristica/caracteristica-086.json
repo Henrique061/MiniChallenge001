@@ -1,0 +1,10 @@
+{
+    "id": 86,
+    "nome": "Magias do Domínio do Conhecimento",
+    "classe": "Clérigo",
+    "subclasse": "Domínio do Conhecimento",
+    "nivel": [
+        1
+    ],
+    "descricao": "Magias de Domínio desta subclasse:\nNível 1 de Clérigo -> Comando, Identificação.\nNível 3 de Clérigo -> Augúrio, Sugestão.\nNível 5 de Clérigo -> Dificultar Detecção, Falar com os Mortos.\nNível 7 de Clérigo -> Olho Arcano, Confusão.\nNível 9 de Clérigo -> Conhecimento Lendário, Vidência."
+}

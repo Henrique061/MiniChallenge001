@@ -1,0 +1,10 @@
+{
+    "id": 171,
+    "nome": "Crítico Aprimorado",
+    "classe": "Guerreiro",
+    "subclasse": "Campeão",
+    "nivel": [
+        3
+    ],
+    "descricao": "A partir do 3° nível, seus ataques com armas adquirem uma margem de acerto crítico de 19 a 20 nas jogadas de ataque."
+}

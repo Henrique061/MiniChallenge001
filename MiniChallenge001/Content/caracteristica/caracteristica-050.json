@@ -1,0 +1,10 @@
+{
+    "id": 50,
+    "nome": "Inspiração Superior",
+    "classe": "Bardo",
+    "subclasse": null,
+    "nivel": [
+        20
+    ],
+    "descricao": "No 20° nível, quando você rolar iniciativa e não tiver nenhum uso restante de Inspiração de Bardo, você recupera um uso."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 76,
+    "nome": "Despertar a Mente",
+    "classe": "Bruxo",
+    "subclasse": "O Grande Antigo",
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do 1° nível, seu conhecimento alienígena concede a você a habilidade de tocar a mente de outras criaturas. Você pode se comunicar telepaticamente com qualquer criatura que você possa ver a até 18 metros de você. Você não precisa partilhar um idioma com a criatura para compreender suas expressões telepáticas, mas a criatura deve ser capaz de compreender pelo menos um idioma."
+}

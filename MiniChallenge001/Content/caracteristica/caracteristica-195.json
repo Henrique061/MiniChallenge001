@@ -1,0 +1,10 @@
+{
+    "id": 195,
+    "nome": "Talento Confiável",
+    "classe": "Ladino",
+    "subclasse": null,
+    "nivel": [
+        11
+    ],
+    "descricao": "No 11° nível, você refinou suas perícias beirando à perfeição. Toda vez que você fizer um teste de habilidade no qual possa adicionar seu bônus de proficiência, você trata um resultado no d20 de 9 ou menor como um 10."
+}

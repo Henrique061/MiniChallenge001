@@ -1,0 +1,10 @@
+{
+    "id": 68,
+    "nome": "Defesa Sedutora",
+    "classe": "Bruxo",
+    "subclasse": "A Arquifada",
+    "nivel": [
+        10
+    ],
+    "descricao": "A partir do 10° nível, seu patrono ensina você como voltar as magias de efeito mental dos seus inimigos contra eles. Você não pode ser enfeitiçado e, quando outra criatura tenta enfeitiçá-lo, você pode usar sua reação para tentar reverter o encanto de volta aquela criatura. A criatura deve ser bem sucedida num teste de resistência de Sabedoria contra a CD da sua magia de bruxo ou ficara enfeitiçado por 1 minuto ou até a criatura sofrer dano."
+}

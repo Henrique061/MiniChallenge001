@@ -1,0 +1,10 @@
+{
+    "id": 305,
+    "nome": "Dogmas de Vingança",
+    "classe": "Paladino",
+    "subclasse": "Juramento de Vingança",
+    "nivel": [
+        3
+    ],
+    "descricao": "Os dogmas do Juramento de Vingança variam de paladino para paladino, mas todos os dogmas giram em torno de punir malfeitores a qualquer custo. Paladinos que defendem esses dogmas estão dispostos a sacrificar, até mesmo sua própria integridade para fazer justiça sobre aqueles que praticaram o mal, de modo que, muitas vezes, os paladinos são neutros ou leais e neutros em alinhamento. Os princípios fundamentais dos dogmas são brutalmente simples.\n-> Combater o Mal Maior: Entre escolher lutar contra meus inimigos jurados ou combater um mal menor. Eu escolho o mal maior.\n-> Sem Misericórdia para os Malignos: Inimigos comuns podem ter minha misericórdia, mas meus inimigos jurados não.\n-> A Todo Custo: Meus escrúpulos não podem ficar no caminho do extermínio dos meus inimigos.\n-> Restituição: Se meus inimigos causaram ruina no mundo, é porque eu falhei em detê-los. Devo ajudar aqueles prejudicados pelos delitos."
+}

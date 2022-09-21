@@ -1,0 +1,10 @@
+{
+    "id": 227,
+    "nome": "O Terceiro Olho",
+    "classe": "Mago",
+    "subclasse": "Escola de Adivinhação",
+    "nivel": [
+        10
+    ],
+    "descricao": "A partir do 10° nível, você pode usar sua ação para aumentar seus poderes de percepção. Quando o fizer, escolha um dos benefícios a seguir, que dura até você ficar incapacitado ou realizar um descanso curto ou longo. Você não pode usar essa característica novamente até ter terminado um descanso longo.\n-> Visão no Escuro: Você adquire visão no escuro com alcance de 18 metros, como descrito no capítulo 8.\n-> Visão Etérea: Você pode ver no Plano Etéreo com alcance de 18 metros.\n-> Compreensão Maior: Você pode ler qualquer idioma.\n-> Ver Invisibilidade: Você pode ver criaturas e objetos invisíveis a até 3 metros de você aos quais você tenha linha de visão."
+}

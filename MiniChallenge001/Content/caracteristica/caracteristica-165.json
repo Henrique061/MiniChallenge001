@@ -1,0 +1,10 @@
+{
+    "id": 165,
+    "nome": "Estilo de Luta",
+    "classe": "Guerreiro",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Você adota um estilo de combate particular que será sua especialidade. Escolha uma das opções a seguir. Você não pode escolher o mesmo Estilo de Combate mais de uma vez, mesmo se puder escolher de novo.\n\nARQEUARIA\nVocê ganha +2 de bônus nas jogadas de ataque realizadas com uma arma de ataque à distância.\n\nCOMBATE COM ARMAS GRANDES\nQuando você rolar um 1 ou um 2 num dado de dano de um ataque com arma corpo-a-corpo que você esteja empunhando com duas mãos, você pode rolar o dado novamente e usar a nova rolagem, mesmo que resulte em 1 ou 2. A arma deve ter a propriedade duas mãos ou versátil para ganhar esse benefício.\n\nCOMBATE COM DUAS ARMAS\nQuando você estiver engajado em uma luta com duas armas, você pode adicionar o seu modificador de habilidade de dano na jogada de dano de seu segundo ataque.\n\nDEFESA\nEnquanto estiver usando armadura, você ganha +1 de bônus em sua CA.\n\nDUELISMO\nQuando você empunhar uma arma de ataque corpo-a- corpo em uma mão e nenhuma outra arma, você ganha +2 de bônus nas jogadas de dano com essa arma.\n\nPROTEÇÃO\nQuando uma criatura que você possa ver atacar um alvo que esteja a até 1,5 metro de você, você pode usar sua reação para impor desvantagem na jogada de ataque da criatura. Você deve estar empunhando um escudo."
+}

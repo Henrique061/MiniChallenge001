@@ -1,0 +1,10 @@
+{
+    "id": 78,
+    "nome": "Escudo de Pensamentos",
+    "classe": "Bruxo",
+    "subclasse": "O Grande Antigo",
+    "nivel": [
+        10
+    ],
+    "descricao": "A partir do 10° nível, seus pensamentos não podem ser lidos através de telepatia ou outros meios, a não ser que você permita. Você também adquire resistência a dano psíquico e, toda vez que uma criatura causar dano psíquico a você, essa criatura sofre a mesma quantidade de dano que você sofreu."
+}

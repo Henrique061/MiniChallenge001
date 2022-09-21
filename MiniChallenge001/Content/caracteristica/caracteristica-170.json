@@ -1,0 +1,12 @@
+{
+    "id": 170,
+    "nome": "Indomável",
+    "classe": "Guerreiro",
+    "subclasse": null,
+    "nivel": [
+        9,
+        13,
+        17
+    ],
+    "descricao": "A partir do 9° nível, você pode jogar de novo um teste de resistência que falhou. Se o fizer, você deve usar o novo valor e não pode usar essa característica de novo antes de terminar um descanso longo.\nVocê pode usar esta característica duas vezes entre descansos longos quando chegar no 13° nível e três vezes entre descansos longos quando chegar no 17° nível."
+}

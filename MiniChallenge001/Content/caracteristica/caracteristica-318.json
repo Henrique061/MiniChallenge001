@@ -1,0 +1,10 @@
+{
+    "id": 318,
+    "nome": "Mimetismo",
+    "classe": "Patrulheiro",
+    "subclasse": null,
+    "nivel": [
+        10
+    ],
+    "descricao": "A partir do 10° nível, você pode permanecer perfeitamente imóvel por longos períodos de tempo para preparar uma emboscada.\nQuando você tentar se esconder no seu turno, você pode optar por não se mover nesse turno. Se você evitar se mover, criaturas que tentarem detectar você sofrem -10 de penalidade em testes de Sabedoria (Percepção) até o começo do seu próximo turno. Você perde esse benefício caso se mova ou caia no chão, voluntariamente ou por um efeito externo. Você ainda será automaticamente detectado caso algum efeito ou ação faça com que você não esteja mais escondido.\nSe você ainda estiver escondido no seu turno, você pode continuar imóvel e ganhar esse benefício até ser detectado."
+}

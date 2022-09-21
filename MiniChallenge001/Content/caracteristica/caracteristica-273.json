@@ -1,0 +1,10 @@
+{
+    "id": 273,
+    "nome": "Integridade Corporal",
+    "classe": "Monge",
+    "subclasse": "Caminho da Mão Aberta",
+    "nivel": [
+        6
+    ],
+    "descricao": "No 6° nível, você ganha a habilidade de se curar. Com uma ação, você recupera uma quantidade de pontos de vida igual a três vezes seu nível de monge. Você deve terminar um descanso longo antes de poder usar essa característica novamente."
+}

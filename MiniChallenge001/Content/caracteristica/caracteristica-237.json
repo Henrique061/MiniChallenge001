@@ -1,0 +1,10 @@
+{
+    "id": 237,
+    "nome": "Evocação Potencializada",
+    "classe": "Mago",
+    "subclasse": "Escola de Evocação",
+    "nivel": [
+        10
+    ],
+    "descricao": "A partir do 10° nível, você pode adicionar seu modificador de Inteligência no resultado das jogadas de dano de qualquer magia de evocação de mago que você conjurar. O bônus de dano se aplica a uma rolagem de dano da magia, não à múltiplas rolagens."
+}

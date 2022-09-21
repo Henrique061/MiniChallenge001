@@ -1,0 +1,10 @@
+{
+    "id": 329,
+    "nome": "Ataque Extra",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave do Caçador",
+    "nivel": [
+        5
+    ],
+    "descricao": "A partir do 5° nível, você pode atacar duas vezes, ao invés de uma, sempre que você realizar a ação de Ataque no seu turno."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 108,
+    "nome": "Canalizar Divindade: Radiação do Amanhecer",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Luz",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, você pode usar seu Canalizar Divindade para criar uma explosão de luz solar, banindo a escuridão e causando dano radiante aos inimigos.\nCom uma ação, você ergue seu símbolo sagrado e qualquer escuridão mágica num raio de 9 metros de você é dissipada. Além disso, cada criatura hostil a até 9 metros deve realizar um teste de resistência de Constituição. Uma criatura sofre dano radiante igual a 2d10 + seu nível de clérigo se falhar no teste e metade desse dano caso seja bem sucedida. Uma criatura que tenha cobertura total contra você não é afetada."
+}

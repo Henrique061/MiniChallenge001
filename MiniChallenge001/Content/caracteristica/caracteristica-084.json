@@ -1,0 +1,14 @@
+{
+    "id": 84,
+    "nome": "Destruir Mortos-Vivos",
+    "classe": "Clérigo",
+    "subclasse": null,
+    "nivel": [
+        5,
+        8,
+        11,
+        14,
+        17
+    ],
+    "descricao": "A partir do 5° nível, quando um morto-vivo falhar no teste de resistência contra a sua característica Expulsar Mortos-vivos, ele é instantaneamente destruído se o Nível de Desafio dele for menor ou igual ao valor da tabela abaixo, de acordo com seu nível de clérigo.\nNível 5 de Clérigo -> 1/2 ou menor.\nNível 8 de Clérigo -> 1 ou menor.\nNível 11 de Clérigo -> 2 ou menor.\nNível 14 de Clérigo -> 3 ou menor.\nNível 17 de Clérigo -> 4 ou menor."
+}

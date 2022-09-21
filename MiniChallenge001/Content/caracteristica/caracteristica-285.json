@@ -1,0 +1,10 @@
+{
+    "id": 285,
+    "nome": "Destruição Divina",
+    "classe": "Paladino",
+    "subclasse": null,
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, quando você atingir uma criatura com um ataque corpo-a-corpo com arma, você pode gastar um espaço de magia de qualquer classe para causar dano radiante no alvo, além do dano normal da arma. O dano extra é de 2d8 para um espaço de magia de 1° nível, mais 1d8 para cada espaço de magia acima do 1°, até o máximo de 5d8. O dano aumenta em 1d8 se o alvo for um corruptor ou um morto-vivo."
+}

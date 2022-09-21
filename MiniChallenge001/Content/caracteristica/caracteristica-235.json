@@ -1,0 +1,10 @@
+{
+    "id": 235,
+    "nome": "Esculpir Magias",
+    "classe": "Mago",
+    "subclasse": "Escola de Evocação",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, você pode criar bolsões de segurança relativa contra os efeitos de suas magias de evocação. Quando você conjurar uma magia de evocação que afeta outras criaturas que você possa ver, você pode escolher um número delas igual a 1 + o nível da magia. As criaturas escolhidas passam automaticamente em seus testes de resistência contra a magia conjurada e elas não sofrem dano se normalmente sofreriam metade em um sucesso no teste de resistência."
+}

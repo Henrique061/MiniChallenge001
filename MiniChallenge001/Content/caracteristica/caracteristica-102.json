@@ -1,0 +1,10 @@
+{
+    "id": 102,
+    "nome": "Canalizar Divindade: Bênção do Deus da Guerra",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Guerra",
+    "nivel": [
+        6
+    ],
+    "descricao": "No 6° nível, quando uma criatura a até 9 metros de você realizar uma jogada de ataque, você pode usar sua reação para conceder a criatura +10 de bônus nessa jogada, usando seu Canalizar Divindade. Você realiza essa escolha depois de ver a rolagem, mas antes do Mestre dizer se o ataque atingiu ou errou."
+}

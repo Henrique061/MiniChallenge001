@@ -1,0 +1,10 @@
+{
+    "id": 200,
+    "nome": "Proficiência Adicional",
+    "classe": "Ladino",
+    "subclasse": "Assassino",
+    "nivel": [
+        3
+    ],
+    "descricao": "Quando você escolhe esse arquétipo, no 3° nível, você ganha proficiência com kit de disfarce e kit de venenos."
+}

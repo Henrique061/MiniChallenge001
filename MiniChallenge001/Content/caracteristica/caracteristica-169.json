@@ -1,0 +1,12 @@
+{
+    "id": 169,
+    "nome": "Ataque Extra",
+    "classe": "Guerreiro",
+    "subclasse": null,
+    "nivel": [
+        5,
+        11,
+        20
+    ],
+    "descricao": "A partir do 5° nível, você pode atacar duas vezes, ao invés de uma, quando usar a ação de Ataque durante seu turno.\nO número de ataques aumenta para três quando você alcançar o 11° nível de guerreiro e para quatro quando alcançar o 20° nível de guerreiro."
+}

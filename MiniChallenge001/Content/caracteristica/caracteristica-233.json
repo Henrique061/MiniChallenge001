@@ -1,0 +1,10 @@
+{
+    "id": 233,
+    "nome": "Invocações Resistentes",
+    "classe": "Mago",
+    "subclasse": "Escola de Conjuração",
+    "nivel": [
+        14
+    ],
+    "descricao": "A partir do 14° nível, qualquer criatura que você invocar ou criar com uma magia de conjuração, terá 30 pontos de vida temporários."
+}

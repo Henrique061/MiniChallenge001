@@ -1,0 +1,10 @@
+{
+    "id": 236,
+    "nome": "Truque Potente",
+    "classe": "Mago",
+    "subclasse": "Escola de Evocação",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, seus truques de dano afetam até mesmo as criaturas que evitariam a força daquele efeito. Quando uma criatura passa em um teste de resistência de seus truques, ela sofre metade do dano (se existir), mas não sofre nenhum efeito adicional."
+}

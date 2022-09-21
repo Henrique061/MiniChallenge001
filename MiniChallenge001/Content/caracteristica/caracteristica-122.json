@@ -1,0 +1,10 @@
+{
+    "id": 122,
+    "nome": "Canalizar Divindade: Ira Destruidora",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Tempestade",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, você pode usar seu Canalizar Divindade para empunhar o poder da tormenta com ferocidade desmedida.\nQuando você rolar dano elétrico ou trovejante, você pode usar seu Canalizar Divindade para causar o máximo de dano, ao invés de rolá-lo."
+}

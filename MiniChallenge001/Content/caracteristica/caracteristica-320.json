@@ -1,0 +1,10 @@
+{
+    "id": 320,
+    "nome": "Sentidos Selvagens",
+    "classe": "Patrulheiro",
+    "subclasse": null,
+    "nivel": [
+        18
+    ],
+    "descricao": "No 18° nível, você ganha sentidos preternaturais que o ajudam a lutar contra criaturas que você não pode ver. Quando você atacar uma criatura que você não possa ver, sua incapacidade em vê-la não impõem desvantagem nas suas jogadas de ataque contra ela.\nVocê também está ciente da localização de qualquer criatura invisível a até 9 metros de você, considerando que a criatura não esteja se escondendo de você e você não esteja cego ou surdo."
+}

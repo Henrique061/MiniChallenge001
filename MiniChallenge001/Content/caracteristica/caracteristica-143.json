@@ -1,0 +1,10 @@
+{
+    "id": 143,
+    "nome": "Proteção Natural",
+    "classe": "Druida",
+    "subclasse": "Círculo da Terra",
+    "nivel": [
+        10
+    ],
+    "descricao": "Quando você atingir o 10° nível, você não pode ser enfeitiçado ou amedrontado por elementais ou fadas e você se torna imune a venenos e doenças."
+}

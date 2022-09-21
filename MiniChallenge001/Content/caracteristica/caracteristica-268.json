@@ -1,0 +1,10 @@
+{
+    "id": 268,
+    "nome": "Alma de Diamante",
+    "classe": "Monge",
+    "subclasse": null,
+    "nivel": [
+        14
+    ],
+    "descricao": "A partir do 14° nível, sua maestria do chi concede a você proficiência em todos os testes de resistência.\nAlém disso, toda vez que você realizar um teste de resistência e falha, você pode gastar 1 ponto de chi para jogar novamente e ficar com o segundo resultado."
+}

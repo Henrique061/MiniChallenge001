@@ -1,0 +1,10 @@
+{
+    "id": 251,
+    "nome": "Pedra de Transmutador",
+    "classe": "Mago",
+    "subclasse": "Escola de Transmutação",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, você pode gastar 8 horas criando uma pedra de transmutador que armazena magia de transmutação. Você pode se beneficiar da pedra ou dá-la para outra criatura. Uma criatura ganha um benefício, à sua escolha, enquanto a pedra estiver em sua posse. Quando você cria a pedra, escolha um benefício dentre as opções a seguir:\n\n-> Visão no escuro com alcance de 18 metros.\n-> Um aumento de 3 metros no deslocamento enquanto a criatura não estiver sobrecarregada.\n-> Proficiência em testes de resistência de Constituição. \n-> Resistência a dano de ácido, frio, fogo, elétrico ou trovejante (escolhido por você quando escolhe esse benefício).\n\nCada vez que você conjurar uma magia de conjuração de 1° nível ou superior, você pode mudar o efeito da sua pedra, se ela estiver em sua posse.\nSe você criar uma nova pedra de transmutador, a anterior para de funcionar."
+}

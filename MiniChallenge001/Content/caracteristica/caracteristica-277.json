@@ -1,0 +1,10 @@
+{
+    "id": 277,
+    "nome": "Passo das Sombras",
+    "classe": "Monge",
+    "subclasse": "Caminho da Sombra",
+    "nivel": [
+        6
+    ],
+    "descricao": "No 6° nível, você ganha a habilidade de entrar em uma sombra e sair em outra. Quando você estiver sob penumbra ou na escuridão, com uma ação bônus, você pode se teletransportar a até 18 metros para um espaço desocupado que você possa ver que também esteja sob penumbra ou escuridão. Você, então, terá vantagem no primeiro ataque corpo-a-corpo que você fizer antes do final do seu turno."
+}

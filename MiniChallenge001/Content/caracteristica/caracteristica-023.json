@@ -1,0 +1,10 @@
+{
+    "id": 23,
+    "nome": "Sentido de Perigo",
+    "classe": "Bárbaro",
+    "subclasse": null,
+    "nivel": [
+        2
+    ],
+    "descricao": "No 2° nível, você adquire um sentido sobrenatural de quando as coisas próximas não estão como deveriam, concedendo a você uma chance maior quando estiver evitando perigos.\nVocê possui vantagem em testes de resistência de Destreza contra efeitos que você possa ver, como armadilhas e magias. Para receber esse benefício você não pode estar cego, surdo ou incapacitado."
+}
