@@ -27,7 +27,7 @@
 		126ABAF828DB3D5200CF5A2E /* FerramentaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEC28DB3D5100CF5A2E /* FerramentaJSON.swift */; };
 		126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAED28DB3D5100CF5A2E /* BugigangaJSON.swift */; };
 		126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEE28DB3D5100CF5A2E /* ArmaduraJSON.swift */; };
-		126ABAFB28DB3D5200CF5A2E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEF28DB3D5100CF5A2E /* Item.swift */; };
+		126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEF28DB3D5100CF5A2E /* Json.swift */; };
 		3D98DE4728DA543900F6F550 /* CDFerramenta+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */; };
 		3D98DE4828DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */; };
 		3D98DE4928DA543900F6F550 /* CDAtributo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */; };
@@ -113,7 +113,7 @@
 		126ABAEC28DB3D5100CF5A2E /* FerramentaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FerramentaJSON.swift; sourceTree = "<group>"; };
 		126ABAED28DB3D5100CF5A2E /* BugigangaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugigangaJSON.swift; sourceTree = "<group>"; };
 		126ABAEE28DB3D5100CF5A2E /* ArmaduraJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmaduraJSON.swift; sourceTree = "<group>"; };
-		126ABAEF28DB3D5100CF5A2E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		126ABAEF28DB3D5100CF5A2E /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAtributo+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -193,13 +193,13 @@
 			isa = PBXGroup;
 			children = (
 				126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */,
+				126ABAEF28DB3D5100CF5A2E /* Json.swift */,
 				126ABAEE28DB3D5100CF5A2E /* ArmaduraJSON.swift */,
 				126ABAEB28DB3D5100CF5A2E /* ArmaJSON.swift */,
 				126ABAED28DB3D5100CF5A2E /* BugigangaJSON.swift */,
 				126ABAE928DB3D5100CF5A2E /* EquipamentoJSON.swift */,
 				126ABAEA28DB3D5100CF5A2E /* EquipamentoMontariaJSON.swift */,
 				126ABAEC28DB3D5100CF5A2E /* FerramentaJSON.swift */,
-				126ABAEF28DB3D5100CF5A2E /* Item.swift */,
 				126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */,
 				126ABAE628DB3D5000CF5A2E /* Moeda.swift */,
 				126ABAE828DB3D5100CF5A2E /* MontariaJSON.swift */,
@@ -497,7 +497,7 @@
 				3D98DE5128DA543900F6F550 /* CDInventario+CoreDataClass.swift in Sources */,
 				3D98DE5628DA543900F6F550 /* CDArmadura+CoreDataProperties.swift in Sources */,
 				126ABAF228DB3D5200CF5A2E /* Moeda.swift in Sources */,
-				126ABAFB28DB3D5200CF5A2E /* Item.swift in Sources */,
+				126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */,
 				3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */,
 				126ABAF828DB3D5200CF5A2E /* FerramentaJSON.swift in Sources */,
 				126ABAF528DB3D5200CF5A2E /* EquipamentoJSON.swift in Sources */,

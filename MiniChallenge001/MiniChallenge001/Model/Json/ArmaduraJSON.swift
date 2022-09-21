@@ -14,7 +14,7 @@ enum TipoArmadura: String, Codable {
     case escudo = "Escudo"
 }
 
-struct ArmaduraJSON: Item {
+struct ArmaduraJSON: Json {
     var id: Int
     var nome: String
     var tipo: TipoArmadura

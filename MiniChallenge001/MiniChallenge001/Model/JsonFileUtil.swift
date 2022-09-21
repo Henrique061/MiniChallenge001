@@ -18,9 +18,9 @@ class JsonFileUtil {
         return filesURL
     }
     
-    public static func getDataFromFiles<T:Item>(folder name: String, decoder: T.Type) -> [Item] {
+    public static func getDataFromFiles<T:Json>(folder name: String, decoder: T.Type) -> [Json] {
         let paths = getFilesURLFromFolder(folder: name)
-        var items: [Item] = []
+        var items: [Json] = []
         for path in paths {
             do {
                 let data = try Data(contentsOf: path)

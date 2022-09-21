@@ -15,7 +15,7 @@ enum CategoriaEquipamento: String, Codable {
     case none = "Sem Categoria"
 }
 
-struct EquipamentoJSON: Item {
+struct EquipamentoJSON: Json {
     var id: Int
     var nome: String
     var categoria: CategoriaEquipamento

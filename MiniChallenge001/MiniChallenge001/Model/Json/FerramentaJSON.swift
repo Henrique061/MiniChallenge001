@@ -19,7 +19,7 @@ enum TipoFerramenta: String, Codable {
     case veneno = "Kit de venenos"
 }
 
-struct FerramentaJSON: Item {
+struct FerramentaJSON: Json {
     var id: Int
     var nome: String
     var tipo: TipoFerramenta

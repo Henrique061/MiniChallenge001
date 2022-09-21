@@ -29,7 +29,7 @@ struct Dano: Codable {
     var tipo: TipoDano
 }
 
-struct ArmaJSON: Item {
+struct ArmaJSON: Json {
     var id: Int
     var nome: String
     var tipo: TipoArma

@@ -33,7 +33,7 @@ enum EscolaMagia: String, Codable {
     case transmutacao = "Transmutação"
 }
 
-struct MagiaJSON: Item {
+struct MagiaJSON: Json {
     var id: Int
     var nome: String
     var nivel: Int
