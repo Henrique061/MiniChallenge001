@@ -12,22 +12,22 @@ class JsonFileUtil {
     
     private static let STANDARD_PATH = "Content"
     
-    public static func getFilesURLFromFolder(folder path: String) -> [URL] {
-        let folderPath = "\(STANDARD_PATH)/\(path)"
+    public static func getFilesURLFromFolder(folder name: String) -> [URL] {
+        let folderPath = "\(STANDARD_PATH)/\(name)"
         guard let filesURL = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: folderPath) else { return [] }
         return filesURL
     }
     
     public static func getDataFromFiles<T:Json>(folder name: String, decoder: T.Type) -> [Json] {
-        let paths = getFilesURLFromFolder(folder: name)
+        let urls = getFilesURLFromFolder(folder: name)
         var items: [Json] = []
-        for path in paths {
+        for url in urls {
             do {
-                let data = try Data(contentsOf: path)
+                let data = try Data(contentsOf: url)
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
                 items.append(decodedData)
             } catch {
-                print("Error on path: \(path)")
+                print("Error on path: \(url)")
             }
         }
         return items
