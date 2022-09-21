@@ -1,0 +1,16 @@
+{
+    "id": 239,
+    "nome": "Pele de Árvore",
+    "nivel": 2,
+    "classes": [
+        "Druida",
+        "Patrulheiro"
+    ],
+    "escola": "Transmutação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático, Material (um pedaço de casca de carvalho)",
+    "duracao": "Concentração, até 1 hora",
+    "descricao": "Você toca uma criatura voluntária. Até o fim da magia, a pele da criatura fica rígida, similar a casca de um carvalho, e a CA do alvo não pode ser inferior a 16, independentemente do tipo de armadura que ela esteja vestindo."
+}

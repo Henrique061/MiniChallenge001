@@ -1,0 +1,16 @@
+{
+    "id": 164,
+    "nome": "Heroísmo",
+    "nivel": 1,
+    "classes": [
+        "Bardo",
+        "Paladino"
+    ],
+    "escola": "Encantamento",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático",
+    "duracao": "Concentração, até 1 minuto",
+    "descricao": "Uma criatura voluntária que você tocar é imbuída com bravura. Até a magia acabar, a criatura é imune a ser amedrontada e ganha pontos de vida temporários igual ao seu modificador de habilidade de conjuração, no início de cada turno dela. Quando a magia acabar, o alvo perde qualquer ponto de vida temporário restante dessa magia. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, você pode afetar uma criatura adicional para cada nível do espaço acima do 1°."
+}

@@ -1,0 +1,15 @@
+{
+    "id": 132,
+    "nome": "Enfraquecer Intelecto",
+    "nivel": 8,
+    "classes": [
+        "Bardo"
+    ],
+    "escola": "Encantamento",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "45 metros",
+    "componentes": "Verbal, Somático, Material (um punhado de barro, cristal,vidro ou esferas minerais)",
+    "duracao": "Instantânea",
+    "descricao": "Você ataca a mente de uma criatura que você possa ver, dentro do alcance, tentando despedaçar seu intelecto e personalidade. O alvo sofre 4d6 de dano psíquico e deve realizar um teste de resistência de Inteligência. Se falhar na resistência, os valores de Inteligência e Carisma da criatura se tornam 1. A criatura não pode conjurar magias, ativar itens mágicos, compreender idiomas ou se comunicar de qualquer forma inteligível. A criatura pode, no entanto, identificar seus amigos, segui-los e, até mesmo, protege-los. Ao final de cada 30 dias, a criatura pode repetir seu teste de resistência contra essa magia. Se ela obtiver sucesso no teste de resistência, a magia termina. Essa magia também pode ser terminada através de restauração maior, cura completa  ou desejo . ENVIAR MENSAGEM3° nível de evocação Tempo de Conjuração: 1 ação Alcance : Ilimitado Componentes : V, S, M (um pequeno e fino pedaço de fio de cobre) Duração : 1 rodada Você envia uma mensagem curta, de vinte e cinco palavras ou menos, para uma criatura que seja familiar a você. A criatura ouve a mensagem na sua mente, reconhecendo que foi enviada por você, se ela te conhecer, e pode responder da mesma maneira, imediatamente. A magia permite que criaturas com valores de Inteligência de no mínimo 1, compreendam o sentido da sua mensagem. Você pode enviar a mensagem através de qualquer distância e, até mesmo, para outro plano de existência, mas se o alvo estiver em um plano diferente do seu, existe 5 por cento de chance da mensagem não chegar."
+}

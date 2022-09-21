@@ -1,0 +1,16 @@
+{
+    "id": 225,
+    "nome": "Orbe Cromática",
+    "nivel": 1,
+    "classes": [
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "27 metros",
+    "componentes": "Verbal, Somático, Material (um diamante valendo, nomínimo, 50 po)",
+    "duracao": "Instantânea",
+    "descricao": "Você arremessa uma esfera de energia de 12 centímetros de diâmetro numa criatura que você possa ver dentro do alcance. Você escolhe ácido, frio, fogo, elétrico, veneno ou trovejante para o tipo de orbe que você cria e, então, realiza um ataque à distância com magia. Se o ataque atingir, a criatura sofre 3d8 de dano do tipo escolhido. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, o dano aumenta em 1d8 para cada nível do espaço acima do 1°."
+}

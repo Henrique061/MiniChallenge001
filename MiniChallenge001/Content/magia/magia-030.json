@@ -1,0 +1,15 @@
+{
+    "id": 30,
+    "nome": "Aura de Pureza",
+    "nivel": 4,
+    "classes": [
+        "Paladino"
+    ],
+    "escola": "Abjuração",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal (9 metros de raio)",
+    "componentes": "Verbal",
+    "duracao": "Concentração, até 10 minutos",
+    "descricao": "Energia purificante irradia de você em uma aura com 9 metros de raio. Até a magia acabar, a aura se move mantendo-se centrada em você. Todas as criaturas não-hostis na aura (incluindo você) não podem ficar doentes, tem resistência a dano de veneno e tem vantagem em testes de resistência contra efeitos que deixem ela com qualquer das condições a seguir: amedrontado, atordoado, cego, enfeitiçado, envenenado, paralisado e surdo."
+}

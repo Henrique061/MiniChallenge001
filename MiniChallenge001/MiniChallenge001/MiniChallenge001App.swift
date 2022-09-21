@@ -14,11 +14,11 @@ struct MiniChallenge001App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            ContentView()
+            
+            TesteView()
         }
         
-        // chama a func save() quando o app vai de base
         .onChange(of: scenePhase) { _ in
             persistenceController.save()
         }

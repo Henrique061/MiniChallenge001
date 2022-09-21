@@ -1,0 +1,17 @@
+{
+    "id": 161,
+    "nome": "Globos de Luz",
+    "nivel": 0,
+    "classes": [
+        "Bardo",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "36 metros",
+    "componentes": "Verbal, Somático, Material (um pouco de fósforo ouwychwood ou um inseto luminoso)",
+    "duracao": "Concentração, até 1 minuto",
+    "descricao": "Você cria até quatro luzes do tamanho de tochas dentro do alcance, fazendo-as parecerem tochas, lanternas ou esferas luminosas que flutuam no ar pela duração. Você também pode combinar as quatro luzes em uma forma luminosa, vagamente humanoide, de tamanho Médio. Qualquer que seja a forma que você escolher, cada luz produz penumbra num raio de 3 metros. Com uma ação bônus, no seu turno, você pode mover as luzes, até 18 metros, para um novo local dentro do alcance. Uma luz deve estar a, pelo menos, 6 metros de outra luz criada por essa magia e uma luz some se exceder o alcance da magia."
+}
