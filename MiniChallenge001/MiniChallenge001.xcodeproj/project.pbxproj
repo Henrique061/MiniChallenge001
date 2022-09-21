@@ -17,6 +17,17 @@
 		126AAE1628DAC0A900CF5A2E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126AAE1528DAC0A900CF5A2E /* TestView.swift */; };
 		126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */; };
 		126ABAE328DB38E000CF5A2E /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 126ABAE228DB38E000CF5A2E /* Content */; };
+		126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */; };
+		126ABAF228DB3D5200CF5A2E /* Moeda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE628DB3D5000CF5A2E /* Moeda.swift */; };
+		126ABAF328DB3D5200CF5A2E /* VeiculoAquaticoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE728DB3D5100CF5A2E /* VeiculoAquaticoJSON.swift */; };
+		126ABAF428DB3D5200CF5A2E /* MontariaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE828DB3D5100CF5A2E /* MontariaJSON.swift */; };
+		126ABAF528DB3D5200CF5A2E /* EquipamentoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE928DB3D5100CF5A2E /* EquipamentoJSON.swift */; };
+		126ABAF628DB3D5200CF5A2E /* EquipamentoMontariaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEA28DB3D5100CF5A2E /* EquipamentoMontariaJSON.swift */; };
+		126ABAF728DB3D5200CF5A2E /* ArmaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEB28DB3D5100CF5A2E /* ArmaJSON.swift */; };
+		126ABAF828DB3D5200CF5A2E /* FerramentaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEC28DB3D5100CF5A2E /* FerramentaJSON.swift */; };
+		126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAED28DB3D5100CF5A2E /* BugigangaJSON.swift */; };
+		126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEE28DB3D5100CF5A2E /* ArmaduraJSON.swift */; };
+		126ABAFB28DB3D5200CF5A2E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEF28DB3D5100CF5A2E /* Item.swift */; };
 		3D98DE4728DA543900F6F550 /* CDFerramenta+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */; };
 		3D98DE4828DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */; };
 		3D98DE4928DA543900F6F550 /* CDAtributo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */; };
@@ -92,6 +103,17 @@
 		126AAE1528DAC0A900CF5A2E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonFileUtil.swift; path = MiniChallenge001/Model/JsonFileUtil.swift; sourceTree = SOURCE_ROOT; };
 		126ABAE228DB38E000CF5A2E /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Content; sourceTree = SOURCE_ROOT; };
+		126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagiaJSON.swift; sourceTree = "<group>"; };
+		126ABAE628DB3D5000CF5A2E /* Moeda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moeda.swift; sourceTree = "<group>"; };
+		126ABAE728DB3D5100CF5A2E /* VeiculoAquaticoJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeiculoAquaticoJSON.swift; sourceTree = "<group>"; };
+		126ABAE828DB3D5100CF5A2E /* MontariaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MontariaJSON.swift; sourceTree = "<group>"; };
+		126ABAE928DB3D5100CF5A2E /* EquipamentoJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipamentoJSON.swift; sourceTree = "<group>"; };
+		126ABAEA28DB3D5100CF5A2E /* EquipamentoMontariaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipamentoMontariaJSON.swift; sourceTree = "<group>"; };
+		126ABAEB28DB3D5100CF5A2E /* ArmaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmaJSON.swift; sourceTree = "<group>"; };
+		126ABAEC28DB3D5100CF5A2E /* FerramentaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FerramentaJSON.swift; sourceTree = "<group>"; };
+		126ABAED28DB3D5100CF5A2E /* BugigangaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugigangaJSON.swift; sourceTree = "<group>"; };
+		126ABAEE28DB3D5100CF5A2E /* ArmaduraJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmaduraJSON.swift; sourceTree = "<group>"; };
+		126ABAEF28DB3D5100CF5A2E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAtributo+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -171,6 +193,17 @@
 			isa = PBXGroup;
 			children = (
 				126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */,
+				126ABAEE28DB3D5100CF5A2E /* ArmaduraJSON.swift */,
+				126ABAEB28DB3D5100CF5A2E /* ArmaJSON.swift */,
+				126ABAED28DB3D5100CF5A2E /* BugigangaJSON.swift */,
+				126ABAE928DB3D5100CF5A2E /* EquipamentoJSON.swift */,
+				126ABAEA28DB3D5100CF5A2E /* EquipamentoMontariaJSON.swift */,
+				126ABAEC28DB3D5100CF5A2E /* FerramentaJSON.swift */,
+				126ABAEF28DB3D5100CF5A2E /* Item.swift */,
+				126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */,
+				126ABAE628DB3D5000CF5A2E /* Moeda.swift */,
+				126ABAE828DB3D5100CF5A2E /* MontariaJSON.swift */,
+				126ABAE728DB3D5100CF5A2E /* VeiculoAquaticoJSON.swift */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -450,8 +483,10 @@
 				3D98DE4B28DA543900F6F550 /* CDCondicao+CoreDataClass.swift in Sources */,
 				09B5569428DA6156001466B0 /* Inventario.swift in Sources */,
 				3D98DE6628DA543900F6F550 /* CDPericia+CoreDataProperties.swift in Sources */,
+				126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */,
 				3D98DE6A28DA543900F6F550 /* CDMontaria+CoreDataProperties.swift in Sources */,
 				3D98DE6528DA543900F6F550 /* CDPericia+CoreDataClass.swift in Sources */,
+				126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */,
 				09B5569628DA6156001466B0 /* Identidade.swift in Sources */,
 				3D98DE5F28DA543900F6F550 /* CDPersonagem+CoreDataClass.swift in Sources */,
 				3DE3796F28D2673E005812C7 /* ViewModel.swift in Sources */,
@@ -461,14 +496,20 @@
 				3D98DE5728DA543900F6F550 /* CDItemMontaria+CoreDataClass.swift in Sources */,
 				3D98DE5128DA543900F6F550 /* CDInventario+CoreDataClass.swift in Sources */,
 				3D98DE5628DA543900F6F550 /* CDArmadura+CoreDataProperties.swift in Sources */,
+				126ABAF228DB3D5200CF5A2E /* Moeda.swift in Sources */,
+				126ABAFB28DB3D5200CF5A2E /* Item.swift in Sources */,
 				3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */,
+				126ABAF828DB3D5200CF5A2E /* FerramentaJSON.swift in Sources */,
+				126ABAF528DB3D5200CF5A2E /* EquipamentoJSON.swift in Sources */,
 				3D98DE4F28DA543900F6F550 /* CDBugiganga+CoreDataClass.swift in Sources */,
 				3D98DE6128DA543900F6F550 /* CDStatus+CoreDataClass.swift in Sources */,
 				3D98DE5428DA543900F6F550 /* CDEquipamento+CoreDataProperties.swift in Sources */,
 				3D98DE4C28DA543900F6F550 /* CDCondicao+CoreDataProperties.swift in Sources */,
 				09B5569728DA6156001466B0 /* ContentView.swift in Sources */,
+				126ABAF328DB3D5200CF5A2E /* VeiculoAquaticoJSON.swift in Sources */,
 				3D98DE4E28DA543900F6F550 /* CDCaracteristica+CoreDataProperties.swift in Sources */,
 				3D98DE5B28DA543900F6F550 /* CDArma+CoreDataClass.swift in Sources */,
+				126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */,
 				126AAE1628DAC0A900CF5A2E /* TestView.swift in Sources */,
 				3D9BED2528CFB76200CA1821 /* MiniChallenge001.xcdatamodeld in Sources */,
 				3D98DE5A28DA543900F6F550 /* CDTesouro+CoreDataProperties.swift in Sources */,
@@ -482,10 +523,13 @@
 				3D98DE5228DA543900F6F550 /* CDInventario+CoreDataProperties.swift in Sources */,
 				3D98DE4828DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift in Sources */,
 				3D98DE5E28DA543900F6F550 /* CDMagia+CoreDataProperties.swift in Sources */,
+				126ABAF628DB3D5200CF5A2E /* EquipamentoMontariaJSON.swift in Sources */,
 				3D98DE5828DA543900F6F550 /* CDItemMontaria+CoreDataProperties.swift in Sources */,
 				3D98DE5028DA543900F6F550 /* CDBugiganga+CoreDataProperties.swift in Sources */,
+				126ABAF728DB3D5200CF5A2E /* ArmaJSON.swift in Sources */,
 				3D98DE6828DA543900F6F550 /* CDResistenciaMorte+CoreDataProperties.swift in Sources */,
 				09B5569328DA6156001466B0 /* SheetTabView.swift in Sources */,
+				126ABAF428DB3D5200CF5A2E /* MontariaJSON.swift in Sources */,
 				3D98DE6228DA543900F6F550 /* CDStatus+CoreDataProperties.swift in Sources */,
 				3D98DE4A28DA543900F6F550 /* CDAtributo+CoreDataProperties.swift in Sources */,
 				3D98DE5528DA543900F6F550 /* CDArmadura+CoreDataClass.swift in Sources */,
