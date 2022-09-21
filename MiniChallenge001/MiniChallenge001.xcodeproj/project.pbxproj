@@ -28,7 +28,9 @@
 		126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAED28DB3D5100CF5A2E /* BugigangaJSON.swift */; };
 		126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEE28DB3D5100CF5A2E /* ArmaduraJSON.swift */; };
 		126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEF28DB3D5100CF5A2E /* Json.swift */; };
-		3D60C63428DB7B1F0051676A /* Builder_Personagem in Resources */ = {isa = PBXBuildFile; fileRef = 3D60C63328DB7B1F0051676A /* Builder_Personagem */; };
+		3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60C63928DB80FE0051676A /* PersonagemBuilder.swift */; };
+		3D60C63C28DB80FE0051676A /* Classe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60C63A28DB80FE0051676A /* Classe.swift */; };
+		3D60C63E28DB958C0051676A /* Raca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60C63D28DB958C0051676A /* Raca.swift */; };
 		3D98DE4728DA543900F6F550 /* CDFerramenta+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */; };
 		3D98DE4828DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */; };
 		3D98DE4928DA543900F6F550 /* CDAtributo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */; };
@@ -115,7 +117,9 @@
 		126ABAED28DB3D5100CF5A2E /* BugigangaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugigangaJSON.swift; sourceTree = "<group>"; };
 		126ABAEE28DB3D5100CF5A2E /* ArmaduraJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmaduraJSON.swift; sourceTree = "<group>"; };
 		126ABAEF28DB3D5100CF5A2E /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
-		3D60C63328DB7B1F0051676A /* Builder_Personagem */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Builder_Personagem; sourceTree = "<group>"; };
+		3D60C63928DB80FE0051676A /* PersonagemBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonagemBuilder.swift; sourceTree = "<group>"; };
+		3D60C63A28DB80FE0051676A /* Classe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classe.swift; sourceTree = "<group>"; };
+		3D60C63D28DB958C0051676A /* Raca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raca.swift; sourceTree = "<group>"; };
 		3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAtributo+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -210,6 +214,16 @@
 			path = Json;
 			sourceTree = "<group>";
 		};
+		3D60C63828DB80FE0051676A /* Builder_Personagem */ = {
+			isa = PBXGroup;
+			children = (
+				3D60C63928DB80FE0051676A /* PersonagemBuilder.swift */,
+				3D60C63A28DB80FE0051676A /* Classe.swift */,
+				3D60C63D28DB958C0051676A /* Raca.swift */,
+			);
+			path = Builder_Personagem;
+			sourceTree = "<group>";
+		};
 		3D9BED0C28CFB76000CA1821 = {
 			isa = PBXGroup;
 			children = (
@@ -281,7 +295,7 @@
 		3DE3796B28D26400005812C7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3D60C63328DB7B1F0051676A /* Builder_Personagem */,
+				3D60C63828DB80FE0051676A /* Builder_Personagem */,
 				3DE3796E28D2673E005812C7 /* ViewModel.swift */,
 			);
 			path = ViewModel;
@@ -452,7 +466,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				126ABAE328DB38E000CF5A2E /* Content in Resources */,
-				3D60C63428DB7B1F0051676A /* Builder_Personagem in Resources */,
 				3D9BED2028CFB76200CA1821 /* Preview Assets.xcassets in Resources */,
 				3D9BED1D28CFB76200CA1821 /* Assets.xcassets in Resources */,
 			);
@@ -492,6 +505,7 @@
 				3D98DE6528DA543900F6F550 /* CDPericia+CoreDataClass.swift in Sources */,
 				126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */,
 				09B5569628DA6156001466B0 /* Identidade.swift in Sources */,
+				3D60C63E28DB958C0051676A /* Raca.swift in Sources */,
 				3D98DE5F28DA543900F6F550 /* CDPersonagem+CoreDataClass.swift in Sources */,
 				3DE3796F28D2673E005812C7 /* ViewModel.swift in Sources */,
 				3D98DE6028DA543900F6F550 /* CDPersonagem+CoreDataProperties.swift in Sources */,
@@ -513,6 +527,7 @@
 				126ABAF328DB3D5200CF5A2E /* VeiculoAquaticoJSON.swift in Sources */,
 				3D98DE4E28DA543900F6F550 /* CDCaracteristica+CoreDataProperties.swift in Sources */,
 				3D98DE5B28DA543900F6F550 /* CDArma+CoreDataClass.swift in Sources */,
+				3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */,
 				126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */,
 				126AAE1628DAC0A900CF5A2E /* TestView.swift in Sources */,
 				3D9BED2528CFB76200CA1821 /* MiniChallenge001.xcdatamodeld in Sources */,
@@ -534,6 +549,7 @@
 				3D98DE6828DA543900F6F550 /* CDResistenciaMorte+CoreDataProperties.swift in Sources */,
 				09B5569328DA6156001466B0 /* SheetTabView.swift in Sources */,
 				126ABAF428DB3D5200CF5A2E /* MontariaJSON.swift in Sources */,
+				3D60C63C28DB80FE0051676A /* Classe.swift in Sources */,
 				3D98DE6228DA543900F6F550 /* CDStatus+CoreDataProperties.swift in Sources */,
 				3D98DE4A28DA543900F6F550 /* CDAtributo+CoreDataProperties.swift in Sources */,
 				3D98DE5528DA543900F6F550 /* CDArmadura+CoreDataClass.swift in Sources */,
