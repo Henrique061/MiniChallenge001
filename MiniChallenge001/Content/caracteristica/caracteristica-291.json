@@ -1,0 +1,10 @@
+{
+    "id": 291,
+    "nome": "Destruição Divina Aprimorada",
+    "classe": "Paladino",
+    "subclasse": null,
+    "nivel": [
+        11
+    ],
+    "descricao": "No 11° nível, você fica tão infundido com o poder da justiça que todos os seus ataques corpo-a-corpo com arma carregam poder divino neles. Sempre que você atingir uma criatura com um ataque corpo-a-corpo, a criatura sofre 1d8 de dano radiante extra. Se você também usar sua Destruição Divina em um ataque, você adiciona esse dano ao dano extra da sua Destruição Divina."
+}

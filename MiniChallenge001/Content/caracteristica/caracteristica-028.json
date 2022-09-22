@@ -1,0 +1,12 @@
+{
+    "id": 28,
+    "nome": "Crítico Brutal",
+    "classe": "Bárbaro",
+    "subclasse": null,
+    "nivel": [
+        9,
+        13,
+        17
+    ],
+    "descricao": "A partir do 9° nível, você pode rolar um dado de dano de arma adicional quando estiver determinando o dano extra de um acerto crítico com uma arma corpo-a-corpo.\nIsso aumenta para dois dados adicionais no 13° nível e três dados adicionais no 17° nível."
+}

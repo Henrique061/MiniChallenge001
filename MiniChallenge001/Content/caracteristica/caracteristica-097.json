@@ -1,0 +1,10 @@
+{
+    "id": 97,
+    "nome": "Duplicidade Aprimorada",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Enganação",
+    "nivel": [
+        17
+    ],
+    "descricao": "A partir do 17° nível, você pode criar até quatro duplicatas de você, ao invés de uma, quando usar Invocar Duplicidade. Com uma ação bônus, no seu turno, você pode mover quantas duplicadas quiser até 9 metros, até no máximo de 36 metros de distância."
+}

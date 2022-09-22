@@ -1,0 +1,10 @@
+{
+    "id": 245,
+    "nome": "Colheita Sinistra",
+    "classe": "Mago",
+    "subclasse": "Escola de Necromancia",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, você ganha a habilidade de ceifar a energia vital das criaturas que você mata com suas magias. Uma vez por turno, quando você matar uma ou mais criaturas com uma magia de 1° nível ou superior, você recupera uma quantidade de pontos de vida igual ao dobro do nível da magia ou o triplo do seu nível, se a magia pertencer a Escola de Necromancia. Você não recebe esse benefício por matar constructos ou mortos- vivos."
+}

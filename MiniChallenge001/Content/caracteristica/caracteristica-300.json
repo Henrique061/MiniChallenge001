@@ -1,0 +1,10 @@
+{
+    "id": 300,
+    "nome": "Magias de Juramento",
+    "classe": "Paladino",
+    "subclasse": "Juramento dos Anciões",
+    "nivel": [
+        3
+    ],
+    "descricao": "Você ganha magias de juramento nos níveis de paladino descritos abaixo:\n\nNível 3 de Paladino -> Golpe Constritor, Falar com Animais\nNível 5 de Paladino -> Raio Lunar, Passo Nebuloso\nNível 9 de Paladino -> Ampliar Plantas, Proteção Contra Energia\nNível 13 de Paladino -> Tempestade de Gelo, Pele de Pedra\nNível 17 de Paladino -> Comunhão com a Natureza, Caminhar em Árvores"
+}

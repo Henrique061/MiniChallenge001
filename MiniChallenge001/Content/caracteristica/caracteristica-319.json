@@ -1,0 +1,10 @@
+{
+    "id": 319,
+    "nome": "Desaparecer",
+    "classe": "Patrulheiro",
+    "subclasse": null,
+    "nivel": [
+        14
+    ],
+    "descricao": "Começando no 14° nível, você pode usar a ação de Esconder, com uma ação bônus, no seu turno. Além disso, você não pode ser rastreado por meios não-mágicos, a não ser que você decida deixar um rastro."
+}

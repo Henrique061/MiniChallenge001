@@ -1,0 +1,10 @@
+{
+    "id": 254,
+    "nome": "Defesa sem Armadura",
+    "classe": "Monge",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do 1° nível, quando você não estiver vestindo nenhuma armadura nem empunhando um escudo, sua Classe de Armadura será 10 + seu modificador de Destreza + seu modificador de Sabedoria."
+}

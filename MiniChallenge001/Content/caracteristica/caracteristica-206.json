@@ -1,0 +1,10 @@
+{
+    "id": 206,
+    "nome": "Andarilho de Telhados",
+    "classe": "Ladino",
+    "subclasse": "Ladrão",
+    "nivel": [
+        3
+    ],
+    "descricao": "No 3° nível, você adquire a habilidade de escalar mais rápido que o normal. Escalar agora não possui custo adicional de movimento para você.\nAlém disso, quando você fizer um salto com corrida, o alcance que pode saltar aumenta um número de metros igual a 0,3 vezes o seu modificador de Destreza."
+}

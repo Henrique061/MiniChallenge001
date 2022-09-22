@@ -1,0 +1,10 @@
+{
+    "id": 94,
+    "nome": "Canalizar Divindade: Invocar Duplicidade",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Enganação",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, você pode usar seu Canalizar Divindade para criar uma duplicada ilusória de si mesmo.\nCom uma ação, você cria uma ilusão perfeita de si mesmo que dura por 1 minuto ou até você perder sua concentração (como se você estivesse se concentrando em uma magia). A ilusão aparece em um espaço desocupado que você possa ver a até 9 metros de você. Com uma ação bônus, no seu turno, você pode mover a ilusão até 9 metros para um espaço que você possa ver, mas ela deve permanecer a até 36 metros de você.\nPela duração, você pode conjurar magias como se você estivesse no espaço ocupado pela ilusão, mas você deve usar seus próprios sentidos. Além disso, quando ambos você e sua ilusão estiverem a 1,5 metro de uma criatura que possa ver a ilusão, você tem vantagem nas jogadas de ataque contra essa criatura, devido a distração causada no alvo pela ilusão."
+}

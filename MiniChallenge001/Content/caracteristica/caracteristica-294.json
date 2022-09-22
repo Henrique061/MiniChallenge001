@@ -1,0 +1,10 @@
+{
+    "id": 294,
+    "nome": "Magias de Juramento",
+    "classe": "Paladino",
+    "subclasse": "Juramento de Devoção",
+    "nivel": [
+        3
+    ],
+    "descricao": "Você ganha magias de juramento nos níveis de paladino descritos abaixo:\n\nNível 3 de Paladino -> Proteção Contra o Bem e o Mal, Santuário\nNível 5 de Paladino -> Restauração Menor, Zona da Verdade\nNível 9 de Paladino -> Sinal de Esperança, Dissipar Magia\nNível 13 de Paladino -> Movimentação Livre, Guardião da Fé\nNível 17 de Paladino -> Comunhão, Coluna de Chamas"
+}

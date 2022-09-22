@@ -1,0 +1,10 @@
+{
+    "id": 113,
+    "nome": "Acólito da Natureza",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Natureza",
+    "nivel": [
+        1
+    ],
+    "descricao": "No 1° nível, você aprende um truque de druida, à sua escolha. Você também ganha proficiência em uma das seguintes perícias, à sua escolha: Adestrar Animais, Natureza ou Sobrevivência."
+}

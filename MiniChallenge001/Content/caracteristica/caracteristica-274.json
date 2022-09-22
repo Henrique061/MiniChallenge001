@@ -1,0 +1,10 @@
+{
+    "id": 274,
+    "nome": "Tranquilidade",
+    "classe": "Monge",
+    "subclasse": "Caminho da Mão Aberta",
+    "nivel": [
+        11
+    ],
+    "descricao": "A partir do 11° nível, você pode entrar num estado especial de meditação que rodeia você com uma aura pacifica. No final de um descanso longo, você ganha o efeito da magia santuário que dura até o começo do seu próximo descanso longo (a magia pode terminar prematuramente, como normal). A CD do teste de resistência para a magia é 8 + seu modificador de Sabedoria + seu bônus de proficiência."
+}

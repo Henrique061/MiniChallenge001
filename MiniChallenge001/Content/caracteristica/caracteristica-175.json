@@ -1,0 +1,10 @@
+{
+    "id": 175,
+    "nome": "Sobrevivente",
+    "classe": "Guerreiro",
+    "subclasse": "Campeão",
+    "nivel": [
+        18
+    ],
+    "descricao": "No 18° nível, você alcança o topo da resiliência em batalha. No começo de cada um de seus turnos, você recupera uma quantidade de pontos de vida igual a 5 + seu modificador de Constituição se não estiver com mais que metade de seus pontos de vida. Você não recebe esse benefício se estiver com 0 pontos de vida."
+}

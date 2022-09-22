@@ -1,0 +1,10 @@
+{
+    "id": 208,
+    "nome": "Usar Instrumento Mágico",
+    "classe": "Ladino",
+    "subclasse": "Ladrão",
+    "nivel": [
+        13
+    ],
+    "descricao": "No 13° nível, você aprende o suficiente sobre como a magia funciona e pode improvisar o uso de itens que nem mesmo foram destinados a você. Você ignora todos os requisitos de classes, raças e níveis para uso de qualquer item mágico."
+}

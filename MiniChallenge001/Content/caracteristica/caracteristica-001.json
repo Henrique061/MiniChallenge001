@@ -1,0 +1,14 @@
+{
+    "id": 1,
+    "nome": "Incremento no Valor de Habilidade",
+    "classe": "Bárbaro",
+    "subclasse": null,
+    "nivel": [
+        4,
+        8,
+        12,
+        16,
+        19
+    ],
+    "descricao": "Você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha, em 1. Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica."
+}

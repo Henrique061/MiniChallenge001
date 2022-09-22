@@ -1,0 +1,10 @@
+{
+    "id": 260,
+    "nome": "Queda Lenta",
+    "classe": "Monge",
+    "subclasse": null,
+    "nivel": [
+        4
+    ],
+    "descricao": "Começando no 4° nível, você pode usar sua reação, quando você cai, para reduzir o dano de queda sofrido por um valor igual a cinco vezes seu nível de monge."
+}

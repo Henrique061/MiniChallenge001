@@ -1,0 +1,10 @@
+{
+    "id": 59,
+    "nome": "Patrono Transcendental",
+    "classe": "Bruxo",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "No 1° nível, você conclui uma barganha com um ser transcendental, à sua escolha: a Arquifada, o Corruptor ou o Grande Antigo. Sua escolha lhe confere traços no 1° nível e novamente no 6°, 10° e 14° nível."
+}

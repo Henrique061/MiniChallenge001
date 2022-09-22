@@ -1,0 +1,10 @@
+{
+    "id": 313,
+    "nome": "Estilo de Luta",
+    "classe": "Patrulheiro",
+    "subclasse": null,
+    "nivel": [
+        2
+    ],
+    "descricao": "No 2° nível, você adota um estilo de combate particular que será sua especialidade. Escolha uma das opções seguir. Você não pode escolher o mesmo Estilo de Combate mais de uma vez, mesmo se puder escolher de novo.\n\nARQUEARIA\nVocê ganha +2 de bônus nas jogadas de ataque realizadas com uma arma de ataque à distância.\n\nCOMBATE COM DUAS ARMAS\nQuando você estiver engajado em uma luta com duas armas, você pode adicionar o seu modificador de habilidade na jogada de dano do seu segundo ataque.\n\nDEFESA\nEnquanto estiver usando armadura, você ganha +1 de bônus em sua CA.\n\nDUELISMO\nQuando você empunhar uma arma de ataque corpo a corpo em uma mão e nenhuma outra arma, você ganha +2 de bônus nas jogadas de dano com essa arma."
+}

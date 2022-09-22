@@ -1,0 +1,10 @@
+{
+    "id": 322,
+    "nome": "Companheiro Animal",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave da Besta",
+    "nivel": [
+        3
+    ],
+    "descricao": "No 3° nível, você aprende a usar sua magia para criar um poderoso vínculo com uma criatura do mundo natural.\nCom 8 horas de trabalho e o gasto de 50 po em ervas raras e comida boa, você invoca um animal do ambiente selvagem para servir como um companheiro leal. Você geralmente escolhe seu companheiro dentre os seguintes animais: um arminho gigante, um javali, um gorila, um lobo, uma mula, uma pantera, um texugo gigante ou urso negro. Porém, seu Mestre pode escolher um desses animais para você baseado nos terrenos ao redor e em que tipos de criaturas logicamente poderiam estar presentes na área.\nAo final das 8 horas, seu companheiro animal aparece e adquire todos os benefícios da sua habilidade Vínculo com o Companheiro. Você só pode ter um companheiro animal por vez.\nSe o seu companheiro animal for morto, o vínculo mágico que vocês compartilham permite que você o traga de volta à vida. Com 8 horas de trabalho e o gasto de 25 po em ervas raras e comida boa, você pode invocar o espírito do seu companheiro e usar sua mágica para criar um novo corpo para ele. Você pode trazer um companheiro animal de volta à vida dessa forma mesmo que você não possua qualquer parte do corpo dele.\nSe você usar essa habilidade para trazer um companheiro animal antigo de volta à vida enquanto você já tiver outro companheiro animal, seu companheiro animal atual abandona você e é substituido pelo companheiro animal ressuscitado."
+}

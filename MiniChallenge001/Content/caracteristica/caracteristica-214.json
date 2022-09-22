@@ -1,0 +1,10 @@
+{
+    "id": 214,
+    "nome": "Ladrão de Magia",
+    "classe": "Ladino",
+    "subclasse": "Trapaceiro Arcano",
+    "nivel": [
+        17
+    ],
+    "descricao": "No 17° nível, você ganha a habilidade de, magicamente, roubar o conhecimento de como conjurar uma magia de outro conjurador.\nImediatamente depois de uma criatura conjurar uma magia que tenha você como alvo ou inclua você na sua área de efeito, você pode usar sua reação para forçar a criatura a realizar um teste de resistência com o modificador de habilidade de conjuração dele. A CD é igual a CD das suas magias. Numa falha, você ignora o efeito da magia sobre você e rouba o conhecimento da magia, se ela for de, pelo menos, 1° nível e de um nível que você possa conjurar (não precisa ser uma magia de mago). Pelas próximas 8 horas, você conhece a magia e pode conjurá-la usando seus espaços de magia. A criatura não pode conjurar a magia até que 8 horas tenham se passado.\nUma vez que você tenha usado essa característica, você não pode usá-la novamente até ter terminado um descanso longo."
+}

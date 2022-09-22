@@ -1,0 +1,10 @@
+{
+    "id": 162,
+    "nome": "Dobrar a Sorte",
+    "classe": "Feiticeiro",
+    "subclasse": "Magia Selvagem",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, você adquire a habilidade de mudar o destino usando sua magia selvagem. Quando outra criatura que você possa ver realizar uma jogada de ataque, um teste de habilidade ou um teste de resistência, você pode usar sua reação para gastar 2 pontos de feitiçaria para rolar 1d4 e aplicar o número rolado como um bônus ou uma penalidade (à sua escolha) na jogada da criatura. Você pode fazer isso depois da criatura fazer a jogada, mas antes do efeito ocorrer."
+}

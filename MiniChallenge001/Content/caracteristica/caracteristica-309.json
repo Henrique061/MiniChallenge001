@@ -1,0 +1,10 @@
+{
+    "id": 309,
+    "nome": "Alma de Vingança",
+    "classe": "Paladino",
+    "subclasse": "Juramento de Vingança",
+    "nivel": [
+        15
+    ],
+    "descricao": "A partir do 15° nível, a autoridade com a qual você fala seu Voto de Inimizade lhe dá maior poder sobre seu inimigo. Quando uma criatura sob efeito do seu Voto de Inimizade realizar um ataque, você pode usar sua reação para realizar um ataque corpo-a-corpo com arma contra essa criatura, se ela estiver ao seu alcance."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 140,
+    "nome": "Recuperação Natural",
+    "classe": "Druida",
+    "subclasse": "Círculo da Terra",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, você pode recuperar parte da sua energia mágica parando para fazer uma meditação e comunhão com a natureza. Durante um descanso curto, você escolhe espaços de magia gastos para recuperar. O espaço de magia pode ter um nível combinado igual ou menor que metade do seu nível de druida (arredondado para baixo) e, nenhum dos espaços pode ser de uma magia de 6° nível ou superior. Você não pode usar essa característica novamente até terminar um descanso longo.\nPor exemplo, quando você for um druida de 4° nível, você pode recuperar até dois níveis em espaços de magia. Você pode recuperar, tanto uma magia de 2° nível, quanto duas magias de 1° nível."
+}

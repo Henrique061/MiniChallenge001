@@ -1,0 +1,10 @@
+{
+    "id": 75,
+    "nome": "Lista de Magia Expandida",
+    "classe": "Bruxo",
+    "subclasse": "O Grande Antigo",
+    "nivel": [
+        1
+    ],
+    "descricao": "O Grande Antigo permite que você escolha magias de uma lista expandida quando você for aprender magias de bruxo. As seguintes magias são adicionadas a sua lista de magias de bruxo:\nNível 1 de magia -> Sussurros Dissonantes, Riso Histérico de Tasha.\nNível 2 de magia -> Detectar Pensamentos, Força Fantasmagórica.\nNível 3 de magia -> Clarividência, Enviar Mensagem.\nNível 4 de magia -> Dominar Besta, Tentáculos Negros de Evard.\nNível 5 de magia -> Dominar Pessoa, Telecinésia."
+}

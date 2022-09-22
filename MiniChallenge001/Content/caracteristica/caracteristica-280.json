@@ -1,0 +1,13 @@
+{
+    "id": 280,
+    "nome": "Discípulo dos Elementos",
+    "classe": "Monge",
+    "subclasse": "Caminho dos Quatro Elementos",
+    "nivel": [
+        3,
+        6,
+        11,
+        17
+    ],
+    "descricao": "Quando você escolhe essa tradição, no 3° nível, você aprende disciplinas mágicas que manipulam o poder dos quatro elementos. Uma disciplina requer que você gaste pontos de chi cada vez que você a usa.\nVocê conhece a disciplina Sintonia Elemental e uma outra disciplina, à sua escolha, que são detalhadas na seção Disciplinas Elementais. Você aprende uma disciplina adicional, à sua escolha, no 6°, 11° e 17° nível.\nToda vez que você aprende uma nova disciplina elemental, você pode substituir uma disciplina elemental que você já conhecia por uma disciplina diferente.\n\n-> Conjurando Magias Elementais: Algumas disciplinas elementais permitem que você conjure magias. Para conjurar uma dessas magias, você usa o tempo de conjuração da mesma e suas outras regras, mas você não precisa fornecer os componentes materiais dela.\nQuando você alcança o 5° nível nessa classe, você pode gastar pontos de chi adicionais para aumentar o nível da magia de disciplina elemental que você conjurar, considerando que a magia tenha um efeito de aprimoramento para um nível superior, como \"Mãos Flamejantes\", por exemplo. O nível da magia aumenta em 1 para cada ponto de chi adicional que você gastar. Por exemplo, se você for um monge de 5° nível e usar Golpe de Varredura Cauterizante para conjurar Mãos Flamejantes, você pode gastar 3 pontos de chi para conjurá-la como uma magia de 2° nível (o custo base da disciplina de 2 pontos mais 1).\nO número máximo de pontos de chi que você pode gastar para conjurar uma magia dessa forma (incluindo seu custo de chi base e quaisquer pontos de chi adicionais que você gastar para elevar seu nível) é determinado pelo seu nível de monge, como mostrado na tabela \"Magias e Pontos de Chi\" abaixo.\n\nMAGIAS E PONTOS DE CHI\nNível 5 à 8 de Monge -> Pontos de Chi máximos para uma magia: 3\nNível 9 à 12 de Monge -> Pontos de Chi máximos para uma magia: 4\nNível 13 à 16 de Monge -> Pontos de Chi máximos para uma magia: 5\nNível 17 à 20 de Monge -> Pontos de Chi máximos para uma magia: 6"
+}

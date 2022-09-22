@@ -1,0 +1,10 @@
+{
+    "id": 64,
+    "nome": "Mestre Místico",
+    "classe": "Bruxo",
+    "subclasse": null,
+    "nivel": [
+        20
+    ],
+    "descricao": "No 20° nível, você pode recarregar sua reserva interior de poder místico quando suplicar ao seu patrono para recuperar espaços de magia gastos. Você pode gastar 1 minuto suplicando pela ajuda do seu patrono para recuperar todos os espaços de magia gastos da sua característica Magia de Pacto. Uma vez que você recuperou espaços de magia com essa característica, você deve terminar um descanso longo antes de fazê-lo novamente."
+}

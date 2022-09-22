@@ -1,0 +1,10 @@
+{
+    "id": 247,
+    "nome": "Acostumado à Morte-Vida",
+    "classe": "Mago",
+    "subclasse": "Escola de Necromancia",
+    "nivel": [
+        10
+    ],
+    "descricao": "A partir do 10° nível, você terá resistência a dano necrótico e seu máximo de pontos de vida não pode ser reduzido. Você gastou tanto tempo lidando com mortos- vivos e com as forças que os animam que você se acostumou a alguns dos seus piores efeitos."
+}

@@ -1,0 +1,11 @@
+{
+    "id": 186,
+    "nome": "Superioridade em Combate Aprimorada",
+    "classe": "Guerreiro",
+    "subclasse": "Mestre de Batalha",
+    "nivel": [
+        10,
+        18
+    ],
+    "descricao": "No 10° nível, seus dados de superioridade se tornam d10s. No 18° nível, eles se tornam d12s."
+}

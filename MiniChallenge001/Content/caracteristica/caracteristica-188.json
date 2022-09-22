@@ -1,0 +1,11 @@
+{
+    "id": 188,
+    "nome": "Especialização",
+    "classe": "Ladino",
+    "subclasse": null,
+    "nivel": [
+        1,
+        6
+    ],
+    "descricao": "No 1° nível, você escolhe duas de suas perícias que seja proficiente, ou uma perícia que seja proficiente e ferramentas de ladrão. Seu bônus de proficiência é dobrado em qualquer teste de habilidade que fizer com elas.\nNo 6° nível, você pode escolher outras duas de suas proficiências (em perícias ou ferramentas de ladrão) para ganhar esse benefício."
+}

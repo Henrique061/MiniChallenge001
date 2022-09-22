@@ -1,0 +1,10 @@
+{
+    "id": 232,
+    "nome": "Conjuração Focada",
+    "classe": "Mago",
+    "subclasse": "Escola de Conjuração",
+    "nivel": [
+        10
+    ],
+    "descricao": "Começando no 10° nível, enquanto você estiver concentrado em uma magia de conjuração, sua concentração não pode ser interrompida como resultado de ter sofrido dano."
+}

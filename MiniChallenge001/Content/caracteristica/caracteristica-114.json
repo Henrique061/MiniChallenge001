@@ -1,0 +1,10 @@
+{
+    "id": 114,
+    "nome": "Proficiência Adicional",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Natureza",
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do 1° nível, você adquire proficiência com armaduras pesadas."
+}

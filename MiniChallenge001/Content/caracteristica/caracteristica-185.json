@@ -1,0 +1,10 @@
+{
+    "id": 185,
+    "nome": "Conheça seu Inimigo",
+    "classe": "Guerreiro",
+    "subclasse": "Mestre de Batalha",
+    "nivel": [
+        7
+    ],
+    "descricao": "A partir do 7° nível, se você gastar, pelo menos, 1 minuto observando ou interagindo com outra criatura fora de combate, você pode aprender certas informações sobre as capacidades dela comparadas as suas. O Mestre conta a você se a criatura é igual, superior ou inferior a você a respeito de duas das seguintes características, à sua escolha:\n\n-> Valor de Força\n-> Valor de Destreza\n-> Valor de Constituição\n-> Classe de Armadura\n-> Pontos de Vida atuais\n-> Nível total de classe (se possuir)\n-> Níveis da classe guerreiro (se possuir)"
+}

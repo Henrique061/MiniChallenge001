@@ -9,18 +9,11 @@ import SwiftUI
 
 @main
 struct MiniChallenge001App: App {
-    let persistenceController = PersistenceController.shared
-    @Environment(\.scenePhase) var scenePhase // var para salvar o core data quando o app vai pro background do phone
 
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            
-            TesteView()
-        }
-        
-        .onChange(of: scenePhase) { _ in
-            persistenceController.save()
+            ContentView()
+//            TesteView()
         }
     }
     struct RecivedView: View {

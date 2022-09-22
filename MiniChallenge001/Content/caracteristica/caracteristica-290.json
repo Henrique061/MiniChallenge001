@@ -1,0 +1,11 @@
+{
+    "id": 290,
+    "nome": "Aura da Coragem",
+    "classe": "Paladino",
+    "subclasse": null,
+    "nivel": [
+        10,
+        18
+    ],
+    "descricao": "Começando no 10° nível, você e as criaturas amigáveis dentro de um raio de 3 metros de você não podem ser amedrontadas enquanto você estiver consciente.\nNo 18° nível, o alcance dessa aura aumenta para 9 metros."
+}

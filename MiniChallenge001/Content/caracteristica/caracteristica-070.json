@@ -1,0 +1,10 @@
+{
+    "id": 70,
+    "nome": "Lista de Magia Expandida",
+    "classe": "Bruxo",
+    "subclasse": "O Corruptor",
+    "nivel": [
+        1
+    ],
+    "descricao": "O Corruptor permite que você escolha magias de uma lista expandida quando você for aprender magias de bruxo. As seguintes magias são adicionadas a sua lista de magias de bruxo:\nNível 1 de magia -> Mãos Flamejantes, Comando.\nNível 2 de magia -> Cegueira/Surdez, Raio Ardente.\nNível 3 de magia -> Bola de Fogo, Névoa Fétida.\nNível 4 de magia -> Escudo de Fogo, Muralha de Fogo.\nNível 5 de magia -> Coluna de Chamas, Consagrar."
+}

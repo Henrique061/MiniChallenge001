@@ -1,0 +1,10 @@
+{
+    "id": 241,
+    "nome": "Ilusões Moldáveis",
+    "classe": "Mago",
+    "subclasse": "Escola de Ilusão",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, quando você conjura uma magia de ilusão que tenha duração de 1 minuto ou maior, você pode usar sua ação para mudar a natureza da ilusão (usando os parâmetros normais da magia para a ilusão), considerando que você pode ver a ilusão."
+}

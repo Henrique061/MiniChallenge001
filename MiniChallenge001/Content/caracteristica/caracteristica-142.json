@@ -1,0 +1,10 @@
+{
+    "id": 142,
+    "nome": "Caminho da Floresta",
+    "classe": "Druida",
+    "subclasse": "Círculo da Terra",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, mover-se através de terreno difícil não-mágico não te custará nenhum movimento extra. Você também pode passar através de plantas não-mágicas sem ser atrasado por elas e sem sofrer dano delas se elas tiverem espinhos, espinhas ou perigos similares.\nAlém disso, você tem vantagem em testes de resistência contra plantas criadas magicamente ou manipuladas para impedir movimentação, como as criadas pela magia constrição."
+}

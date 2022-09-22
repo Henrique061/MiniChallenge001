@@ -1,0 +1,10 @@
+{
+    "id": 293,
+    "nome": "Dogmas de Devoção",
+    "classe": "Paladino",
+    "subclasse": "Juramento de Devoção",
+    "nivel": [
+        3
+    ],
+    "descricao": "Embora as palavras exatas e restrições do Juramento de Devoção variem, os paladinos que fazem esse juramento partilha desses dogmas.\n-> Honestidade: Não minta nem trapaceie. Deixe sua palavra ser sua garantia.\n-> Coragem: Nunca tenha medo de agir, apesar de a cautela ser sensata.\n-> Compaixão: Ajude os outros, proteja os fracos, puna aqueles que os ameaçarem. Mostre misericórdia aos seus adversários, mas tempere isso com sabedoria.\n-> Honra: Trate os outros com equidade e deixe seus feitos honoráveis serem exemplos para eles. Faça o máximo de bem possível causando a menor quantidade de mazelas.\n-> Dever: Seja responsável pelos seus atos e por suas consequências, proteja aqueles confiados aos vossos cuidados e obedeça aqueles que tiverem autoridade sobre você."
+}

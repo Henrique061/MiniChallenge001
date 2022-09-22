@@ -1,0 +1,10 @@
+{
+    "id": 178,
+    "nome": "Magia de Guerra",
+    "classe": "Guerreiro",
+    "subclasse": "Cavaleiro Arcano",
+    "nivel": [
+        7
+    ],
+    "descricao": "A partir do 7° nível, quando você usar sua ação para conjurar um truque, você pode realizar um ataque com arma, com uma ação bônus."
+}

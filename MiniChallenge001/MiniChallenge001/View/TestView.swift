@@ -12,7 +12,8 @@ struct TesteView: View {
     
     var body: some View {
         Button {
-            JsonFileUtil.getFilesURLFromFolder(folder: "ferramenta")
+            _ = JsonFileUtil.getFilesURLFromFolder(folder: "ferramenta")
+            
         } label: {
             Text("Botãozim do capeta")
         }

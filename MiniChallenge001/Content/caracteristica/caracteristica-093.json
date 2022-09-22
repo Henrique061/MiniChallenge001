@@ -1,0 +1,10 @@
+{
+    "id": 93,
+    "nome": "Benção do Trapaceiro",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Enganação",
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do momento em que você escolhe esse domínio, no 1° nível, você pode usar sua ação para tocar uma criatura voluntária além de você mesmo para conceder vantagem em testes de Destreza (Furtividade). Essa bênção dura por 1 hora ou até você usar essa característica novamente."
+}

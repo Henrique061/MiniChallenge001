@@ -1,0 +1,10 @@
+{
+    "id": 223,
+    "nome": "Resistência à Magia",
+    "classe": "Mago",
+    "subclasse": "Escola de Abjuração",
+    "nivel": [
+        14
+    ],
+    "descricao": "A partir do 14° nível, você tem vantagem em testes de resistência contra magia.\nAlém disso, você tem resistência contra o dano de magias."
+}

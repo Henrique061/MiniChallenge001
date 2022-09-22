@@ -1,0 +1,10 @@
+{
+    "id": 179,
+    "nome": "Golpe Místico",
+    "classe": "Guerreiro",
+    "subclasse": "Cavaleiro Arcano",
+    "nivel": [
+        10
+    ],
+    "descricao": "No 10° nível, você aprende como fazer com que os seus golpes com arma penetrem a resistência de uma criatura às suas magias. Quando você atingir uma criatura com um ataque com arma, aquela criatura terá desvantagem no próximo teste de resistência que ela fizer contra uma magia que você conjurar antes do final do seu próximo turno."
+}

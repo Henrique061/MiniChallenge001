@@ -1,0 +1,11 @@
+{
+    "id": 85,
+    "nome": "Intervenção Divina",
+    "classe": "Clérigo",
+    "subclasse": null,
+    "nivel": [
+        10,
+        20
+    ],
+    "descricao": "A partir do 10° nível, você pode rogar à sua divindade para que auxilie você em uma árdua tarefa.\nImplorar pelo auxílio requer uma ação. Você precisa descrever o que busca e realizar uma rolagem de dado de percentagem. Se o resultado for menor ou igual ao seu nível de clérigo, sua divindade intervém. O Mestre escolhe a natureza da intervenção. O efeito de qualquer magia de clérigo ou magia de domínio é apropriado como resultado.\nSe sua divindade intervir, você fica impedido de usar essa característica de novo por 7 dias. Do contrário, você pode usá-la de novo após terminar um descanso longo.\nNo 20° nível, seus pedidos de intervenção funcionam automaticamente, sem necessidade de rolagem de dados."
+}

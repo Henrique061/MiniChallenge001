@@ -1,0 +1,10 @@
+{
+    "id": 40,
+    "nome": "Andarilho Espiritual",
+    "classe": "Bárbaro",
+    "subclasse": "Caminho do Guerreiro Totêmico",
+    "nivel": [
+        10
+    ],
+    "descricao": "No 10° nível, você pode conjurar a magia comunhão com a natureza, mas apenas como um ritual. Quando o fizer, uma versão espiritual de um dos animais que você escolheu como Totem Espiritual ou Aspecto da Besta aparece para você para transmitir a informação que você busca."
+}

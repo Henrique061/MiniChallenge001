@@ -1,0 +1,10 @@
+{
+    "id": 325,
+    "nome": "Defesa da Besta",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave da Besta",
+    "nivel": [
+        7
+    ],
+    "descricao": "No 7° nível, enquanto seu companheiro puder ver você, ele tem vantagem em todos os testes de resistência."
+}

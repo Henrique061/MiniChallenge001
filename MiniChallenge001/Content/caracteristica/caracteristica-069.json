@@ -1,0 +1,10 @@
+{
+    "id": 69,
+    "nome": "Delírio Sombrio",
+    "classe": "Bruxo",
+    "subclasse": "A Arquifada",
+    "nivel": [
+        14
+    ],
+    "descricao": "Começando no 14° nível, você pode imergir uma criatura num reino ilusório. Com um ação, escolha uma criatura que você possa ver a até 18 metros de você. Ela deve ser bem sucedida num teste de resistência de Sabedoria contra a CD da sua magia de bruxo. Se ela falhar, ela ficará enfeitiçada ou amedrontada por você (à sua escolha) por 1 minuto ou até você quebrar sua concentração (como se você estivesse se concentrando em uma magia). Esse efeito termina prematuramente se a criatura sofrer dano.\nAté que essa ilusão termine, a criatura acredita que está perdida num reino enevoado, a aparência desse reino fica a seu critério. A criatura só pode ver e ouvir a si mesma, a você e a sua ilusão.\nVocê deve terminar um descanso curto ou longo antes de poder usar essa característica novamente."
+}

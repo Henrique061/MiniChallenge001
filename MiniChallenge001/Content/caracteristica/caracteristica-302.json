@@ -1,0 +1,11 @@
+{
+    "id": 302,
+    "nome": "Aura de Vigilância",
+    "classe": "Paladino",
+    "subclasse": "Juramento dos Anciões",
+    "nivel": [
+        7,
+        18
+    ],
+    "descricao": "A partir do 7° nível, a magia antiga fica tão profunda em você que ela forma uma proteção mística. Você e as criaturas amistosas a até 3 metros tem resistência ao dano de magias.\nNo 18° nível, o alcance dessa aura aumenta para 9 metros."
+}

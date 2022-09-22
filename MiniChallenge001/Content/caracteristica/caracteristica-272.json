@@ -1,0 +1,10 @@
+{
+    "id": 272,
+    "nome": "Técnica da Mão Aberta",
+    "classe": "Monge",
+    "subclasse": "Caminho da Mão Aberta",
+    "nivel": [
+        3
+    ],
+    "descricao": "Começando quando você escolhe essa tradição, no 3° nível, você pode manipular o chi do seu inimigo quando você controla o seu. Toda vez que você atingir uma criatura com um dos seus ataques garantidos por sua Rajada de Golpes, você pode impor um dos seguintes efeitos no alvo:\n\n-> Ele deve ser bem sucedido num teste de resistência de Destreza ou cairá no chão.\n-> Ele deve realizar um teste de resistência de Força. Se falhar, você pode empurrá-lo 4,5 metros para longe de você.\n-> Ele não pode realizar reações até o final do seu próximo turno."
+}

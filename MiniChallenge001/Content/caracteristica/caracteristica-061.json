@@ -1,0 +1,10 @@
+{
+    "id": 61,
+    "nome": "Invocações Místicas",
+    "classe": "Bruxo",
+    "subclasse": null,
+    "nivel": [
+        2
+    ],
+    "descricao": "Durante seus estudos sobre conhecimento oculto, você descobriu as invocações místicas, fragmentos de conhecimento proibido que infundiram você com habilidade mágica permanente.\nNo 2° nível, você ganha duas invocações místicas, à sua escolha. Quando você atinge certos nível de bruxo, você adquire novas invocações à sua escolha.\nAlém disso, quando você adquire um novo nível nessa classe, você pode escolher uma invocação que você conheça e substituí-la por outra invocação que você possa aprender nesse nível."
+}

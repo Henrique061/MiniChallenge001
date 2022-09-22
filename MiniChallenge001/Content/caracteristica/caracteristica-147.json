@@ -1,0 +1,10 @@
+{
+    "id": 147,
+    "nome": "Ataque Primordial",
+    "classe": "Druida",
+    "subclasse": "Círculo da Lua",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, seus ataques na forma de besta contam como mágicos com os propósitos de ultrapassar resistência e imunidade a ataques e danos não-mágicos."
+}

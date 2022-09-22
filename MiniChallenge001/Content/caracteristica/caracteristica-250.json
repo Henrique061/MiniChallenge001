@@ -1,0 +1,10 @@
+{
+    "id": 250,
+    "nome": "Alquimia Menor",
+    "classe": "Mago",
+    "subclasse": "Escola de Transmutação",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, quando você escolhe essa escola, você pode alterar temporariamente as propriedades físicas de um objeto não-mágico, alterando-o de uma substância para outra. Você realiza um procedimento alquímico especial em um objeto composto inteiramente de madeira, pedra (mas não uma pedra preciosa), ferro, cobre ou prata, transformando-o em um material diferente dentre esses. Para cada 10 minutos que você gastar realizando esse procedimento, você pode transformar 30 centímetros cúbicos de material. Após 1 hora, ou até você perder sua concentração (como es estivesse se concentrando em uma magia) o material reverte à sua substancia original."
+}

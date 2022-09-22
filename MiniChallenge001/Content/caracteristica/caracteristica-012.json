@@ -1,0 +1,15 @@
+{
+    "id": 12,
+    "nome": "Incremento no Valor de Habilidade",
+    "classe": "Ladino",
+    "subclasse": null,
+    "nivel": [
+        4,
+        8,
+        10,
+        12,
+        16,
+        19
+    ],
+    "descricao": "Você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha, em 1. Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica."
+}

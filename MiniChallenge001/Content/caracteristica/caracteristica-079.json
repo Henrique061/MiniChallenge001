@@ -1,0 +1,10 @@
+{
+    "id": 79,
+    "nome": "Criar Lacaio",
+    "classe": "Bruxo",
+    "subclasse": "O Grande Antigo",
+    "nivel": [
+        14
+    ],
+    "descricao": "No 14° nível, você adquire a habilidade de infectar a mente de um humanoide com a magia alienígena do seu patrono. Você pode usar sua ação para tocar um humanoide incapacitado. Essa criatura então, ficará enfeitiçada por você até que a magia remover maldição seja conjurada sobre ela, a condição enfeitiçado seja removida dela ou você use essa característica novamente.\nVocê pode se comunicar telepaticamente com a criatura enfeitiçada contanto que ambos estejam no mesmo plano de existência."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 324,
+    "nome": "Ataque Coordenado",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave da Besta",
+    "nivel": [
+        5
+    ],
+    "descricao": "A partir do 5° nível, você e seu companheiro animal formam um time de luta mais poderoso. Quando você usar a ação de Ataque no seu turno, se o seu companheiro puder ver você, ele pode usar a reação dele para realizar um ataque corpo-a-corpo."
+}

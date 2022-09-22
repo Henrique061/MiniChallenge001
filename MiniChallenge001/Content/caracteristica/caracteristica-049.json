@@ -1,0 +1,12 @@
+{
+    "id": 49,
+    "nome": "Segredos Mágicos",
+    "classe": "Bardo",
+    "subclasse": null,
+    "nivel": [
+        10,
+        14,
+        18
+    ],
+    "descricao": "No 10° nível, você usurpou conhecimento mágico de um vasto espectro de disciplinas. Escolha duas magias de qualquer classe, incluindo essa. A magia que você escolher deve ser de um nível que você possa conjurar ou um truque.\nAs magias escolhidas contam como magias de bardo para você.\nVocê aprende duas magias adicionais de qualquer classe no 14° nível e novamente no 18° nível."
+}

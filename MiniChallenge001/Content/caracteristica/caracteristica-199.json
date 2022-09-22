@@ -1,0 +1,10 @@
+{
+    "id": 199,
+    "nome": "Golpe de Sorte",
+    "classe": "Ladino",
+    "subclasse": null,
+    "nivel": [
+        20
+    ],
+    "descricao": "No 20° nível, você adquire um dom incrível para ter sucesso nos momentos em que mais precisa. Se um ataque seu falhar contra um alvo ao seu alcance, você pode transformar essa falha em um acerto. Ou se falhar em um teste qualquer, você pode tratar a jogada desse mesmo teste como 20 natural.\nUma vez que você use essa característica, você não pode fazê-lo de novo até terminar um descanso curto ou longo."
+}

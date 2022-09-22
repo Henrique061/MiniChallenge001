@@ -1,0 +1,10 @@
+{
+    "id": 174,
+    "nome": "Crítico Superior",
+    "classe": "Guerreiro",
+    "subclasse": "Campeão",
+    "nivel": [
+        15
+    ],
+    "descricao": "A partir do 15° nível, seus ataques com armas adquirem uma margem de acerto crítico de 18 a 20 nas jogadas de ataque."
+}

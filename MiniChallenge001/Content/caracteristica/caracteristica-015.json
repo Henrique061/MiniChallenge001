@@ -1,0 +1,10 @@
+{
+    "id": 15,
+    "nome": "Conjuração",
+    "classe": " Druida",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Você pode conjurar magias da sua lista de magias e truques."
+}

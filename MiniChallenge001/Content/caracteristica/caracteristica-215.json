@@ -1,0 +1,10 @@
+{
+    "id": 215,
+    "nome": "Recuperação Arcana",
+    "classe": "Mago",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Você aprendeu como recuperar um pouco de sua energia mágica estudando seu grimório. Uma vez por dia, quando você terminar um descanso curto, você pode escolher espaços de magia gastos para recuperá-los. Os espaços gastos a serem recuperados podem ser de qualquer combinação de níveis de magia, desde que sejam iguais ou inferiores a metade de seu nível de mago (arredondado para cima) e nenhum deles seja de 6o ou superior.\nPor exemplo, se você é um mago de 4° nível, você pode recuperar até 2 espaços de magia gastos. Você pode recuperar o espaço de uma magia de 2° nível ou os espaços de duas magias de 1° nível."
+}

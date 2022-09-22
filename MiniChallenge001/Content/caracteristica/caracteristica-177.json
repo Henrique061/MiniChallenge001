@@ -1,0 +1,10 @@
+{
+    "id": 177,
+    "nome": "Vínculo com Arma",
+    "classe": "Guerreiro",
+    "subclasse": "Cavaleiro Arcano",
+    "nivel": [
+        3
+    ],
+    "descricao": "No 3° nível, você aprende um ritual que cria um vínculo mágico entre você e uma arma. Você realiza esse ritual no curso de 1 hora, que pode ser realizada durante um descanso curto. A arma deve estar ao seu alcance ao decorrer do ritual, ao concluí-lo, você toca a arma e forja o elo.\nUma vez que você tenha vinculado uma arma a você, você não pode ser desarmado dessa arma, a menos que você esteja incapacitado. Se ela estiver no mesmo plano de existência, você pode invocar essa arma com uma ação bônus, no seu turno, fazendo-a se teletransportar instantaneamente para a sua mão.\nVocê pode ter até duas armas vinculadas, mas só pode invocar uma por vez com sua ação bônus. Se você quiser criar um elo com uma terceira arma, você deve quebrar o vínculo com um das outras duas."
+}

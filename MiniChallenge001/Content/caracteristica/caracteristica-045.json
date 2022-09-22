@@ -1,0 +1,10 @@
+{
+    "id": 45,
+    "nome": "Colégio de Bardo",
+    "classe": "Bardo",
+    "subclasse": null,
+    "nivel": [
+        3
+    ],
+    "descricao": "No 3° nível, você investiga as técnicas avançadas de um colégio de bardo, à sua escolha: o Colégio do Conhecimento ou o Colégio da Bravura. Sua escolha lhe concede características no 3° nível e novamente no 6° e 14° nível."
+}

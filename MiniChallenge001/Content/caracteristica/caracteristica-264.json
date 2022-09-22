@@ -1,0 +1,10 @@
+{
+    "id": 264,
+    "nome": "Evasão",
+    "classe": "Monge",
+    "subclasse": null,
+    "nivel": [
+        7
+    ],
+    "descricao": "A partir do 7° nível, você pode esquivar-se agilmente de certos efeitos em área, como o sopro elétrico de um dragão azul ou uma magia bola de fogo. Quando você for alvo de um efeito que exige um teste de resistência de Destreza para sofrer metade do dano, você não sofre dano algum se passar, e somente metade do dano se falhar."
+}

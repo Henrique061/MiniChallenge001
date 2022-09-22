@@ -1,0 +1,10 @@
+{
+    "id": 253,
+    "nome": "Mestre Transmutador",
+    "classe": "Mago",
+    "subclasse": "Escola de Transmutação",
+    "nivel": [
+        14
+    ],
+    "descricao": "A partir do 14° nível, você pode usar sua ação para consumir a reserva de magia de transmutação armazenada dentro da sua pedra de transmutador em uma única explosão. Quando o fizer, escolha um dos seguintes efeitos. Sua pedra de transmutador é destruída e não pode ser refeita até você terminar um descanso longo.\n\n-> Transformação Maior: Você pode transmutar um objeto não-mágico - não maior que 1,5 metro cubico - em outro objeto não-mágico de tamanho e massa similares e de valor igual ou inferior. Você deve gastar 10 minutos manipulando o objeto para transformá-lo.\n-> Panaceia: Você remove todas as maldições, doenças e venenos afetando uma criatura que você tocar com sua pedra de transmutador. A criatura também recupera todos os seu pontos de vida.\n-> Restaurar Vida: Você pode conjurar reviver mortos em uma criatura que você tocar com sua pedra de transmutador, sem gastar espaço de magia ou precisar ter a magia no seu grimório.\n-> Restaurar Juventude: Você toca a pedra de transmutador em uma criatura voluntária e a idade aparente da criatura é reduzida em 3d10 anos, para o mínimo de 13 anos. Esse efeito não estende a vida útil da criatura."
+}

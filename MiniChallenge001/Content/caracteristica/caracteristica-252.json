@@ -1,0 +1,10 @@
+{
+    "id": 252,
+    "nome": "Metamorfo",
+    "classe": "Mago",
+    "subclasse": "Escola de Transmutação",
+    "nivel": [
+        10
+    ],
+    "descricao": "No 10° nível, você adiciona a magia metamorfose ao seu grimório, se você ainda não a possuir. Você pode conjurar metamorfose sem gastar um espaço de magia. Quando o fizer, você só pode escolher a si mesmo como alvo e se transforma em uma besta com nível de desafio 1 ou menor.\nQuando você conjurar metamorfose dessa forma, você não poderá fazê-lo novamente até terminar um descanso curto ou longo, apesar de ainda poder conjurá-la normalmente usando espaços de magia disponíveis."
+}

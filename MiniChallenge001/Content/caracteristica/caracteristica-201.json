@@ -1,0 +1,10 @@
+{
+    "id": 201,
+    "nome": "Assassinar",
+    "classe": "Ladino",
+    "subclasse": "Assassino",
+    "nivel": [
+        3
+    ],
+    "descricao": "A partir do 3° nível, você fica mais mortal quando pega seus oponentes desprevenidos. Você tem vantagem nas jogadas de ataque contra qualquer criatura que ainda não tenha chegado ao turno dela no combate. Além disso, qualquer ataque que você fizer contra essa criatura que está surpresa, será um ataque crítico."
+}

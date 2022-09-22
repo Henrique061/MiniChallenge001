@@ -1,0 +1,10 @@
+{
+    "id": 297,
+    "nome": "Pureza de Espírito",
+    "classe": "Paladino",
+    "subclasse": "Juramento de Devoção",
+    "nivel": [
+        15
+    ],
+    "descricao": "A partir do 15° nível, você estará sempre sob efeito da magia proteção contra o bem e mal."
+}
