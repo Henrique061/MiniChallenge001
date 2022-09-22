@@ -16,9 +16,4 @@ struct MiniChallenge001App: App {
 //            TesteView()
         }
     }
-    struct RecivedView: View {
-        var body: some View {
-            Text("Hello, World!")
-        }
-    }
 }

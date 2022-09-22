@@ -12,8 +12,12 @@ struct TesteView: View {
     
     var body: some View {
         Button {
-            _ = JsonFileUtil.getFilesURLFromFolder(folder: "ferramenta")
-            
+            let teste = FactoryMagiasConhecidas.criarMagiasComTudo(classe: .clerigo, limiteTruePorNivel: [3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5])
+            for i in teste {
+                print("Nível: \(i.nivel)", terminator: "\t")
+                print("Limite truque: \(i.quantiaTruques)", terminator: "\t")
+                print("Limite magias: \(i.quantiaMagias)")
+            }
         } label: {
             Text("Botãozim do capeta")
         }
