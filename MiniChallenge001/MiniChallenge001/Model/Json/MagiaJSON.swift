@@ -7,21 +7,6 @@
 
 import Foundation
 
-enum ClassePersonagem: String, Codable, Hashable {
-    case barbaro = "Bárbaro"
-    case bardo = "Bardo"
-    case bruxo = "Bruxo"
-    case clerigo = "Clérigo"
-    case druida = "Druida"
-    case feiticeiro = "Feiticeiro"
-    case guerreiro = "Guerreiro"
-    case ladino = "Ladino"
-    case mago = "Mago"
-    case monge = "Monge"
-    case paladino = "Paladino"
-    case patrulheiro = "Patrulheiro"
-}
-
 enum EscolaMagia: String, Codable {
     case abjuracao = "Abjuração"
     case adivinhacao = "Adivinhação"
