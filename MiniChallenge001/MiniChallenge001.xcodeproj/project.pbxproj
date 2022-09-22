@@ -34,49 +34,12 @@
 		3D3DC35D28DC14B30093BD92 /* ClasseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35C28DC14B30093BD92 /* ClasseClient.swift */; };
 		3D3DC35F28DC15310093BD92 /* ClasseConcreteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35E28DC15310093BD92 /* ClasseConcreteBuilder.swift */; };
 		3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60C63928DB80FE0051676A /* PersonagemBuilder.swift */; };
-		3D60C63C28DB80FE0051676A /* Classe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60C63A28DB80FE0051676A /* Classe.swift */; };
+		3D60C63C28DB80FE0051676A /* ClasseEscolha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60C63A28DB80FE0051676A /* ClasseEscolha.swift */; };
 		3D60C63E28DB958C0051676A /* Raca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60C63D28DB958C0051676A /* Raca.swift */; };
-		3D98DE4728DA543900F6F550 /* CDFerramenta+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */; };
-		3D98DE4828DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */; };
-		3D98DE4928DA543900F6F550 /* CDAtributo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */; };
-		3D98DE4A28DA543900F6F550 /* CDAtributo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2628DA543900F6F550 /* CDAtributo+CoreDataProperties.swift */; };
-		3D98DE4B28DA543900F6F550 /* CDCondicao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2728DA543900F6F550 /* CDCondicao+CoreDataClass.swift */; };
-		3D98DE4C28DA543900F6F550 /* CDCondicao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2828DA543900F6F550 /* CDCondicao+CoreDataProperties.swift */; };
-		3D98DE4D28DA543900F6F550 /* CDCaracteristica+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2928DA543900F6F550 /* CDCaracteristica+CoreDataClass.swift */; };
-		3D98DE4E28DA543900F6F550 /* CDCaracteristica+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2A28DA543900F6F550 /* CDCaracteristica+CoreDataProperties.swift */; };
-		3D98DE4F28DA543900F6F550 /* CDBugiganga+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2B28DA543900F6F550 /* CDBugiganga+CoreDataClass.swift */; };
-		3D98DE5028DA543900F6F550 /* CDBugiganga+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2C28DA543900F6F550 /* CDBugiganga+CoreDataProperties.swift */; };
-		3D98DE5128DA543900F6F550 /* CDInventario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2D28DA543900F6F550 /* CDInventario+CoreDataClass.swift */; };
-		3D98DE5228DA543900F6F550 /* CDInventario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2E28DA543900F6F550 /* CDInventario+CoreDataProperties.swift */; };
-		3D98DE5328DA543900F6F550 /* CDEquipamento+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE2F28DA543900F6F550 /* CDEquipamento+CoreDataClass.swift */; };
-		3D98DE5428DA543900F6F550 /* CDEquipamento+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3028DA543900F6F550 /* CDEquipamento+CoreDataProperties.swift */; };
-		3D98DE5528DA543900F6F550 /* CDArmadura+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3128DA543900F6F550 /* CDArmadura+CoreDataClass.swift */; };
-		3D98DE5628DA543900F6F550 /* CDArmadura+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3228DA543900F6F550 /* CDArmadura+CoreDataProperties.swift */; };
-		3D98DE5728DA543900F6F550 /* CDItemMontaria+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3328DA543900F6F550 /* CDItemMontaria+CoreDataClass.swift */; };
-		3D98DE5828DA543900F6F550 /* CDItemMontaria+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3428DA543900F6F550 /* CDItemMontaria+CoreDataProperties.swift */; };
-		3D98DE5928DA543900F6F550 /* CDTesouro+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3528DA543900F6F550 /* CDTesouro+CoreDataClass.swift */; };
-		3D98DE5A28DA543900F6F550 /* CDTesouro+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3628DA543900F6F550 /* CDTesouro+CoreDataProperties.swift */; };
-		3D98DE5B28DA543900F6F550 /* CDArma+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3728DA543900F6F550 /* CDArma+CoreDataClass.swift */; };
-		3D98DE5C28DA543900F6F550 /* CDArma+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3828DA543900F6F550 /* CDArma+CoreDataProperties.swift */; };
-		3D98DE5D28DA543900F6F550 /* CDMagia+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3928DA543900F6F550 /* CDMagia+CoreDataClass.swift */; };
-		3D98DE5E28DA543900F6F550 /* CDMagia+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3A28DA543900F6F550 /* CDMagia+CoreDataProperties.swift */; };
-		3D98DE5F28DA543900F6F550 /* CDPersonagem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3B28DA543900F6F550 /* CDPersonagem+CoreDataClass.swift */; };
-		3D98DE6028DA543900F6F550 /* CDPersonagem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3C28DA543900F6F550 /* CDPersonagem+CoreDataProperties.swift */; };
-		3D98DE6128DA543900F6F550 /* CDStatus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3D28DA543900F6F550 /* CDStatus+CoreDataClass.swift */; };
-		3D98DE6228DA543900F6F550 /* CDStatus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3E28DA543900F6F550 /* CDStatus+CoreDataProperties.swift */; };
-		3D98DE6328DA543900F6F550 /* CDVeiculo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE3F28DA543900F6F550 /* CDVeiculo+CoreDataClass.swift */; };
-		3D98DE6428DA543900F6F550 /* CDVeiculo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE4028DA543900F6F550 /* CDVeiculo+CoreDataProperties.swift */; };
-		3D98DE6528DA543900F6F550 /* CDPericia+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE4128DA543900F6F550 /* CDPericia+CoreDataClass.swift */; };
-		3D98DE6628DA543900F6F550 /* CDPericia+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE4228DA543900F6F550 /* CDPericia+CoreDataProperties.swift */; };
-		3D98DE6728DA543900F6F550 /* CDResistenciaMorte+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE4328DA543900F6F550 /* CDResistenciaMorte+CoreDataClass.swift */; };
-		3D98DE6828DA543900F6F550 /* CDResistenciaMorte+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE4428DA543900F6F550 /* CDResistenciaMorte+CoreDataProperties.swift */; };
-		3D98DE6928DA543900F6F550 /* CDMontaria+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE4528DA543900F6F550 /* CDMontaria+CoreDataClass.swift */; };
-		3D98DE6A28DA543900F6F550 /* CDMontaria+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DE4628DA543900F6F550 /* CDMontaria+CoreDataProperties.swift */; };
+		3D81D6C028DCF23A00F9AE13 /* EquipamentoInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81D6BF28DCF23A00F9AE13 /* EquipamentoInicial.swift */; };
 		3D9BED1928CFB76000CA1821 /* MiniChallenge001App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED1828CFB76000CA1821 /* MiniChallenge001App.swift */; };
 		3D9BED1D28CFB76200CA1821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D9BED1C28CFB76200CA1821 /* Assets.xcassets */; };
 		3D9BED2028CFB76200CA1821 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D9BED1F28CFB76200CA1821 /* Preview Assets.xcassets */; };
-		3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED2128CFB76200CA1821 /* Persistence.swift */; };
-		3D9BED2528CFB76200CA1821 /* MiniChallenge001.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED2328CFB76200CA1821 /* MiniChallenge001.xcdatamodeld */; };
 		3D9BED2F28CFB76200CA1821 /* MiniChallenge001Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED2E28CFB76200CA1821 /* MiniChallenge001Tests.swift */; };
 		3D9BED3928CFB76200CA1821 /* MiniChallenge001UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED3828CFB76200CA1821 /* MiniChallenge001UITests.swift */; };
 		3D9BED3B28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED3A28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift */; };
@@ -128,50 +91,13 @@
 		3D3DC35C28DC14B30093BD92 /* ClasseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseClient.swift; sourceTree = "<group>"; };
 		3D3DC35E28DC15310093BD92 /* ClasseConcreteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseConcreteBuilder.swift; sourceTree = "<group>"; };
 		3D60C63928DB80FE0051676A /* PersonagemBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonagemBuilder.swift; sourceTree = "<group>"; };
-		3D60C63A28DB80FE0051676A /* Classe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classe.swift; sourceTree = "<group>"; };
+		3D60C63A28DB80FE0051676A /* ClasseEscolha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseEscolha.swift; sourceTree = "<group>"; };
 		3D60C63D28DB958C0051676A /* Raca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raca.swift; sourceTree = "<group>"; };
-		3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFerramenta+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAtributo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE2628DA543900F6F550 /* CDAtributo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAtributo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE2728DA543900F6F550 /* CDCondicao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCondicao+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE2828DA543900F6F550 /* CDCondicao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCondicao+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE2928DA543900F6F550 /* CDCaracteristica+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCaracteristica+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE2A28DA543900F6F550 /* CDCaracteristica+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCaracteristica+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE2B28DA543900F6F550 /* CDBugiganga+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBugiganga+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE2C28DA543900F6F550 /* CDBugiganga+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBugiganga+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE2D28DA543900F6F550 /* CDInventario+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDInventario+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE2E28DA543900F6F550 /* CDInventario+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDInventario+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE2F28DA543900F6F550 /* CDEquipamento+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEquipamento+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE3028DA543900F6F550 /* CDEquipamento+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEquipamento+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE3128DA543900F6F550 /* CDArmadura+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmadura+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE3228DA543900F6F550 /* CDArmadura+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArmadura+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE3328DA543900F6F550 /* CDItemMontaria+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDItemMontaria+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE3428DA543900F6F550 /* CDItemMontaria+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDItemMontaria+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE3528DA543900F6F550 /* CDTesouro+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTesouro+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE3628DA543900F6F550 /* CDTesouro+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTesouro+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE3728DA543900F6F550 /* CDArma+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArma+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE3828DA543900F6F550 /* CDArma+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDArma+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE3928DA543900F6F550 /* CDMagia+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMagia+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE3A28DA543900F6F550 /* CDMagia+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMagia+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE3B28DA543900F6F550 /* CDPersonagem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPersonagem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE3C28DA543900F6F550 /* CDPersonagem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPersonagem+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE3D28DA543900F6F550 /* CDStatus+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDStatus+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE3E28DA543900F6F550 /* CDStatus+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDStatus+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE3F28DA543900F6F550 /* CDVeiculo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDVeiculo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE4028DA543900F6F550 /* CDVeiculo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDVeiculo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE4128DA543900F6F550 /* CDPericia+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPericia+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE4228DA543900F6F550 /* CDPericia+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPericia+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE4328DA543900F6F550 /* CDResistenciaMorte+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDResistenciaMorte+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE4428DA543900F6F550 /* CDResistenciaMorte+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDResistenciaMorte+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3D98DE4528DA543900F6F550 /* CDMontaria+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMontaria+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D98DE4628DA543900F6F550 /* CDMontaria+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMontaria+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3D81D6BF28DCF23A00F9AE13 /* EquipamentoInicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipamentoInicial.swift; sourceTree = "<group>"; };
 		3D9BED1528CFB76000CA1821 /* MiniChallenge001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge001.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9BED1828CFB76000CA1821 /* MiniChallenge001App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge001App.swift; sourceTree = "<group>"; };
 		3D9BED1C28CFB76200CA1821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D9BED1F28CFB76200CA1821 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3D9BED2128CFB76200CA1821 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		3D9BED2428CFB76200CA1821 /* MiniChallenge001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MiniChallenge001.xcdatamodel; sourceTree = "<group>"; };
 		3D9BED2A28CFB76200CA1821 /* MiniChallenge001Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniChallenge001Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9BED2E28CFB76200CA1821 /* MiniChallenge001Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge001Tests.swift; sourceTree = "<group>"; };
 		3D9BED3428CFB76200CA1821 /* MiniChallenge001UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniChallenge001UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,7 +166,8 @@
 				3D3DC35E28DC15310093BD92 /* ClasseConcreteBuilder.swift */,
 				3D3DC35728DC13880093BD92 /* ClasseDirector.swift */,
 				3D3DC35C28DC14B30093BD92 /* ClasseClient.swift */,
-				3D60C63A28DB80FE0051676A /* Classe.swift */,
+				3D60C63A28DB80FE0051676A /* ClasseEscolha.swift */,
+				3D81D6BF28DCF23A00F9AE13 /* EquipamentoInicial.swift */,
 			);
 			path = Builder_Classe;
 			sourceTree = "<group>";
@@ -318,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				126AA8F828DABD5300CF5A2E /* Json */,
-				3DE3796D28D2644D005812C7 /* CoreData */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,51 +271,6 @@
 				126AAE1528DAC0A900CF5A2E /* TestView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		3DE3796D28D2644D005812C7 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				3D98DE2328DA543800F6F550 /* CDFerramenta+CoreDataClass.swift */,
-				3D98DE2428DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift */,
-				3D98DE2528DA543900F6F550 /* CDAtributo+CoreDataClass.swift */,
-				3D98DE2628DA543900F6F550 /* CDAtributo+CoreDataProperties.swift */,
-				3D98DE2728DA543900F6F550 /* CDCondicao+CoreDataClass.swift */,
-				3D98DE2828DA543900F6F550 /* CDCondicao+CoreDataProperties.swift */,
-				3D98DE2928DA543900F6F550 /* CDCaracteristica+CoreDataClass.swift */,
-				3D98DE2A28DA543900F6F550 /* CDCaracteristica+CoreDataProperties.swift */,
-				3D98DE2B28DA543900F6F550 /* CDBugiganga+CoreDataClass.swift */,
-				3D98DE2C28DA543900F6F550 /* CDBugiganga+CoreDataProperties.swift */,
-				3D98DE2D28DA543900F6F550 /* CDInventario+CoreDataClass.swift */,
-				3D98DE2E28DA543900F6F550 /* CDInventario+CoreDataProperties.swift */,
-				3D98DE2F28DA543900F6F550 /* CDEquipamento+CoreDataClass.swift */,
-				3D98DE3028DA543900F6F550 /* CDEquipamento+CoreDataProperties.swift */,
-				3D98DE3128DA543900F6F550 /* CDArmadura+CoreDataClass.swift */,
-				3D98DE3228DA543900F6F550 /* CDArmadura+CoreDataProperties.swift */,
-				3D98DE3328DA543900F6F550 /* CDItemMontaria+CoreDataClass.swift */,
-				3D98DE3428DA543900F6F550 /* CDItemMontaria+CoreDataProperties.swift */,
-				3D98DE3528DA543900F6F550 /* CDTesouro+CoreDataClass.swift */,
-				3D98DE3628DA543900F6F550 /* CDTesouro+CoreDataProperties.swift */,
-				3D98DE3728DA543900F6F550 /* CDArma+CoreDataClass.swift */,
-				3D98DE3828DA543900F6F550 /* CDArma+CoreDataProperties.swift */,
-				3D98DE3928DA543900F6F550 /* CDMagia+CoreDataClass.swift */,
-				3D98DE3A28DA543900F6F550 /* CDMagia+CoreDataProperties.swift */,
-				3D98DE3B28DA543900F6F550 /* CDPersonagem+CoreDataClass.swift */,
-				3D98DE3C28DA543900F6F550 /* CDPersonagem+CoreDataProperties.swift */,
-				3D98DE3D28DA543900F6F550 /* CDStatus+CoreDataClass.swift */,
-				3D98DE3E28DA543900F6F550 /* CDStatus+CoreDataProperties.swift */,
-				3D98DE3F28DA543900F6F550 /* CDVeiculo+CoreDataClass.swift */,
-				3D98DE4028DA543900F6F550 /* CDVeiculo+CoreDataProperties.swift */,
-				3D98DE4128DA543900F6F550 /* CDPericia+CoreDataClass.swift */,
-				3D98DE4228DA543900F6F550 /* CDPericia+CoreDataProperties.swift */,
-				3D98DE4328DA543900F6F550 /* CDResistenciaMorte+CoreDataClass.swift */,
-				3D98DE4428DA543900F6F550 /* CDResistenciaMorte+CoreDataProperties.swift */,
-				3D98DE4528DA543900F6F550 /* CDMontaria+CoreDataClass.swift */,
-				3D98DE4628DA543900F6F550 /* CDMontaria+CoreDataProperties.swift */,
-				3D9BED2128CFB76200CA1821 /* Persistence.swift */,
-				3D9BED2328CFB76200CA1821 /* MiniChallenge001.xcdatamodeld */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,74 +404,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D98DE4D28DA543900F6F550 /* CDCaracteristica+CoreDataClass.swift in Sources */,
-				3D98DE5928DA543900F6F550 /* CDTesouro+CoreDataClass.swift in Sources */,
-				3D98DE6728DA543900F6F550 /* CDResistenciaMorte+CoreDataClass.swift in Sources */,
-				3D98DE6928DA543900F6F550 /* CDMontaria+CoreDataClass.swift in Sources */,
-				3D98DE6328DA543900F6F550 /* CDVeiculo+CoreDataClass.swift in Sources */,
-				3D98DE4B28DA543900F6F550 /* CDCondicao+CoreDataClass.swift in Sources */,
 				09B5569428DA6156001466B0 /* Inventario.swift in Sources */,
-				3D98DE6628DA543900F6F550 /* CDPericia+CoreDataProperties.swift in Sources */,
 				126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */,
-				3D98DE6A28DA543900F6F550 /* CDMontaria+CoreDataProperties.swift in Sources */,
-				3D98DE6528DA543900F6F550 /* CDPericia+CoreDataClass.swift in Sources */,
 				126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */,
 				3D3DC35428DBF8440093BD92 /* Antecedente.swift in Sources */,
 				09B5569628DA6156001466B0 /* Identidade.swift in Sources */,
 				3D60C63E28DB958C0051676A /* Raca.swift in Sources */,
 				3D3DC35628DC09F00093BD92 /* ClasseBuilder.swift in Sources */,
-				3D98DE5F28DA543900F6F550 /* CDPersonagem+CoreDataClass.swift in Sources */,
 				3DE3796F28D2673E005812C7 /* ViewModel.swift in Sources */,
-				3D98DE6028DA543900F6F550 /* CDPersonagem+CoreDataProperties.swift in Sources */,
 				09B5569528DA6156001466B0 /* Atributos.swift in Sources */,
-				3D98DE4928DA543900F6F550 /* CDAtributo+CoreDataClass.swift in Sources */,
-				3D98DE5728DA543900F6F550 /* CDItemMontaria+CoreDataClass.swift in Sources */,
-				3D98DE5128DA543900F6F550 /* CDInventario+CoreDataClass.swift in Sources */,
-				3D98DE5628DA543900F6F550 /* CDArmadura+CoreDataProperties.swift in Sources */,
 				126ABAF228DB3D5200CF5A2E /* Moeda.swift in Sources */,
 				126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */,
-				3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */,
 				126ABAF828DB3D5200CF5A2E /* FerramentaJSON.swift in Sources */,
 				126ABAF528DB3D5200CF5A2E /* EquipamentoJSON.swift in Sources */,
 				3D3DC35D28DC14B30093BD92 /* ClasseClient.swift in Sources */,
-				3D98DE4F28DA543900F6F550 /* CDBugiganga+CoreDataClass.swift in Sources */,
-				3D98DE6128DA543900F6F550 /* CDStatus+CoreDataClass.swift in Sources */,
-				3D98DE5428DA543900F6F550 /* CDEquipamento+CoreDataProperties.swift in Sources */,
-				3D98DE4C28DA543900F6F550 /* CDCondicao+CoreDataProperties.swift in Sources */,
 				09B5569728DA6156001466B0 /* ContentView.swift in Sources */,
 				126ABAF328DB3D5200CF5A2E /* VeiculoAquaticoJSON.swift in Sources */,
-				3D98DE4E28DA543900F6F550 /* CDCaracteristica+CoreDataProperties.swift in Sources */,
-				3D98DE5B28DA543900F6F550 /* CDArma+CoreDataClass.swift in Sources */,
 				3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */,
 				3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */,
 				126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */,
 				126AAE1628DAC0A900CF5A2E /* TestView.swift in Sources */,
-				3D9BED2528CFB76200CA1821 /* MiniChallenge001.xcdatamodeld in Sources */,
-				3D98DE5A28DA543900F6F550 /* CDTesouro+CoreDataProperties.swift in Sources */,
 				09B5569228DA6156001466B0 /* Habilidades.swift in Sources */,
 				126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */,
-				3D98DE5328DA543900F6F550 /* CDEquipamento+CoreDataClass.swift in Sources */,
 				3D3DC35F28DC15310093BD92 /* ClasseConcreteBuilder.swift in Sources */,
-				3D98DE4728DA543900F6F550 /* CDFerramenta+CoreDataClass.swift in Sources */,
-				3D98DE6428DA543900F6F550 /* CDVeiculo+CoreDataProperties.swift in Sources */,
-				3D98DE5D28DA543900F6F550 /* CDMagia+CoreDataClass.swift in Sources */,
 				09B5569828DA6156001466B0 /* Combate.swift in Sources */,
-				3D98DE5228DA543900F6F550 /* CDInventario+CoreDataProperties.swift in Sources */,
-				3D98DE4828DA543900F6F550 /* CDFerramenta+CoreDataProperties.swift in Sources */,
-				3D98DE5E28DA543900F6F550 /* CDMagia+CoreDataProperties.swift in Sources */,
 				126ABAF628DB3D5200CF5A2E /* EquipamentoMontariaJSON.swift in Sources */,
-				3D98DE5828DA543900F6F550 /* CDItemMontaria+CoreDataProperties.swift in Sources */,
-				3D98DE5028DA543900F6F550 /* CDBugiganga+CoreDataProperties.swift in Sources */,
 				126ABAF728DB3D5200CF5A2E /* ArmaJSON.swift in Sources */,
-				3D98DE6828DA543900F6F550 /* CDResistenciaMorte+CoreDataProperties.swift in Sources */,
+				3D81D6C028DCF23A00F9AE13 /* EquipamentoInicial.swift in Sources */,
 				09B5569328DA6156001466B0 /* SheetTabView.swift in Sources */,
 				126ABAF428DB3D5200CF5A2E /* MontariaJSON.swift in Sources */,
-				3D60C63C28DB80FE0051676A /* Classe.swift in Sources */,
-				3D98DE6228DA543900F6F550 /* CDStatus+CoreDataProperties.swift in Sources */,
-				3D98DE4A28DA543900F6F550 /* CDAtributo+CoreDataProperties.swift in Sources */,
-				3D98DE5528DA543900F6F550 /* CDArmadura+CoreDataClass.swift in Sources */,
+				3D60C63C28DB80FE0051676A /* ClasseEscolha.swift in Sources */,
 				3D9BED1928CFB76000CA1821 /* MiniChallenge001App.swift in Sources */,
-				3D98DE5C28DA543900F6F550 /* CDArma+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,19 +761,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3D9BED2328CFB76200CA1821 /* MiniChallenge001.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3D9BED2428CFB76200CA1821 /* MiniChallenge001.xcdatamodel */,
-			);
-			currentVersion = 3D9BED2428CFB76200CA1821 /* MiniChallenge001.xcdatamodel */;
-			path = MiniChallenge001.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3D9BED0D28CFB76000CA1821 /* Project object */;
 }

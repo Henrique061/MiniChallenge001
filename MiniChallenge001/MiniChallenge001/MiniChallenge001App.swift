@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct MiniChallenge001App: App {
-    let persistenceController = PersistenceController.shared
+    //let persistenceController = PersistenceController.shared
     @Environment(\.scenePhase) var scenePhase // var para salvar o core data quando o app vai pro background do phone
 
     var body: some Scene {
@@ -20,7 +20,7 @@ struct MiniChallenge001App: App {
         }
         
         .onChange(of: scenePhase) { _ in
-            persistenceController.save()
+            //persistenceController.save()
         }
     }
     struct RecivedView: View {

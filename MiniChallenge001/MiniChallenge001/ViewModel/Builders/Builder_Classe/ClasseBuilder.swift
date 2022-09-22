@@ -15,7 +15,7 @@ protocol ClasseBuilder {
     func setNomeClasse()
     
     func setCaracteristicasClasse(_ caracteristicas: [String])
-    func setSubClasses(_ subClasses: [SubClasse])
+    func setSubClasses(_ subClasses: [SubClasseEscolha])
     func setDadoVida(_ dado: String)
     
     func setProfSalvaguarda(_ atributos: [AtributosSalvaguarda])
@@ -28,11 +28,14 @@ protocol ClasseBuilder {
     func setEquipamentosIniciais(_ equipamentos: [EquipamentoJSON])
     func setFerramentasIniciais(_ ferramentas: [FerramentaJSON])
     
-    func setProfPericias(_ pericias: [String])
+    func setProfPericias(_ pericias: [Pericia])
+    func setQuantiaEscolhaProfPericia(_ quantia: Int)
     func setPossuiMagias(_ possuiMagia: Bool)
+    func setMagiaApenasSubclasse(_ magiaDeSubclasse: Bool)
+    func setSubclasseComMagia(_ subclasse: SubclassePersonagem)
+    
     func setMagiasConhecidas(_ magiasConhecidas: [MagiasConhecidas])
     func setEspacosDeMagia(_ espacosMagias: [EspacosDeMagias])
     func setPontosEspecificosNumericos(_ pontoNumerico: [PontoEspecificoNumerico])
     func setPontosEspecificosTexto(_ pontoTexto: [PontoEspecificoTexto])
-    func setRiquezaInicial(_ riqueza: Int)
 }

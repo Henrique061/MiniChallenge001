@@ -8,19 +8,19 @@
 import Foundation
 
 // MARK: Magias conhecidas de cada classe por nivel
-struct MagiasConhecidas {
+public struct MagiasConhecidas {
     var nivel: Int
     var quantiaTruques: Int
     var quantiaMagias: Int
 }
 
 // MARK: Espacos de magia de cada classe por nivel e nivel de circulo magico
-struct EspacosDeMagias {
+public struct EspacosDeMagias {
     var nivelPersonagem: Int
     var niveisCirculo: [CirculoMagico] // cada indice representa 1 nivel de circulo magico
 }
 
-struct CirculoMagico {
+public struct CirculoMagico {
     var nivelCirculo: Int
     var limiteUsoMagia: Int?
     var magiasConhecidas: [String]
@@ -38,7 +38,7 @@ struct PontoEspecificoNumerico {
 }
 
 //MARK: Enum ClassePersonagem
-enum ClassePersonagem: String, Codable, Hashable {
+public enum ClassePersonagem: String, Codable, Hashable {
     case barbaro = "Bárbaro"
     case bardo = "Bardo"
     case bruxo = "Bruxo"
@@ -106,33 +106,63 @@ enum AtributosSalvaguarda : String {
     case carisma = "Carisma"
 }
 
+enum Pericia : String, CaseIterable {
+    case acrobacia = "Acrobacia (DES)"
+    case adestrarAnimais = "Adestrar Animais (SAB)"
+    case arcanismo = "Arcanismo (INT)"
+    case atletismo = "Atletismo (FOR)"
+    case atuacao = "Atuação (CAR)"
+    case enganacao = "Enganação (CAR)"
+    case furtividade = "Furtividade (DES)"
+    case historia = "História (INT)"
+    case intimidacao = "Intimidação (CAR)"
+    case intuicao = "Intuição (SAB)"
+    case investigacao = "Investigação (INT)"
+    case medicina = "Medicina (SAB)"
+    case natureza = "Natureza (INT)"
+    case percepcao = "Percepção (SAB)"
+    case persuasao = "Persuasão (CAR)"
+    case prestidigitacao = "Prestidigitação (DES)"
+    case religiao = "Religião (INT)"
+    case sobrevivencia = "Sobrevivência (SAB)"
+}
+
 //MARK: Classe
-public class Classe {
+public class ClasseEscolha {
     var classePersonagem: ClassePersonagem? // enum de classes
     var nomeClasse: String?
     var caracteristicasClasse: [String]? // COLOCAR CARACTERISTICAS AQUI
-    var subClasses: [SubClasse]?
+    var subClasses: [SubClasseEscolha]?
     var dadoVida: String?
     var profSalvaguardas: [AtributosSalvaguarda]?
     var profArmas: [ArmaJSON]?
     var profArmaduras: [ArmaduraJSON]?
     var profFerramentas: [FerramentaJSON]?
+    
+    var opcaoEquipamento1: [String]?
+    var opcaoEquipamento2: [String]?
+    var opcaoEquipamento3: [String]?
+    var opcaoEquipamento4: [String]?
+    var opcaoEquipamento5: [String]?
     var armasIniciais: [ArmaJSON]?
     var armadurasIniciais: [ArmaduraJSON]?
     var equipamentosIniciais: [EquipamentoJSON]?
     var ferramentasIniciais: [FerramentaJSON]?
+    
     var vidaInicial: Int?
-    var profPericias: [String]?
+    var profPericias: [Pericia]?
+    var quantiaProfPericias: Int?
     var possuiMagias: Bool?
+    var magiaApenasSubclasse: Bool?
+    var subclasseComMagia: SubclassePersonagem?
     var magiasConhecidas: [MagiasConhecidas]?
     var espacosDeMagia: [EspacosDeMagias]?
     var pontosEspecificosNumerico: [PontoEspecificoNumerico]?
     var pontosEspecificosTexto: [PontoEspecificoTexto]?
-    var riquezaInicial: Int?
 }
 
 //MARK: SubClasse
-struct SubClasse{
+struct SubClasseEscolha{
     var subclasse: SubclassePersonagem
     var subclasseNome: String
     var caracteristicasSubClasse: [String] // COLOCAR CARACTERISTICAS AQUI

@@ -41,7 +41,7 @@ struct ValoresAtributos {
 protocol PersonagemBuilder {
     func resetBuilder() -> Void
     func buildRaca() -> Raca
-    func buildClasse() -> Classe
+    func buildClasse() -> ClasseEscolha
     func buildAntecedente() -> Antecedente
     func buildNome() -> String
     func buildTendencia() -> Tendencia

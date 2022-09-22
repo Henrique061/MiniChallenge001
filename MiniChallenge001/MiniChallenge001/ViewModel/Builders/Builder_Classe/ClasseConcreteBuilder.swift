@@ -8,10 +8,10 @@
 import Foundation
 
 public class ClasseConcreteBuilder : ClasseBuilder {
-    private var classe = Classe()
+    private var classe = ClasseEscolha()
     
     func resetBuilder() {
-        classe = Classe()
+        classe = ClasseEscolha()
     }
     
     //MARK: CLASSE
@@ -33,7 +33,7 @@ public class ClasseConcreteBuilder : ClasseBuilder {
     }
     
     //MARK: SUBCLASSE
-    func setSubClasses(_ subClasses: [SubClasse]) {
+    func setSubClasses(_ subClasses: [SubClasseEscolha]) {
         self.classe.subClasses = subClasses
     }
     
@@ -83,13 +83,26 @@ public class ClasseConcreteBuilder : ClasseBuilder {
     }
     
     //MARK: PROFICIENCIA PERICIAS
-    func setProfPericias(_ pericias: [String]) {
+    func setProfPericias(_ pericias: [Pericia]) {
         self.classe.profPericias = pericias
+    }
+    
+    //MARK: QUANTIA PROFICIENCIA PERICIAS
+    func setQuantiaEscolhaProfPericia(_ quantia: Int) {
+        self.classe.quantiaProfPericias = quantia
     }
     
     //MARK: POSSUI MAGIAS
     func setPossuiMagias(_ possuiMagia: Bool) {
         self.classe.possuiMagias = possuiMagia
+    }
+    
+    func setMagiaApenasSubclasse(_ magiaDeSubclasse: Bool) {
+        self.classe.magiaApenasSubclasse = magiaDeSubclasse
+    }
+    
+    func setSubclasseComMagia(_ subclasse: SubclassePersonagem) {
+        self.classe.subclasseComMagia = subclasse
     }
     
     //MARK: MAGIAS CONHECIDAS
@@ -112,12 +125,8 @@ public class ClasseConcreteBuilder : ClasseBuilder {
         self.classe.pontosEspecificosTexto = pontoTexto
     }
     
-    //MARK: RIQUEZA INICIAL
-    func setRiquezaInicial(_ riqueza: Int) {
-        self.classe.riquezaInicial = riqueza
-    }
      //MARK: GET FINAL
-    func getClasseFinal() -> Classe {
+    func getClasseFinal() -> ClasseEscolha {
         let buildedClasse = self.classe
         self.resetBuilder()
         return buildedClasse
