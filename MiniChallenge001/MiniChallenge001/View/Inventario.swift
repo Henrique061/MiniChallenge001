@@ -15,53 +15,43 @@ struct Inventario: View {
     var body: some View {
         NavigationView{
             VStack{
-                List {
-                    
+                List{
                     Section{
                         VStack(alignment: .leading){
-                            
-                            Text("Capacidade de carga")
+                            Text("Amizade")
                                 .bold()
-                            Text("teste")
-                            
+                            Text("1,5Kg / 20GKg")
                         }
                         VStack(alignment: .leading){
                             Text("Saco de Moedas")
                                 .bold()
                             HStack{
-                                Text("PC: \(1000)\tPP: \(1000)\tPE: \(1000)\tPO: \(1000)\tPL: \(1000)")
+                                Text("PC:\(1000)   PP:\(1000)   PE:\(1000)   PO:\(1000)   PL:\(1000)")
+                                    .font(.system(size: 13))
                                     .lineLimit(1)
                                     .scaledToFill()
-                                //.padding()
-                                
                             }
                         }
-                        
+                    }header: {
+                        Text("Mochila")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
                     }
-                header: {
-                    Text("Mochila")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                }
-                    
                     Section{
                         VStack(alignment: .leading){
                             
                             Text("2X Adaga")
                                 .bold()
-                            
-                            
-                            
-                            
+                                .font(.system(size: 15))
                             HStack{
                                 Text("Arma simples de Corpo-a-Corpo")
-                                
+                                    .font(.system(size: 13))
+                                Spacer()
                                 Text("1,0 Kg")
                                     .frame( alignment: .trailing)
+                                    .font(.system(size: 13))
                             }
                         }
                     }
-                    
-                    
                     Section {
                         ForEach(arr, id: \.self) { item in
                             Text(item)
@@ -75,12 +65,20 @@ struct Inventario: View {
                 
                 .navigationTitle("Inventário")
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button() {
+                            print("Pressed")
+                        } label: {
+                            Image(systemName: "cart.fill").accentColor(.black)
+                        }
+                    }
+                }
             }
+            
         }
-        
     }
 }
-
 struct InfoMoeda: View {
     
     @State var tipoMoeda: String

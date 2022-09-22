@@ -14,10 +14,30 @@ struct Identidade: View {
     
     var body: some View {
         NavigationView{
-            Text("Identidade")
+            VStack{
+            List{
+                Section{
+                Text("Nome")
+                Text("Nome")
+                }
+                Section{  Text("Nome")
+                Text("Nome")
+                }
+                    }.listStyle(.insetGrouped)
+            }
                 .navigationTitle("Identidade")
                 .navigationBarTitleDisplayMode(.inline)
-
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button() {
+                            print("Pressed")
+                        } label: {
+                            Image("Aprimoramento").accentColor(.black)
+                    
+                        }
+                    }
+                }
+        
         }
     }
 }
