@@ -16,6 +16,16 @@ struct Combate: View {
             Text("Combate")
                 .navigationTitle("Combate")
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button() {
+                            print("Pressed")
+                        } label: {
+                            Image("Temporizador").accentColor(.black)
+                    
+                        }
+                    }
+                }
         
         }
     }
