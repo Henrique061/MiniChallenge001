@@ -29,12 +29,12 @@ struct CirculoMagico {
 //MARK: Pontos especificos de classe (chi e furia por exemplo), mostrando um valor numerico ou textual
 struct PontoEspecificoTexto {
     var nomeValor: String
-    var valorTextural: String
+    var valorTexturalInicial: String
 }
 
 struct PontoEspecificoNumerico {
     var nomeValor: String
-    var valorNumerico: Int
+    var valorNumericoInicial: Int
 }
 
 //MARK: Enum ClassePersonagem
@@ -97,13 +97,23 @@ enum SubclassePersonagem : String {
     case PT_conclaveRastreadorSubterraneo = "Conclave do Rastreador Subterrâneo"
 }
 
+enum AtributosSalvaguarda : String {
+    case forca = "Força"
+    case destreza = "Destreza"
+    case constituicao = "Constituição"
+    case inteligencia = "Inteligência"
+    case sabedoria = "Sabedoria"
+    case carisma = "Carisma"
+}
+
 //MARK: Classe
 public class Classe {
-    var classe: ClassePersonagem // enum de classes
-    var nomeClasse: String
-    var caracteristicasClasse: [String] // COLOCAR CARACTERISTICAS AQUI
-    var dadoVida: String
-    var profSalvaguardas: [String]
+    var classePersonagem: ClassePersonagem? // enum de classes
+    var nomeClasse: String?
+    var caracteristicasClasse: [String]? // COLOCAR CARACTERISTICAS AQUI
+    var subClasses: [SubClasse]?
+    var dadoVida: String?
+    var profSalvaguardas: [AtributosSalvaguarda]?
     var profArmas: [ArmaJSON]?
     var profArmaduras: [ArmaduraJSON]?
     var profFerramentas: [FerramentaJSON]?
@@ -111,50 +121,25 @@ public class Classe {
     var armadurasIniciais: [ArmaduraJSON]?
     var equipamentosIniciais: [EquipamentoJSON]?
     var ferramentasIniciais: [FerramentaJSON]?
-    var vidaInicial: Int
-    var profPericias: [String]
-    var possuiMagias: Bool
+    var vidaInicial: Int?
+    var profPericias: [String]?
+    var possuiMagias: Bool?
     var magiasConhecidas: [MagiasConhecidas]?
     var espacosDeMagia: [EspacosDeMagias]?
     var pontosEspecificosNumerico: [PontoEspecificoNumerico]?
     var pontosEspecificosTexto: [PontoEspecificoTexto]?
-    var riquezaInicial: Int
-    
-    init (classe: ClassePersonagem) {
-        self.classe = classe
-        self.nomeClasse = classe.rawValue
-        self.caracteristicasClasse = []
-        self.dadoVida = ""
-        self.profSalvaguardas = []
-        self.profArmas = nil
-        self.profArmaduras = nil
-        self.profFerramentas = nil
-        self.armasIniciais = nil
-        self.armasIniciais = nil
-        self.armadurasIniciais = nil
-        self.equipamentosIniciais = nil
-        self.ferramentasIniciais = nil
-        self.vidaInicial = 0
-        self.profPericias = []
-        self.possuiMagias = true
-        self.magiasConhecidas = nil
-        self.espacosDeMagia = nil
-        self.pontosEspecificosNumerico = nil
-        self.pontosEspecificosTexto = nil
-        self.riquezaInicial = 0
-    }
+    var riquezaInicial: Int?
 }
 
 //MARK: SubClasse
-public class SubClasse : Classe {
-    var subclasse: SubclassePersonagem?
-    var subclasseNome: String?
+struct SubClasse{
+    var subclasse: SubclassePersonagem
+    var subclasseNome: String
     var caracteristicasSubClasse: [String] // COLOCAR CARACTERISTICAS AQUI
     
-    override init (classe: ClassePersonagem) {
-        self.subclasse = nil
-        self.subclasseNome = nil
-        self.caracteristicasSubClasse = []
-        super.init(classe: classe)
+    init (subclase: SubclassePersonagem, caracteristicas: [String]) {
+        self.subclasse = subclase
+        self.subclasseNome = subclase.rawValue
+        self.caracteristicasSubClasse = caracteristicas
     }
 }
