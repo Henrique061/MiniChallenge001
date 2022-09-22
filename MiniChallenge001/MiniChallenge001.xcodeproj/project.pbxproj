@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09A02A6A28DCFAAA0047AD40 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A02A6928DCFAAA0047AD40 /* View+Extension.swift */; };
 		09B5569228DA6156001466B0 /* Habilidades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568B28DA6154001466B0 /* Habilidades.swift */; };
 		09B5569328DA6156001466B0 /* SheetTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568C28DA6155001466B0 /* SheetTabView.swift */; };
 		09B5569428DA6156001466B0 /* Inventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568D28DA6155001466B0 /* Inventario.swift */; };
@@ -93,6 +94,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09A02A6928DCFAAA0047AD40 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		09B5568B28DA6154001466B0 /* Habilidades.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habilidades.swift; sourceTree = "<group>"; };
 		09B5568C28DA6155001466B0 /* SheetTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetTabView.swift; sourceTree = "<group>"; };
 		09B5568D28DA6155001466B0 /* Inventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventario.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				09B5568D28DA6155001466B0 /* Inventario.swift */,
 				09B5568C28DA6155001466B0 /* SheetTabView.swift */,
 				126AAE1528DAC0A900CF5A2E /* TestView.swift */,
+				09A02A6928DCFAAA0047AD40 /* View+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				3D98DE5128DA543900F6F550 /* CDInventario+CoreDataClass.swift in Sources */,
 				3D98DE5628DA543900F6F550 /* CDArmadura+CoreDataProperties.swift in Sources */,
 				126ABAF228DB3D5200CF5A2E /* Moeda.swift in Sources */,
+				09A02A6A28DCFAAA0047AD40 /* View+Extension.swift in Sources */,
 				126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */,
 				3D9BED2228CFB76200CA1821 /* Persistence.swift in Sources */,
 				126ABAF828DB3D5200CF5A2E /* FerramentaJSON.swift in Sources */,
