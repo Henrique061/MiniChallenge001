@@ -1,0 +1,10 @@
+{
+    "id": 146,
+    "nome": "Formas de Círculo",
+    "classe": "Druida",
+    "subclasse": "Círculo da Lua",
+    "nivel": [
+        2
+    ],
+    "descricao": "Os ritos do seu círculo garantem a você a habilidade de se transformar em formas animais mais poderosas. A partir do 2° nível, você pode usar sua Forma Selvagem para se transformar em uma besta com nível de desafio até 1 (você ignora a coluna ND Max da tabela Formas de Besta, mas ainda deve acatar as limitações descritas lá).\nA partir do 6° nível, você pode se transformar em uma besta com nível de desafio tão alto quanto seu nível de druida dividido por 3, arredondado para baixo."
+}

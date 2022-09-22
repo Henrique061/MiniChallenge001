@@ -1,0 +1,17 @@
+{
+    "id": 278,
+    "nome": "Relâmpago",
+    "nivel": 3,
+    "classes": [
+        "Druida",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Evocação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal (linha de 30 metros)",
+    "componentes": "Verbal, Somático, Material (um pouco de pelo e uma haste deâmbar, cristal ou vidro)",
+    "duracao": "Instantânea",
+    "descricao": "Um relâmpago forma uma linha de 30 metros de comprimento e 1,5 metro de largura que é disparado por você em uma direção, à sua escolha. Cada criatura na linha deve realizar um teste de resistência de Destreza. Uma criatura sofre 8d6 de dano elétrico se falhar na resistência ou metade desse dano se obtiver sucesso. O relâmpago incendeia objetos inflamáveis na área que não estejam sendo vestidos ou carregados. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 4° nível ou superior, o dano aumenta em 1d6 para cada nível do espaço acima do 3°."
+}

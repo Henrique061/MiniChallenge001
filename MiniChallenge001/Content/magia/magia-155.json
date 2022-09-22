@@ -1,0 +1,18 @@
+{
+    "id": 155,
+    "nome": "Forjar Morte",
+    "nivel": 3,
+    "classes": [
+        "Bardo",
+        "Clérigo",
+        "Druida",
+        "Mago"
+    ],
+    "escola": "Necromancia",
+    "ritual": true,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático, Material (uma pitada de terra decemitério)",
+    "duracao": "1 hora",
+    "descricao": "Você toca uma criatura voluntária e a coloca em um estado catatônico que é indistinguível da morte. Pela duração da magia, ou até você usar uma ação para tocar o alvo e dissipar a magia, o alvo aparenta estar morto para todas as inspeções externas e para magias usadas para determinar a condição do alvo. O alvo está cego e incapacitado e seu deslocamento cai para 0. O alvo tem resistência a todos os danos, exceto dano psíquico. Se o alvo estava doente ou envenenado quando você conjuroua magia, ou ficou doente ou envenenado durante o período em que estava sob efeito da magia, a doença e veneno não terá qualquer efeito até a magia terminar."
+}

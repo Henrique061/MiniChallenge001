@@ -1,0 +1,18 @@
+{
+    "id": 299,
+    "nome": "Sexto Sentido",
+    "nivel": 9,
+    "classes": [
+        "Bardo",
+        "Bruxo",
+        "Druida",
+        "Mago"
+    ],
+    "escola": "Adivinhação",
+    "ritual": false,
+    "tempoConjuracao": "1 minuto",
+    "alcance": "Toque",
+    "componentes": "Verbal, Somático, Material (uma pena de colibri)",
+    "duracao": "8 horas",
+    "descricao": "Você toca uma criatura voluntária e a abençoa com uma habilidade limitada de ver o futuro iminente. Pela duração, o alvo não pode ser surpreendido e tem vantagem nas jogadas de ataque, testes de habilidade e testes de resistência. Além disso, outras criaturas tem desvantagem nas jogadas de ataque contra o alvo, pela duração. Essa magia termina imediatamente, se você conjura- la novamente antes da duração acabar. SILÊNCIO2° nível de ilusão (ritual) Tempo de Conjuração: 1 ação Alcance : 36 metros Componentes : V, S  Duração : Concentração, até 10 minutos Pela duração, nenhum som pode ser criado dentro ou atravessar uma esfera de 6 metros de raio centrada num ponto, à sua escolha, dentro do alcance. Qualquer criatura ou objeto totalmente dentro da esfera é imune a dano trovejante e as criaturas estarão surdas enquanto estiverem completamente dentro dela. Conjurar magias que inclua a componente verbal é impossível ai."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 130,
+    "nome": "Curandeiro Abençoado",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Vida",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, as magias que você conjurar para curar os outros também curam você. Quando conjurar uma magia de cura em outra criatura, você também recupera pontos de vida, em um total de 2 + nível da magia."
+}

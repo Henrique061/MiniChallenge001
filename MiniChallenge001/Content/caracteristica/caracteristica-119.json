@@ -1,0 +1,10 @@
+{
+    "id": 119,
+    "nome": "Magias do Domínio da Tempestade",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Tempestade",
+    "nivel": [
+        1
+    ],
+    "descricao": "Magias de Domínio desta subclasse:\nNível 1 de Clérigo -> Névoa Oscurecente, Onda Trovejante.\nNível 3 de Clérigo -> Lufada de Vento, Despedaçar.\nNível 5 de Clérigo -> Convocar Relâmpagos, Nevasca.\nNível 7 de Clérigo -> Controlar a Água, Tempestade de Gelo.\nNível 9 de Clérigo -> Onda Destrutiva, Praga de Insetos."
+}

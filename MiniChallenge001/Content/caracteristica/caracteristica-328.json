@@ -1,0 +1,10 @@
+{
+    "id": 328,
+    "nome": "Presa do Caçador",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave do Caçador",
+    "nivel": [
+        3
+    ],
+    "descricao": "No 3° nível, você ganha uma das seguintes características, à sua escolha.\n\nASSASSINO DE COLOSSOS\nSua tenacidade pode derrubar os mais poderosos oponentes. Quando você atinge uma criatura com um ataque com arma, a criatura sofre 1d8 de dano extra, se ela estiver abaixo do máximo de pontos de vida dela. Você só pode causar esse dano extra uma vez por turno.\n\nMATADOR DE GIGANTES\nQuando uma criatura Grande ou maior a até 1,5 metro de você atingir ou errar um ataque contra você, você pode usar sua reação para atacar a criatura, imediatamente após o ataque dela, considerando que você possa ver a criatura.\n\nDESTRUIDOR DE HORDAS\nUma vez em cada um dos seus turnos, quando você fizer um ataque com arma, você pode realizar outro ataque com a mesma arma contra uma criatura diferente que esteja a até 1,5 metro do alvo original e esteja no alcance da sua arma."
+}

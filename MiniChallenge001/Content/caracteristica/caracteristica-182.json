@@ -1,0 +1,10 @@
+{
+    "id": 182,
+    "nome": "Superioridade em Combate",
+    "classe": "Guerreiro",
+    "subclasse": "Mestre de Batalha",
+    "nivel": [
+        3
+    ],
+    "descricao": "Quando você escolhe esse arquétipo, no 3° nível, você aprende manobras que são abastecidas com dados especiais chamados dados de superioridade.\n-> Manobras: Você aprende três manobras, à sua escolha, que são detalhadas na tabela de Manobrasa. Muitas manobras aprimoram um ataque de várias formas. Você só pode usar uma manobra por ataque. Você aprende duas manobras adicionais, à sua escolha, no 7°, 10° e 15° nível. A cada vez que você aprende uma nova manobra, você pode substituir uma manobra conhecida por uma diferente.\n\n-> Dados de Superioridade: Você tem quatro dados de superioridade, que são d8s. Um dado de superioridade é gasto quando você usa-o. Você recupera todos os dados de superioridade gastos quando terminar um descanso curto ou longo. Você adquire outro dado de superioridade no 7° nível e mais um no 15° nível.\n\n-> Teste de Resistência: Algumas das suas manobras exigem que o alvo realize um teste de resistência contra o efeito da manobra. A CD do teste de resistência é calculada a seguir: CD para suas manobras = 8 + bônus de proficiência + seu modificador de Força ou Destreza (à sua escolha)"
+}

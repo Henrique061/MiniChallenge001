@@ -1,0 +1,10 @@
+{
+    "id": 209,
+    "nome": "Reflexos de Ladrão",
+    "classe": "Ladino",
+    "subclasse": "Ladrão",
+    "nivel": [
+        17
+    ],
+    "descricao": "Quando atinge o 17° nível, você se torna adepto em fazer emboscadas e fugas rápidas de situações perigosas. Você pode realizar dois turnos durante o primeiro turno de cada combate. Você realiza seu primeiro turno na sua iniciativa e o segundo na ordem de sua iniciativa menos 10.\nVocê não pode usar essa característica quando está surpreso."
+}

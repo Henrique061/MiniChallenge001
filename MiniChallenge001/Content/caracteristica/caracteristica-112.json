@@ -1,0 +1,10 @@
+{
+    "id": 112,
+    "nome": "Magias do Domínio da Natureza",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Natureza",
+    "nivel": [
+        1
+    ],
+    "descricao": "Magias de Domínio desta subclasse:\nNível 1 de Clérigo -> Amizade Animal, Falar com Animais.\nNível 3 de Clérigo -> Pele de Árvore, Crescer Espinhos.\nNível 5 de Clérigo -> Ampliar Plantas, Muralha de Vento.\nNível 7 de Clérigo -> Dominar Besta, Vinha Esmagadora.\nNível 9 de Clérigo -> Praga de Insetos, Caminhar em Árvores."
+}

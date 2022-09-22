@@ -1,0 +1,10 @@
+{
+    "id": 72,
+    "nome": "Sorte do Próprio Obscuro",
+    "classe": "Bruxo",
+    "subclasse": "O Corruptor",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, você pode pedir ao seu patrono para alterar o destino em seu favor. Quando você realizar um teste de habilidade ou um teste de resistência, você pode usar essa característica para adicionar 1d10 a sua jogada. Você pode fazer isso após ver sua jogada inicial, mas antes que qualquer efeito da jogada ocorra.\nApós usar essa características, você não poderá utilizá-la novamente até terminar um descanso curto ou longo."
+}

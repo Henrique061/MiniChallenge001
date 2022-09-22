@@ -1,0 +1,10 @@
+{
+    "id": 238,
+    "nome": "Sobrecarga",
+    "classe": "Mago",
+    "subclasse": "Escola de Evocação",
+    "nivel": [
+        14
+    ],
+    "descricao": "A partir do 14° nível, você pode aumentar o poder de suas magias mais simples. Quando você conjurar uma magia de mago de 5° nível ou inferior (exceto truques) que cause dano, a magia causa o dano máximo.\nA primeira vez que fizer isso, você não sofre qualquer efeito adverso. Porém, se usar de novo essa característica antes de terminar um descanso longo, você sofre 2d12 de dano necrótico para cada nível de magia, imediatamente após conjurá-la. Cada vez que você usar essa característica antes de terminar um descanso longo, o dano necrótico por nível da magia aumenta em 1d12. Esse dano ignora qualquer resistência ou imunidade."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 73,
+    "nome": "Resistência Demoníaca",
+    "classe": "Bruxo",
+    "subclasse": "O Corruptor",
+    "nivel": [
+        10
+    ],
+    "descricao": "A partir do 10° nível, você pode escolher um tipo de dano quando você terminar um descanso curto ou longo. Você adquire resistência contra esse tipo de dano até você escolher um tipo de dano diferente com essa característica. Dano causado por armas mágicas ou armas de prata ignoram essa resistência."
+}

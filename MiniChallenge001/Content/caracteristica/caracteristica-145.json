@@ -1,0 +1,10 @@
+{
+    "id": 145,
+    "nome": "Forma Selvagem de Combate",
+    "classe": "Druida",
+    "subclasse": "Círculo da Lua",
+    "nivel": [
+        2
+    ],
+    "descricao": "Quando você escolhe esse círculo, no 2° nível, você recebe a habilidade de usar sua Forma Selvagem no seu turno com uma ação bônus, ao invés de com uma ação.\nAlém disso, enquanto você estiver transformando pela sua Forma Selvagem, você pode usar uma ação bônus para gastar uma espaço de magia e ganhar 1d8 pontos de vida por nível do espaço de magia gasto."
+}

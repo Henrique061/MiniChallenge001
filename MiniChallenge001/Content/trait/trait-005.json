@@ -1,0 +1,7 @@
+{
+    "id": 5,
+    "nome": "Deslocamento",
+    "raca": "Anão",
+    "subraca": null,
+    "descricao": "Seu deslocamento base de caminhada é de 7,5 metros. Seu deslocamento não é reduzido quando estiver usando armadura pesada."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 31,
+    "nome": "Força Indomável",
+    "classe": "Bárbaro",
+    "subclasse": null,
+    "nivel": [
+        18
+    ],
+    "descricao": "A partir do 18° nível, se o total de um teste de Força seu for menor que o seu valor de Força, você pode usar esse valor no lugar do resultado."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 116,
+    "nome": "Amortecer Elementos",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Natureza",
+    "nivel": [
+        6
+    ],
+    "descricao": "No 6° nível, quando você ou uma criatura a até 9 metros de você sofrer dano de ácido, frio, fogo, elétrico ou trovão, você pode usar sua reação para conceder resistência a criatura contra aquele tipo de dano."
+}

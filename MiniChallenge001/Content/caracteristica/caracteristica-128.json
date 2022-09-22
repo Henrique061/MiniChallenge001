@@ -1,0 +1,10 @@
+{
+    "id": 128,
+    "nome": "Discípulo da Vida",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Vida",
+    "nivel": [
+        1
+    ],
+    "descricao": "No 1° nível, suas magias de cura são mais efetivas. Sempre que você conjurar uma magia de cura para recuperar pontos de vida, o alvo daquela magia recupera pontos de vida adicionais iguais a 2 + nível da magia."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 326,
+    "nome": "Tempestade de Garras e Presas",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave da Besta",
+    "nivel": [
+        11
+    ],
+    "descricao": "A partir do 11° nível, seu companheiro pode usar a ação dele para realizar um ataques corpo-a-corpo contra cada criatura, a escolha dele, a até 1,5 metro dele, com uma jogada de ataque separada para cada alvo."
+}

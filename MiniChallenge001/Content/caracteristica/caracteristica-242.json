@@ -1,0 +1,10 @@
+{
+    "id": 242,
+    "nome": "Eu Ilusório",
+    "classe": "Mago",
+    "subclasse": "Escola de Ilusão",
+    "nivel": [
+        10
+    ],
+    "descricao": "Começando no 10° nível, você pode criar uma duplicata ilusória de si mesmo em um instante, como uma reação instintiva ao perigo. Quando uma criatura realizar uma jogada de ataque contra você, você pode usar sua reação para interpor a duplicata ilusória entre o atacante e você. O ataque erra você automaticamente, e então, a ilusão se dissipa.\nUma vez que você usa essa característica, não pode usá-la novamente até terminar um descanso longo."
+}

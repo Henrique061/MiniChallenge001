@@ -1,0 +1,10 @@
+{
+    "id": 34,
+    "nome": "Fúria Inconsciente",
+    "classe": "Bárbaro",
+    "subclasse": "Caminho Furioso",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, você não pode ser enfeitiçado ou amedrontado enquanto estiver em fúria. Se você estava enfeitiçado ou amedrontado quando entrou em fúria, o efeito é suspenso pela duração da fúria."
+}

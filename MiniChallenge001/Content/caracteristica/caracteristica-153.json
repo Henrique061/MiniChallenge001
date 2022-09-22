@@ -1,0 +1,10 @@
+{
+    "id": 153,
+    "nome": "Restauração Mística",
+    "classe": "Feiticeiro",
+    "subclasse": null,
+    "nivel": [
+        20
+    ],
+    "descricao": "No 20° nível, você recupera 4 pontos de feitiçaria gastos sempre que você terminar um descanso curto."
+}

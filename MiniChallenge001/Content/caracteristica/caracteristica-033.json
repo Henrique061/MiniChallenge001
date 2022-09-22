@@ -1,0 +1,10 @@
+{
+    "id": 33,
+    "nome": "Frenesi",
+    "classe": "Bárbaro",
+    "subclasse": "Caminho Furioso",
+    "nivel": [
+        3
+    ],
+    "descricao": "Começando no momento que você escolhe esse caminho no 3° nível, você pode entrar num frenesi quando estiver em fúria. Se você desejar, pela duração da sua fúria, você pode realizar um único ataque corpo-a-corpo com arma, com uma ação bônus, em cada um de seus turnos após esse."
+}

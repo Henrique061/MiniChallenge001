@@ -1,0 +1,10 @@
+{
+    "id": 207,
+    "nome": "Furtividade Suprema",
+    "classe": "Ladino",
+    "subclasse": "Ladrão",
+    "nivel": [
+        9
+    ],
+    "descricao": "A partir do 9° nível, você tem vantagem no teste de Destreza (Furtividade) se você não mover-se mais do que a metade de seu deslocamento em um turno."
+}

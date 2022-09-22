@@ -1,0 +1,17 @@
+{
+    "id": 207,
+    "nome": "Mover Terra",
+    "nivel": 6,
+    "classes": [
+        "Druida",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Transmutação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "36 metros",
+    "componentes": "Verbal, Somático, Material (uma lâmina de ferro e umapequena sacola contendo uma mistura de solos –argila, barro e areia)",
+    "duracao": "Concentração, até 2 horas",
+    "descricao": "Escolha uma área de terreno não maior que 12 metros de lado, dentro do alcance. Você pode remodelar terra, areia ou barro na área da maneira que quiser, pera duração. Você pode erguer ou abaixar a elevação da área, criar ou preencher valas, levantar ou deitar um muro ou formar uma coluna. A extensão de tais mudanças não pode exceder metade da maior dimensão da área. Portanto, se você afetar um quadrado de 12 metros, você poderá criar um pilar de até 6 metros de altura, erguer ou abaixar a elevação do quadrado em até 6 metros ou cavar uma vala de até 6 metros de profundidade e assim por diante. Leva 10 minutos para completar essas modificações. Ao final de cada 10 minutos que você gastar se concentrando nessa magia, você pode escolher uma nova área de terreno para afetar. Devido às transformações no terreno ocorrerem lentamente, as criaturas na área normalmente não podem ficar presas ou sofrer dano pela movimentação do solo. Essa magia pode manipular rocha natural ou construções de pedra. Pedra e estruturas deslocam- se para acomodar o novo terreno. Se a forma pela qual você modela o terreno poderia tornar uma estrutura instável, ela poderá desmoronar. Similarmente, essa magia não afeta diretamente o crescimento da vegetação. A terra movida carrega quaisquer plantas no caminho junto com ela. 261 MOVIMENTAÇÃO LIVRE4° nível de abjuração Tempo de Conjuração: 1 ação Alcance : Toque Componentes : V, S, M (uma fita de couro, enrolada no braço ou apêndice similar) Duração : 1 hora  Você toca uma criatura voluntária. Pela duração, os movimentos do alvo não são afetados por terreno difícil e magias e outros efeitos mágicos também não podem reduzir o deslocamento do alvo ou fazer com que o alvo fique paralisado ou impedido. O alvo também pode gastar 1,5 metro de deslocamento para escapar, automaticamente, de impedimentos não-mágicos, como algemas ou o agarrão de uma criatura. Finalmente, estar submerso não impõe penalidades no deslocamento ou ataques do alvo."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 321,
+    "nome": "Matador de Inimigos",
+    "classe": "Patrulheiro",
+    "subclasse": null,
+    "nivel": [
+        20
+    ],
+    "descricao": "No 20° nível, você se torna um caçador incomparável. Uma vez em cada um dos seus turnos, você pode adicionar seu modificador de Sabedoria na jogada de ataque ou jogada de dano de um ataque que você fizer. Você pode escolher usar essa característica antes ou depois da rolagem, mas antes de qualquer efeito da jogada ser aplicado."
+}

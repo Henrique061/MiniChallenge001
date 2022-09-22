@@ -1,0 +1,10 @@
+{
+    "id": 47,
+    "nome": "Fonte de Inspiração",
+    "classe": "Bardo",
+    "subclasse": null,
+    "nivel": [
+        5
+    ],
+    "descricao": "Começando no momento em que você atinge o 5° nível, você recupera todas as utilizações gastas da sua Inspiração de Bardo quando você termina um descanso curto ou longo."
+}

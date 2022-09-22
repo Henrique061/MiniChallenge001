@@ -1,0 +1,10 @@
+{
+    "id": 217,
+    "nome": "Dominar Magia",
+    "classe": "Mago",
+    "subclasse": null,
+    "nivel": [
+        18
+    ],
+    "descricao": "No 18° nível, você alcança tamanha maestria em determinadas magias que pode conjurá-las à vontade. Você escolhe uma magia de mago de 1° nível e uma magia de mago de 2° nível de seu grimório. Você as conjura em seu nível mínimo, sem gastar espaços de magia quando as tiver preparadas. Caso queira, você pode conjurá-las com um espaço de nível superior, porém gastará espaços de magia, como normalmente se faz."
+}

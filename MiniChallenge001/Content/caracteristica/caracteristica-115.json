@@ -1,0 +1,10 @@
+{
+    "id": 115,
+    "nome": "Canalizar Divindade: Enfeitiçar Animais e Plantas",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Natureza",
+    "nivel": [
+        2
+    ],
+    "descricao": "A partir do 2° nível, você pode usar seu Canalizar Divindade para enfeitiçar animais e plantas.\nCom uma ação, você ergue seu símbolo sagrado e invoca o nome do seu deus. Cada besta ou criatura-planta que puder ver você num raio de 9 metros, deve realizar um teste de resistência de Sabedoria. Se a criatura falhar, ela estará enfeitiçada por você durante 1 minuto ou até sofrer dano. Enquanto estiver enfeitiçada por você, ela será amistosa a você a as criaturas que você designar."
+}

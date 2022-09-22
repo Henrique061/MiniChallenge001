@@ -1,0 +1,10 @@
+{
+    "id": 205,
+    "nome": "Mãos Rápidas",
+    "classe": "Ladino",
+    "subclasse": "Ladrão",
+    "nivel": [
+        3
+    ],
+    "descricao": "A partir do 3° nível, você pode usar a sua ação bônus concedida pela Ação Ardilosa para fazer um teste de Destreza (Prestidigitação), usar suas ferramentas de ladrão para desarmar uma armadilha ou abrir uma fechadura, ou realizar a ação de Usar um Objeto."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 100,
+    "nome": "Sacerdote da Guerra",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Guerra",
+    "nivel": [
+        1
+    ],
+    "descricao": "A partir do 1° nível, seu deus envia rajadas de inspiração a você quando você está engajado em combate. Quando você usa a ação de Ataque, você pode realizar um ataque com arma, com uma ação bônus.\nVocê pode usar essa característica um número de vezes igual ao seu modificador de Sabedoria (mínimo uma vez). Você recupera todos os usos gastos após terminar um descanso longo."
+}

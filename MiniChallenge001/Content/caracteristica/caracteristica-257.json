@@ -1,0 +1,11 @@
+{
+    "id": 257,
+    "nome": "Movimento sem Armadura",
+    "classe": "Monge",
+    "subclasse": null,
+    "nivel": [
+        2,
+        9
+    ],
+    "descricao": "A partir do 2° nível, seu deslocamento aumenta em 3 metros enquanto você não estiver usando armadura nem empunhando um escudo. Esse bônus aumenta quando você alcança determinados níveis.\nNo 9° nível, você ganha a habilidade de se mover através de superfícies verticais e sobre líquidos, no seu turno, sem cair durante o movimento."
+}

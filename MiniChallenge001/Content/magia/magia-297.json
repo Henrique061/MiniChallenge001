@@ -1,0 +1,16 @@
+{
+    "id": 297,
+    "nome": "Sentido Bestial",
+    "nivel": 2,
+    "classes": [
+        "Druida",
+        "Patrulheiro"
+    ],
+    "escola": "Adivinhação",
+    "ritual": true,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Toque",
+    "componentes": "Somático",
+    "duracao": "Concentração, até 1 hora",
+    "descricao": "Você toca uma besta voluntária. Pela duração da magia, você pode usar sua ação para ver através dos olhos e ouvir através dos ouvidos da besta e continua a fazê-lo até você usar sua ação para retornar aos seus sentidos normais. Enquanto estiver utilizando os sentidos da besta, você ganha os benefícios de qualquer sentido especial possuído pela criatura, no entanto, você estará cego e surdo em relação aos seus próprios sentidos."
+}

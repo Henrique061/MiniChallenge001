@@ -1,0 +1,13 @@
+{
+    "id": 63,
+    "nome": "Arcana Mística",
+    "classe": "Bruxo",
+    "subclasse": null,
+    "nivel": [
+        11,
+        13,
+        15,
+        17
+    ],
+    "descricao": "No 11° nível, seu patrono confere a você um segredo mágico conhecido como arcana. Escolha uma magia de 6° nível da lista de magias de bruxo como sua arcana.\nVocê pode conjurar essa magia arcana uma vez sem gastar um espaço de magia. Você deve terminar um descanso longo antes de poder fazer isso novamente.\nEm nível altos, você adquire mais magias de bruxo de sua escolha que podem ser conjuradas dessa forma: uma magia de 7° nível no 13° nível, uma magia de 8° nível no 15° nível e uma magia de 9° nível no 17° nível. Você recupera todos os usos de sua Arcana Mística quando você termina um descanso longo."
+}

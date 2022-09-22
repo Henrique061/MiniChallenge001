@@ -1,0 +1,13 @@
+{
+    "id": 184,
+    "nome": "Localizar Animais Ou P Lantas",
+    "nivel": 2,
+    "classes": [],
+    "escola": "Adivinhação",
+    "ritual": true,
+    "tempoConjuracao": "1 ação",
+    "alcance": "Pessoal",
+    "componentes": "Verbal, Somático, Material (um pouco de pelo de um cão decaça)",
+    "duracao": "Instantânea",
+    "descricao": "Descreva ou nomeie um tipo especifico de besta ou planta. Concentre-se na voz da natureza ao seu redor, você 255 descobre a direção e distância da criatura ou planta mais próxima desse tipo dentro de 7,5 quilômetros, se houver alguma presente."
+}

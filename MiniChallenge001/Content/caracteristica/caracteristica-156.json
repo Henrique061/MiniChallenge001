@@ -1,0 +1,10 @@
+{
+    "id": 156,
+    "nome": "Afinidade Elemental",
+    "classe": "Feiticeiro",
+    "subclasse": "Linhagem Dracônica",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, quando você conjurar uma magia que cause dano do tipo associado ao seu ancestral dracônico, adicione seu modificador de Carisma ao dano. Ao mesmo tempo, você pode gastar 1 ponto de feitiçaria para ganhar resistência a esse tipo de dano por 1 hora. O bônus de dano se aplica a uma única rolagem de dano da magia, não à diversas rolagens."
+}

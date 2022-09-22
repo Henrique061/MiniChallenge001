@@ -1,0 +1,10 @@
+{
+    "id": 231,
+    "nome": "Transposição Benigna",
+    "classe": "Mago",
+    "subclasse": "Escola de Conjuração",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, você pode usar sua ação para se teletransportar até 9 metros em um espaço desocupado que você possa ver. Alternativamente, você pode escolher um espaço ao alcance que seja ocupado por uma criatura Pequena ou Média. Se essa criatura for voluntária, vocês dois teletransportam-se, trocando de lugar.\nUma vez que você usa essa característica, não pode usá-la novamente até terminar um descanso longo ou até conjurar uma magia de conjuração de 1° nível ou superior."
+}

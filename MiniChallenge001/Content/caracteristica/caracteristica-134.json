@@ -1,0 +1,10 @@
+{
+    "id": 134,
+    "nome": "Círculo Druídico",
+    "classe": "Druida",
+    "subclasse": null,
+    "nivel": [
+        2
+    ],
+    "descricao": "No 2° nível, você escolhe se identificar com um círculo de druidas: o Círculo da Terra ou o Círculo da Lua. Sua escolha lhe concede características no 2° nível e novamente no 6°, 10° e 14° nível."
+}

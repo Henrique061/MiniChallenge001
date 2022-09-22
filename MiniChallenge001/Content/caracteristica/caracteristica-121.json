@@ -1,0 +1,10 @@
+{
+    "id": 121,
+    "nome": "Ira da Tormenta",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Tempestade",
+    "nivel": [
+        1
+    ],
+    "descricao": "Também a partir do 1° nível, você pode repreender ataques violentamente. Quando uma criatura a 1,5 metro de você que você possa ver, atingir você com um ataque, você pode usar sua reação para forçar a criatura a realizar um teste de resistência de Destreza. A criatura sofre 2d8 de dano elétrico ou de trovão (à sua escolha) caso falhe no teste, e metade desse dano caso seja bem sucedido.\nVocê pode usar essa característica um número de vezes igual ao seu modificador de Sabedoria (mínimo uma vez). Você recupera todos os usos gastos após terminar um descanso longo."
+}

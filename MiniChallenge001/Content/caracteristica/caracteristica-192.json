@@ -1,0 +1,10 @@
+{
+    "id": 192,
+    "nome": "Arquétipo de Ladino",
+    "classe": "Ladino",
+    "subclasse": null,
+    "nivel": [
+        3
+    ],
+    "descricao": "No 3° nível, você escolhe um arquétipo que se esforçará para se equiparar através de exercícios de suas habilidades de ladino: Assassino, Ladrão ou Trapaceiro Arcano. Sua escolha garante a você características no 3° nível e de novo no 9°, 13° e 17° nível."
+}

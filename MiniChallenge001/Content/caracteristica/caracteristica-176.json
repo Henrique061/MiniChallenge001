@@ -1,0 +1,10 @@
+{
+    "id": 176,
+    "nome": "Conjuração",
+    "classe": "Guerreiro",
+    "subclasse": "Cavaleiro Arcano",
+    "nivel": [
+        3
+    ],
+    "descricao": "Quando você alcançar o 3° nível, você amplia o seu poderio marcial com a habilidade de conjurar magias da lista de magias do Mago."
+}

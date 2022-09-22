@@ -1,0 +1,10 @@
+{
+    "id": 155,
+    "nome": "Resiliência Dracônica",
+    "classe": "Feiticeiro",
+    "subclasse": "Linhagem Dracônica",
+    "nivel": [
+        1
+    ],
+    "descricao": "A medida que a magia flui pelo seu corpo, ela faz com que os traços físicos do seu ancestral dracônico surjam. No 1° nível, seu máximo de pontos de vida aumenta em 1 e aumenta em mais 1 sempre que você ganhar um nível na classe.\nAlém disso, partes da sua pele são cobertas com minúsculas escamas lustrosas de dragão. Quando você não estiver utilizando armadura, sua CA será igual a 13 + seu modificador de Destreza."
+}

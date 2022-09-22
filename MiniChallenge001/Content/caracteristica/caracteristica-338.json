@@ -1,0 +1,10 @@
+{
+    "id": 338,
+    "nome": "Esquiva do Rastreador",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave do Rastreador Subterrâneo",
+    "nivel": [
+        15
+    ],
+    "descricao": "No 15° nível, sempre que uma criatura atacar você e não tiver vantagem, você pode usar sua reação para impor desvantagem na jogada de ataque da criatura contra você. Você pode usar essa característica antes ou depois da jogada de ataque ser feita, mas deve ser usada antes do resultado da jogada ser determinado."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 166,
+    "nome": "Retomar o Fôlego",
+    "classe": "Guerreiro",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Você possui uma reserva de estamina e pode usá-la para proteger a si mesmo contra danos. No seu turno, você pode usar uma ação bônus para recuperar pontos de vida igual a 1d10 + seu nível de guerreiro.\nUma vez que você use essa característica, você precisa terminar um descanso curto ou longo para usá-la de novo."
+}

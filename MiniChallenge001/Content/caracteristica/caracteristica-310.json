@@ -1,0 +1,10 @@
+{
+    "id": 310,
+    "nome": "Anjo Vingador",
+    "classe": "Paladino",
+    "subclasse": "Juramento de Vingança",
+    "nivel": [
+        20
+    ],
+    "descricao": "No 20° nível, você pode assumir a forma de um anjo vingador. Usando sua ação, você sofre uma transformação. Por 1 hora, você ganha os seguintes benefícios:\n\n-> Asas crescem nas suas costas e lhe concedem deslocamento de voo de 18 metros.\n-> Você emana uma aura de ameaça num raio de 9 metros. A primeira vez que qualquer criatura inimiga entrar na aura ou começar seu turno nela, durante uma batalha, a criatura deve ser bem sucedida num teste de resistência de Sabedoria ou ficará amedrontada em relação a você por 1 minuto ou até sofrer qualquer dano. Jogadas de ataque contra a criatura amedrontada tem vantagem.\n\nUma vez que você use essa característica, não poderá fazê-lo novamente até ter terminado um descanso longo."
+}

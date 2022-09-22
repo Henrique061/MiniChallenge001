@@ -1,0 +1,10 @@
+{
+    "id": 60,
+    "nome": "Magia de Pacto",
+    "classe": "Bruxo",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Sua pesquisa arcana e a magia outorgada a você por seu patrono, lhe concedem uma gama de magias."
+}

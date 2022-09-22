@@ -1,0 +1,10 @@
+{
+    "id": 132,
+    "nome": "Cura Suprema",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Vida",
+    "nivel": [
+        17
+    ],
+    "descricao": "A partir do 17° nível, quando você jogaria normalmente um ou mais dados para recuperar pontos de vida com uma magia, você usa o maior resultado possível nos dados. Por exemplo, ao invés de recuperar 2d6 pontos de vida, você recupera 12."
+}

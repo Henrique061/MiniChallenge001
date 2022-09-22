@@ -1,0 +1,10 @@
+{
+    "id": 77,
+    "nome": "Proteção Entrópica",
+    "classe": "Bruxo",
+    "subclasse": "O Grande Antigo",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, você aprende a se proteger magicamente contra ataques e a transformar os ataques mal sucedidos de seus inimigos em boa sorte pra você. Quando uma criatura realizar uma jogada de ataque contra você, você pode usar sua reação para impor desvantagem nesse jogada. Se o ataque errar você, sua próxima jogada de ataque contra essa criatura recebe vantagem se você o fizer antes do final do seu próximo turno.\nApós usar essa características, você não poderá utilizá-la novamente até terminar um descanso curto ou longo."
+}

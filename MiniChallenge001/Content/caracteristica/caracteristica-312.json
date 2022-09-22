@@ -1,0 +1,10 @@
+{
+    "id": 312,
+    "nome": "Explorador Natural",
+    "classe": "Patrulheiro",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Você é um mestre na navegação pelo mundo natural e você reage de forma rápida e decisiva quando é atacado. Isso fornece a você os seguintes benefícios:\n\n-> Você ignora terreno difícil.\n-> Você tem vantagem em rolagens de iniciativa.\n-> No seu primeiro turno de combate, você tem vantagem nas jogadas de ataque contra criaturas que ainda não tenham agido.\n\nAlém disso, você é perito em navegar pelo ambiente selvagem. Você ganha os seguintes benefícios quando estiver viajando por uma hora ou mais:\n\n-> Terreno difícil não atrasa a viagem do seu grupo.\n-> Seu grupo não pode se perder, exceto por meios mágicos.\n-> Mesmo quando você está engajado em outra atividade além de viajar (como forragear, navegar ou rastrear), você permanece alerta ao perigo.\n-> Se você estiver viajando sozinho, você pode se mover furtividamente com um ritmo de viagem normal.\n-> Quando você forrageia, você encontra o dobro de comida que normalmente encontraria.\n-> Enquanto estiver rastreando outras criaturas, você também descobre o número exato delas, seus tamanhos e há quanto tempo elas passaram pela área."
+}

@@ -1,0 +1,10 @@
+{
+    "id": 330,
+    "nome": "Táticas Defensivas",
+    "classe": "Patrulheiro",
+    "subclasse": "Conclave do Caçador",
+    "nivel": [
+        7
+    ],
+    "descricao": "No 7° nível, você ganha uma das seguintes características, à sua escolha.\n\nESCAPAR DA HORDA\nAtaques de oportunidade contra você são feitos com desvantagem.\n\nDEFESA CONTRA MÚLTIPLOS ATAQUES\nQuando uma criatura atinge você com um ataque, você recebe +4 de bônus na CA contra todos os ataques subsequentes feitos por essa criatura no resto do turno.\n\nVONTADE DE AÇO\nVocê tem vantagem em testes de resistência para evitar ser amedrontado."
+}

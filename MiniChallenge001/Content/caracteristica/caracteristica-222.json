@@ -1,0 +1,10 @@
+{
+    "id": 222,
+    "nome": "Abjuração Aprimorada",
+    "classe": "Mago",
+    "subclasse": "Escola de Abjuração",
+    "nivel": [
+        10
+    ],
+    "descricao": "A partir do 10° nível, quando você conjurar uma magia de abjuração que requeira que você realize um teste de habilidade como parte da conjuração da magia (como em Contramágica e Dissipar Magia), você adiciona seu bônus de proficiência a esse teste de habilidade."
+}

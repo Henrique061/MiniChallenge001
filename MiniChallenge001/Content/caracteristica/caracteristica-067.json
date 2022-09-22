@@ -1,0 +1,10 @@
+{
+    "id": 67,
+    "nome": "Névoa de Fuga",
+    "classe": "Bruxo",
+    "subclasse": "A Arquifada",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, você pode desaparecer em uma lufada de névoa em resposta a alguma ofensa. Quando você sofrer dano, você pode usar sua reação para ficar invisível e se teletransportar a até 18 metros para um espaço desocupado que você possa ver. Você permanece invisível até o início do seu próximo turno ou até realizar um ataque ou conjurar uma magia.\nApós usar essa características, você não poderá utilizá-la novamente até terminar um descanso curto ou longo."
+}

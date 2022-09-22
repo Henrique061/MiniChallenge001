@@ -1,0 +1,10 @@
+{
+    "id": 218,
+    "nome": "Assinatura Mágica",
+    "classe": "Mago",
+    "subclasse": null,
+    "nivel": [
+        20
+    ],
+    "descricao": "Quando alcançar o 20° nível, você adquire domínio completo de duas poderosas magias e pode conjurá-las sem muito esforço. Escolha duas magias de mago de 3° nível em seu grimório como sua assinatura mágica. Você sempre tem essas magias preparadas e elas não contam como magias preparadas em sua lista, além de você poder conjurar cada uma das magias escolhidas, uma vez ao dia, como magias de 3° nível, sem gastar nenhum espaço. Quando o fizer, você não poderá fazê-lo de novo antes de terminar um descanso curto ou longo.\nSe você quiser conjurar essas magias com espaços de níveis superiores, a magia gastará espaços de magia, como normalmente se faz."
+}

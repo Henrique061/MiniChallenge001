@@ -1,0 +1,10 @@
+{
+    "id": 126,
+    "nome": "Magias do Domínio da Vida",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Vida",
+    "nivel": [
+        1
+    ],
+    "descricao": "Magias de Domínio desta subclasse:\nNível 1 de Clérigo -> Benção, Curar Ferimentos.\nNível 3 de Clérigo -> Restauração Menor, Arma Espiritual.\nNível 5 de Clérigo -> Sinal de Esperança, Revivificar.\nNível 7 de Clérigo -> Proteção Contra a Morte, Guardião da Fé.\nNível 9 de Clérigo -> Curar Ferimentos em Massa, Reviver os Mortos."
+}

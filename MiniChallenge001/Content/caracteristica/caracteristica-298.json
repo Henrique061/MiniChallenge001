@@ -1,0 +1,10 @@
+{
+    "id": 298,
+    "nome": "Halo Sagrado",
+    "classe": "Paladino",
+    "subclasse": "Juramento de Devoção",
+    "nivel": [
+        20
+    ],
+    "descricao": "No 20° nível, com uma ação, você pode emanar uma aura de luz solar. Por 1 minuto, luz plena emana de você num raio de 9 metros, penumbra brilha mais 9 metros além.\nSempre que uma criatura inimiga começar seu turno na luz plena, a criatura sofrerá 10 de dano radiante.\nAlém disso, por essa duração, você tem vantagem em testes de resistência contra magias conjuradas por corruptores ou mortos-vivos.\nUma vez que você use essa característica, não poderá fazê-lo novamente até ter terminado um descanso longo."
+}

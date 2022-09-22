@@ -1,0 +1,10 @@
+{
+    "id": 124,
+    "nome": "Golpe Divino",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Tempestade",
+    "nivel": [
+        8
+    ],
+    "descricao": "No 8° nível, você ganha a habilidade de imbuir seus ataques com energia divina. Uma vez em cada um de seus turnos, quando você acertar uma criatura com um ataque com arma, você pode fazer o ataque causar 1d8 de dano trovejante extra ao alvo. Quando alcançar o 14° nível, o dano extra aumenta para 2d8."
+}

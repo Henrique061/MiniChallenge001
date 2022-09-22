@@ -1,0 +1,10 @@
+{
+    "id": 258,
+    "nome": "Tradição Monástica",
+    "classe": "Monge",
+    "subclasse": null,
+    "nivel": [
+        3
+    ],
+    "descricao": "Quando você alcança o 3° nível, você ingressa numa tradição monástica: o Caminho da Mão Aberta, o Caminho Sombrio e o Caminho dos Quatro Elementos. Sua tradição concede a você características no 3° nível e novamente no 6°, 11° e 17° nível."
+}

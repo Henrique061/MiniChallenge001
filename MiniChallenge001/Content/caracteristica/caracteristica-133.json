@@ -1,0 +1,10 @@
+{
+    "id": 133,
+    "nome": "Druídico",
+    "classe": "Druida",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Você conhece o Druídico, o idioma secreto dos druidas. Você pode falar esse idioma e usá-lo para deixar mensagens escondidas. Você e outros que conheçam esse idioma automaticamente veem tais mensagens. Outros perceberão a presença da mensagem se passarem num teste de Sabedoria (Percepção) CD 15, mas não conseguirão decifrá-lo sem magia."
+}

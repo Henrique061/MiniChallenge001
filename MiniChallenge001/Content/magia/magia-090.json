@@ -1,0 +1,16 @@
+{
+    "id": 90,
+    "nome": "Crescer Espinhos",
+    "nivel": 2,
+    "classes": [
+        "Druida",
+        "Patrulheiro"
+    ],
+    "escola": "Transmutação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação",
+    "alcance": "45 metros",
+    "componentes": "Verbal, Somático, Material (sete espinhos afiados ou setegravetos, todos com uma ponta afiada)",
+    "duracao": "Concentração, até 10 minutos",
+    "descricao": "O solo num raio de 6 metros, centrado num ponto dentro do alcance, se retorce e brotam cavilhas rígidas e espinhos. A área se torna terreno difícil pela duração. Quando uma criatura entrar ou se mover dentro da área, ela sofrerá 2d4 de dano perfurante para cada 1,5 metro que ela atravessar. A transformação do terreno é camuflada para parecer natural. Qualquer criatura que não puder ver a área no momento que a magia for conjurada, deve realizar um teste de Sabedoria (Percepção) contra a CD da magia para reconhecer o terreno como perigoso, antes de adentra-lo."
+}

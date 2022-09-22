@@ -1,0 +1,10 @@
+{
+    "id": 55,
+    "nome": "Proficiência Adicional",
+    "classe": "Bardo",
+    "subclasse": "Colégio da Bravura",
+    "nivel": [
+        3
+    ],
+    "descricao": "Quando você se junta ao Colégio da Bravura no 3° nível, você adquire proficiência com armadura médias, escudos e armas marciais."
+}

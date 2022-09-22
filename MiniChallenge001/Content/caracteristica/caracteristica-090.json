@@ -1,0 +1,10 @@
+{
+    "id": 90,
+    "nome": "Conjuração Poderosa",
+    "classe": "Clérigo",
+    "subclasse": "Domínio do Conhecimento",
+    "nivel": [
+        8
+    ],
+    "descricao": "A partir do 8° nível, você adiciona seu modificador de Sabedoria no dano causado por qualquer truque de clérigo."
+}

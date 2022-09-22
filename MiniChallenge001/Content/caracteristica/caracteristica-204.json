@@ -1,0 +1,10 @@
+{
+    "id": 204,
+    "nome": "Golpe Letal",
+    "classe": "Ladino",
+    "subclasse": "Assassino",
+    "nivel": [
+        17
+    ],
+    "descricao": "No 17° nível, você se torna um mestre da morte instantânea. Quando você atacar e atingir uma criatura que esteja surpresa, ela deve realizar um teste de resistência de Constituição (CD 8 + seu modificador de Destreza + seu bônus de proficiência). Se ela falhar, dobre o dano do seu ataque contra a criatura."
+}

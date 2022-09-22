@@ -1,0 +1,10 @@
+{
+    "id": 279,
+    "nome": "Oportunista",
+    "classe": "Monge",
+    "subclasse": "Caminho da Sombra",
+    "nivel": [
+        17
+    ],
+    "descricao": "No 17° nível, você pode explorar um momento de distração de uma criatura quando ela é atingida por um ataque. Toda vez que uma criatura a até 1,5 metro de você for atingida por um ataque realizar por outra criatura diferente de você, você pode usar sua reação para realizar um ataque corpo-a-corpo contra essa criatura."
+}

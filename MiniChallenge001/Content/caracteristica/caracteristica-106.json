@@ -1,0 +1,10 @@
+{
+    "id": 106,
+    "nome": "Truque Adicional",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Luz",
+    "nivel": [
+        1
+    ],
+    "descricao": "Quando você escolhe esse domínio no 1° nível, você ganha o truque luz se você ainda não o conhecia."
+}

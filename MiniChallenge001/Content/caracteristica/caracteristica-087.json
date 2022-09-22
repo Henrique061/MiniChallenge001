@@ -1,0 +1,10 @@
+{
+    "id": 87,
+    "nome": "Bençãos do Conhecimento",
+    "classe": "Clérigo",
+    "subclasse": "Domínio do Conhecimento",
+    "nivel": [
+        1
+    ],
+    "descricao": "No 1° nível, você aprende dois idiomas, à sua escolha. Você também se torna proficiente em duas perícias, à sua escolha, dentre as seguintes: Arcanismo, História, Natureza ou Religião.\nSeu bônus de proficiência é dobrado em qualquer teste de habilidade que você fizer usando qualquer dessas perícias."
+}

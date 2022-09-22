@@ -1,0 +1,11 @@
+{
+    "id": 296,
+    "nome": "Aura de Devoção",
+    "classe": "Paladino",
+    "subclasse": "Juramento de Devoção",
+    "nivel": [
+        7,
+        18
+    ],
+    "descricao": "A partir do 7° nível, você e as criaturas amistosas a até 3 metros não podem ser enfeitiçadas enquanto você estiver consciente.\nNo 18° nível, o alcance dessa aura aumenta para 9 metros."
+}

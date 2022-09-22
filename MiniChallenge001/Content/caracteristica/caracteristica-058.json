@@ -1,0 +1,10 @@
+{
+    "id": 58,
+    "nome": "Magia de Batalha",
+    "classe": "Bardo",
+    "subclasse": "Colégio da Bravura",
+    "nivel": [
+        14
+    ],
+    "descricao": "No 14° nível, você dominou a arte de tecer a conjuração e usar armas em um ato harmonioso. Quando você usar sua ação para conjurar uma magia de bardo, você pode realizar um ataque com arma com uma ação bônus."
+}

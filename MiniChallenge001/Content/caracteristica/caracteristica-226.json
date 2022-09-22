@@ -1,0 +1,10 @@
+{
+    "id": 226,
+    "nome": "Especialista em Adivinhação",
+    "classe": "Mago",
+    "subclasse": "Escola de Adivinhação",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, conjurar magias de adivinhação se tornou tão fácil pra você que isso requer apenas uma fração do seu esforço de conjuração. Quando você conjura uma magia de adivinhação de 2° nível ou superior usando um espaço de magia, você recupera um espaço de magia gasto. O espaço de magia que você recupera deve ser de um nível inferior ao da magia conjurada e não pode ser maior que 5° nível."
+}

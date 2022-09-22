@@ -1,0 +1,10 @@
+{
+    "id": 228,
+    "nome": "Prodígio Maior",
+    "classe": "Mago",
+    "subclasse": "Escola de Adivinhação",
+    "nivel": [
+        14
+    ],
+    "descricao": "A partir do 14° nível, as visões em seus sonhos se intensificam e pintam um quadro mais preciso na sua mente do que está para acontecer. Você rola três d20s para a sua característica Prodígio, ao invés de dois."
+}

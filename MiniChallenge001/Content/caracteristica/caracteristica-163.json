@@ -1,0 +1,10 @@
+{
+    "id": 163,
+    "nome": "Caos Controlado",
+    "classe": "Feiticeiro",
+    "subclasse": "Magia Selvagem",
+    "nivel": [
+        14
+    ],
+    "descricao": "No 14° nível, você ganha um controle modico sobre seus surtos de magia selvagem. Sempre que você rolar a tabela Surto de Magia Selvagem, você pode rolar duas vezes e usar qualquer resultado."
+}

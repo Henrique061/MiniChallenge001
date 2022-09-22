@@ -1,0 +1,10 @@
+{
+    "id": 221,
+    "nome": "Proteção Projetada",
+    "classe": "Mago",
+    "subclasse": "Escola de Abjuração",
+    "nivel": [
+        6
+    ],
+    "descricao": "A partir do 6° nível, quando uma criatura que você possa ver a até 9 metros sofrer dano, você pode usar sua reação para fazer com que sua Proteção Arcana absorva aquele dano. Se esse dano reduzir a proteção a 0 pontos de vida, a criatura protegida sofrerá qualquer dano remanescente."
+}

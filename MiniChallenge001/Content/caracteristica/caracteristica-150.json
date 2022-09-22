@@ -1,0 +1,10 @@
+{
+    "id": 150,
+    "nome": "Origem de Feitiçaria",
+    "classe": "Feiticeiro",
+    "subclasse": null,
+    "nivel": [
+        1
+    ],
+    "descricao": "Escolha uma origem de feitiçaria, que descreve a fonte do seu poder mágico inato: Linhagem Dracônica ou Magia Selvagem.\nSua escolha lhe confere características quando você a escolhe, no 1° nível e novamente no 6°, 14° e 18° nível."
+}

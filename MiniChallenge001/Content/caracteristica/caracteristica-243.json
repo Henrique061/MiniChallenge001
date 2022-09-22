@@ -1,0 +1,10 @@
+{
+    "id": 243,
+    "nome": "Realidade Ilusória",
+    "classe": "Mago",
+    "subclasse": "Escola de Ilusão",
+    "nivel": [
+        14
+    ],
+    "descricao": "A partir do 14° nível, você aprendeu o segredo de como tecer magia sombria em suas ilusões para torná-las semirreais. Quando você conjura uma magia de ilusão de 1° nível ou superior, você pode escolher um objeto inanimado e não-mágico que é parte da ilusão e tornar esse objeto real. Você pode fazer isso no seu turno, com uma ação bônus, enquanto a magia estiver em efeito. O objeto permanece real por 1 minuto. Por exemplo, você pode criar uma ilusão de uma ponte sobre um abismo e depois torná-la real tempo suficiente para que seus aliados a atravessem.\nO objeto não pode causar dano ou qualquer tipo de ferimento direto a ninguém."
+}

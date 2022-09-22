@@ -1,0 +1,10 @@
+{
+    "id": 168,
+    "nome": "Arquétipo Marcial",
+    "classe": "Guerreiro",
+    "subclasse": null,
+    "nivel": [
+        3
+    ],
+    "descricao": "No 3° nível, você escolhe um arquétipo o qual se esforçará para seguir as técnicas e estilos de combate dele. Escolha Campeão, Cavaleiro Arcano ou Mestre de Batalha. O arquétipo confere a você características especiais no 3° nível e de novo no 7°, 10°, 15° e 18° nível."
+}

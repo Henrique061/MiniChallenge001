@@ -1,0 +1,10 @@
+{
+    "id": 212,
+    "nome": "Emboscada Mágica",
+    "classe": "Ladino",
+    "subclasse": "Trapaceiro Arcano",
+    "nivel": [
+        9
+    ],
+    "descricao": "A partir do 9° nível, se você estiver escondido de uma criatura quando conjurar uma magia nela, a criatura terá desvantagem em qualquer teste de resistência que ela fizer contra a magia nesse turno."
+}

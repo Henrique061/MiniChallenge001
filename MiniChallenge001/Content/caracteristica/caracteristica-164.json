@@ -1,0 +1,10 @@
+{
+    "id": 164,
+    "nome": "Bombardeio de Magia",
+    "classe": "Feiticeiro",
+    "subclasse": "Magia Selvagem",
+    "nivel": [
+        18
+    ],
+    "descricao": "A partir do 18° nível, a energia nociva das suas magias se intensifica. Quando você rolar o dano de uma magia e rolar o maior dano possível em qualquer dado, escolha um desses dados, role ele novamente e adicione o valor rolado ao dano. Você pode usar essa característica apenas uma vez por rodada."
+}

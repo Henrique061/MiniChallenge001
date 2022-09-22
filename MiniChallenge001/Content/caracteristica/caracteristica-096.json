@@ -1,0 +1,10 @@
+{
+    "id": 96,
+    "nome": "Golpe Divino",
+    "classe": "Clérigo",
+    "subclasse": "Domínio da Enganação",
+    "nivel": [
+        8
+    ],
+    "descricao": "No 8° nível, você ganha a habilidade de imbuir seus ataques com arma com veneno - uma dádiva da sua divindade. Uma vez em cada um de seus turnos, quando você acertar uma criatura com um ataque com arma, você pode fazer o ataque causar 1d8 de dano de veneno extra ao alvo. Quando alcançar o 14° nível, o dano extra aumenta para 2d8."
+}

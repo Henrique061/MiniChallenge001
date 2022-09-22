@@ -1,0 +1,13 @@
+{
+    "id": 141,
+    "nome": "Magias de Círculo",
+    "classe": "Druida",
+    "subclasse": "Círculo da Terra",
+    "nivel": [
+        3,
+        5,
+        7,
+        9
+    ],
+    "descricao": "Sua conexão mística com a terra infunde você com a habilidade de conjurar certas magias. No 3°, 5°, 7° e 9° nível, você ganha acesso a magias de círculo ligadas ao terreno em que você se tornou druida. Escolha o terreno - ártico, costa, deserto, floresta, montanha, pântano, planície ou subterrâneo - e consulte a lista de magias associada abaixo.\nUma vez que você tenha acesso a uma magia de círculo, você sempre poderá prepará-la e ela não conta no número de magias que você pode preparar a cada dia. Se você tiver acesso a uma magia que não aparece na lista de magias de druida, a magia, no entanto, será uma magia de druida para você.\n\nÁRTICO\nNível 3 de Druida -> Imobilizar Pessoa, Crescer Espinho\nNível 5 de Druida -> Nevasca, Lentidão\nNível 7 de Druida -> Movimentação Livre, Tempestade de Gelo\nNível 9 de Druida -> Comunhão com a Natureza, Cone de Frio\n\nCOSTA\nNível 3 de Druida -> Passo Nebuloso, Reflexos\nNível 5 de Druida -> Andar na Água, Respirar Água\nNível 7 de Druida -> Movimentação Livre, Controlar Água\nNível 9 de Druida -> Violência, Conjurar Elemental\n\nDESERTO\nNível 3 de Druida -> Nublar, Silêncio\nNível 5 de Druida -> Criar Alimentos, Proteção Contra Energia\nNível 7 de Druida -> Praga, Terreno Alucinógeno\nNível 9 de Druida -> Muralha de Pedra, Praga de Insetos\n\nFLORESTA\nNível 3 de Druida -> Patas de Aranha, Pele de Árvore\nNível 5 de Druida -> Convocar Relâmpagos, Crescer Plantas\nNível 7 de Druida -> Adivinhação, Movimentação Livre\nNível 9 de Druida -> Comunhão com a Natureza, Passo de Árvore\n\nMONTANHA\nNível 3 de Druida -> Crescer Espinho, Patas de Aranha\nNível 5 de Druida -> Mersclar-se às Rochas, Relâmpago\nNível 7 de Druida -> Moldar Rochas, Pele de Pedra\nNível 9 de Druida -> Criar Passagem, Muralha de Pedra\n\nPÂNTANO\nNível 3 de Druida -> Escuridão, Flecha Rápida\nNível 5 de Druida -> Andar na Água, Névoa Fétida\nNível 7 de Druida -> Localizar Criatura, Movimentação Livre\nNível 9 de Druida -> Vidência, Praga de Insetos\n\nPLANÍCIE\nNível 3 de Druida -> Invisibilidade, Passos sem Pegadas\nNível 5 de Druida -> Luz do Dia, Velocidade\nNível 7 de Druida -> Adivinhação, Movimentação Livre\nNível 9 de Druida -> Praga de Insetos, Sonho\n\nSUBTERRÂNEO\nNível 3 de Druida -> Patas de Aranha, Teia\nNível 5 de Druida -> Forma Gasosa, Névoa Fétida\nNível 7 de Druida -> Invisibilidade Maior, Moldar Rochas\nNível 9 de Druida -> Praga de Insetos, Névoa Fétida"
+}

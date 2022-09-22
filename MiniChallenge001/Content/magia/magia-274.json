@@ -1,0 +1,17 @@
+{
+    "id": 274,
+    "nome": "Recuo Acelerado",
+    "nivel": 1,
+    "classes": [
+        "Bruxo",
+        "Feiticeiro",
+        "Mago"
+    ],
+    "escola": "Transmutação",
+    "ritual": false,
+    "tempoConjuracao": "1 ação bônus",
+    "alcance": "Pessoal",
+    "componentes": "Verbal, Somático",
+    "duracao": "Concentração, até 10 minutos",
+    "descricao": "Essa magia permite que você se mova a um ritmo incrível. Quando você conjura essa magia e, a partir de então, com uma ação bônus em cada um dos seus turnos, até a magia acabar, você pode reali zar a ação de Disparada."
+}
