@@ -32,6 +32,13 @@ struct Inventario: View {
                         Text("Mochila")
                             .font(.system(size: 20, weight: .bold, design: .rounded))
                     }
+                    
+                    ForEach($montarias, id: \.nome) { montaria in
+                        CapacidadeCarga(cargaUtilizada: .constant(50), cargaTotal: .constant(100))
+//                        ForEach(montaria.itens, id: \.self) { item in
+//                            Text(item.wrappedValue)
+//                        }
+                    }
                 }
             }
             
@@ -45,7 +52,6 @@ struct Inventario: View {
                         print("Pressed")
                     } label: {
                         Image("Carrinho")
-                            
                     }
                 }
             }
