@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ClasseBuilder {
+protocol ClasseBuilder : Codable{
     func resetBuilder()
     
     func setClasse(classe: ClassePersonagem)
@@ -23,10 +23,7 @@ protocol ClasseBuilder {
     func setProfArmaduras(_ armaduras: [ArmaduraJSON])
     func setProfFerramentas(_ ferramentas: [FerramentaJSON])
     
-    func setArmasIniciais(_ armas: [ArmaJSON])
-    func setArmadurasIniciais(_ armaduras: [ArmaduraJSON])
-    func setEquipamentosIniciais(_ equipamentos: [EquipamentoJSON])
-    func setFerramentasIniciais(_ ferramentas: [FerramentaJSON])
+    func setOpcoes(opcoes: [OpcaoEquipamento])
     
     func setProfPericias(_ pericias: [Pericia])
     func setQuantiaEscolhaProfPericia(_ quantia: Int)

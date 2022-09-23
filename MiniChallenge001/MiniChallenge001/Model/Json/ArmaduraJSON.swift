@@ -7,22 +7,22 @@
 
 import Foundation
 
-enum TipoArmadura: String, Codable {
+public enum TipoArmadura: String, Codable {
     case leve = "Leve"
     case media = "Média"
     case pesada = "Pesada"
     case escudo = "Escudo"
 }
 
-struct ArmaduraJSON: Json {
-    var id: Int
-    var nome: String
-    var tipo: TipoArmadura
-    var preco: Moeda
-    var valorCA: Int
-    var modCA: Int
-    var forca: Int
-    var desv_furtividade: Bool
-    var peso: Float
-    var descricao: String
+public struct ArmaduraJSON: Json {
+    public var id: Int
+    public var nome: String
+    public var tipo: TipoArmadura
+    public var preco: Moeda
+    public var valorCA: Int
+    public var modCA: Int
+    public var forca: Int
+    public var desv_furtividade: Bool
+    public var peso: Float
+    public var descricao: String
 }

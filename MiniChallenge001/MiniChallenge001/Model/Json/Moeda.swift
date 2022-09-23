@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TipoMoeda: String, Codable {
+public enum TipoMoeda: String, Codable {
     case cobre = "Cobre"
     case prata = "Prata"
     case electro = "Electro"
@@ -15,7 +15,7 @@ enum TipoMoeda: String, Codable {
     case platina = "Platina"
 }
 
-struct Moeda: Codable {
+public struct Moeda: Codable {
     var quantidade: Int
     var tipo: TipoMoeda
 }

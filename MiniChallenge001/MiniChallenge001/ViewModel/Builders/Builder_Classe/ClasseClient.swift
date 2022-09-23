@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ClasseClient {
+public class ClasseClient : Codable {
     static func orderClasse(classePersonagem: ClassePersonagem) {
         let director = ClasseDirector()
         let builder = ClasseConcreteBuilder()

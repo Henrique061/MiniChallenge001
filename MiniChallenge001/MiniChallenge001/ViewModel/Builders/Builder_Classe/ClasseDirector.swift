@@ -34,6 +34,56 @@ public class FactoryMagiasConhecidas {
     
 }
 
+public class BuscaArma : Codable {
+    public static func buscaArmaTipo(tipo: TipoArma, nomeExcluso: String) -> [String] {
+        guard let armas = JsonFileUtil.getDataFromFiles(folder: "arma", decoder: ArmaJSON.self) as? [ArmaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        var armasNome: [String] = []
+        
+        for arma in armas {
+            if arma.tipo == tipo && arma.nome != nomeExcluso {
+                armasNome.append(arma.nome)
+            }
+        }
+        
+        return armasNome
+    }
+    
+    public static func buscaArmaEstilo(estilo: EstiloArma, nomeExcluso: String) -> [String] {
+        guard let armas = JsonFileUtil.getDataFromFiles(folder: "arma", decoder: ArmaJSON.self) as? [ArmaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        var armasNome: [String] = []
+        
+        for arma in armas {
+            if arma.estilo == estilo && arma.nome != nomeExcluso {
+                armasNome.append(arma.nome)
+            }
+        }
+        
+        return armasNome
+    }
+    
+    public static func buscaArmaTipoEstilo(tipo: TipoArma, estilo: EstiloArma, nomeExcluso: String) -> [String] {
+        guard let armas = JsonFileUtil.getDataFromFiles(folder: "arma", decoder: ArmaJSON.self) as? [ArmaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        var armasNome: [String] = []
+        
+        for arma in armas {
+            if arma.tipo == tipo && arma.estilo == estilo && arma.nome != nomeExcluso {
+                armasNome.append(arma.nome)
+            }
+        }
+        
+        return armasNome
+    }
+}
+
 public class FactoryEspacosDeMagia {
     public static func criarEspacosDeMagia(circulosPorNivel: [Int]) -> [EspacosDeMagias] {
         var espacosMagia: [EspacosDeMagias] = []
@@ -51,17 +101,6 @@ public class FactoryEspacosDeMagia {
         return espacosMagia
     }
 }
-
-//public class OpcaoEquipamentoMultiplo {
-//    public static func addMultiploEquipamento<T:Json>(equipamento: T, quantidade: Int) -> [T] {
-//        var equipamentos: [T] = []
-//        for _ in 1 ... quantidade {
-//            equipamentos.append(equipamento)
-//        }
-//
-//        return equipamentos
-//    }
-//}
 
 public class ClasseDirector {
     private var builder: ClasseBuilder?
@@ -147,10 +186,31 @@ public class ClasseDirector {
         let armasProficientes: [ArmaJSON] = []
         let armadurasProficientes: [ArmaduraJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        
         let periciasProficientes: [Pericia] = [.adestrarAnimais, .atletismo, .intimidacao, .natureza, .percepcao, .sobrevivencia]
+        
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipoEstilo(tipo: .marcial, estilo: .cac, nomeExcluso: "")
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Machadinha")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
         
         // METODOS //////////////////////////
         
@@ -162,8 +222,7 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         
-        builder?.setArmasIniciais(armasIniciais) // VER OPCOES DE PLAYER
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
+        builder?.setOpcoes(opcoes: [opcao1, opcao2])
         
         builder?.setProfPericias(periciasProficientes) // definir pericias
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -197,12 +256,47 @@ public class ClasseDirector {
         let armadurasProficientes: [ArmaduraJSON] = []
         let ferramentasProficientes: [FerramentaJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let armadurasIniciais: [ArmaduraJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        let ferramentasIniciais: [FerramentaJSON] = []
-        
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .bardo, limiteTruquePorNivel: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4], limiteMagia: [4,5,6,7,8,9,10,11,12,14,15,15,16,18,19,19,20,22,22,22])
+        
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha3: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Rapieira", quantia: 1)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Longa", quantia: 1)]))
+            
+            for arma in armasEscolha3 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Machadinha")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao3: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Machadinha")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
         
         // METODOS //////////////////////////
         
@@ -214,11 +308,6 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         builder?.setProfFerramentas(ferramentasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setArmadurasIniciais(armadurasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
-        builder?.setFerramentasIniciais(ferramentasIniciais)
         
         builder?.setProfPericias(Pericia.allCases)
         builder?.setQuantiaEscolhaProfPericia(3)
@@ -247,10 +336,6 @@ public class ClasseDirector {
         let armasProficientes: [ArmaJSON] = []
         let armadurasProficientes: [ArmaduraJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let armadurasIniciais: [ArmaduraJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        
         let periciasProficientes: [Pericia] = [.arcanismo, .enganacao, .historia, .intimidacao, .investigacao, .natureza, .religiao]
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .bruxo, limiteTruquePorNivel: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4], limiteMagia: [2,3,4,5,6,7,8,9,10,10,11,11,12,12,13,13,14,14,15,15])
@@ -264,10 +349,6 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.sabedoria, .carisma])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setArmadurasIniciais(armadurasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -304,10 +385,6 @@ public class ClasseDirector {
         let armasProficientes: [ArmaJSON] = []
         let armadurasProficientes: [ArmaduraJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let armadurasIniciais: [ArmaduraJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        
         let periciasProficientes: [Pericia] = [.historia, .intuicao, .medicina, .persuasao, .religiao]
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComTudo(classe: .clerigo, limiteTruePorNivel: [3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5])
@@ -321,10 +398,6 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.sabedoria, .carisma])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setArmadurasIniciais(armadurasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -352,10 +425,6 @@ public class ClasseDirector {
         let armadurasProficientes: [ArmaduraJSON] = []
         let ferramentasProficientes: [FerramentaJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let armadurasIniciais: [ArmaduraJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        
         let periciasProficientes: [Pericia] = [.adestrarAnimais, .arcanismo, .intuicao, .medicina, .natureza, .percepcao, .religiao, .sobrevivencia]
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComTudo(classe: .druida, limiteTruePorNivel: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4])
@@ -370,10 +439,6 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         builder?.setProfFerramentas(ferramentasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setArmadurasIniciais(armadurasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -399,9 +464,6 @@ public class ClasseDirector {
         
         let armasProficientes: [ArmaJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        
         let periciasProficientes: [Pericia] = [.arcanismo, .enganacao, .intimidacao, .intuicao, .persuasao, .religiao]
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .feiticeiro, limiteTruquePorNivel: [4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6], limiteMagia: [2,3,4,5,6,7,8,9,10,11,12,12,13,13,14,14,15,15,15,15])
@@ -414,9 +476,6 @@ public class ClasseDirector {
         
         builder?.setProfSalvaguarda([.constituicao, .carisma])
         builder?.setProfArmas(armasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -445,10 +504,6 @@ public class ClasseDirector {
         let armasProficientes: [ArmaJSON] = []
         let armadurasProficientes: [ArmaduraJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let armadurasIniciais: [ArmaduraJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        
         let periciasProficientes: [Pericia] = [.acrobacia, .adestrarAnimais, .atletismo, .historia, .intimidacao, .intuicao, .percepcao, .sobrevivencia]
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .guerreiro, limiteTruquePorNivel: [0,0,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3], limiteMagia: [0,0,3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13])
@@ -462,10 +517,6 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.forca, .constituicao])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setArmadurasIniciais(armadurasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -496,11 +547,6 @@ public class ClasseDirector {
         let armadurasProficientes: [ArmaduraJSON] = []
         let ferramentasProficientes: [FerramentaJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let armadurasIniciais: [ArmaduraJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        let ferramentasIniciais: [FerramentaJSON] = []
-        
         let periciasProficientes: [Pericia] = [.acrobacia, .atletismo, .atuacao, .enganacao, .furtividade, .intimidacao, .intuicao, .investigacao, .percepcao, .persuasao, .prestidigitacao]
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .ladino, limiteTruquePorNivel: [0,0,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4], limiteMagia: [0,0,3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13])
@@ -515,11 +561,6 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         builder?.setProfFerramentas(ferramentasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setArmadurasIniciais(armadurasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
-        builder?.setFerramentasIniciais(ferramentasIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(4)
@@ -556,9 +597,6 @@ public class ClasseDirector {
         
         let armasProficientes: [ArmaJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        
         let periciasProficientes: [Pericia] = [.arcanismo, .historia, .intuicao, .investigacao, .medicina, .religiao]
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComTudo(classe: .mago, limiteTruePorNivel: [3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5])
@@ -571,9 +609,6 @@ public class ClasseDirector {
         
         builder?.setProfSalvaguarda([.inteligencia, .sabedoria])
         builder?.setProfArmas(armasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -602,9 +637,6 @@ public class ClasseDirector {
         let armasProficientes: [ArmaJSON] = []
         let ferramentasProficientes: [FerramentaJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        
         let periciasProficientes: [Pericia] = [.acrobacia, .atletismo, .furtividade, .historia, .intuicao, .religiao]
         
         // METODOS //////////////////////////
@@ -616,9 +648,6 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.forca, .destreza])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfFerramentas(ferramentasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -644,10 +673,6 @@ public class ClasseDirector {
         let armasProficientes: [ArmaJSON] = []
         let armadurasProficientes: [ArmaduraJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let armadurasIniciais: [ArmaduraJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        
         let periciasProficientes: [Pericia] = [.atletismo, .intimidacao, .intuicao, .medicina, .persuasao, .religiao]
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComTudo(classe: .paladino, limiteTruePorNivel: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
@@ -661,10 +686,6 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.sabedoria, .carisma])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setArmadurasIniciais(armadurasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -693,10 +714,6 @@ public class ClasseDirector {
         let armasProficientes: [ArmaJSON] = []
         let armadurasProficientes: [ArmaduraJSON] = []
         
-        let armasIniciais: [ArmaJSON] = []
-        let armadurasIniciais: [ArmaduraJSON] = []
-        let equipamentosIniciais: [EquipamentoJSON] = []
-        
         let periciasProficientes: [Pericia] = [.adestrarAnimais, .atletismo, .furtividade, .intuicao, .investigacao, .natureza, .percepcao, .sobrevivencia]
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .patrulheiro, limiteTruquePorNivel: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], limiteMagia: [0,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11])
@@ -710,10 +727,6 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.forca, .destreza])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
-        
-        builder?.setArmasIniciais(armasIniciais)
-        builder?.setArmadurasIniciais(armadurasIniciais)
-        builder?.setEquipamentosIniciais(equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(3)

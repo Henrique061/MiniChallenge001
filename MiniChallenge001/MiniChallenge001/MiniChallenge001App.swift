@@ -12,8 +12,8 @@ struct MiniChallenge001App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-//            TesteView()
+//            ContentView()
+            TesteView()
         }
     }
 }

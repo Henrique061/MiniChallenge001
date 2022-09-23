@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ClasseConcreteBuilder : ClasseBuilder {
+public class ClasseConcreteBuilder : ClasseBuilder{
     private var classe = ClasseEscolha()
     
     func resetBuilder() {
@@ -62,24 +62,9 @@ public class ClasseConcreteBuilder : ClasseBuilder {
         self.setProfFerramentas(ferramentas)
     }
     
-    //MARK: ARMAS INICIAIS
-    func setArmasIniciais(_ armas: [ArmaJSON]) {
-        self.classe.armasIniciais = armas
-    }
-    
-    //MARK: ARMADURAS INICIAIS
-    func setArmadurasIniciais(_ armaduras: [ArmaduraJSON]) {
-        self.classe.armadurasIniciais = armaduras
-    }
-    
-    //MARK: EQUIPAMENTOS INICIAIS
-    func setEquipamentosIniciais(_ equipamentos: [EquipamentoJSON]) {
-        self.classe.equipamentosIniciais = equipamentos
-    }
-    
-    //MARK: FERRAMENTAS INICIAIS
-    func setFerramentasIniciais(_ ferramentas: [FerramentaJSON]) {
-        self.classe.ferramentasIniciais = ferramentas
+    //MARK: SET OPCOES
+    func setOpcoes(opcoes: [OpcaoEquipamento]) {
+        self.classe.opcoesEquipamento = opcoes
     }
     
     //MARK: PROFICIENCIA PERICIAS
@@ -97,10 +82,12 @@ public class ClasseConcreteBuilder : ClasseBuilder {
         self.classe.possuiMagias = possuiMagia
     }
     
+    //MARK: MAGIA APENAS DE SUBCLASSE
     func setMagiaApenasSubclasse(_ magiaDeSubclasse: Bool) {
         self.classe.magiaApenasSubclasse = magiaDeSubclasse
     }
     
+    //MARK: SUBCLASSE COM MAGIA
     func setSubclasseComMagia(_ subclasse: SubclassePersonagem) {
         self.classe.subclasseComMagia = subclasse
     }
