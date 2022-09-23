@@ -9,8 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-
-    @State var currentTab: SheetTabView = .inventario
+    
+    @State var currentTab: SheetTabView = .combate
     
     var body: some View {
         TabView(selection: $currentTab) {
@@ -43,9 +43,8 @@ struct ContentView: View {
                 .tabItem{
                     Label("Atributos", image: currentTab == .atributos ? "AtributosIconOn" : "AtributosIconOff")
                 }
-            
         }
-        .accentColor(.red)
+        .accentColor((Color(UIColor(red: 0.675, green: 0.114, blue: 0.114, alpha: 1).cgColor)))
     }
 }
 
@@ -55,3 +54,47 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+struct NavigationBarTitle: View {
+    private var titulo: String
+    
+    init(_ titulo: String) {
+        self.titulo = titulo
+    }
+    
+    var body: some View {
+        Text(titulo)
+            .font(.system(size: 18, weight: .bold, design: .rounded))
+    }
+}
+
+struct PadraoDisplayInformacao: View {
+    
+    @Binding var titulo: String
+    @Binding var descricao: String
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(titulo)
+                .font(.system(size: 15, weight: .bold, design: .rounded))
+            Text(descricao)
+                .font(.system(size: 13, weight: .regular, design: .rounded))
+        }
+    }
+}
+
+struct TelaPadrao<Content: View>: View {
+    
+    var content: () -> Content
+    
+    var body: some View {
+        ZStack {
+            Color(uiColor: .systemGray6)
+                .ignoresSafeArea(.all)
+            VStack {
+                Divider()
+                content()
+            }
+        }
+    }
+    
+}
