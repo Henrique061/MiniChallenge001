@@ -12,19 +12,22 @@ struct TodasHabilidadesView: View {
     @State private var textoBusca: String = ""
     
     var body: some View {
-        List {
-            ForEach(0..<10) {nivel in
-                Section {
-                    ForEach(vmmagias.filterMagiasByLevel(nivel: nivel), id: \.id) { magia in
-                        NomeEscolaBotaoHabilidade(magia: magia)
+        
+        TelaPadrao {
+            List {
+                ForEach(0..<10) {nivel in
+                    Section {
+                        ForEach(vmmagias.filterMagiasByLevel(nivel: nivel), id: \.id) { magia in
+                            NomeEscolaBotaoHabilidade(magia: magia)
+                        }
+                    } header: {
+                        Text(nivel > 0 ? "\(nivel)º Círculo" : "Truques")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
                     }
-                } header: {
-                    Text(nivel > 0 ? "\(nivel)º Círculo" : "Truques")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
                 }
             }
+            .listStyle(.sidebar)
         }
-        .listStyle(.sidebar)
         
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

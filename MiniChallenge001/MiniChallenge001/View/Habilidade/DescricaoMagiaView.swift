@@ -18,20 +18,22 @@ public struct DetalhesMagia: View {
     }
     
     public var body: some View {
-        VStack {
-            HeaderDetalhesMagia(circulo: (magia.nivel > 0) ? "\(magia.nivel)º Círculo" : "Truque") { dismiss in
-                if dismiss {
-                    self.dismiss()
+        ZStack {
+            Color(uiColor: .systemGray6)
+            VStack {
+                HeaderDetalhesMagia(circulo: (magia.nivel > 0) ? "\(magia.nivel)º Círculo" : "Truque") { dismiss in
+                    if dismiss {
+                        self.dismiss()
+                    }
+                }
+                Divider()
+                Form {
+                    TituloDetalheView(titulo: magia.nome, descricao: magia.escola.rawValue)
+                    CorpoDetalheView(magia: magia)
+                        .padding(.bottom, 10)
                 }
             }
-            Divider()
-            Form {
-                TituloDetalheView(titulo: magia.nome, descricao: magia.escola.rawValue)
-                CorpoDetalheView(magia: magia)
-                    .padding(.bottom, 10)
-            }
         }
-        .background(Color(uiColor: UIColor.systemGray6))
     }
 }
 
@@ -47,7 +49,7 @@ struct HeaderDetalhesMagia: View {
     
     var body: some View {
         HStack(alignment: .center) {
-            Image("HabilidadesIconOff")
+            Image("Habilidades Detalhado")
                 .padding(.horizontal, 10)
             VStack(alignment: .leading) {
                 Text("Descrição da Habilidade")

@@ -44,7 +44,7 @@ struct ContentView: View {
                     Label("Atributos", image: currentTab == .atributos ? "AtributosIconOn" : "AtributosIconOff")
                 }
         }
-        .accentColor(Color(UIColor(red: 0.675, green: 0.114, blue: 0.114, alpha: 1).cgColor))
+        .accentColor((Color(UIColor(red: 0.675, green: 0.114, blue: 0.114, alpha: 1).cgColor)))
     }
 }
 
@@ -73,11 +73,28 @@ struct PadraoDisplayInformacao: View {
     @Binding var descricao: String
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(titulo)
                 .font(.system(size: 15, weight: .bold, design: .rounded))
             Text(descricao)
                 .font(.system(size: 13, weight: .regular, design: .rounded))
         }
     }
+}
+
+struct TelaPadrao<Content: View>: View {
+    
+    var content: () -> Content
+    
+    var body: some View {
+        ZStack {
+            Color(uiColor: .systemGray6)
+                .ignoresSafeArea(.all)
+            VStack {
+                Divider()
+                content()
+            }
+        }
+    }
+    
 }

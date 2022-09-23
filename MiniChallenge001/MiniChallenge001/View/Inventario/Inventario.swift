@@ -12,74 +12,47 @@ import SwiftUI
 
 struct Inventario: View {
     @State var arr: [String] = Array.init(repeating: "Alguma coisa", count: 15)
+    @State var mochila = Mochila(itens: ["Item 1", "Item 2", "Item 3", "Item 4"])
+    @State var montarias = [
+        Montaria(nome: "Cavalo", mochila: Mochila(itens: ["Item 1", "Item 2", "Item 3", "Item 4"])),
+        Montaria(nome: "Mula", mochila: Mochila(itens: ["Item 1", "Item 2", "Item 3", "Item 4"])),
+        Montaria(nome: "Mastiff", mochila: Mochila(itens: ["Item 1", "Item 2", "Item 3", "Item 4"]))
+    ]
+    
     var body: some View {
         NavigationView{
-            VStack{
-                List{
-                    Section{
-                        VStack(alignment: .leading){
-                            Text("Amizade")
-                                .bold()
-                            Text("1,5Kg / 20GKg")
-                        }
-                        VStack(alignment: .leading){
-                            Text("Saco de Moedas")
-                                .bold()
-                            HStack{
-                                Text("PC:\(1000)   PP:\(1000)   PE:\(1000)   PO:\(1000)   PL:\(1000)")
-                                    .font(.system(size: 13))
-                                    .lineLimit(1)
-                                    .scaledToFill()
-                            }
-                        }
-                    }header: {
-                        Text("Mochila")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
-                    }
-                    Section{
-                        VStack(alignment: .leading){
-                            
-                            Text("2X Adaga")
-                                .bold()
-                                .font(.system(size: 15))
-                            HStack{
-                                Text("Arma simples de Corpo-a-Corpo")
-                                    .font(.system(size: 13))
-                                Spacer()
-                                Text("1,0 Kg")
-                                    .frame( alignment: .trailing)
-                                    .font(.system(size: 13))
-                            }
-                        }
-                    }
+            TelaPadrao {
+                List {
                     Section {
-                        ForEach(arr, id: \.self) { item in
-                            Text(item)
+                        CapacidadeCarga(cargaUtilizada: .constant(10.0), cargaTotal: .constant(20.1))
+                        ForEach($mochila.itens, id: \.self) { item in
+                            Text(item.wrappedValue)
                         }
                     } header: {
-                        Text("Montaria")
+                        Text("Mochila")
                             .font(.system(size: 20, weight: .bold, design: .rounded))
-                    }
-                }
-                .listStyle(.insetGrouped)
-                
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar{
-                    ToolbarItem(placement: .principal) {
-                        NavigationBarTitle("Inventário")
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button() {
-                            print("Pressed")
-                        } label: {
-                            Image(systemName: "cart.fill").accentColor(.black)
-                        }
                     }
                 }
             }
             
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                ToolbarItem(placement: .principal) {
+                    NavigationBarTitle("Inventário")
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button() {
+                        print("Pressed")
+                    } label: {
+                        Image("Carrinho")
+                            
+                    }
+                }
+            }
         }
     }
+    
+    func testeDelete(index: IndexSet) { }
 }
 
 struct InfoMoeda: View {
@@ -91,4 +64,41 @@ struct InfoMoeda: View {
             .lineLimit(1)
             .scaledToFill()
     }
+}
+
+struct CapacidadeCarga: View {
+    
+    @Binding var cargaUtilizada: Float
+    @Binding var cargaTotal: Float
+    
+    private var numberFormatter: NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.decimalSeparator = ","
+        formatter.maximumFractionDigits = 2
+        formatter.numberStyle = .decimal
+        return formatter
+    }
+    
+    private var cargaFormatada: String {
+        let cargaAtual = numberFormatter.string(from: NSNumber(value: cargaUtilizada))
+        let cargaMaxima = numberFormatter.string(from: NSNumber(value: cargaTotal))
+        return "\(cargaAtual ?? "0,0")kg / \(cargaMaxima ?? "0,0")kg"
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Capacidade de Carga")
+                .font(.system(size: 15, weight: .bold, design: .rounded))
+            Text(cargaFormatada)
+        }
+    }
+}
+
+struct Mochila {
+    var itens: [String]
+}
+
+struct Montaria {
+    var nome: String
+    var mochila: Mochila
 }
