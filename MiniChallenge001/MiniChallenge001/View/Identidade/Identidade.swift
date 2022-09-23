@@ -13,31 +13,29 @@ import SwiftUI
 struct Identidade: View {
     
     var body: some View {
-        NavigationView{
-            VStack{
+        VStack{
             List{
                 Section{
-                Text("Nome")
-                Text("Nome")
+                    Text("Nome")
+                    Text("Nome")
                 }
                 Section{  Text("Nome")
-                Text("Nome")
+                    Text("Nome")
                 }
-                    }.listStyle(.insetGrouped)
+            }.listStyle(.insetGrouped)
+        }
+        
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar{
+            ToolbarItem(placement: .principal) {
+                NavigationBarTitle("Identidade")
             }
-            
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar{
-                ToolbarItem(placement: .principal) {
-                    NavigationBarTitle("Identidade")
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button() {
-                        print("Pressed")
-                    } label: {
-                        Image("Aprimoramento").accentColor(.black)
-                
-                    }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button() {
+                    print("Pressed")
+                } label: {
+                    Image("Aprimoramento").accentColor(.black)
+                    
                 }
             }
         }

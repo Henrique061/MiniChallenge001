@@ -16,7 +16,7 @@ struct Habilidades: View {
     @State private var textoBusca: String = ""
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             TelaPadrao {
                 List {
                     ForEach(0..<10) {nivel in
@@ -33,6 +33,8 @@ struct Habilidades: View {
                 .listStyle(.sidebar)
             }
             
+            .searchable(text: $textoBusca)
+            
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -45,8 +47,7 @@ struct Habilidades: View {
                         Image("Habilidade Livro")
                     }
                 }
-            }
-            .searchable(text: $textoBusca)
+            }  
         }
     }
 }

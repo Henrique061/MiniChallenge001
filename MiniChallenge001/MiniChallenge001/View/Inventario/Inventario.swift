@@ -20,39 +20,35 @@ struct Inventario: View {
     ]
     
     var body: some View {
-        NavigationView{
-            TelaPadrao {
-                List {
-                    Section {
-                        CapacidadeCarga(cargaUtilizada: .constant(10.0), cargaTotal: .constant(20.1))
-                        ForEach($mochila.itens, id: \.self) { item in
-                            Text(item.wrappedValue)
-                        }
-                    } header: {
-                        Text("Mochila")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
+        TelaPadrao {
+            List {
+                Section {
+                    CapacidadeCarga(cargaUtilizada: .constant(10.0), cargaTotal: .constant(20.1))
+                    ForEach($mochila.itens, id: \.self) { item in
+                        Text(item.wrappedValue)
                     }
+                } header: {
+                    Text("Mochila")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                }
+                
+                ForEach($montarias, id: \.nome) { montaria in
+                    CapacidadeCarga(cargaUtilizada: .constant(50), cargaTotal: .constant(100))
                     
-                    ForEach($montarias, id: \.nome) { montaria in
-                        CapacidadeCarga(cargaUtilizada: .constant(50), cargaTotal: .constant(100))
-//                        ForEach(montaria.itens, id: \.self) { item in
-//                            Text(item.wrappedValue)
-//                        }
-                    }
                 }
             }
-            
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar{
-                ToolbarItem(placement: .principal) {
-                    NavigationBarTitle("Inventário")
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button() {
-                        print("Pressed")
-                    } label: {
-                        Image("Carrinho")
-                    }
+        }
+        
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar{
+            ToolbarItem(placement: .principal) {
+                NavigationBarTitle("Inventário")
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button() {
+                    print("Pressed")
+                } label: {
+                    Image("Carrinho")
                 }
             }
         }

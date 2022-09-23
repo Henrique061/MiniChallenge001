@@ -1,0 +1,96 @@
+//
+//  MainView.swift
+//  MiniChallenge001
+//
+//  Created by Matheus Cavalcanti de Arruda on 23/09/22.
+//
+
+import SwiftUI
+
+struct MainView: View {
+    //
+    
+    @State var fichas: [TesteFicha] = [
+        TesteFicha(nome: "Levesleves", classe: .mago, nivel: 5),
+        TesteFicha(nome: "Henrique", classe: .clerigo, nivel: 8),
+        TesteFicha(nome: "Thiago", classe: .bardo, nivel: 6)
+    ]
+    
+    @State private var mostrarFicha: Bool = false
+    @State private var fichaSelecionada: TesteFicha?
+    
+    var body: some View {
+        NavigationView {
+            TelaPadrao {
+                List {
+                    ForEach($fichas, id: \.nome) { ficha in
+                        Section {
+                            Button {
+                                fichaSelecionada = ficha.wrappedValue
+                                mostrarFicha.toggle()
+                            } label: {
+                                LabelFicha(nome: ficha.nome, classe: ficha.classe, nivel: ficha.nivel)
+                                    .tint(Color(uiColor: .black))
+                            }
+                        } header: {
+                            Text("Nome da ficha")
+                                .font(.system(size: 20, weight: .bold, design: .rounded))
+                        }
+                    }
+                }
+                .listStyle(.grouped)
+            }
+            
+            .fullScreenCover(isPresented: $mostrarFicha) {
+                ContentView()
+            }
+            
+            
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Fichas")
+                        .font(.system(size: 34, weight: .bold, design: .rounded))
+                }
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Spacer()
+                    Button {
+                        
+                    } label: {
+                        Text("Nova Ficha")
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+    }
+}
+
+struct LabelFicha: View {
+    @Binding var nome: String
+    @Binding var classe: ClassePersonagem
+    @Binding var nivel: Int
+    
+    private var formatClasseNivel: String {
+        return "\(classe.rawValue) \(nivel)"
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            PadraoDisplayInformacao(titulo: .constant("Nome"), descricao: $nome)
+            Divider()
+            PadraoDisplayInformacao(titulo: .constant("Classe e Nível"), descricao: .constant(formatClasseNivel))
+        }
+    }
+}
+
+struct TesteFicha {
+    var nome: String
+    var classe: ClassePersonagem
+    var nivel: Int
+}

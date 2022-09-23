@@ -11,24 +11,36 @@ import Foundation
 import SwiftUI
 
 struct Combate: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
-        NavigationView{
-            Text("Combate")
-                
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar{
-                    ToolbarItem(placement: .principal) {
-                        NavigationBarTitle("Nome da Ficha")
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button() {
-                            print("Pressed")
-                        } label: {
-                            Image("Temporizador").accentColor(.black)
-                            
-                        }
+        NavigationView {
+            TelaPadrao {
+                Text("Tela principal do personagem")
+            }
+            
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                ToolbarItem(placement: .principal) {
+                    NavigationBarTitle("Nome da Ficha")
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Menu Principal")
                     }
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button() {
+                        print("Pressed")
+                    } label: {
+                        Image("Temporizador").accentColor(.black)
+                        
+                    }
+                }
+            }
         }
     }
 }
