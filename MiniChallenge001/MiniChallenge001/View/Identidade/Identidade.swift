@@ -25,19 +25,21 @@ struct Identidade: View {
                 }
                     }.listStyle(.insetGrouped)
             }
-                .navigationTitle("Identidade")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button() {
-                            print("Pressed")
-                        } label: {
-                            Image("Aprimoramento").accentColor(.black)
-                    
-                        }
+            
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                ToolbarItem(placement: .principal) {
+                    NavigationBarTitle("Identidade")
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button() {
+                        print("Pressed")
+                    } label: {
+                        Image("Aprimoramento").accentColor(.black)
+                
                     }
                 }
-        
+            }
         }
     }
 }

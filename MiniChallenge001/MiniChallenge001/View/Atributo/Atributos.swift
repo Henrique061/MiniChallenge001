@@ -10,67 +10,75 @@ import SwiftUI
 
 // Só para atualizar
 
-struct Inventario: View {
-    @State var arr: [String] = Array.init(repeating: "Alguma coisa", count: 15)
+struct Atributos: View {
+    @State var teste = true
     var body: some View {
         NavigationView{
             VStack{
                 List{
                     Section{
+                        HStack{
                         VStack(alignment: .leading){
-                            Text("Amizade")
+                            Text("Pontos adicionais")
                                 .bold()
-                            Text("1,5Kg / 20GKg")
+                            Text("02")
                         }
-                        VStack(alignment: .leading){
-                            Text("Saco de Moedas")
-                                .bold()
-                            HStack{
-                                Text("PC:\(1000)   PP:\(1000)   PE:\(1000)   PO:\(1000)   PL:\(1000)")
-                                    .font(.system(size: 13))
-                                    .lineLimit(1)
-                                    .scaledToFill()
+                            Toggle(isOn: $teste){
+                            
                             }
+                            
+                            
+                            
                         }
+                        
                     }header: {
-                        Text("Mochila")
+                        Text("Bônus de Proeficiência")
                             .font(.system(size: 20, weight: .bold, design: .rounded))
                     }
                     Section{
                         VStack(alignment: .leading){
-                            
-                            Text("2X Adaga")
+                            HStack{
+                                VStack{
+                            Text("Forc")
                                 .bold()
                                 .font(.system(size: 15))
-                            HStack{
+                        
                                 Text("Arma simples de Corpo-a-Corpo")
                                     .font(.system(size: 13))
-                                Spacer()
-                                Text("1,0 Kg")
+                                    
+                            }
+                                VStack{
+                                    
+                                
+                                
+                                Text("inteligencia")
+                                        .bold()
                                     .frame( alignment: .trailing)
-                                    .font(.system(size: 13))
+                                    .font(.system(size: 15))
+                                    
+                                    Text("18 ")
+                                }
+                                    
                             }
                         }
-                    }
-                    Section {
-                        ForEach(arr, id: \.self) { item in
-                            Text(item)
-                        }
-                    } header: {
-                        Text("Montaria")
+                    }header: {
+                        Text("Atributos")
                             .font(.system(size: 20, weight: .bold, design: .rounded))
                     }
+                    
                 }
                 .listStyle(.insetGrouped)
                 
-                .navigationTitle("Inventário")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar{
+                    ToolbarItem(placement: .principal) {
+                        NavigationBarTitle("Atributos")
+                    }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button() {
                             print("Pressed")
                         } label: {
-                            Image(systemName: "cart.fill").accentColor(.black)
+                            Image("Penalidade").accentColor(.black)
                         }
                     }
                 }
@@ -79,15 +87,4 @@ struct Inventario: View {
         }
     }
 }
-struct InfoMoeda: View {
-    
-    @State var tipoMoeda: String
-    @State var quantidade: Int
-    
-    var body: some View {
-        Text("\(tipoMoeda): \(quantidade)")
-            .lineLimit(1)
-            .scaledToFill()
-    }
-    
-}
+
