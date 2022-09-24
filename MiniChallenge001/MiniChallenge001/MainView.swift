@@ -57,11 +57,15 @@ struct MainView: View {
                     Button {
                         
                     } label: {
-                        Text("Nova Ficha")
+                        HStack {
+                            Text("Nova Fica")
+                            Image(systemName: "square.and.pencil")
+                        }
                     }
                 }
             }
         }
+        .accentColor((Color(UIColor(red: 0.675, green: 0.114, blue: 0.114, alpha: 1).cgColor)))
     }
 }
 
