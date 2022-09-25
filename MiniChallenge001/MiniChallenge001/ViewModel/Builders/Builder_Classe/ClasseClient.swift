@@ -8,13 +8,13 @@
 import Foundation
 
 public class ClasseClient : Codable {
-    static func orderClasse(classePersonagem: ClassePersonagem) {
+    public static func orderClasse(classePersonagem: ClassePersonagem) -> ClasseEscolha {
         let director = ClasseDirector()
         let builder = ClasseConcreteBuilder()
         
         director.newBuilder(classeBuilder: builder)
         director.makeClasse(classe: classePersonagem)
         
-        let classe = builder.getClasseFinal()
+        return builder.getClasseFinal()
     }
 }

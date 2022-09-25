@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ClasseConcreteBuilder : ClasseBuilder{
+public class ClasseConcreteBuilder : ClasseBuilder {
     private var classe = ClasseEscolha()
     
     func resetBuilder() {
@@ -59,12 +59,42 @@ public class ClasseConcreteBuilder : ClasseBuilder{
     
     //MARK: PROFICIENCIA FERRAMENTAS
     func setProfFerramentas(_ ferramentas: [FerramentaJSON]) {
-        self.setProfFerramentas(ferramentas)
+        self.classe.profFerramentas = ferramentas
+    }
+    
+    //MARK: OPCOES FERRAMENTAS
+    func setEscolhasProficienciaFerramenta(_ escolhas: [EscolhaOpcao]) {
+        self.classe.escolhasProficienciaFerramenta = escolhas
     }
     
     //MARK: SET OPCOES
     func setOpcoes(opcoes: [OpcaoEquipamento]) {
         self.classe.opcoesEquipamento = opcoes
+    }
+    
+    //MARK: ARMAS INICIAIS
+    func setArmasIniciais(armas: [ArmaJSON]) {
+        self.classe.armasIniciais = armas
+    }
+    
+    //MARK: ARMADURAS INICIAIS
+    func setArmadurasIniciais(armaduras: [ArmaduraJSON]) {
+        self.classe.armadurasIniciais = armaduras
+    }
+    
+    //MARK: EQUIPAMENTOS INICIAIS
+    func setEquipamentosIniciais(equipamentos: [EquipamentoJSON]) {
+        self.classe.equipamentosIniciais = equipamentos
+    }
+    
+    //MARK: FERRAMENTAS INICIAIS
+    func setFerramentasIniciais(ferramentas: [FerramentaJSON]) {
+        self.classe.ferramentasIniciais = ferramentas
+    }
+    
+    //MARK: PACOTES INICIAIS
+    func setPacotesIniciais(pacotes: [PacoteEquipamento]) {
+        self.classe.pacotesIniciais = pacotes
     }
     
     //MARK: PROFICIENCIA PERICIAS

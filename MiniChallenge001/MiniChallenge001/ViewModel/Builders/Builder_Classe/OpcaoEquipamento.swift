@@ -19,7 +19,7 @@ public enum PacoteEquipamento : String, Codable {
 
 public enum TipoJSON : String, Codable {
     case arma = "arma"
-    case armadura = "armadura"
+    case armadura = "armaduras"
     case equipamento = "equipamento"
     case ferramenta = "ferramenta"
 }
@@ -44,7 +44,7 @@ public struct EscolhaOpcao : Codable {
     var itens: [ItemEscolha]
 }
 
-public struct ItemEscolha: Codable {
+public struct ItemEscolha : Codable {
     var nomeItem: String
     var quantia: Int
     var tipoJson: TipoJSON

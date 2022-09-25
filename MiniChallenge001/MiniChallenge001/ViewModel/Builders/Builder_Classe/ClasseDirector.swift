@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class FactoryMagiasConhecidas {
+public class FactoryMagiasConhecidas : Codable {
     
     public static func criarMagiasComTudo(classe: ClassePersonagem, limiteTruePorNivel: [Int]) -> [MagiasConhecidas] {
         guard let magias = JsonFileUtil.getDataFromFiles(folder: "magia", decoder: MagiaJSON.self) as? [MagiaJSON] else {
@@ -30,6 +30,114 @@ public class FactoryMagiasConhecidas {
         }
         
         return arr
+    }
+    
+    public static func criarEspacosDeMagiaPiramide() -> [EspacosDeMagias] {
+        var espacosMagia: [EspacosDeMagias] = []
+        
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 1, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 2, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 3, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 4, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 5, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 6, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 7, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4], limiteUsoMagia: [4, 3, 3, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 8, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4], limiteUsoMagia: [4, 3, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 9, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5], limiteUsoMagia: [4, 3, 3, 3, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 10, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5], limiteUsoMagia: [4, 3, 3, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 11, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5, 6], limiteUsoMagia: [4, 3, 3, 3, 2, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 12, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5, 6], limiteUsoMagia: [4, 3, 3, 3, 2, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 13, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5, 6, 7], limiteUsoMagia: [4, 3, 3, 3, 2, 1, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 14, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5, 6, 7], limiteUsoMagia: [4, 3, 3, 3, 2, 1, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 15, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5, 6, 7, 8], limiteUsoMagia: [4, 3, 3, 3, 2, 1, 1, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 16, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5, 6, 7, 8], limiteUsoMagia: [4, 3, 3, 3, 2, 1, 1, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 17, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5, 6, 7, 8, 9], limiteUsoMagia: [4, 3, 3, 3, 2, 1, 1, 1, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 18, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5, 6, 7, 8, 9], limiteUsoMagia: [4, 3, 3, 3, 3, 1, 1, 1, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 19, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5, 6, 7, 8, 9], limiteUsoMagia: [4, 3, 3, 3, 3, 2, 1, 1, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 20, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5, 6, 7, 8, 9], limiteUsoMagia: [4, 3, 3, 3, 3, 2, 2, 1, 1])))
+        
+        return espacosMagia
+    }
+    
+    public static func criarEspacosDeMagiaMetade() -> [EspacosDeMagias] {
+        var espacosMagia: [EspacosDeMagias] = []
+        
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 1, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [0])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 2, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 3, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 4, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 5, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 6, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 7, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 8, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 9, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 10, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 11, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 12, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 13, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4], limiteUsoMagia: [4, 3, 3, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 14, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4], limiteUsoMagia: [4, 3, 3, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 15, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4], limiteUsoMagia: [4, 3, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 16, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4], limiteUsoMagia: [4, 3, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 17, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5], limiteUsoMagia: [4, 3, 3, 3, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 18, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5], limiteUsoMagia: [4, 3, 3, 3, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 19, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5], limiteUsoMagia: [4, 3, 3, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 20, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4, 5], limiteUsoMagia: [4, 3, 3, 3, 2])))
+        
+        return espacosMagia
+    }
+    
+    public static func criarEspacosDeMagiaPequeno() -> [EspacosDeMagias] {
+        var espacosMagia: [EspacosDeMagias] = []
+        
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 1, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [0])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 2, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [0])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 3, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 4, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 5, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 6, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 7, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 8, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 9, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 10, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 11, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 12, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2], limiteUsoMagia: [4, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 13, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 14, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 15, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 16, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 17, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 18, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3], limiteUsoMagia: [4, 3, 3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 19, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4], limiteUsoMagia: [4, 3, 3, 1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 20, niveisCirculo: CirculoMagico(nivelCirculo: [1, 2, 3, 4], limiteUsoMagia: [4, 3, 3, 1])))
+        
+        return espacosMagia
+    }
+    
+    public static func criarEspacosDeMagiaBruxo() -> [EspacosDeMagias] {
+        var espacosMagia: [EspacosDeMagias] = []
+        
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 1, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [1])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 2, niveisCirculo: CirculoMagico(nivelCirculo: [1], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 3, niveisCirculo: CirculoMagico(nivelCirculo: [2], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 4, niveisCirculo: CirculoMagico(nivelCirculo: [2], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 5, niveisCirculo: CirculoMagico(nivelCirculo: [3], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 6, niveisCirculo: CirculoMagico(nivelCirculo: [3], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 7, niveisCirculo: CirculoMagico(nivelCirculo: [4], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 8, niveisCirculo: CirculoMagico(nivelCirculo: [4], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 9, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 10, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [2])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 11, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 12, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 13, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 14, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 15, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 16, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [3])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 17, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [4])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 18, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [4])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 19, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [4])))
+        espacosMagia.append(EspacosDeMagias(nivelPersonagem: 20, niveisCirculo: CirculoMagico(nivelCirculo: [5], limiteUsoMagia: [4])))
+        
+        return espacosMagia
     }
     
 }
@@ -84,11 +192,215 @@ public class BuscaArma : Codable {
     }
 }
 
-public class BuscaArmadura {
+public class BuscaJson : Codable {
+    public static func buscaArmaTodos() -> [ArmaJSON] {
+        guard let armas = JsonFileUtil.getDataFromFiles(folder: "arma", decoder: ArmaJSON.self) as? [ArmaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        return armas
+    }
     
+    public static func buscaArmaTipo(tipo: TipoArma) -> [ArmaJSON] {
+        guard let armas = JsonFileUtil.getDataFromFiles(folder: "arma", decoder: ArmaJSON.self) as? [ArmaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        var armasRetorno: [ArmaJSON] = []
+        
+        for arma in armas {
+            if arma.tipo == tipo {
+                armasRetorno.append(arma)
+            }
+        }
+        
+        return armasRetorno
+    }
+    
+    public static func buscaArmaPorNome(nome: String) -> ArmaJSON {
+        guard let armas = JsonFileUtil.getDataFromFiles(folder: "arma", decoder: ArmaJSON.self) as? [ArmaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        for arma in armas {
+            if arma.nome == nome {
+                return arma
+            }
+        }
+        
+        return armas[0]
+    }
+    
+    public static func buscaArmaPorNomes(nomes: [String]) -> [ArmaJSON] {
+        guard let armas = JsonFileUtil.getDataFromFiles(folder: "arma", decoder: ArmaJSON.self) as? [ArmaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var armasRetorno: [ArmaJSON] = []
+        
+        for arma in armas {
+            for nome in nomes {
+                if arma.nome == nome {
+                    armasRetorno.append(arma)
+                }
+            }
+        }
+        
+        return armasRetorno
+    }
+    
+    public static func buscaArmaPorNomeQuantidade(nome: String, quantidade: Int) -> [ArmaJSON] {
+        guard let armas = JsonFileUtil.getDataFromFiles(folder: "arma", decoder: ArmaJSON.self) as? [ArmaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var armasRetorno: [ArmaJSON] = []
+        
+        for arma in armas {
+            if arma.nome == nome {
+                for _ in 1 ... quantidade {
+                    armasRetorno.append(arma)
+                }
+                return armasRetorno
+            }
+        }
+        
+        return armasRetorno
+    }
+    
+    public static func buscaArmadurasTodos() -> [ArmaduraJSON] {
+        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: "armaduras", decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        return armaduras
+    }
+    
+    public static func buscaArmadurasSemEscudo() -> [ArmaduraJSON] {
+        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: "armaduras", decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var armadurasRetorno: [ArmaduraJSON] = []
+        
+        for armadura in armaduras {
+            if armadura.nome != "Escudo" {
+                armadurasRetorno.append(armadura)
+            }
+        }
+        
+        return armadurasRetorno
+    }
+    
+    public static func buscaArmadurasPorTipo(tipo: TipoArmadura) -> [ArmaduraJSON] {
+        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: "armaduras", decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var armadurasRetorno: [ArmaduraJSON] = []
+        
+        for armadura in armaduras {
+            if armadura.tipo != tipo {
+                armadurasRetorno.append(armadura)
+            }
+        }
+        
+        return armadurasRetorno
+    }
+    
+    public static func buscaArmadurasPorTipos(tipos: [TipoArmadura]) -> [ArmaduraJSON] {
+        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: "armaduras", decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var armadurasRetorno: [ArmaduraJSON] = []
+        
+        for armadura in armaduras {
+            for tipo in tipos {
+                if armadura.tipo == tipo {
+                    armadurasRetorno.append(armadura)
+                }
+            }
+            
+        }
+        
+        return armadurasRetorno
+    }
+    
+    public static func buscaArmaduraPorNome(nome: String) -> ArmaduraJSON {
+        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: "armaduras", decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        for armadura in armaduras {
+            if armadura.nome == nome {
+                return armadura
+            }
+        }
+        
+        return armaduras[0]
+    }
+    
+    public static func buscaArmaduraPorNomes(nomes: [String]) -> [ArmaduraJSON] {
+        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: "armaduras", decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var armadurasRetorno: [ArmaduraJSON] = []
+        
+        for armadura in armaduras {
+            for nome in nomes {
+                if armadura.nome == nome {
+                    armadurasRetorno.append(armadura)
+                }
+            }
+        }
+        
+        return armadurasRetorno
+    }
+    
+    public static func buscaEquipamentoPorNome(nome: String) -> EquipamentoJSON {
+        guard let equipamentos = JsonFileUtil.getDataFromFiles(folder: "equipamento", decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        for equipamento in equipamentos {
+            if equipamento.nome == nome {
+                return equipamento
+            }
+        }
+        
+        return equipamentos[0]
+    }
+    
+    public static func buscaEquipamentoPorNomeQuantidade(nome: String, quantidade: Int) -> [EquipamentoJSON] {
+        guard let equipamentos = JsonFileUtil.getDataFromFiles(folder: "equipamento", decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var equipamentosRetorno: [EquipamentoJSON] = []
+        
+        for equipamento in equipamentos {
+            if equipamento.nome == nome {
+                for _ in 1 ... quantidade {
+                    equipamentosRetorno.append(equipamento)
+                }
+                return equipamentosRetorno
+            }
+        }
+        
+        return equipamentosRetorno
+    }
+    
+    public static func buscaFerramentaPorNome(nome: String) -> FerramentaJSON {
+        guard let ferramentas = JsonFileUtil.getDataFromFiles(folder: "ferramenta", decoder: FerramentaJSON.self) as? [FerramentaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        for ferramenta in ferramentas {
+            if ferramenta.nome == nome {
+                return ferramenta
+            }
+        }
+        
+        return ferramentas[0]
+    }
 }
 
-public class BuscaFerramenta {
+public class BuscaFerramenta : Codable {
     public static func buscaFerramentaTipo(tipo: TipoFerramenta, nomeExcluso: String) -> [String] {
         guard let ferramentas = JsonFileUtil.getDataFromFiles(folder: "ferramenta", decoder: FerramentaJSON.self) as? [FerramentaJSON] else {
             fatalError("Erro ao tentar converter magias")
@@ -106,8 +418,8 @@ public class BuscaFerramenta {
     }
 }
 
-public class BuscaEquipamento {
-    public static func buscaFerramentaCategoria(categoria: CategoriaEquipamento, nomeExcluso: String) -> [String] {
+public class BuscaEquipamento : Codable {
+    public static func buscaEquipamentoCategoria(categoria: CategoriaEquipamento, nomeExcluso: String) -> [String] {
         guard let equipamentos = JsonFileUtil.getDataFromFiles(folder: "equipamento", decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
@@ -121,24 +433,6 @@ public class BuscaEquipamento {
         }
         
         return equipamentosNome
-    }
-}
-
-public class FactoryEspacosDeMagia {
-    public static func criarEspacosDeMagia(circulosPorNivel: [Int]) -> [EspacosDeMagias] {
-        var espacosMagia: [EspacosDeMagias] = []
-        
-        if circulosPorNivel.count == 20 {
-            for nivel in 1 ... circulosPorNivel.count {
-                espacosMagia.append(EspacosDeMagias(nivelPersonagem: nivel, niveisCirculo: []))
-            }
-        }
-        
-        else {
-            print("Erro ao criar Factory de epsacos de magia. CirculoPorNivel deve ser == 20")
-        }
-        
-        return espacosMagia
     }
 }
 
@@ -223,8 +517,11 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .BB_caminhoGuerreiroTotemico, caracteristicas: caracTotemico)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
-        let armadurasProficientes: [ArmaduraJSON] = []
+        let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTodos()
+        let armadurasProficientes: [ArmaduraJSON] = BuscaJson.buscaArmadurasPorTipos(tipos: [.leve, .media, .escudo])
+        
+        let armasIniciais: [ArmaJSON] = BuscaJson.buscaArmaPorNomeQuantidade(nome: "Azagaia", quantidade: 4)
+        let pacotesIniciais: [PacoteEquipamento] = [PacoteEquipamento.pacoteAventureiro]
         
         let periciasProficientes: [Pericia] = [.adestrarAnimais, .atletismo, .intimidacao, .natureza, .percepcao, .sobrevivencia]
         
@@ -263,17 +560,19 @@ public class ClasseDirector {
         builder?.setProfArmaduras(armadurasProficientes)
         
         builder?.setOpcoes(opcoes: [opcao1, opcao2])
+        builder?.setArmasIniciais(armas: armasIniciais)
+        builder?.setPacotesIniciais(pacotes: pacotesIniciais)
         
         builder?.setProfPericias(periciasProficientes) // definir pericias
         builder?.setQuantiaEscolhaProfPericia(2)
         builder?.setPossuiMagias(false)
         
         builder?.setPontosEspecificosNumericos([
-            PontoEspecificoNumerico(nomeValor: "Fúria", valorNumericoInicial: 2)
+            PontoEspecificoNumerico(nomeValor: "Fúria", valorPorNivel: [2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 99])
         ])
         
         builder?.setPontosEspecificosTexto([
-            PontoEspecificoTexto(nomeValor: "Dano de Fúria", valorTexturalInicial: "+2")
+            PontoEspecificoTexto(nomeValor: "Dano de Fúria", textoPorNivel: ["+2", "+2", "+2", "+2", "+2", "+2", "+2", "+2", "+3", "+3", "+3", "+3", "+3", "+3", "+3", "+4", "+4", "+4", "+4", "+4"])
         ])
         
     }
@@ -292,9 +591,30 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .BD_colegioBravura, caracteristicas: caracBravura)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
-        let armadurasProficientes: [ArmaduraJSON] = []
-        let ferramentasProficientes: [FerramentaJSON] = []
+        var armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
+        armasProficientes.append(BuscaJson.buscaArmaPorNome(nome: "Besta de Mão"))
+        armasProficientes.append(BuscaJson.buscaArmaPorNome(nome: "Espada Longa"))
+        armasProficientes.append(BuscaJson.buscaArmaPorNome(nome: "Rapieira"))
+        armasProficientes.append(BuscaJson.buscaArmaPorNome(nome: "Espada Curta"))
+        
+        let armadurasProficientes: [ArmaduraJSON] = BuscaJson.buscaArmadurasPorTipo(tipo: .leve)
+        
+        var escolhasProfFerramenta: [EscolhaOpcao] {
+            var itensEscolha: [[ItemEscolha]] = []
+            let ferramentas = BuscaFerramenta.buscaFerramentaTipo(tipo: .musical, nomeExcluso: "")
+            
+            for ferramenta in ferramentas {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: ferramenta, quantia: 1, tipo: .ferramenta)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha)
+        }
+        
+        var armasIniciais: [ArmaJSON] = []
+        armasIniciais.append(BuscaJson.buscaArmaPorNome(nome: "Adaga"))
+        
+        var armadurasIniciais: [ArmaduraJSON] = []
+        armadurasIniciais.append(BuscaJson.buscaArmaduraPorNome(nome: "Couro"))
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .bardo, limiteTruquePorNivel: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4], limiteMagia: [4,5,6,7,8,9,10,11,12,14,15,15,16,18,19,19,20,22,22,22])
         
@@ -341,9 +661,11 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.destreza, .carisma])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
-        builder?.setProfFerramentas(ferramentasProficientes)
+        builder?.setEscolhasProficienciaFerramenta(escolhasProfFerramenta)
         
         builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
+        builder?.setArmasIniciais(armas: armasIniciais)
+        builder?.setArmadurasIniciais(armaduras: armadurasIniciais)
         
         builder?.setProfPericias(Pericia.allCases)
         builder?.setQuantiaEscolhaProfPericia(3)
@@ -351,6 +673,7 @@ public class ClasseDirector {
         builder?.setMagiaApenasSubclasse(false)
         
         builder?.setMagiasConhecidas(magiasConhecidas)
+        builder?.setEspacosDeMagia(FactoryMagiasConhecidas.criarEspacosDeMagiaPiramide())
     }
     
     //MARK: BRUXO
@@ -369,8 +692,13 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .BX_grandeAntigo, caracteristicas: caracAntigo)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
-        let armadurasProficientes: [ArmaduraJSON] = []
+        let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
+        let armadurasProficientes: [ArmaduraJSON] = BuscaJson.buscaArmadurasPorTipo(tipo: .leve)
+        
+        var armadurasIniciais: [ArmaduraJSON] = []
+        armadurasIniciais.append(BuscaJson.buscaArmaduraPorNome(nome: "Couro"))
+        
+        let armasIniciais: [ArmaJSON] = BuscaJson.buscaArmaPorNomeQuantidade(nome: "Adaga", quantidade: 2)
         
         let periciasProficientes: [Pericia] = [.arcanismo, .enganacao, .historia, .intimidacao, .investigacao, .natureza, .religiao]
         
@@ -391,7 +719,7 @@ public class ClasseDirector {
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
-            let equipamentosEscolha2: [String] = BuscaEquipamento.buscaFerramentaCategoria(categoria: .focoArcano, nomeExcluso: "")
+            let equipamentosEscolha2: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .focoArcano, nomeExcluso: "")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bolsa de componentes", quantia: 1, tipo: .equipamento)]))
             
@@ -411,6 +739,17 @@ public class ClasseDirector {
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
         }
         
+        var opcao4: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "")
+            
+            for arma in armasEscolha {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -421,7 +760,9 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         
-        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3, opcao4])
+        builder?.setArmasIniciais(armas: armasIniciais)
+        builder?.setArmadurasIniciais(armaduras: armadurasIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -429,6 +770,11 @@ public class ClasseDirector {
         builder?.setMagiaApenasSubclasse(false)
         
         builder?.setMagiasConhecidas(magiasConhecidas)
+        builder?.setEspacosDeMagia(FactoryMagiasConhecidas.criarEspacosDeMagiaBruxo())
+        
+        builder?.setPontosEspecificosNumericos([
+            PontoEspecificoNumerico(nomeValor: "Invocações Conhecidas", valorPorNivel: [0, 2, 2, 3, 3, 4, 4 ,4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8])
+        ])
     }
     
     //MARK: CLERIGO
@@ -455,8 +801,11 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .CL_dominioVida, caracteristicas: caracVida)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
-        let armadurasProficientes: [ArmaduraJSON] = []
+        let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
+        let armadurasProficientes: [ArmaduraJSON] = BuscaJson.buscaArmadurasPorTipos(tipos: [.leve, .media, .escudo])
+        
+        var armadurasIniciais: [ArmaduraJSON] = []
+        armadurasIniciais.append(BuscaJson.buscaArmaduraPorNome(nome: "Escudo"))
         
         let periciasProficientes: [Pericia] = [.historia, .intuicao, .medicina, .persuasao, .religiao]
         
@@ -503,6 +852,17 @@ public class ClasseDirector {
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
         }
         
+        var opcao5: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let equipamentosEscolha: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .simboloSagrado, nomeExcluso: "")
+            
+            for equipamento in equipamentosEscolha {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -513,7 +873,8 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         
-        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3, opcao4])
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3, opcao4, opcao5])
+        builder?.setArmadurasIniciais(armaduras: armadurasIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -521,6 +882,7 @@ public class ClasseDirector {
         builder?.setMagiaApenasSubclasse(false)
         
         builder?.setMagiasConhecidas(magiasConhecidas)
+        builder?.setEspacosDeMagia(FactoryMagiasConhecidas.criarEspacosDeMagiaPiramide())
     }
     
     //MARK: DRUIDA
@@ -537,9 +899,15 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .DR_circuloLua, caracteristicas: caracLua)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
-        let armadurasProficientes: [ArmaduraJSON] = []
-        let ferramentasProficientes: [FerramentaJSON] = []
+        let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaPorNomes(nomes: ["Clava Grande", "Adaga", "Dardo", "Azagaia", "Maça", "Bordão", "Cimitarra", "Foice Curta", "Funda", "Lança"])
+        let armadurasProficientes: [ArmaduraJSON] = BuscaJson.buscaArmaduraPorNomes(nomes: ["Escudo", "Gibão de Peles", "Couro Batido", "Couro", "Acolchoado"])
+        var ferramentasProficientes: [FerramentaJSON] = []
+        ferramentasProficientes.append(BuscaJson.buscaFerramentaPorNome(nome: "Kit de herbalismo"))
+        
+        var armadurasIniciais: [ArmaduraJSON] = []
+        armadurasIniciais.append(BuscaJson.buscaArmaduraPorNome(nome: "Couro"))
+        
+        let pacotesIniciais: [PacoteEquipamento] = [PacoteEquipamento.pacoteAventureiro]
         
         let periciasProficientes: [Pericia] = [.adestrarAnimais, .arcanismo, .intuicao, .medicina, .natureza, .percepcao, .religiao, .sobrevivencia]
         
@@ -580,6 +948,17 @@ public class ClasseDirector {
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
         }
         
+        var opcao4: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let equipamentosEscolha: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .focoDruidico, nomeExcluso: "")
+            
+            for equipamento in equipamentosEscolha {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -591,7 +970,9 @@ public class ClasseDirector {
         builder?.setProfArmaduras(armadurasProficientes)
         builder?.setProfFerramentas(ferramentasProficientes)
         
-        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3, opcao4])
+        builder?.setArmadurasIniciais(armaduras: armadurasIniciais)
+        builder?.setPacotesIniciais(pacotes: pacotesIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -599,6 +980,7 @@ public class ClasseDirector {
         builder?.setMagiaApenasSubclasse(false)
         
         builder?.setMagiasConhecidas(magiasConhecidas)
+        builder?.setEspacosDeMagia(FactoryMagiasConhecidas.criarEspacosDeMagiaPiramide())
     }
     
     //MARK: FEITICEIRO
@@ -615,7 +997,7 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .FE_magiaSelvagem, caracteristicas: caracSelvagem)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
+        let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaPorNomes(nomes: ["Adaga", "Dardo", "Bordão", "Funda", "Besta Leve"])
         
         let periciasProficientes: [Pericia] = [.arcanismo, .enganacao, .intimidacao, .intuicao, .persuasao, .religiao]
         
@@ -636,7 +1018,7 @@ public class ClasseDirector {
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
-            let equipamentosEscolha2: [String] = BuscaEquipamento.buscaFerramentaCategoria(categoria: .focoArcano, nomeExcluso: "")
+            let equipamentosEscolha2: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .focoArcano, nomeExcluso: "")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bolsa de componentes", quantia: 1, tipo: .equipamento)]))
             
@@ -673,6 +1055,11 @@ public class ClasseDirector {
         builder?.setMagiaApenasSubclasse(false)
         
         builder?.setMagiasConhecidas(magiasConhecidas)
+        builder?.setEspacosDeMagia(FactoryMagiasConhecidas.criarEspacosDeMagiaPiramide())
+        
+        builder?.setPontosEspecificosNumericos([
+            PontoEspecificoNumerico(nomeValor: "Ponto de Feitiçaria", valorPorNivel: [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+        ])
     }
     
     //MARK: GUERREIRO
@@ -691,8 +1078,8 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .GU_mestreBatalha, caracteristicas: caracMestre)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
-        let armadurasProficientes: [ArmaduraJSON] = []
+        let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTodos()
+        let armadurasProficientes: [ArmaduraJSON] = BuscaJson.buscaArmadurasSemEscudo()
         
         let periciasProficientes: [Pericia] = [.acrobacia, .adestrarAnimais, .atletismo, .historia, .intimidacao, .intuicao, .percepcao, .sobrevivencia]
         
@@ -759,6 +1146,7 @@ public class ClasseDirector {
         builder?.setSubclasseComMagia(.GU_cavaleiroArcano)
         
         builder?.setMagiasConhecidas(magiasConhecidas)
+        builder?.setEspacosDeMagia(FactoryMagiasConhecidas.criarEspacosDeMagiaPequeno())
     }
     
     //MARK: LADINO
@@ -777,9 +1165,23 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .LA_trapaceiroArcano, caracteristicas: caracArcano)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
-        let armadurasProficientes: [ArmaduraJSON] = []
-        let ferramentasProficientes: [FerramentaJSON] = []
+        var armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
+        armasProficientes.append(BuscaJson.buscaArmaPorNome(nome: "Besta de Mão"))
+        armasProficientes.append(BuscaJson.buscaArmaPorNome(nome: "Espada Longa"))
+        armasProficientes.append(BuscaJson.buscaArmaPorNome(nome: "Rapieira"))
+        armasProficientes.append(BuscaJson.buscaArmaPorNome(nome: "Espada Curta"))
+        
+        let armadurasProficientes: [ArmaduraJSON] = BuscaJson.buscaArmadurasPorTipo(tipo: .leve)
+        
+        var ferramentasProficientes: [FerramentaJSON] = []
+        ferramentasProficientes.append(BuscaJson.buscaFerramentaPorNome(nome: "Ferramentas de ladrão"))
+        
+        var armadurasIniciais: [ArmaduraJSON] = []
+        armadurasIniciais.append(BuscaJson.buscaArmaduraPorNome(nome: "Couro"))
+        
+        let armasIniciais: [ArmaJSON] = BuscaJson.buscaArmaPorNomeQuantidade(nome: "Adaga", quantidade: 2)
+        var ferramentasIniciais: [FerramentaJSON] = []
+        ferramentasIniciais.append(BuscaJson.buscaFerramentaPorNome(nome: "Ferramentas de ladrão"))
         
         let periciasProficientes: [Pericia] = [.acrobacia, .atletismo, .atuacao, .enganacao, .furtividade, .intimidacao, .intuicao, .investigacao, .percepcao, .persuasao, .prestidigitacao]
         
@@ -825,6 +1227,9 @@ public class ClasseDirector {
         builder?.setProfFerramentas(ferramentasProficientes)
         
         builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
+        builder?.setArmasIniciais(armas: armasIniciais)
+        builder?.setArmadurasIniciais(armaduras: armadurasIniciais)
+        builder?.setFerramentasIniciais(ferramentas: ferramentasIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(4)
@@ -833,6 +1238,11 @@ public class ClasseDirector {
         builder?.setSubclasseComMagia(.LA_trapaceiroArcano)
         
         builder?.setMagiasConhecidas(magiasConhecidas)
+        builder?.setEspacosDeMagia(FactoryMagiasConhecidas.criarEspacosDeMagiaPequeno())
+        
+        builder?.setPontosEspecificosTexto([
+            PontoEspecificoTexto(nomeValor: "Ataque Furtivo", textoPorNivel: ["1d6", "1d6", "2d6", "2d6", "3d6", "3d6", "4d6", "4d6", "5d6", "5d6", "6d6", "6d6", "7d6", "7d6", "8d6", "8d6", "9d6", "9d6", "10d6", "10d6"])
+        ])
     }
     
     //MARK: MAGO
@@ -859,7 +1269,10 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .MA_escolaTransmutacao, caracteristicas: caracTransmutacao)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
+        let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaPorNomes(nomes: ["Adaga", "Dardo", "Bordão", "Funda", "Besta Leve"])
+        
+        var equipamentosIniciais: [EquipamentoJSON] = []
+        equipamentosIniciais.append(BuscaJson.buscaEquipamentoPorNome(nome: "Grimório"))
         
         let periciasProficientes: [Pericia] = [.arcanismo, .historia, .intuicao, .investigacao, .medicina, .religiao]
         
@@ -876,7 +1289,7 @@ public class ClasseDirector {
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
-            let equipamentosEscolha2: [String] = BuscaEquipamento.buscaFerramentaCategoria(categoria: .focoArcano, nomeExcluso: "")
+            let equipamentosEscolha2: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .focoArcano, nomeExcluso: "")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bolsa de componentes", quantia: 1, tipo: .equipamento)]))
             
@@ -906,6 +1319,7 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         
         builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
+        builder?.setEquipamentosIniciais(equipamentos: equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -913,6 +1327,7 @@ public class ClasseDirector {
         builder?.setMagiaApenasSubclasse(false)
         
         builder?.setMagiasConhecidas(magiasConhecidas)
+        builder?.setEspacosDeMagia(FactoryMagiasConhecidas.criarEspacosDeMagiaPiramide())
     }
     
     //MARK: MONGE
@@ -931,8 +1346,24 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .MO_caminhoQuatroElementos, caracteristicas: caracElementos)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
-        let ferramentasProficientes: [FerramentaJSON] = []
+        var armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
+        armasProficientes.append(BuscaJson.buscaArmaPorNome(nome: "Espada Curta"))
+        
+        var escolhasProfFerramenta: [EscolhaOpcao] {
+            var itensEscolha: [[ItemEscolha]] = []
+            let ferramentas1 = BuscaFerramenta.buscaFerramentaTipo(tipo: .musical, nomeExcluso: "")
+            let ferramentas2 = BuscaFerramenta.buscaFerramentaTipo(tipo: .artesao, nomeExcluso: "")
+            
+            let ferramentas: [String] = ferramentas1 + ferramentas2
+            
+            for ferramenta in ferramentas {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: ferramenta, quantia: 1, tipo: .ferramenta)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha)
+        }
+        
+        let armasIniciais: [ArmaJSON] = BuscaJson.buscaArmaPorNomeQuantidade(nome: "Dardo", quantidade: 10)
         
         let periciasProficientes: [Pericia] = [.acrobacia, .atletismo, .furtividade, .historia, .intuicao, .religiao]
         
@@ -966,13 +1397,23 @@ public class ClasseDirector {
         
         builder?.setProfSalvaguarda([.forca, .destreza])
         builder?.setProfArmas(armasProficientes)
-        builder?.setProfFerramentas(ferramentasProficientes)
+        builder?.setEscolhasProficienciaFerramenta(escolhasProfFerramenta)
         
         builder?.setOpcoes(opcoes: [opcao1, opcao2])
+        builder?.setArmasIniciais(armas: armasIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
         builder?.setPossuiMagias(false)
+        
+        builder?.setPontosEspecificosTexto([
+            PontoEspecificoTexto(nomeValor: "Artes Marciais", textoPorNivel: ["1d4", "1d4", "1d4", "1d4", "1d6", "1d6", "1d6", "1d6", "1d6", "1d6", "1d8", "1d8", "1d8", "1d8", "1d8", "1d8", "1d10", "1d10", "1d10", "1d10"])
+        ])
+        
+        builder?.setPontosEspecificosNumericos([
+            PontoEspecificoNumerico(nomeValor: "Pontos de Chi", valorPorNivel: [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+        ])
+        
     }
     
     //MARK: PALADINO
@@ -991,8 +1432,11 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .PD_juramentoVinganca, caracteristicas: caracVinganca)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
-        let armadurasProficientes: [ArmaduraJSON] = []
+        let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTodos()
+        let armadurasProficientes: [ArmaduraJSON] = BuscaJson.buscaArmadurasTodos()
+        
+        var armadurasIniciais: [ArmaduraJSON] = []
+        armadurasIniciais.append(BuscaJson.buscaArmaduraPorNome(nome: "Cota de Malha"))
         
         let periciasProficientes: [Pericia] = [.atletismo, .intimidacao, .intuicao, .medicina, .persuasao, .religiao]
         
@@ -1035,6 +1479,17 @@ public class ClasseDirector {
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
         }
         
+        var opcao4: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let equipamentosEscolha: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .simboloSagrado, nomeExcluso: "")
+            
+            for equipamento in equipamentosEscolha {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -1045,7 +1500,8 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         
-        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3, opcao4])
+        builder?.setArmadurasIniciais(armaduras: armadurasIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -1053,6 +1509,7 @@ public class ClasseDirector {
         builder?.setMagiaApenasSubclasse(false)
         
         builder?.setMagiasConhecidas(magiasConhecidas)
+        builder?.setEspacosDeMagia(FactoryMagiasConhecidas.criarEspacosDeMagiaMetade())
     }
     
     //MARK: PATRULHEIRO
@@ -1071,8 +1528,14 @@ public class ClasseDirector {
             SubClasseEscolha(subclase: .PT_conclaveRastreadorSubterraneo, caracteristicas: caracSubterraneo)
         ]
         
-        let armasProficientes: [ArmaJSON] = []
-        let armadurasProficientes: [ArmaduraJSON] = []
+        let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTodos()
+        let armadurasProficientes: [ArmaduraJSON] = BuscaJson.buscaArmadurasPorTipos(tipos: [.leve, .media, .escudo])
+        
+        var armasIniciais: [ArmaJSON] = []
+        armasIniciais.append(BuscaJson.buscaArmaPorNome(nome: "Arco Longo"))
+        
+        var equipamentosIniciais: [EquipamentoJSON] = BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Flechas", quantidade: 20)
+        equipamentosIniciais.append(BuscaJson.buscaEquipamentoPorNome(nome: "Aljava"))
         
         let periciasProficientes: [Pericia] = [.adestrarAnimais, .atletismo, .furtividade, .intuicao, .investigacao, .natureza, .percepcao, .sobrevivencia]
         
@@ -1120,6 +1583,8 @@ public class ClasseDirector {
         builder?.setProfArmaduras(armadurasProficientes)
         
         builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
+        builder?.setArmasIniciais(armas: armasIniciais)
+        builder?.setEquipamentosIniciais(equipamentos: equipamentosIniciais)
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(3)
@@ -1127,5 +1592,6 @@ public class ClasseDirector {
         builder?.setMagiaApenasSubclasse(false)
         
         builder?.setMagiasConhecidas(magiasConhecidas)
+        builder?.setEspacosDeMagia(FactoryMagiasConhecidas.criarEspacosDeMagiaMetade())
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum EscolaMagia: String, Codable {
+public enum EscolaMagia: String, Codable {
     case abjuracao = "Abjuração"
     case adivinhacao = "Adivinhação"
     case conjuracao = "Conjuração"
@@ -18,7 +18,7 @@ enum EscolaMagia: String, Codable {
     case transmutacao = "Transmutação"
 }
 
-struct MagiaJSON: Json {
+public struct MagiaJSON: Json {
     var id: Int
     var nome: String
     var nivel: Int

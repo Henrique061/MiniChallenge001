@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VeiculoAquaticoJSON: Json {
+public struct VeiculoAquaticoJSON: Json {
     var id: Int
     var nome: String
     var preco: Moeda

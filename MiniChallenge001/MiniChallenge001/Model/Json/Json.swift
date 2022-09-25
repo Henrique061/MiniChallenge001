@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Json: Codable {
+protocol Json: Codable {
     var id: Int { get }
     var nome: String { get }
 }

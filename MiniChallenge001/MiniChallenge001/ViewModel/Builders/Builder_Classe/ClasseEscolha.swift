@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: Magias conhecidas de cada classe por nivel
-public struct MagiasConhecidas: Codable {
+public struct MagiasConhecidas : Codable {
     var nivel: Int
     var quantiaTruques: Int
     var quantiaMagias: Int
@@ -17,24 +17,23 @@ public struct MagiasConhecidas: Codable {
 // MARK: Espacos de magia de cada classe por nivel e nivel de circulo magico
 public struct EspacosDeMagias : Codable {
     var nivelPersonagem: Int
-    var niveisCirculo: [CirculoMagico] // cada indice representa 1 nivel de circulo magico
+    var niveisCirculo: CirculoMagico // cada indice representa 1 nivel de circulo magico
 }
 
 public struct CirculoMagico : Codable {
-    var nivelCirculo: Int
-    var limiteUsoMagia: Int?
-    var magiasConhecidas: [String]
+    var nivelCirculo: [Int]
+    var limiteUsoMagia: [Int]
 }
 
 //MARK: Pontos especificos de classe (chi e furia por exemplo), mostrando um valor numerico ou textual
 struct PontoEspecificoTexto : Codable {
     var nomeValor: String
-    var valorTexturalInicial: String
+    var textoPorNivel: [String]
 }
 
 struct PontoEspecificoNumerico : Codable {
     var nomeValor: String
-    var valorNumericoInicial: Int
+    var valorPorNivel: [Int]
 }
 
 //MARK: Enum ClassePersonagem
@@ -128,7 +127,7 @@ enum Pericia : String, CaseIterable, Codable {
 }
 
 //MARK: Classe
-public class ClasseEscolha : Codable {
+public class ClasseEscolha {
     var classePersonagem: ClassePersonagem? // enum de classes
     var nomeClasse: String?
     var caracteristicasClasse: [String]? // COLOCAR CARACTERISTICAS AQUI
@@ -138,14 +137,15 @@ public class ClasseEscolha : Codable {
     var profArmas: [ArmaJSON]?
     var profArmaduras: [ArmaduraJSON]?
     var profFerramentas: [FerramentaJSON]?
+    var escolhasProficienciaFerramenta: [EscolhaOpcao]?
     
     var opcoesEquipamento: [OpcaoEquipamento]?
     var armasIniciais: [ArmaJSON]?
     var armadurasIniciais: [ArmaduraJSON]?
     var equipamentosIniciais: [EquipamentoJSON]?
     var ferramentasIniciais: [FerramentaJSON]?
+    var pacotesIniciais: [PacoteEquipamento]?
     
-    var vidaInicial: Int?
     var profPericias: [Pericia]?
     var quantiaProfPericias: Int?
     var possuiMagias: Bool?
