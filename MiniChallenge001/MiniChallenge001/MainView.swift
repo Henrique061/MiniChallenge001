@@ -54,8 +54,8 @@ struct MainView: View {
                 }
                 ToolbarItemGroup(placement: .bottomBar) {
                     Spacer()
-                    Button {
-                        
+                    NavigationLink {
+                        CriacaoMain()
                     } label: {
                         HStack {
                             Text("Nova Fica")

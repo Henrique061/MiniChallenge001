@@ -30,6 +30,7 @@
 		126ABB2B28DD25F100CF5A2E /* TodasHabilidadesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB2A28DD25F100CF5A2E /* TodasHabilidadesView.swift */; };
 		126ABB2D28DD26DF00CF5A2E /* DescricaoMagiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB2C28DD26DF00CF5A2E /* DescricaoMagiaView.swift */; };
 		126ABB3328DE3EE200CF5A2E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3228DE3EE200CF5A2E /* MainView.swift */; };
+		126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */; };
 		3D3DC35428DBF8440093BD92 /* Antecedente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35328DBF8440093BD92 /* Antecedente.swift */; };
 		3D3DC35628DC09F00093BD92 /* ClasseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */; };
 		3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35728DC13880093BD92 /* ClasseDirector.swift */; };
@@ -89,6 +90,7 @@
 		126ABB2A28DD25F100CF5A2E /* TodasHabilidadesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodasHabilidadesView.swift; sourceTree = "<group>"; };
 		126ABB2C28DD26DF00CF5A2E /* DescricaoMagiaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescricaoMagiaView.swift; sourceTree = "<group>"; };
 		126ABB3228DE3EE200CF5A2E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriacaoMain.swift; sourceTree = "<group>"; };
 		3D3DC35328DBF8440093BD92 /* Antecedente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Antecedente.swift; sourceTree = "<group>"; };
 		3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseBuilder.swift; sourceTree = "<group>"; };
 		3D3DC35728DC13880093BD92 /* ClasseDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseDirector.swift; sourceTree = "<group>"; };
@@ -194,6 +196,14 @@
 				09B5568D28DA6155001466B0 /* Inventario.swift */,
 			);
 			path = Inventario;
+			sourceTree = "<group>";
+		};
+		126ABB3B28DF3A4A00CF5A2E /* Criacao Personagem */ = {
+			isa = PBXGroup;
+			children = (
+				126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */,
+			);
+			path = "Criacao Personagem";
 			sourceTree = "<group>";
 		};
 		3D3DC35A28DC146A0093BD92 /* Builders */ = {
@@ -308,6 +318,7 @@
 		3DE3796C28D26413005812C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				126ABB3B28DF3A4A00CF5A2E /* Criacao Personagem */,
 				09B5568C28DA6155001466B0 /* SheetTabView.swift */,
 				09B5569028DA6156001466B0 /* ContentView.swift */,
 				126ABB2928DD25CB00CF5A2E /* Habilidade */,
@@ -453,6 +464,7 @@
 				09B5569428DA6156001466B0 /* Inventario.swift in Sources */,
 				126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */,
 				126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */,
+				126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */,
 				3D3DC35428DBF8440093BD92 /* Antecedente.swift in Sources */,
 				09B5569628DA6156001466B0 /* Identidade.swift in Sources */,
 				3D60C63E28DB958C0051676A /* Raca.swift in Sources */,
