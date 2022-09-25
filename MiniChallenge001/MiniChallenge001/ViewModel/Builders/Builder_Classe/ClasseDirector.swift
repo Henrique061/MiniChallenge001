@@ -84,6 +84,46 @@ public class BuscaArma : Codable {
     }
 }
 
+public class BuscaArmadura {
+    
+}
+
+public class BuscaFerramenta {
+    public static func buscaFerramentaTipo(tipo: TipoFerramenta, nomeExcluso: String) -> [String] {
+        guard let ferramentas = JsonFileUtil.getDataFromFiles(folder: "ferramenta", decoder: FerramentaJSON.self) as? [FerramentaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        var ferramentasNome: [String] = []
+        
+        for ferramenta in ferramentas {
+            if ferramenta.tipo == tipo && ferramenta.nome != nomeExcluso {
+                ferramentasNome.append(ferramenta.nome)
+            }
+        }
+        
+        return ferramentasNome
+    }
+}
+
+public class BuscaEquipamento {
+    public static func buscaFerramentaCategoria(categoria: CategoriaEquipamento, nomeExcluso: String) -> [String] {
+        guard let equipamentos = JsonFileUtil.getDataFromFiles(folder: "equipamento", decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        
+        var equipamentosNome: [String] = []
+        
+        for equipamento in equipamentos {
+            if equipamento.categoria == categoria && equipamento.nome != nomeExcluso {
+                equipamentosNome.append(equipamento.nome)
+            }
+        }
+        
+        return equipamentosNome
+    }
+}
+
 public class FactoryEspacosDeMagia {
     public static func criarEspacosDeMagia(circulosPorNivel: [Int]) -> [EspacosDeMagias] {
         var espacosMagia: [EspacosDeMagias] = []
@@ -193,7 +233,7 @@ public class ClasseDirector {
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipoEstilo(tipo: .marcial, estilo: .cac, nomeExcluso: "")
             
             for arma in armasEscolha2 {
-                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1)]))
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
@@ -203,10 +243,10 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Machadinha")
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2, tipo: .arma)]))
             
             for arma in armasEscolha2 {
-                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1)]))
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
@@ -262,11 +302,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             let armasEscolha3: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "")
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Rapieira", quantia: 1)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Longa", quantia: 1)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Rapieira", quantia: 1, tipo: .arma)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Longa", quantia: 1, tipo: .arma)]))
             
             for arma in armasEscolha3 {
-                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1)]))
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
@@ -274,25 +314,19 @@ public class ClasseDirector {
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
-            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Machadinha")
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2)]))
-            
-            for arma in armasEscolha2 {
-                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1)]))
-            }
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteDiplomata.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteArtista.rawValue, quantia: 1, tipo: .equipamento)]))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
-            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Machadinha")
+            let ferramentasEscolha: [String] = BuscaFerramenta.buscaFerramentaTipo(tipo: .musical, nomeExcluso: "")
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2)]))
-            
-            for arma in armasEscolha2 {
-                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1)]))
+            for ferramenta in ferramentasEscolha {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: ferramenta, quantia: 1, tipo: .ferramenta)]))
             }
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
@@ -308,6 +342,8 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         builder?.setProfFerramentas(ferramentasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
         
         builder?.setProfPericias(Pericia.allCases)
         builder?.setQuantiaEscolhaProfPericia(3)
@@ -340,6 +376,41 @@ public class ClasseDirector {
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .bruxo, limiteTruquePorNivel: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4], limiteMagia: [2,3,4,5,6,7,8,9,10,10,11,11,12,12,13,13,14,14,15,15])
         
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Besta Leve")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Besta Leve", quantia: 1, tipo: .arma), (item: "Virotes", quantia: 20, tipo: .equipamento)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let equipamentosEscolha2: [String] = BuscaEquipamento.buscaFerramentaCategoria(categoria: .focoArcano, nomeExcluso: "")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bolsa de componentes", quantia: 1, tipo: .equipamento)]))
+            
+            for equipamento in equipamentosEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao3: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -349,6 +420,8 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.sabedoria, .carisma])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -389,6 +462,47 @@ public class ClasseDirector {
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComTudo(classe: .clerigo, limiteTruePorNivel: [3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5])
         
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Maça", quantia: 1, tipo: .arma)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Martelo de Guerra", quantia: 1, tipo: .arma)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Brunea", quantia: 1, tipo: .armadura)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armadura)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armadura)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao3: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Besta Leve")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Besta Leve", quantia: 1, tipo: .arma), (item: "Virotes", quantia: 20, tipo: .equipamento)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao4: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteSacerdote.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -398,6 +512,8 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.sabedoria, .carisma])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3, opcao4])
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -429,6 +545,41 @@ public class ClasseDirector {
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComTudo(classe: .druida, limiteTruePorNivel: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4])
         
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Escudo", quantia: 1, tipo: .armadura)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipoEstilo(tipo: .simples, estilo: .cac, nomeExcluso: "Cimitarra")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cimitarra", quantia: 1, tipo: .arma)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao3: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -439,6 +590,8 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         builder?.setProfFerramentas(ferramentasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -468,6 +621,41 @@ public class ClasseDirector {
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .feiticeiro, limiteTruquePorNivel: [4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6], limiteMagia: [2,3,4,5,6,7,8,9,10,11,12,12,13,13,14,14,15,15,15,15])
         
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Besta Leve")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Besta Leve", quantia: 1, tipo: .arma), (item: "Virotes", quantia: 20, tipo: .equipamento)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let equipamentosEscolha2: [String] = BuscaEquipamento.buscaFerramentaCategoria(categoria: .focoArcano, nomeExcluso: "")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bolsa de componentes", quantia: 1, tipo: .equipamento)]))
+            
+            for equipamento in equipamentosEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao3: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -476,6 +664,8 @@ public class ClasseDirector {
         
         builder?.setProfSalvaguarda([.constituicao, .carisma])
         builder?.setProfArmas(armasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -508,6 +698,48 @@ public class ClasseDirector {
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .guerreiro, limiteTruquePorNivel: [0,0,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3], limiteMagia: [0,0,3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13])
         
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armadura)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Gibão de Peles", quantia: 1, tipo: .armadura), (item: "Arco Longo", quantia: 1, tipo: .arma), (item: "Flechas", quantia: 20, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha: [String] = BuscaArma.buscaArmaTipo(tipo: .marcial, nomeExcluso: "")
+            
+            for arma in armasEscolha {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma), (item: "Escudo", quantia: 1, tipo: .armadura)]))
+            }
+            
+            for arma in armasEscolha {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 2, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao3: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Besta Leve", quantia: 1, tipo: .arma), (item: "Virotes", quantia: 20, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2, tipo: .arma)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao4: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -517,6 +749,8 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.forca, .constituicao])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3, opcao4])
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -551,6 +785,34 @@ public class ClasseDirector {
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .ladino, limiteTruquePorNivel: [0,0,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4], limiteMagia: [0,0,3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13])
         
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Rapieira", quantia: 1, tipo: .arma)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Longa", quantia: 1, tipo: .arma)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Arco Curto", quantia: 1, tipo: .arma), (item: "Aljava", quantia: 1, tipo: .equipamento), (item: "Flechas", quantia: 20, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Curta", quantia: 1, tipo: .arma)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao3: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAssaltante.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -561,6 +823,8 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         builder?.setProfFerramentas(ferramentasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(4)
@@ -601,6 +865,37 @@ public class ClasseDirector {
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComTudo(classe: .mago, limiteTruePorNivel: [3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5])
         
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bordão", quantia: 1, tipo: .arma)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Adaga", quantia: 1, tipo: .arma)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let equipamentosEscolha2: [String] = BuscaEquipamento.buscaFerramentaCategoria(categoria: .focoArcano, nomeExcluso: "")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bolsa de componentes", quantia: 1, tipo: .equipamento)]))
+            
+            for equipamento in equipamentosEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao3: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -609,6 +904,8 @@ public class ClasseDirector {
         
         builder?.setProfSalvaguarda([.inteligencia, .sabedoria])
         builder?.setProfArmas(armasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -639,6 +936,28 @@ public class ClasseDirector {
         
         let periciasProficientes: [Pericia] = [.acrobacia, .atletismo, .furtividade, .historia, .intuicao, .religiao]
         
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Curta", quantia: 1, tipo: .arma)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -648,6 +967,8 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.forca, .destreza])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfFerramentas(ferramentasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2])
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -677,6 +998,43 @@ public class ClasseDirector {
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComTudo(classe: .paladino, limiteTruePorNivel: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
         
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha: [String] = BuscaArma.buscaArmaTipo(tipo: .marcial, nomeExcluso: "")
+            
+            for arma in armasEscolha {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma), (item: "Escudo", quantia: 1, tipo: .armadura)]))
+            }
+            
+            for arma in armasEscolha {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 2, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipoEstilo(tipo: .simples, estilo: .cac, nomeExcluso: "Azagaia")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Azagaia", quantia: 5, tipo: .arma)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao3: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteSacerdote.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -686,6 +1044,8 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.sabedoria, .carisma])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(2)
@@ -718,6 +1078,37 @@ public class ClasseDirector {
         
         let magiasConhecidas: [MagiasConhecidas] = FactoryMagiasConhecidas.criarMagiasComLimite(classe: .patrulheiro, limiteTruquePorNivel: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], limiteMagia: [0,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11])
         
+        var opcao1: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Brunea", quantia: 1, tipo: .armadura)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armadura)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao2: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Espada Curta")
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Curta", quantia: 2, tipo: .arma)]))
+            
+            for arma in armasEscolha2 {
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 2, tipo: .arma)]))
+            }
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
+        var opcao3: OpcaoEquipamento {
+            var itensEscolha: [[ItemEscolha]] = []
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+        }
+        
         // METODOS //////////////////////////
         
         builder?.setCaracteristicasClasse(caracteristicasClasse)
@@ -727,6 +1118,8 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.forca, .destreza])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
+        
+        builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
         
         builder?.setProfPericias(periciasProficientes)
         builder?.setQuantiaEscolhaProfPericia(3)

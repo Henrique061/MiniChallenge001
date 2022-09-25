@@ -7,6 +7,23 @@
 
 import Foundation
 
+public enum PacoteEquipamento : String, Codable {
+    case pacoteArtista = "Pacote de Artista"
+    case pacoteAssaltante = "Pacote de Assaltante"
+    case pacoteAventureiro = "Pacote de Aventureiro"
+    case pacoteDiplomata = "Pacote de Diplomata"
+    case pacoteEstudioso = "Pacote de Estudioso"
+    case pacoteExplorador = "Pacote de Explorador"
+    case pacoteSacerdote = "Pacote de Sacerdote"
+}
+
+public enum TipoJSON : String, Codable {
+    case arma = "arma"
+    case armadura = "armadura"
+    case equipamento = "equipamento"
+    case ferramenta = "ferramenta"
+}
+
 public class OpcaoEquipamento : Codable {
     var escolhas: [EscolhaOpcao] = []
     
@@ -30,6 +47,7 @@ public struct EscolhaOpcao : Codable {
 public struct ItemEscolha: Codable {
     var nomeItem: String
     var quantia: Int
+    var tipoJson: TipoJSON
 }
 
 //MARK: Factory
@@ -52,10 +70,10 @@ public class FactoryOpcaoEquipamento : Codable {
     }
     
     // cria o item(s) de uma escolha
-    public static func criaItemEscolha(tuplaItens: [(item: String, quantia: Int)]) -> [ItemEscolha] {
+    public static func criaItemEscolha(tuplaItens: [(item: String, quantia: Int, tipo: TipoJSON)]) -> [ItemEscolha] {
         var itensEscolha: [ItemEscolha] = []
         for tuplaItem in tuplaItens {
-            itensEscolha.append(ItemEscolha(nomeItem: tuplaItem.item, quantia: tuplaItem.quantia))
+            itensEscolha.append(ItemEscolha(nomeItem: tuplaItem.item, quantia: tuplaItem.quantia, tipoJson: tuplaItem.tipo))
         }
         
         return itensEscolha

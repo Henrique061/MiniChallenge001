@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TipoFerramenta: String, Codable {
+public enum TipoFerramenta: String, Codable {
     case artesao = "Ferramenta de artesão"
     case navegacao = "Ferramenta de navegador"
     case ladrao = "Ferramenta de ladrão"
