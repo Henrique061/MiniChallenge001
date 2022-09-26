@@ -14,7 +14,7 @@ protocol ClasseBuilder {
     func getClassePersonagem() -> ClassePersonagem
     func setNomeClasse()
     
-    func setCaracteristicasClasse(_ caracteristicas: [String])
+    func setCaracteristicasClasse(_ caracteristicas: [CaracteristicaJSON])
     func setSubClasses(_ subClasses: [SubClasseEscolha])
     func setDadoVida(_ dado: String)
     

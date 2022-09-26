@@ -293,6 +293,68 @@ public class BuscaJson : Codable {
         
         return magias[0]
     }
+    
+    //MARK: CARACTERISTICAS JSON
+    public static func buscaCaracteristicasPorClasse(classe: ClassePersonagem) -> [CaracteristicaJSON] {
+        guard let caracteristicas = JsonFileUtil.getDataFromFiles(folder: "caracteristica", decoder: CaracteristicaJSON.self) as? [CaracteristicaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var caracteristicasRetorno: [CaracteristicaJSON] = []
+        
+        for caracteristica in caracteristicas {
+            if caracteristica.classe == classe {
+                caracteristicasRetorno.append(caracteristica)
+            }
+        }
+        
+        return caracteristicasRetorno
+    }
+    
+    public static func buscaCaracteristicasPorSubclasse(subclasse: SubclassePersonagem) -> [CaracteristicaJSON] {
+        guard let caracteristicas = JsonFileUtil.getDataFromFiles(folder: "caracteristica", decoder: CaracteristicaJSON.self) as? [CaracteristicaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var caracteristicasRetorno: [CaracteristicaJSON] = []
+        
+        for caracteristica in caracteristicas {
+            if caracteristica.subclasse == subclasse {
+                caracteristicasRetorno.append(caracteristica)
+            }
+        }
+        
+        return caracteristicasRetorno
+    }
+    
+    //MARK: TRACOS JSON
+    public static func buscaTracosPorRaca(raca: TipoRaca) -> [TraitJSON] {
+        guard let tracos = JsonFileUtil.getDataFromFiles(folder: "trait", decoder: TraitJSON.self) as? [TraitJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var tracosRetorno: [TraitJSON] = []
+        
+        for traco in tracos {
+            if traco.raca == raca {
+                tracosRetorno.append(traco)
+            }
+        }
+        
+        return tracosRetorno
+    }
+    
+    public static func buscaTracosPorSubraca(subraca: TipoSubRaca) -> [TraitJSON] {
+        guard let tracos = JsonFileUtil.getDataFromFiles(folder: "trait", decoder: TraitJSON.self) as? [TraitJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var tracosRetorno: [TraitJSON] = []
+        
+        for traco in tracos {
+            if traco.subraca == subraca {
+                tracosRetorno.append(traco)
+            }
+        }
+        
+        return tracosRetorno
+    }
 }
 
 //MARK: FERRAMENTA

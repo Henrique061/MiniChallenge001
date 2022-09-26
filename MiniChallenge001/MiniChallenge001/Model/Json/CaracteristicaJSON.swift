@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CaracteristicaJSON: Json {
+public struct CaracteristicaJSON: Json {
     var id: Int
     var nome: String
     var classe: ClassePersonagem
