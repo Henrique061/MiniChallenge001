@@ -10,10 +10,10 @@ import Foundation
 public enum TipoRaca : String, Codable, CaseIterable {
     case anao = "Anão"
     case elfo = "Elfo"
-    case halfling = "Halfling"
+    case halfling = "Halflings"
     case humano = "Humano"
     case draconato = "Draconato"
-    case gnomo = "Gnomo"
+    case gnomo = "Gnomos"
     case meioElfo = "Meio-Elfo"
     case meioOrc = "Meio-Orc"
     case tiefling = "Tiefling"
@@ -27,8 +27,8 @@ public enum TipoSubRaca : String, Codable, CaseIterable {
     case altoElfo = "Alto Elfo"
     case elfoFloresta = "Elfo da Floresta"
     case elfoNegro = "Elfo Negro"
-    case halflingPesLeves = "Halfling Pés Leves"
-    case halflingRobusto = "Halfling Robusto"
+    case halflingPesLeves = "Pés Leves"
+    case halflingRobusto = "Robusto"
     case gnomoFloresta = "Gnomo da Floresta"
     case gnomoRochas = "Gnomo das Rochas"
 }
@@ -132,7 +132,7 @@ public class RacaEscolha {
     var subracaPossuiEscolhaIdioma: Bool?
     var subracaComEscolhaDeIdioma: TipoSubRaca?
     var escolhaIdioma: [Idioma]?
-    var tracos: [String]? // colocar json traits aqui
+    var tracos: [TraitJSON]? // colocar json traits aqui
     var profArmas: [ArmaJSON]?
     var subracaProfArma: [ProficienciaArmasPorSubraca]?
     var profFerramentas: [FerramentaJSON]?
@@ -155,10 +155,10 @@ public class RacaEscolha {
 public struct Subraca : Codable, Hashable {
     var subraca: TipoSubRaca
     var subracaNome: String
-    var tracosSubraca: [String] // colocar json traits aqui
+    var tracosSubraca: [TraitJSON] // colocar json traits aqui
     var atributoGanho: AtributosGanhosRaca
     
-    init (subraca: TipoSubRaca, tracos: [String], atributoGanho: AtributosGanhosRaca) {
+    init (subraca: TipoSubRaca, tracos: [TraitJSON], atributoGanho: AtributosGanhosRaca) {
         self.subraca = subraca
         self.subracaNome = subraca.rawValue
         self.tracosSubraca = tracos

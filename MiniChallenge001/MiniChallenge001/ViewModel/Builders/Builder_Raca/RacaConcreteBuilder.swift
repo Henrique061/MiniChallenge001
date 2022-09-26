@@ -101,7 +101,7 @@ public class RacaConcreteBuilder : RacaBuilder {
     }
     
     //MARK: TRACOS
-    func setTracos(tracos: [String]) {
+    func setTracos(tracos: [TraitJSON]) {
         self.raca.tracos = tracos
     }
     

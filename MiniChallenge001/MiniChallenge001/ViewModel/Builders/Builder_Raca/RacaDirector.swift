@@ -68,9 +68,9 @@ public class RacaDirector {
     //MARK: ANAO
     private func makeAnao() {
         // TRACOS, trocar por tracosJson
-        let tracos: [String] = []
-        let tracosColina: [String] = []
-        let tracosMontanha: [String] = []
+        let tracos: [TraitJSON] = BuscaJson.buscaTracosPorRaca(raca: .anao)
+        let tracosColina: [TraitJSON] = BuscaJson.buscaTracosPorSubraca(subraca: .anaoColina)
+        let tracosMontanha: [TraitJSON] = BuscaJson.buscaTracosPorSubraca(subraca: .anaoMontanha)
         
         let subracas: [Subraca] = [
             Subraca(subraca: .anaoColina, tracos: tracosColina, atributoGanho: AtributosGanhosRaca(atributo: .sabedoria, pontosGanhos: 1)),
@@ -112,10 +112,10 @@ public class RacaDirector {
     
     //MARK: ELFO
     private func makeElfo() {
-        let tracos: [String] = []
-        let tracosAlto: [String] = []
-        let tracosFloresta: [String] = []
-        let tracosNegro: [String] = []
+        let tracos: [TraitJSON] = BuscaJson.buscaTracosPorRaca(raca: .elfo)
+        let tracosAlto: [TraitJSON] = BuscaJson.buscaTracosPorSubraca(subraca: .altoElfo)
+        let tracosFloresta: [TraitJSON] = BuscaJson.buscaTracosPorSubraca(subraca: .elfoFloresta)
+        let tracosNegro: [TraitJSON] = BuscaJson.buscaTracosPorSubraca(subraca: .elfoNegro)
         
         let subracas: [Subraca] = [
             Subraca(subraca: .altoElfo, tracos: tracosAlto, atributoGanho: AtributosGanhosRaca(atributo: .inteligencia, pontosGanhos: 1)),
@@ -178,9 +178,9 @@ public class RacaDirector {
     
     //MARK: HALFLING
     private func makeHalfling() {
-        let tracos: [String] = []
-        let tracosPesLeves: [String] = []
-        let tracosRobusto: [String] = []
+        let tracos: [TraitJSON] = BuscaJson.buscaTracosPorRaca(raca: .halfling)
+        let tracosPesLeves: [TraitJSON] = BuscaJson.buscaTracosPorSubraca(subraca: .halflingPesLeves)
+        let tracosRobusto: [TraitJSON] = BuscaJson.buscaTracosPorSubraca(subraca: .halflingRobusto)
         
         let subracas: [Subraca] = [
             Subraca(subraca: .halflingPesLeves, tracos: tracosPesLeves, atributoGanho: AtributosGanhosRaca(atributo: .carisma, pontosGanhos: 1)),
@@ -212,7 +212,7 @@ public class RacaDirector {
     
     //MARK: HUMANO
     private func makeHumano() {
-        let tracos: [String] = []
+        let tracos: [TraitJSON] = BuscaJson.buscaTracosPorRaca(raca: .humano)
         
         let atributosGanhos: [AtributosGanhosRaca] = [
             AtributosGanhosRaca(atributo: .forca, pontosGanhos: 1),
@@ -245,7 +245,7 @@ public class RacaDirector {
     
     //MARK: DRACONATO
     private func makeDraconato() {
-        let tracos: [String] = []
+        let tracos: [TraitJSON] = BuscaJson.buscaTracosPorRaca(raca: .draconato)
         
         let atributosGanhos: [AtributosGanhosRaca] = [
             AtributosGanhosRaca(atributo: .forca, pontosGanhos: 2),
@@ -272,9 +272,9 @@ public class RacaDirector {
     
     //MARK: GNOMO
     private func makeGnomo() {
-        let tracos: [String] = []
-        let tracosFloresta: [String] = []
-        let tracosRochas: [String] = []
+        let tracos: [TraitJSON] = BuscaJson.buscaTracosPorRaca(raca: .gnomo)
+        let tracosFloresta: [TraitJSON] = BuscaJson.buscaTracosPorSubraca(subraca: .gnomoFloresta)
+        let tracosRochas: [TraitJSON] = BuscaJson.buscaTracosPorSubraca(subraca: .gnomoRochas)
         
         let subracas: [Subraca] = [
             Subraca(subraca: .gnomoFloresta, tracos: tracosFloresta, atributoGanho: AtributosGanhosRaca(atributo: .destreza, pontosGanhos: 1)),
@@ -314,7 +314,7 @@ public class RacaDirector {
     
     //MARK: MEIO ELFO
     private func makeMeioElfo() {
-        let tracos: [String] = []
+        let tracos: [TraitJSON] = BuscaJson.buscaTracosPorRaca(raca: .meioElfo)
         
         let atributosGanhos: [AtributosGanhosRaca] = [
             AtributosGanhosRaca(atributo: .carisma, pontosGanhos: 2)
@@ -352,7 +352,7 @@ public class RacaDirector {
     
     //MARK: MEIO ORC
     private func makeMeioOrc() {
-        let tracos: [String] = []
+        let tracos: [TraitJSON] = BuscaJson.buscaTracosPorRaca(raca: .meioOrc)
         
         let atributosGanhos: [AtributosGanhosRaca] = [
             AtributosGanhosRaca(atributo: .forca, pontosGanhos: 2),
@@ -388,7 +388,7 @@ public class RacaDirector {
     
     //MARK: TIEFLING
     private func makeTiefling() {
-        let tracos: [String] = []
+        let tracos: [TraitJSON] = BuscaJson.buscaTracosPorRaca(raca: .tiefling)
         
         let atributosGanhos: [AtributosGanhosRaca] = [
             AtributosGanhosRaca(atributo: .inteligencia, pontosGanhos: 1),
