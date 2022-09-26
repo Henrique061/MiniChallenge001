@@ -7,7 +7,7 @@
 
 import Foundation
 //MARK: Enum Raca
-public enum TipoRaca : String, Codable {
+public enum TipoRaca : String, Codable, CaseIterable {
     case anao = "Anão"
     case elfo = "Elfo"
     case halfling = "Halfling"
@@ -21,7 +21,7 @@ public enum TipoRaca : String, Codable {
 
 
 //MARK: Enum SubRaca
-public enum TipoSubRaca : String, Codable {
+public enum TipoSubRaca : String, Codable, CaseIterable {
     case anaoColina = "Anão da Colina"
     case anaoMontanha = "Anão da Montanha"
     case altoElfo = "Alto Elfo"
@@ -74,7 +74,7 @@ public struct IdiomaAlfabeto : Codable {
 }
 
 //MARK: AtributosGanhos
-public struct AtributosGanhosRaca : Codable {
+public struct AtributosGanhosRaca : Codable, Hashable {
     var atributo: AtributosSalvaguarda
     var pontosGanhos: Int
 }
@@ -152,7 +152,7 @@ public class RacaEscolha {
 }
 
 //MARK: SUBRACA
-public struct Subraca : Codable {
+public struct Subraca : Codable, Hashable {
     var subraca: TipoSubRaca
     var subracaNome: String
     var tracosSubraca: [String] // colocar json traits aqui

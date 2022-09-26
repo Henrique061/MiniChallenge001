@@ -17,7 +17,7 @@ class JsonViewModel: ObservableObject {
     }
     
     public func fetchMagias() {
-        if let arr = JsonFileUtil.getDataFromFiles(folder: "magia", decoder: MagiaJSON.self) as? [MagiaJSON] {
+        if let arr = JsonFileUtil.getDataFromFiles(folder: .magia, decoder: MagiaJSON.self) as? [MagiaJSON] {
             self.magias = arr
         }
     }

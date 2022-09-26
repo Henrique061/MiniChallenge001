@@ -16,6 +16,7 @@
 		09B5569828DA6156001466B0 /* Combate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569128DA6156001466B0 /* Combate.swift */; };
 		122E948228E21EE100184F88 /* CaracteristicaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948128E21EE100184F88 /* CaracteristicaJSON.swift */; };
 		122E948428E21F2000184F88 /* TraitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948328E21F2000184F88 /* TraitJSON.swift */; };
+		122E948628E2205300184F88 /* PersonagemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948528E2205300184F88 /* PersonagemViewModel.swift */; };
 		126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */; };
 		126ABAE328DB38E000CF5A2E /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 126ABAE228DB38E000CF5A2E /* Content */; };
 		126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */; };
@@ -93,6 +94,7 @@
 		09B5569128DA6156001466B0 /* Combate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combate.swift; sourceTree = "<group>"; };
 		122E948128E21EE100184F88 /* CaracteristicaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracteristicaJSON.swift; sourceTree = "<group>"; };
 		122E948328E21F2000184F88 /* TraitJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitJSON.swift; sourceTree = "<group>"; };
+		122E948528E2205300184F88 /* PersonagemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemViewModel.swift; sourceTree = "<group>"; };
 		126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonFileUtil.swift; path = MiniChallenge001/Model/JsonFileUtil.swift; sourceTree = SOURCE_ROOT; };
 		126ABAE228DB38E000CF5A2E /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Content; sourceTree = SOURCE_ROOT; };
 		126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagiaJSON.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			children = (
 				3D3DC35A28DC146A0093BD92 /* Builders */,
 				3D6F868A28E0D3F00022D0BE /* ViewModel.swift */,
+				122E948528E2205300184F88 /* PersonagemViewModel.swift */,
 				3D6F868E28E11B910022D0BE /* BuscaJson.swift */,
 				3DF24F9628E200DF006C0AAE /* PacoteFactory.swift */,
 			);
@@ -541,6 +544,7 @@
 				3D6F868728E0CD760022D0BE /* RacaClient.swift in Sources */,
 				3D6F868F28E11B910022D0BE /* BuscaJson.swift in Sources */,
 				126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */,
+				122E948628E2205300184F88 /* PersonagemViewModel.swift in Sources */,
 				126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */,
 				126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */,
 				3DF24F8B28E1CC99006C0AAE /* ClasseFinal.swift in Sources */,

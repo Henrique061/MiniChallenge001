@@ -10,7 +10,7 @@ import Foundation
 public class FactoryMagiasConhecidas : Codable {
     
     public static func criarMagiasComTudo(classe: ClassePersonagem, limiteTruePorNivel: [Int]) -> [MagiasConhecidas] {
-        guard let magias = JsonFileUtil.getDataFromFiles(folder: "magia", decoder: MagiaJSON.self) as? [MagiaJSON] else {
+        guard let magias = JsonFileUtil.getDataFromFiles(folder: .magia, decoder: MagiaJSON.self) as? [MagiaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         

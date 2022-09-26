@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct CriacaoMain: View {
-    @State private var nomeFicha: String = ""
-    @State private var nomePersonagem: String = ""
-    @State private var selectedTendencia: TipoTendencia? = nil
+    
+    @State private var novaFicha = PersonagemFicha()
     
     var body: some View {
         TelaPadrao {
@@ -18,15 +17,15 @@ struct CriacaoMain: View {
                 Text("Para começarmos, preencha abaixo os dados de seu peronsagem")
                 
                 TemplateBackgroundInfo {
-                    TextField("Nome da ficha", text: $nomeFicha)
+                    TextField("Nome da ficha", text: $novaFicha.nome)
                 }.padding(.bottom, -5)
                 
                 TemplateBackgroundInfo {
-                    TextField("Nome do personagem", text: $nomePersonagem)
+                    TextField("Nome do personagem", text: $novaFicha.nomePersonagem)
                 }
                 
                 NavigationLink {
-                    EscolherRacaView()
+                    EscolherRacaView(novaFicha: $novaFicha)
                 } label: {
                     TemplateBackgroundInfo {
                         DisplayTextoBotao(titulo: "Raça do personagem", descricao: "Toque para selecionar...")
@@ -49,7 +48,7 @@ struct CriacaoMain: View {
                     }
                 }.padding(.bottom, 8)
                 
-                MenuSelecaoTendencia(selectedItem: $selectedTendencia)
+                MenuSelecaoTendencia(selectedItem: $novaFicha.tendenciaPersonagem)
                 Spacer()
                 Button {
                     
@@ -98,6 +97,7 @@ struct DisplayTextoBotao: View {
                 .font(.system(size: 15, weight: .semibold, design: .default))
             Text(descricao)
                 .font(.system(size: 13, weight: .regular, design: .default))
+                .fixedSize(horizontal: false, vertical: true)
         }
         .padding(.vertical, 7)
     }

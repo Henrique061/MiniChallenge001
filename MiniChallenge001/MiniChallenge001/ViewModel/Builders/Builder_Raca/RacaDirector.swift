@@ -34,31 +34,31 @@ public class RacaDirector {
         
         switch builder?.getRaca() {
         case .anao:
-            break
+            makeAnao()
             
         case .elfo:
-            break
+            makeElfo()
             
         case .halfling:
-            break
+            makeHalfling()
             
         case .humano:
-            break
+            makeHumano()
             
         case .draconato:
-            break
+            makeDraconato()
             
         case .gnomo:
-            break
+            makeGnomo()
             
         case .meioElfo:
-            break
+            makeMeioElfo()
             
         case .meioOrc:
-            break
+            makeMeioOrc()
             
         case .tiefling:
-            break
+            makeTiefling()
             
         default:
             break

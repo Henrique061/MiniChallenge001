@@ -18,8 +18,8 @@ class JsonFileUtil {
         return filesURL
     }
     
-    public static func getDataFromFiles<T:Json>(folder name: String, decoder: T.Type) -> [Json] {
-        let urls = getFilesURLFromFolder(folder: name)
+    public static func getDataFromFiles<T:Json>(folder name: FolderName, decoder: T.Type) -> [Json] {
+        let urls = getFilesURLFromFolder(folder: name.rawValue)
         var items: [Json] = []
         for url in urls {
             do {
@@ -32,4 +32,19 @@ class JsonFileUtil {
         }
         return items
     }
+}
+
+public enum FolderName: String {
+    case arma = "arma"
+    case armaduras = "armaduras"
+    case bugiganga = "bugiganga"
+    case caracterisca = "caracteristica"
+    case equipamento = "equipamento"
+    case ferramenta = "ferramenta"
+    case fichas = "fichas"
+    case itemMontaria = "item-montaria"
+    case magia = "magia"
+    case montaria = "montaria"
+    case trait = "trait"
+    case veiculo = "veiculo"
 }
