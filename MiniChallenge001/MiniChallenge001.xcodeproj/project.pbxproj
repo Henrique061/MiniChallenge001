@@ -14,7 +14,6 @@
 		09B5569628DA6156001466B0 /* Identidade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568F28DA6156001466B0 /* Identidade.swift */; };
 		09B5569728DA6156001466B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569028DA6156001466B0 /* ContentView.swift */; };
 		09B5569828DA6156001466B0 /* Combate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569128DA6156001466B0 /* Combate.swift */; };
-		126AAE1628DAC0A900CF5A2E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126AAE1528DAC0A900CF5A2E /* TestView.swift */; };
 		126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */; };
 		126ABAE328DB38E000CF5A2E /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 126ABAE228DB38E000CF5A2E /* Content */; };
 		126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */; };
@@ -42,7 +41,6 @@
 		3D3DC35F28DC15310093BD92 /* ClasseConcreteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35E28DC15310093BD92 /* ClasseConcreteBuilder.swift */; };
 		3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60C63928DB80FE0051676A /* PersonagemBuilder.swift */; };
 		3D60C63C28DB80FE0051676A /* ClasseEscolha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60C63A28DB80FE0051676A /* ClasseEscolha.swift */; };
-		3D60C63E28DB958C0051676A /* Raca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60C63D28DB958C0051676A /* Raca.swift */; };
 		3D696F8F28DE130A000F1D62 /* OpcaoEquipamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D696F8E28DE130A000F1D62 /* OpcaoEquipamento.swift */; };
 		3D6F868328E0CD5B0022D0BE /* RacaBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F868228E0CD5B0022D0BE /* RacaBuilder.swift */; };
 		3D6F868528E0CD6B0022D0BE /* RacaConcreteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F868428E0CD6B0022D0BE /* RacaConcreteBuilder.swift */; };
@@ -175,6 +173,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1226256F28E214600087140F /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				3D3DC35328DBF8440093BD92 /* Antecedente.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		126AA8F828DABD5300CF5A2E /* Json */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +319,7 @@
 				3D9BED2D28CFB76200CA1821 /* MiniChallenge001Tests */,
 				3D9BED3728CFB76200CA1821 /* MiniChallenge001UITests */,
 				3D9BED1628CFB76000CA1821 /* Products */,
+				1226256F28E214600087140F /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
