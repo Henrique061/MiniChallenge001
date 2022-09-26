@@ -40,7 +40,7 @@ struct ValoresAtributos {
 //MARK: PersonagemBuilder
 protocol PersonagemBuilder {
     func resetBuilder() -> Void
-    func buildRaca() -> Raca
+    //func buildRaca() -> Raca
     //func buildClasse() -> ClasseEscolha
     func buildAntecedente() -> Antecedente
     func buildNome() -> String
