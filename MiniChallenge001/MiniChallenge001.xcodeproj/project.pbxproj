@@ -57,7 +57,7 @@
 		3DF24F8928E1CC8F006C0AAE /* AntecedenteFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8828E1CC8F006C0AAE /* AntecedenteFinal.swift */; };
 		3DF24F8B28E1CC99006C0AAE /* ClasseFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8A28E1CC99006C0AAE /* ClasseFinal.swift */; };
 		3DF24F8D28E1CCB0006C0AAE /* PersonagemFicha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */; };
-		3DF24F9028E1D641006C0AAE /* PacoteFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8F28E1D641006C0AAE /* PacoteFactory.swift */; };
+		3DF24F9728E200DF006C0AAE /* PacoteFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F9628E200DF006C0AAE /* PacoteFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +131,7 @@
 		3DF24F8828E1CC8F006C0AAE /* AntecedenteFinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntecedenteFinal.swift; sourceTree = "<group>"; };
 		3DF24F8A28E1CC99006C0AAE /* ClasseFinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseFinal.swift; sourceTree = "<group>"; };
 		3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemFicha.swift; sourceTree = "<group>"; };
-		3DF24F8F28E1D641006C0AAE /* PacoteFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteFactory.swift; sourceTree = "<group>"; };
+		3DF24F9628E200DF006C0AAE /* PacoteFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,7 +309,7 @@
 				3D3DC35A28DC146A0093BD92 /* Builders */,
 				3D6F868A28E0D3F00022D0BE /* ViewModel.swift */,
 				3D6F868E28E11B910022D0BE /* BuscaJson.swift */,
-				3DF24F8F28E1D641006C0AAE /* PacoteFactory.swift */,
+				3DF24F9628E200DF006C0AAE /* PacoteFactory.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -507,7 +507,7 @@
 				126ABAF628DB3D5200CF5A2E /* EquipamentoMontariaJSON.swift in Sources */,
 				126ABAF728DB3D5200CF5A2E /* ArmaJSON.swift in Sources */,
 				09B5569328DA6156001466B0 /* SheetTabView.swift in Sources */,
-				3DF24F9028E1D641006C0AAE /* PacoteFactory.swift in Sources */,
+				3DF24F9728E200DF006C0AAE /* PacoteFactory.swift in Sources */,
 				3D6F868928E0CD830022D0BE /* RacaEscolha.swift in Sources */,
 				3D6F869828E11C160022D0BE /* AntecedenteConcreteBuilder.swift in Sources */,
 				126ABAF428DB3D5200CF5A2E /* MontariaJSON.swift in Sources */,
