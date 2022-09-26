@@ -21,7 +21,7 @@ public enum TipoRaca : String, Codable, CaseIterable {
 
 
 //MARK: Enum SubRaca
-public enum TipoSubRaca : String, Codable, CaseIterable {
+public enum TipoSubRaca : String, Codable, CaseIterable, Hashable {
     case anaoColina = "Anão da Colina"
     case anaoMontanha = "Anão da Montanha"
     case altoElfo = "Alto Elfo"
