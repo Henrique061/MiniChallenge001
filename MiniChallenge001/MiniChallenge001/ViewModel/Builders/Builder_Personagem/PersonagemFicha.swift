@@ -15,7 +15,7 @@ public struct ResistenciaMorte : Codable {
 }
 
 //MARK: ENUM TENDENCIA
-enum TipoTendencia : String, Codable {
+enum TipoTendencia : String, Codable, CaseIterable {
     case lealBom = "Leal e Bom"
     case neutroBom = "Neutro e Bom"
     case caoticoBom = "Caótico e Bom"

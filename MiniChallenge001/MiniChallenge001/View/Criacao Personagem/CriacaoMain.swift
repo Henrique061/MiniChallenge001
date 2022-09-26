@@ -10,7 +10,7 @@ import SwiftUI
 struct CriacaoMain: View {
     @State private var nomeFicha: String = ""
     @State private var nomePersonagem: String = ""
-    @State private var selectedTendencia: TipoTendencia = .caoticoBom
+    @State private var selectedTendencia: TipoTendencia? = nil
     
     var body: some View {
         TelaPadrao {
@@ -49,8 +49,7 @@ struct CriacaoMain: View {
                     }
                 }.padding(.bottom, 8)
                 
-                PickerTendencia(selectedTendencia: $selectedTendencia)
-                
+                MenuSelecaoTendencia(selectedItem: $selectedTendencia)
                 Spacer()
                 Button {
                     
@@ -104,57 +103,25 @@ struct DisplayTextoBotao: View {
     }
 }
 
-struct PickerTendencia: View {
+struct MenuSelecaoTendencia: View {
     
-    private var selectedTendencia: Binding<TipoTendencia>
-    @State private var options: [(TipoTendencia, Bool)] = []
+    private var selectedItem: Binding<TipoTendencia?>
     
-    public init(selectedTendencia: Binding<TipoTendencia>) {
-        self.selectedTendencia = selectedTendencia
-        for tendencia in TipoTendencia.allCases {
-            options.append((tendencia, false))
-        }
+    init(selectedItem: Binding<TipoTendencia?>) {
+        self.selectedItem = selectedItem
     }
     
     var body: some View {
         Menu {
-            ForEach($options, id: \.0) { option in
-                PickerTendenciaCell(title: option.wrappedValue.0.rawValue, isSelected: option.1)
+            ForEach(TipoTendencia.allCases, id:\.self) { tendencia in
+                Button(tendencia.rawValue) {
+                    selectedItem.wrappedValue = tendencia
+                }
             }
         } label: {
             TemplateBackgroundInfo {
-                HStack {
-                    DisplayTextoBotao(titulo: "Tendência", descricao: selectedTendencia.wrappedValue.rawValue)
-                    Spacer()
-                    Image(systemName: "chevron.down")
-                }
+                DisplayTextoBotao(titulo: "Tendência", descricao: selectedItem.wrappedValue?.rawValue ?? "Toque para selecionar...")
             }
-        }
-    }
-    
-    func setSelectedItem(_ item: TipoTendencia) {
-        self.selectedTendencia.wrappedValue = item
-        for i in 0..<self.options.count {
-            options[i].1 = options[i].0 == self.selectedTendencia.wrappedValue
-        }
-    }
-}
-
-struct PickerTendenciaCell: View {
-    
-    private var title: String
-    private var isSelected: Binding<Bool>
-    
-    public init(title: String, isSelected: Binding<Bool>) {
-        self.title = title
-        self.isSelected = isSelected
-    }
-    
-    var body: some View {
-        HStack(alignment: .center) {
-            Circle()
-                .foregroundColor(isSelected.wrappedValue ? Color("RedTheme") : Color(uiColor: .systemGray4))
-            Text(title)
         }
     }
 }

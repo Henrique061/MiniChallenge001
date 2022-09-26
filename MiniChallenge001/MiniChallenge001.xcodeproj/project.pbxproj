@@ -14,6 +14,8 @@
 		09B5569628DA6156001466B0 /* Identidade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568F28DA6156001466B0 /* Identidade.swift */; };
 		09B5569728DA6156001466B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569028DA6156001466B0 /* ContentView.swift */; };
 		09B5569828DA6156001466B0 /* Combate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569128DA6156001466B0 /* Combate.swift */; };
+		122E948228E21EE100184F88 /* CaracteristicaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948128E21EE100184F88 /* CaracteristicaJSON.swift */; };
+		122E948428E21F2000184F88 /* TraitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948328E21F2000184F88 /* TraitJSON.swift */; };
 		126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */; };
 		126ABAE328DB38E000CF5A2E /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 126ABAE228DB38E000CF5A2E /* Content */; };
 		126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */; };
@@ -32,7 +34,6 @@
 		126ABB3328DE3EE200CF5A2E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3228DE3EE200CF5A2E /* MainView.swift */; };
 		126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */; };
 		12CC7ABF28E10E24000AB35B /* EscolherRacaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC7ABE28E10E24000AB35B /* EscolherRacaView.swift */; };
-		3D3DC35428DBF8440093BD92 /* Antecedente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35328DBF8440093BD92 /* Antecedente.swift */; };
 		3D3DC35628DC09F00093BD92 /* ClasseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */; };
 		3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35728DC13880093BD92 /* ClasseDirector.swift */; };
 		3D3DC35D28DC14B30093BD92 /* ClasseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35C28DC14B30093BD92 /* ClasseClient.swift */; };
@@ -90,6 +91,8 @@
 		09B5568F28DA6156001466B0 /* Identidade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identidade.swift; sourceTree = "<group>"; };
 		09B5569028DA6156001466B0 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09B5569128DA6156001466B0 /* Combate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combate.swift; sourceTree = "<group>"; };
+		122E948128E21EE100184F88 /* CaracteristicaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracteristicaJSON.swift; sourceTree = "<group>"; };
+		122E948328E21F2000184F88 /* TraitJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitJSON.swift; sourceTree = "<group>"; };
 		126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonFileUtil.swift; path = MiniChallenge001/Model/JsonFileUtil.swift; sourceTree = SOURCE_ROOT; };
 		126ABAE228DB38E000CF5A2E /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Content; sourceTree = SOURCE_ROOT; };
 		126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagiaJSON.swift; sourceTree = "<group>"; };
@@ -108,7 +111,6 @@
 		126ABB3228DE3EE200CF5A2E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriacaoMain.swift; sourceTree = "<group>"; };
 		12CC7ABE28E10E24000AB35B /* EscolherRacaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolherRacaView.swift; sourceTree = "<group>"; };
-		3D3DC35328DBF8440093BD92 /* Antecedente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Antecedente.swift; sourceTree = "<group>"; };
 		3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseBuilder.swift; sourceTree = "<group>"; };
 		3D3DC35728DC13880093BD92 /* ClasseDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseDirector.swift; sourceTree = "<group>"; };
 		3D3DC35C28DC14B30093BD92 /* ClasseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseClient.swift; sourceTree = "<group>"; };
@@ -184,6 +186,8 @@
 				126ABAE628DB3D5000CF5A2E /* Moeda.swift */,
 				126ABAE828DB3D5100CF5A2E /* MontariaJSON.swift */,
 				126ABAE728DB3D5100CF5A2E /* VeiculoAquaticoJSON.swift */,
+				122E948128E21EE100184F88 /* CaracteristicaJSON.swift */,
+				122E948328E21F2000184F88 /* TraitJSON.swift */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -553,12 +557,14 @@
 				126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */,
 				3D696F8F28DE130A000F1D62 /* OpcaoEquipamento.swift in Sources */,
 				126ABAF828DB3D5200CF5A2E /* FerramentaJSON.swift in Sources */,
+				122E948428E21F2000184F88 /* TraitJSON.swift in Sources */,
 				126ABAF528DB3D5200CF5A2E /* EquipamentoJSON.swift in Sources */,
 				3D3DC35D28DC14B30093BD92 /* ClasseClient.swift in Sources */,
 				09B5569728DA6156001466B0 /* ContentView.swift in Sources */,
 				126ABAF328DB3D5200CF5A2E /* VeiculoAquaticoJSON.swift in Sources */,
 				3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */,
 				3D6F869428E11BF70022D0BE /* AntecedenteDirector.swift in Sources */,
+				122E948228E21EE100184F88 /* CaracteristicaJSON.swift in Sources */,
 				3D6F868528E0CD6B0022D0BE /* RacaConcreteBuilder.swift in Sources */,
 				3D6F868B28E0D3F00022D0BE /* ViewModel.swift in Sources */,
 				3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */,
