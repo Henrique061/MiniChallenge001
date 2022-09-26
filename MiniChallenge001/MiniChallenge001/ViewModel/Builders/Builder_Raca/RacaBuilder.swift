@@ -28,7 +28,7 @@ protocol RacaBuilder {
     func setSubracaPossuiEscolhaIdioma(_ possui: Bool)
     func setSubracaComEscolhaIdioma(_ subraca: TipoSubRaca)
     func setEscolhaIdioma(_ idiomas: [Idioma])
-    func setTracos(tracos: [String])
+    func setTracos(tracos: [TraitJSON])
     
     func setProfArmas(_ armas: [ArmaJSON])
     func setSubracaProfArma(_ profSubraca: [ProficienciaArmasPorSubraca])
