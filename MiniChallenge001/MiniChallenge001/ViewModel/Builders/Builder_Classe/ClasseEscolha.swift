@@ -8,33 +8,32 @@
 import Foundation
 
 // MARK: Magias conhecidas de cada classe por nivel
-public struct MagiasConhecidas {
+public struct MagiasConhecidas : Codable {
     var nivel: Int
     var quantiaTruques: Int
     var quantiaMagias: Int
 }
 
 // MARK: Espacos de magia de cada classe por nivel e nivel de circulo magico
-public struct EspacosDeMagias {
+public struct EspacosDeMagias : Codable {
     var nivelPersonagem: Int
-    var niveisCirculo: [CirculoMagico] // cada indice representa 1 nivel de circulo magico
+    var niveisCirculo: CirculoMagico // cada indice representa 1 nivel de circulo magico
 }
 
-public struct CirculoMagico {
-    var nivelCirculo: Int
-    var limiteUsoMagia: Int?
-    var magiasConhecidas: [String]
+public struct CirculoMagico : Codable {
+    var nivelCirculo: [Int]
+    var limiteUsoMagia: [Int]
 }
 
 //MARK: Pontos especificos de classe (chi e furia por exemplo), mostrando um valor numerico ou textual
-struct PontoEspecificoTexto {
+struct PontoEspecificoTexto : Codable {
     var nomeValor: String
-    var valorTexturalInicial: String
+    var textoPorNivel: [String]
 }
 
-struct PontoEspecificoNumerico {
+struct PontoEspecificoNumerico : Codable {
     var nomeValor: String
-    var valorNumericoInicial: Int
+    var valorPorNivel: [Int]
 }
 
 //MARK: Enum ClassePersonagem
@@ -54,7 +53,7 @@ public enum ClassePersonagem: String, Codable, Hashable {
 }
 
 //MARK: Enum Subclasse
-enum SubclassePersonagem : String {
+enum SubclassePersonagem : String, Codable {
     case BB_caminhoFurioso = "Caminho Furioso"
     case BB_caminhoGuerreiroTotemico = "Caminho do Guerreiro Totêmico"
     case BD_colegioConhecimento = "Colégio do Conhecimento"
@@ -97,7 +96,7 @@ enum SubclassePersonagem : String {
     case PT_conclaveRastreadorSubterraneo = "Conclave do Rastreador Subterrâneo"
 }
 
-enum AtributosSalvaguarda : String {
+enum AtributosSalvaguarda : String, Codable {
     case forca = "Força"
     case destreza = "Destreza"
     case constituicao = "Constituição"
@@ -106,7 +105,7 @@ enum AtributosSalvaguarda : String {
     case carisma = "Carisma"
 }
 
-enum Pericia : String, CaseIterable {
+enum Pericia : String, CaseIterable, Codable {
     case acrobacia = "Acrobacia (DES)"
     case adestrarAnimais = "Adestrar Animais (SAB)"
     case arcanismo = "Arcanismo (INT)"
@@ -138,18 +137,15 @@ public class ClasseEscolha {
     var profArmas: [ArmaJSON]?
     var profArmaduras: [ArmaduraJSON]?
     var profFerramentas: [FerramentaJSON]?
+    var escolhasProficienciaFerramenta: [EscolhaOpcao]?
     
-    var opcaoEquipamento1: [String]?
-    var opcaoEquipamento2: [String]?
-    var opcaoEquipamento3: [String]?
-    var opcaoEquipamento4: [String]?
-    var opcaoEquipamento5: [String]?
+    var opcoesEquipamento: [OpcaoEquipamento]?
     var armasIniciais: [ArmaJSON]?
     var armadurasIniciais: [ArmaduraJSON]?
     var equipamentosIniciais: [EquipamentoJSON]?
     var ferramentasIniciais: [FerramentaJSON]?
+    var pacotesIniciais: [PacoteEquipamento]?
     
-    var vidaInicial: Int?
     var profPericias: [Pericia]?
     var quantiaProfPericias: Int?
     var possuiMagias: Bool?
@@ -162,7 +158,7 @@ public class ClasseEscolha {
 }
 
 //MARK: SubClasse
-struct SubClasseEscolha{
+struct SubClasseEscolha : Codable{
     var subclasse: SubclassePersonagem
     var subclasseNome: String
     var caracteristicasSubClasse: [String] // COLOCAR CARACTERISTICAS AQUI

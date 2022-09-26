@@ -21,38 +21,8 @@ enum TipoTendencia : String, CaseIterable {
     case caoticoMau = "Caótico e Mau"
 }
 
-//MARK: Struct Tendencia
-struct Tendencia {
-    var tipoTendencia: TipoTendencia
-    var descricao: String
-}
-
-//MARK: Struct ValoresAtributos
-struct ValoresAtributos {
-    var forca: Int
-    var destreza: Int
-    var constituicao: Int
-    var inteligencia: Int
-    var sabedoria: Int
-    var carisma: Int
-}
 
 //MARK: PersonagemBuilder
 protocol PersonagemBuilder {
-    func resetBuilder() -> Void
-    func buildRaca() -> Raca
-    func buildClasse() -> ClasseEscolha
-    func buildAntecedente() -> Antecedente
-    func buildNome() -> String
-    func buildTendencia() -> Tendencia
-    func buildFoto() -> Image
-    func buildIdade() -> Int
-    func buildAltura() -> Float
-    func buildPeso() -> Float
-    func buildOlhos() -> String
-    func buildPele() -> String
-    func buildCabelo() -> String
-    func buildOutros() -> String
-    func buildValoresAtributos() -> ValoresAtributos
-    func buildNomeFicha() -> String
+
 }
