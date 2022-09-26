@@ -32,6 +32,8 @@
 		126ABB3328DE3EE200CF5A2E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3228DE3EE200CF5A2E /* MainView.swift */; };
 		126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */; };
 		12CC7ABF28E10E24000AB35B /* EscolherRacaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC7ABE28E10E24000AB35B /* EscolherRacaView.swift */; };
+		12CC7AC128E20817000AB35B /* TraitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC7AC028E20817000AB35B /* TraitJSON.swift */; };
+		12CC7AC328E2086C000AB35B /* CaracteristicaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC7AC228E2086C000AB35B /* CaracteristicaJSON.swift */; };
 		3D3DC35428DBF8440093BD92 /* Antecedente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35328DBF8440093BD92 /* Antecedente.swift */; };
 		3D3DC35628DC09F00093BD92 /* ClasseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */; };
 		3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35728DC13880093BD92 /* ClasseDirector.swift */; };
@@ -104,6 +106,8 @@
 		126ABB3228DE3EE200CF5A2E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriacaoMain.swift; sourceTree = "<group>"; };
 		12CC7ABE28E10E24000AB35B /* EscolherRacaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolherRacaView.swift; sourceTree = "<group>"; };
+		12CC7AC028E20817000AB35B /* TraitJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitJSON.swift; sourceTree = "<group>"; };
+		12CC7AC228E2086C000AB35B /* CaracteristicaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracteristicaJSON.swift; sourceTree = "<group>"; };
 		3D3DC35328DBF8440093BD92 /* Antecedente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Antecedente.swift; sourceTree = "<group>"; };
 		3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseBuilder.swift; sourceTree = "<group>"; };
 		3D3DC35728DC13880093BD92 /* ClasseDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseDirector.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				126ABAE628DB3D5000CF5A2E /* Moeda.swift */,
 				126ABAE828DB3D5100CF5A2E /* MontariaJSON.swift */,
 				126ABAE728DB3D5100CF5A2E /* VeiculoAquaticoJSON.swift */,
+				12CC7AC028E20817000AB35B /* TraitJSON.swift */,
+				12CC7AC228E2086C000AB35B /* CaracteristicaJSON.swift */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -544,11 +550,13 @@
 				3D6F868B28E0D3F00022D0BE /* ViewModel.swift in Sources */,
 				3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */,
 				126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */,
+				12CC7AC328E2086C000AB35B /* CaracteristicaJSON.swift in Sources */,
 				126ABB2D28DD26DF00CF5A2E /* DescricaoMagiaView.swift in Sources */,
 				12CC7ABF28E10E24000AB35B /* EscolherRacaView.swift in Sources */,
 				09B5569228DA6156001466B0 /* Habilidades.swift in Sources */,
 				126ABB2B28DD25F100CF5A2E /* TodasHabilidadesView.swift in Sources */,
 				126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */,
+				12CC7AC128E20817000AB35B /* TraitJSON.swift in Sources */,
 				3D3DC35F28DC15310093BD92 /* ClasseConcreteBuilder.swift in Sources */,
 				09B5569828DA6156001466B0 /* Combate.swift in Sources */,
 				126ABAF628DB3D5200CF5A2E /* EquipamentoMontariaJSON.swift in Sources */,
