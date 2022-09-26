@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 //MARK: Enum Tendencia
-enum TipoTendencia : String {
+enum TipoTendencia : String, CaseIterable {
     case lealBom = "Leal e Bom"
     case neutroBom = "Neutro e Bom"
     case caoticoBom = "Caótico e Bom"

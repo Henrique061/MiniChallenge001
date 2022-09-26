@@ -65,7 +65,7 @@ struct MainView: View {
                 }
             }
         }
-        .accentColor((Color(UIColor(red: 0.675, green: 0.114, blue: 0.114, alpha: 1).cgColor)))
+        .accentColor(Color("RedTheme"))
     }
 }
 
@@ -97,4 +97,20 @@ struct TesteFicha {
     var nome: String
     var classe: ClassePersonagem
     var nivel: Int
+}
+
+struct TemplateBackgroundInfo<Content:View>: View {
+    
+    var content: () -> Content
+    
+    var body: some View {
+        ZStack(alignment: .leading) {
+            RoundedRectangle(cornerRadius: 5)
+                .foregroundColor(Color(uiColor: .white))
+            content()
+                .padding(.horizontal)
+        }
+        .frame(maxWidth: .infinity, maxHeight: 35, alignment: .leading)
+        .padding(.bottom, 10)
+    }
 }

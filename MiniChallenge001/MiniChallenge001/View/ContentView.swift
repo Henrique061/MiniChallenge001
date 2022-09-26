@@ -75,9 +75,9 @@ struct PadraoDisplayInformacao: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(titulo)
-                .font(.system(size: 15, weight: .bold, design: .rounded))
+                .font(.system(size: 15, weight: .bold, design: .default))
             Text(descricao)
-                .font(.system(size: 13, weight: .regular, design: .rounded))
+                .font(.system(size: 13, weight: .regular, design: .default))
         }
     }
 }
@@ -90,11 +90,12 @@ struct TelaPadrao<Content: View>: View {
         ZStack {
             Color(uiColor: .systemGray6)
                 .ignoresSafeArea(.all)
-            VStack {
+            VStack() {
                 Divider()
                 content()
             }
         }
+        .frame(alignment: .top)
     }
     
 }
