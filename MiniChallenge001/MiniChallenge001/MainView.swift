@@ -15,7 +15,7 @@ struct MainView: View {
         TesteFicha(nome: "Henrique", classe: .clerigo, nivel: 8),
         TesteFicha(nome: "Thiago", classe: .bardo, nivel: 6)
     ]
-    
+    @State private var imagemPerfil: UIImage?
     @State private var mostrarFicha: Bool = false
     @State private var fichaSelecionada: TesteFicha?
     
@@ -85,10 +85,13 @@ struct LabelFicha: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            PadraoDisplayInformacao(titulo: .constant("Nome"), descricao: $nome)
-            Divider()
-            PadraoDisplayInformacao(titulo: .constant("Classe e Nível"), descricao: .constant(formatClasseNivel))
+        HStack(alignment: .center) {
+            ImagemPerfil(userImage: $imagemPerfil)
+            VStack(alignment: .leading) {
+                PadraoDisplayInformacao(titulo: .constant("Nome"), descricao: $nome)
+                Divider()
+                PadraoDisplayInformacao(titulo: .constant("Classe e Nível"), descricao: .constant(formatClasseNivel))
+            }
         }
     }
 }
@@ -112,5 +115,24 @@ struct TemplateBackgroundInfo<Content:View>: View {
         }
         .frame(maxWidth: .infinity, maxHeight: 35, alignment: .leading)
         .padding(.bottom, 10)
+    }
+}
+
+struct ImagemPerfil: View {
+    
+    @Binding var userImage: UIImage?
+    
+    var body: some View {
+        if let userImage = userImage {
+            Image(uiImage: userImage)
+        } else {
+            ZStack {
+                Color.black
+                Image("IdentidadeIconOff")
+                    .renderingMode(.template)
+                    .foregroundColor(.white)
+            }
+            .clipShape(Circle())
+        }
     }
 }

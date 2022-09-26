@@ -15,17 +15,17 @@ public struct ResistenciaMorte : Codable {
 }
 
 //MARK: ENUM TENDENCIA
-enum TipoTendencia : String, Codable {
-    case lealBom = "Leal e Bom"
-    case neutroBom = "Neutro e Bom"
-    case caoticoBom = "Caótico e Bom"
-    case lealNeutro = "Leal e Neutro"
-    case neutro = "Neutro"
-    case caoticoNeutro = "Caótico e Neutro"
-    case lealMau = "Leal e Mau"
-    case neutroMau = "Neutro e Mau"
-    case caoticoMau = "Caótico e Mau"
-}
+//enum TipoTendencia : String, Codable {
+//    case lealBom = "Leal e Bom"
+//    case neutroBom = "Neutro e Bom"
+//    case caoticoBom = "Caótico e Bom"
+//    case lealNeutro = "Leal e Neutro"
+//    case neutro = "Neutro"
+//    case caoticoNeutro = "Caótico e Neutro"
+//    case lealMau = "Leal e Mau"
+//    case neutroMau = "Neutro e Mau"
+//    case caoticoMau = "Caótico e Mau"
+//}
 
 //MARK: STRICT TENDENCIA
 struct Tendencia : Codable {
