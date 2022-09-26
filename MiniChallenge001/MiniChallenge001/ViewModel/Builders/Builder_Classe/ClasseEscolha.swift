@@ -53,7 +53,7 @@ public enum ClassePersonagem: String, Codable, Hashable {
 }
 
 //MARK: Enum Subclasse
-enum SubclassePersonagem : String, Codable {
+public enum SubclassePersonagem : String, Codable {
     case BB_caminhoFurioso = "Caminho Furioso"
     case BB_caminhoGuerreiroTotemico = "Caminho do Guerreiro Totêmico"
     case BD_colegioConhecimento = "Colégio do Conhecimento"
@@ -130,7 +130,7 @@ enum Pericia : String, CaseIterable, Codable {
 public class ClasseEscolha {
     var classePersonagem: ClassePersonagem? // enum de classes
     var nomeClasse: String?
-    var caracteristicasClasse: [String]? // COLOCAR CARACTERISTICAS AQUI
+    var caracteristicasClasse: [CaracteristicaJSON]? // COLOCAR CARACTERISTICAS AQUI
     var subClasses: [SubClasseEscolha]?
     var dadoVida: String?
     var profSalvaguardas: [AtributosSalvaguarda]?
@@ -161,9 +161,9 @@ public class ClasseEscolha {
 struct SubClasseEscolha : Codable{
     var subclasse: SubclassePersonagem
     var subclasseNome: String
-    var caracteristicasSubClasse: [String] // COLOCAR CARACTERISTICAS AQUI
+    var caracteristicasSubClasse: [CaracteristicaJSON] // COLOCAR CARACTERISTICAS AQUI
     
-    init (subclase: SubclassePersonagem, caracteristicas: [String]) {
+    init (subclase: SubclassePersonagem, caracteristicas: [CaracteristicaJSON]) {
         self.subclasse = subclase
         self.subclasseNome = subclase.rawValue
         self.caracteristicasSubClasse = caracteristicas

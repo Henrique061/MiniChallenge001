@@ -28,7 +28,7 @@ public class ClasseConcreteBuilder : ClasseBuilder {
     }
     
     //MARK: CARACTERISTICA
-    func setCaracteristicasClasse(_ caracteristicas: [String]) {
+    func setCaracteristicasClasse(_ caracteristicas: [CaracteristicaJSON]) {
         self.classe.caracteristicasClasse = caracteristicas
     }
     
