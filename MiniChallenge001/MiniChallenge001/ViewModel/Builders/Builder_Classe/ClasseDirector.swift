@@ -212,12 +212,12 @@ public class ClasseDirector {
     
     //MARK: BARBARO
     private func makeBarbaro() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .barbaro)
         
         // barbaro tem 2 subclasses
         // array do json caracteristicas aqui
-        let caracFurioso = ["SC1", "SC2"]
-        let caracTotemico = ["SC1", "SC2"]
+        let caracFurioso: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BB_caminhoFurioso)
+        let caracTotemico: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BB_caminhoGuerreiroTotemico)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .BB_caminhoFurioso, caracteristicas: caracFurioso),
@@ -286,12 +286,12 @@ public class ClasseDirector {
     
     //MARK: BARDO
     private func makeBardo() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .bardo)
         
         // bardo tem 2 subclasses
         // array do json caracteristicas aqui
-        let caracConhecimento = ["SC1", "SC2"]
-        let caracBravura = ["SC1", "SC2"]
+        let caracConhecimento: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BD_colegioConhecimento)
+        let caracBravura: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BD_colegioBravura)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .BD_colegioConhecimento, caracteristicas: caracConhecimento),
@@ -385,13 +385,13 @@ public class ClasseDirector {
     
     //MARK: BRUXO
     private func makeBruxo() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .bruxo)
         
         // bruxo tem 3 subclasses
         // array do json caracteristicas aqui
-        let caracArquifada = ["SC1", "SC2"]
-        let caracCorruptor = ["SC1", "SC2"]
-        let caracAntigo = ["SC1", "SC2"]
+        let caracArquifada: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BX_arquifada)
+        let caracCorruptor: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BX_corruptor)
+        let caracAntigo: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BX_grandeAntigo)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .BX_arquifada, caracteristicas: caracArquifada),
@@ -486,17 +486,17 @@ public class ClasseDirector {
     
     //MARK: CLERIGO
     private func makeClerigo() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .clerigo)
         
         // clerigo tem 7 subclasses
         // array do json caracteristicas aqui
-        let caracConhecimento = ["SC1", "SC2"]
-        let caracEnganacao = ["SC1", "SC2"]
-        let caracGuerra = ["SC1", "SC2"]
-        let caracLuz = ["SC1", "SC2"]
-        let caracNatureza = ["SC1", "SC2"]
-        let caracTempestade = ["SC1", "SC2"]
-        let caracVida = ["SC1", "SC2"]
+        let caracConhecimento: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .CL_dominioConhecimento)
+        let caracEnganacao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .CL_dominioEnganacao)
+        let caracGuerra: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .CL_dominioGuerra)
+        let caracLuz: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .CL_dominioLuz)
+        let caracNatureza: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .CL_domonioNatureza)
+        let caracTempestade: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .CL_dominioTempestade)
+        let caracVida: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .CL_dominioVida)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .CL_dominioConhecimento, caracteristicas: caracConhecimento),
@@ -594,12 +594,12 @@ public class ClasseDirector {
     
     //MARK: DRUIDA
     private func makeDruida() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .druida)
         
         // druida tem 2 subclasses
         // array do json caracteristicas aqui
-        let caracTerra = ["SC1", "SC2"]
-        let caracLua = ["SC1", "SC2"]
+        let caracTerra: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .DR_circuloTerra)
+        let caracLua: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .DR_circuloLua)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .DR_circuloTerra, caracteristicas: caracTerra),
@@ -692,12 +692,12 @@ public class ClasseDirector {
     
     //MARK: FEITICEIRO
     private func makeFeiticeiro() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .feiticeiro)
         
         // feiticeiro tem 2 subclasses
         // array do json caracteristicas aqui
-        let caracDraconica = ["SC1", "SC2"]
-        let caracSelvagem = ["SC1", "SC2"]
+        let caracDraconica: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .FE_linhagemDraconica)
+        let caracSelvagem: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .FE_magiaSelvagem)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .FE_linhagemDraconica, caracteristicas: caracDraconica),
@@ -771,13 +771,13 @@ public class ClasseDirector {
     
     //MARK: GUERREIRO
     private func makeGuerreiro() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .guerreiro)
         
         // guerreiro tem 3 subclasses
         // array do json caracteristicas aqui
-        let caracCampeao = ["SC1", "SC2"]
-        let caracArcano = ["SC1", "SC2"]
-        let caracMestre = ["SC1", "SC2"]
+        let caracCampeao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .GU_campeao)
+        let caracArcano: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .GU_cavaleiroArcano)
+        let caracMestre: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .GU_mestreBatalha)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .GU_campeao, caracteristicas: caracCampeao),
@@ -858,13 +858,13 @@ public class ClasseDirector {
     
     //MARK: LADINO
     private func makeLadino() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .ladino)
         
         // ladino tem 3 subclasses
         // array do json caracteristicas aqui
-        let caracAssassino = ["SC1", "SC2"]
-        let caracLadrao = ["SC1", "SC2"]
-        let caracArcano = ["SC1", "SC2"]
+        let caracAssassino: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .LA_assassino)
+        let caracLadrao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .LA_ladrao)
+        let caracArcano: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .LA_trapaceiroArcano)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .LA_assassino, caracteristicas: caracAssassino),
@@ -954,17 +954,17 @@ public class ClasseDirector {
     
     //MARK: MAGO
     private func makeMago() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .mago)
         
         // mago tem 7 subclasses
         // array do json caracteristicas aqui
-        let caracAbjuracao = ["SC1", "SC2"]
-        let caracAdivinhacao = ["SC1", "SC2"]
-        let caracConjuracao = ["SC1", "SC2"]
-        let caracEvocacao = ["SC1", "SC2"]
-        let caracIlusao = ["SC1", "SC2"]
-        let caracNecromancia = ["SC1", "SC2"]
-        let caracTransmutacao = ["SC1", "SC2"]
+        let caracAbjuracao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MA_escolaAbjuracao)
+        let caracAdivinhacao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MA_escolaAdivinhacao)
+        let caracConjuracao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MA_escolaConjuracao)
+        let caracEvocacao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MA_escolaEvocacao)
+        let caracIlusao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MA_escolaIlusao)
+        let caracNecromancia: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MA_escolaNecromancia)
+        let caracTransmutacao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MA_escolaTransmutacao)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .MA_escolaAbjuracao, caracteristicas: caracAbjuracao),
@@ -1039,13 +1039,13 @@ public class ClasseDirector {
     
     //MARK: MONGE
     private func makeMonge() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .monge)
         
         // monge tem 3 subclasses
         // array do json caracteristicas aqui
-        let caracMaoAberta = ["SC1", "SC2"]
-        let caracSombra = ["SC1", "SC2"]
-        let caracElementos = ["SC1", "SC2"]
+        let caracMaoAberta: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MO_caminhoMaoAberta)
+        let caracSombra: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MO_caminhoSombra)
+        let caracElementos: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MO_caminhoQuatroElementos)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .MO_caminhoMaoAberta, caracteristicas: caracMaoAberta),
@@ -1126,13 +1126,13 @@ public class ClasseDirector {
     
     //MARK: PALADINO
     private func makePaladino() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .paladino)
         
         // paladino tem 3 subclasses
         // array do json caracteristicas aqui
-        let caracDevocao = ["SC1", "SC2"]
-        let caracAncioes = ["SC1", "SC2"]
-        let caracVinganca = ["SC1", "SC2"]
+        let caracDevocao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .PD_juramentoDevocao)
+        let caracAncioes: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .PD_juramentoAncioes)
+        let caracVinganca: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .PD_juramentoVinganca)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .PD_juramentoDevocao, caracteristicas: caracDevocao),
@@ -1222,13 +1222,13 @@ public class ClasseDirector {
     
     //MARK: PATRULHEIRO
     private func makePatrulheiro() {
-        let caracteristicasClasse = ["C1", "C2"] // array do json caracteristicas aqui
+        let caracteristicasClasse: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorClasse(classe: .patrulheiro)
         
         // patrulheiro tem 3 subclasses
         // array do json caracteristicas aqui
-        let caracBesta = ["SC1", "SC2"]
-        let caracCacador = ["SC1", "SC2"]
-        let caracSubterraneo = ["SC1", "SC2"]
+        let caracBesta: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .PT_conclaveBesta)
+        let caracCacador: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .PT_conclaveCacador)
+        let caracSubterraneo: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .PT_conclaveRastreadorSubterraneo)
         
         let subclasses: [SubClasseEscolha] = [
             SubClasseEscolha(subclase: .PT_conclaveBesta, caracteristicas: caracBesta),
