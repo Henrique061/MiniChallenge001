@@ -48,6 +48,6 @@ public class AntecedenteEscolha {
     var escolhaEquipamentoInicial: [String]?
     var escolhaFerramentaInicial: [String]?
     
-    var dinheiroIniciail: Moeda?
+    var dinheiroInicial: Moeda?
     
 }

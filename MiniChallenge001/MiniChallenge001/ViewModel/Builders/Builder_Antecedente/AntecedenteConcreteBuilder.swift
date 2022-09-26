@@ -82,7 +82,7 @@ public class AntecedenteConcreteBuilder : AntecedenteBuilder {
     
     //MARK: DINHEIRO INICIAL
     func setDinheiroInicial(_ moeda: Moeda) {
-        self.antecedente.dinheiroIniciail = moeda
+        self.antecedente.dinheiroInicial = moeda
     }
     
     //MARK: GET FINAL

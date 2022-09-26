@@ -1114,7 +1114,8 @@ public class ClasseDirector {
         builder?.setPossuiMagias(false)
         
         builder?.setPontosEspecificosTexto([
-            PontoEspecificoTexto(nomeValor: "Artes Marciais", textoPorNivel: ["1d4", "1d4", "1d4", "1d4", "1d6", "1d6", "1d6", "1d6", "1d6", "1d6", "1d8", "1d8", "1d8", "1d8", "1d8", "1d8", "1d10", "1d10", "1d10", "1d10"])
+            PontoEspecificoTexto(nomeValor: "Artes Marciais", textoPorNivel: ["1d4", "1d4", "1d4", "1d4", "1d6", "1d6", "1d6", "1d6", "1d6", "1d6", "1d8", "1d8", "1d8", "1d8", "1d8", "1d8", "1d10", "1d10", "1d10", "1d10"]),
+            PontoEspecificoTexto(nomeValor: "Deslocamento sem Armadura", textoPorNivel: ["+0m", "+3m", "+3m", "+3m", "+3m", "+4.5m", "+4.5m", "+4.5m", "+4.5m", "+6m", "+6m", "+6m", "+6m", "+7.5m", "+7.5m", "+7.5m", "+7.5m", "+9m", "+9m", "+9m"])
         ])
         
         builder?.setPontosEspecificosNumericos([
