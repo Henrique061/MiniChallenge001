@@ -14,7 +14,6 @@
 		09B5569628DA6156001466B0 /* Identidade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568F28DA6156001466B0 /* Identidade.swift */; };
 		09B5569728DA6156001466B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569028DA6156001466B0 /* ContentView.swift */; };
 		09B5569828DA6156001466B0 /* Combate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569128DA6156001466B0 /* Combate.swift */; };
-		126AAE1628DAC0A900CF5A2E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126AAE1528DAC0A900CF5A2E /* TestView.swift */; };
 		126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */; };
 		126ABAE328DB38E000CF5A2E /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 126ABAE228DB38E000CF5A2E /* Content */; };
 		126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */; };
@@ -28,6 +27,11 @@
 		126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAED28DB3D5100CF5A2E /* BugigangaJSON.swift */; };
 		126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEE28DB3D5100CF5A2E /* ArmaduraJSON.swift */; };
 		126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAEF28DB3D5100CF5A2E /* Json.swift */; };
+		126ABB2B28DD25F100CF5A2E /* TodasHabilidadesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB2A28DD25F100CF5A2E /* TodasHabilidadesView.swift */; };
+		126ABB2D28DD26DF00CF5A2E /* DescricaoMagiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB2C28DD26DF00CF5A2E /* DescricaoMagiaView.swift */; };
+		126ABB3328DE3EE200CF5A2E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3228DE3EE200CF5A2E /* MainView.swift */; };
+		126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */; };
+		12CC7ABF28E10E24000AB35B /* EscolherRacaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC7ABE28E10E24000AB35B /* EscolherRacaView.swift */; };
 		3D3DC35428DBF8440093BD92 /* Antecedente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35328DBF8440093BD92 /* Antecedente.swift */; };
 		3D3DC35628DC09F00093BD92 /* ClasseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */; };
 		3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35728DC13880093BD92 /* ClasseDirector.swift */; };
@@ -82,7 +86,6 @@
 		09B5568F28DA6156001466B0 /* Identidade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identidade.swift; sourceTree = "<group>"; };
 		09B5569028DA6156001466B0 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09B5569128DA6156001466B0 /* Combate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combate.swift; sourceTree = "<group>"; };
-		126AAE1528DAC0A900CF5A2E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonFileUtil.swift; path = MiniChallenge001/Model/JsonFileUtil.swift; sourceTree = SOURCE_ROOT; };
 		126ABAE228DB38E000CF5A2E /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Content; sourceTree = SOURCE_ROOT; };
 		126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagiaJSON.swift; sourceTree = "<group>"; };
@@ -96,6 +99,11 @@
 		126ABAED28DB3D5100CF5A2E /* BugigangaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugigangaJSON.swift; sourceTree = "<group>"; };
 		126ABAEE28DB3D5100CF5A2E /* ArmaduraJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmaduraJSON.swift; sourceTree = "<group>"; };
 		126ABAEF28DB3D5100CF5A2E /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		126ABB2A28DD25F100CF5A2E /* TodasHabilidadesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodasHabilidadesView.swift; sourceTree = "<group>"; };
+		126ABB2C28DD26DF00CF5A2E /* DescricaoMagiaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescricaoMagiaView.swift; sourceTree = "<group>"; };
+		126ABB3228DE3EE200CF5A2E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriacaoMain.swift; sourceTree = "<group>"; };
+		12CC7ABE28E10E24000AB35B /* EscolherRacaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolherRacaView.swift; sourceTree = "<group>"; };
 		3D3DC35328DBF8440093BD92 /* Antecedente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Antecedente.swift; sourceTree = "<group>"; };
 		3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseBuilder.swift; sourceTree = "<group>"; };
 		3D3DC35728DC13880093BD92 /* ClasseDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseDirector.swift; sourceTree = "<group>"; };
@@ -170,6 +178,57 @@
 				126ABAE728DB3D5100CF5A2E /* VeiculoAquaticoJSON.swift */,
 			);
 			path = Json;
+			sourceTree = "<group>";
+		};
+		126ABB2928DD25CB00CF5A2E /* Habilidade */ = {
+			isa = PBXGroup;
+			children = (
+				09B5568B28DA6154001466B0 /* Habilidades.swift */,
+				126ABB2A28DD25F100CF5A2E /* TodasHabilidadesView.swift */,
+				126ABB2C28DD26DF00CF5A2E /* DescricaoMagiaView.swift */,
+			);
+			path = Habilidade;
+			sourceTree = "<group>";
+		};
+		126ABB2E28DD326200CF5A2E /* Atributo */ = {
+			isa = PBXGroup;
+			children = (
+				09B5568E28DA6155001466B0 /* Atributos.swift */,
+			);
+			path = Atributo;
+			sourceTree = "<group>";
+		};
+		126ABB2F28DD327B00CF5A2E /* Combate */ = {
+			isa = PBXGroup;
+			children = (
+				09B5569128DA6156001466B0 /* Combate.swift */,
+			);
+			path = Combate;
+			sourceTree = "<group>";
+		};
+		126ABB3028DD328200CF5A2E /* Identidade */ = {
+			isa = PBXGroup;
+			children = (
+				09B5568F28DA6156001466B0 /* Identidade.swift */,
+			);
+			path = Identidade;
+			sourceTree = "<group>";
+		};
+		126ABB3128DD328A00CF5A2E /* Inventario */ = {
+			isa = PBXGroup;
+			children = (
+				09B5568D28DA6155001466B0 /* Inventario.swift */,
+			);
+			path = Inventario;
+			sourceTree = "<group>";
+		};
+		126ABB3B28DF3A4A00CF5A2E /* Criacao Personagem */ = {
+			isa = PBXGroup;
+			children = (
+				126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */,
+				12CC7ABE28E10E24000AB35B /* EscolherRacaView.swift */,
+			);
+			path = "Criacao Personagem";
 			sourceTree = "<group>";
 		};
 		3D3DC35A28DC146A0093BD92 /* Builders */ = {
@@ -255,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				3D9BED1828CFB76000CA1821 /* MiniChallenge001App.swift */,
+				126ABB3228DE3EE200CF5A2E /* MainView.swift */,
 				3DE3796C28D26413005812C7 /* View */,
 				3DE3796B28D26400005812C7 /* ViewModel */,
 				3DE3796A28D26391005812C7 /* Model */,
@@ -310,14 +370,14 @@
 		3DE3796C28D26413005812C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				09B5568E28DA6155001466B0 /* Atributos.swift */,
-				09B5569128DA6156001466B0 /* Combate.swift */,
-				09B5569028DA6156001466B0 /* ContentView.swift */,
-				09B5568B28DA6154001466B0 /* Habilidades.swift */,
-				09B5568F28DA6156001466B0 /* Identidade.swift */,
-				09B5568D28DA6155001466B0 /* Inventario.swift */,
+				126ABB3B28DF3A4A00CF5A2E /* Criacao Personagem */,
 				09B5568C28DA6155001466B0 /* SheetTabView.swift */,
-				126AAE1528DAC0A900CF5A2E /* TestView.swift */,
+				09B5569028DA6156001466B0 /* ContentView.swift */,
+				126ABB2928DD25CB00CF5A2E /* Habilidade */,
+				126ABB3128DD328A00CF5A2E /* Inventario */,
+				126ABB2E28DD326200CF5A2E /* Atributo */,
+				126ABB2F28DD327B00CF5A2E /* Combate */,
+				126ABB3028DD328200CF5A2E /* Identidade */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -460,11 +520,13 @@
 				126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */,
 				126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */,
 				3D6F869A28E11C200022D0BE /* AntecedenteBuilder.swift in Sources */,
+				126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */,
 				3D3DC35428DBF8440093BD92 /* Antecedente.swift in Sources */,
 				09B5569628DA6156001466B0 /* Identidade.swift in Sources */,
 				3D60C63E28DB958C0051676A /* Raca.swift in Sources */,
 				3D6F869228E11BEB0022D0BE /* AntecedenteEscolha.swift in Sources */,
 				3D3DC35628DC09F00093BD92 /* ClasseBuilder.swift in Sources */,
+				126ABB3328DE3EE200CF5A2E /* MainView.swift in Sources */,
 				3D6F868D28E0E84D0022D0BE /* RacaDirector.swift in Sources */,
 				09B5569528DA6156001466B0 /* Atributos.swift in Sources */,
 				126ABAF228DB3D5200CF5A2E /* Moeda.swift in Sources */,
@@ -482,8 +544,10 @@
 				3D6F868B28E0D3F00022D0BE /* ViewModel.swift in Sources */,
 				3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */,
 				126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */,
-				126AAE1628DAC0A900CF5A2E /* TestView.swift in Sources */,
+				126ABB2D28DD26DF00CF5A2E /* DescricaoMagiaView.swift in Sources */,
+				12CC7ABF28E10E24000AB35B /* EscolherRacaView.swift in Sources */,
 				09B5569228DA6156001466B0 /* Habilidades.swift in Sources */,
+				126ABB2B28DD25F100CF5A2E /* TodasHabilidadesView.swift in Sources */,
 				126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */,
 				3D3DC35F28DC15310093BD92 /* ClasseConcreteBuilder.swift in Sources */,
 				09B5569828DA6156001466B0 /* Combate.swift in Sources */,
@@ -655,12 +719,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniChallenge001/Preview Content\"";
-				DEVELOPMENT_TEAM = 66824UF4JS;
+				DEVELOPMENT_TEAM = KFCLN3TFTY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiniChallenge001/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -684,12 +748,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniChallenge001/Preview Content\"";
-				DEVELOPMENT_TEAM = 66824UF4JS;
+				DEVELOPMENT_TEAM = KFCLN3TFTY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiniChallenge001/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
