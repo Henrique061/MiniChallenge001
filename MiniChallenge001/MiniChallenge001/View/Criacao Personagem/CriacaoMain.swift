@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CriacaoMain: View {
     
-    @State private var novaFicha = PersonagemFicha()
+    @State private var novaFicha: PersonagemFicha
+    
+    public init() {
+        novaFicha = PersonagemFicha()
+    }
     
     var body: some View {
         TelaPadrao {
@@ -25,10 +29,15 @@ struct CriacaoMain: View {
                 }
                 
                 NavigationLink {
-                    EscolherRacaView(novaFicha: $novaFicha)
+                    EscolherRacaView { raca, subraca in
+                        if let raca = raca.nomeRaca, let subraca = subraca {
+                            novaFicha.racaFinal?.racaPersonagem = TipoRaca(rawValue: raca)!
+                            novaFicha.racaFinal?.subracaPersonagem = TipoSubRaca(rawValue: subraca.subracaNome)
+                        }
+                    }
                 } label: {
                     TemplateBackgroundInfo {
-                        DisplayTextoBotao(titulo: "Raça do personagem", descricao: "Toque para selecionar...")
+                        DisplayTextoBotao(titulo: "Raça do personagem", descricao: novaFicha.racaFinal?.subracaPersonagem?.rawValue ?? novaFicha.racaFinal?.racaPersonagem.rawValue ?? "Toque para selecionar...")
                     }
                 }.padding(.bottom, 8)
                 
@@ -99,6 +108,7 @@ struct DisplayTextoBotao: View {
                 .font(.system(size: 13, weight: .regular, design: .default))
                 .fixedSize(horizontal: false, vertical: true)
         }
+        .foregroundColor(Color("BlackAndWhite"))
         .padding(.vertical, 7)
     }
 }
