@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct TraitJSON: Json, Hashable {
+public struct TraitJSON: Json, Hashable, Equatable {
     var id: Int
     var nome: String
     var raca: TipoRaca
-    var subraca: TipoSubRaca
+    var subraca: TipoSubRaca?
     var descricao: String
 }

@@ -330,30 +330,44 @@ public class BuscaJson : Codable {
         guard let tracos = JsonFileUtil.getDataFromFiles(folder: .trait, decoder: TraitJSON.self) as? [TraitJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
-        var tracosRetorno: [TraitJSON] = []
+        
+        var aux: [TraitJSON] = []
         
         for traco in tracos {
-            if traco.raca == raca {
-                tracosRetorno.append(traco)
+            if !aux.contains(where: {$0.id == traco.id}) && traco.raca == raca && traco.subraca == nil {
+                aux.append(traco)
             }
         }
         
-        return tracosRetorno
+        return aux
     }
     
     public static func buscaTracosPorSubraca(subraca: TipoSubRaca) -> [TraitJSON] {
-        guard let tracos = JsonFileUtil.getDataFromFiles(folder: .trait, decoder: TraitJSON.self) as? [TraitJSON] else {
-            fatalError("Erro ao tentar converter magias")
+        if let tracos = JsonFileUtil.getDataFromFiles(folder: .trait, decoder: TraitJSON.self) as? [TraitJSON] {
+            return tracos.filter({$0.subraca == subraca})
         }
-        var tracosRetorno: [TraitJSON] = []
-        
-        for traco in tracos {
-            if traco.subraca == subraca {
-                tracosRetorno.append(traco)
+        return []
+    }
+    
+    public static func buscarTracos(raca: TipoRaca, subraca: TipoSubRaca?) -> [TraitJSON] {
+        if let tracos = JsonFileUtil.getDataFromFiles(folder: .trait, decoder: TraitJSON.self) as? [TraitJSON] {
+            var aux: [TraitJSON] = []
+            if let subraca = subraca {
+                for traco in tracos {
+                    if !aux.contains(where: {$0.id == traco.id}) && (traco.raca == raca || traco.subraca == subraca) {
+                        aux.append(traco)
+                    }
+                }
+            } else {
+                for traco in tracos {
+                    if !aux.contains(where: {$0.id == traco.id}) && traco.raca == raca {
+                        aux.append(traco)
+                    }
+                }
             }
+            return aux
         }
-        
-        return tracosRetorno
+        return []
     }
 }
 
