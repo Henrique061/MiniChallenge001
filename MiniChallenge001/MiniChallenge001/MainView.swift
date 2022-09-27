@@ -106,7 +106,7 @@ struct TemplateBackgroundInfo<Content:View>: View {
     var body: some View {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 5)
-                .foregroundColor(Color(uiColor: .white))
+                .foregroundColor(Color("ContentBackground"))
             content()
                 .padding(.horizontal)
         }

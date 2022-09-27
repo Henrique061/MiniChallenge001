@@ -9,9 +9,15 @@ import SwiftUI
 
 struct EscolherRacaView: View {
     
-    @Binding var novaFicha: PersonagemFicha
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var racaEscolha: RacaEscolha? = nil
     @State private var subRacaEscolha: Subraca? = nil
+    private var completion: (_ raca: RacaEscolha, _ subraca: Subraca?) -> Void
+    
+    public init(completion: @escaping (_ raca: RacaEscolha, _ subraca: Subraca?) -> Void) {
+        self.completion = completion
+    }
     
     var body: some View {
         VStack {
@@ -25,6 +31,12 @@ struct EscolherRacaView: View {
                     IdiomaRacaView(racaEscolha: $racaEscolha, subRacaEscolha: $subRacaEscolha)
                     BotaoMostrarTracosRaca(racaEscolha: $racaEscolha, subRacaEscolha: $subRacaEscolha)
                     Spacer()
+                    Button {
+                        completion(racaEscolha!, subRacaEscolha)
+                        dismiss()
+                    } label: {
+                        Text("Salvar")
+                    }.disabled(racaEscolha == nil)
                 }
                 .padding(.horizontal)
                 .tint(.black)
@@ -208,51 +220,10 @@ struct BotaoMostrarTracosRaca: View {
             }
             
             .sheet(isPresented: $showSheet) {
-                ListaTracos(racaEscolha: $racaEscolha, subRacaEscolha: $subRacaEscolha)
+                DetalhesTracoView(racaEscolha: $racaEscolha, subRacaEscolha: $subRacaEscolha)
             }
         } else {
             Text("Qualquer coisa").hidden()
         }
     }
 }
-
-struct ListaTracos: View {
-    
-    @Environment(\.dismiss) private var dismiss
-    
-    @Binding var racaEscolha: RacaEscolha?
-    @Binding var subRacaEscolha: Subraca?
-    
-    private var racaFinal: String {
-        if let temSub = racaEscolha?.possuiSubRaca {
-            if temSub {
-                return subRacaEscolha?.subracaNome ?? "<<ERROR>>"
-            } else {
-                return racaEscolha?.nomeRaca ?? "<<ERROR>>"
-            }
-        }
-        return "NULL"
-    }
-    
-    var body: some View {
-        VStack {
-            HStack(alignment: .center) {
-                Image("IdentidadeIconOff")
-                DisplayTextoBotao(titulo: "Descrição de Traços Raciais", descricao: racaFinal)
-                Spacer()
-                Button {
-                    dismiss()
-                } label: {
-                    CustomBotaoFechar()
-                        .frame(width: 30, height: 30)
-                }
-            }.padding(.horizontal, 12)
-            Divider()
-            Spacer()
-        }
-    }
-}
-
-//struct DescricaoListaTracos: View {
-//
-//}
