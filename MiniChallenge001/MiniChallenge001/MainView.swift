@@ -8,29 +8,23 @@
 import SwiftUI
 
 struct MainView: View {
-    //
     
-    @State var fichas: [TesteFicha] = [
-        TesteFicha(nome: "Levesleves", classe: .mago, nivel: 5),
-        TesteFicha(nome: "Henrique", classe: .clerigo, nivel: 8),
-        TesteFicha(nome: "Thiago", classe: .bardo, nivel: 6)
-    ]
+    @ObservedObject private var fichas = PersonagemViewModel()
     
     @State private var mostrarFicha: Bool = false
-    @State private var fichaSelecionada: TesteFicha?
+    @State private var fichaSelecionada: PersonagemFicha?
     
     var body: some View {
         NavigationView {
             TelaPadrao {
                 List {
-                    ForEach($fichas, id: \.nome) { ficha in
+                    ForEach($fichas.listaFichas, id: \.nome) { ficha in
                         Section {
                             Button {
                                 fichaSelecionada = ficha.wrappedValue
                                 mostrarFicha.toggle()
                             } label: {
-                                LabelFicha(nome: ficha.nome, classe: ficha.classe, nivel: ficha.nivel)
-                                    .tint(Color(uiColor: .black))
+                                LabelFicha(ficha: ficha)
                             }
                         } header: {
                             Text("Nome da ficha")
@@ -58,7 +52,7 @@ struct MainView: View {
                         CriacaoMain()
                     } label: {
                         HStack {
-                            Text("Nova Fica")
+                            Text("Nova Ficha")
                             Image(systemName: "square.and.pencil")
                         }
                     }
@@ -76,9 +70,14 @@ struct MainView_Previews: PreviewProvider {
 }
 
 struct LabelFicha: View {
-    @Binding var nome: String
-    @Binding var classe: ClassePersonagem
-    @Binding var nivel: Int
+    @Binding var ficha: PersonagemFicha
+    private var classe: ClassePersonagem {
+        if let classe = ficha.classeFinal?.classePersonagem {
+            return classe
+        }
+        return .patrulheiro
+    }
+    private var nivel: Int
     
     private var formatClasseNivel: String {
         return "\(classe.rawValue) \(nivel)"
@@ -86,8 +85,9 @@ struct LabelFicha: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            PadraoDisplayInformacao(titulo: .constant("Nome"), descricao: $nome)
+            DisplayTextoBotao(titulo: "Nome", descricao: ficha.nome)
             Divider()
+            DisplayTextoBotao(titulo: "Classe e Nível", descricao: <#T##String#>)
             PadraoDisplayInformacao(titulo: .constant("Classe e Nível"), descricao: .constant(formatClasseNivel))
         }
     }

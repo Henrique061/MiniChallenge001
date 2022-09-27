@@ -52,6 +52,10 @@ public class PersonagemFicha: Json {
 
     }
     
+    //MARK: NÍVEIS
+    var nivel: Int = 1
+    var experiencica: Int = 0
+    
     //MARK: CLASSES
     var classeFinal: ClasseFinal?
     var racaFinal: RacaFinal?

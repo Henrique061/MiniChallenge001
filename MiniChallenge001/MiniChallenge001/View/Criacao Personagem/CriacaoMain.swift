@@ -29,17 +29,14 @@ struct CriacaoMain: View {
                 }
                 
                 NavigationLink {
-                    EscolherRacaView { raca, subraca in
-                        if let raca = raca.nomeRaca, let subraca = subraca {
-                            novaFicha.racaFinal?.racaPersonagem = TipoRaca(rawValue: raca)!
-                            novaFicha.racaFinal?.subracaPersonagem = TipoSubRaca(rawValue: subraca.subracaNome)
-                        }
-                    }
+                    EscolherRacaView(novaFicha: $novaFicha)
                 } label: {
                     TemplateBackgroundInfo {
-                        DisplayTextoBotao(titulo: "Raça do personagem", descricao: novaFicha.racaFinal?.subracaPersonagem?.rawValue ?? novaFicha.racaFinal?.racaPersonagem.rawValue ?? "Toque para selecionar...")
+                        DisplayTextoBotao(titulo: "Raça do personagem", descricao: novaFicha.racaFinal?.racaPersonagem.rawValue ?? "Toque para selecionar...")
                     }
-                }.padding(.bottom, 8)
+                }
+                .padding(.bottom, 8)
+                
                 
                 NavigationLink {
                     
@@ -62,14 +59,7 @@ struct CriacaoMain: View {
                 Button {
                     
                 } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                        Text("Próximo")
-                            .padding()
-                            .foregroundColor(.white)
-                    }
-                    .frame(minWidth: 100, maxWidth: .infinity, minHeight: 10, maxHeight: 40, alignment: .center)
-                    .padding()
+                    TemplateBotaoConfirmacao("Próximo")
                 }
             }
             .tint(.black)
@@ -88,6 +78,25 @@ struct CriacaoMain: View {
 struct CriacaoMain_Previews: PreviewProvider {
     static var previews: some View {
         CriacaoMain()
+    }
+}
+
+struct TemplateBotaoConfirmacao: View {
+    private var titulo: String
+    
+    init(_ titulo: String) {
+        self.titulo = titulo
+    }
+    
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+            Text(titulo)
+                .padding()
+                .foregroundColor(.white)
+        }
+        .frame(minWidth: 100, maxWidth: .infinity, minHeight: 10, maxHeight: 40, alignment: .center)
+        .padding()
     }
 }
 

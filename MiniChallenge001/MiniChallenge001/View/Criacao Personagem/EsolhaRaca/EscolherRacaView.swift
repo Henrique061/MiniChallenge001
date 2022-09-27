@@ -10,13 +10,12 @@ import SwiftUI
 struct EscolherRacaView: View {
     
     @Environment(\.dismiss) private var dismiss
-    
+    private var novaFicha: Binding<PersonagemFicha>
     @State private var racaEscolha: RacaEscolha? = nil
     @State private var subRacaEscolha: Subraca? = nil
-    private var completion: (_ raca: RacaEscolha, _ subraca: Subraca?) -> Void
     
-    public init(completion: @escaping (_ raca: RacaEscolha, _ subraca: Subraca?) -> Void) {
-        self.completion = completion
+    public init(novaFicha: Binding<PersonagemFicha>) {
+        self.novaFicha = novaFicha
     }
     
     var body: some View {
@@ -32,10 +31,14 @@ struct EscolherRacaView: View {
                     BotaoMostrarTracosRaca(racaEscolha: $racaEscolha, subRacaEscolha: $subRacaEscolha)
                     Spacer()
                     Button {
-                        completion(racaEscolha!, subRacaEscolha)
+                        novaFicha.wrappedValue.racaFinal = RacaFinalFactory.create(
+                            raca: (racaEscolha?.tipoRaca)!,
+                            subraca: (subRacaEscolha?.subraca) ?? nil,
+                            tracosRaca: (racaEscolha?.tracos)!,
+                            tracosSubraca: (subRacaEscolha?.tracosSubraca) ?? [])
                         dismiss()
                     } label: {
-                        Text("Salvar")
+                        TemplateBotaoConfirmacao("Salvar")
                     }.disabled(racaEscolha == nil)
                 }
                 .padding(.horizontal)
