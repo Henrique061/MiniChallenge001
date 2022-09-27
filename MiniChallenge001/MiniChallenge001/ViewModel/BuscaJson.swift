@@ -231,6 +231,21 @@ public class BuscaJson : Codable {
         return equipamentos[0]
     }
     
+    public static func buscaEquipamentoPorNomes(nomes: [String]) -> [EquipamentoJSON] {
+        guard let equipamentos = JsonFileUtil.getDataFromFiles(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var equipamentosRetorno: [EquipamentoJSON] = []
+        
+        for equipamento in equipamentos {
+            if nomes.contains(equipamento.nome) {
+                equipamentosRetorno.append(equipamento)
+            }
+        }
+        
+        return equipamentosRetorno
+    }
+    
     public static func buscaEquipamentoPorNomeQuantidade(nome: String, quantidade: Int) -> [EquipamentoJSON] {
         guard let equipamentos = JsonFileUtil.getDataFromFiles(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
             fatalError("Erro ao tentar converter magias")
