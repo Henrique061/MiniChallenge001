@@ -13,7 +13,7 @@ struct TodasHabilidadesView: View {
     
     var body: some View {
         
-        TelaPadrao {
+        TemplateTelaPadrao {
             List {
                 ForEach(0..<10) {nivel in
                     Section {

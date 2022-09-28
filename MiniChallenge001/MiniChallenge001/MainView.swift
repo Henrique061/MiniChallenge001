@@ -11,12 +11,12 @@ struct MainView: View {
     
     @ObservedObject private var fichas = PersonagemViewModel()
     
-    @State private var mostrarFicha: Bool = false
     @State private var fichaSelecionada: PersonagemFicha?
+    @State private var mostrarFicha: Bool = false
     
     var body: some View {
         NavigationView {
-            TelaPadrao {
+            TemplateTelaPadrao {
                 List {
                     ForEach($fichas.listaFichas, id: \.nome) { ficha in
                         Section {
@@ -39,6 +39,24 @@ struct MainView: View {
                 ContentView()
             }
             
+            .onAppear {
+                let caracteristicas = BuscaJson.buscaCaracteristicasPorClasse(classe: .bardo)
+                let subcaracteristicas = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BD_colegioConhecimento)
+                let tracos = BuscaJson.buscaTracosPorRaca(raca: .gnomo)
+                let subtracos = BuscaJson.buscaTracosPorSubraca(subraca: .gnomoFloresta)
+                
+                let template = PersonagemFicha()
+                template.id = 1
+                template.nome = "Ficha Teste"
+                template.nivel = 1
+                template.experiencica = 0
+                template.classeFinal = ClasseFinal(classePersonagem: .bardo, caracteristicasPersonagem: ["Tocador de violão"], subclassesPersonagem: [.init(subclase: .BD_colegioConhecimento, caracteristicas: caracteristicas + subcaracteristicas)], espacosDeMagia: [EspacosDeMagias(nivelPersonagem: 1, niveisCirculo: .init(nivelCirculo: [1], limiteUsoMagia: [10]))], pontosEspecificosNumerico: nil, pontosEspecificosTexto: nil)
+                template.racaFinal = RacaFinal(racaPersonagem: .gnomo, subracaPersonagem: TipoSubRaca.gnomoFloresta, tracos: tracos, tracosSubraca: subtracos)
+                template.antecedenteFinal = .criminoso
+                template.magias = BuscaJson.buscaMagiaPorClasse(classe: .bardo)
+                print(JsonFileUtil.DOCUMENTS_PATH.path)
+                fichas.createNewFicha(ficha: template)
+            }
             
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -77,7 +95,10 @@ struct LabelFicha: View {
         }
         return .patrulheiro
     }
-    private var nivel: Int
+    
+    private var nivel: Int {
+        return ficha.nivel
+    }
     
     private var formatClasseNivel: String {
         return "\(classe.rawValue) \(nivel)"
@@ -87,16 +108,9 @@ struct LabelFicha: View {
         VStack(alignment: .leading) {
             DisplayTextoBotao(titulo: "Nome", descricao: ficha.nome)
             Divider()
-            DisplayTextoBotao(titulo: "Classe e Nível", descricao: <#T##String#>)
-            PadraoDisplayInformacao(titulo: .constant("Classe e Nível"), descricao: .constant(formatClasseNivel))
+            DisplayTextoBotao(titulo: "Classe e Nível", descricao: formatClasseNivel)
         }
     }
-}
-
-struct TesteFicha {
-    var nome: String
-    var classe: ClassePersonagem
-    var nivel: Int
 }
 
 struct TemplateBackgroundInfo<Content:View>: View {
@@ -110,7 +124,25 @@ struct TemplateBackgroundInfo<Content:View>: View {
             content()
                 .padding(.horizontal)
         }
-        .frame(maxWidth: .infinity, maxHeight: 35, alignment: .leading)
+        .frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
         .padding(.bottom, 10)
     }
+}
+
+struct TemplateTelaPadrao<Content: View>: View {
+    
+    var content: () -> Content
+    
+    var body: some View {
+        ZStack {
+            Color(uiColor: .systemGray6)
+                .ignoresSafeArea(.all)
+            VStack() {
+                Divider()
+                content()
+            }
+        }
+        .frame(alignment: .top)
+    }
+    
 }

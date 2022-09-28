@@ -10,7 +10,7 @@ import Foundation
 //MARK: ARMA
 public class BuscaArma : Codable {
     public static func buscaArmaTipo(tipo: TipoArma, nomeExcluso: String) -> [String] {
-        guard let armas = JsonFileUtil.getDataFromFiles(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
+        guard let armas = JsonFileUtil.getDataFromBundle(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -26,7 +26,7 @@ public class BuscaArma : Codable {
     }
     
     public static func buscaArmaEstilo(estilo: EstiloArma, nomeExcluso: String) -> [String] {
-        guard let armas = JsonFileUtil.getDataFromFiles(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
+        guard let armas = JsonFileUtil.getDataFromBundle(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -42,7 +42,7 @@ public class BuscaArma : Codable {
     }
     
     public static func buscaArmaTipoEstilo(tipo: TipoArma, estilo: EstiloArma, nomeExcluso: String) -> [String] {
-        guard let armas = JsonFileUtil.getDataFromFiles(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
+        guard let armas = JsonFileUtil.getDataFromBundle(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -62,7 +62,7 @@ public class BuscaArma : Codable {
 public class BuscaJson : Codable {
     //MARK: ARMA JSON
     public static func buscaArmaTodos() -> [ArmaJSON] {
-        guard let armas = JsonFileUtil.getDataFromFiles(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
+        guard let armas = JsonFileUtil.getDataFromBundle(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -70,7 +70,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaArmaTipo(tipo: TipoArma) -> [ArmaJSON] {
-        guard let armas = JsonFileUtil.getDataFromFiles(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
+        guard let armas = JsonFileUtil.getDataFromBundle(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -86,7 +86,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaArmaPorNome(nome: String) -> ArmaJSON {
-        guard let armas = JsonFileUtil.getDataFromFiles(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
+        guard let armas = JsonFileUtil.getDataFromBundle(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -100,7 +100,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaArmaPorNomes(nomes: [String]) -> [ArmaJSON] {
-        guard let armas = JsonFileUtil.getDataFromFiles(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
+        guard let armas = JsonFileUtil.getDataFromBundle(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var armasRetorno: [ArmaJSON] = []
@@ -115,7 +115,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaArmaPorNomeQuantidade(nome: String, quantidade: Int) -> [ArmaJSON] {
-        guard let armas = JsonFileUtil.getDataFromFiles(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
+        guard let armas = JsonFileUtil.getDataFromBundle(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var armasRetorno: [ArmaJSON] = []
@@ -134,7 +134,7 @@ public class BuscaJson : Codable {
     
     //MARK: ARMADURA JSON
     public static func buscaArmadurasTodos() -> [ArmaduraJSON] {
-        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+        guard let armaduras = JsonFileUtil.getDataFromBundle(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -142,7 +142,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaArmadurasSemEscudo() -> [ArmaduraJSON] {
-        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+        guard let armaduras = JsonFileUtil.getDataFromBundle(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var armadurasRetorno: [ArmaduraJSON] = []
@@ -157,7 +157,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaArmadurasPorTipo(tipo: TipoArmadura) -> [ArmaduraJSON] {
-        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+        guard let armaduras = JsonFileUtil.getDataFromBundle(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var armadurasRetorno: [ArmaduraJSON] = []
@@ -172,7 +172,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaArmadurasPorTipos(tipos: [TipoArmadura]) -> [ArmaduraJSON] {
-        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+        guard let armaduras = JsonFileUtil.getDataFromBundle(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var armadurasRetorno: [ArmaduraJSON] = []
@@ -187,7 +187,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaArmaduraPorNome(nome: String) -> ArmaduraJSON {
-        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+        guard let armaduras = JsonFileUtil.getDataFromBundle(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -201,7 +201,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaArmaduraPorNomes(nomes: [String]) -> [ArmaduraJSON] {
-        guard let armaduras = JsonFileUtil.getDataFromFiles(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+        guard let armaduras = JsonFileUtil.getDataFromBundle(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var armadurasRetorno: [ArmaduraJSON] = []
@@ -218,7 +218,7 @@ public class BuscaJson : Codable {
     
     //MARK: EQUIPAMENTO JSON
     public static func buscaEquipamentoPorNome(nome: String) -> EquipamentoJSON {
-        guard let equipamentos = JsonFileUtil.getDataFromFiles(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
+        guard let equipamentos = JsonFileUtil.getDataFromBundle(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -232,7 +232,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaEquipamentoPorNomes(nomes: [String]) -> [EquipamentoJSON] {
-        guard let equipamentos = JsonFileUtil.getDataFromFiles(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
+        guard let equipamentos = JsonFileUtil.getDataFromBundle(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var equipamentosRetorno: [EquipamentoJSON] = []
@@ -247,7 +247,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaEquipamentoPorNomeQuantidade(nome: String, quantidade: Int) -> [EquipamentoJSON] {
-        guard let equipamentos = JsonFileUtil.getDataFromFiles(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
+        guard let equipamentos = JsonFileUtil.getDataFromBundle(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var equipamentosRetorno: [EquipamentoJSON] = []
@@ -266,7 +266,7 @@ public class BuscaJson : Codable {
     
     //MARK: FERRAMENTA JSON
     public static func buscaFerramentaPorNome(nome: String) -> FerramentaJSON {
-        guard let ferramentas = JsonFileUtil.getDataFromFiles(folder: .ferramenta, decoder: FerramentaJSON.self) as? [FerramentaJSON] else {
+        guard let ferramentas = JsonFileUtil.getDataFromBundle(folder: .ferramenta, decoder: FerramentaJSON.self) as? [FerramentaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -280,7 +280,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaFerramentaPorTipo(tipo: TipoFerramenta) -> [FerramentaJSON] {
-        guard let ferramentas = JsonFileUtil.getDataFromFiles(folder: .ferramenta, decoder: FerramentaJSON.self) as? [FerramentaJSON] else {
+        guard let ferramentas = JsonFileUtil.getDataFromBundle(folder: .ferramenta, decoder: FerramentaJSON.self) as? [FerramentaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var ferramentasRetorno: [FerramentaJSON] = []
@@ -296,7 +296,7 @@ public class BuscaJson : Codable {
     
     //MARK: MAGIA JSON
     public static func buscaMagiaPorNome(nome: String) -> MagiaJSON {
-        guard let magias = JsonFileUtil.getDataFromFiles(folder: .magia, decoder: MagiaJSON.self) as? [MagiaJSON] else {
+        guard let magias = JsonFileUtil.getDataFromBundle(folder: .magia, decoder: MagiaJSON.self) as? [MagiaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -311,7 +311,7 @@ public class BuscaJson : Codable {
     
     //MARK: CARACTERISTICAS JSON
     public static func buscaCaracteristicasPorClasse(classe: ClassePersonagem) -> [CaracteristicaJSON] {
-        guard let caracteristicas = JsonFileUtil.getDataFromFiles(folder: .caracterisca, decoder: CaracteristicaJSON.self) as? [CaracteristicaJSON] else {
+        guard let caracteristicas = JsonFileUtil.getDataFromBundle(folder: .caracterisca, decoder: CaracteristicaJSON.self) as? [CaracteristicaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var caracteristicasRetorno: [CaracteristicaJSON] = []
@@ -326,7 +326,7 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaCaracteristicasPorSubclasse(subclasse: SubclassePersonagem) -> [CaracteristicaJSON] {
-        guard let caracteristicas = JsonFileUtil.getDataFromFiles(folder: .caracterisca, decoder: CaracteristicaJSON.self) as? [CaracteristicaJSON] else {
+        guard let caracteristicas = JsonFileUtil.getDataFromBundle(folder: .caracterisca, decoder: CaracteristicaJSON.self) as? [CaracteristicaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         var caracteristicasRetorno: [CaracteristicaJSON] = []
@@ -342,7 +342,7 @@ public class BuscaJson : Codable {
     
     //MARK: TRACOS JSON
     public static func buscaTracosPorRaca(raca: TipoRaca) -> [TraitJSON] {
-        guard let tracos = JsonFileUtil.getDataFromFiles(folder: .trait, decoder: TraitJSON.self) as? [TraitJSON] else {
+        guard let tracos = JsonFileUtil.getDataFromBundle(folder: .trait, decoder: TraitJSON.self) as? [TraitJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -358,14 +358,14 @@ public class BuscaJson : Codable {
     }
     
     public static func buscaTracosPorSubraca(subraca: TipoSubRaca) -> [TraitJSON] {
-        if let tracos = JsonFileUtil.getDataFromFiles(folder: .trait, decoder: TraitJSON.self) as? [TraitJSON] {
+        if let tracos = JsonFileUtil.getDataFromBundle(folder: .trait, decoder: TraitJSON.self) as? [TraitJSON] {
             return tracos.filter({$0.subraca == subraca})
         }
         return []
     }
     
     public static func buscarTracos(raca: TipoRaca, subraca: TipoSubRaca?) -> [TraitJSON] {
-        if let tracos = JsonFileUtil.getDataFromFiles(folder: .trait, decoder: TraitJSON.self) as? [TraitJSON] {
+        if let tracos = JsonFileUtil.getDataFromBundle(folder: .trait, decoder: TraitJSON.self) as? [TraitJSON] {
             var aux: [TraitJSON] = []
             if let subraca = subraca {
                 for traco in tracos {
@@ -384,12 +384,19 @@ public class BuscaJson : Codable {
         }
         return []
     }
+    
+    public static func buscaMagiaPorClasse(classe: ClassePersonagem) -> [MagiaJSON] {
+        if let magias = JsonFileUtil.getDataFromBundle(folder: .magia, decoder: MagiaJSON.self) as? [MagiaJSON] {
+            return magias.filter({$0.classes.contains(classe)})
+        }
+        return []
+    }
 }
 
 //MARK: FERRAMENTA
 public class BuscaFerramenta : Codable {
     public static func buscaFerramentaTipo(tipo: TipoFerramenta, nomeExcluso: String) -> [String] {
-        guard let ferramentas = JsonFileUtil.getDataFromFiles(folder: .ferramenta, decoder: FerramentaJSON.self) as? [FerramentaJSON] else {
+        guard let ferramentas = JsonFileUtil.getDataFromBundle(folder: .ferramenta, decoder: FerramentaJSON.self) as? [FerramentaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -408,7 +415,7 @@ public class BuscaFerramenta : Codable {
 //MARK: EQUIPAMENTO
 public class BuscaEquipamento : Codable {
     public static func buscaEquipamentoCategoria(categoria: CategoriaEquipamento, nomeExcluso: String) -> [String] {
-        guard let equipamentos = JsonFileUtil.getDataFromFiles(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
+        guard let equipamentos = JsonFileUtil.getDataFromBundle(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         
@@ -427,7 +434,7 @@ public class BuscaEquipamento : Codable {
 //MARK: MAGIA
 public class BuscaMagia : Codable {
     public static func buscaMagiaClasseNivel(classe: ClassePersonagem, nivel: Int) -> [String] {
-        guard let magias = JsonFileUtil.getDataFromFiles(folder: .magia, decoder: MagiaJSON.self) as? [MagiaJSON] else {
+        guard let magias = JsonFileUtil.getDataFromBundle(folder: .magia, decoder: MagiaJSON.self) as? [MagiaJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
         

@@ -17,7 +17,7 @@ struct Habilidades: View {
     
     var body: some View {
         NavigationView {
-            TelaPadrao {
+            TemplateTelaPadrao {
                 List {
                     ForEach(0..<10) {nivel in
                         Section {

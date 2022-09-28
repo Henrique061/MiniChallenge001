@@ -21,7 +21,7 @@ struct Inventario: View {
     
     var body: some View {
         NavigationView {
-            TelaPadrao {
+            TemplateTelaPadrao {
                 List {
                     Section {
                         CapacidadeCarga(cargaUtilizada: .constant(10.0), cargaTotal: .constant(20.1))

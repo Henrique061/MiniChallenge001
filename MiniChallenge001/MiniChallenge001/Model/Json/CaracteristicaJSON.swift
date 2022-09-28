@@ -11,7 +11,7 @@ public struct CaracteristicaJSON: Json {
     var id: Int
     var nome: String
     var classe: ClassePersonagem
-    var subclasse: SubclassePersonagem
+    var subclasse: SubclassePersonagem?
     var nivel: [Int]
     var descricao: String
 }

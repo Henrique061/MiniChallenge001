@@ -81,21 +81,3 @@ struct PadraoDisplayInformacao: View {
         }
     }
 }
-
-struct TelaPadrao<Content: View>: View {
-    
-    var content: () -> Content
-    
-    var body: some View {
-        ZStack {
-            Color(uiColor: .systemGray6)
-                .ignoresSafeArea(.all)
-            VStack() {
-                Divider()
-                content()
-            }
-        }
-        .frame(alignment: .top)
-    }
-    
-}

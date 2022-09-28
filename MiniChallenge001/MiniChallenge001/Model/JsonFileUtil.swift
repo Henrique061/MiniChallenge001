@@ -12,14 +12,20 @@ class JsonFileUtil {
     
     private static let STANDARD_PATH = "Content"
     
-    public static func getFilesURLFromFolder(folder name: String) -> [URL] {
+    public static var DOCUMENTS_PATH: URL {
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return urls[0]
+            .appendingPathComponent(".inventure").appendingPathComponent("sheets")
+    }
+    
+    public static func getFilesURLFromBundle(folder name: String) -> [URL] {
         let folderPath = "\(STANDARD_PATH)/\(name)"
         guard let filesURL = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: folderPath) else { return [] }
         return filesURL
     }
     
-    public static func getDataFromFiles<T:Json>(folder name: FolderName, decoder: T.Type) -> [Json] {
-        let urls = getFilesURLFromFolder(folder: name.rawValue)
+    public static func getDataFromBundle<T:Json>(folder name: BundleFolderName, decoder: T.Type) -> [Json] {
+        let urls = getFilesURLFromBundle(folder: name.rawValue)
         var items: [Json] = []
         for url in urls {
             do {
@@ -32,16 +38,53 @@ class JsonFileUtil {
         }
         return items
     }
+    
+    private static func createSheetsFolderPath() throws {
+        if !DOCUMENTS_PATH.hasDirectoryPath {
+            try FileManager.default.createDirectory(at: DOCUMENTS_PATH, withIntermediateDirectories: true)
+        }
+    }
+    
+    public static func getNewIdForSheet() throws -> Int {
+        try createSheetsFolderPath()
+        let arr = try FileManager.default.contentsOfDirectory(atPath: DOCUMENTS_PATH.path)
+        return arr.count + 1
+    }
+    
+    public static func write<T:Json>(content: T) throws {
+        try createSheetsFolderPath()
+        let encodedContent = try JSONEncoder().encode(content)
+        let fileName = "\(content.nome)-\(content.id)".lowercased().replacingOccurrences(of: " ", with: "+")
+        let url = DOCUMENTS_PATH.appendingPathComponent(fileName).appendingPathExtension("json")
+        FileManager.default.createFile(atPath: url.path,contents: encodedContent)
+    }
+    
+    public static func getAllSheets() throws -> [PersonagemFicha] {
+        let sheetsPath = try FileManager.default.contentsOfDirectory(atPath: DOCUMENTS_PATH.path)
+        var sheetsArr: [PersonagemFicha] = []
+        for path in sheetsPath {
+//            if let url = URL(string: path) {
+            let url = URL.init(fileURLWithPath: path)
+                let data = try Data(contentsOf: url)
+                let decodedContent = try JSONDecoder().decode(PersonagemFicha.self, from: data)
+                sheetsArr.append(decodedContent)
+//            }
+        }
+        return sheetsArr
+    }
 }
 
-public enum FolderName: String {
+public enum DocumentsFolderName: String {
+    case sheets = "sheets"
+}
+
+public enum BundleFolderName: String {
     case arma = "arma"
     case armaduras = "armaduras"
     case bugiganga = "bugiganga"
     case caracterisca = "caracteristica"
     case equipamento = "equipamento"
     case ferramenta = "ferramenta"
-    case fichas = "fichas"
     case itemMontaria = "item-montaria"
     case magia = "magia"
     case montaria = "montaria"

@@ -16,7 +16,7 @@ struct Combate: View {
     
     var body: some View {
         NavigationView {
-            TelaPadrao {
+            TemplateTelaPadrao {
                 Text("Tela principal do personagem")
             }
             

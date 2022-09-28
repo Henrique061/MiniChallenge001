@@ -20,7 +20,7 @@ struct EscolherRacaView: View {
     
     var body: some View {
         VStack {
-            TelaPadrao {
+            TemplateTelaPadrao {
                 VStack(spacing: 10) {
                     MenuEscolhaRaca(racaEscolha: $racaEscolha, subRacaEscolha: $subRacaEscolha)
                         .padding(.top, 10)

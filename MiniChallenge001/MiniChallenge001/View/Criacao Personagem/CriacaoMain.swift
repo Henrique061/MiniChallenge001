@@ -16,7 +16,7 @@ struct CriacaoMain: View {
     }
     
     var body: some View {
-        TelaPadrao {
+        TemplateTelaPadrao {
             VStack() {
                 Text("Para começarmos, preencha abaixo os dados de seu peronsagem")
                 
