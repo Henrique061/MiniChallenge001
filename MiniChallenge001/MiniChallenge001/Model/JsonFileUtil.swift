@@ -62,13 +62,12 @@ class JsonFileUtil {
     public static func getAllSheets() throws -> [PersonagemFicha] {
         let sheetsPath = try FileManager.default.contentsOfDirectory(atPath: DOCUMENTS_PATH.path)
         var sheetsArr: [PersonagemFicha] = []
-        for path in sheetsPath {
-//            if let url = URL(string: path) {
-            let url = URL.init(fileURLWithPath: path)
-                let data = try Data(contentsOf: url)
+        for fileName in sheetsPath {
+            let completePath = DOCUMENTS_PATH.appendingPathComponent(fileName)
+            if let data = FileManager.default.contents(atPath: completePath.path) {
                 let decodedContent = try JSONDecoder().decode(PersonagemFicha.self, from: data)
                 sheetsArr.append(decodedContent)
-//            }
+            }
         }
         return sheetsArr
     }

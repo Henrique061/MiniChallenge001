@@ -11,6 +11,10 @@ class PersonagemViewModel: ObservableObject {
     
     @Published var listaFichas: [PersonagemFicha] = []
     
+    public init() {
+        fetch()
+    }
+    
     public func fetch() {
         do {
             listaFichas = try JsonFileUtil.getAllSheets()

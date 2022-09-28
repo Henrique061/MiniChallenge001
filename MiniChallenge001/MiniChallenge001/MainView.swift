@@ -18,7 +18,7 @@ struct MainView: View {
         NavigationView {
             TemplateTelaPadrao {
                 List {
-                    ForEach($fichas.listaFichas, id: \.nome) { ficha in
+                    ForEach($fichas.listaFichas, id: \.id) { ficha in
                         Section {
                             Button {
                                 fichaSelecionada = ficha.wrappedValue
@@ -37,25 +37,6 @@ struct MainView: View {
             
             .fullScreenCover(isPresented: $mostrarFicha) {
                 ContentView()
-            }
-            
-            .onAppear {
-                let caracteristicas = BuscaJson.buscaCaracteristicasPorClasse(classe: .bardo)
-                let subcaracteristicas = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BD_colegioConhecimento)
-                let tracos = BuscaJson.buscaTracosPorRaca(raca: .gnomo)
-                let subtracos = BuscaJson.buscaTracosPorSubraca(subraca: .gnomoFloresta)
-                
-                let template = PersonagemFicha()
-                template.id = 1
-                template.nome = "Ficha Teste"
-                template.nivel = 1
-                template.experiencica = 0
-                template.classeFinal = ClasseFinal(classePersonagem: .bardo, caracteristicasPersonagem: ["Tocador de violão"], subclassesPersonagem: [.init(subclase: .BD_colegioConhecimento, caracteristicas: caracteristicas + subcaracteristicas)], espacosDeMagia: [EspacosDeMagias(nivelPersonagem: 1, niveisCirculo: .init(nivelCirculo: [1], limiteUsoMagia: [10]))], pontosEspecificosNumerico: nil, pontosEspecificosTexto: nil)
-                template.racaFinal = RacaFinal(racaPersonagem: .gnomo, subracaPersonagem: TipoSubRaca.gnomoFloresta, tracos: tracos, tracosSubraca: subtracos)
-                template.antecedenteFinal = .criminoso
-                template.magias = BuscaJson.buscaMagiaPorClasse(classe: .bardo)
-                print(JsonFileUtil.DOCUMENTS_PATH.path)
-                fichas.createNewFicha(ficha: template)
             }
             
             .navigationBarTitleDisplayMode(.inline)
