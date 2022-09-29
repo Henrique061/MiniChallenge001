@@ -14,20 +14,28 @@ struct TodasHabilidadesView: View {
     var body: some View {
         
         TemplateTelaPadrao {
-            VStack(alignment: .leading) {
-                ScrollView {
-                    ForEach(0..<10) {nivel in
-                        HStack() {
+            ScrollView {
+                LazyVStack {
+                    ForEach(0..<10) { nivel in
+                        ZStack {
+                            Color("ContentBackground")
                             SecaoNivelMagia {
-                                ForEach(Array(vmmagias.filterMagiasByLevel(nivel: nivel).enumerated()), id: \.offset) { index, magia in
-                                    MagiaDetailCellWithButton(magia: magia)
+                                LazyVStack(spacing: 0) {
+                                    Divider()
+                                    let magias = vmmagias.filterMagiasByLevel(nivel: nivel)
+                                    ForEach(Array(magias.enumerated()), id: \.offset) { index, magia in
+                                        MagiaDetailCellWithButton(magia: magia)
+                                        if (index < magias.count - 1) {
+                                            Divider()
+                                        }
+                                    }
                                 }
                             } label: {
                                 HeaderMagiaSection(nivel)
                             }
                         }
-                        .padding(.vertical, 2)
-                        .padding(.horizontal, 10)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                        .padding(.horizontal, 20)
                     }
                 }
             }
@@ -52,18 +60,17 @@ struct MagiaDetailCellWithButton: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                MagiaDetailCell(magia: magia)
-                Button {
-                    print("Magia \(magia.nome) aprendida")
-                } label: {
-                    Text("Aprender")
-                        .font(.system(size: 14, weight: .regular, design: .rounded))
-                }
-                .buttonStyle(.borderless)
+        HStack(spacing: 0) {
+            MagiaDetailCell(magia: magia)
+//            Divider()
+            Button {
+                print("Magia \(magia.nome) aprendida")
+            } label: {
+                Text("Aprender")
+                    .font(.system(size: 14, weight: .regular, design: .rounded))
+                    .padding(.horizontal, 10)
             }
-            Divider()
+            .buttonStyle(.borderless)
         }
     }
 }

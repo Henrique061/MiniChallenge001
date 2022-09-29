@@ -21,20 +21,24 @@ struct Habilidades: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(0..<10) { nivel in
-                            SecaoNivelMagia {
-                                LazyVStack(spacing: 0) {
-                                    let magias = vmmagias.filterMagiasByLevel(nivel: nivel)
-                                    ForEach(Array(magias.enumerated()), id: \.offset) { index, magia in
-                                        MagiaDetailCell(magia: magia)
-                                        if (index < magias.count - 1) {
-                                            Divider()
+                            ZStack {
+                                Color("ContentBackground")
+                                SecaoNivelMagia {
+                                    LazyVStack(spacing: 0) {
+                                        Divider()
+                                        let magias = vmmagias.filterMagiasByLevel(nivel: nivel)
+                                        ForEach(Array(magias.enumerated()), id: \.offset) { index, magia in
+                                            MagiaDetailCell(magia: magia)
+                                            if (index < magias.count - 1) {
+                                                Divider()
+                                            }
                                         }
                                     }
+                                } label: {
+                                    HeaderMagiaSection(nivel)
                                 }
-                                .clipShape(RoundedRectangle(cornerRadius: 5))
-                            } label: {
-                                HeaderMagiaSection(nivel)
                             }
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
                             .padding(.horizontal, 20)
                         }
                     }
@@ -76,8 +80,7 @@ struct SecaoNivelMagia<Label, Content> : View where Label: View, Content: View {
             content()
         } label: {
             label()
-                .padding(.bottom, 10)
-        }
+        }.buttonStyle(CustomButtonStyle())
     }
 }
 
@@ -110,7 +113,7 @@ struct MagiaDetailCell: View {
             mostrarDetalhes.toggle()
         } label: {
             DisplayTextoBotao(titulo: magia.nome, descricao: magia.escola.rawValue)
-        }.buttonStyle(MagiaCellStyle())
+        }.buttonStyle(CustomButtonStyle())
         
         
         .sheet(isPresented: $mostrarDetalhes) {
@@ -119,7 +122,7 @@ struct MagiaDetailCell: View {
     }
 }
 
-struct MagiaCellStyle: ButtonStyle {
+struct CustomButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(.vertical, 5)
