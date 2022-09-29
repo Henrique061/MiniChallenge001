@@ -20,11 +20,11 @@ public class ClasseConcreteBuilder : ClasseBuilder {
     }
     
     func getClassePersonagem() -> ClassePersonagem {
-        return self.classe.classePersonagem!
+        return self.classe.classePersonagem
     }
 
     func setNomeClasse() {
-        self.classe.nomeClasse = self.classe.classePersonagem?.rawValue
+        self.classe.nomeClasse = self.classe.classePersonagem.rawValue
     }
     
     //MARK: CARACTERISTICA

@@ -37,7 +37,6 @@ protocol RacaBuilder {
     func setProArmaduras(_ armaduras: [ArmaduraJSON])
     func setSubracaProfArmadura(_ profSubaraca: [ProficienciaArmaduraPorSubraca])
     func setProfPericias(_ pericias: [Pericia])
-    func setSubracaProfPericia(_ profSubaraca: [ProficienciaPericiaPorSubraca])
     
     func setPossuiEscolhaProfFerramentas(_ possui: Bool)
     func setEscolhasProfFerramentas(_ ferramentas: [String])

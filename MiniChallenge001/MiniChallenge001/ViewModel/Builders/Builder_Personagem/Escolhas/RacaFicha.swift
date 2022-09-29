@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct RacaFinal : Codable {
+public struct RacaFicha : Codable {
     var racaPersonagem: TipoRaca = .none
     var subracaPersonagem: TipoSubRaca = .none
     var tracos: [TraitJSON] = []
@@ -16,8 +16,8 @@ public struct RacaFinal : Codable {
 
 public class RacaFinalFactory {
     
-    public static func create(raca: TipoRaca, subraca: TipoSubRaca, tracosRaca: [TraitJSON], tracosSubraca: [TraitJSON]) -> RacaFinal {
-        return RacaFinal(racaPersonagem: raca, subracaPersonagem: subraca, tracos: tracosRaca, tracosSubraca: tracosSubraca)
+    public static func create(raca: TipoRaca, subraca: TipoSubRaca, tracosRaca: [TraitJSON], tracosSubraca: [TraitJSON]) -> RacaFicha {
+        return RacaFicha(racaPersonagem: raca, subracaPersonagem: subraca, tracos: tracosRaca, tracosSubraca: tracosSubraca)
     }
     
 }

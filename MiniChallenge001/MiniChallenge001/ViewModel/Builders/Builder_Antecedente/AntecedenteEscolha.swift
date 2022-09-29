@@ -39,19 +39,19 @@ public enum VariacaoAntecedente : String, Codable {
 }
 
 public class AntecedenteEscolha {
-    var tipoAntecedente: AntecedentePersonagem?
-    var nomeAntecente: String?
-    var variacaoAntecedente: VariacaoAntecedente?
-    var profPericias: [Pericia]?
-    var profFerramentas: [FerramentaJSON]?
-    var escolhaProfFerramentas: [String]?
-    var quantiaEscolhaIdioma: Int?
-    var equipamentosIniciais: [EquipamentoJSON]?
-    var ferramentasIniciais: [FerramentaJSON]?
-    var armasIniciais: [ArmaJSON]?
-    var escolhaEquipamentoInicial: [String]?
-    var escolhaFerramentaInicial: [String]?
+    var tipoAntecedente: AntecedentePersonagem = .none
+    var nomeAntecente: String = ""
+    var variacaoAntecedente: VariacaoAntecedente = .none
+    var profPericias: [Pericia] = []
+    var profFerramentas: [FerramentaJSON] = []
+    var escolhaProfFerramentas: [String] = []
+    var quantiaEscolhaIdioma: Int = 0
+    var equipamentosIniciais: [EquipamentoJSON] = []
+    var ferramentasIniciais: [FerramentaJSON] = []
+    var armasIniciais: [ArmaJSON] = []
+    var escolhaEquipamentoInicial: [String] = []
+    var escolhaFerramentaInicial: [String] = []
     
-    var dinheiroInicial: Moeda?
+    var dinheiroInicial: Moeda = Moeda()
     
 }

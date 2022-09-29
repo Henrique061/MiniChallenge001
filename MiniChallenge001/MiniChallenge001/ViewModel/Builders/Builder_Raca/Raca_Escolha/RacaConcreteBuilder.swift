@@ -140,11 +140,6 @@ public class RacaConcreteBuilder : RacaBuilder {
         self.raca.profPericias = pericias
     }
     
-    //MARK: SUBRACA PROF PERICIA
-    func setSubracaProfPericia(_ profSubaraca: [ProficienciaPericiaPorSubraca]) {
-        self.raca.subracaProfPericia = profSubaraca
-    }
-    
     //MARK: POSSUI ESCOLHA FERRAMENTA?
     func setPossuiEscolhaProfFerramentas(_ possui: Bool) {
         self.raca.possuiEscolhaProfFerramentas = possui

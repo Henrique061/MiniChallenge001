@@ -366,11 +366,6 @@ public class RacaDirector {
         
         let profPericias: [Pericia] = [.intimidacao]
         
-        var magias: [MagiaJSON] = []
-        magias.append(BuscaJson.buscaMagiaPorNome(nome: "Taumaturgia"))
-        magias.append(BuscaJson.buscaMagiaPorNome(nome: "Repreensão Infernal"))
-        magias.append(BuscaJson.buscaMagiaPorNome(nome: "Escuridão"))
-        
         // METODOS /////////////////////
         builder?.setPossuiSubraca(false)
         builder?.setTracos(tracos: tracos)
@@ -383,7 +378,6 @@ public class RacaDirector {
         builder?.setProfPericias(profPericias)
         builder?.setPossuiEscolhaProfFerramentas(false)
         builder?.setPossuiEscolhaProfPericias(false)
-        builder?.setMagiasRecebidas(magias)
     }
     
     //MARK: TIEFLING
@@ -400,6 +394,11 @@ public class RacaDirector {
             IdiomaAlfabeto(idioma: .comum, alfabeto: .comum, isPadrao: true)
         ]
         
+        var magias: [MagiaJSON] = []
+        magias.append(BuscaJson.buscaMagiaPorNome(nome: "Taumaturgia"))
+        magias.append(BuscaJson.buscaMagiaPorNome(nome: "Repreensão Infernal"))
+        magias.append(BuscaJson.buscaMagiaPorNome(nome: "Escuridão"))
+        
         // METODOS /////////////////////
         builder?.setPossuiSubraca(false)
         builder?.setTracos(tracos: tracos)
@@ -411,5 +410,6 @@ public class RacaDirector {
         builder?.setSubracaPossuiEscolhaIdioma(false)
         builder?.setPossuiEscolhaProfFerramentas(false)
         builder?.setPossuiEscolhaProfPericias(false)
+        builder?.setMagiasRecebidas(magias)
     }
 }

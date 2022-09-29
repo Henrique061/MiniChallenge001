@@ -22,12 +22,12 @@ public class AntecedenteConcreteBuilder : AntecedenteBuilder {
     
     //MARK: GET ANTECEDENTE
     func getAntecedente() -> AntecedentePersonagem {
-        return self.antecedente.tipoAntecedente!
+        return self.antecedente.tipoAntecedente
     }
     
     //MARK: NOME ANTECEDENTE
     func setNomeAntecedente() {
-        self.antecedente.nomeAntecente = self.antecedente.tipoAntecedente?.rawValue
+        self.antecedente.nomeAntecente = self.antecedente.tipoAntecedente.rawValue
     }
     
     //MARK: VARIACAO ANTECEDENTE

@@ -59,8 +59,8 @@ public class PersonagemFicha: Json {
     var experiencica: Int = 0
     
     //MARK: CLASSES
-    var classeFinal: ClasseFinal = ClasseFinal()
-    var racaFinal: RacaFinal = RacaFinal()
+    var classeFinal: ClasseFicha = ClasseFicha()
+    var racaFinal: RacaFicha = RacaFicha()
     var antecedenteFinal: AntecedentePersonagem = .none
     
     //MARK: INVENTARIO JSON

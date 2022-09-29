@@ -136,40 +136,40 @@ enum Pericia : String, CaseIterable, Codable {
 
 //MARK: Classe
 public class ClasseEscolha {
-    var classePersonagem: ClassePersonagem? // enum de classes
-    var nomeClasse: String?
-    var caracteristicasClasse: [CaracteristicaJSON]? // COLOCAR CARACTERISTICAS AQUI
-    var subClasses: [SubClasseEscolha]?
-    var dadoVida: String?
-    var profSalvaguardas: [AtributosSalvaguarda]?
-    var profArmas: [ArmaJSON]?
-    var profArmaduras: [ArmaduraJSON]?
-    var profFerramentas: [FerramentaJSON]?
-    var escolhasProficienciaFerramenta: [EscolhaOpcao]?
+    var classePersonagem: ClassePersonagem = .none // enum de classes
+    var nomeClasse: String = ""
+    var caracteristicasClasse: [CaracteristicaJSON] = [] // COLOCAR CARACTERISTICAS AQUI
+    var subClasses: [SubClasseEscolha] = []
+    var dadoVida: String = ""
+    var profSalvaguardas: [AtributosSalvaguarda] = []
+    var profArmas: [ArmaJSON] = []
+    var profArmaduras: [ArmaduraJSON] = []
+    var profFerramentas: [FerramentaJSON] = []
+    var escolhasProficienciaFerramenta: [EscolhaOpcao] = []
     
-    var opcoesEquipamento: [OpcaoEquipamento]?
-    var armasIniciais: [ArmaJSON]?
-    var armadurasIniciais: [ArmaduraJSON]?
-    var equipamentosIniciais: [EquipamentoJSON]?
-    var ferramentasIniciais: [FerramentaJSON]?
-    var pacotesIniciais: [PacoteEquipamento]?
+    var opcoesEquipamento: [OpcaoEquipamento] = []
+    var armasIniciais: [ArmaJSON] = []
+    var armadurasIniciais: [ArmaduraJSON] = []
+    var equipamentosIniciais: [EquipamentoJSON] = []
+    var ferramentasIniciais: [FerramentaJSON] = []
+    var pacotesIniciais: [PacoteEquipamento] = []
     
-    var profPericias: [Pericia]?
-    var quantiaProfPericias: Int?
-    var possuiMagias: Bool?
-    var magiaApenasSubclasse: Bool?
-    var subclasseComMagia: SubclassePersonagem?
-    var magiasConhecidas: [MagiasConhecidas]?
-    var espacosDeMagia: [EspacosDeMagias]?
-    var pontosEspecificosNumerico: [PontoEspecificoNumerico]?
-    var pontosEspecificosTexto: [PontoEspecificoTexto]?
+    var profPericias: [Pericia] = []
+    var quantiaProfPericias: Int = 0
+    var possuiMagias: Bool = false
+    var magiaApenasSubclasse: Bool = false
+    var subclasseComMagia: SubclassePersonagem = .none
+    var magiasConhecidas: [MagiasConhecidas] = []
+    var espacosDeMagia: [EspacosDeMagias] = []
+    var pontosEspecificosNumerico: [PontoEspecificoNumerico] = []
+    var pontosEspecificosTexto: [PontoEspecificoTexto] = []
 }
 
 //MARK: SubClasse
 struct SubClasseEscolha : Codable{
-    var subclasse: SubclassePersonagem
-    var subclasseNome: String
-    var caracteristicasSubClasse: [CaracteristicaJSON] // COLOCAR CARACTERISTICAS AQUI
+    var subclasse: SubclassePersonagem = .none
+    var subclasseNome: String = ""
+    var caracteristicasSubClasse: [CaracteristicaJSON] = [] // COLOCAR CARACTERISTICAS AQUI
     
     init (subclase: SubclassePersonagem, caracteristicas: [CaracteristicaJSON]) {
         self.subclasse = subclase

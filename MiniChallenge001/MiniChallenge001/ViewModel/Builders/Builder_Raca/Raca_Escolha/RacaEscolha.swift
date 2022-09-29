@@ -147,7 +147,6 @@ public class RacaEscolha {
     var profArmaduras: [ArmaduraJSON] = []
     var subracaProfArmaduras: [ProficienciaArmaduraPorSubraca] = []
     var profPericias: [Pericia] = []
-    var subracaProfPericia: [ProficienciaPericiaPorSubraca] = []
     var possuiEscolhaProfFerramentas: Bool = false
     var escolhasProfFerramentas: [String] = []
     var possuiEscolhaProfPericias: Bool = false
