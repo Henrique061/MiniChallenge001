@@ -40,6 +40,17 @@ struct MainView: View {
                 ContentView()
             }
             
+            .onAppear {
+                let template = PersonagemFicha()
+                do { try template.id = JsonFileUtil.getNewIdForSheet() }
+                catch {}
+                template.nome = "Ficha Manhattan"
+                template.nomePersonagem = "Manhattan The Great"
+                template.classeFinal = ClasseFinal(classePersonagem: .monge)
+                template.nivel = 18
+                fichas.createNewFicha(ficha: template)
+            }
+            
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

@@ -71,9 +71,14 @@ class JsonFileUtil {
         for fileName in sheetsPath {
             if fileName.contains(".DS_Store") { continue }
             let completePath = DOCUMENTS_PATH.appendingPathComponent(fileName)
+            print(completePath.path)
             if let data = FileManager.default.contents(atPath: completePath.path) {
-                let decodedContent = try JSONDecoder().decode(PersonagemFicha.self, from: data)
-                sheetsArr.append(decodedContent)
+                do {
+                    let decodedContent = try JSONDecoder().decode(PersonagemFicha.self, from: data)
+                    sheetsArr.append(decodedContent)
+                } catch {
+                    continue
+                }
             }
         }
         return sheetsArr
