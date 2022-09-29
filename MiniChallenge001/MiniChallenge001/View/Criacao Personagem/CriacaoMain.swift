@@ -124,9 +124,9 @@ struct DisplayTextoBotao: View {
 
 struct MenuSelecaoTendencia: View {
     
-    private var selectedItem: Binding<TipoTendencia?>
+    private var selectedItem: Binding<TipoTendencia>
     
-    init(selectedItem: Binding<TipoTendencia?>) {
+    init(selectedItem: Binding<TipoTendencia>) {
         self.selectedItem = selectedItem
     }
     
@@ -139,7 +139,7 @@ struct MenuSelecaoTendencia: View {
             }
         } label: {
             TemplateBackgroundInfo {
-                DisplayTextoBotao(titulo: "Tendência", descricao: selectedItem.wrappedValue?.rawValue ?? "Toque para selecionar...")
+                DisplayTextoBotao(titulo: "Tendência", descricao: selectedItem.wrappedValue == .none ? "Toque para selecionar..." : selectedItem.wrappedValue.rawValue)
             }
         }
     }

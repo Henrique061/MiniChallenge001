@@ -71,19 +71,9 @@ struct MainView_Previews: PreviewProvider {
 
 struct LabelFicha: View {
     @Binding var ficha: PersonagemFicha
-    private var classe: ClassePersonagem {
-        if let classe = ficha.classeFinal?.classePersonagem {
-            return classe
-        }
-        return .patrulheiro
-    }
-    
-    private var nivel: Int {
-        return ficha.nivel
-    }
     
     private var formatClasseNivel: String {
-        return "\(classe.rawValue) \(nivel)"
+        return "\(ficha.classeFinal.classePersonagem.rawValue) \(ficha.nivel)"
     }
     
     var body: some View {
