@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BugigangaJSON: Json {
+public struct BugigangaJSON: Json {
     var id: Int
     var nome: String
     var valor: Int

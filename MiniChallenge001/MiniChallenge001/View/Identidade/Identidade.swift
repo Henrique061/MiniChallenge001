@@ -13,17 +13,17 @@ import SwiftUI
 struct Identidade: View {
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack{
-            List{
-                Section{
-                Text("Nome")
-                Text("Nome")
-                }
-                Section{  Text("Nome")
-                Text("Nome")
-                }
-                    }.listStyle(.insetGrouped)
+                List{
+                    Section{
+                        Text("Nome")
+                        Text("Nome")
+                    }
+                    Section{  Text("Nome")
+                        Text("Nome")
+                    }
+                }.listStyle(.insetGrouped)
             }
             
             .navigationBarTitleDisplayMode(.inline)
@@ -36,7 +36,7 @@ struct Identidade: View {
                         print("Pressed")
                     } label: {
                         Image("Aprimoramento").accentColor(.black)
-                
+                        
                     }
                 }
             }

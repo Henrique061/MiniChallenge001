@@ -14,7 +14,7 @@ protocol ClasseBuilder {
     func getClassePersonagem() -> ClassePersonagem
     func setNomeClasse()
     
-    func setCaracteristicasClasse(_ caracteristicas: [String])
+    func setCaracteristicasClasse(_ caracteristicas: [CaracteristicaJSON])
     func setSubClasses(_ subClasses: [SubClasseEscolha])
     func setDadoVida(_ dado: String)
     
@@ -22,11 +22,14 @@ protocol ClasseBuilder {
     func setProfArmas(_ armas: [ArmaJSON])
     func setProfArmaduras(_ armaduras: [ArmaduraJSON])
     func setProfFerramentas(_ ferramentas: [FerramentaJSON])
+    func setEscolhasProficienciaFerramenta(_ escolhas: [EscolhaOpcao])
     
-    func setArmasIniciais(_ armas: [ArmaJSON])
-    func setArmadurasIniciais(_ armaduras: [ArmaduraJSON])
-    func setEquipamentosIniciais(_ equipamentos: [EquipamentoJSON])
-    func setFerramentasIniciais(_ ferramentas: [FerramentaJSON])
+    func setOpcoes(opcoes: [OpcaoEquipamento])
+    func setArmasIniciais(armas: [ArmaJSON])
+    func setArmadurasIniciais(armaduras: [ArmaduraJSON])
+    func setEquipamentosIniciais(equipamentos: [EquipamentoJSON])
+    func setFerramentasIniciais(ferramentas: [FerramentaJSON])
+    func setPacotesIniciais(pacotes: [PacoteEquipamento])
     
     func setProfPericias(_ pericias: [Pericia])
     func setQuantiaEscolhaProfPericia(_ quantia: Int)

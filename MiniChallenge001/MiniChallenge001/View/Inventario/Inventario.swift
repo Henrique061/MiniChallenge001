@@ -20,13 +20,17 @@ struct Inventario: View {
     ]
     
     var body: some View {
-        NavigationView{
-            TelaPadrao {
+        NavigationView {
+            TemplateTelaPadrao {
                 List {
                     Section {
                         CapacidadeCarga(cargaUtilizada: .constant(10.0), cargaTotal: .constant(20.1))
                         ForEach($mochila.itens, id: \.self) { item in
-                            Text(item.wrappedValue)
+                            Button {
+                                
+                            } label: {
+                                Text(item.wrappedValue)
+                            }
                         }
                     } header: {
                         Text("Mochila")
@@ -35,9 +39,7 @@ struct Inventario: View {
                     
                     ForEach($montarias, id: \.nome) { montaria in
                         CapacidadeCarga(cargaUtilizada: .constant(50), cargaTotal: .constant(100))
-//                        ForEach(montaria.itens, id: \.self) { item in
-//                            Text(item.wrappedValue)
-//                        }
+                        
                     }
                 }
             }

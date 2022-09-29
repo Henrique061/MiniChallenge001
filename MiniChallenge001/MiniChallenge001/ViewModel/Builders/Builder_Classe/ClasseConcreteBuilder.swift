@@ -28,7 +28,7 @@ public class ClasseConcreteBuilder : ClasseBuilder {
     }
     
     //MARK: CARACTERISTICA
-    func setCaracteristicasClasse(_ caracteristicas: [String]) {
+    func setCaracteristicasClasse(_ caracteristicas: [CaracteristicaJSON]) {
         self.classe.caracteristicasClasse = caracteristicas
     }
     
@@ -59,27 +59,42 @@ public class ClasseConcreteBuilder : ClasseBuilder {
     
     //MARK: PROFICIENCIA FERRAMENTAS
     func setProfFerramentas(_ ferramentas: [FerramentaJSON]) {
-        self.setProfFerramentas(ferramentas)
+        self.classe.profFerramentas = ferramentas
+    }
+    
+    //MARK: OPCOES FERRAMENTAS
+    func setEscolhasProficienciaFerramenta(_ escolhas: [EscolhaOpcao]) {
+        self.classe.escolhasProficienciaFerramenta = escolhas
+    }
+    
+    //MARK: SET OPCOES
+    func setOpcoes(opcoes: [OpcaoEquipamento]) {
+        self.classe.opcoesEquipamento = opcoes
     }
     
     //MARK: ARMAS INICIAIS
-    func setArmasIniciais(_ armas: [ArmaJSON]) {
+    func setArmasIniciais(armas: [ArmaJSON]) {
         self.classe.armasIniciais = armas
     }
     
     //MARK: ARMADURAS INICIAIS
-    func setArmadurasIniciais(_ armaduras: [ArmaduraJSON]) {
+    func setArmadurasIniciais(armaduras: [ArmaduraJSON]) {
         self.classe.armadurasIniciais = armaduras
     }
     
     //MARK: EQUIPAMENTOS INICIAIS
-    func setEquipamentosIniciais(_ equipamentos: [EquipamentoJSON]) {
+    func setEquipamentosIniciais(equipamentos: [EquipamentoJSON]) {
         self.classe.equipamentosIniciais = equipamentos
     }
     
     //MARK: FERRAMENTAS INICIAIS
-    func setFerramentasIniciais(_ ferramentas: [FerramentaJSON]) {
+    func setFerramentasIniciais(ferramentas: [FerramentaJSON]) {
         self.classe.ferramentasIniciais = ferramentas
+    }
+    
+    //MARK: PACOTES INICIAIS
+    func setPacotesIniciais(pacotes: [PacoteEquipamento]) {
+        self.classe.pacotesIniciais = pacotes
     }
     
     //MARK: PROFICIENCIA PERICIAS
@@ -97,10 +112,12 @@ public class ClasseConcreteBuilder : ClasseBuilder {
         self.classe.possuiMagias = possuiMagia
     }
     
+    //MARK: MAGIA APENAS DE SUBCLASSE
     func setMagiaApenasSubclasse(_ magiaDeSubclasse: Bool) {
         self.classe.magiaApenasSubclasse = magiaDeSubclasse
     }
     
+    //MARK: SUBCLASSE COM MAGIA
     func setSubclasseComMagia(_ subclasse: SubclassePersonagem) {
         self.classe.subclasseComMagia = subclasse
     }

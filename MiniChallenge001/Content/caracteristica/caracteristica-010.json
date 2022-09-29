@@ -1,7 +1,7 @@
 {
     "id": 10,
     "nome": "Incremento no Valor de Habilidade",
-    "classe": " Patrulheiro",
+    "classe": "Patrulheiro",
     "subclasse": null,
     "nivel": [
         4,

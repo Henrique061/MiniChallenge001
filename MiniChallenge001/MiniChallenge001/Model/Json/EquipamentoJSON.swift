@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CategoriaEquipamento: String, Codable {
+public enum CategoriaEquipamento: String, Codable {
     case focoArcano = "Foco Arcano"
     case focoDruidico = "Foco Druídico"
     case municao = "Munição"
@@ -15,12 +15,12 @@ enum CategoriaEquipamento: String, Codable {
     case none = "Sem Categoria"
 }
 
-struct EquipamentoJSON: Json {
-    var id: Int
-    var nome: String
-    var categoria: CategoriaEquipamento
-    var preco: Moeda
-    var peso: Float
-    var quantidade: Int
-    var descricao: String
+public struct EquipamentoJSON: Json {
+    public var id: Int
+    public var nome: String
+    public var categoria: CategoriaEquipamento
+    public var preco: Moeda
+    public var peso: Float
+    public var quantidade: Int
+    public var descricao: String
 }

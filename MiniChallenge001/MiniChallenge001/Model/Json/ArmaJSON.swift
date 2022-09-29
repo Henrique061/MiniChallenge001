@@ -7,35 +7,35 @@
 
 import Foundation
 
-enum TipoDano: String, Codable {
+public enum TipoDano: String, Codable {
     case perfurante = "Perfurante"
     case cortante = "Cortante"
     case concussao = "Concussão"
     case none = "Nenhum"
 }
 
-enum EstiloArma: String, Codable {
+public enum EstiloArma: String, Codable {
     case distancia = "Distância"
     case cac = "Corpo a Corpo"
 }
 
-enum TipoArma: String, Codable {
+public enum TipoArma: String, Codable {
     case simples = "Simples"
     case marcial = "Marcial"
 }
 
-struct Dano: Codable {
+public struct Dano: Codable {
     var dano: String
     var tipo: TipoDano
 }
 
-struct ArmaJSON: Json {
-    var id: Int
-    var nome: String
-    var tipo: TipoArma
-    var estilo: EstiloArma
-    var preco: Moeda
-    var dano: Dano
-    var peso: Float
-    var propriedades: String
+public struct ArmaJSON: Json {
+   public var id: Int
+   public var nome: String
+   public var tipo: TipoArma
+   public var estilo: EstiloArma
+   public var preco: Moeda
+   public var dano: Dano
+   public var peso: Float
+   public var propriedades: String
 }
