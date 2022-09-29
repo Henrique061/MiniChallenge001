@@ -9,28 +9,36 @@
 
 import Foundation
 import SwiftUI
-
+   
 struct Habilidades: View {
     
-    @ObservedObject private var vmmagias = JsonViewModel()
+    @ObservedObject private var vmmagias = MagiasViewModel()
     @State private var textoBusca: String = ""
     
     var body: some View {
         NavigationView {
             TemplateTelaPadrao {
-                List {
-                    ForEach(0..<10) {nivel in
-                        Section {
-                            ForEach(vmmagias.filterMagiasByLevel(nivel: nivel), id: \.id) { magia in
-                                NomeEscolaHabilidade(magia: magia)
+                ScrollView {
+                    LazyVStack {
+                        ForEach(0..<10) { nivel in
+                            SecaoNivelMagia {
+                                LazyVStack(spacing: 0) {
+                                    let magias = vmmagias.filterMagiasByLevel(nivel: nivel)
+                                    ForEach(Array(magias.enumerated()), id: \.offset) { index, magia in
+                                        MagiaDetailCell(magia: magia)
+                                        if (index < magias.count - 1) {
+                                            Divider()
+                                        }
+                                    }
+                                }
+                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                            } label: {
+                                HeaderMagiaSection(nivel)
                             }
-                        } header: {
-                            Text(nivel > 0 ? "\(nivel)º Círculo" : "Truques")
-                                .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .padding(.horizontal, 20)
                         }
                     }
                 }
-                .listStyle(.sidebar)
             }
             
             .searchable(text: $textoBusca)
@@ -52,7 +60,43 @@ struct Habilidades: View {
     }
 }
 
-struct NomeEscolaHabilidade: View {
+struct SecaoNivelMagia<Label, Content> : View where Label: View, Content: View {
+    
+    @State private var showContent: Bool = false
+    @ViewBuilder private var label: () -> Label
+    @ViewBuilder private var content: () -> Content
+    
+    public init(@ViewBuilder content: @escaping () -> Content, @ViewBuilder label: @escaping () -> Label) {
+        self.label = label
+        self.content = content
+    }
+    
+    var body: some View {
+        DisclosureGroup(isExpanded: $showContent) {
+            content()
+        } label: {
+            label()
+                .padding(.bottom, 10)
+        }
+    }
+}
+
+struct HeaderMagiaSection: View {
+    
+    private var nivel: Int
+    
+    public init(_ nivel: Int) {
+        self.nivel = nivel
+    }
+    
+    var body: some View {
+        Text(nivel > 0 ? "\(nivel)º Círculo" : "Truques")
+            .font(.system(size: 20, weight: .bold, design: .rounded))
+            .foregroundColor(Color("BlackAndWhite"))
+    }
+}
+
+struct MagiaDetailCell: View {
     
     @State private var mostrarDetalhes: Bool = false
     private let magia: MagiaJSON
@@ -65,16 +109,23 @@ struct NomeEscolaHabilidade: View {
         Button {
             mostrarDetalhes.toggle()
         } label: {
-            VStack(alignment: .leading) {
-                Text(magia.nome)
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                Text(magia.escola.rawValue)
-                    .font(.system(size: 13, weight: .regular, design: .rounded))
-            }
-        }
+            DisplayTextoBotao(titulo: magia.nome, descricao: magia.escola.rawValue)
+        }.buttonStyle(MagiaCellStyle())
+        
         
         .sheet(isPresented: $mostrarDetalhes) {
             DetalhesMagia(magia: magia)
         }
+    }
+}
+
+struct MagiaCellStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(.vertical, 5)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .padding(.horizontal, 10)
+            .foregroundColor(Color("BlackAndWhite"))
+            .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("ContentBackground"))
     }
 }

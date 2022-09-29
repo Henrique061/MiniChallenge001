@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class JsonViewModel: ObservableObject {
+class MagiasViewModel: ObservableObject {
     
     @Published var magias: [MagiaJSON] = []
     
@@ -25,5 +25,9 @@ class JsonViewModel: ObservableObject {
     public func filterMagiasByLevel(nivel: Int) -> [MagiaJSON] {
         let filteredMagias = magias.filter({$0.nivel == nivel})
         return filteredMagias
+    }
+    
+    public func filterMagiaPerClass(classe: ClassePersonagem) {
+        
     }
 }

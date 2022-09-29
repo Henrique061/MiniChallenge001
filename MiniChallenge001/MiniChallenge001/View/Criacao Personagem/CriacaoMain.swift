@@ -32,7 +32,7 @@ struct CriacaoMain: View {
                     EscolherRacaView(novaFicha: $novaFicha)
                 } label: {
                     TemplateBackgroundInfo {
-                        DisplayTextoBotao(titulo: "Raça do personagem", descricao: novaFicha.racaFinal?.racaPersonagem.rawValue ?? "Toque para selecionar...")
+                        DisplayTextoBotao(titulo: "Raça do personagem", descricao: "Toque para selecionar...")
                     }
                 }
                 .padding(.bottom, 8)
@@ -118,7 +118,7 @@ struct DisplayTextoBotao: View {
                 .fixedSize(horizontal: false, vertical: true)
         }
         .foregroundColor(Color("BlackAndWhite"))
-        .padding(.vertical, 7)
+//        .padding(.vertical, 7)
     }
 }
 

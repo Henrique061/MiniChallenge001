@@ -8,25 +8,29 @@
 import SwiftUI
 
 struct TodasHabilidadesView: View {
-    @ObservedObject private var vmmagias = JsonViewModel()
+    @ObservedObject private var vmmagias = MagiasViewModel()
     @State private var textoBusca: String = ""
     
     var body: some View {
         
         TemplateTelaPadrao {
-            List {
-                ForEach(0..<10) {nivel in
-                    Section {
-                        ForEach(vmmagias.filterMagiasByLevel(nivel: nivel), id: \.id) { magia in
-                            NomeEscolaBotaoHabilidade(magia: magia)
+            VStack(alignment: .leading) {
+                ScrollView {
+                    ForEach(0..<10) {nivel in
+                        HStack() {
+                            SecaoNivelMagia {
+                                ForEach(Array(vmmagias.filterMagiasByLevel(nivel: nivel).enumerated()), id: \.offset) { index, magia in
+                                    MagiaDetailCellWithButton(magia: magia)
+                                }
+                            } label: {
+                                HeaderMagiaSection(nivel)
+                            }
                         }
-                    } header: {
-                        Text(nivel > 0 ? "\(nivel)º Círculo" : "Truques")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .padding(.vertical, 2)
+                        .padding(.horizontal, 10)
                     }
                 }
             }
-            .listStyle(.sidebar)
         }
         
         .navigationBarTitleDisplayMode(.inline)
@@ -39,7 +43,7 @@ struct TodasHabilidadesView: View {
     }
 }
 
-struct NomeEscolaBotaoHabilidade: View {
+struct MagiaDetailCellWithButton: View {
     
     private let magia: MagiaJSON
     
@@ -48,16 +52,18 @@ struct NomeEscolaBotaoHabilidade: View {
     }
     
     var body: some View {
-        HStack {
-            NomeEscolaHabilidade(magia: magia)
-            Spacer()
-            Button {
-                print("Magia \(magia.nome) aprendida")
-            } label: {
-                Text("Aprender")
-                    .font(.system(size: 14, weight: .regular, design: .rounded))
+        VStack {
+            HStack {
+                MagiaDetailCell(magia: magia)
+                Button {
+                    print("Magia \(magia.nome) aprendida")
+                } label: {
+                    Text("Aprender")
+                        .font(.system(size: 14, weight: .regular, design: .rounded))
+                }
+                .buttonStyle(.borderless)
             }
-            .buttonStyle(.borderless)
+            Divider()
         }
     }
 }

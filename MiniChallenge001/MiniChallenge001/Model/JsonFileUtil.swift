@@ -59,10 +59,17 @@ class JsonFileUtil {
         FileManager.default.createFile(atPath: url.path,contents: encodedContent)
     }
     
+    public static func delete<T:Json>(content: T) throws {
+        let fileName = "\(content.nome)-\(content.id)".lowercased().replacingOccurrences(of: " ", with: "+")
+        let completePath = DOCUMENTS_PATH.appendingPathComponent(fileName).appendingPathExtension("json")
+        try FileManager.default.removeItem(atPath: completePath.path)
+    }
+    
     public static func getAllSheets() throws -> [PersonagemFicha] {
         let sheetsPath = try FileManager.default.contentsOfDirectory(atPath: DOCUMENTS_PATH.path)
         var sheetsArr: [PersonagemFicha] = []
         for fileName in sheetsPath {
+            if fileName.contains(".DS_Store") { continue }
             let completePath = DOCUMENTS_PATH.appendingPathComponent(fileName)
             if let data = FileManager.default.contents(atPath: completePath.path) {
                 let decodedContent = try JSONDecoder().decode(PersonagemFicha.self, from: data)

@@ -26,7 +26,11 @@ struct Inventario: View {
                     Section {
                         CapacidadeCarga(cargaUtilizada: .constant(10.0), cargaTotal: .constant(20.1))
                         ForEach($mochila.itens, id: \.self) { item in
-                            Text(item.wrappedValue)
+                            Button {
+                                
+                            } label: {
+                                Text(item.wrappedValue)
+                            }
                         }
                     } header: {
                         Text("Mochila")

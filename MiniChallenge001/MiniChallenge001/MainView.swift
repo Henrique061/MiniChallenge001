@@ -31,6 +31,7 @@ struct MainView: View {
                                 .font(.system(size: 20, weight: .bold, design: .rounded))
                         }
                     }
+                    .onDelete(perform: fichas.delete)
                 }
                 .listStyle(.grouped)
             }
@@ -86,17 +87,31 @@ struct LabelFicha: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            DisplayTextoBotao(titulo: "Nome", descricao: ficha.nome)
-            Divider()
-            DisplayTextoBotao(titulo: "Classe e Nível", descricao: formatClasseNivel)
+        HStack {
+            ZStack {
+                Circle()
+                    .foregroundColor(Color.black)
+                Image("IdentidadeIconOff")
+                    .renderingMode(.template)
+                    .foregroundColor(Color.white)
+            }
+                
+            VStack(alignment: .leading) {
+                DisplayTextoBotao(titulo: "Nome", descricao: ficha.nome)
+                Divider()
+                DisplayTextoBotao(titulo: "Classe e Nível", descricao: formatClasseNivel)
+            }
         }
     }
 }
 
-struct TemplateBackgroundInfo<Content:View>: View {
+struct TemplateBackgroundInfo<Content> : View where Content: View {
     
-    var content: () -> Content
+    @ViewBuilder private var content: () -> Content
+    
+    public init(@ViewBuilder content: @escaping () -> Content) {
+        self.content = content
+    }
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -110,17 +125,22 @@ struct TemplateBackgroundInfo<Content:View>: View {
     }
 }
 
-struct TemplateTelaPadrao<Content: View>: View {
+struct TemplateTelaPadrao<Content> : View where Content: View {
     
-    var content: () -> Content
+    @ViewBuilder private var content: () -> Content
+    
+    public init(@ViewBuilder content: @escaping () -> Content) {
+        self.content = content
+    }
     
     var body: some View {
         ZStack {
-            Color(uiColor: .systemGray6)
+            Color("ScreenBackground")
                 .ignoresSafeArea(.all)
             VStack() {
                 Divider()
                 content()
+                Divider()
             }
         }
         .frame(alignment: .top)
