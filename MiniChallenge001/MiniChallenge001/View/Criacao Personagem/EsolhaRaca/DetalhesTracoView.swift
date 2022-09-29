@@ -11,29 +11,25 @@ struct DetalhesTracoView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    @Binding var racaEscolha: RacaEscolha?
-    @Binding var subRacaEscolha: Subraca?
+    @Binding var racaEscolha: RacaEscolha
+    @Binding var subRacaEscolha: Subraca
     
     private var racaFinal: String {
-        if let temSub = racaEscolha?.possuiSubRaca {
-            if temSub {
-                return subRacaEscolha?.subracaNome ?? "<<ERROR>>"
-            } else {
-                return racaEscolha?.nomeRaca ?? "<<ERROR>>"
-            }
+        if racaEscolha.possuiSubRaca {
+            return subRacaEscolha.subraca.rawValue
         }
-        return "NULL"
+        return racaEscolha.tipoRaca.rawValue
     }
     
     private var passivasRaca: [TraitJSON] {
         var aux: [TraitJSON] = []
         
-        if let tracosRaca = racaEscolha?.tracos {
-            aux += tracosRaca
+        aux += racaEscolha.tracos
+        
+        if subRacaEscolha.subraca != .none {
+            aux += subRacaEscolha.tracosSubraca
         }
-        if let tracosSubraca = subRacaEscolha?.tracosSubraca {
-            aux += tracosSubraca
-        }
+        
         return aux
     }
     
