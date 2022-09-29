@@ -8,11 +8,11 @@
 import Foundation
 
 public struct ClasseFinal : Codable {
-    var classePersonagem: ClassePersonagem
-    var caracteristicasPersonagem: [String]
-    var subclassesPersonagem: [SubClasseEscolha]
+    var classePersonagem: ClassePersonagem = .none
+    var caracteristicasPersonagem: [String] = []
+    var subclassesPersonagem: [SubClasseEscolha] = []
     
-    var espacosDeMagia: [EspacosDeMagias]?
-    var pontosEspecificosNumerico: [PontoEspecificoNumerico]?
-    var pontosEspecificosTexto: [PontoEspecificoTexto]?
+    var espacosDeMagia: [EspacosDeMagias] = []
+    var pontosEspecificosNumerico: [PontoEspecificoNumerico] = []
+    var pontosEspecificosTexto: [PontoEspecificoTexto] = []
 }

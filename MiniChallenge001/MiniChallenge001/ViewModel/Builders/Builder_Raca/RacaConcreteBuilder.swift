@@ -22,12 +22,12 @@ public class RacaConcreteBuilder : RacaBuilder {
     
     //MARK: GET RACA
     func getRaca() -> TipoRaca {
-        return self.raca.tipoRaca!
+        return self.raca.tipoRaca
     }
     
     //MARK: NOME RACA
     func setNomeRaca() {
-        self.raca.nomeRaca = self.raca.tipoRaca?.rawValue
+        self.raca.nomeRaca = self.raca.tipoRaca.rawValue
     }
     
     //MARK: POSSUI SUBRACA

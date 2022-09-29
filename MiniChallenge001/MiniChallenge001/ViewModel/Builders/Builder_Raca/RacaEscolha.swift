@@ -17,6 +17,8 @@ public enum TipoRaca : String, Codable, CaseIterable {
     case meioElfo = "Meio-Elfo"
     case meioOrc = "Meio-Orc"
     case tiefling = "Tiefling"
+    
+    case none = "Nenhum"
 }
 
 
@@ -31,6 +33,8 @@ public enum TipoSubRaca : String, Codable, CaseIterable, Hashable {
     case halflingRobusto = "Robusto"
     case gnomoFloresta = "Gnomo da Floresta"
     case gnomoRochas = "Gnomo das Rochas"
+    
+    case none = "Nenhum"
 }
 
 
@@ -53,6 +57,8 @@ public enum Idioma: String, Codable, CaseIterable {
     case primordial = "Primordial"
     case silvestre = "Silvestre"
     case subcomum = "Subcomum"
+    
+    case none = "Nenhum"
 }
 
 //MARK: Enum alfabeto
@@ -63,92 +69,93 @@ public enum Alfabeto : String, Codable {
     case infernal = "Infernal"
     case celestial = "Celestial"
     case draconico = "Dracônico"
+    
     case none = "Nenhum"
 }
 
 //MARK: Struct Idiomas
 public struct IdiomaAlfabeto : Codable {
-    var idioma: Idioma
-    var alfabeto: Alfabeto
-    var isPadrao: Bool
+    var idioma: Idioma = .none
+    var alfabeto: Alfabeto = .none
+    var isPadrao: Bool = true
 }
 
 //MARK: AtributosGanhos
 public struct AtributosGanhosRaca : Codable, Hashable {
-    var atributo: AtributosSalvaguarda
-    var pontosGanhos: Int
+    var atributo: AtributosSalvaguarda = .none
+    var pontosGanhos: Int = 0
 }
 
 public struct ProficienciaArmasPorSubraca : Codable {
-    var subraca: TipoSubRaca
-    var armasProficientes: [ArmaJSON]
+    var subraca: TipoSubRaca = .none
+    var armasProficientes: [ArmaJSON] = []
 }
 
 public struct ProficienciaFerramentaPorSubraca : Codable {
-    var subraca: TipoSubRaca
-    var armasProficientes: [FerramentaJSON]
+    var subraca: TipoSubRaca = .none
+    var armasProficientes: [FerramentaJSON] = []
 }
 
 public struct ProficienciaArmaduraPorSubraca : Codable {
-    var subraca: TipoSubRaca
-    var armasProficientes: [ArmaduraJSON]
+    var subraca: TipoSubRaca = .none
+    var armasProficientes: [ArmaduraJSON] = []
 }
 
 public struct ProficienciaPericiaPorSubraca : Codable {
-    var subraca: TipoSubRaca
-    var armasProficientes: [Pericia]
+    var subraca: TipoSubRaca = .none
+    var armasProficientes: [Pericia] = []
 }
 
 public struct MagiaSubraca : Codable {
-    var subraca: TipoSubRaca
-    var magias: [MagiaJSON]
+    var subraca: TipoSubRaca = .none
+    var magias: [MagiaJSON] = []
 }
 
 public struct MagiaEscolhaSubraca : Codable {
-    var subraca: TipoSubRaca
-    var magias: [String]
+    var subraca: TipoSubRaca = .none
+    var magias: [String] = []
 }
 
 public struct DeslocamentoSubraca : Codable {
-    var subraca: TipoSubRaca
-    var deslocamento: Float
+    var subraca: TipoSubRaca = .none
+    var deslocamento: Float = 0;
 }
 
 //MARK: RACA ESCOLHA
 public class RacaEscolha {
-    var tipoRaca: TipoRaca?
-    var nomeRaca: String?
-    var possuiSubRaca: Bool?
-    var subRacas: [Subraca]?
-    var atributosGanhos: [AtributosGanhosRaca]?
-    var possuiEscolhaAtributo: Bool?
-    var escolhasAtributo: [AtributosSalvaguarda]?
-    var numEscolhaDeAtributos: Int?
-    var valorGanhoEscolhaAtributos: Int?
-    var deslocamento: Float?
-    var deslocamentoSubraca: [DeslocamentoSubraca]?
-    var idiomas: [IdiomaAlfabeto]?
-    var possuiEscolhaIdioma: Bool?
-    var subracaPossuiEscolhaIdioma: Bool?
-    var subracaComEscolhaDeIdioma: TipoSubRaca?
-    var escolhaIdioma: [Idioma]?
-    var tracos: [TraitJSON]? // colocar json traits aqui
-    var profArmas: [ArmaJSON]?
-    var subracaProfArma: [ProficienciaArmasPorSubraca]?
-    var profFerramentas: [FerramentaJSON]?
-    var subracaProfFerramenta: [ProficienciaFerramentaPorSubraca]?
-    var profArmaduras: [ArmaduraJSON]?
-    var subracaProfArmaduras: [ProficienciaArmaduraPorSubraca]?
-    var profPericias: [Pericia]?
-    var subracaProfPericia: [ProficienciaPericiaPorSubraca]?
-    var possuiEscolhaProfFerramentas: Bool?
-    var escolhasProfFerramentas: [String]?
-    var possuiEscolhaProfPericias: Bool?
-    var escolhasProfPericias: [Pericia]?
-    var quantiaEscolhaPericia: Int?
-    var magiasRecebidas: [MagiaJSON]?
-    var magiasPorSubraca: MagiaSubraca?
-    var subracaEscolhaMagias: MagiaEscolhaSubraca?
+    var tipoRaca: TipoRaca = .none
+    var nomeRaca: String = ""
+    var possuiSubRaca: Bool = false
+    var subRacas: [Subraca] = []
+    var atributosGanhos: [AtributosGanhosRaca] = []
+    var possuiEscolhaAtributo: Bool = false
+    var escolhasAtributo: [AtributosSalvaguarda] = []
+    var numEscolhaDeAtributos: Int = 0
+    var valorGanhoEscolhaAtributos: Int = 0
+    var deslocamento: Float = 0
+    var deslocamentoSubraca: [DeslocamentoSubraca] = []
+    var idiomas: [IdiomaAlfabeto] = []
+    var possuiEscolhaIdioma: Bool = false
+    var subracaPossuiEscolhaIdioma: Bool = false
+    var subracaComEscolhaDeIdioma: TipoSubRaca = .none
+    var escolhaIdioma: [Idioma] = []
+    var tracos: [TraitJSON] = [] // colocar json traits aqui
+    var profArmas: [ArmaJSON] = []
+    var subracaProfArma: [ProficienciaArmasPorSubraca] = []
+    var profFerramentas: [FerramentaJSON] = []
+    var subracaProfFerramenta: [ProficienciaFerramentaPorSubraca] = []
+    var profArmaduras: [ArmaduraJSON] = []
+    var subracaProfArmaduras: [ProficienciaArmaduraPorSubraca] = []
+    var profPericias: [Pericia] = []
+    var subracaProfPericia: [ProficienciaPericiaPorSubraca] = []
+    var possuiEscolhaProfFerramentas: Bool = false
+    var escolhasProfFerramentas: [String] = []
+    var possuiEscolhaProfPericias: Bool = false
+    var escolhasProfPericias: [Pericia] = []
+    var quantiaEscolhaPericia: Int = 0
+    var magiasRecebidas: [MagiaJSON] = []
+    var magiasPorSubraca: MagiaSubraca = MagiaSubraca()
+    var subracaEscolhaMagias: MagiaEscolhaSubraca = MagiaEscolhaSubraca()
 }
 
 //MARK: SUBRACA

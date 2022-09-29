@@ -22,6 +22,8 @@ public enum AntecedentePersonagem : String, Codable {
     case orfao = "Órfão"
     case sabio = "Sábio"
     case soldado = "Soldado"
+    
+    case none = "Nenhum"
 }
 
 //MARK: Enum Variacao Antecedentes
@@ -32,6 +34,8 @@ public enum VariacaoAntecedente : String, Codable {
     case ER_outrosEremitas = "Outros Eremitas"
     case MA_pirata = "Pirata"
     case NO_cavaleiro = "Cavaleiro"
+    
+    case none = "Nenhum"
 }
 
 public class AntecedenteEscolha {

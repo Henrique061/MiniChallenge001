@@ -7,6 +7,15 @@
 
 import Foundation
 
+public enum TipoJSON : String, Codable {
+    case arma = "arma"
+    case armadura = "armaduras"
+    case equipamento = "equipamento"
+    case ferramenta = "ferramenta"
+    
+    case none = "Nenhum"
+}
+
 //MARK: ARMA
 public class BuscaArma : Codable {
     public static func buscaArmaTipo(tipo: TipoArma, nomeExcluso: String) -> [String] {
@@ -246,22 +255,20 @@ public class BuscaJson : Codable {
         return equipamentosRetorno
     }
     
-    public static func buscaEquipamentoPorNomeQuantidade(nome: String, quantidade: Int) -> [EquipamentoJSON] {
+    public static func buscaEquipamentoPorNomeQuantidade(nome: String, quantidade: Int) -> EquipamentoJSON {
         guard let equipamentos = JsonFileUtil.getDataFromBundle(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else {
             fatalError("Erro ao tentar converter magias")
         }
-        var equipamentosRetorno: [EquipamentoJSON] = []
         
         for equipamento in equipamentos {
             if equipamento.nome == nome {
-                for _ in 1 ... quantidade {
-                    equipamentosRetorno.append(equipamento)
-                }
-                return equipamentosRetorno
+                var equipamentoRetorno = equipamento
+                equipamentoRetorno.quantidade = quantidade
+                return equipamentoRetorno
             }
         }
         
-        return equipamentosRetorno
+        return equipamentos[0]
     }
     
     //MARK: FERRAMENTA JSON

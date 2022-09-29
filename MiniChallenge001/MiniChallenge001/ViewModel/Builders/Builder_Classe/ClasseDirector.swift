@@ -1242,7 +1242,8 @@ public class ClasseDirector {
         var armasIniciais: [ArmaJSON] = []
         armasIniciais.append(BuscaJson.buscaArmaPorNome(nome: "Arco Longo"))
         
-        var equipamentosIniciais: [EquipamentoJSON] = BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Flechas", quantidade: 20)
+        var equipamentosIniciais: [EquipamentoJSON] = []
+        equipamentosIniciais.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Flechas", quantidade: 20))
         equipamentosIniciais.append(BuscaJson.buscaEquipamentoPorNome(nome: "Aljava"))
         
         let periciasProficientes: [Pericia] = [.adestrarAnimais, .atletismo, .furtividade, .intuicao, .investigacao, .natureza, .percepcao, .sobrevivencia]

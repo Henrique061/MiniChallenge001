@@ -10,8 +10,8 @@ import SwiftUI
 
 //MARK: RESISTENCIA MORTE
 public struct ResistenciaMorte : Codable {
-    var sucesso: [Int]
-    var falha: [Int]
+    var sucesso: Int = 0
+    var falha: Int = 0
 }
 
 //MARK: ENUM TENDENCIA
@@ -25,6 +25,8 @@ enum TipoTendencia : String, Codable, CaseIterable {
     case lealMau = "Leal e Mau"
     case neutroMau = "Neutro e Mau"
     case caoticoMau = "Caótico e Mau"
+    
+    case none = "Nenhum"
 }
 
 //MARK: STRICT TENDENCIA
@@ -35,12 +37,12 @@ struct Tendencia : Codable {
 
 //MARK: VALORES ATRIBUTOS
 struct ValoresAtributos : Codable {
-    var forca: Int
-    var destreza: Int
-    var constituicao: Int
-    var inteligencia: Int
-    var sabedoria: Int
-    var carisma: Int
+    var forca: Int = 0
+    var destreza: Int = 0
+    var constituicao: Int = 0
+    var inteligencia: Int = 0
+    var sabedoria: Int = 0
+    var carisma: Int = 0
 }
 
 //MARK: PERSONAGEM FICHA
@@ -57,9 +59,9 @@ public class PersonagemFicha: Json {
     var experiencica: Int = 0
     
     //MARK: CLASSES
-    var classeFinal: ClasseFinal?
-    var racaFinal: RacaFinal?
-    var antecedenteFinal: AntecedentePersonagem?
+    var classeFinal: ClasseFinal = ClasseFinal()
+    var racaFinal: RacaFinal = RacaFinal()
+    var antecedenteFinal: AntecedentePersonagem = .none
     
     //MARK: INVENTARIO JSON
     var magias: [MagiaJSON] = []
@@ -81,7 +83,7 @@ public class PersonagemFicha: Json {
     var pontosVidaTemporário: Int = 0
     var dadoVida: String = ""
     var quantiaDadoVida: Int = 0
-    var resistenciaMorte: ResistenciaMorte?
+    var resistenciaMorte: ResistenciaMorte = ResistenciaMorte()
     
     //MARK: PERFIL
     var fotoPersonagem: Data?
@@ -97,10 +99,10 @@ public class PersonagemFicha: Json {
     var ideaisPersonagem: String = ""
     var vinculoPersonagem: String = ""
     var defeitosPersonagem: String = ""
-    var tendenciaPersonagem: TipoTendencia? = nil // leal e bom, essas parada
+    var tendenciaPersonagem: TipoTendencia = .none // leal e bom, essas parada
     
     //MARK: PONTOS ATRIBUTOS
-    var pontosAtributos: ValoresAtributos?
+    var pontosAtributos: ValoresAtributos = ValoresAtributos()
     
     //MARK: PROFICIENCIAS
     var profSalvaguardas: [AtributosSalvaguarda] = []

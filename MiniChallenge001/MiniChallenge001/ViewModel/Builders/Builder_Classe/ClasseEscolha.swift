@@ -50,6 +50,8 @@ public enum ClassePersonagem: String, Codable, Hashable {
     case monge = "Monge"
     case paladino = "Paladino"
     case patrulheiro = "Patrulheiro"
+    
+    case none = "Nenhum"
 }
 
 //MARK: Enum Subclasse
@@ -94,6 +96,8 @@ public enum SubclassePersonagem : String, Codable {
     case PT_conclaveBesta = "Conclave da Besta"
     case PT_conclaveCacador = "Conclave do Caçador"
     case PT_conclaveRastreadorSubterraneo = "Conclave do Rastreador Subterrâneo"
+    
+    case none = "Nenhum"
 }
 
 enum AtributosSalvaguarda : String, Codable {
@@ -103,6 +107,8 @@ enum AtributosSalvaguarda : String, Codable {
     case inteligencia = "Inteligência"
     case sabedoria = "Sabedoria"
     case carisma = "Carisma"
+    
+    case none = "Nenhum"
 }
 
 enum Pericia : String, CaseIterable, Codable {
@@ -124,6 +130,8 @@ enum Pericia : String, CaseIterable, Codable {
     case prestidigitacao = "Prestidigitação (DES)"
     case religiao = "Religião (INT)"
     case sobrevivencia = "Sobrevivência (SAB)"
+    
+    case none = "Nenhum"
 }
 
 //MARK: Classe
