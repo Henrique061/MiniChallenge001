@@ -17,12 +17,11 @@ struct Habilidades: View {
     
     var body: some View {
         NavigationView {
-            TemplateTelaPadrao {
+            TemplateTelaPadrao(withPaddings: false) {
                 ScrollView {
                     LazyVStack {
                         ForEach(0..<10) { nivel in
-                            ZStack {
-                                Color("ContentBackground")
+                            TemplateContentBackground {
                                 SecaoNivelMagia {
                                     LazyVStack(spacing: 0) {
                                         Divider()
@@ -38,10 +37,8 @@ struct Habilidades: View {
                                     HeaderMagiaSection(nivel)
                                 }
                             }
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
-                            .padding(.horizontal, 20)
                         }
-                    }
+                    }.padding(.horizontal, 10)
                 }
             }
             
@@ -80,7 +77,7 @@ struct SecaoNivelMagia<Label, Content> : View where Label: View, Content: View {
             content()
         } label: {
             label()
-        }.buttonStyle(CustomButtonStyle())
+        }.buttonStyle(CustomButtonStyle2())
     }
 }
 
@@ -113,7 +110,7 @@ struct MagiaDetailCell: View {
             mostrarDetalhes.toggle()
         } label: {
             DisplayTextoBotao(titulo: magia.nome, descricao: magia.escola.rawValue)
-        }.buttonStyle(CustomButtonStyle())
+        }.buttonStyle(CustomButtonStyle2())
         
         
         .sheet(isPresented: $mostrarDetalhes) {

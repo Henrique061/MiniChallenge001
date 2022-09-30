@@ -256,8 +256,30 @@
 			children = (
 				126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */,
 				12535F4928E323DC0020A005 /* EsolhaRaca */,
+				12FEBA2528E7A55300DBB6EF /* EscolhaClasse */,
 			);
 			path = "Criacao Personagem";
+			sourceTree = "<group>";
+		};
+		12FEBA2528E7A55300DBB6EF /* EscolhaClasse */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EscolhaClasse;
+			sourceTree = "<group>";
+		};
+		12FEBA2628E7A59000DBB6EF /* SheetPersonagem */ = {
+			isa = PBXGroup;
+			children = (
+				09B5568C28DA6155001466B0 /* SheetTabView.swift */,
+				09B5569028DA6156001466B0 /* ContentView.swift */,
+				126ABB2928DD25CB00CF5A2E /* Habilidade */,
+				126ABB3128DD328A00CF5A2E /* Inventario */,
+				126ABB2E28DD326200CF5A2E /* Atributo */,
+				126ABB2F28DD327B00CF5A2E /* Combate */,
+				126ABB3028DD328200CF5A2E /* Identidade */,
+			);
+			path = SheetPersonagem;
 			sourceTree = "<group>";
 		};
 		3D28DBA428E62A35005F71AC /* Raca_Final */ = {
@@ -420,14 +442,8 @@
 		3DE3796C28D26413005812C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				12FEBA2628E7A59000DBB6EF /* SheetPersonagem */,
 				126ABB3B28DF3A4A00CF5A2E /* Criacao Personagem */,
-				09B5568C28DA6155001466B0 /* SheetTabView.swift */,
-				09B5569028DA6156001466B0 /* ContentView.swift */,
-				126ABB2928DD25CB00CF5A2E /* Habilidade */,
-				126ABB3128DD328A00CF5A2E /* Inventario */,
-				126ABB2E28DD326200CF5A2E /* Atributo */,
-				126ABB2F28DD327B00CF5A2E /* Combate */,
-				126ABB3028DD328200CF5A2E /* Identidade */,
 			);
 			path = View;
 			sourceTree = "<group>";

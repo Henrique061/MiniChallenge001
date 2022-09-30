@@ -16,7 +16,7 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            TemplateTelaPadrao {
+            TemplateTelaPadrao(withPaddings: false) {
                 List {
                     ForEach($fichas.listaFichas, id: \.id) { ficha in
                         Section {
@@ -151,10 +151,12 @@ struct TemplateBackgroundInfo<Content> : View where Content: View {
 
 struct TemplateTelaPadrao<Content> : View where Content: View {
     
+    var withPaddings: Bool
     @ViewBuilder private var content: () -> Content
     
-    public init(@ViewBuilder content: @escaping () -> Content) {
+    public init(withPaddings: Bool = true, @ViewBuilder content: @escaping () -> Content) {
         self.content = content
+        self.withPaddings = withPaddings
     }
     
     var body: some View {
@@ -162,9 +164,9 @@ struct TemplateTelaPadrao<Content> : View where Content: View {
             Color("ScreenBackground")
                 .ignoresSafeArea(.all)
             VStack(spacing: 0) {
-                Divider()
+                Divider().padding(.bottom, 10)
                 content()
-                Divider()
+                Divider().padding(.top, withPaddings ? 10 : 0)
             }
         }
         .frame(alignment: .top)
@@ -205,7 +207,7 @@ struct CustomButtonStyle2: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(.vertical, 5)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .padding(.horizontal, 10)
             .foregroundColor(Color("BlackAndWhite"))
             .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("ContentBackground"))

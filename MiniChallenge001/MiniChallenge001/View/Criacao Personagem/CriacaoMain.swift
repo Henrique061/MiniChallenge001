@@ -130,14 +130,17 @@ struct MenuSelecaoTendencia: View {
     var body: some View {
         TemplateContentBackground {
             DisclosureGroup(isExpanded: $showContent) {
-                ForEach(TipoTendencia.allCases, id: \.self) { tendencia in
-                    if tendencia != .none {
-                        TemplateRadioButton(isMarked: ficha.tendenciaPersonagem == tendencia ,title: tendencia.rawValue) {
-                            ficha.tendenciaPersonagem = tendencia
-                            withAnimation(.easeOut, {
-                                self.showContent.toggle()
-                            })
-                        }.frame(height: 40)
+                VStack(spacing: 0) {
+                    Divider()
+                    ForEach(TipoTendencia.allCases, id: \.self) { tendencia in
+                        if tendencia != .none {
+                            TemplateRadioButton(isMarked: ficha.tendenciaPersonagem == tendencia ,title: tendencia.rawValue) {
+                                ficha.tendenciaPersonagem = tendencia
+                                withAnimation(.easeOut, {
+                                    self.showContent.toggle()
+                                })
+                            }
+                        }
                     }
                 }
             } label: {
@@ -173,44 +176,21 @@ struct TemplateRadioButton: View {
                     .renderingMode(.template)
                     .foregroundColor(isMarked ? Color("RedTheme") : Color(uiColor: .systemGray3))
             }
-        }.buttonStyle(CustomButtonStyle2())
-    }
-    
-}
-
-struct TemplateSelecaoUnica<Content, Label>: View where Content: View, Label: View {
-    
-    @State private var showContent: Bool = false
-    @ViewBuilder private var content: () -> Content
-    @ViewBuilder private var label: () -> Label
-    
-    public init(@ViewBuilder content: @escaping () -> Content, @ViewBuilder label: @escaping () -> Label) {
-        self.content = content
-        self.label = label
-    }
-    
-    var body: some View {
-        ZStack {
-            Color("ContentBackground")
-            DisclosureGroup(isExpanded: $showContent) {
-                content()
-            } label: {
-                label()
-            }
-            .buttonStyle(CustomButtonStyle())
         }
-        .clipShape(RoundedRectangle(cornerRadius: 5))
+        .buttonStyle(CustomButtonStyle2())
+        .frame(height: 40)
     }
+    
 }
 
 struct CustomButtonStyle3: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-        .padding(.vertical, 10)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, 10)
-        .foregroundColor(Color.white)
-        .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color.black)
-        .clipShape(RoundedRectangle(cornerRadius: 5))
+            .padding(.vertical, 10)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.horizontal, 10)
+            .foregroundColor(Color.white)
+            .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color.black)
+            .clipShape(RoundedRectangle(cornerRadius: 5))
     }
 }

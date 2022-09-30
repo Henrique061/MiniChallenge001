@@ -12,13 +12,11 @@ struct TodasHabilidadesView: View {
     @State private var textoBusca: String = ""
     
     var body: some View {
-        
-        TemplateTelaPadrao {
+        TemplateTelaPadrao(withPaddings: false) {
             ScrollView {
                 LazyVStack {
                     ForEach(0..<10) { nivel in
-                        ZStack {
-                            Color("ContentBackground")
+                        TemplateContentBackground {
                             SecaoNivelMagia {
                                 LazyVStack(spacing: 0) {
                                     Divider()
@@ -34,10 +32,8 @@ struct TodasHabilidadesView: View {
                                 HeaderMagiaSection(nivel)
                             }
                         }
-                        .clipShape(RoundedRectangle(cornerRadius: 5))
-                        .padding(.horizontal, 20)
                     }
-                }
+                }.padding(.horizontal, 10)
             }
         }
         

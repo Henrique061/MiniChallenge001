@@ -20,6 +20,7 @@ struct DetalhesTracoView: View {
                 HStack(alignment: .center) {
                     Image("IdentidadeIconOff")
                     DisplayTextoBotao(titulo: "Descrição de Traços Raciais", descricao: vmraca.subraca.subraca == .none ? vmraca.raca.tipoRaca.rawValue : vmraca.subraca.subraca.rawValue)
+                    Spacer()
                     Button {
                         dismiss()
                     } label: {

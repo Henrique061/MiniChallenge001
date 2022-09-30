@@ -89,19 +89,21 @@ struct EscolherRacaView: View {
     
     var body: some View {
         TemplateTelaPadrao {
-            VStack(spacing: 10) {
-                MenuEscolhaRaca().environmentObject(vmraca)
-                
-                MenuEscolhaSubraca().environmentObject(vmraca)
-                
-                AtributosRacaView().environmentObject(vmraca)
-                
-                DeslocamentoRacaView().environmentObject(vmraca)
-                
-                IdiomaRacaView().environmentObject(vmraca)
-                
-                BotaoMostrarTracosRaca().environmentObject(vmraca)
-                Spacer()
+            ScrollView {
+                VStack(spacing: 10) {
+                    MenuEscolhaRaca().environmentObject(vmraca)
+                    
+                    MenuEscolhaSubraca().environmentObject(vmraca)
+                    
+                    AtributosRacaView().environmentObject(vmraca)
+                    
+                    DeslocamentoRacaView().environmentObject(vmraca)
+                    
+                    IdiomaRacaView().environmentObject(vmraca)
+                    
+                    BotaoMostrarTracosRaca().environmentObject(vmraca)
+                    Spacer()
+                }
             }
             .padding(.horizontal, 10)
             .padding(.vertical, 10)
@@ -113,6 +115,7 @@ struct EscolherRacaView: View {
             }
             .buttonStyle(CustomButtonStyle3())
             .disabled(vmraca.raca.tipoRaca == .none)
+            .padding(.horizontal, 10)
         }
         
         .toolbar {
@@ -131,14 +134,16 @@ struct MenuEscolhaRaca: View {
     var body: some View {
         TemplateContentBackground {
             DisclosureGroup(isExpanded: $showContent) {
-                ForEach(TipoRaca.allCases, id: \.self) { raca in
-                    if !(raca == .none) {
-                        TemplateRadioButton(isMarked: vmraca.raca.tipoRaca == raca, title: raca.rawValue) {
-                            withAnimation(.easeOut) {
-                                self.showContent.toggle()
-                                vmraca.setRaca(tipoRaca: raca)
+                VStack(spacing: 0) {
+                    ForEach(TipoRaca.allCases, id: \.self) { raca in
+                        if !(raca == .none) {
+                            TemplateRadioButton(isMarked: vmraca.raca.tipoRaca == raca, title: raca.rawValue) {
+                                withAnimation(.easeOut) {
+                                    self.showContent.toggle()
+                                    vmraca.setRaca(tipoRaca: raca)
+                                }
                             }
-                        }.frame(height: 40)
+                        }
                     }
                 }
             } label: {
@@ -163,13 +168,15 @@ struct MenuEscolhaSubraca: View {
         if vmraca.raca.possuiSubRaca {
             TemplateContentBackground {
                 DisclosureGroup(isExpanded: $showContent) {
-                    ForEach(vmraca.raca.subRacas, id: \.self) { subraca in
-                        TemplateRadioButton(isMarked: vmraca.subraca.subraca == subraca.subraca, title: subraca.subraca.rawValue) {
-                            withAnimation(.easeOut) {
-                                vmraca.subraca = subraca
-                                showContent.toggle()
+                    VStack(spacing: 0) {
+                        ForEach(vmraca.raca.subRacas, id: \.self) { subraca in
+                            TemplateRadioButton(isMarked: vmraca.subraca.subraca == subraca.subraca, title: subraca.subraca.rawValue) {
+                                withAnimation(.easeOut) {
+                                    vmraca.subraca = subraca
+                                    showContent.toggle()
+                                }
                             }
-                        }.frame(height: 40)
+                        }
                     }
                 } label: {
                     VStack(alignment: .leading, spacing: 3) {
@@ -193,7 +200,7 @@ struct AtributosRacaView: View {
         if vmraca.raca.tipoRaca != .none  {
             TemplateContentBackground {
                 DisplayTextoBotao(titulo: "Bônus de Atributos", descricao: vmraca.getAtributos())
-                    .padding(.horizontal, 10)
+                    .padding(10)
             }
         }
     }
@@ -207,7 +214,7 @@ struct DeslocamentoRacaView: View {
         if vmraca.raca.tipoRaca != .none {
             TemplateContentBackground {
                 DisplayTextoBotao(titulo: "Deslocamento", descricao: vmraca.getDeslocamento())
-                    .padding(.horizontal, 10)
+                    .padding(10)
             }
         }
     }
@@ -220,7 +227,7 @@ struct IdiomaRacaView: View {
         if vmraca.raca.tipoRaca != .none {
             TemplateContentBackground {
                 DisplayTextoBotao(titulo: "Idiomas", descricao: vmraca.getIdiomas())
-                    .padding(.horizontal, 10)
+                    .padding(10)
             }
         }
     }
@@ -240,9 +247,9 @@ struct BotaoMostrarTracosRaca: View {
                 DisplayTextoBotao(titulo: "Traços Raciais", descricao: "Toque para detalhes...")
             }.buttonStyle(CustomButtonStyle())
             
-            .sheet(isPresented: $showSheet) {
-                DetalhesTracoView().environmentObject(vmraca)
-            }
+                .sheet(isPresented: $showSheet) {
+                    DetalhesTracoView().environmentObject(vmraca)
+                }
         }
     }
 }
