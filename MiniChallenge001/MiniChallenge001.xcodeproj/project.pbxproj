@@ -67,6 +67,7 @@
 		3DF24F8B28E1CC99006C0AAE /* ClasseFicha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8A28E1CC99006C0AAE /* ClasseFicha.swift */; };
 		3DF24F8D28E1CCB0006C0AAE /* PersonagemFicha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */; };
 		3DF24F9728E200DF006C0AAE /* PacoteFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F9628E200DF006C0AAE /* PacoteFactory.swift */; };
+		3DF7C31128E78BD900DC3795 /* RacaFinalConcreteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7C31028E78BD900DC3795 /* RacaFinalConcreteBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		3DF24F8A28E1CC99006C0AAE /* ClasseFicha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseFicha.swift; sourceTree = "<group>"; };
 		3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemFicha.swift; sourceTree = "<group>"; };
 		3DF24F9628E200DF006C0AAE /* PacoteFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteFactory.swift; sourceTree = "<group>"; };
+		3DF7C31028E78BD900DC3795 /* RacaFinalConcreteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaFinalConcreteBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				3D28DBA628E62A99005F71AC /* RacaFinalBuilder.swift */,
+				3DF7C31028E78BD900DC3795 /* RacaFinalConcreteBuilder.swift */,
 				3D28DBA828E62D64005F71AC /* RacaFinal.swift */,
 			);
 			path = Raca_Final;
@@ -574,6 +577,7 @@
 				3D6F868728E0CD760022D0BE /* RacaClient.swift in Sources */,
 				3D6F868F28E11B910022D0BE /* BuscaJson.swift in Sources */,
 				126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */,
+				3DF7C31128E78BD900DC3795 /* RacaFinalConcreteBuilder.swift in Sources */,
 				122E948628E2205300184F88 /* PersonagemViewModel.swift in Sources */,
 				126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */,
 				126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */,

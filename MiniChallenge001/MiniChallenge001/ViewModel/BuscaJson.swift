@@ -316,6 +316,21 @@ public class BuscaJson : Codable {
         return magias[0]
     }
     
+    public static func buscaMagiasPorNomes(nomes: [String]) -> [MagiaJSON] {
+        guard let magias = JsonFileUtil.getDataFromBundle(folder: .magia, decoder: MagiaJSON.self) as? [MagiaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var magiasRetorno: [MagiaJSON] = []
+        
+        for magia in magias {
+            if nomes.contains(magia.nome) {
+                magiasRetorno.append(magia)
+            }
+        }
+        
+        return magiasRetorno
+    }
+    
     //MARK: CARACTERISTICAS JSON
     public static func buscaCaracteristicasPorClasse(classe: ClassePersonagem) -> [CaracteristicaJSON] {
         guard let caracteristicas = JsonFileUtil.getDataFromBundle(folder: .caracterisca, decoder: CaracteristicaJSON.self) as? [CaracteristicaJSON] else {

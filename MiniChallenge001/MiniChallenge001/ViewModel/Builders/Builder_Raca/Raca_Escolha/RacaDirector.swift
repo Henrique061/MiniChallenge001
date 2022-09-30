@@ -145,7 +145,7 @@ public class RacaDirector {
         
         let profPericias: [Pericia] = [.percepcao]
         
-        let magiasSubraca: MagiaSubraca = MagiaSubraca(subraca: .elfoNegro, magias: [BuscaJson.buscaMagiaPorNome(nome: "Globos de Luz"), BuscaJson.buscaMagiaPorNome(nome: "Fome de Hadar"), BuscaJson.buscaMagiaPorNome(nome: "Escuridão")])
+        let magiasSubraca: MagiaSubraca = MagiaSubraca(subraca: .elfoNegro, magias: BuscaJson.buscaMagiasPorNomes(nomes: ["Globos de Luz", "Fome de Hadar", "Escuridão"]))
         
         let subracaEscolhaMagia = MagiaEscolhaSubraca(subraca: .altoElfo, magias: BuscaMagia.buscaMagiaClasseNivel(classe: .mago, nivel: 0))
         
@@ -394,10 +394,7 @@ public class RacaDirector {
             IdiomaAlfabeto(idioma: .comum, alfabeto: .comum, isPadrao: true)
         ]
         
-        var magias: [MagiaJSON] = []
-        magias.append(BuscaJson.buscaMagiaPorNome(nome: "Taumaturgia"))
-        magias.append(BuscaJson.buscaMagiaPorNome(nome: "Repreensão Infernal"))
-        magias.append(BuscaJson.buscaMagiaPorNome(nome: "Escuridão"))
+        let magias: [MagiaJSON] = BuscaJson.buscaMagiasPorNomes(nomes: ["Taumaturgia", "Repreensão Infernal", "Escuridão"])
         
         // METODOS /////////////////////
         builder?.setPossuiSubraca(false)

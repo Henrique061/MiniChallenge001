@@ -11,7 +11,7 @@ import Foundation
 public struct RacaEscolhasDefinidas : Codable {
     var escolhaAtributos: [AtributosGanhosRaca] = []
     var escolhaIdioma: IdiomaAlfabeto = IdiomaAlfabeto()
-    var escolhaProfFerramentaAdicional: [FerramentaJSON] = []
+    var escolhaProfFerramentasAdicionais: [FerramentaJSON] = []
     var escolhaProfPericias: [Pericia] = []
     var escolhaMagia: [MagiaJSON] = []
 }

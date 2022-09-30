@@ -15,7 +15,7 @@ public class RacaClient : Codable {
         director.newBuilder(racaBuilder: builder)
         director.makeRaca(tipoRaca)
         
-        return builder.getRacaFinal()
+        return builder.getRacaEscolha()
     }
     
     public static func orderPersonagemRaca(_ racaEscolha: RacaEscolha, escolhas: RacaEscolhasDefinidas) {

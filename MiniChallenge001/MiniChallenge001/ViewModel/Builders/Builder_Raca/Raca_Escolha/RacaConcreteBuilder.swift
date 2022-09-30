@@ -181,7 +181,7 @@ public class RacaConcreteBuilder : RacaBuilder {
     }
     
     //MARK: GET FINAL
-    func getRacaFinal() -> RacaEscolha {
+    func getRacaEscolha() -> RacaEscolha {
         let buildedRaca = self.raca
         self.resetBuilder()
         return buildedRaca
