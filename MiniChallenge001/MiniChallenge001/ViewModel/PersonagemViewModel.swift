@@ -25,15 +25,18 @@ class PersonagemViewModel: ObservableObject {
         }
     }
     
-    public func delete(at offsets: IndexSet) {
-        DispatchQueue.main.async {
-            do {
-                let ficha = offsets.map({self.listaFichas[$0]})[0]
-                try JsonFileUtil.delete(content: ficha)
-                self.fetch()
-            } catch {
-                print(error.localizedDescription)
+    public func delete(ficha: PersonagemFicha) {
+        do {
+            try JsonFileUtil.delete(content: ficha)
+            for i in 0..<listaFichas.count {
+                if listaFichas[i].id == ficha.id {
+                    listaFichas.remove(at: i)
+                    break
+                }
             }
+            self.fetch()
+        } catch {
+            print(error.localizedDescription)
         }
     }
     

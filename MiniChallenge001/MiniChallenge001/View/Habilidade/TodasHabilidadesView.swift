@@ -62,7 +62,6 @@ struct MagiaDetailCellWithButton: View {
     var body: some View {
         HStack(spacing: 0) {
             MagiaDetailCell(magia: magia)
-//            Divider()
             Button {
                 print("Magia \(magia.nome) aprendida")
             } label: {

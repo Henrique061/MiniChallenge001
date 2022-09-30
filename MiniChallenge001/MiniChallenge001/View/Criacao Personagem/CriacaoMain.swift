@@ -7,64 +7,69 @@
 
 import SwiftUI
 
+public class NovaFichaViewModel: ObservableObject {
+    @Published var ficha: PersonagemFicha
+    
+    init() {
+        self.ficha = PersonagemFicha()
+    }
+}
+
 struct CriacaoMain: View {
     
-    @State private var novaFicha: PersonagemFicha
+    @ObservedObject private var novaFicha: NovaFichaViewModel
+    
     
     public init() {
-        novaFicha = PersonagemFicha()
+        novaFicha = NovaFichaViewModel()
     }
     
     var body: some View {
         TemplateTelaPadrao {
-            VStack() {
-                Text("Para começarmos, preencha abaixo os dados de seu peronsagem")
-                
-                TemplateBackgroundInfo {
-                    TextField("Nome da ficha", text: $novaFicha.nome)
-                }.padding(.bottom, -5)
-                
-                TemplateBackgroundInfo {
-                    TextField("Nome do personagem", text: $novaFicha.nomePersonagem)
-                }
-                
-                NavigationLink {
-                    EscolherRacaView(novaFicha: $novaFicha)
-                } label: {
-                    TemplateBackgroundInfo {
+            ScrollView {
+                VStack(spacing: 10) {
+                    Text("Para começarmos, preencha abaixo os dados de seu peronsagem")
+                    
+                    TextField("Nome da ficha", text: $novaFicha.ficha.nome)
+                        .textFieldStyle(CustomTextFieldStyle())
+                    
+                    TextField("Nome do personagem", text: $novaFicha.ficha.nomePersonagem)
+                        .textFieldStyle(CustomTextFieldStyle())
+                    
+                    CustomNavigationLink {
+                        EscolherRacaView(novaFicha: $novaFicha.ficha)
+                    } label: {
                         DisplayTextoBotao(titulo: "Raça do personagem", descricao: "Toque para selecionar...")
                     }
-                }
-                .padding(.bottom, 8)
-                
-                
-                NavigationLink {
                     
-                } label: {
-                    TemplateBackgroundInfo {
+                    CustomNavigationLink {
+                        EmptyView()
+                    } label: {
                         DisplayTextoBotao(titulo: "Classe do personagem", descricao: "Toque para selecionar...")
                     }
-                }.padding(.bottom, 8)
-                
-                NavigationLink {
                     
-                } label: {
-                    TemplateBackgroundInfo {
+                    CustomNavigationLink {
+                        EmptyView()
+                    } label: {
                         DisplayTextoBotao(titulo: "Antecedente", descricao: "Toque para selecionar...")
                     }
-                }.padding(.bottom, 8)
-                
-                MenuSelecaoTendencia(selectedItem: $novaFicha.tendenciaPersonagem)
-                Spacer()
-                Button {
                     
-                } label: {
-                    TemplateBotaoConfirmacao("Próximo")
+                    MenuSelecaoTendencia(ficha: $novaFicha.ficha)
+                    Spacer()
                 }
+                .tint(.black)
+                .padding(.horizontal)
             }
-            .tint(.black)
-            .padding(.horizontal)
+            
+            Button {
+                
+            } label: {
+                Text("Próximo")
+            }
+            .buttonStyle(CustomButtonStyle3())
+            .padding(.horizontal, 10)
         }
+        
         
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -81,22 +86,18 @@ struct CriacaoMain_Previews: PreviewProvider {
     }
 }
 
-struct TemplateBotaoConfirmacao: View {
-    private var titulo: String
+struct CustomNavigationLink<Destination, Label>: View where Destination: View, Label: View {
     
-    init(_ titulo: String) {
-        self.titulo = titulo
-    }
+    public var destination: () -> Destination
+    public var label: () -> Label
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-            Text(titulo)
-                .padding()
-                .foregroundColor(.white)
+        NavigationLink {
+            destination()
+        } label: {
+            label()
         }
-        .frame(minWidth: 100, maxWidth: .infinity, minHeight: 10, maxHeight: 40, alignment: .center)
-        .padding()
+        .buttonStyle(CustomButtonStyle())
     }
 }
 
@@ -118,29 +119,98 @@ struct DisplayTextoBotao: View {
                 .fixedSize(horizontal: false, vertical: true)
         }
         .foregroundColor(Color("BlackAndWhite"))
-//        .padding(.vertical, 7)
     }
 }
 
 struct MenuSelecaoTendencia: View {
     
-    private var selectedItem: Binding<TipoTendencia>
+    @Binding var ficha: PersonagemFicha
+    @State private var showContent: Bool = false
     
-    init(selectedItem: Binding<TipoTendencia>) {
-        self.selectedItem = selectedItem
+    var body: some View {
+        TemplateContentBackground {
+            DisclosureGroup(isExpanded: $showContent) {
+                ForEach(TipoTendencia.allCases, id: \.self) { tendencia in
+                    if tendencia != .none {
+                        TemplateRadioButton(isMarked: ficha.tendenciaPersonagem == tendencia ,title: tendencia.rawValue) {
+                            ficha.tendenciaPersonagem = tendencia
+                            withAnimation(.easeOut, {
+                                self.showContent.toggle()
+                            })
+                        }.frame(height: 40)
+                    }
+                }
+            } label: {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Tendência")
+                        .font(.system(size: 15, weight: .semibold, design: .default))
+                    Text(ficha.tendenciaPersonagem == .none ? "Toque para selecionar..." : ficha.tendenciaPersonagem.rawValue)
+                        .font(.system(size: 13, weight: .regular, design: .default))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            .buttonStyle(CustomButtonStyle2())
+        }
+    }
+}
+
+struct TemplateRadioButton: View {
+    
+    @State var isMarked: Bool = false
+    let title: String
+    var completion: () -> Void
+    
+    var body: some View {
+        Button {
+            self.isMarked.toggle()
+            completion()
+        } label: {
+            HStack {
+                Text(title)
+                    .font(.system(size: 15, weight: .regular, design: .default))
+                Spacer()
+                Image(systemName: "circle.fill")
+                    .renderingMode(.template)
+                    .foregroundColor(isMarked ? Color("RedTheme") : Color(uiColor: .systemGray3))
+            }
+        }.buttonStyle(CustomButtonStyle2())
+    }
+    
+}
+
+struct TemplateSelecaoUnica<Content, Label>: View where Content: View, Label: View {
+    
+    @State private var showContent: Bool = false
+    @ViewBuilder private var content: () -> Content
+    @ViewBuilder private var label: () -> Label
+    
+    public init(@ViewBuilder content: @escaping () -> Content, @ViewBuilder label: @escaping () -> Label) {
+        self.content = content
+        self.label = label
     }
     
     var body: some View {
-        Menu {
-            ForEach(TipoTendencia.allCases, id:\.self) { tendencia in
-                Button(tendencia.rawValue) {
-                    selectedItem.wrappedValue = tendencia
-                }
+        ZStack {
+            Color("ContentBackground")
+            DisclosureGroup(isExpanded: $showContent) {
+                content()
+            } label: {
+                label()
             }
-        } label: {
-            TemplateBackgroundInfo {
-                DisplayTextoBotao(titulo: "Tendência", descricao: selectedItem.wrappedValue == .none ? "Toque para selecionar..." : selectedItem.wrappedValue.rawValue)
-            }
+            .buttonStyle(CustomButtonStyle())
         }
+        .clipShape(RoundedRectangle(cornerRadius: 5))
+    }
+}
+
+struct CustomButtonStyle3: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+        .padding(.vertical, 10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 10)
+        .foregroundColor(Color.white)
+        .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color.black)
+        .clipShape(RoundedRectangle(cornerRadius: 5))
     }
 }

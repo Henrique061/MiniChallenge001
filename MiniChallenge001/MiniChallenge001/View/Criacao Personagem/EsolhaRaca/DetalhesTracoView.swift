@@ -10,55 +10,31 @@ import SwiftUI
 struct DetalhesTracoView: View {
     
     @Environment(\.dismiss) private var dismiss
-    
-    @Binding var racaEscolha: RacaEscolha
-    @Binding var subRacaEscolha: Subraca
-    
-    private var racaFinal: String {
-        if racaEscolha.possuiSubRaca {
-            return subRacaEscolha.subraca.rawValue
-        }
-        return racaEscolha.tipoRaca.rawValue
-    }
-    
-    private var passivasRaca: [TraitJSON] {
-        var aux: [TraitJSON] = []
-        
-        aux += racaEscolha.tracos
-        
-        if subRacaEscolha.subraca != .none {
-            aux += subRacaEscolha.tracosSubraca
-        }
-        
-        return aux
-    }
+    @EnvironmentObject var vmraca: CriacaoRacaViewModel
     
     var body: some View {
         ZStack {
-            Color(uiColor: .systemGray6)
+            Color("ScreenBackground")
                 .ignoresSafeArea()
             VStack {
                 HStack(alignment: .center) {
                     Image("IdentidadeIconOff")
-                    DisplayTextoBotao(titulo: "Descrição de Traços Raciais", descricao: racaFinal)
-                    Spacer()
+                    DisplayTextoBotao(titulo: "Descrição de Traços Raciais", descricao: vmraca.subraca.subraca == .none ? vmraca.raca.tipoRaca.rawValue : vmraca.subraca.subraca.rawValue)
                     Button {
                         dismiss()
                     } label: {
                         CustomBotaoFechar()
                             .frame(width: 30, height: 30)
                     }
-                }.padding(.horizontal, 12)
+                }
+                .padding(.horizontal, 10)
+                .padding(.top, 10)
                 Divider()
                 
                 ScrollView {
-                    ForEach(passivasRaca, id: \.id) { traco in
-                        HStack {
-                            CelulaDetalheTraco(nomePassiva: traco.nome, descricaoPassiva: traco.descricao)
-                        }
-                        .padding(.vertical, 2)
-                        .padding(.horizontal, 10)
-                    }
+                    ForEach(vmraca.getTracos(), id: \.id) { traco in
+                        CelulaDetalheTraco(nomePassiva: traco.nome, descricaoPassiva: traco.descricao)
+                    }.padding(.horizontal, 10)
                 }
             }
         }
@@ -77,21 +53,20 @@ struct CelulaDetalheTraco: View {
     }
     
     var body: some View {
-        ZStack(alignment: .leading) {
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color("ContentBackground"))
-            VStack(alignment: .leading, spacing: 4)  {
-                DisclosureGroup(isExpanded: $showContent) {
-                    VStack(alignment: .leading) {
-                        Divider()
-                        DisplayTextoBotao(titulo: "Descrição:", descricao: descricaoPassiva)
-                    }
-                } label: {
-                    DisplayTextoBotao(titulo: nomePassiva, descricao: "Passiva")
+        TemplateContentBackground {
+            DisclosureGroup(isExpanded: $showContent) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Divider().padding(.horizontal, -10)
+                    DisplayTextoBotao(titulo: "Descrição:", descricao: descricaoPassiva)
                 }
+                .padding(.horizontal, 10)
+                .padding(.bottom, 10)
+            } label: {
+                DisplayTextoBotao(titulo: nomePassiva, descricao: "Passiva")
             }
-            .accentColor(Color("BlackAndWhite"))
-            .padding(.horizontal, 10)
+            .accentColor(Color("RedTheme"))
+            .buttonStyle(CustomButtonStyle2())
+            
         }
     }
 }

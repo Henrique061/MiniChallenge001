@@ -121,14 +121,3 @@ struct MagiaDetailCell: View {
         }
     }
 }
-
-struct CustomButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding(.vertical, 5)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding(.horizontal, 10)
-            .foregroundColor(Color("BlackAndWhite"))
-            .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("ContentBackground"))
-    }
-}

@@ -47,20 +47,35 @@ class JsonFileUtil {
     
     public static func getNewIdForSheet() throws -> Int {
         try createSheetsFolderPath()
+        var id = 1
         let arr = try FileManager.default.contentsOfDirectory(atPath: DOCUMENTS_PATH.path)
-        return arr.count + 1
+        while true {
+            id = Int.random(in: 1...5000)
+            var isValidID = true
+            for fileName in arr {
+                if fileName.contains("\(id)") {
+                    isValidID = false
+                }
+            }
+            if isValidID { break }
+        }
+        return id
+    }
+    
+    private static func formatSheetName(name: String, id: Int) -> String {
+        return "\(name)%\(id)".lowercased().replacingOccurrences(of: " ", with: "_")
     }
     
     public static func write<T:Json>(content: T) throws {
         try createSheetsFolderPath()
         let encodedContent = try JSONEncoder().encode(content)
-        let fileName = "\(content.nome)-\(content.id)".lowercased().replacingOccurrences(of: " ", with: "+")
+        let fileName = formatSheetName(name: content.nome, id: content.id)
         let url = DOCUMENTS_PATH.appendingPathComponent(fileName).appendingPathExtension("json")
         FileManager.default.createFile(atPath: url.path,contents: encodedContent)
     }
     
     public static func delete<T:Json>(content: T) throws {
-        let fileName = "\(content.nome)-\(content.id)".lowercased().replacingOccurrences(of: " ", with: "+")
+        let fileName = formatSheetName(name: content.nome, id: content.id)
         let completePath = DOCUMENTS_PATH.appendingPathComponent(fileName).appendingPathExtension("json")
         try FileManager.default.removeItem(atPath: completePath.path)
     }
@@ -71,7 +86,6 @@ class JsonFileUtil {
         for fileName in sheetsPath {
             if fileName.contains(".DS_Store") { continue }
             let completePath = DOCUMENTS_PATH.appendingPathComponent(fileName)
-            print(completePath.path)
             if let data = FileManager.default.contents(atPath: completePath.path) {
                 do {
                     let decodedContent = try JSONDecoder().decode(PersonagemFicha.self, from: data)
