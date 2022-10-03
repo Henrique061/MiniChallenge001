@@ -42,6 +42,21 @@ public class ClasseConcreteBuilder : ClasseBuilder {
         self.classe.dadoVida = dado
     }
     
+    //MARK: VIDA INICIAL
+    func setVidaInicial(_ vida: Int) {
+        self.classe.vidaInicial = vida
+    }
+    
+    //MARK: VIDAS SWGUINTES
+    func setVidasSeguintes(_ vidaSeguinte: String) {
+        self.classe.vidasSeguintes = vidaSeguinte
+    }
+    
+    //MARK: RIQUEZA INICIAL
+    func setRiquezaInicial(_ riqueza: String) {
+        self.classe.riquezaInicial = riqueza
+    }
+    
     //MARK: PROFICIENCIA SALVAGUARDA
     func setProfSalvaguarda(_ atributos: [AtributosSalvaguarda]) {
         self.classe.profSalvaguardas = atributos

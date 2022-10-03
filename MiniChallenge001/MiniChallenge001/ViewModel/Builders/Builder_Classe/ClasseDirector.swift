@@ -262,6 +262,10 @@ public class ClasseDirector {
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d12")
         
+        builder?.setVidaInicial(12)
+        builder?.setVidasSeguintes("1d12 ou 7")
+        builder?.setRiquezaInicial("2d4 x 10")
+        
         builder?.setProfSalvaguarda([.forca, .constituicao])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
@@ -365,6 +369,10 @@ public class ClasseDirector {
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d8")
         
+        builder?.setVidaInicial(8)
+        builder?.setVidasSeguintes("1d8 ou 5")
+        builder?.setRiquezaInicial("5d4 x 10")
+        
         builder?.setProfSalvaguarda([.destreza, .carisma])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
@@ -462,6 +470,10 @@ public class ClasseDirector {
         builder?.setCaracteristicasClasse(caracteristicasClasse)
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d8")
+        
+        builder?.setVidaInicial(8)
+        builder?.setVidasSeguintes("1d8 ou 5")
+        builder?.setRiquezaInicial("4d4 x 10")
         
         builder?.setProfSalvaguarda([.sabedoria, .carisma])
         builder?.setProfArmas(armasProficientes)
@@ -576,6 +588,10 @@ public class ClasseDirector {
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d8")
         
+        builder?.setVidaInicial(8)
+        builder?.setVidasSeguintes("1d8 ou 5")
+        builder?.setRiquezaInicial("5d4 x 10")
+        
         builder?.setProfSalvaguarda([.sabedoria, .carisma])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
@@ -672,6 +688,10 @@ public class ClasseDirector {
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d8")
         
+        builder?.setVidaInicial(8)
+        builder?.setVidasSeguintes("1d8 ou 5")
+        builder?.setRiquezaInicial("2d4 x 10")
+        
         builder?.setProfSalvaguarda([.inteligencia, .sabedoria])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
@@ -750,6 +770,10 @@ public class ClasseDirector {
         builder?.setCaracteristicasClasse(caracteristicasClasse)
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d6")
+        
+        builder?.setVidaInicial(6)
+        builder?.setVidasSeguintes("1d6 ou 4")
+        builder?.setRiquezaInicial("3d4 x 10")
         
         builder?.setProfSalvaguarda([.constituicao, .carisma])
         builder?.setProfArmas(armasProficientes)
@@ -840,6 +864,10 @@ public class ClasseDirector {
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d10")
         
+        builder?.setVidaInicial(10)
+        builder?.setVidasSeguintes("1d10 ou 6")
+        builder?.setRiquezaInicial("5d4 x 10")
+        
         builder?.setProfSalvaguarda([.forca, .constituicao])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
@@ -927,6 +955,10 @@ public class ClasseDirector {
         builder?.setCaracteristicasClasse(caracteristicasClasse)
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d8")
+        
+        builder?.setVidaInicial(8)
+        builder?.setVidasSeguintes("1d8 ou 5")
+        builder?.setRiquezaInicial("4d4 x 10")
         
         builder?.setProfSalvaguarda([.destreza, .inteligencia])
         builder?.setProfArmas(armasProficientes)
@@ -1022,6 +1054,10 @@ public class ClasseDirector {
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d6")
         
+        builder?.setVidaInicial(6)
+        builder?.setVidasSeguintes("1d6 ou 4")
+        builder?.setRiquezaInicial("4d4 x 10")
+        
         builder?.setProfSalvaguarda([.inteligencia, .sabedoria])
         builder?.setProfArmas(armasProficientes)
         
@@ -1101,6 +1137,10 @@ public class ClasseDirector {
         builder?.setCaracteristicasClasse(caracteristicasClasse)
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d8")
+        
+        builder?.setVidaInicial(8)
+        builder?.setVidasSeguintes("1d8 ou 5")
+        builder?.setRiquezaInicial("5d4")
         
         builder?.setProfSalvaguarda([.forca, .destreza])
         builder?.setProfArmas(armasProficientes)
@@ -1204,6 +1244,10 @@ public class ClasseDirector {
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d10")
         
+        builder?.setVidaInicial(10)
+        builder?.setVidasSeguintes("1d10 ou 6")
+        builder?.setRiquezaInicial("5d4 x 10")
+        
         builder?.setProfSalvaguarda([.sabedoria, .carisma])
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
@@ -1286,6 +1330,10 @@ public class ClasseDirector {
         builder?.setCaracteristicasClasse(caracteristicasClasse)
         builder?.setSubClasses(subclasses)
         builder?.setDadoVida("d10")
+        
+        builder?.setVidaInicial(10)
+        builder?.setVidasSeguintes("1d10 ou 6")
+        builder?.setRiquezaInicial("5d4 x 10")
         
         builder?.setProfSalvaguarda([.forca, .destreza])
         builder?.setProfArmas(armasProficientes)

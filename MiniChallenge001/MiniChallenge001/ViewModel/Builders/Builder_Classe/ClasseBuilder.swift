@@ -18,6 +18,10 @@ protocol ClasseBuilder {
     func setSubClasses(_ subClasses: [SubClasseEscolha])
     func setDadoVida(_ dado: String)
     
+    func setVidaInicial(_ vida: Int)
+    func setVidasSeguintes(_ vidaSeguinte: String)
+    func setRiquezaInicial(_ riqueza: String)
+    
     func setProfSalvaguarda(_ atributos: [AtributosSalvaguarda])
     func setProfArmas(_ armas: [ArmaJSON])
     func setProfArmaduras(_ armaduras: [ArmaduraJSON])

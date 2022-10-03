@@ -141,6 +141,11 @@ public class ClasseEscolha {
     var caracteristicasClasse: [CaracteristicaJSON] = [] // COLOCAR CARACTERISTICAS AQUI
     var subClasses: [SubClasseEscolha] = []
     var dadoVida: String = ""
+    
+    var vidaInicial: Int = 0
+    var vidasSeguintes: String = ""
+    var riquezaInicial: String = ""
+    
     var profSalvaguardas: [AtributosSalvaguarda] = []
     var profArmas: [ArmaJSON] = []
     var profArmaduras: [ArmaduraJSON] = []
