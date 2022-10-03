@@ -8,8 +8,8 @@
 import SwiftUI
 
 class CriacaoRacaViewModel: ObservableObject {
-    @Published var raca: RacaEscolha
-    @Published var subraca: Subraca
+    @Published public var raca: RacaEscolha
+    @Published public var subraca: Subraca
     
     private var numberFormatter: NumberFormatter {
         let formatter = NumberFormatter()
@@ -19,9 +19,17 @@ class CriacaoRacaViewModel: ObservableObject {
         return formatter
     }
     
-    init() {
+    public init() {
         self.raca = RacaEscolha()
         self.subraca = Subraca(subraca: .none, tracos: [], atributoGanho: .init())
+    }
+    
+    public init(ficha: PersonagemFicha) {
+        self.raca = RacaClient.orderRaca(ficha.racaFinal.racaPersonagem)
+        self.subraca = Subraca(subraca: .none, tracos: [], atributoGanho: .init())
+        if self.raca.possuiSubRaca {
+            self.subraca = self.raca.subRacas.filter({$0.subraca == ficha.racaFinal.subracaPersonagem})[0]
+        }
     }
     
     public func gerarRacaFinal() -> RacaFicha {
@@ -76,16 +84,11 @@ class CriacaoRacaViewModel: ObservableObject {
     }
 }
 
-struct EscolherRacaView: View {
+struct SelecaoRacaView: View {
     
     @Environment(\.dismiss) private var dismiss
-    private var novaFicha: Binding<PersonagemFicha>
-    @ObservedObject var vmraca: CriacaoRacaViewModel
-    
-    public init(novaFicha: Binding<PersonagemFicha>) {
-        self.novaFicha = novaFicha
-        self.vmraca = CriacaoRacaViewModel()
-    }
+    @Binding var ficha: PersonagemFicha
+    @ObservedObject var vmraca: CriacaoRacaViewModel = CriacaoRacaViewModel()
     
     var body: some View {
         TemplateTelaPadrao {
@@ -139,8 +142,8 @@ struct MenuEscolhaRaca: View {
                         if !(raca == .none) {
                             TemplateRadioButton(isMarked: vmraca.raca.tipoRaca == raca, title: raca.rawValue) {
                                 withAnimation(.easeOut) {
-                                    self.showContent.toggle()
                                     vmraca.setRaca(tipoRaca: raca)
+                                    self.showContent.toggle()
                                 }
                             }
                         }

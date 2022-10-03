@@ -17,12 +17,7 @@ public class NovaFichaViewModel: ObservableObject {
 
 struct CriacaoMain: View {
     
-    @ObservedObject private var novaFicha: NovaFichaViewModel
-    
-    
-    public init() {
-        novaFicha = NovaFichaViewModel()
-    }
+    @ObservedObject private var novaFicha: NovaFichaViewModel = NovaFichaViewModel()
     
     var body: some View {
         TemplateTelaPadrao {
@@ -37,13 +32,13 @@ struct CriacaoMain: View {
                         .textFieldStyle(CustomTextFieldStyle())
                     
                     CustomNavigationLink {
-                        EscolherRacaView(novaFicha: $novaFicha.ficha)
+                        SelecaoRacaView(ficha: $novaFicha.ficha)
                     } label: {
                         DisplayTextoBotao(titulo: "Raça do personagem", descricao: "Toque para selecionar...")
                     }
                     
                     CustomNavigationLink {
-                        EmptyView()
+                        SelecaoClasseView(ficha: $novaFicha.ficha)
                     } label: {
                         DisplayTextoBotao(titulo: "Classe do personagem", descricao: "Toque para selecionar...")
                     }
@@ -174,7 +169,7 @@ struct TemplateRadioButton: View {
                 Spacer()
                 Image(systemName: "circle.fill")
                     .renderingMode(.template)
-                    .foregroundColor(isMarked ? Color("RedTheme") : Color(uiColor: .systemGray3))
+                    .foregroundColor(isMarked ? Color("RedTheme") : Color(uiColor: .systemGray4))
             }
         }
         .buttonStyle(CustomButtonStyle2())

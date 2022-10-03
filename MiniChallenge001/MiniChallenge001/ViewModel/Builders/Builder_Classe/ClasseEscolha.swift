@@ -37,7 +37,7 @@ struct PontoEspecificoNumerico : Codable {
 }
 
 //MARK: Enum ClassePersonagem
-public enum ClassePersonagem: String, Codable, Hashable {
+public enum ClassePersonagem: String, Codable, Hashable, CaseIterable {
     case barbaro = "Bárbaro"
     case bardo = "Bardo"
     case bruxo = "Bruxo"

@@ -35,7 +35,9 @@
 		126ABB2D28DD26DF00CF5A2E /* DescricaoMagiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB2C28DD26DF00CF5A2E /* DescricaoMagiaView.swift */; };
 		126ABB3328DE3EE200CF5A2E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3228DE3EE200CF5A2E /* MainView.swift */; };
 		126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */; };
-		12CC7ABF28E10E24000AB35B /* EscolherRacaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC7ABE28E10E24000AB35B /* EscolherRacaView.swift */; };
+		12CC7ABF28E10E24000AB35B /* SelecaoRacaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC7ABE28E10E24000AB35B /* SelecaoRacaView.swift */; };
+		12FEBA2828E7A6CB00DBB6EF /* SelecaoClasseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEBA2728E7A6CB00DBB6EF /* SelecaoClasseView.swift */; };
+		12FEBA2A28E8A26A00DBB6EF /* EditarRiquezaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEBA2928E8A26A00DBB6EF /* EditarRiquezaView.swift */; };
 		3D28DBA728E62A99005F71AC /* RacaFinalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D28DBA628E62A99005F71AC /* RacaFinalBuilder.swift */; };
 		3D28DBA928E62D64005F71AC /* RacaFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D28DBA828E62D64005F71AC /* RacaFinal.swift */; };
 		3D3DC35628DC09F00093BD92 /* ClasseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */; };
@@ -116,7 +118,9 @@
 		126ABB2C28DD26DF00CF5A2E /* DescricaoMagiaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescricaoMagiaView.swift; sourceTree = "<group>"; };
 		126ABB3228DE3EE200CF5A2E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriacaoMain.swift; sourceTree = "<group>"; };
-		12CC7ABE28E10E24000AB35B /* EscolherRacaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolherRacaView.swift; sourceTree = "<group>"; };
+		12CC7ABE28E10E24000AB35B /* SelecaoRacaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecaoRacaView.swift; sourceTree = "<group>"; };
+		12FEBA2728E7A6CB00DBB6EF /* SelecaoClasseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecaoClasseView.swift; sourceTree = "<group>"; };
+		12FEBA2928E8A26A00DBB6EF /* EditarRiquezaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarRiquezaView.swift; sourceTree = "<group>"; };
 		3D28DBA628E62A99005F71AC /* RacaFinalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaFinalBuilder.swift; sourceTree = "<group>"; };
 		3D28DBA828E62D64005F71AC /* RacaFinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaFinal.swift; sourceTree = "<group>"; };
 		3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseBuilder.swift; sourceTree = "<group>"; };
@@ -179,13 +183,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		12535F4928E323DC0020A005 /* EsolhaRaca */ = {
+		12535F4928E323DC0020A005 /* SelecaoRaca */ = {
 			isa = PBXGroup;
 			children = (
-				12CC7ABE28E10E24000AB35B /* EscolherRacaView.swift */,
+				12CC7ABE28E10E24000AB35B /* SelecaoRacaView.swift */,
 				12535F4A28E323F60020A005 /* DetalhesTracoView.swift */,
 			);
-			path = EsolhaRaca;
+			path = SelecaoRaca;
 			sourceTree = "<group>";
 		};
 		126AA8F828DABD5300CF5A2E /* Json */ = {
@@ -255,17 +259,19 @@
 			isa = PBXGroup;
 			children = (
 				126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */,
-				12535F4928E323DC0020A005 /* EsolhaRaca */,
-				12FEBA2528E7A55300DBB6EF /* EscolhaClasse */,
+				12535F4928E323DC0020A005 /* SelecaoRaca */,
+				12FEBA2528E7A55300DBB6EF /* SelecaoClasse */,
 			);
 			path = "Criacao Personagem";
 			sourceTree = "<group>";
 		};
-		12FEBA2528E7A55300DBB6EF /* EscolhaClasse */ = {
+		12FEBA2528E7A55300DBB6EF /* SelecaoClasse */ = {
 			isa = PBXGroup;
 			children = (
+				12FEBA2728E7A6CB00DBB6EF /* SelecaoClasseView.swift */,
+				12FEBA2928E8A26A00DBB6EF /* EditarRiquezaView.swift */,
 			);
-			path = EscolhaClasse;
+			path = SelecaoClasse;
 			sourceTree = "<group>";
 		};
 		12FEBA2628E7A59000DBB6EF /* SheetPersonagem */ = {
@@ -593,6 +599,7 @@
 				3D6F868728E0CD760022D0BE /* RacaClient.swift in Sources */,
 				3D6F868F28E11B910022D0BE /* BuscaJson.swift in Sources */,
 				126ABAFA28DB3D5200CF5A2E /* ArmaduraJSON.swift in Sources */,
+				12FEBA2A28E8A26A00DBB6EF /* EditarRiquezaView.swift in Sources */,
 				3DF7C31128E78BD900DC3795 /* RacaFinalConcreteBuilder.swift in Sources */,
 				122E948628E2205300184F88 /* PersonagemViewModel.swift in Sources */,
 				126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */,
@@ -616,6 +623,7 @@
 				126ABAF528DB3D5200CF5A2E /* EquipamentoJSON.swift in Sources */,
 				3D3DC35D28DC14B30093BD92 /* ClasseClient.swift in Sources */,
 				09B5569728DA6156001466B0 /* ContentView.swift in Sources */,
+				12FEBA2828E7A6CB00DBB6EF /* SelecaoClasseView.swift in Sources */,
 				126ABAF328DB3D5200CF5A2E /* VeiculoAquaticoJSON.swift in Sources */,
 				3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */,
 				3D6F869428E11BF70022D0BE /* AntecedenteDirector.swift in Sources */,
@@ -625,7 +633,7 @@
 				3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */,
 				126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */,
 				126ABB2D28DD26DF00CF5A2E /* DescricaoMagiaView.swift in Sources */,
-				12CC7ABF28E10E24000AB35B /* EscolherRacaView.swift in Sources */,
+				12CC7ABF28E10E24000AB35B /* SelecaoRacaView.swift in Sources */,
 				09B5569228DA6156001466B0 /* Habilidades.swift in Sources */,
 				126ABB2B28DD25F100CF5A2E /* TodasHabilidadesView.swift in Sources */,
 				126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */,

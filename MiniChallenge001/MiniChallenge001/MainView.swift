@@ -32,7 +32,6 @@ struct MainView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .foregroundColor(Color("BlackAndWhite"))
                                 .padding(.leading, -20)
-                                .padding(.bottom, 10)
                         }
                         
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
@@ -188,6 +187,79 @@ struct TemplateContentBackground<Content>: View where Content: View{
             content()
         }
         .clipShape(RoundedRectangle(cornerRadius: 5))
+    }
+}
+
+struct TemplateSheetView<Header, Content>: View where Content: View, Header: SheetHeader {
+    
+    @Environment(\.dismiss) private var dismiss
+    @ViewBuilder private var content: () -> Content
+    private var header: Header
+    
+    public init(header: Header, @ViewBuilder content: @escaping () -> Content) {
+        self.header = header
+        self.content = content
+    }
+    
+    var body: some View {
+        ZStack(alignment: .top) {
+            Color("ScreenBackground").ignoresSafeArea()
+            VStack(alignment: .leading, spacing: 0) {
+                header
+                    .padding(.top, 10)
+                content()
+            }
+        }
+    }
+}
+
+protocol SheetHeader: View {
+    var image: Image { get }
+    var title: String { get }
+    var subtitle: String { get }
+}
+
+struct DefaultSheetHeader: SheetHeader {
+    
+    @Environment(\.dismiss) private var dismiss
+    var image: Image
+    var title: String
+    var subtitle: String
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(alignment: .top, spacing: 0) {
+                image
+                    .renderingMode(.template)
+                    .frame(width: 30, height: 30, alignment: .center)
+                    .scaledToFill()
+                    .padding(.horizontal, 10)
+                
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(title)
+                        .font(.system(size: 15, weight: .bold, design: .default))
+                    Text(subtitle)
+                        .font(.system(size: 13, weight: .regular, design: .default))
+                }
+                
+                Spacer()
+                
+                Button {
+                    dismiss()
+                } label: {
+                    ZStack {
+                        Color(uiColor: .systemGray3)
+                        Image(systemName: "xmark")
+                               .renderingMode(.template)
+                               .foregroundColor(Color.black)
+                    }
+                }
+                .frame(width: 30, height: 30, alignment: .center)
+                .clipShape(Circle())
+                .padding(.trailing, 10)
+            }.padding(.bottom, 10)
+            Divider()
+        }
     }
 }
 
