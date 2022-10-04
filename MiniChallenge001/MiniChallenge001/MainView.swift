@@ -257,8 +257,10 @@ struct DefaultSheetHeader: SheetHeader {
                 .frame(width: 30, height: 30, alignment: .center)
                 .clipShape(Circle())
                 .padding(.trailing, 10)
-            }.padding(.bottom, 10)
+            }
+            .padding(.bottom, 10)
             Divider()
+                .padding(.bottom, 10)
         }
     }
 }
@@ -283,6 +285,18 @@ struct CustomButtonStyle2: ButtonStyle {
             .padding(.horizontal, 10)
             .foregroundColor(Color("BlackAndWhite"))
             .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("ContentBackground"))
+    }
+}
+
+struct CustomButtonStyle4: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(.vertical, 5)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .padding(.horizontal, 10)
+            .foregroundColor(Color("BlackAndWhite"))
+            .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("ContentBackground"))
+            .border(Color("InverseBlackAndWhite"))
     }
 }
 

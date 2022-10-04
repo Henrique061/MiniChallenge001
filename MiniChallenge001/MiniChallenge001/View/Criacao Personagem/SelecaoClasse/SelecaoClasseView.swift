@@ -82,7 +82,7 @@ struct PontosDeVidaInfo: View {
     var body: some View {
         if vmclasse.escolha.classePersonagem != .none {
             TemplateContentBackground {
-                DisplayTextoBotao(titulo: "Pontos de Vida", descricao: "\(vmclasse.escolha.dadoVida) + Modificador de Destreza")
+                DisplayTextoBotao(titulo: "Pontos de Vida Inicial", descricao: "\(vmclasse.escolha.vidaInicial) + Modificador de Constituição")
                     .padding(10)
             }
         }
