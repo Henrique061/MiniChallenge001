@@ -88,7 +88,7 @@ public class RacaDirector {
         let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaPorNomes(nomes: ["Machado de Batalha", "Machadinha", "Martelo Leve", "Martelo de Guerra"])
         
         let profArmadurasPorSubraca: [ProficienciaArmaduraPorSubraca] = [
-            ProficienciaArmaduraPorSubraca(subraca: .anaoMontanha, armasProficientes: BuscaJson.buscaArmadurasPorTipos(tipos: [.leve, .media]))
+            ProficienciaArmaduraPorSubraca(subraca: .anaoMontanha, armadurasProficientes: BuscaJson.buscaArmadurasPorTipos(tipos: [.leve, .media]))
         ]
         
         let escolhasFerramentas: [String] = ["Ferramentas de ferreiro", "Suprimentos de cervejeiro", "Ferramentas de pedreiro"]
@@ -291,7 +291,7 @@ public class RacaDirector {
         ]
         
         let profFerramentasPorSubraca: [ProficienciaFerramentaPorSubraca] = [
-            ProficienciaFerramentaPorSubraca(subraca: .gnomoRochas, armasProficientes: BuscaJson.buscaFerramentaPorTipo(tipo: .artesao))
+            ProficienciaFerramentaPorSubraca(subraca: .gnomoRochas, ferramentasProficientes: BuscaJson.buscaFerramentaPorTipo(tipo: .artesao))
         ]
         
         let magiasSubraca: MagiaSubraca = MagiaSubraca(subraca: .gnomoFloresta, magias: [BuscaJson.buscaMagiaPorNome(nome: "Ilusão Programada")])

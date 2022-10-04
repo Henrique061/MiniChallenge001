@@ -9,6 +9,7 @@ import Foundation
 
 // todas as opcoes de escolhas possiveis serao salvas aqui
 public struct RacaEscolhasDefinidas : Codable {
+    var escolhaSubRaca: Subraca = Subraca()
     var escolhaAtributos: [AtributosGanhosRaca] = []
     var escolhaIdioma: IdiomaAlfabeto = IdiomaAlfabeto()
     var escolhaProfFerramentasAdicionais: [FerramentaJSON] = []

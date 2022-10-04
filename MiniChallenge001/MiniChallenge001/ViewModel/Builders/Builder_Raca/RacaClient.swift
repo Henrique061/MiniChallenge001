@@ -18,7 +18,13 @@ public class RacaClient : Codable {
         return builder.getRacaEscolha()
     }
     
-    public static func orderPersonagemRaca(_ racaEscolha: RacaEscolha, escolhas: RacaEscolhasDefinidas) {
+    public static func orderPersonagemRaca(_ racaEscolha: RacaEscolha, escolhas: RacaEscolhasDefinidas) -> RacaFinal {
+        let director = RacaFinalDirector()
+        let builder = RacaFinalConcreteBuilder()
         
+        director.newBuilder(racaFinalBuilder: builder)
+        director.makeRacaFinal(racaEscolha, escolhas)
+        
+        return builder.getRacaFinal()
     }
 }

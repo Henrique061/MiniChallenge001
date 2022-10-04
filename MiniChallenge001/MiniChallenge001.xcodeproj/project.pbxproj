@@ -65,6 +65,7 @@
 		3D9BED2F28CFB76200CA1821 /* MiniChallenge001Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED2E28CFB76200CA1821 /* MiniChallenge001Tests.swift */; };
 		3D9BED3928CFB76200CA1821 /* MiniChallenge001UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED3828CFB76200CA1821 /* MiniChallenge001UITests.swift */; };
 		3D9BED3B28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED3A28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift */; };
+		3DB929A528ECA6B20075F0D9 /* RacaFinalDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB929A428ECA6B20075F0D9 /* RacaFinalDirector.swift */; };
 		3DF24F8728E1CC82006C0AAE /* RacaFicha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8628E1CC82006C0AAE /* RacaFicha.swift */; };
 		3DF24F8B28E1CC99006C0AAE /* ClasseFicha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8A28E1CC99006C0AAE /* ClasseFicha.swift */; };
 		3DF24F8D28E1CCB0006C0AAE /* PersonagemFicha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */; };
@@ -151,6 +152,7 @@
 		3D9BED3428CFB76200CA1821 /* MiniChallenge001UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniChallenge001UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9BED3828CFB76200CA1821 /* MiniChallenge001UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge001UITests.swift; sourceTree = "<group>"; };
 		3D9BED3A28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge001UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3DB929A428ECA6B20075F0D9 /* RacaFinalDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaFinalDirector.swift; sourceTree = "<group>"; };
 		3DF24F8628E1CC82006C0AAE /* RacaFicha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaFicha.swift; sourceTree = "<group>"; };
 		3DF24F8A28E1CC99006C0AAE /* ClasseFicha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseFicha.swift; sourceTree = "<group>"; };
 		3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemFicha.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			children = (
 				3D28DBA628E62A99005F71AC /* RacaFinalBuilder.swift */,
 				3DF7C31028E78BD900DC3795 /* RacaFinalConcreteBuilder.swift */,
+				3DB929A428ECA6B20075F0D9 /* RacaFinalDirector.swift */,
 				3D28DBA828E62D64005F71AC /* RacaFinal.swift */,
 			);
 			path = Raca_Final;
@@ -637,6 +640,7 @@
 				09B5569228DA6156001466B0 /* Habilidades.swift in Sources */,
 				126ABB2B28DD25F100CF5A2E /* TodasHabilidadesView.swift in Sources */,
 				126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */,
+				3DB929A528ECA6B20075F0D9 /* RacaFinalDirector.swift in Sources */,
 				3D3DC35F28DC15310093BD92 /* ClasseConcreteBuilder.swift in Sources */,
 				09B5569828DA6156001466B0 /* Combate.swift in Sources */,
 				126ABAF628DB3D5200CF5A2E /* EquipamentoMontariaJSON.swift in Sources */,

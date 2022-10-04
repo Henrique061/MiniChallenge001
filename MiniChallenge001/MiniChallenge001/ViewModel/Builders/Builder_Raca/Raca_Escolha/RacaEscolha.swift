@@ -93,17 +93,17 @@ public struct ProficienciaArmasPorSubraca : Codable {
 
 public struct ProficienciaFerramentaPorSubraca : Codable {
     var subraca: TipoSubRaca = .none
-    var armasProficientes: [FerramentaJSON] = []
+    var ferramentasProficientes: [FerramentaJSON] = []
 }
 
 public struct ProficienciaArmaduraPorSubraca : Codable {
     var subraca: TipoSubRaca = .none
-    var armasProficientes: [ArmaduraJSON] = []
+    var armadurasProficientes: [ArmaduraJSON] = []
 }
 
 public struct ProficienciaPericiaPorSubraca : Codable {
     var subraca: TipoSubRaca = .none
-    var armasProficientes: [Pericia] = []
+    var periciasProficientes: [Pericia] = []
 }
 
 public struct MagiaSubraca : Codable {
@@ -161,8 +161,15 @@ public class RacaEscolha {
 public struct Subraca : Codable, Hashable {
     var subraca: TipoSubRaca
     var subracaNome: String
-    var tracosSubraca: [TraitJSON] // colocar json traits aqui
+    var tracosSubraca: [TraitJSON]// colocar json traits aqui
     var atributoGanho: AtributosGanhosRaca
+    
+    init () {
+        self.subraca = .none
+        self.subracaNome = ""
+        self.tracosSubraca = []
+        self.atributoGanho = AtributosGanhosRaca(atributo: .none, pontosGanhos: 0)
+    }
     
     init (subraca: TipoSubRaca, tracos: [TraitJSON], atributoGanho: AtributosGanhosRaca) {
         self.subraca = subraca

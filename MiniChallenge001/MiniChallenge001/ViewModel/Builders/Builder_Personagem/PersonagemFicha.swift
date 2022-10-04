@@ -73,7 +73,13 @@ public class PersonagemFicha: Json {
     var equipamentosMontaria: [EquipamentoMontariaJSON] = []
     var veiculosAquaticos: [VeiculoAquaticoJSON] = []
     var bugigangas: [BugigangaJSON] = []
-    var carteira: [Moeda] = []
+    var carteira: [Moeda] = [
+        .init(quantidade: 0, tipo: .cobre),
+        .init(quantidade: 0, tipo: .prata),
+        .init(quantidade: 0, tipo: .electro),
+        .init(quantidade: 0, tipo: .ouro),
+        .init(quantidade: 0, tipo: .platina)
+    ]
     
     //MARK: PONTOS
     var classeArmadura: Int = 0
