@@ -542,9 +542,9 @@ public class ClasseDirector {
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Brunea", quantia: 1, tipo: .armadura)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armadura)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armadura)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Brunea", quantia: 1, tipo: .armaduras)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armaduras)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armaduras)]))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
         }
@@ -640,7 +640,7 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "")
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Escudo", quantia: 1, tipo: .armadura)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Escudo", quantia: 1, tipo: .armaduras)]))
             
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
@@ -819,8 +819,8 @@ public class ClasseDirector {
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armadura)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Gibão de Peles", quantia: 1, tipo: .armadura), (item: "Arco Longo", quantia: 1, tipo: .arma), (item: "Flechas", quantia: 20, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armaduras)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Gibão de Peles", quantia: 1, tipo: .armaduras), (item: "Arco Longo", quantia: 1, tipo: .arma), (item: "Flechas", quantia: 20, tipo: .equipamento)]))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
         }
@@ -830,7 +830,7 @@ public class ClasseDirector {
             let armasEscolha: [String] = BuscaArma.buscaArmaTipo(tipo: .marcial, nomeExcluso: "")
             
             for arma in armasEscolha {
-                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma), (item: "Escudo", quantia: 1, tipo: .armadura)]))
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma), (item: "Escudo", quantia: 1, tipo: .armaduras)]))
             }
             
             for arma in armasEscolha {
@@ -1195,7 +1195,7 @@ public class ClasseDirector {
             let armasEscolha: [String] = BuscaArma.buscaArmaTipo(tipo: .marcial, nomeExcluso: "")
             
             for arma in armasEscolha {
-                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma), (item: "Escudo", quantia: 1, tipo: .armadura)]))
+                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma), (item: "Escudo", quantia: 1, tipo: .armaduras)]))
             }
             
             for arma in armasEscolha {
@@ -1297,8 +1297,8 @@ public class ClasseDirector {
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Brunea", quantia: 1, tipo: .armadura)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armadura)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Brunea", quantia: 1, tipo: .armaduras)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armaduras)]))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
         }

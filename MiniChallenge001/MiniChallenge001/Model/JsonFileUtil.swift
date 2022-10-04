@@ -103,7 +103,7 @@ public enum DocumentsFolderName: String {
     case sheets = "sheets"
 }
 
-public enum BundleFolderName: String {
+public enum BundleFolderName: String, Codable {
     case arma = "arma"
     case armaduras = "armaduras"
     case bugiganga = "bugiganga"
@@ -115,4 +115,6 @@ public enum BundleFolderName: String {
     case montaria = "montaria"
     case trait = "trait"
     case veiculo = "veiculo"
+    
+    case none = "Nenhum"
 }

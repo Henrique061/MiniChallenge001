@@ -66,6 +66,10 @@
 		3D9BED3928CFB76200CA1821 /* MiniChallenge001UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED3828CFB76200CA1821 /* MiniChallenge001UITests.swift */; };
 		3D9BED3B28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED3A28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift */; };
 		3DB929A528ECA6B20075F0D9 /* RacaFinalDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB929A428ECA6B20075F0D9 /* RacaFinalDirector.swift */; };
+		3DB929AB28ECC0E50075F0D9 /* ClasseFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB929AA28ECC0E50075F0D9 /* ClasseFinal.swift */; };
+		3DB929AD28ECC1120075F0D9 /* ClasseFinalDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB929AC28ECC1120075F0D9 /* ClasseFinalDirector.swift */; };
+		3DB929AF28ECC1280075F0D9 /* ClasseFinalConcreteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB929AE28ECC1280075F0D9 /* ClasseFinalConcreteBuilder.swift */; };
+		3DB929B128ECC13B0075F0D9 /* ClasseFinalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB929B028ECC13B0075F0D9 /* ClasseFinalBuilder.swift */; };
 		3DF24F8728E1CC82006C0AAE /* RacaFicha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8628E1CC82006C0AAE /* RacaFicha.swift */; };
 		3DF24F8B28E1CC99006C0AAE /* ClasseFicha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8A28E1CC99006C0AAE /* ClasseFicha.swift */; };
 		3DF24F8D28E1CCB0006C0AAE /* PersonagemFicha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */; };
@@ -153,6 +157,10 @@
 		3D9BED3828CFB76200CA1821 /* MiniChallenge001UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge001UITests.swift; sourceTree = "<group>"; };
 		3D9BED3A28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge001UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3DB929A428ECA6B20075F0D9 /* RacaFinalDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaFinalDirector.swift; sourceTree = "<group>"; };
+		3DB929AA28ECC0E50075F0D9 /* ClasseFinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseFinal.swift; sourceTree = "<group>"; };
+		3DB929AC28ECC1120075F0D9 /* ClasseFinalDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseFinalDirector.swift; sourceTree = "<group>"; };
+		3DB929AE28ECC1280075F0D9 /* ClasseFinalConcreteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseFinalConcreteBuilder.swift; sourceTree = "<group>"; };
+		3DB929B028ECC13B0075F0D9 /* ClasseFinalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseFinalBuilder.swift; sourceTree = "<group>"; };
 		3DF24F8628E1CC82006C0AAE /* RacaFicha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaFicha.swift; sourceTree = "<group>"; };
 		3DF24F8A28E1CC99006C0AAE /* ClasseFicha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseFicha.swift; sourceTree = "<group>"; };
 		3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemFicha.swift; sourceTree = "<group>"; };
@@ -326,12 +334,10 @@
 		3D3DC35B28DC14790093BD92 /* Builder_Classe */ = {
 			isa = PBXGroup;
 			children = (
-				3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */,
-				3D3DC35E28DC15310093BD92 /* ClasseConcreteBuilder.swift */,
-				3D3DC35728DC13880093BD92 /* ClasseDirector.swift */,
-				3D3DC35C28DC14B30093BD92 /* ClasseClient.swift */,
-				3D60C63A28DB80FE0051676A /* ClasseEscolha.swift */,
+				3DB929A928ECC0A50075F0D9 /* Classe_Escolha */,
+				3DB929A828ECC09B0075F0D9 /* Classe_Final */,
 				3D696F8E28DE130A000F1D62 /* OpcaoEquipamento.swift */,
+				3D3DC35C28DC14B30093BD92 /* ClasseClient.swift */,
 			);
 			path = Builder_Classe;
 			sourceTree = "<group>";
@@ -426,6 +432,28 @@
 				3D9BED3A28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift */,
 			);
 			path = MiniChallenge001UITests;
+			sourceTree = "<group>";
+		};
+		3DB929A828ECC09B0075F0D9 /* Classe_Final */ = {
+			isa = PBXGroup;
+			children = (
+				3DB929B028ECC13B0075F0D9 /* ClasseFinalBuilder.swift */,
+				3DB929AE28ECC1280075F0D9 /* ClasseFinalConcreteBuilder.swift */,
+				3DB929AC28ECC1120075F0D9 /* ClasseFinalDirector.swift */,
+				3DB929AA28ECC0E50075F0D9 /* ClasseFinal.swift */,
+			);
+			path = Classe_Final;
+			sourceTree = "<group>";
+		};
+		3DB929A928ECC0A50075F0D9 /* Classe_Escolha */ = {
+			isa = PBXGroup;
+			children = (
+				3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */,
+				3D3DC35E28DC15310093BD92 /* ClasseConcreteBuilder.swift */,
+				3D3DC35728DC13880093BD92 /* ClasseDirector.swift */,
+				3D60C63A28DB80FE0051676A /* ClasseEscolha.swift */,
+			);
+			path = Classe_Escolha;
 			sourceTree = "<group>";
 		};
 		3DE3796A28D26391005812C7 /* Model */ = {
@@ -630,6 +658,7 @@
 				126ABAF328DB3D5200CF5A2E /* VeiculoAquaticoJSON.swift in Sources */,
 				3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */,
 				3D6F869428E11BF70022D0BE /* AntecedenteDirector.swift in Sources */,
+				3DB929AD28ECC1120075F0D9 /* ClasseFinalDirector.swift in Sources */,
 				122E948228E21EE100184F88 /* CaracteristicaJSON.swift in Sources */,
 				3D6F868528E0CD6B0022D0BE /* RacaConcreteBuilder.swift in Sources */,
 				3D6F868B28E0D3F00022D0BE /* ViewModel.swift in Sources */,
@@ -637,12 +666,14 @@
 				126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */,
 				126ABB2D28DD26DF00CF5A2E /* DescricaoMagiaView.swift in Sources */,
 				12CC7ABF28E10E24000AB35B /* SelecaoRacaView.swift in Sources */,
+				3DB929B128ECC13B0075F0D9 /* ClasseFinalBuilder.swift in Sources */,
 				09B5569228DA6156001466B0 /* Habilidades.swift in Sources */,
 				126ABB2B28DD25F100CF5A2E /* TodasHabilidadesView.swift in Sources */,
 				126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */,
 				3DB929A528ECA6B20075F0D9 /* RacaFinalDirector.swift in Sources */,
 				3D3DC35F28DC15310093BD92 /* ClasseConcreteBuilder.swift in Sources */,
 				09B5569828DA6156001466B0 /* Combate.swift in Sources */,
+				3DB929AF28ECC1280075F0D9 /* ClasseFinalConcreteBuilder.swift in Sources */,
 				126ABAF628DB3D5200CF5A2E /* EquipamentoMontariaJSON.swift in Sources */,
 				126ABAF728DB3D5200CF5A2E /* ArmaJSON.swift in Sources */,
 				09B5569328DA6156001466B0 /* SheetTabView.swift in Sources */,
@@ -654,6 +685,7 @@
 				3D60C63C28DB80FE0051676A /* ClasseEscolha.swift in Sources */,
 				3DF24F8728E1CC82006C0AAE /* RacaFicha.swift in Sources */,
 				3D9BED1928CFB76000CA1821 /* MiniChallenge001App.swift in Sources */,
+				3DB929AB28ECC0E50075F0D9 /* ClasseFinal.swift in Sources */,
 				3D28DBA928E62D64005F71AC /* RacaFinal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

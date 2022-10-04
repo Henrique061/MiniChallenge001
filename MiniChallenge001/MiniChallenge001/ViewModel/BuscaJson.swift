@@ -7,15 +7,6 @@
 
 import Foundation
 
-public enum TipoJSON : String, Codable {
-    case arma = "arma"
-    case armadura = "armaduras"
-    case equipamento = "equipamento"
-    case ferramenta = "ferramenta"
-    
-    case none = "Nenhum"
-}
-
 //MARK: ARMA
 public class BuscaArma : Codable {
     public static func buscaArmaTipo(tipo: TipoArma, nomeExcluso: String) -> [String] {

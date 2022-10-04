@@ -17,4 +17,14 @@ public class ClasseClient : Codable {
         
         return builder.getClasseFinal()
     }
+    
+    public static func orderClasseFinal(_ classeEscolha: ClasseEscolha, _ escolhas: ClasseEscolhasDefinidas) {
+        let director = ClasseFinalDirector()
+        let builder = ClasseFinalConcreteBuilder()
+        
+        //director.newBuilder(classeBuilder: builder)
+        //director.makeClasse(classe: classePersonagem)
+        
+        //return builder.getClasseFinal()
+    }
 }
