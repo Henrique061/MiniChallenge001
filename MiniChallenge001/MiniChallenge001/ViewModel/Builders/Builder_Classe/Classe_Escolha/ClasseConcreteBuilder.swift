@@ -33,7 +33,7 @@ public class ClasseConcreteBuilder : ClasseBuilder {
     }
     
     //MARK: SUBCLASSE
-    func setSubClasses(_ subClasses: [SubClasseEscolha]) {
+    func setSubClasses(_ subClasses: [SubClasse]) {
         self.classe.subClasses = subClasses
     }
     
