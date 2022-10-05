@@ -30,6 +30,7 @@ struct SelecaoClasseView: View {
                 MenuSelecaoClasse().environmentObject(vmclasse)
                 PontosDeVidaInfo().environmentObject(vmclasse)
                 BotaoEscolherRiqueza().environmentObject(vmclasse)
+                BotaoEscolherProficiencia(escolha: $vmclasse.escolha)
             }
             .padding(.horizontal, 10)
             
@@ -104,6 +105,24 @@ struct BotaoEscolherRiqueza: View {
             
             .sheet(isPresented: $showSheet) {
                 EditarRiquezaView()
+            }
+        }
+    }
+}
+
+struct BotaoEscolherProficiencia: View {
+    
+    @Binding var escolha: ClasseEscolha
+    @State private var showContent: Bool = false
+    
+    var body: some View {
+        if escolha.classePersonagem != .none {
+            TemplateContentBackground {
+                NavigationLink {
+                    
+                } label: {
+                    
+                }
             }
         }
     }

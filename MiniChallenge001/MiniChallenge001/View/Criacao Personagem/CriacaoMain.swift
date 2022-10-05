@@ -178,14 +178,4 @@ struct TemplateRadioButton: View {
     
 }
 
-struct CustomButtonStyle3: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding(.vertical, 10)
-            .frame(maxWidth: .infinity, alignment: .center)
-            .padding(.horizontal, 10)
-            .foregroundColor(Color.white)
-            .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color.black)
-            .clipShape(RoundedRectangle(cornerRadius: 5))
-    }
-}
+

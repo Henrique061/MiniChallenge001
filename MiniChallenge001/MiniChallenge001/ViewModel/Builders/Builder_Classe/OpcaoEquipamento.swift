@@ -12,11 +12,11 @@ public class OpcaoEquipamento : Codable {
 
 }
 
-public struct EscolhaOpcao : Codable {
+public struct EscolhaOpcao : Codable, Hashable {
     var itens: [ItemEscolha]
 }
 
-public struct ItemEscolha : Codable {
+public struct ItemEscolha : Codable, Hashable {
     var nomeItem: String
     var quantia: Int
     var tipoJson: BundleFolderName

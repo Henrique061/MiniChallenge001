@@ -186,6 +186,7 @@ struct TemplateContentBackground<Content>: View where Content: View{
                 .foregroundColor(Color("ContentBackground"))
             content()
         }
+        .fixedSize(horizontal: false, vertical: true)
         .clipShape(RoundedRectangle(cornerRadius: 5))
     }
 }
@@ -228,7 +229,7 @@ struct DefaultSheetHeader: SheetHeader {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HStack(alignment: .top, spacing: 0) {
+            HStack(alignment: .center, spacing: 0) {
                 image
                     .renderingMode(.template)
                     .frame(width: 30, height: 30, alignment: .center)
@@ -260,7 +261,6 @@ struct DefaultSheetHeader: SheetHeader {
             }
             .padding(.bottom, 10)
             Divider()
-                .padding(.bottom, 10)
         }
     }
 }
@@ -288,15 +288,29 @@ struct CustomButtonStyle2: ButtonStyle {
     }
 }
 
+struct CustomButtonStyle3: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(.vertical, 10)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.horizontal, 10)
+            .foregroundColor(Color.white)
+            .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color.black)
+            .clipShape(RoundedRectangle(cornerRadius: 5))
+    }
+}
+
 struct CustomButtonStyle4: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(.vertical, 5)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding(.horizontal, 10)
+            .font(.system(size: 15, weight: .bold, design: .default))
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(10)
             .foregroundColor(Color("BlackAndWhite"))
             .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("ContentBackground"))
-            .border(Color("InverseBlackAndWhite"))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BlackAndWhite"), lineWidth: 1))
+            
     }
 }
 
