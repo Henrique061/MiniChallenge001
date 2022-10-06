@@ -139,7 +139,7 @@ public class ClasseEscolha {
     var classePersonagem: ClassePersonagem = .none // enum de classes
     var nomeClasse: String = ""
     var caracteristicasClasse: [CaracteristicaJSON] = [] // COLOCAR CARACTERISTICAS AQUI
-    var subClasses: [SubClasseEscolha] = []
+    var subClasses: [SubClasse] = []
     var dadoVida: String = ""
     
     var vidaInicial: Int = 0
@@ -171,7 +171,7 @@ public class ClasseEscolha {
 }
 
 //MARK: SubClasse
-struct SubClasseEscolha : Codable{
+struct SubClasse : Codable{
     var subclasse: SubclassePersonagem = .none
     var subclasseNome: String = ""
     var caracteristicasSubClasse: [CaracteristicaJSON] = [] // COLOCAR CARACTERISTICAS AQUI

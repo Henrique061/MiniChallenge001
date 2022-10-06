@@ -219,9 +219,9 @@ public class ClasseDirector {
         let caracFurioso: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BB_caminhoFurioso)
         let caracTotemico: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BB_caminhoGuerreiroTotemico)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .BB_caminhoFurioso, caracteristicas: caracFurioso),
-            SubClasseEscolha(subclase: .BB_caminhoGuerreiroTotemico, caracteristicas: caracTotemico)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .BB_caminhoFurioso, caracteristicas: caracFurioso),
+            SubClasse(subclase: .BB_caminhoGuerreiroTotemico, caracteristicas: caracTotemico)
         ]
         
         let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTodos()
@@ -297,9 +297,9 @@ public class ClasseDirector {
         let caracConhecimento: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BD_colegioConhecimento)
         let caracBravura: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BD_colegioBravura)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .BD_colegioConhecimento, caracteristicas: caracConhecimento),
-            SubClasseEscolha(subclase: .BD_colegioBravura, caracteristicas: caracBravura)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .BD_colegioConhecimento, caracteristicas: caracConhecimento),
+            SubClasse(subclase: .BD_colegioBravura, caracteristicas: caracBravura)
         ]
         
         var armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
@@ -401,10 +401,10 @@ public class ClasseDirector {
         let caracCorruptor: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BX_corruptor)
         let caracAntigo: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .BX_grandeAntigo)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .BX_arquifada, caracteristicas: caracArquifada),
-            SubClasseEscolha(subclase: .BX_corruptor, caracteristicas: caracCorruptor),
-            SubClasseEscolha(subclase: .BX_grandeAntigo, caracteristicas: caracAntigo)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .BX_arquifada, caracteristicas: caracArquifada),
+            SubClasse(subclase: .BX_corruptor, caracteristicas: caracCorruptor),
+            SubClasse(subclase: .BX_grandeAntigo, caracteristicas: caracAntigo)
         ]
         
         let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
@@ -510,14 +510,14 @@ public class ClasseDirector {
         let caracTempestade: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .CL_dominioTempestade)
         let caracVida: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .CL_dominioVida)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .CL_dominioConhecimento, caracteristicas: caracConhecimento),
-            SubClasseEscolha(subclase: .CL_dominioEnganacao, caracteristicas: caracEnganacao),
-            SubClasseEscolha(subclase: .CL_dominioGuerra, caracteristicas: caracGuerra),
-            SubClasseEscolha(subclase: .CL_dominioLuz, caracteristicas: caracLuz),
-            SubClasseEscolha(subclase: .CL_domonioNatureza, caracteristicas: caracNatureza),
-            SubClasseEscolha(subclase: .CL_dominioTempestade, caracteristicas: caracTempestade),
-            SubClasseEscolha(subclase: .CL_dominioVida, caracteristicas: caracVida)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .CL_dominioConhecimento, caracteristicas: caracConhecimento),
+            SubClasse(subclase: .CL_dominioEnganacao, caracteristicas: caracEnganacao),
+            SubClasse(subclase: .CL_dominioGuerra, caracteristicas: caracGuerra),
+            SubClasse(subclase: .CL_dominioLuz, caracteristicas: caracLuz),
+            SubClasse(subclase: .CL_domonioNatureza, caracteristicas: caracNatureza),
+            SubClasse(subclase: .CL_dominioTempestade, caracteristicas: caracTempestade),
+            SubClasse(subclase: .CL_dominioVida, caracteristicas: caracVida)
         ]
         
         let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
@@ -617,9 +617,9 @@ public class ClasseDirector {
         let caracTerra: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .DR_circuloTerra)
         let caracLua: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .DR_circuloLua)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .DR_circuloTerra, caracteristicas: caracTerra),
-            SubClasseEscolha(subclase: .DR_circuloLua, caracteristicas: caracLua)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .DR_circuloTerra, caracteristicas: caracTerra),
+            SubClasse(subclase: .DR_circuloLua, caracteristicas: caracLua)
         ]
         
         let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaPorNomes(nomes: ["Clava Grande", "Adaga", "Dardo", "Azagaia", "Maça", "Bordão", "Cimitarra", "Foice Curta", "Funda", "Lança"])
@@ -719,9 +719,9 @@ public class ClasseDirector {
         let caracDraconica: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .FE_linhagemDraconica)
         let caracSelvagem: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .FE_magiaSelvagem)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .FE_linhagemDraconica, caracteristicas: caracDraconica),
-            SubClasseEscolha(subclase: .FE_magiaSelvagem, caracteristicas: caracSelvagem)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .FE_linhagemDraconica, caracteristicas: caracDraconica),
+            SubClasse(subclase: .FE_magiaSelvagem, caracteristicas: caracSelvagem)
         ]
         
         let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaPorNomes(nomes: ["Adaga", "Dardo", "Bordão", "Funda", "Besta Leve"])
@@ -803,10 +803,10 @@ public class ClasseDirector {
         let caracArcano: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .GU_cavaleiroArcano)
         let caracMestre: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .GU_mestreBatalha)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .GU_campeao, caracteristicas: caracCampeao),
-            SubClasseEscolha(subclase: .GU_cavaleiroArcano, caracteristicas: caracArcano),
-            SubClasseEscolha(subclase: .GU_mestreBatalha, caracteristicas: caracMestre)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .GU_campeao, caracteristicas: caracCampeao),
+            SubClasse(subclase: .GU_cavaleiroArcano, caracteristicas: caracArcano),
+            SubClasse(subclase: .GU_mestreBatalha, caracteristicas: caracMestre)
         ]
         
         let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTodos()
@@ -894,10 +894,10 @@ public class ClasseDirector {
         let caracLadrao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .LA_ladrao)
         let caracArcano: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .LA_trapaceiroArcano)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .LA_assassino, caracteristicas: caracAssassino),
-            SubClasseEscolha(subclase: .LA_ladrao, caracteristicas: caracLadrao),
-            SubClasseEscolha(subclase: .LA_trapaceiroArcano, caracteristicas: caracArcano)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .LA_assassino, caracteristicas: caracAssassino),
+            SubClasse(subclase: .LA_ladrao, caracteristicas: caracLadrao),
+            SubClasse(subclase: .LA_trapaceiroArcano, caracteristicas: caracArcano)
         ]
         
         var armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
@@ -998,14 +998,14 @@ public class ClasseDirector {
         let caracNecromancia: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MA_escolaNecromancia)
         let caracTransmutacao: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MA_escolaTransmutacao)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .MA_escolaAbjuracao, caracteristicas: caracAbjuracao),
-            SubClasseEscolha(subclase: .MA_escolaAdivinhacao, caracteristicas: caracAdivinhacao),
-            SubClasseEscolha(subclase: .MA_escolaConjuracao, caracteristicas: caracConjuracao),
-            SubClasseEscolha(subclase: .MA_escolaEvocacao, caracteristicas: caracEvocacao),
-            SubClasseEscolha(subclase: .MA_escolaIlusao, caracteristicas: caracIlusao),
-            SubClasseEscolha(subclase: .MA_escolaNecromancia, caracteristicas: caracNecromancia),
-            SubClasseEscolha(subclase: .MA_escolaTransmutacao, caracteristicas: caracTransmutacao)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .MA_escolaAbjuracao, caracteristicas: caracAbjuracao),
+            SubClasse(subclase: .MA_escolaAdivinhacao, caracteristicas: caracAdivinhacao),
+            SubClasse(subclase: .MA_escolaConjuracao, caracteristicas: caracConjuracao),
+            SubClasse(subclase: .MA_escolaEvocacao, caracteristicas: caracEvocacao),
+            SubClasse(subclase: .MA_escolaIlusao, caracteristicas: caracIlusao),
+            SubClasse(subclase: .MA_escolaNecromancia, caracteristicas: caracNecromancia),
+            SubClasse(subclase: .MA_escolaTransmutacao, caracteristicas: caracTransmutacao)
         ]
         
         let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaPorNomes(nomes: ["Adaga", "Dardo", "Bordão", "Funda", "Besta Leve"])
@@ -1083,10 +1083,10 @@ public class ClasseDirector {
         let caracSombra: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MO_caminhoSombra)
         let caracElementos: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .MO_caminhoQuatroElementos)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .MO_caminhoMaoAberta, caracteristicas: caracMaoAberta),
-            SubClasseEscolha(subclase: .MO_caminhoSombra, caracteristicas: caracSombra),
-            SubClasseEscolha(subclase: .MO_caminhoQuatroElementos, caracteristicas: caracElementos)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .MO_caminhoMaoAberta, caracteristicas: caracMaoAberta),
+            SubClasse(subclase: .MO_caminhoSombra, caracteristicas: caracSombra),
+            SubClasse(subclase: .MO_caminhoQuatroElementos, caracteristicas: caracElementos)
         ]
         
         var armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
@@ -1174,10 +1174,10 @@ public class ClasseDirector {
         let caracAncioes: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .PD_juramentoAncioes)
         let caracVinganca: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .PD_juramentoVinganca)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .PD_juramentoDevocao, caracteristicas: caracDevocao),
-            SubClasseEscolha(subclase: .PD_juramentoAncioes, caracteristicas: caracAncioes),
-            SubClasseEscolha(subclase: .PD_juramentoVinganca, caracteristicas: caracVinganca)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .PD_juramentoDevocao, caracteristicas: caracDevocao),
+            SubClasse(subclase: .PD_juramentoAncioes, caracteristicas: caracAncioes),
+            SubClasse(subclase: .PD_juramentoVinganca, caracteristicas: caracVinganca)
         ]
         
         let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTodos()
@@ -1274,10 +1274,10 @@ public class ClasseDirector {
         let caracCacador: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .PT_conclaveCacador)
         let caracSubterraneo: [CaracteristicaJSON] = BuscaJson.buscaCaracteristicasPorSubclasse(subclasse: .PT_conclaveRastreadorSubterraneo)
         
-        let subclasses: [SubClasseEscolha] = [
-            SubClasseEscolha(subclase: .PT_conclaveBesta, caracteristicas: caracBesta),
-            SubClasseEscolha(subclase: .PT_conclaveCacador, caracteristicas: caracCacador),
-            SubClasseEscolha(subclase: .PT_conclaveRastreadorSubterraneo, caracteristicas: caracSubterraneo)
+        let subclasses: [SubClasse] = [
+            SubClasse(subclase: .PT_conclaveBesta, caracteristicas: caracBesta),
+            SubClasse(subclase: .PT_conclaveCacador, caracteristicas: caracCacador),
+            SubClasse(subclase: .PT_conclaveRastreadorSubterraneo, caracteristicas: caracSubterraneo)
         ]
         
         let armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTodos()

@@ -215,6 +215,23 @@ public class BuscaJson : Codable {
         return armadurasRetorno
     }
     
+    public static func buscaArmaduraPorNomeQuantidade(nome: String, quantidade: Int) -> [ArmaduraJSON] {
+        guard let armaduras = JsonFileUtil.getDataFromBundle(folder: .armaduras, decoder: ArmaduraJSON.self) as? [ArmaduraJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var armadurasRetorno: [ArmaduraJSON] = []
+        
+        for armadura in armaduras {
+            if armadura.nome == nome {
+                for _ in 1 ... quantidade {
+                    armadurasRetorno.append(armadura)
+                }
+                return armadurasRetorno
+            }
+        }
+        
+        return armadurasRetorno
+    }
     
     //MARK: EQUIPAMENTO JSON
     public static func buscaEquipamentoPorNome(nome: String) -> EquipamentoJSON {
@@ -286,6 +303,24 @@ public class BuscaJson : Codable {
         for ferramenta in ferramentas {
             if ferramenta.tipo == tipo {
                 ferramentasRetorno.append(ferramenta)
+            }
+        }
+        
+        return ferramentasRetorno
+    }
+    
+    public static func buscaFerramentaPorNomeQuantidade(nome: String, quantidade: Int) -> [FerramentaJSON] {
+        guard let ferramentas = JsonFileUtil.getDataFromBundle(folder: .ferramenta, decoder: FerramentaJSON.self) as? [FerramentaJSON] else {
+            fatalError("Erro ao tentar converter magias")
+        }
+        var ferramentasRetorno: [FerramentaJSON] = []
+        
+        for ferramenta in ferramentas {
+            if ferramenta.nome == nome {
+                for _ in 1 ... quantidade {
+                    ferramentasRetorno.append(ferramenta)
+                }
+                return ferramentasRetorno
             }
         }
         

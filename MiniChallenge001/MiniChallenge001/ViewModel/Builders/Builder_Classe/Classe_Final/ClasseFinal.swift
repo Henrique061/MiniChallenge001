@@ -19,13 +19,16 @@ public class ClasseFinal {
     //MARK: CLASSE, VIDA E DINDIN
     var tipoClasse: ClassePersonagem = .none
     var caracteristicasClasse: [CaracteristicaJSON] = []
-    var subClasses: [SubClasseEscolha] = [] // aqui tem as subclasses e suas respectivas caracteristicas
+    var subClasses: [SubClasse] = [] // aqui tem as subclasses e suas respectivas caracteristicas
     var dadoVida: String = ""
     var vidaInicial: Int = 0
     var vidasSeguintes: String = ""
     var riquezaInicial: Moeda = Moeda(quantidade: 0, tipo: .none)
     
     //MARK: MAGIAS
+    var possuiMagia: Bool = false
+    var magiaSubclasse: Bool = false
+    var subclasseComMagia: SubclassePersonagem = .none
     var magiasConhecidas: [MagiasConhecidas] = []
     var espacosMagia: [EspacosDeMagias] = []
     
