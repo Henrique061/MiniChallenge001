@@ -61,7 +61,7 @@ struct CriacaoMain: View {
             } label: {
                 Text("Próximo")
             }
-            .buttonStyle(CustomButtonStyle3())
+            .buttonStyle(CustomButtonStyle5())
             .padding(.horizontal, 10)
         }
         
@@ -203,7 +203,7 @@ struct TemplateCustomDisclosureGroup<Content, Header>: View where Content: View,
     var body: some View {
         TemplateContentBackground {
             DisclosureGroup(isExpanded: $isExpanded) {
-                VStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
                     Divider()
                     content()
                 }

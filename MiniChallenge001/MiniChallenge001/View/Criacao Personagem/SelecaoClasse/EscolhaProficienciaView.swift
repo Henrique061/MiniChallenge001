@@ -9,7 +9,11 @@ import SwiftUI
 
 struct EscolhaProficienciaView: View {
     
-    @Binding var escolha: ClasseEscolha
+    @Binding private var escolha: ClasseEscolha
+    
+    public init(escolha: Binding<ClasseEscolha>) {
+        self._escolha = escolha
+    }
     
     var body: some View {
         
@@ -26,6 +30,8 @@ struct EscolhaProficienciaView: View {
                     
                     MostrarSalvaguardas(title: "Teste de Resistência", lista: escolha.profSalvaguardas)
                     
+                    SelecionarFerramentas(escolha: $escolha)
+                    
                     Spacer()
                 }.padding(.horizontal, 10)
             }
@@ -41,8 +47,13 @@ struct EscolhaProficienciaView: View {
 struct MostrarProficiencias<Item>: View where Item: Json {
     
     @State private var showContent: Bool = true
-    var title: String
-    var lista: [Item]
+    private var title: String
+    private var lista: [Item]
+    
+    public init(title: String, lista: [Item]) {
+        self.title = title
+        self.lista = lista
+    }
     
     var body: some View {
         TemplateContentBackground {
@@ -68,8 +79,13 @@ struct MostrarProficiencias<Item>: View where Item: Json {
 struct MostrarSalvaguardas: View {
     
     @State private var showContent: Bool = true
-    var title: String
-    var lista: [AtributosSalvaguarda]
+    private var title: String
+    private var lista: [AtributosSalvaguarda]
+    
+    public init(title: String, lista: [AtributosSalvaguarda]) {
+        self.title = title
+        self.lista = lista
+    }
     
     var body: some View {
         TemplateContentBackground {
@@ -92,4 +108,35 @@ struct MostrarSalvaguardas: View {
     }
 }
 
-
+struct SelecionarFerramentas: View {
+    
+    @Binding private var escolha: ClasseEscolha
+    @State private var isExpanded: Bool = true
+    
+    public init(escolha: Binding<ClasseEscolha>) {
+        self._escolha = escolha
+    }
+    
+    var body: some View {
+        TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+            ForEach(escolha.escolhasProficienciaFerramenta, id: \.self) { opcao in
+                TemplateRadioButton(isMarked: false, title: getItens(opcao: opcao)) {
+                    
+                }
+            }
+        } header: {
+            Text("Ferramentas")
+                .font(.system(size: 15, weight: .bold, design: .default))
+        }
+    }
+    
+    private func getItens(opcao: EscolhaOpcao) -> String {
+        var temp = ""
+        opcao.itens.forEach({
+            print($0.nomeItem)
+            temp += " \($0.nomeItem)"
+            print(temp)
+        })
+        return temp
+    }
+}

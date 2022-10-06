@@ -121,7 +121,7 @@ struct SelecaoRacaView: View {
             } label: {
                 Text("Salvar")
             }
-            .buttonStyle(CustomButtonStyle3())
+            .buttonStyle(CustomButtonStyle5())
             .disabled(vmraca.raca.tipoRaca == .none)
             .padding(.horizontal, 10)
         }
@@ -136,67 +136,57 @@ struct SelecaoRacaView: View {
 
 struct MenuEscolhaRaca: View {
     
-    @EnvironmentObject var vmraca: CriacaoRacaViewModel
+    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     @State private var showContent: Bool = false
     
     var body: some View {
-        TemplateContentBackground {
-            DisclosureGroup(isExpanded: $showContent) {
-                VStack(spacing: 0) {
-                    Divider()
-                    ForEach(TipoRaca.allCases, id: \.self) { raca in
-                        if !(raca == .none) {
-                            TemplateRadioButton(isMarked: vmraca.raca.tipoRaca == raca, title: raca.rawValue) {
-                                withAnimation(.easeOut) {
-                                    vmraca.setRaca(tipoRaca: raca)
-                                    self.showContent.toggle()
-                                }
-                            }
+        TemplateCustomDisclosureGroup(isExpanded: $showContent) {
+            ForEach(TipoRaca.allCases, id: \.self) { raca in
+                if !(raca == .none) {
+                    TemplateRadioButton(isMarked: vmraca.raca.tipoRaca == raca, title: raca.rawValue) {
+                        withAnimation(.easeOut) {
+                            vmraca.setRaca(tipoRaca: raca)
+                            self.showContent.toggle()
                         }
                     }
                 }
-            } label: {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("Raça do personagem")
-                        .font(.system(size: 15, weight: .semibold, design: .default))
-                    Text(vmraca.raca.tipoRaca == .none ? "Toque para selecionar..." : vmraca.raca.tipoRaca.rawValue)
-                        .font(.system(size: 13, weight: .regular, design: .default))
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-            }.buttonStyle(CustomButtonStyle2())
+            }
+        } header: {
+            VStack(alignment: .leading, spacing: 3) {
+                Text("Raça do personagem")
+                    .font(.system(size: 15, weight: .semibold, design: .default))
+                Text(vmraca.raca.tipoRaca == .none ? "Toque para selecionar..." : vmraca.raca.tipoRaca.rawValue)
+                    .font(.system(size: 13, weight: .regular, design: .default))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
     }
 }
 
 struct MenuEscolhaSubraca: View {
     
-    @EnvironmentObject var vmraca: CriacaoRacaViewModel
+    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     @State private var showContent: Bool = false
     
     var body: some View {
         if vmraca.raca.possuiSubRaca {
-            TemplateContentBackground {
-                DisclosureGroup(isExpanded: $showContent) {
-                    VStack(spacing: 0) {
-                        Divider()
-                        ForEach(vmraca.raca.subRacas, id: \.self) { subraca in
-                            TemplateRadioButton(isMarked: vmraca.subraca.subraca == subraca.subraca, title: subraca.subraca.rawValue) {
-                                withAnimation(.easeOut) {
-                                    vmraca.subraca = subraca
-                                    showContent.toggle()
-                                }
-                            }
+            TemplateCustomDisclosureGroup(isExpanded: $showContent) {
+                ForEach(vmraca.raca.subRacas, id: \.self) { subraca in
+                    TemplateRadioButton(isMarked: vmraca.subraca.subraca == subraca.subraca, title: subraca.subraca.rawValue) {
+                        withAnimation(.easeOut) {
+                            vmraca.subraca = subraca
+                            showContent.toggle()
                         }
                     }
-                } label: {
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text("Sub-Raça do personagem")
-                            .font(.system(size: 15, weight: .semibold, design: .default))
-                        Text(vmraca.subraca.subraca == .none ? "Toque para selecionar..." : vmraca.subraca.subraca.rawValue)
-                            .font(.system(size: 13, weight: .regular, design: .default))
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                }.buttonStyle(CustomButtonStyle2())
+                }
+            } header: {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Sub-Raça do personagem")
+                        .font(.system(size: 15, weight: .semibold, design: .default))
+                    Text(vmraca.subraca.subraca == .none ? "Toque para selecionar..." : vmraca.subraca.subraca.rawValue)
+                        .font(.system(size: 13, weight: .regular, design: .default))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
         }
     }
@@ -204,7 +194,7 @@ struct MenuEscolhaSubraca: View {
 
 struct AtributosRacaView: View {
     
-    @EnvironmentObject var vmraca: CriacaoRacaViewModel
+    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     
     var body: some View {
         if vmraca.raca.tipoRaca != .none  {
@@ -218,7 +208,7 @@ struct AtributosRacaView: View {
 
 struct DeslocamentoRacaView: View {
     
-    @EnvironmentObject var vmraca: CriacaoRacaViewModel
+    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     
     var body: some View {
         if vmraca.raca.tipoRaca != .none {
@@ -231,7 +221,7 @@ struct DeslocamentoRacaView: View {
 }
 
 struct IdiomaRacaView: View {
-    @EnvironmentObject var vmraca: CriacaoRacaViewModel
+    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     
     var body: some View {
         if vmraca.raca.tipoRaca != .none {
@@ -245,8 +235,7 @@ struct IdiomaRacaView: View {
 
 struct BotaoMostrarTracosRaca: View {
     
-    @EnvironmentObject var vmraca: CriacaoRacaViewModel
-    
+    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     @State private var showSheet: Bool = false
     
     var body: some View {

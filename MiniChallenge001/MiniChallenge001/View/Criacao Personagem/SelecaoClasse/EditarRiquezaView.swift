@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditarRiquezaView: View {
+    @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
     
     @State private var quantidade: Int = 0
@@ -15,35 +16,41 @@ struct EditarRiquezaView: View {
     var body: some View {
         TemplateSheetView(
             header: DefaultSheetHeader(image: Image("Saco Detalhado"), title: "Riqueza da Classe", subtitle: "Nome da Classe")) {
-//                ScrollView {
-                    VStack(alignment: .leading, spacing: 10) {
-                        TemplateContentBackground {
-                            DisplayTextoBotao(titulo: "Riqueza", descricao: vmclasse.escolha.riquezaInicial)
-                                .padding(10)
-                        }
-                        
-                        TemplateContentBackground {
-                            VStack(alignment: .leading, spacing: 10) {
-                                DisplayTextoBotao(titulo: "Peças de Ouro", descricao: "\(quantidade)")
-                                Divider()
-                                HStack(alignment: .center, spacing: 10) {
-                                    EditButtonRiqueza(valorBotao: 1, quantidade: $quantidade)
-                                    EditButtonRiqueza(valorBotao: 10, quantidade: $quantidade)
-                                    EditButtonRiqueza(valorBotao: 50, quantidade: $quantidade)
-                                    EditButtonRiqueza(valorBotao: 100, quantidade: $quantidade)
-                                }
-                                HStack(alignment: .center, spacing: 10) {
-                                    EditButtonRiqueza(valorBotao: -1, quantidade: $quantidade)
-                                    EditButtonRiqueza(valorBotao: -10, quantidade: $quantidade)
-                                    EditButtonRiqueza(valorBotao: -50, quantidade: $quantidade)
-                                    EditButtonRiqueza(valorBotao: -100, quantidade: $quantidade)
-                                }
-                            }
+                VStack(alignment: .leading, spacing: 10) {
+                    TemplateContentBackground {
+                        DisplayTextoBotao(titulo: "Riqueza", descricao: vmclasse.escolha.riquezaInicial)
                             .padding(10)
+                    }
+                    
+                    TemplateContentBackground {
+                        VStack(alignment: .leading, spacing: 10) {
+                            DisplayTextoBotao(titulo: "Peças de Ouro", descricao: "\(quantidade)")
+                            Divider()
+                            HStack(alignment: .center, spacing: 10) {
+                                EditButtonRiqueza(valorBotao: 1, quantidade: $quantidade)
+                                EditButtonRiqueza(valorBotao: 10, quantidade: $quantidade)
+                                EditButtonRiqueza(valorBotao: 50, quantidade: $quantidade)
+                                EditButtonRiqueza(valorBotao: 100, quantidade: $quantidade)
+                            }
+                            HStack(alignment: .center, spacing: 10) {
+                                EditButtonRiqueza(valorBotao: -1, quantidade: $quantidade)
+                                EditButtonRiqueza(valorBotao: -10, quantidade: $quantidade)
+                                EditButtonRiqueza(valorBotao: -50, quantidade: $quantidade)
+                                EditButtonRiqueza(valorBotao: -100, quantidade: $quantidade)
+                            }
                         }
-                    }.padding(10)
-                }
-//            }
+                        .padding(10)
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Salvar Alteração")
+                    }.buttonStyle(CustomButtonStyle5())
+                }.padding(10)
+            }
     }
 }
 
