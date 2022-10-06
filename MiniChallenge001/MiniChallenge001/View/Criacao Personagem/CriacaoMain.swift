@@ -83,8 +83,13 @@ struct CriacaoMain_Previews: PreviewProvider {
 
 struct CustomNavigationLink<Destination, Label>: View where Destination: View, Label: View {
     
-    public var destination: () -> Destination
-    public var label: () -> Label
+    @ViewBuilder private var label: () -> Label
+    private var destination: () -> Destination
+    
+    public init(destination: @escaping () -> Destination, @ViewBuilder label: @escaping () -> Label) {
+        self.label = label
+        self.destination = destination
+    }
     
     var body: some View {
         NavigationLink {
@@ -119,44 +124,49 @@ struct DisplayTextoBotao: View {
 
 struct MenuSelecaoTendencia: View {
     
-    @Binding var ficha: PersonagemFicha
-    @State private var showContent: Bool = false
+    @Binding private var ficha: PersonagemFicha
+    @State private var showContent: Bool
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+        self.showContent = false
+    }
     
     var body: some View {
-        TemplateContentBackground {
-            DisclosureGroup(isExpanded: $showContent) {
-                VStack(spacing: 0) {
-                    Divider()
-                    ForEach(TipoTendencia.allCases, id: \.self) { tendencia in
-                        if tendencia != .none {
-                            TemplateRadioButton(isMarked: ficha.tendenciaPersonagem == tendencia ,title: tendencia.rawValue) {
-                                ficha.tendenciaPersonagem = tendencia
-                                withAnimation(.easeOut, {
-                                    self.showContent.toggle()
-                                })
-                            }
-                        }
+        TemplateCustomDisclosureGroup(isExpanded: $showContent) {
+            ForEach(TipoTendencia.allCases, id: \.self) { tendencia in
+                if tendencia != .none {
+                    TemplateRadioButton(isMarked: ficha.tendenciaPersonagem == tendencia ,title: tendencia.rawValue) {
+                        ficha.tendenciaPersonagem = tendencia
+                        withAnimation(.easeOut, {
+                            self.showContent.toggle()
+                        })
                     }
                 }
-            } label: {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("Tendência")
-                        .font(.system(size: 15, weight: .semibold, design: .default))
-                    Text(ficha.tendenciaPersonagem == .none ? "Toque para selecionar..." : ficha.tendenciaPersonagem.rawValue)
-                        .font(.system(size: 13, weight: .regular, design: .default))
-                        .fixedSize(horizontal: false, vertical: true)
-                }
             }
-            .buttonStyle(CustomButtonStyle2())
+        } header: {
+            VStack(alignment: .leading, spacing: 3) {
+                Text("Tendência")
+                    .font(.system(size: 15, weight: .semibold, design: .default))
+                Text(ficha.tendenciaPersonagem == .none ? "Toque para selecionar..." : ficha.tendenciaPersonagem.rawValue)
+                    .font(.system(size: 13, weight: .regular, design: .default))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
     }
 }
 
 struct TemplateRadioButton: View {
     
-    @State var isMarked: Bool = false
-    let title: String
-    var completion: () -> Void
+    @State private var isMarked: Bool
+    private let title: String
+    private var completion: () -> Void
+    
+    public init(isMarked: Bool = false, title: String, completion: @escaping () -> Void) {
+        self.isMarked = isMarked
+        self.title = title
+        self.completion = completion
+    }
     
     var body: some View {
         Button {
@@ -164,12 +174,11 @@ struct TemplateRadioButton: View {
             completion()
         } label: {
             HStack {
-                Text(title)
-                    .font(.system(size: 15, weight: .regular, design: .default))
-                Spacer()
                 Image(systemName: "circle.fill")
                     .renderingMode(.template)
                     .foregroundColor(isMarked ? Color("RedTheme") : Color(uiColor: .systemGray4))
+                Text(title)
+                    .font(.system(size: 15, weight: .regular, design: .default))
             }
         }
         .buttonStyle(CustomButtonStyle2())
@@ -178,4 +187,29 @@ struct TemplateRadioButton: View {
     
 }
 
-
+struct TemplateCustomDisclosureGroup<Content, Header>: View where Content: View, Header: View {
+    
+    @Binding private var isExpanded: Bool
+    @ViewBuilder private var content: () -> Content
+    @ViewBuilder private var header: () -> Header
+    
+    
+    public init(isExpanded: Binding<Bool>, @ViewBuilder content: @escaping () -> Content, @ViewBuilder header: @escaping () -> Header) {
+        self._isExpanded = isExpanded
+        self.content = content
+        self.header = header
+    }
+    
+    var body: some View {
+        TemplateContentBackground {
+            DisclosureGroup(isExpanded: $isExpanded) {
+                VStack(spacing: 0) {
+                    Divider()
+                    content()
+                }
+            } label: {
+                header()
+            }.buttonStyle(CustomButtonStyle2())
+        }
+    }
+}

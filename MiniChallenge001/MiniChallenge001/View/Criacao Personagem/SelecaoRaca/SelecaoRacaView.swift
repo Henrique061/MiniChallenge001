@@ -87,8 +87,13 @@ class CriacaoRacaViewModel: ObservableObject {
 struct SelecaoRacaView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @Binding var ficha: PersonagemFicha
-    @ObservedObject var vmraca: CriacaoRacaViewModel = CriacaoRacaViewModel()
+    @Binding private var ficha: PersonagemFicha
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+        self.vmraca = CriacaoRacaViewModel(ficha: ficha.wrappedValue)
+    }
     
     var body: some View {
         TemplateTelaPadrao {
@@ -138,6 +143,7 @@ struct MenuEscolhaRaca: View {
         TemplateContentBackground {
             DisclosureGroup(isExpanded: $showContent) {
                 VStack(spacing: 0) {
+                    Divider()
                     ForEach(TipoRaca.allCases, id: \.self) { raca in
                         if !(raca == .none) {
                             TemplateRadioButton(isMarked: vmraca.raca.tipoRaca == raca, title: raca.rawValue) {
@@ -172,6 +178,7 @@ struct MenuEscolhaSubraca: View {
             TemplateContentBackground {
                 DisclosureGroup(isExpanded: $showContent) {
                     VStack(spacing: 0) {
+                        Divider()
                         ForEach(vmraca.raca.subRacas, id: \.self) { subraca in
                             TemplateRadioButton(isMarked: vmraca.subraca.subraca == subraca.subraca, title: subraca.subraca.rawValue) {
                                 withAnimation(.easeOut) {

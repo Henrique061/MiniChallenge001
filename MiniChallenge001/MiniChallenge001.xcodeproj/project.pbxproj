@@ -18,6 +18,7 @@
 		122E948428E21F2000184F88 /* TraitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948328E21F2000184F88 /* TraitJSON.swift */; };
 		122E948628E2205300184F88 /* PersonagemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948528E2205300184F88 /* PersonagemViewModel.swift */; };
 		12535F4B28E323F60020A005 /* DetalhesTracoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12535F4A28E323F60020A005 /* DetalhesTracoView.swift */; };
+		125B251628EE03DB00B60168 /* EscolhaProficienciaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B251528EE03DB00B60168 /* EscolhaProficienciaView.swift */; };
 		126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */; };
 		126ABAE328DB38E000CF5A2E /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 126ABAE228DB38E000CF5A2E /* Content */; };
 		126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */; };
@@ -106,6 +107,7 @@
 		122E948328E21F2000184F88 /* TraitJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitJSON.swift; sourceTree = "<group>"; };
 		122E948528E2205300184F88 /* PersonagemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemViewModel.swift; sourceTree = "<group>"; };
 		12535F4A28E323F60020A005 /* DetalhesTracoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesTracoView.swift; sourceTree = "<group>"; };
+		125B251528EE03DB00B60168 /* EscolhaProficienciaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolhaProficienciaView.swift; sourceTree = "<group>"; };
 		126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonFileUtil.swift; path = MiniChallenge001/Model/JsonFileUtil.swift; sourceTree = SOURCE_ROOT; };
 		126ABAE228DB38E000CF5A2E /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Content; sourceTree = SOURCE_ROOT; };
 		126ABAE528DB3D5000CF5A2E /* MagiaJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagiaJSON.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			children = (
 				12FEBA2728E7A6CB00DBB6EF /* SelecaoClasseView.swift */,
 				12FEBA2928E8A26A00DBB6EF /* EditarRiquezaView.swift */,
+				125B251528EE03DB00B60168 /* EscolhaProficienciaView.swift */,
 			);
 			path = SelecaoClasse;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				126ABAF228DB3D5200CF5A2E /* Moeda.swift in Sources */,
 				3D6F868328E0CD5B0022D0BE /* RacaBuilder.swift in Sources */,
 				126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */,
+				125B251628EE03DB00B60168 /* EscolhaProficienciaView.swift in Sources */,
 				3D28DBA728E62A99005F71AC /* RacaFinalBuilder.swift in Sources */,
 				3D696F8F28DE130A000F1D62 /* OpcaoEquipamento.swift in Sources */,
 				126ABAF828DB3D5200CF5A2E /* FerramentaJSON.swift in Sources */,
