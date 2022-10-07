@@ -52,6 +52,7 @@ struct MenuSelecaoClasse: View {
         TemplateContentBackground {
             DisclosureGroup(isExpanded: $showContent) {
                 VStack(spacing: 0) {
+                    Divider()
                     ForEach(ClassePersonagem.allCases, id: \.self) { classe in
                         if classe != .none {
                             TemplateRadioButton(isMarked: vmclasse.escolha.classePersonagem == classe, title: classe.rawValue) {
@@ -112,18 +113,19 @@ struct BotaoEscolherRiqueza: View {
 
 struct BotaoEscolherProficiencia: View {
     
-    @Binding var escolha: ClasseEscolha
-    @State private var showContent: Bool = false
+    @Binding private var escolha: ClasseEscolha
+    
+    public init(escolha: Binding<ClasseEscolha>) {
+        self._escolha = escolha
+    }
     
     var body: some View {
         if escolha.classePersonagem != .none {
-            TemplateContentBackground {
-                NavigationLink {
-                    
-                } label: {
-                    
-                }
-            }
+            CustomNavigationLink {
+                EscolhaProficienciaView(escolha: $escolha)
+            } label: {
+                DisplayTextoBotao(titulo: "Proficiências", descricao: "Toque para selecionar...")
+            }.buttonStyle(CustomButtonStyle2())
         }
     }
 }

@@ -249,7 +249,7 @@ struct DefaultSheetHeader: SheetHeader {
                     dismiss()
                 } label: {
                     ZStack {
-                        Color(uiColor: .systemGray3)
+                        Color(uiColor: .systemGray5)
                         Image(systemName: "xmark")
                                .renderingMode(.template)
                                .foregroundColor(Color.black)
@@ -268,9 +268,8 @@ struct DefaultSheetHeader: SheetHeader {
 struct CustomButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(.vertical, 5)
+            .padding(10)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding(.horizontal, 10)
             .foregroundColor(Color("BlackAndWhite"))
             .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("ContentBackground"))
             .clipShape(RoundedRectangle(cornerRadius: 5 ))
@@ -311,6 +310,18 @@ struct CustomButtonStyle4: ButtonStyle {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BlackAndWhite"), lineWidth: 1))
             
+    }
+}
+
+struct CustomButtonStyle5: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 15, weight: .bold, design: .default))
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(10)
+            .foregroundColor(Color("InverseBlackAndWhite"))
+            .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("InverseButton"))
+            .clipShape(RoundedRectangle(cornerRadius: 5))
     }
 }
 

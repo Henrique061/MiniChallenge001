@@ -13,30 +13,12 @@ struct DetalhesTracoView: View {
     @EnvironmentObject var vmraca: CriacaoRacaViewModel
     
     var body: some View {
-        ZStack {
-            Color("ScreenBackground")
-                .ignoresSafeArea()
-            VStack {
-                HStack(alignment: .center) {
-                    Image("IdentidadeIconOff")
-                    DisplayTextoBotao(titulo: "Descrição de Traços Raciais", descricao: vmraca.subraca.subraca == .none ? vmraca.raca.tipoRaca.rawValue : vmraca.subraca.subraca.rawValue)
-                    Spacer()
-                    Button {
-                        dismiss()
-                    } label: {
-                        CustomBotaoFechar()
-                            .frame(width: 30, height: 30)
-                    }
+        TemplateSheetView(header: DefaultSheetHeader(image: Image("IdentidadeIconOff"), title: "Descrição de Traços Raciais", subtitle: vmraca.subraca.subraca == .none ? vmraca.raca.tipoRaca.rawValue : vmraca.subraca.subraca.rawValue)) {
+            ScrollView {
+                ForEach(vmraca.getTracos(), id: \.id) { traco in
+                    CelulaDetalheTraco(nomePassiva: traco.nome, descricaoPassiva: traco.descricao)
                 }
-                .padding(.horizontal, 10)
-                .padding(.top, 10)
-                Divider()
-                
-                ScrollView {
-                    ForEach(vmraca.getTracos(), id: \.id) { traco in
-                        CelulaDetalheTraco(nomePassiva: traco.nome, descricaoPassiva: traco.descricao)
-                    }.padding(.horizontal, 10)
-                }
+                .padding(10)
             }
         }
     }
@@ -54,20 +36,11 @@ struct CelulaDetalheTraco: View {
     }
     
     var body: some View {
-        TemplateContentBackground {
-            DisclosureGroup(isExpanded: $showContent) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Divider().padding(.horizontal, -10)
-                    DisplayTextoBotao(titulo: "Descrição:", descricao: descricaoPassiva)
-                }
-                .padding(.horizontal, 10)
-                .padding(.bottom, 10)
-            } label: {
-                DisplayTextoBotao(titulo: nomePassiva, descricao: "Passiva")
-            }
-            .accentColor(Color("RedTheme"))
-            .buttonStyle(CustomButtonStyle2())
-            
+        TemplateCustomDisclosureGroup(isExpanded: $showContent) {
+            DisplayTextoBotao(titulo: "Descrição:", descricao: descricaoPassiva)
+                .padding(10)
+        } header: {
+            DisplayTextoBotao(titulo: nomePassiva, descricao: "Passiva")
         }
     }
 }
