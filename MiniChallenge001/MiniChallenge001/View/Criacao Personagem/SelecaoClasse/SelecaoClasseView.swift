@@ -10,8 +10,12 @@ import SwiftUI
 class CriacaoClasseViewModel: ObservableObject {
     @Published var escolha: ClasseEscolha
     
-    init() {
+    public init() {
         self.escolha = ClasseClient.orderClasse(classePersonagem: .none)
+    }
+    
+    public init(ficha: PersonagemFicha) {
+        self.escolha = ClasseClient.orderClasse(classePersonagem: ficha.classeFinal.classePersonagem)
     }
     
     public func setClasse(classe: ClassePersonagem) {
@@ -21,8 +25,13 @@ class CriacaoClasseViewModel: ObservableObject {
 
 struct SelecaoClasseView: View {
     
-    @Binding var ficha: PersonagemFicha
-    @ObservedObject var vmclasse: CriacaoClasseViewModel = CriacaoClasseViewModel()
+    @Binding private var ficha: PersonagemFicha
+    @ObservedObject private var vmclasse: CriacaoClasseViewModel
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+        self.vmclasse = CriacaoClasseViewModel(ficha: ficha.wrappedValue)
+    }
     
     var body: some View {
         TemplateTelaPadrao {
@@ -31,6 +40,7 @@ struct SelecaoClasseView: View {
                 PontosDeVidaInfo().environmentObject(vmclasse)
                 BotaoEscolherRiqueza().environmentObject(vmclasse)
                 BotaoEscolherProficiencia(escolha: $vmclasse.escolha)
+                BotaoEscolherEquipamento(escolha: $vmclasse.escolha)
             }
             .padding(.horizontal, 10)
             
@@ -125,6 +135,25 @@ struct BotaoEscolherProficiencia: View {
                 EscolhaProficienciaView(escolha: $escolha)
             } label: {
                 DisplayTextoBotao(titulo: "Proficiências", descricao: "Toque para selecionar...")
+            }.buttonStyle(CustomButtonStyle2())
+        }
+    }
+}
+
+struct BotaoEscolherEquipamento: View {
+    
+    @Binding private var escolha: ClasseEscolha
+    
+    public init(escolha: Binding<ClasseEscolha>) {
+        self._escolha = escolha
+    }
+    
+    var body: some View {
+        if escolha.classePersonagem != .none {
+            CustomNavigationLink {
+                EscolhaEquipamento(escolha: $escolha)
+            } label: {
+                DisplayTextoBotao(titulo: "Equipamentos", descricao: "Toque para selecionar...")
             }.buttonStyle(CustomButtonStyle2())
         }
     }

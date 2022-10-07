@@ -14,6 +14,7 @@
 		09B5569628DA6156001466B0 /* Identidade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568F28DA6156001466B0 /* Identidade.swift */; };
 		09B5569728DA6156001466B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569028DA6156001466B0 /* ContentView.swift */; };
 		09B5569828DA6156001466B0 /* Combate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569128DA6156001466B0 /* Combate.swift */; };
+		1214FE8328F09CE800E15113 /* EscolhaEquipamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214FE8228F09CE800E15113 /* EscolhaEquipamento.swift */; };
 		122E948228E21EE100184F88 /* CaracteristicaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948128E21EE100184F88 /* CaracteristicaJSON.swift */; };
 		122E948428E21F2000184F88 /* TraitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948328E21F2000184F88 /* TraitJSON.swift */; };
 		122E948628E2205300184F88 /* PersonagemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948528E2205300184F88 /* PersonagemViewModel.swift */; };
@@ -103,6 +104,7 @@
 		09B5568F28DA6156001466B0 /* Identidade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identidade.swift; sourceTree = "<group>"; };
 		09B5569028DA6156001466B0 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09B5569128DA6156001466B0 /* Combate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combate.swift; sourceTree = "<group>"; };
+		1214FE8228F09CE800E15113 /* EscolhaEquipamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolhaEquipamento.swift; sourceTree = "<group>"; };
 		122E948128E21EE100184F88 /* CaracteristicaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracteristicaJSON.swift; sourceTree = "<group>"; };
 		122E948328E21F2000184F88 /* TraitJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitJSON.swift; sourceTree = "<group>"; };
 		122E948528E2205300184F88 /* PersonagemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemViewModel.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				12FEBA2728E7A6CB00DBB6EF /* SelecaoClasseView.swift */,
 				12FEBA2928E8A26A00DBB6EF /* EditarRiquezaView.swift */,
 				125B251528EE03DB00B60168 /* EscolhaProficienciaView.swift */,
+				1214FE8228F09CE800E15113 /* EscolhaEquipamento.swift */,
 			);
 			path = SelecaoClasse;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				3D6F869828E11C160022D0BE /* AntecedenteConcreteBuilder.swift in Sources */,
 				126ABAF428DB3D5200CF5A2E /* MontariaJSON.swift in Sources */,
 				3DF24F8D28E1CCB0006C0AAE /* PersonagemFicha.swift in Sources */,
+				1214FE8328F09CE800E15113 /* EscolhaEquipamento.swift in Sources */,
 				3D60C63C28DB80FE0051676A /* ClasseEscolha.swift in Sources */,
 				3DF24F8728E1CC82006C0AAE /* RacaFicha.swift in Sources */,
 				3D9BED1928CFB76000CA1821 /* MiniChallenge001App.swift in Sources */,

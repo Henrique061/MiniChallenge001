@@ -104,7 +104,7 @@ public enum DocumentsFolderName: String {
     case sheets = "sheets"
 }
 
-public enum BundleFolderName: String, Codable {
+public enum BundleFolderName: String, Codable, Hashable {
     case arma = "arma"
     case armaduras = "armaduras"
     case bugiganga = "bugiganga"

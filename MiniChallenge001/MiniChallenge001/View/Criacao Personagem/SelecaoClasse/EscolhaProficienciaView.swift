@@ -29,8 +29,9 @@ struct EscolhaProficienciaView: View {
                     }
                     
                     MostrarSalvaguardas(title: "Teste de Resistência", lista: escolha.profSalvaguardas)
-                    
                     SelecionarFerramentas(escolha: $escolha)
+                    
+                    SelecionarPericias(escolha: $escolha)
                     
                     Spacer()
                 }.padding(.horizontal, 10)
@@ -46,7 +47,7 @@ struct EscolhaProficienciaView: View {
 
 struct MostrarProficiencias<Item>: View where Item: Json {
     
-    @State private var showContent: Bool = true
+    @State private var showContent: Bool = false
     private var title: String
     private var lista: [Item]
     
@@ -78,7 +79,7 @@ struct MostrarProficiencias<Item>: View where Item: Json {
 
 struct MostrarSalvaguardas: View {
     
-    @State private var showContent: Bool = true
+    @State private var showContent: Bool = false
     private var title: String
     private var lista: [AtributosSalvaguarda]
     
@@ -111,7 +112,44 @@ struct MostrarSalvaguardas: View {
 struct SelecionarFerramentas: View {
     
     @Binding private var escolha: ClasseEscolha
-    @State private var isExpanded: Bool = true
+    @State private var isExpanded: Bool = false
+    
+    public init(escolha: Binding<ClasseEscolha>) {
+        self._escolha = escolha
+    }
+    
+    var body: some View {
+        if !escolha.escolhasProficienciaFerramenta.isEmpty {
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(escolha.escolhasProficienciaFerramenta, id: \.self) { opcao in
+                    TemplateRadioButton(isMarked: false, title: getItens(opcao: opcao)) {
+                        
+                    }
+                }
+            } header: {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Ferramentas")
+                        .font(.system(size: 15, weight: .bold, design: .default))
+                    Text("Toque para selecionar")
+                        .font(.system(size: 13, weight: .regular, design: .default))
+                }
+            }
+        }
+    }
+    
+    private func getItens(opcao: EscolhaOpcao) -> String {
+        var temp = ""
+        opcao.itens.forEach({
+            temp += " \($0.nomeItem)"
+        })
+        return temp
+    }
+}
+
+struct SelecionarPericias: View {
+    
+    @Binding private var escolha: ClasseEscolha
+    @State private var isExpanded: Bool = false
     
     public init(escolha: Binding<ClasseEscolha>) {
         self._escolha = escolha
@@ -119,24 +157,22 @@ struct SelecionarFerramentas: View {
     
     var body: some View {
         TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-            ForEach(escolha.escolhasProficienciaFerramenta, id: \.self) { opcao in
-                TemplateRadioButton(isMarked: false, title: getItens(opcao: opcao)) {
-                    
+            ForEach(Pericia.allCases, id: \.self) { pericia in
+                TemplateRadioButton(isMarked: escolha.profPericias.contains(pericia), title: pericia.rawValue) {
+                    if escolha.profPericias.contains(pericia) {
+                        escolha.profPericias.removeAll(where: {$0 == pericia})
+                    } else {
+                        escolha.profPericias.append(pericia)
+                    }
                 }
             }
         } header: {
-            Text("Ferramentas")
-                .font(.system(size: 15, weight: .bold, design: .default))
+            VStack(alignment: .leading, spacing: 3) {
+                Text("Perícias")
+                    .font(.system(size: 15, weight: .bold, design: .default))
+                Text("Toque para selecionar")
+                    .font(.system(size: 13, weight: .regular, design: .default))
+            }
         }
-    }
-    
-    private func getItens(opcao: EscolhaOpcao) -> String {
-        var temp = ""
-        opcao.itens.forEach({
-            print($0.nomeItem)
-            temp += " \($0.nomeItem)"
-            print(temp)
-        })
-        return temp
     }
 }
