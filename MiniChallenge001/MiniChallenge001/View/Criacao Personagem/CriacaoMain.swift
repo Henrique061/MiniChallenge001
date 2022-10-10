@@ -21,9 +21,10 @@ struct CriacaoMain: View {
     
     var body: some View {
         TemplateTelaPadrao {
-            ScrollView {
-                VStack(spacing: 10) {
+            VStack(alignment: .leading, spacing: 10) {
+                ScrollView {
                     Text("Para começarmos, preencha abaixo os dados de seu peronsagem")
+                        .font(.system(size: 15, weight: .semibold, design: .default))
                     
                     TextField("Nome da ficha", text: $novaFicha.ficha.nome)
                         .textFieldStyle(CustomTextFieldStyle())
@@ -44,7 +45,7 @@ struct CriacaoMain: View {
                     }
                     
                     CustomNavigationLink {
-                        EmptyView()
+                        SelecaoAntecedenteView(ficha: $novaFicha.ficha)
                     } label: {
                         DisplayTextoBotao(titulo: "Antecedente", descricao: "Toque para selecionar...")
                     }
@@ -52,16 +53,14 @@ struct CriacaoMain: View {
                     MenuSelecaoTendencia(ficha: $novaFicha.ficha)
                     Spacer()
                 }
-                .tint(.black)
-                .padding(.horizontal)
-            }
-            
-            Button {
                 
-            } label: {
-                Text("Próximo")
+                NavigationLink {
+                    CriacaoCaracteristica(ficha: $novaFicha.ficha)
+                } label: {
+                    Text("Próximo")
+                }
+                .buttonStyle(CustomButtonStyle5())
             }
-            .buttonStyle(CustomButtonStyle5())
             .padding(.horizontal, 10)
         }
         
@@ -184,7 +183,51 @@ struct TemplateRadioButton: View {
         .buttonStyle(CustomButtonStyle2())
         .frame(height: 40)
     }
+}
+
+struct TemplateRadioButtonWithContent<Content>: View where Content: View {
+    @State private var isMarked: Bool
+    @ViewBuilder private var content: () -> Content
+    private var completion: () -> Void
     
+    public init(isMarked: Bool = false, @ViewBuilder content: @escaping () -> Content, completion: @escaping () -> Void) {
+        self.isMarked = isMarked
+        self.content = content
+        self.completion = completion
+    }
+    
+    var body: some View {
+        Button {
+            self.isMarked.toggle()
+            completion()
+        } label: {
+            HStack {
+                Image(systemName: "circle.fill")
+                    .renderingMode(.template)
+                    .foregroundColor(isMarked ? Color("RedTheme") : Color(uiColor: .systemGray4))
+                VStack(alignment: .leading, spacing: 0) {
+                    content()
+                }
+            }
+        }
+        .buttonStyle(CustomButtonStyle2())
+    }
+}
+
+struct TemplateDisclosureGroupContent: View {
+    
+    private let title: String
+    
+    public init(title: String) {
+        self.title = title
+    }
+    
+    var body: some View {
+        Text(title)
+            .padding(.horizontal, 10)
+            .font(.system(size: 15, weight: .regular, design: .default))
+            .frame(height: 40)
+    }
 }
 
 struct TemplateCustomDisclosureGroup<Content, Header>: View where Content: View, Header: View {
@@ -210,6 +253,54 @@ struct TemplateCustomDisclosureGroup<Content, Header>: View where Content: View,
             } label: {
                 header()
             }.buttonStyle(CustomButtonStyle2())
+        }
+    }
+}
+
+struct TemplateCustomDisclosureGroup2<Content, Header>: View where Content: View, Header: View {
+    
+    @ViewBuilder private var content: () -> Content
+    @ViewBuilder private var header: () -> Header
+    
+    
+    public init(@ViewBuilder content: @escaping () -> Content, @ViewBuilder header: @escaping () -> Header) {
+        self.content = content
+        self.header = header
+    }
+    
+    var body: some View {
+        TemplateContentBackground {
+            DisclosureGroup {
+                VStack(alignment: .leading, spacing: 0) {
+                    Divider()
+                    content()
+                }
+            } label: {
+                header()
+            }.buttonStyle(CustomButtonStyle2())
+        }
+    }
+}
+
+struct TemplateDetalheCaracteristica: View {
+    
+    @State private var isExpanded: Bool = false
+    private var title: String
+    private var subtitle: String
+    private var description: String
+    
+    public init(title: String, subtitle: String, description: String) {
+        self.title = title
+        self.subtitle = subtitle
+        self.description = description
+    }
+    
+    var body: some View {
+        TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+            DisplayTextoBotao(titulo: "Descrição:", descricao: description)
+                .padding(10)
+        } header: {
+            DisplayTextoBotao(titulo: title , descricao: subtitle)
         }
     }
 }

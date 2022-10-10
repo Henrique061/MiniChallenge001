@@ -49,7 +49,7 @@ struct EditarRiquezaView: View {
                     } label: {
                         Text("Salvar Alteração")
                     }.buttonStyle(CustomButtonStyle5())
-                }.padding(10)
+                }.padding(.horizontal, 10)
             }
     }
 }

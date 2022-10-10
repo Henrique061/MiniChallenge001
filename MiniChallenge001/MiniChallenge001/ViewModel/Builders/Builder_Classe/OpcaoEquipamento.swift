@@ -7,9 +7,9 @@
 
 import Foundation
 
-public class OpcaoEquipamento : Codable {
+// Isso daqui poderia ser uma variável
+public struct OpcaoEquipamento : Codable, Hashable {
     var escolhas: [EscolhaOpcao] = []
-
 }
 
 public struct EscolhaOpcao : Codable, Hashable {
@@ -26,7 +26,7 @@ public struct ItemEscolha : Codable, Hashable {
 public class FactoryOpcaoEquipamento : Codable {
     // cria uma opcao
     public static func criaOpcao(escolhas: [EscolhaOpcao]) -> OpcaoEquipamento {
-        let opcao = OpcaoEquipamento()
+        var opcao = OpcaoEquipamento()
         opcao.escolhas = escolhas
         return opcao
     }

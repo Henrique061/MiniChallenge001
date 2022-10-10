@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: Enum Antecedentes
-public enum AntecedentePersonagem : String, Codable {
+public enum AntecedentePersonagem : String, Codable, CaseIterable {
     case acolito = "Acólito"
     case artesaoGuilda = "Artesão de Guilda"
     case artista = "Artista"
@@ -53,5 +53,4 @@ public class AntecedenteEscolha {
     var escolhaFerramentaInicial: [String] = []
     
     var dinheiroInicial: Moeda = Moeda()
-    
 }

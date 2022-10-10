@@ -53,16 +53,16 @@ struct MainView: View {
                 ContentView()
             }
             
-            //            .onAppear {
-            //                let template = PersonagemFicha()
-            //                do { try template.id = JsonFileUtil.getNewIdForSheet() }
-            //                catch {}
-            //                template.nome = "Ficha Manhattan"
-            //                template.nomePersonagem = "Manhattan The Great"
-            //                template.classeFinal = ClasseFicha(classePersonagem: .monge)
-            //                template.nivel = 18
-            //                fichas.createNewFicha(ficha: template)
-            //            }
+            .onAppear {
+                let template = PersonagemFicha()
+                do { try template.id = JsonFileUtil.getNewIdForSheet() }
+                catch {}
+                template.nome = "Ficha Manhattan"
+                template.nomePersonagem = "Manhattan The Great"
+                template.classeFinal = ClasseFicha(classePersonagem: .monge)
+                template.nivel = 18
+                fichas.createNewFicha(ficha: template)
+            }
             
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -207,7 +207,7 @@ struct TemplateSheetView<Header, Content>: View where Content: View, Header: She
             Color("ScreenBackground").ignoresSafeArea()
             VStack(alignment: .leading, spacing: 0) {
                 header
-                    .padding(.top, 10)
+                    .padding(.vertical, 10)
                 content()
             }
         }
@@ -273,6 +273,7 @@ struct CustomButtonStyle: ButtonStyle {
             .foregroundColor(Color("BlackAndWhite"))
             .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("ContentBackground"))
             .clipShape(RoundedRectangle(cornerRadius: 5 ))
+            .fixedSize(horizontal: false, vertical: true)
     }
 }
 

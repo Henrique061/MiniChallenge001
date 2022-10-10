@@ -16,31 +16,10 @@ struct DetalhesTracoView: View {
         TemplateSheetView(header: DefaultSheetHeader(image: Image("IdentidadeIconOff"), title: "Descrição de Traços Raciais", subtitle: vmraca.subraca.subraca == .none ? vmraca.raca.tipoRaca.rawValue : vmraca.subraca.subraca.rawValue)) {
             ScrollView {
                 ForEach(vmraca.getTracos(), id: \.id) { traco in
-                    CelulaDetalheTraco(nomePassiva: traco.nome, descricaoPassiva: traco.descricao)
+                    TemplateDetalheCaracteristica(title: traco.nome, subtitle: "Passiva", description: traco.descricao)
                 }
-                .padding(10)
+                .padding(.horizontal, 10)
             }
-        }
-    }
-}
-
-struct CelulaDetalheTraco: View {
-    
-    private var nomePassiva: String
-    private var descricaoPassiva: String
-    @State private var showContent: Bool = false
-    
-    public init(nomePassiva: String, descricaoPassiva: String) {
-        self.nomePassiva = nomePassiva
-        self.descricaoPassiva = descricaoPassiva
-    }
-    
-    var body: some View {
-        TemplateCustomDisclosureGroup(isExpanded: $showContent) {
-            DisplayTextoBotao(titulo: "Descrição:", descricao: descricaoPassiva)
-                .padding(10)
-        } header: {
-            DisplayTextoBotao(titulo: nomePassiva, descricao: "Passiva")
         }
     }
 }
