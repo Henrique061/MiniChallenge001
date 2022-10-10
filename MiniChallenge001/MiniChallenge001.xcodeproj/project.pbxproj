@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093F602428F0D5E0006A8911 /* Condicoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F602328F0D5E0006A8911 /* Condicoes.swift */; };
 		09B5569228DA6156001466B0 /* Habilidades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568B28DA6154001466B0 /* Habilidades.swift */; };
 		09B5569328DA6156001466B0 /* SheetTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568C28DA6155001466B0 /* SheetTabView.swift */; };
 		09B5569428DA6156001466B0 /* Inventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568D28DA6155001466B0 /* Inventario.swift */; };
@@ -96,6 +97,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		093F602328F0D5E0006A8911 /* Condicoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condicoes.swift; sourceTree = "<group>"; };
 		09B5568B28DA6154001466B0 /* Habilidades.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habilidades.swift; sourceTree = "<group>"; };
 		09B5568C28DA6155001466B0 /* SheetTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetTabView.swift; sourceTree = "<group>"; };
 		09B5568D28DA6155001466B0 /* Inventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventario.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				09B5568E28DA6155001466B0 /* Atributos.swift */,
+				093F602328F0D5E0006A8911 /* Condicoes.swift */,
 			);
 			path = Atributo;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09B5569428DA6156001466B0 /* Inventario.swift in Sources */,
+				093F602428F0D5E0006A8911 /* Condicoes.swift in Sources */,
 				3D6F869628E11C070022D0BE /* AntecedenteClient.swift in Sources */,
 				3D6F868728E0CD760022D0BE /* RacaClient.swift in Sources */,
 				3D6F868F28E11B910022D0BE /* BuscaJson.swift in Sources */,
