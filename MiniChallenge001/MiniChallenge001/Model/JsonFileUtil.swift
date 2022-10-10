@@ -47,23 +47,23 @@ class JsonFileUtil {
     
     public static func getNewIdForSheet() throws -> Int {
         try createSheetsFolderPath()
-        var id = 1
         let arr = try FileManager.default.contentsOfDirectory(atPath: DOCUMENTS_PATH.path)
-        while true {
-            id = Int.random(in: 1...5000)
-            var isValidID = true
-            for fileName in arr {
-                if fileName.contains("\(id)") {
-                    isValidID = false
-                }
-            }
-            if isValidID { break }
+        if arr.isEmpty {
+            return 1
         }
+        
+        var id = 1
+        
+        for i in arr {
+            let temp = Int(i.split(separator: "_")[1]) ?? id
+            if id <= temp { id += 1 }
+        }
+        
         return id
     }
     
     private static func formatSheetName(name: String, id: Int) -> String {
-        return "\(name)%\(id)".lowercased().replacingOccurrences(of: " ", with: "_")
+        return "\(name)_\(id)".lowercased().replacingOccurrences(of: " ", with: "-")
     }
     
     public static func write<T:Json>(content: T) throws {

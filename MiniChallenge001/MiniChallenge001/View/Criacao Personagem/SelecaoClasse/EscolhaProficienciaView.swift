@@ -57,22 +57,13 @@ struct MostrarProficiencias<Item>: View where Item: Json {
     }
     
     var body: some View {
-        TemplateContentBackground {
-            DisclosureGroup(isExpanded: $showContent) {
-                VStack(spacing: 0) {
-                    Divider()
-                    ForEach(lista, id: \.id) { item in
-                        Text(item.nome)
-                            .font(.system(size: 13, weight: .regular, design: .default))
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                }
-            } label: {
-                Text(title)
-                    .font(.system(size: 15, weight: .bold, design: .default))
-            }.buttonStyle(CustomButtonStyle2())
+        TemplateCustomDisclosureGroup(isExpanded: $showContent) {
+            ForEach(lista, id: \.id) { item in
+                TemplateDisclosureGroupContent(title: item.nome)
+            }
+        } header: {
+            Text(title)
+                .font(.system(size: 15, weight: .bold, design: .default))
         }
     }
 }
@@ -89,22 +80,13 @@ struct MostrarSalvaguardas: View {
     }
     
     var body: some View {
-        TemplateContentBackground {
-            DisclosureGroup(isExpanded: $showContent) {
-                VStack(spacing: 0) {
-                    Divider()
-                    ForEach(lista, id: \.self) { item in
-                        Text(item.rawValue)
-                            .font(.system(size: 13, weight: .regular, design: .default))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
-                    }
-                }
-            } label: {
-                Text(title)
-                    .font(.system(size: 15, weight: .bold, design: .default))
-            }.buttonStyle(CustomButtonStyle2())
+        TemplateCustomDisclosureGroup(isExpanded: $showContent) {
+            ForEach(lista, id: \.self) { item in
+                TemplateDisclosureGroupContent(title: item.rawValue)
+            }
+        } header: {
+            Text(title)
+                .font(.system(size: 15, weight: .bold, design: .default))
         }
     }
 }
@@ -127,12 +109,7 @@ struct SelecionarFerramentas: View {
                     }
                 }
             } header: {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("Ferramentas")
-                        .font(.system(size: 15, weight: .bold, design: .default))
-                    Text("Toque para selecionar")
-                        .font(.system(size: 13, weight: .regular, design: .default))
-                }
+                DisplayTextoBotao(titulo: "Ferramentas", descricao: "Toque para selecionar...")
             }
         }
     }
@@ -167,12 +144,7 @@ struct SelecionarPericias: View {
                 }
             }
         } header: {
-            VStack(alignment: .leading, spacing: 3) {
-                Text("Perícias")
-                    .font(.system(size: 15, weight: .bold, design: .default))
-                Text("Toque para selecionar")
-                    .font(.system(size: 13, weight: .regular, design: .default))
-            }
+            DisplayTextoBotao(titulo: "Perícias", descricao: "Toque para selecionar...")
         }
     }
 }

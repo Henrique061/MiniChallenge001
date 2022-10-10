@@ -99,16 +99,11 @@ struct SelecaoRacaView: View {
         TemplateTelaPadrao {
             ScrollView {
                 VStack(spacing: 10) {
-                    MenuEscolhaRaca().environmentObject(vmraca)
-                    
-                    MenuEscolhaSubraca().environmentObject(vmraca)
-                    
+                    RacaPickView().environmentObject(vmraca)
+                    SubracaPickView().environmentObject(vmraca)
                     AtributosRacaView().environmentObject(vmraca)
-                    
                     DeslocamentoRacaView().environmentObject(vmraca)
-                    
                     IdiomaRacaView().environmentObject(vmraca)
-                    
                     BotaoMostrarTracosRaca().environmentObject(vmraca)
                     Spacer()
                 }
@@ -134,7 +129,7 @@ struct SelecaoRacaView: View {
     }
 }
 
-struct MenuEscolhaRaca: View {
+private struct RacaPickView: View {
     
     @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     @State private var showContent: Bool = false
@@ -163,7 +158,7 @@ struct MenuEscolhaRaca: View {
     }
 }
 
-struct MenuEscolhaSubraca: View {
+private struct SubracaPickView: View {
     
     @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     @State private var showContent: Bool = false
@@ -192,7 +187,7 @@ struct MenuEscolhaSubraca: View {
     }
 }
 
-struct AtributosRacaView: View {
+private struct AtributosRacaView: View {
     
     @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     
@@ -206,7 +201,7 @@ struct AtributosRacaView: View {
     }
 }
 
-struct DeslocamentoRacaView: View {
+private struct DeslocamentoRacaView: View {
     
     @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     
@@ -220,7 +215,7 @@ struct DeslocamentoRacaView: View {
     }
 }
 
-struct IdiomaRacaView: View {
+private struct IdiomaRacaView: View {
     @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     
     var body: some View {
@@ -233,7 +228,7 @@ struct IdiomaRacaView: View {
     }
 }
 
-struct BotaoMostrarTracosRaca: View {
+private struct BotaoMostrarTracosRaca: View {
     
     @EnvironmentObject private var vmraca: CriacaoRacaViewModel
     @State private var showSheet: Bool = false

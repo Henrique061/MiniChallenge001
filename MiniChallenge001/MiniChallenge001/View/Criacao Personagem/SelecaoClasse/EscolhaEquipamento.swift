@@ -19,7 +19,7 @@ struct EscolhaEquipamento: View {
         TemplateTelaPadrao {
             
             ScrollView {
-                VStack(alignment: .leading, spacing: 0) {
+                VStack(alignment: .leading, spacing: 10) {
                     EquipamentosPadrao(escolha: $escolha)
                     OpcoesEquipamento(escolha: $escolha)
                     Spacer()
@@ -47,7 +47,7 @@ private struct EquipamentosPadrao: View {
     var body: some View {
         TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
             ForEach(escolha.equipamentosIniciais, id: \.id) { equipamento in
-                Text(equipamento.nome)
+                TemplateDisclosureGroupContent(title: equipamento.nome)
             }
         } header: {
             Text("Equipamentos Padrão")
@@ -65,24 +65,33 @@ private struct OpcoesEquipamento: View {
     }
     
     var body: some View {
-        ForEach(escolha.opcoesEquipamento, id: \.self) { i in
-            DisclosureGroup("Escolha #n") {
-                ForEach(i.escolhas, id: \.self) { j in
-                    ForEach(j.itens, id: \.self) { k in
-                        Text(k.nomeItem)
+        ForEach(Array(escolha.opcoesEquipamento.enumerated()), id: \.element) { (i, selecao) in
+            
+            TemplateCustomDisclosureGroup2 {
+                ForEach(Array(selecao.escolhas.enumerated()), id: \.element) { (j, opcao) in
+                    Text("Opção \(String(UnicodeScalar(65 + j)!))")
+                        .font(.system(size: 13, weight: .bold, design: .default))
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                    
+                    TemplateRadioButtonWithContent(isMarked: false) {
+                        ForEach(opcao.itens, id: \.self) { item in
+                            VStack(alignment: .leading, spacing: 0) {
+                                Text(item.nomeItem)
+                                    .font(.system(size: 13, weight: .regular, design: .default))
+                                Text("Quantidade: \(item.quantia)")
+                                    .font(.system(size: 10, weight: .regular, design: .default))
+                            }.padding(.vertical, 3)
+                        }
+                    } completion: {
+                        
                     }
                 }
+            } header: {
+                Text("Escolha \(i + 1)")
+                    .font(.system(size: 15, weight: .bold, design: .default))
             }
         }
-        
-//            .onAppear {
-//                for i in escolha.opcoesEquipamento {
-//                    for j in i.escolhas {
-//                        for k in j.itens {
-//                            print(k.nomeItem)
-//                        }
-//                    }
-//                }
-//            }
     }
 }
+

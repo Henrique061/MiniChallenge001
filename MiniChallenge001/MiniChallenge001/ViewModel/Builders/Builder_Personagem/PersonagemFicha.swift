@@ -14,6 +14,19 @@ public struct ResistenciaMorte : Codable {
     var falha: Int = 0
 }
 
+//MARK: ESTILO DE VIDA
+enum EstiloDeVida: String, Codable, CaseIterable {
+    case miseravel = "Miserável"
+    case esqualido = "Esquálido"
+    case pobre = "Pobre"
+    case modesto = "Modesto"
+    case confortavel = "Confortável"
+    case rico = "Rico"
+    case aristocratico = "Aristocrático"
+    
+    case none = "Nenhum"
+}
+
 //MARK: ENUM TENDENCIA
 enum TipoTendencia : String, Codable, CaseIterable {
     case lealBom = "Leal e Bom"
@@ -106,6 +119,7 @@ public class PersonagemFicha: Json {
     var vinculoPersonagem: String = ""
     var defeitosPersonagem: String = ""
     var tendenciaPersonagem: TipoTendencia = .none // leal e bom, essas parada
+    var estiloVida: EstiloDeVida = .none
     
     //MARK: PONTOS ATRIBUTOS
     var pontosAtributos: ValoresAtributos = ValoresAtributos()

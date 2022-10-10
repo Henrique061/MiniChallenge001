@@ -15,6 +15,10 @@
 		09B5569728DA6156001466B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569028DA6156001466B0 /* ContentView.swift */; };
 		09B5569828DA6156001466B0 /* Combate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569128DA6156001466B0 /* Combate.swift */; };
 		1214FE8328F09CE800E15113 /* EscolhaEquipamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214FE8228F09CE800E15113 /* EscolhaEquipamento.swift */; };
+		1214FE8528F101D700E15113 /* DetalhesCaracteristicaClasse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214FE8428F101D700E15113 /* DetalhesCaracteristicaClasse.swift */; };
+		1214FE8828F10A7800E15113 /* SelecaoAntecedenteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214FE8728F10A7800E15113 /* SelecaoAntecedenteView.swift */; };
+		1214FE8A28F4681D00E15113 /* CriacaoCaracteristica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214FE8928F4681D00E15113 /* CriacaoCaracteristica.swift */; };
+		1214FE8C28F486C200E15113 /* CriacaoDescricao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214FE8B28F486C200E15113 /* CriacaoDescricao.swift */; };
 		122E948228E21EE100184F88 /* CaracteristicaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948128E21EE100184F88 /* CaracteristicaJSON.swift */; };
 		122E948428E21F2000184F88 /* TraitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948328E21F2000184F88 /* TraitJSON.swift */; };
 		122E948628E2205300184F88 /* PersonagemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948528E2205300184F88 /* PersonagemViewModel.swift */; };
@@ -105,6 +109,10 @@
 		09B5569028DA6156001466B0 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09B5569128DA6156001466B0 /* Combate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combate.swift; sourceTree = "<group>"; };
 		1214FE8228F09CE800E15113 /* EscolhaEquipamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolhaEquipamento.swift; sourceTree = "<group>"; };
+		1214FE8428F101D700E15113 /* DetalhesCaracteristicaClasse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesCaracteristicaClasse.swift; sourceTree = "<group>"; };
+		1214FE8728F10A7800E15113 /* SelecaoAntecedenteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecaoAntecedenteView.swift; sourceTree = "<group>"; };
+		1214FE8928F4681D00E15113 /* CriacaoCaracteristica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriacaoCaracteristica.swift; sourceTree = "<group>"; };
+		1214FE8B28F486C200E15113 /* CriacaoDescricao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriacaoDescricao.swift; sourceTree = "<group>"; };
 		122E948128E21EE100184F88 /* CaracteristicaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracteristicaJSON.swift; sourceTree = "<group>"; };
 		122E948328E21F2000184F88 /* TraitJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitJSON.swift; sourceTree = "<group>"; };
 		122E948528E2205300184F88 /* PersonagemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemViewModel.swift; sourceTree = "<group>"; };
@@ -197,6 +205,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1214FE8628F10A4A00E15113 /* SelecaoAntescedente */ = {
+			isa = PBXGroup;
+			children = (
+				1214FE8728F10A7800E15113 /* SelecaoAntecedenteView.swift */,
+			);
+			path = SelecaoAntescedente;
+			sourceTree = "<group>";
+		};
 		12535F4928E323DC0020A005 /* SelecaoRaca */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,8 +289,11 @@
 			isa = PBXGroup;
 			children = (
 				126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */,
+				1214FE8928F4681D00E15113 /* CriacaoCaracteristica.swift */,
+				1214FE8B28F486C200E15113 /* CriacaoDescricao.swift */,
 				12535F4928E323DC0020A005 /* SelecaoRaca */,
 				12FEBA2528E7A55300DBB6EF /* SelecaoClasse */,
+				1214FE8628F10A4A00E15113 /* SelecaoAntescedente */,
 			);
 			path = "Criacao Personagem";
 			sourceTree = "<group>";
@@ -286,6 +305,7 @@
 				12FEBA2928E8A26A00DBB6EF /* EditarRiquezaView.swift */,
 				125B251528EE03DB00B60168 /* EscolhaProficienciaView.swift */,
 				1214FE8228F09CE800E15113 /* EscolhaEquipamento.swift */,
+				1214FE8428F101D700E15113 /* DetalhesCaracteristicaClasse.swift */,
 			);
 			path = SelecaoClasse;
 			sourceTree = "<group>";
@@ -642,16 +662,19 @@
 				126ABAF128DB3D5200CF5A2E /* MagiaJSON.swift in Sources */,
 				126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */,
 				3DF24F8B28E1CC99006C0AAE /* ClasseFicha.swift in Sources */,
+				1214FE8528F101D700E15113 /* DetalhesCaracteristicaClasse.swift in Sources */,
 				3D6F869A28E11C200022D0BE /* AntecedenteBuilder.swift in Sources */,
 				09B5569628DA6156001466B0 /* Identidade.swift in Sources */,
 				3D6F869228E11BEB0022D0BE /* AntecedenteEscolha.swift in Sources */,
 				12535F4B28E323F60020A005 /* DetalhesTracoView.swift in Sources */,
+				1214FE8C28F486C200E15113 /* CriacaoDescricao.swift in Sources */,
 				3D3DC35628DC09F00093BD92 /* ClasseBuilder.swift in Sources */,
 				126ABB3328DE3EE200CF5A2E /* MainView.swift in Sources */,
 				3D6F868D28E0E84D0022D0BE /* RacaDirector.swift in Sources */,
 				09B5569528DA6156001466B0 /* Atributos.swift in Sources */,
 				126ABAF228DB3D5200CF5A2E /* Moeda.swift in Sources */,
 				3D6F868328E0CD5B0022D0BE /* RacaBuilder.swift in Sources */,
+				1214FE8828F10A7800E15113 /* SelecaoAntecedenteView.swift in Sources */,
 				126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */,
 				125B251628EE03DB00B60168 /* EscolhaProficienciaView.swift in Sources */,
 				3D28DBA728E62A99005F71AC /* RacaFinalBuilder.swift in Sources */,
@@ -662,6 +685,7 @@
 				3D3DC35D28DC14B30093BD92 /* ClasseClient.swift in Sources */,
 				09B5569728DA6156001466B0 /* ContentView.swift in Sources */,
 				12FEBA2828E7A6CB00DBB6EF /* SelecaoClasseView.swift in Sources */,
+				1214FE8A28F4681D00E15113 /* CriacaoCaracteristica.swift in Sources */,
 				126ABAF328DB3D5200CF5A2E /* VeiculoAquaticoJSON.swift in Sources */,
 				3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */,
 				3D6F869428E11BF70022D0BE /* AntecedenteDirector.swift in Sources */,
