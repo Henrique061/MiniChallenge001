@@ -42,47 +42,6 @@ struct estruturaCondicoes: View{
     var body: some View{
         TemplateTabelaAtributo(title: "Condicoes"){
             
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            TemplateRadioButton(isMarked: true, title: "Agarrado"){
-                
-            }
-            
-            
         }
     }
 }

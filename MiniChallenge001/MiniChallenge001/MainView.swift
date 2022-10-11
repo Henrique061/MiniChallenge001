@@ -9,10 +9,15 @@ import SwiftUI
 
 struct MainView: View {
     
-    @ObservedObject private var fichas = PersonagemViewModel()
+    @ObservedObject private var fichas: PersonagemViewModel
     
     @State private var fichaSelecionada: PersonagemFicha?
     @State private var mostrarFicha: Bool = false
+    
+    public init() {
+        self.fichas = PersonagemViewModel()
+        
+    }
     
     var body: some View {
         NavigationView {
@@ -53,17 +58,17 @@ struct MainView: View {
                 ContentView()
             }
             
-            .onAppear {
-                let template = PersonagemFicha()
-                do { try template.id = JsonFileUtil.getNewIdForSheet() }
-                catch {}
-                template.nome = "Ficha Manhattan"
-                template.nomePersonagem = "Manhattan The Great"
-                template.classeFinal = ClasseFicha(classePersonagem: .monge)
-                template.nivel = 18
-                fichas.createNewFicha(ficha: template)
-            }
-            
+//            .onAppear {
+//                let template = PersonagemFicha()
+//                do { try template.id = JsonFileUtil.getNewIdForSheet() }
+//                catch {}
+//                template.nome = "Ficha Manhattan"
+//                template.nomePersonagem = "Manhattan The Great"
+//                template.classeFinal = ClasseFicha(classePersonagem: .monge)
+//                template.nivel = 18
+//                fichas.createNewFicha(ficha: template)
+//            }
+
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

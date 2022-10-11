@@ -24,34 +24,36 @@ struct CriacaoCaracteristica: View {
     var body: some View {
         TemplateTelaPadrao {
             VStack(alignment: .leading, spacing: 10) {
-                Text("Todo herói (ou vilão) possui uma história por trás de seus feitos. Conte-nos um pouco sobre a sua...")
-                    .font(.system(size: 15, weight: .semibold, design: .default))
-                
-                
-                CriacaoCaracteristicaButton(title: "Traços de Personalidade", content: $ficha.tracosPersonalidadePersonagem)
-                CriacaoCaracteristicaButton(title: "Ideais", content: $ficha.ideaisPersonagem)
-                CriacaoCaracteristicaButton(title: "Vínculo", content: $ficha.vinculoPersonagem)
-                CriacaoCaracteristicaButton(title: "Defeitos", content: $ficha.defeitosPersonagem)
-                
-                EstiloVidaPicker(estiloVida: $ficha.estiloVida)
-                
-                Spacer()
+                ScrollView {
+                    Text("Todo herói (ou vilão) possui uma história por trás de seus feitos. Conte-nos um pouco sobre a sua...")
+                        .font(.system(size: 15, weight: .semibold, design: .default))
+                    
+                    
+                    CriacaoCaracteristicaButton(title: "Traços de Personalidade", content: $ficha.tracosPersonalidadePersonagem)
+                    CriacaoCaracteristicaButton(title: "Ideais", content: $ficha.ideaisPersonagem)
+                    CriacaoCaracteristicaButton(title: "Vínculo", content: $ficha.vinculoPersonagem)
+                    CriacaoCaracteristicaButton(title: "Defeitos", content: $ficha.defeitosPersonagem)
+                    
+                    EstiloVidaPicker(estiloVida: $ficha.estiloVida)
+                    
+                    Spacer()
+                }
                 
                 NavigationLink {
-                    EmptyView()
+                    CriacaoDescricao(ficha: $ficha)
                 } label: {
                     Text("Próximo")
                 }.buttonStyle(CustomButtonStyle5())
             }
             .padding(.horizontal, 10)
             
+            .navigationTitle("Criação de Personagem")
             
-            
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    NavigationBarTitle("Criação de Personagem")
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .principal) {
+//                    NavigationBarTitle("Criação de Personagem")
+//                }
+//            }
         }
     }
 }

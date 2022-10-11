@@ -64,12 +64,12 @@ struct CriacaoMain: View {
             .padding(.horizontal, 10)
         }
         
-        
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                NavigationBarTitle("Criação de Personagem")
-            }
-        }
+        .navigationTitle("Criação de Personagem")
+//        .toolbar {
+//            ToolbarItem(placement: .principal) {
+//                NavigationBarTitle("Criação de Personagem")
+//            }
+//        }
     }
 }
 

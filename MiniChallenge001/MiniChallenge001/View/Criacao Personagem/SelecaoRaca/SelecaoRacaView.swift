@@ -241,9 +241,9 @@ private struct BotaoMostrarTracosRaca: View {
                 DisplayTextoBotao(titulo: "Traços Raciais", descricao: "Toque para detalhes...")
             }.buttonStyle(CustomButtonStyle())
             
-                .sheet(isPresented: $showSheet) {
-                    DetalhesTracoView().environmentObject(vmraca)
-                }
+            .sheet(isPresented: $showSheet) {
+                DetalhesTracoView().environmentObject(vmraca)
+            }
         }
     }
 }

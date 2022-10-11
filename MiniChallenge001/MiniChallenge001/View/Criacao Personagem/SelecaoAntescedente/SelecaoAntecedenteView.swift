@@ -30,7 +30,6 @@ struct SelecaoAntecedenteView: View {
         self._ficha = ficha
         self.vmantecedente = ViewModelEscolhaAntecedente()
         self.showContent = ficha.wrappedValue.antecedenteFinal != .none
-        print("showContent: \(showContent)")
     }
     
     var body: some View {
@@ -41,7 +40,6 @@ struct SelecaoAntecedenteView: View {
                         withAnimation {
                             showContent = antecedente != .none
                         }
-                        print(showContent)
                         self.vmantecedente.setAntecedente(antecedente)
                     }
                     
