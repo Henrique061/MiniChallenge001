@@ -26,7 +26,7 @@ protocol ClasseBuilder {
     func setProfArmas(_ armas: [ArmaJSON])
     func setProfArmaduras(_ armaduras: [ArmaduraJSON])
     func setProfFerramentas(_ ferramentas: [FerramentaJSON])
-    func setEscolhasProficienciaFerramenta(_ escolhas: [EscolhaOpcao])
+    func setEscolhasProficienciaFerramenta(_ escolhas: [FerramentaJSON])
     func setQuantiaEscolhaProfFerramentas(_ quantia: Int)
     
     func setOpcoes(opcoes: [OpcaoEquipamento])

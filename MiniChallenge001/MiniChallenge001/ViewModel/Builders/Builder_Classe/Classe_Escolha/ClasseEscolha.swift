@@ -150,7 +150,7 @@ public class ClasseEscolha {
     var profArmas: [ArmaJSON] = []
     var profArmaduras: [ArmaduraJSON] = []
     var profFerramentas: [FerramentaJSON] = []
-    var escolhasProficienciaFerramenta: [EscolhaOpcao] = [] // ESCOLHA
+    var escolhasProficienciaFerramenta: [FerramentaJSON] = []
     var quantiaEscolhaProfFerramentas: Int = 0
     
     var opcoesEquipamento: [OpcaoEquipamento] = []

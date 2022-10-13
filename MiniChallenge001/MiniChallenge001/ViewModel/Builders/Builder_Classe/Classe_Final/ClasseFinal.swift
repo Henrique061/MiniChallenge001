@@ -12,7 +12,7 @@ public struct ClasseEscolhasDefinidas : Codable {
     var escolhaRiqueza: Moeda = Moeda(quantidade: 0, tipo: .none)
     var escolhaProfFerramentas: [FerramentaJSON] = []
     var escolhaProfPericias: [Pericia] = []
-    var escolhasOpcoesEquip: [EscolhaOpcao] = []
+    var escolhasOpcoesEquip: [EscolhaUnica] = []
 }
 
 public class ClasseFinal {

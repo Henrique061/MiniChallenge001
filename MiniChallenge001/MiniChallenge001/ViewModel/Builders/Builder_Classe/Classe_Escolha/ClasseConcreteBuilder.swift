@@ -83,7 +83,7 @@ public class ClasseConcreteBuilder : ClasseBuilder {
     }
     
     //MARK: OPCOES FERRAMENTAS
-    func setEscolhasProficienciaFerramenta(_ escolhas: [EscolhaOpcao]) {
+    func setEscolhasProficienciaFerramenta(_ escolhas: [FerramentaJSON]) {
         self.classe.escolhasProficienciaFerramenta = escolhas
     }
     

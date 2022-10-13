@@ -326,16 +326,7 @@ public class ClasseDirector {
         
         let armadurasProficientes: [ArmaduraJSON] = BuscaJson.buscaArmadurasPorTipo(tipo: .leve)
         
-        var escolhasProfFerramenta: [EscolhaOpcao] {
-            var itensEscolha: [[ItemEscolha]] = []
-            let ferramentas = BuscaFerramenta.buscaFerramentaTipo(tipo: .musical, nomeExcluso: "")
-            
-            for ferramenta in ferramentas {
-                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: ferramenta, quantia: 1, tipo: .ferramenta)]))
-            }
-            
-            return []
-        }
+        let escolhasProfFerramenta: [FerramentaJSON] = BuscaJson.buscaFerramentaPorTipo(tipo: .musical)
         
         var armasIniciais: [ArmaJSON] = []
         armasIniciais.append(BuscaJson.buscaArmaPorNome(nome: "Adaga"))
@@ -347,36 +338,52 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha3: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Rapieira", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
+            
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Longa", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha3 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteDiplomata.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteArtista.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteArtista.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let ferramentasEscolha: [String] = BuscaFerramenta.buscaFerramentaTipo(tipo: .musical, nomeExcluso: "")
             
             for ferramenta in ferramentasEscolha {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: ferramenta, quantia: 1, tipo: .ferramenta)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -438,48 +445,66 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Besta Leve")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Besta Leve", quantia: 1, tipo: .arma), (item: "Virotes", quantia: 20, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let equipamentosEscolha2: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .focoArcano, nomeExcluso: "")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bolsa de componentes", quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for equipamento in equipamentosEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao4: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "")
             
             for arma in armasEscolha {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -549,54 +574,80 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Maça", quantia: 1, tipo: .arma)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Martelo de Guerra", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Martelo de Guerra", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Brunea", quantia: 1, tipo: .armaduras)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armaduras)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armaduras)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armaduras)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armaduras)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Besta Leve")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Besta Leve", quantia: 1, tipo: .arma), (item: "Virotes", quantia: 20, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao4: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteSacerdote.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao5: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let equipamentosEscolha: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .simboloSagrado, nomeExcluso: "")
             
             for equipamento in equipamentosEscolha {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -655,48 +706,66 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Escudo", quantia: 1, tipo: .armaduras)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipoEstilo(tipo: .simples, estilo: .cac, nomeExcluso: "Cimitarra")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cimitarra", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao4: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let equipamentosEscolha: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .focoDruidico, nomeExcluso: "")
             
             for equipamento in equipamentosEscolha {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -749,37 +818,52 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Besta Leve")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Besta Leve", quantia: 1, tipo: .arma), (item: "Virotes", quantia: 20, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let equipamentosEscolha2: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .focoArcano, nomeExcluso: "")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bolsa de componentes", quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for equipamento in equipamentosEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -835,44 +919,64 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armaduras)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Gibão de Peles", quantia: 1, tipo: .armaduras), (item: "Arco Longo", quantia: 1, tipo: .arma), (item: "Flechas", quantia: 20, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Gibão de Peles", quantia: 1, tipo: .armaduras), (item: "Arco Longo", quantia: 1, tipo: .arma), (item: "Flechas", quantia: 20, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha: [String] = BuscaArma.buscaArmaTipo(tipo: .marcial, nomeExcluso: "")
             
             for arma in armasEscolha {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma), (item: "Escudo", quantia: 1, tipo: .armaduras)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 2, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Besta Leve", quantia: 1, tipo: .arma), (item: "Virotes", quantia: 20, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao4: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -941,30 +1045,48 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Rapieira", quantia: 1, tipo: .arma)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Longa", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Longa", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Arco Curto", quantia: 1, tipo: .arma), (item: "Aljava", quantia: 1, tipo: .equipamento), (item: "Flechas", quantia: 20, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Curta", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Curta", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAssaltante.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
+            
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -1036,33 +1158,48 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bordão", quantia: 1, tipo: .arma)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Adaga", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Adaga", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let equipamentosEscolha2: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .focoArcano, nomeExcluso: "")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bolsa de componentes", quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for equipamento in equipamentosEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -1109,19 +1246,8 @@ public class ClasseDirector {
         var armasProficientes: [ArmaJSON] = BuscaJson.buscaArmaTipo(tipo: .simples)
         armasProficientes.append(BuscaJson.buscaArmaPorNome(nome: "Espada Curta"))
         
-        var escolhasProfFerramenta: [EscolhaOpcao] {
-            var itensEscolha: [[ItemEscolha]] = []
-            let ferramentas1 = BuscaFerramenta.buscaFerramentaTipo(tipo: .musical, nomeExcluso: "")
-            let ferramentas2 = BuscaFerramenta.buscaFerramentaTipo(tipo: .artesao, nomeExcluso: "")
-            
-            let ferramentas: [String] = ferramentas1 + ferramentas2
-            
-            for ferramenta in ferramentas {
-                itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: ferramenta, quantia: 1, tipo: .ferramenta)]))
-            }
-            
-            return []
-        }
+        var escolhasProfFerramenta: [FerramentaJSON] = BuscaJson.buscaFerramentaPorTipo(tipo: .musical)
+        escolhasProfFerramenta.append(contentsOf: BuscaJson.buscaFerramentaPorTipo(tipo: .artesao))
         
         let armasIniciais: [ArmaJSON] = BuscaJson.buscaArmaPorNomeQuantidade(nome: "Dardo", quantidade: 10)
         
@@ -1129,24 +1255,34 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Curta", quantia: 1, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -1210,50 +1346,68 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha: [String] = BuscaArma.buscaArmaTipo(tipo: .marcial, nomeExcluso: "")
             
             for arma in armasEscolha {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma), (item: "Escudo", quantia: 1, tipo: .armaduras)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 2, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipoEstilo(tipo: .simples, estilo: .cac, nomeExcluso: "Azagaia")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Azagaia", quantia: 5, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteSacerdote.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao4: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let equipamentosEscolha: [String] = BuscaEquipamento.buscaEquipamentoCategoria(categoria: .simboloSagrado, nomeExcluso: "")
             
             for equipamento in equipamentosEscolha {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -1314,33 +1468,48 @@ public class ClasseDirector {
         
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Brunea", quantia: 1, tipo: .armaduras)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armaduras)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armaduras)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Espada Curta")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Curta", quantia: 2, tipo: .arma)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 2, tipo: .arma)]))
             }
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
-            return OpcaoEquipamento(escolhas: [])
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         var opcao3: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
             
-            return OpcaoEquipamento(escolhas: [])
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
