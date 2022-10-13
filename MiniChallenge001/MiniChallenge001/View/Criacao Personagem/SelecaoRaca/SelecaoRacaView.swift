@@ -87,12 +87,11 @@ class CriacaoRacaViewModel: ObservableObject {
 struct SelecaoRacaView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @Binding private var ficha: PersonagemFicha
-    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    @EnvironmentObject private var vmficha: NovaFichaViewModel
+    @StateObject private var vmraca: CriacaoRacaViewModel
     
-    public init(ficha: Binding<PersonagemFicha>) {
-        self._ficha = ficha
-        self.vmraca = CriacaoRacaViewModel(ficha: ficha.wrappedValue)
+    public init(ficha: PersonagemFicha) {
+        self._vmraca = StateObject(wrappedValue: CriacaoRacaViewModel(ficha: ficha))
     }
     
     var body: some View {
@@ -112,6 +111,7 @@ struct SelecaoRacaView: View {
             .padding(.vertical, 10)
             
             Button {
+                self.vmficha.setRaca(raca: vmraca.gerarRacaFinal())
                 dismiss()
             } label: {
                 Text("Salvar")
@@ -147,13 +147,7 @@ private struct RacaPickView: View {
                 }
             }
         } header: {
-            VStack(alignment: .leading, spacing: 3) {
-                Text("Raça do personagem")
-                    .font(.system(size: 15, weight: .semibold, design: .default))
-                Text(vmraca.raca.tipoRaca == .none ? "Toque para selecionar..." : vmraca.raca.tipoRaca.rawValue)
-                    .font(.system(size: 13, weight: .regular, design: .default))
-                    .fixedSize(horizontal: false, vertical: true)
-            }
+            DisplayTextoBotaoCondicao(titulo: "Raça", descricaoTrue: "Toque para selecionar...", descricaoFalse: vmraca.raca.tipoRaca.rawValue, condicao: vmraca.raca.tipoRaca == .none)
         }
     }
 }

@@ -9,43 +9,53 @@ import SwiftUI
 
 struct EscolhaProficienciaView: View {
     
-    @Binding private var escolha: ClasseEscolha
-    
-    public init(escolha: Binding<ClasseEscolha>) {
-        self._escolha = escolha
-    }
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
+    @State private var selectedPericias: [Pericia] = []
     
     var body: some View {
         
         TemplateTelaPadrao {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 10) {
-                    if !escolha.profArmaduras.isEmpty {
-                        MostrarProficiencias(title: "Armadura", lista: escolha.profArmaduras)
+            VStack(alignment: .leading, spacing: 10) {
+                ScrollView {
+                    if !vmclasse.escolha.profArmaduras.isEmpty {
+                        MostrarItensJson(title: "Armadura", lista: vmclasse.escolha.profArmaduras)
                     }
                     
-                    if !escolha.profArmas.isEmpty {
-                        MostrarProficiencias(title: "Arma", lista: escolha.profArmas)
+                    if !vmclasse.escolha.profArmas.isEmpty {
+                        MostrarItensJson(title: "Arma", lista: vmclasse.escolha.profArmas)
                     }
                     
-                    MostrarSalvaguardas(title: "Teste de Resistência", lista: escolha.profSalvaguardas)
-                    SelecionarFerramentas(escolha: $escolha)
+                    MostrarSalvaguardas(title: "Teste de Resistência", lista: vmclasse.escolha.profSalvaguardas)
                     
-                    SelecionarPericias(escolha: $escolha)
+                    SelecionarFerramentas()
+                        .environmentObject(vmclasse)
+                    
+                    SelecionarPericias(selectedID: $selectedPericias)
+                        .environmentObject(vmclasse)
                     
                     Spacer()
-                }.padding(.horizontal, 10)
+                }
+                Button {
+                    
+                    dismiss()
+                } label: {
+                    Text("Salvar Alterações")
+                }
+                .buttonStyle(CustomButtonStyle5())
             }
+            .padding(.horizontal, 10)
+            
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    NavigationBarTitle("Proficiências de \(escolha.classePersonagem.rawValue)")
+                    NavigationBarTitle("Proficiências de \(vmclasse.escolha.classePersonagem.rawValue)")
                 }
             }
         }
     }
 }
 
-struct MostrarProficiencias<Item>: View where Item: Json {
+struct MostrarItensJson<Item>: View where Item: Json {
     
     @State private var showContent: Bool = false
     private var title: String
@@ -68,7 +78,7 @@ struct MostrarProficiencias<Item>: View where Item: Json {
     }
 }
 
-struct MostrarSalvaguardas: View {
+private struct MostrarSalvaguardas: View {
     
     @State private var showContent: Bool = false
     private var title: String
@@ -93,19 +103,20 @@ struct MostrarSalvaguardas: View {
 
 struct SelecionarFerramentas: View {
     
-    @Binding private var escolha: ClasseEscolha
+    @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
     @State private var isExpanded: Bool = false
-    
-    public init(escolha: Binding<ClasseEscolha>) {
-        self._escolha = escolha
-    }
+    @State private var selectionId: [String] = []
     
     var body: some View {
-        if !escolha.escolhasProficienciaFerramenta.isEmpty {
+        if !vmclasse.escolha.escolhasProficienciaFerramenta.isEmpty {
             TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-                ForEach(escolha.escolhasProficienciaFerramenta, id: \.self) { opcao in
-                    TemplateRadioButton(isMarked: false, title: getItens(opcao: opcao)) {
-                        
+                ForEach(vmclasse.escolha.escolhasProficienciaFerramenta, id: \.self) { opcao in
+                    ForEach(opcao.itens, id: \.self) { item in
+                        TemplateRadioButtonMultipleIdentifier(selectedID: $selectionId, id: item.nomeItem) {
+                            
+                        } content: {
+                            Text(item.nomeItem)
+                        }.frame(height: 40)
                     }
                 }
             } header: {
@@ -113,38 +124,25 @@ struct SelecionarFerramentas: View {
             }
         }
     }
-    
-    private func getItens(opcao: EscolhaOpcao) -> String {
-        var temp = ""
-        opcao.itens.forEach({
-            temp += " \($0.nomeItem)"
-        })
-        return temp
-    }
 }
 
 struct SelecionarPericias: View {
     
-    @Binding private var escolha: ClasseEscolha
+    @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
     @State private var isExpanded: Bool = false
-    
-    public init(escolha: Binding<ClasseEscolha>) {
-        self._escolha = escolha
-    }
+    @Binding var selectedID: [Pericia]
     
     var body: some View {
         TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-            ForEach(Pericia.allCases, id: \.self) { pericia in
-                TemplateRadioButton(isMarked: escolha.profPericias.contains(pericia), title: pericia.rawValue) {
-                    if escolha.profPericias.contains(pericia) {
-                        escolha.profPericias.removeAll(where: {$0 == pericia})
-                    } else {
-                        escolha.profPericias.append(pericia)
-                    }
-                }
+            ForEach(vmclasse.escolha.profPericias, id: \.self) { pericia in
+                TemplateRadioButtonMultipleIdentifier(selectedID: $selectedID, id: pericia, maxSelection: vmclasse.escolha.quantiaProfPericias) {
+                    
+                } content: {
+                    Text(pericia.rawValue)
+                }.frame(height: 40)
             }
         } header: {
-            DisplayTextoBotao(titulo: "Perícias", descricao: "Toque para selecionar...")
+            DisplayTextoBotaoCondicao(titulo: "Perícias", descricaoTrue: "Selecione \(vmclasse.escolha.quantiaProfPericias - selectedID.count) perícias...", descricaoFalse: "Perícias selecionadas", condicao: selectedID.count < vmclasse.escolha.quantiaProfPericias)
         }
     }
 }

@@ -25,15 +25,17 @@ enum AtributoIdentifier: String, Codable, Hashable, CaseIterable {
 
 struct CriacaoAtributos: View {
     
-    @ObservedObject private var vmatributo: ViewModelAtributo
+    @StateObject private var vmatributo: ViewModelAtributo
     @Binding private var ficha: PersonagemFicha
+    @Binding private var popToRoot: Bool
     @State private var tipoDistribuicao: TipoDistribuicao
     @State private var selectedAtributo: Atributo
     
-    public init(ficha: Binding<PersonagemFicha>) {
-        self.vmatributo = ViewModelAtributo()
+    public init(ficha: Binding<PersonagemFicha>, popToRoot: Binding<Bool>) {
+        self._vmatributo = StateObject(wrappedValue: ViewModelAtributo(ficha: ficha.wrappedValue))
         self._ficha = ficha
-        self.tipoDistribuicao = .none
+        self._popToRoot = popToRoot
+        self.tipoDistribuicao = .livre
         self.selectedAtributo = Atributo(nome: .none, valor: 0)
     }
     
@@ -59,7 +61,22 @@ struct CriacaoAtributos: View {
                 Spacer()
                 
                 Button("Criar Personagem") {
-                    
+                    DispatchQueue.main.async {
+                        self.ficha.pontosAtributos.carisma = self.vmatributo.atributos[0].valor
+                        self.ficha.pontosAtributos.constituicao = self.vmatributo.atributos[1].valor
+                        self.ficha.pontosAtributos.destreza = self.vmatributo.atributos[2].valor
+                        self.ficha.pontosAtributos.forca = self.vmatributo.atributos[3].valor
+                        self.ficha.pontosAtributos.inteligencia = self.vmatributo.atributos[4].valor
+                        self.ficha.pontosAtributos.sabedoria = self.vmatributo.atributos[5].valor
+                        
+                        do {
+                            ficha.id = try JsonFileUtil.getNewIdForSheet()
+                            try JsonFileUtil.write(content: ficha)
+                        } catch {
+                            print("UNABLE TO CREATE A NEW ID TO SHEET: \(error.localizedDescription)")
+                        }
+                        self.popToRoot.toggle()
+                    }
                 }
                 .buttonStyle(CustomButtonStyle5())
             }
@@ -91,23 +108,23 @@ struct SelecaoDistribuirAtributo: View {
                     .padding(.horizontal, -10)
                 
                 HStack(alignment: .center, spacing: 20) {
-                    Button("Padrão") {
-                        withAnimation {
-                            self.tipoDistribuicao = .padrao
-                            self.selectedAtributo = Atributo(nome: .none, valor: 0)
-                        }
-                    }
-                    .buttonStyle(CustomButtonStyle4())
-                    .opacity(tipoDistribuicao == .padrao ? 1 : 0.4)
+//                    Button("Padrão") {
+//                        withAnimation {
+//                            self.tipoDistribuicao = .padrao
+//                            self.selectedAtributo = Atributo(nome: .none, valor: 0)
+//                        }
+//                    }
+//                    .buttonStyle(CustomButtonStyle4())
+//                    .opacity(tipoDistribuicao == .padrao ? 1 : 0.4)
                     
                     Button("Livre") {
                         withAnimation {
-                            self.tipoDistribuicao = .livre
-                            self.selectedAtributo = Atributo(nome: .none, valor: 0)
+//                            self.tipoDistribuicao = .livre
+//                            self.selectedAtributo = Atributo(nome: .none, valor: 0)
                         }
                     }
                     .buttonStyle(CustomButtonStyle4())
-                    .opacity(tipoDistribuicao == .livre ? 1 : 0.4)
+                    .disabled(true) // remover mais para frente
                 }
             }
             .padding(10)
@@ -153,8 +170,8 @@ struct LivreEditAtributo: View {
     var body: some View {
         TemplateContentBackground {
             VStack(alignment: .leading, spacing: 10) {
-                DisplayTextoBotao(titulo: atributo.nome.rawValue, descricao: "\(atributo.valor)")
-                
+                Text("\(atributo.nome.rawValue)")
+                    .font(.system(size: 15, weight: .bold, design: .default))
                 Divider().padding(.horizontal, -10)
                 
                 HStack {
@@ -174,44 +191,6 @@ struct LivreEditAtributo: View {
         }
     }
 }
-
-struct TemplateRadioButtonWithIdentifier<Content, ID>: View where Content: View, ID: Hashable {
-    
-    @ViewBuilder private var content: () -> Content
-    @Binding private var selectedID: ID
-    private var id: ID
-    private var completion: () -> Void
-    
-    public init(selectedID: Binding<ID>, id: ID, completion: @escaping () -> Void, @ViewBuilder content: @escaping () -> Content) {
-        self._selectedID = selectedID
-        self.id = id
-        self.completion = completion
-        self.content = content
-    }
-    
-    var body: some View {
-        HStack {
-            Button {
-                withAnimation {
-                    self.selectedID = id
-                }
-                completion()
-            } label: {
-                HStack {
-                    Image(systemName: "circle.fill")
-                        .renderingMode(.template)
-                        .foregroundColor(self.id == self.selectedID ? Color("RedTheme") : Color(uiColor: .systemGray4))
-                    VStack(alignment: .leading, spacing: 0) {
-                        content()
-                    }
-                }
-            }
-            .buttonStyle(CustomButtonStyle2())
-        }
-    }
-}
-
-
 
 struct Atributo: Hashable {
     
@@ -235,6 +214,15 @@ private class ViewModelAtributo: ObservableObject {
                           Atributo(nome: .forca, valor: 0),
                           Atributo(nome: .inteligencia, valor: 0),
                           Atributo(nome: .sabedoria, valor: 0)]
+    }
+    
+    public init(ficha: PersonagemFicha) {
+        self.atributos = [Atributo(nome: .carisma, valor: ficha.pontosAtributos.carisma),
+                          Atributo(nome: .constituicao, valor: ficha.pontosAtributos.constituicao),
+                          Atributo(nome: .destreza, valor: ficha.pontosAtributos.destreza),
+                          Atributo(nome: .forca, valor: ficha.pontosAtributos.forca),
+                          Atributo(nome: .inteligencia, valor: ficha.pontosAtributos.inteligencia),
+                          Atributo(nome: .sabedoria, valor: ficha.pontosAtributos.sabedoria)]
     }
     
     public func updateAtributoValor(value: Int, name: AtributoIdentifier) {

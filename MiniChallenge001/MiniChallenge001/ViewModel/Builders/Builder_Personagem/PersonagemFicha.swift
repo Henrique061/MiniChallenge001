@@ -15,7 +15,7 @@ public struct ResistenciaMorte : Codable {
 }
 
 //MARK: ESTILO DE VIDA
-enum EstiloDeVida: String, Codable, CaseIterable {
+public enum EstiloDeVida: String, Codable, CaseIterable {
     case miseravel = "Miserável"
     case esqualido = "Esquálido"
     case pobre = "Pobre"
@@ -28,7 +28,7 @@ enum EstiloDeVida: String, Codable, CaseIterable {
 }
 
 //MARK: ENUM TENDENCIA
-enum TipoTendencia : String, Codable, CaseIterable {
+public enum TipoTendencia : String, Codable, CaseIterable {
     case lealBom = "Leal e Bom"
     case neutroBom = "Neutro e Bom"
     case caoticoBom = "Caótico e Bom"

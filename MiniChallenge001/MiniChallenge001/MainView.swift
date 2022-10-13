@@ -11,12 +11,14 @@ struct MainView: View {
     
     @ObservedObject private var fichas: PersonagemViewModel
     
-    @State private var fichaSelecionada: PersonagemFicha?
+    @State private var fichaSelecionada: PersonagemFicha
     @State private var mostrarFicha: Bool = false
+    
+    @State private var isRoot: Bool = false
     
     public init() {
         self.fichas = PersonagemViewModel()
-        
+        self.fichaSelecionada = PersonagemFicha()
     }
     
     var body: some View {
@@ -55,19 +57,8 @@ struct MainView: View {
             }
             
             .fullScreenCover(isPresented: $mostrarFicha) {
-                ContentView()
+                ContentView(ficha: $fichaSelecionada)
             }
-            
-//            .onAppear {
-//                let template = PersonagemFicha()
-//                do { try template.id = JsonFileUtil.getNewIdForSheet() }
-//                catch {}
-//                template.nome = "Ficha Manhattan"
-//                template.nomePersonagem = "Manhattan The Great"
-//                template.classeFinal = ClasseFicha(classePersonagem: .monge)
-//                template.nivel = 18
-//                fichas.createNewFicha(ficha: template)
-//            }
 
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -77,18 +68,22 @@ struct MainView: View {
                 }
                 ToolbarItemGroup(placement: .bottomBar) {
                     Spacer()
-                    NavigationLink {
-                        CriacaoMain()
+                    NavigationLink(isActive: $isRoot) {
+                        CriacaoMain(popToRoot: $isRoot)
                     } label: {
                         HStack {
                             Text("Nova Ficha")
                             Image(systemName: "square.and.pencil")
                         }
-                    }
+                    }.isDetailLink(false)
                 }
             }
         }
         .accentColor(Color("RedTheme"))
+        
+        .onChange(of: isRoot) { _ in
+            self.fichas.fetch()
+        }
     }
 }
 
@@ -114,14 +109,24 @@ struct LabelFicha: View {
     
     var body: some View {
         HStack(spacing: 10) {
-            fotoPersonagem
-                .renderingMode(.template)
-                .resizable()
-                .foregroundColor(Color.white)
-                .scaledToFill()
-                .background(Color.black)
-                .clipShape(Circle())
-                .frame(width: 80, height: 80, alignment: .center)
+            
+            ZStack(alignment: .center) {
+                Color.black
+                if let data = ficha.fotoPersonagem, let image = UIImage(data: data){
+                    Image(uiImage: image)
+                        .renderingMode(.original)
+                        .resizable()
+                        .scaledToFill()
+                } else {
+                    Image("ProfilePicture")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(8)
+                }
+            }
+            .frame(width: 80, height: 80, alignment: .center)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(Color("BlackAndWhite"), lineWidth: 1))
             
             VStack(alignment: .leading) {
                 DisplayTextoBotao(titulo: "Nome", descricao: ficha.nomePersonagem)
@@ -320,6 +325,7 @@ struct CustomButtonStyle4: ButtonStyle {
 }
 
 struct CustomButtonStyle5: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled: Bool
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(size: 15, weight: .bold, design: .default))
@@ -328,6 +334,18 @@ struct CustomButtonStyle5: ButtonStyle {
             .foregroundColor(Color("InverseBlackAndWhite"))
             .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("InverseButton"))
             .clipShape(RoundedRectangle(cornerRadius: 5))
+            .opacity(isEnabled ? 1 : 0.4)
+    }
+}
+
+struct CustomButtonStyle6: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(10)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("ContentBackground"))
+            .clipShape(RoundedRectangle(cornerRadius: 5 ))
+            .fixedSize(horizontal: false, vertical: true)
     }
 }
 

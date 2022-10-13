@@ -15,50 +15,51 @@ class ViewModelEscolhaAntecedente: ObservableObject {
         escolha = AntecedenteClient.orderAntecedente(.none)
     }
     
+    public init(ficha: PersonagemFicha) {
+        self.escolha = AntecedenteClient.orderAntecedente(ficha.antecedenteFinal)
+    }
+    
     public func setAntecedente(_ antecedente: AntecedentePersonagem) {
         self.escolha = AntecedenteClient.orderAntecedente(antecedente)
     }
+    
 }
 
 struct SelecaoAntecedenteView: View {
     
-    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
-    @Binding private var ficha: PersonagemFicha
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var vmficha: NovaFichaViewModel
+    @StateObject private var vmantecedente: ViewModelEscolhaAntecedente
     @State private var showContent: Bool
     
-    public init(ficha: Binding<PersonagemFicha>) {
-        self._ficha = ficha
-        self.vmantecedente = ViewModelEscolhaAntecedente()
-        self.showContent = ficha.wrappedValue.antecedenteFinal != .none
+    public init(ficha: PersonagemFicha) {
+        self._vmantecedente = StateObject(wrappedValue: ViewModelEscolhaAntecedente(ficha: ficha))
+        self._showContent = State(initialValue: ficha.antecedenteFinal != .none)
     }
     
     var body: some View {
         TemplateTelaPadrao {
             VStack(alignment: .leading, spacing: 10) {
                 ScrollView {
-                    AntecedentePickerView { antecedente in
-                        withAnimation {
-                            showContent = antecedente != .none
-                        }
-                        self.vmantecedente.setAntecedente(antecedente)
-                    }
+                    AntecedentePickerView()
+                        .environmentObject(vmantecedente)
                     
-                    if showContent {
-                        ProficienciasAntecedenteView(antecedente: $vmantecedente.escolha)
-                        ProficienciaFerramentaAntecedenteView(antecedente: $vmantecedente.escolha)
-                        EscolhaProficienciaFerramentaAntecedenteView(antecedente: $vmantecedente.escolha)
-                        EquipamentoAntecedenteView(antecedente: $vmantecedente.escolha)
-                        EscolhaEquipamentoAntecedenteView(antecedente: $vmantecedente.escolha)
-                        RiquezaAntecedenteView(antecedente: $vmantecedente.escolha)
-                    }
-                    
+                    PericiasAntecedenteView(antecedente: $vmantecedente.escolha)
+                    ProficienciaFerramentaAntecedenteView(antecedente: $vmantecedente.escolha)
+                    EscolhaProficienciaFerramentaAntecedenteView(antecedente: $vmantecedente.escolha)
+                    EquipamentoAntecedenteView(antecedente: $vmantecedente.escolha)
+                    EscolhaEquipamentoAntecedenteView(antecedente: $vmantecedente.escolha)
+                    RiquezaAntecedenteView(antecedente: $vmantecedente.escolha)
                 }
                 
                 Button {
-                    
+                    self.vmficha.setAntecedente(antecedente: vmantecedente.escolha.tipoAntecedente)
+                    dismiss()
                 } label: {
                     Text("Salvar Alteração")
-                }.buttonStyle(CustomButtonStyle5())
+                }
+                .buttonStyle(CustomButtonStyle5())
+                .disabled(vmantecedente.escolha.tipoAntecedente == .none)
             }
             .padding(.horizontal, 10)
             
@@ -73,36 +74,35 @@ struct SelecaoAntecedenteView: View {
 
 private struct AntecedentePickerView: View {
     
+    @EnvironmentObject private var vmantecedente: ViewModelEscolhaAntecedente
     @State private var isExpanded: Bool
-    @State private var selectedAntecedente: AntecedentePersonagem
-    private var completion: (_ antecedente: AntecedentePersonagem) -> Void
     
-    public init(completion: @escaping (_ antecedente: AntecedentePersonagem) -> Void) {
+    public init() {
         self.isExpanded = false
-        self.selectedAntecedente = .none
-        self.completion = completion
     }
     
     var body: some View {
         TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
             ForEach(AntecedentePersonagem.allCases, id: \.self) { antecedente in
                 if antecedente != .none {
-                    TemplateRadioButton(isMarked: selectedAntecedente == antecedente, title: antecedente.rawValue) {
-                        completion(antecedente)
+                    TemplateRadioButtonWithIdentifier(selectedID: $vmantecedente.escolha.tipoAntecedente, id: antecedente) {
+                        self.vmantecedente.setAntecedente(antecedente)
                         withAnimation {
-                            self.selectedAntecedente = antecedente
                             self.isExpanded.toggle()
                         }
+                    } content: {
+                        Text("\(antecedente.rawValue)")
                     }
+                    .frame(height: 40)
                 }
             }
         } header: {
-            DisplayTextoBotao(titulo: "Antecedente do Personagem", descricao: selectedAntecedente == .none ? "Toque para selecionar..." : selectedAntecedente.rawValue)
+            DisplayTextoBotaoCondicao(titulo: "Antecedente", descricaoTrue: "Toque para selecionar...", descricaoFalse: vmantecedente.escolha.tipoAntecedente.rawValue, condicao: vmantecedente.escolha.tipoAntecedente == .none)
         }
     }
 }
 
-private struct ProficienciasAntecedenteView: View {
+private struct PericiasAntecedenteView: View {
     
     @Binding private var antecedente: AntecedenteEscolha
     @State private var isExpanded: Bool
@@ -113,12 +113,14 @@ private struct ProficienciasAntecedenteView: View {
     }
     
     var body: some View {
-        TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-            ForEach(antecedente.profPericias, id: \.self) { pericia in
-                TemplateDisclosureGroupContent(title: pericia.rawValue)
+        if !antecedente.profPericias.isEmpty {
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(antecedente.profPericias, id: \.self) { pericia in
+                    TemplateDisclosureGroupContent(title: pericia.rawValue)
+                }
+            } header: {
+                DisplayTextoBotao(titulo: "Proficiência em Perícias", descricao: "Toque para detalhes...")
             }
-        } header: {
-            DisplayTextoBotao(titulo: "Proficiência em Perícias", descricao: "Toque para detalhes...")
         }
     }
 }
@@ -134,12 +136,14 @@ private struct ProficienciaFerramentaAntecedenteView: View {
     }
     
     var body: some View {
-        TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-            ForEach(antecedente.profFerramentas, id: \.id) { ferramenta in
-                TemplateDisclosureGroupContent(title: ferramenta.nome)
+        if !antecedente.profFerramentas.isEmpty {
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(antecedente.profFerramentas, id: \.id) { ferramenta in
+                    TemplateDisclosureGroupContent(title: ferramenta.nome)
+                }
+            } header: {
+                DisplayTextoBotao(titulo: "Proficiência em Ferramenta Padrão", descricao: "Toque para detalhes...")
             }
-        } header: {
-            DisplayTextoBotao(titulo: "Proficiência em Ferramenta Padrão", descricao: "Toque para detalhes...")
         }
     }
 }
@@ -148,6 +152,7 @@ private struct EscolhaProficienciaFerramentaAntecedenteView: View {
     
     @Binding private var antecedente: AntecedenteEscolha
     @State private var isExpanded: Bool
+    @State private var selectedFerramenta: String = ""
     
     public init(antecedente: Binding<AntecedenteEscolha>) {
         self._antecedente = antecedente
@@ -155,14 +160,19 @@ private struct EscolhaProficienciaFerramentaAntecedenteView: View {
     }
     
     var body: some View {
-        TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-            ForEach(antecedente.escolhaProfFerramentas, id: \.self) { ferramenta in
-                TemplateRadioButton(isMarked: false, title: ferramenta) {
-                    
+        if !antecedente.escolhaProfFerramentas.isEmpty {
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(antecedente.escolhaProfFerramentas, id: \.self) { ferramenta in
+                    TemplateRadioButtonWithIdentifier(selectedID: $selectedFerramenta, id: ferramenta) {
+                        
+                    } content: {
+                        Text(ferramenta)
+                    }
+                    .frame(height: 40)
                 }
+            } header: {
+                DisplayTextoBotao(titulo: "Proficiência em Ferramenta Selecionável", descricao: "Toque para selecionar...")
             }
-        } header: {
-            DisplayTextoBotao(titulo: "Proficiência em Ferramenta Selecionável", descricao: "Toque para selecionar...")
         }
     }
 }
@@ -178,12 +188,14 @@ private struct EquipamentoAntecedenteView: View {
     }
     
     var body: some View {
-        TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-            ForEach(antecedente.equipamentosIniciais, id: \.id) { equipamento in
-                TemplateDisclosureGroupContent(title: equipamento.nome)
+        if !antecedente.equipamentosIniciais.isEmpty {
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(antecedente.equipamentosIniciais, id: \.id) { equipamento in
+                    TemplateDisclosureGroupContent(title: equipamento.nome)
+                }
+            } header: {
+                DisplayTextoBotao(titulo: "Equipamento Padrão", descricao: "Toque para detalhes...")
             }
-        } header: {
-            DisplayTextoBotao(titulo: "Equioamento Padrão", descricao: "Toque para detalhes...")
         }
     }
 }
@@ -192,6 +204,7 @@ private struct EscolhaEquipamentoAntecedenteView: View {
     
     @Binding private var antecedente: AntecedenteEscolha
     @State private var isExpanded: Bool
+    @State private var selectedEquipamento: String = ""
     
     public init(antecedente: Binding<AntecedenteEscolha>) {
         self._antecedente = antecedente
@@ -199,14 +212,19 @@ private struct EscolhaEquipamentoAntecedenteView: View {
     }
     
     var body: some View {
-        TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-            ForEach(antecedente.escolhaEquipamentoInicial, id: \.self) { equipamento in
-                TemplateRadioButton(isMarked: false, title: equipamento) {
-                    
+        if !antecedente.escolhaEquipamentoInicial.isEmpty {
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(antecedente.escolhaEquipamentoInicial, id: \.self) { equipamento in
+                    TemplateRadioButtonWithIdentifier(selectedID: $selectedEquipamento, id: equipamento) {
+                        
+                    } content: {
+                        Text(equipamento)
+                    }
+                    .frame(height: 40)
                 }
+            } header: {
+                DisplayTextoBotao(titulo: "Equipamento Selecionável", descricao: "Toque para selecionar...")
             }
-        } header: {
-            DisplayTextoBotao(titulo: "Equipamento Selecionável", descricao: "Toque para selecionar...")
         }
     }
 }
@@ -220,9 +238,11 @@ private struct RiquezaAntecedenteView: View {
     }
     
     var body: some View {
-        TemplateContentBackground {
-            DisplayTextoBotao(titulo: "Riqueza", descricao: "\(antecedente.dinheiroInicial.quantidade) \(antecedente.dinheiroInicial.tipo.rawValue)")
-                .padding(10)
+        if antecedente.dinheiroInicial.tipo != .none {
+            TemplateContentBackground {
+                DisplayTextoBotao(titulo: "Riqueza", descricao: "\(antecedente.dinheiroInicial.quantidade) \(antecedente.dinheiroInicial.tipo.rawValue)")
+                    .padding(10)
+            }
         }
     }
 }

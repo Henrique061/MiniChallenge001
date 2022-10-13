@@ -10,14 +10,47 @@ import SwiftUI
 public class NovaFichaViewModel: ObservableObject {
     @Published var ficha: PersonagemFicha
     
-    init() {
+     public init() {
         self.ficha = PersonagemFicha()
+    }
+    
+    public func setRaca(raca: RacaFicha) {
+        DispatchQueue.main.async {
+            self.ficha.racaFinal = raca
+            self.objectWillChange.send()
+        }
+    }
+    
+    public func setClasse(classe: ClasseFicha) {
+        DispatchQueue.main.async {
+            self.ficha.classeFinal = classe
+            self.objectWillChange.send()
+        }
+    }
+    
+    public func setAntecedente(antecedente: AntecedentePersonagem) {
+        DispatchQueue.main.async {
+            self.ficha.antecedenteFinal = antecedente
+            self.objectWillChange.send()
+        }
+    }
+    
+    public func setTendencia(tendencia: TipoTendencia) {
+        DispatchQueue.main.async {
+            self.ficha.tendenciaPersonagem = tendencia
+            self.objectWillChange.send()
+        }
     }
 }
 
 struct CriacaoMain: View {
     
-    @ObservedObject private var novaFicha: NovaFichaViewModel = NovaFichaViewModel()
+    @StateObject private var novaFicha: NovaFichaViewModel = NovaFichaViewModel()
+    @Binding private var popToRoot: Bool
+    
+    public init(popToRoot: Binding<Bool>) {
+        self._popToRoot = popToRoot
+    }
     
     var body: some View {
         TemplateTelaPadrao {
@@ -26,57 +59,80 @@ struct CriacaoMain: View {
                     Text("Para começarmos, preencha abaixo os dados de seu peronsagem")
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     
-                    TextField("Nome da ficha", text: $novaFicha.ficha.nome)
-                        .textFieldStyle(CustomTextFieldStyle())
-                    
-                    TextField("Nome do personagem", text: $novaFicha.ficha.nomePersonagem)
-                        .textFieldStyle(CustomTextFieldStyle())
+                    TextFieldCriacao(title: "Nome da ficha", text: $novaFicha.ficha.nome)
+                    TextFieldCriacao(title: "Nome do personagem", text: $novaFicha.ficha.nomePersonagem)
                     
                     CustomNavigationLink {
-                        SelecaoRacaView(ficha: $novaFicha.ficha)
+                        SelecaoRacaView(ficha: novaFicha.ficha)
+                            .environmentObject(novaFicha)
                     } label: {
-                        DisplayTextoBotao(titulo: "Raça do personagem", descricao: "Toque para selecionar...")
+                        DisplayTextoBotaoCondicao(titulo: "Raça", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.racaFinal.racaPersonagem.rawValue, condicao: novaFicha.ficha.racaFinal.racaPersonagem == .none)
                     }
                     
                     CustomNavigationLink {
-                        SelecaoClasseView(ficha: $novaFicha.ficha)
+                        SelecaoClasseView(ficha: novaFicha.ficha)
+                            .environmentObject(novaFicha)
                     } label: {
-                        DisplayTextoBotao(titulo: "Classe do personagem", descricao: "Toque para selecionar...")
+                        DisplayTextoBotaoCondicao(titulo: "Classe", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.classeFinal.classePersonagem.rawValue, condicao: novaFicha.ficha.classeFinal.classePersonagem == .none)
                     }
                     
                     CustomNavigationLink {
-                        SelecaoAntecedenteView(ficha: $novaFicha.ficha)
+                        SelecaoAntecedenteView(ficha: novaFicha.ficha)
+                            .environmentObject(novaFicha)
                     } label: {
-                        DisplayTextoBotao(titulo: "Antecedente", descricao: "Toque para selecionar...")
+                        DisplayTextoBotaoCondicao(titulo: "Antecedente", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.antecedenteFinal.rawValue, condicao: novaFicha.ficha.antecedenteFinal == .none)
                     }
                     
-                    MenuSelecaoTendencia(ficha: $novaFicha.ficha)
-                    Spacer()
+                    MenuSelecaoTendencia()
+                        .environmentObject(novaFicha)
                 }
                 
                 NavigationLink {
-                    CriacaoCaracteristica(ficha: $novaFicha.ficha)
+                    CriacaoCaracteristica(ficha: $novaFicha.ficha, popToRoot: $popToRoot)
                 } label: {
                     Text("Próximo")
                 }
+                .isDetailLink(false)
                 .buttonStyle(CustomButtonStyle5())
+                .disabled(novaFicha.ficha.nome.isEmpty ||
+                          novaFicha.ficha.nomePersonagem.isEmpty ||
+                          novaFicha.ficha.racaFinal.racaPersonagem == .none ||
+                          novaFicha.ficha.classeFinal.classePersonagem == .none ||
+                          novaFicha.ficha.antecedenteFinal == .none ||
+                          novaFicha.ficha.tendenciaPersonagem == .none)
+                
             }
             .padding(.horizontal, 10)
         }
         
         .navigationTitle("Criação de Personagem")
-//        .toolbar {
-//            ToolbarItem(placement: .principal) {
-//                NavigationBarTitle("Criação de Personagem")
-//            }
-//        }
     }
 }
 
-
-struct CriacaoMain_Previews: PreviewProvider {
-    static var previews: some View {
-        CriacaoMain()
+struct MenuSelecaoTendencia: View {
+    
+    @EnvironmentObject private var vmficha: NovaFichaViewModel
+    @State private var showContent: Bool
+    
+    public init() {
+        self.showContent = false
+    }
+    
+    var body: some View {
+        TemplateCustomDisclosureGroup(isExpanded: $showContent) {
+            ForEach(TipoTendencia.allCases, id: \.self) { tendencia in
+                if tendencia != .none {
+                    TemplateRadioButton(isMarked: vmficha.ficha.tendenciaPersonagem == tendencia ,title: tendencia.rawValue) {
+                        vmficha.setTendencia(tendencia: tendencia)
+                        withAnimation(.easeOut) {
+                            self.showContent.toggle()
+                        }
+                    }
+                }
+            }
+        } header: {
+            DisplayTextoBotaoCondicao(titulo: "Tendência", descricaoTrue: "Toque para selecionar...", descricaoFalse: vmficha.ficha.tendenciaPersonagem.rawValue, condicao: vmficha.ficha.tendenciaPersonagem == .none)
+        }
     }
 }
 
@@ -96,7 +152,7 @@ struct CustomNavigationLink<Destination, Label>: View where Destination: View, L
         } label: {
             label()
         }
-        .buttonStyle(CustomButtonStyle())
+        .buttonStyle(CustomButtonStyle6())
     }
 }
 
@@ -121,37 +177,28 @@ struct DisplayTextoBotao: View {
     }
 }
 
-struct MenuSelecaoTendencia: View {
+struct DisplayTextoBotaoCondicao: View {
+    private var titulo: String
+    private var descricaoTrue: String
+    private var descricaoFalse: String
+    private var condicao: Bool
     
-    @Binding private var ficha: PersonagemFicha
-    @State private var showContent: Bool
-    
-    public init(ficha: Binding<PersonagemFicha>) {
-        self._ficha = ficha
-        self.showContent = false
+    public init(titulo: String, descricaoTrue: String, descricaoFalse: String, condicao: Bool) {
+        self.titulo = titulo
+        self.descricaoTrue = descricaoTrue
+        self.descricaoFalse = descricaoFalse
+        self.condicao = condicao
     }
     
     var body: some View {
-        TemplateCustomDisclosureGroup(isExpanded: $showContent) {
-            ForEach(TipoTendencia.allCases, id: \.self) { tendencia in
-                if tendencia != .none {
-                    TemplateRadioButton(isMarked: ficha.tendenciaPersonagem == tendencia ,title: tendencia.rawValue) {
-                        ficha.tendenciaPersonagem = tendencia
-                        withAnimation(.easeOut, {
-                            self.showContent.toggle()
-                        })
-                    }
-                }
-            }
-        } header: {
-            VStack(alignment: .leading, spacing: 3) {
-                Text("Tendência")
-                    .font(.system(size: 15, weight: .semibold, design: .default))
-                Text(ficha.tendenciaPersonagem == .none ? "Toque para selecionar..." : ficha.tendenciaPersonagem.rawValue)
-                    .font(.system(size: 13, weight: .regular, design: .default))
-                    .fixedSize(horizontal: false, vertical: true)
-            }
+        VStack(alignment: .leading, spacing: 3) {
+            Text(titulo)
+                .font(.system(size: 15, weight: .semibold, design: .default))
+            Text(condicao ? descricaoTrue : descricaoFalse)
+                .font(.system(size: 13, weight: .regular, design: .default))
+                .fixedSize(horizontal: false, vertical: true)
         }
+        .foregroundColor(condicao ? Color("RedTheme") : Color("BlackAndWhite"))
     }
 }
 
@@ -211,6 +258,103 @@ struct TemplateRadioButtonWithContent<Content>: View where Content: View {
             }
         }
         .buttonStyle(CustomButtonStyle2())
+    }
+}
+
+struct TemplateRadioButtonWithIdentifier<Content, ID>: View where Content: View, ID: Hashable {
+    
+    @ViewBuilder private var content: () -> Content
+    @Binding private var selectedID: ID
+    private var id: ID
+    private var completion: () -> Void
+    
+    public init(selectedID: Binding<ID>, id: ID, completion: @escaping () -> Void, @ViewBuilder content: @escaping () -> Content) {
+        self._selectedID = selectedID
+        self.id = id
+        self.completion = completion
+        self.content = content
+    }
+    
+    var body: some View {
+        HStack {
+            Button {
+                withAnimation {
+                    self.selectedID = id
+                }
+                completion()
+            } label: {
+                HStack {
+                    Image(systemName: "circle.fill")
+                        .renderingMode(.template)
+                        .foregroundColor(self.id == self.selectedID ? Color("RedTheme") : Color(uiColor: .systemGray4))
+                    VStack(alignment: .leading, spacing: 0) {
+                        content()
+                    }
+                }
+            }
+            .buttonStyle(CustomButtonStyle2())
+        }
+    }
+}
+
+struct TemplateRadioButtonMultipleIdentifier<Content, ID>: View where Content: View, ID: Hashable {
+    
+    @ViewBuilder private var content: () -> Content
+    @Binding private var selectedID: [ID]
+    private var maxSelection: Int
+    private var id: ID
+    private var completion: () -> Void
+    
+    public init(selectedID: Binding<[ID]>, id: ID, maxSelection: Int = 0, completion: @escaping () -> Void, @ViewBuilder content: @escaping () -> Content) {
+        self._selectedID = selectedID
+        self.id = id
+        self.maxSelection = maxSelection
+        self.completion = completion
+        self.content = content
+    }
+    
+    var body: some View {
+        HStack {
+            Button {
+                withAnimation {
+                    changeSelection()
+                }
+                completion()
+            } label: {
+                HStack {
+                    Image(systemName: "circle.fill")
+                        .renderingMode(.template)
+                        .foregroundColor(selectedID.contains(id) ? Color("RedTheme") : Color(uiColor: .systemGray4))
+                    VStack(alignment: .leading, spacing: 0) {
+                        content()
+                    }
+                }
+            }
+            .buttonStyle(CustomButtonStyle2())
+        }
+    }
+    
+    private func changeSelection() {
+        DispatchQueue.main.async {
+            if self.maxSelection == 0 {
+                if self.selectedID.contains(self.id) {
+                    self.selectedID.removeAll(where: {$0 == self.id})
+                } else {
+                    self.selectedID.append(self.id)
+                }
+            } else {
+                if self.selectedID.contains(self.id) {
+                    self.selectedID.removeAll(where: {$0 == self.id})
+                } else {
+                    if selectedID.count >= maxSelection {
+                        self.selectedID.removeFirst()
+                        self.selectedID.append(id)
+                    } else {
+                        self.selectedID.append(self.id)
+                    }
+                }
+            }
+        }
     }
 }
 

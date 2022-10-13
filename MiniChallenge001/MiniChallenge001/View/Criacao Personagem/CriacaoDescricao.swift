@@ -11,9 +11,11 @@ import SwiftUI
 struct CriacaoDescricao: View {
     
     @Binding private var ficha: PersonagemFicha
+    @Binding private var popToRoot: Bool
     
-    public init(ficha: Binding<PersonagemFicha>) {
+    public init(ficha: Binding<PersonagemFicha>, popToRoot: Binding<Bool>) {
         self._ficha = ficha
+        self._popToRoot = popToRoot
     }
     
     var body: some View {
@@ -29,10 +31,12 @@ struct CriacaoDescricao: View {
                 }
                 
                 NavigationLink {
-                    CriacaoAtributos(ficha: $ficha)
+                    CriacaoAtributos(ficha: $ficha, popToRoot: $popToRoot)
                 } label: {
                     Text("Próximo")
-                }.buttonStyle(CustomButtonStyle5())
+                }
+                .isDetailLink(false)
+                .buttonStyle(CustomButtonStyle5())
                 
             }
             .padding(.horizontal, 10)
@@ -119,7 +123,7 @@ private struct FloatTextFieldCriacao: View {
     }
 }
 
-private struct TextFieldCriacao: View {
+struct TextFieldCriacao: View {
     
     @Binding private var text: String
     private let title: String
@@ -150,7 +154,7 @@ private struct SelecionarImagemCriacao: View {
         if let data = ficha.fotoPersonagem.wrappedValue {
             self.currentImage = Image(uiImage: UIImage(data: data)!)
         } else {
-            self.currentImage = Image("IdentidadeIconOff")
+            self.currentImage = Image("ProfilePicture")
         }
     }
     
@@ -158,10 +162,17 @@ private struct SelecionarImagemCriacao: View {
         VStack {
             ZStack(alignment: .center) {
                 Color.black
-                currentImage
-                    .renderingMode(.original)
-                    .resizable()
-                    .scaledToFill()
+                if ficha.fotoPersonagem != nil {
+                    currentImage
+                        .renderingMode(.original)
+                        .resizable()
+                        .scaledToFill()
+                } else {
+                    Image("ProfilePicture")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(8)
+                }
             }
             .frame(width: 80, height: 80, alignment: .center)
             .clipShape(Circle())

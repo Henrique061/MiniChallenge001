@@ -10,7 +10,13 @@ import CoreData
 
 struct ContentView: View {
     
-    @State var currentTab: SheetTabView = .combate
+    @Binding private var ficha: PersonagemFicha
+    @State private var currentTab: SheetTabView
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+        self.currentTab = .combate
+    }
     
     var body: some View {
         TabView(selection: $currentTab) {
@@ -26,7 +32,7 @@ struct ContentView: View {
                     Label("Habilidades", image: currentTab == .habilidades ? "HabilidadesIconOn" : "HabilidadesIconOff")
                 }
             
-            Combate()
+            Combate(ficha: $ficha)
                 .tag(SheetTabView.combate)
                 .tabItem {
                     Label("Combate", image: currentTab == .combate ? "CombateIconOn" : "CombateIconOff")
@@ -45,12 +51,6 @@ struct ContentView: View {
                 }
         }
         .accentColor((Color(UIColor(red: 0.675, green: 0.114, blue: 0.114, alpha: 1).cgColor)))
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
 

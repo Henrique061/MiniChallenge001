@@ -13,17 +13,23 @@ import SwiftUI
 struct Combate: View {
     
     @Environment(\.dismiss) private var dismiss
+    @Binding private var ficha: PersonagemFicha
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+    }
     
     var body: some View {
         NavigationView {
             TemplateTelaPadrao {
                 Text("Tela principal do personagem")
+                Spacer()
             }
             
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .principal) {
-                    NavigationBarTitle("Nome da Ficha")
+                    NavigationBarTitle("\(ficha.nome)")
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {

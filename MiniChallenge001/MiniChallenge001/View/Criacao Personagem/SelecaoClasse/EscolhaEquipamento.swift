@@ -9,54 +9,43 @@ import SwiftUI
 
 struct EscolhaEquipamento: View {
     
-    @Binding private var escolha: ClasseEscolha
+    @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
+    @Environment(\.dismiss) private var dismiss
     
-    public init(escolha: Binding<ClasseEscolha>) {
-        self._escolha = escolha
+    public init() {
+        
     }
     
     var body: some View {
         TemplateTelaPadrao {
-            
-            ScrollView {
-                VStack(alignment: .leading, spacing: 10) {
-                    EquipamentosPadrao(escolha: $escolha)
-                    OpcoesEquipamento(escolha: $escolha)
+            VStack(alignment: .leading, spacing: 10) {
+                ScrollView {
+                    MostrarItensJson(title: "Equipamentos Padrão", lista: vmclasse.escolha.equipamentosIniciais)
+                    OpcoesEquipamento(escolha: $vmclasse.escolha)
                     Spacer()
-                }.padding(.horizontal, 10)
+                }
+                
+                Button {
+                    
+                    dismiss()
+                } label: {
+                    Text("Salvar Alterações")
+                }
+                .buttonStyle(CustomButtonStyle5())
             }
+            .padding(.horizontal, 10)
             
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    NavigationBarTitle("Equipamentos para \(escolha.classePersonagem.rawValue)")
+                    NavigationBarTitle("Equipamentos para \(vmclasse.escolha.classePersonagem.rawValue)")
                 }
             }
         }
     }
 }
 
-private struct EquipamentosPadrao: View {
-    
-    @Binding private var escolha: ClasseEscolha
-    @State private var isExpanded: Bool = false
-    
-    public init(escolha: Binding<ClasseEscolha>) {
-        self._escolha = escolha
-    }
-    
-    var body: some View {
-        TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-            ForEach(escolha.equipamentosIniciais, id: \.id) { equipamento in
-                TemplateDisclosureGroupContent(title: equipamento.nome)
-            }
-        } header: {
-            Text("Equipamentos Padrão")
-                .font(.system(size: 15, weight: .bold, design: .default))
-        }
-    }
-}
-
 private struct OpcoesEquipamento: View {
+    
     
     @Binding private var escolha: ClasseEscolha
     

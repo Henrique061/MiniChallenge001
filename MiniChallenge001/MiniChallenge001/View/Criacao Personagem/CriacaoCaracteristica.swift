@@ -7,18 +7,14 @@
 
 import SwiftUI
 
-//extension TextEditor {
-//
-//    UITextView.appearance().textContainerInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-//
-//}
-
 struct CriacaoCaracteristica: View {
     
     @Binding private var ficha: PersonagemFicha
+    @Binding private var popToRoot: Bool
     
-    public init(ficha: Binding<PersonagemFicha>) {
+    public init(ficha: Binding<PersonagemFicha>, popToRoot: Binding<Bool>) {
         self._ficha = ficha
+        self._popToRoot = popToRoot
     }
     
     var body: some View {
@@ -40,20 +36,17 @@ struct CriacaoCaracteristica: View {
                 }
                 
                 NavigationLink {
-                    CriacaoDescricao(ficha: $ficha)
+                    CriacaoDescricao(ficha: $ficha, popToRoot: $popToRoot)
                 } label: {
                     Text("Próximo")
-                }.buttonStyle(CustomButtonStyle5())
+                }
+                .isDetailLink(false)
+                .buttonStyle(CustomButtonStyle5())
+                .disabled(self.ficha.estiloVida == .none)
             }
             .padding(.horizontal, 10)
             
             .navigationTitle("Criação de Personagem")
-            
-//            .toolbar {
-//                ToolbarItem(placement: .principal) {
-//                    NavigationBarTitle("Criação de Personagem")
-//                }
-//            }
         }
     }
 }
@@ -128,7 +121,7 @@ private struct EstiloVidaPicker: View {
                 }
             }
         } header: {
-            DisplayTextoBotao(titulo: "Estilo de Vida", descricao: selectedValue == .none ? "Toque para selecionar..." : selectedValue.rawValue)
+            DisplayTextoBotaoCondicao(titulo: "Estilo de Vida", descricaoTrue: "Toque para selecionar...", descricaoFalse: self.selectedValue.rawValue, condicao: selectedValue == .none)
         }
     }
 }

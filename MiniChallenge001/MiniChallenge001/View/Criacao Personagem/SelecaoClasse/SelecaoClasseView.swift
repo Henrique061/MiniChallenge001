@@ -21,16 +21,28 @@ class CriacaoClasseViewModel: ObservableObject {
     public func setClasse(classe: ClassePersonagem) {
         self.escolha = ClasseClient.orderClasse(classePersonagem: classe)
     }
+    
+    public func getCaracteristicas() -> [String] {
+        var nomes: [String] = []
+        for i in self.escolha.caracteristicasClasse {
+            nomes.append(i.nome)
+        }
+        return nomes
+    }
+    
+    public func buildClasseFicha() -> ClasseFicha {
+        return ClasseFicha(classePersonagem: self.escolha.classePersonagem, caracteristicasPersonagem: getCaracteristicas(), subclassesPersonagem: self.escolha.subClasses, espacosDeMagia: self.escolha.espacosDeMagia, pontosEspecificosNumerico: self.escolha.pontosEspecificosNumerico, pontosEspecificosTexto: self.escolha.pontosEspecificosTexto)
+    }
 }
 
 struct SelecaoClasseView: View {
     
-    @Binding private var ficha: PersonagemFicha
-    @ObservedObject private var vmclasse: CriacaoClasseViewModel
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var vmficha: NovaFichaViewModel
+    @StateObject private var vmclasse: CriacaoClasseViewModel
     
-    public init(ficha: Binding<PersonagemFicha>) {
-        self._ficha = ficha
-        self.vmclasse = CriacaoClasseViewModel(ficha: ficha.wrappedValue)
+    public init(ficha: PersonagemFicha) {
+        self._vmclasse = StateObject(wrappedValue: CriacaoClasseViewModel(ficha: ficha))
     }
     
     var body: some View {
@@ -38,17 +50,21 @@ struct SelecaoClasseView: View {
             VStack {
                 ScrollView {
                     MenuSelecaoClasse().environmentObject(vmclasse)
-                    PontosDeVidaInfo().environmentObject(vmclasse)
+                    PontosDeVidaInfo(classe: $vmclasse.escolha)
                     BotaoEscolherRiqueza().environmentObject(vmclasse)
-                    BotaoEscolherProficiencia(escolha: $vmclasse.escolha)
-                    BotaoEscolherEquipamento(escolha: $vmclasse.escolha)
+                    BotaoEscolherProficiencia().environmentObject(vmclasse)
+                    BotaoEscolherEquipamento().environmentObject(vmclasse)
                     BotaDetalhesCaracteristicaClasse(escolha: $vmclasse.escolha)
-                    
                 }
                 
-                SalvarButton(escolha: $vmclasse.escolha) {
-                    
+                Button {
+                    self.vmficha.setClasse(classe: vmclasse.buildClasseFicha())
+                    dismiss()
+                } label: {
+                    Text("Salvar Alterações")
                 }
+                .buttonStyle(CustomButtonStyle5())
+                .disabled(vmclasse.escolha.classePersonagem == .none)
                 
             }.padding(.horizontal, 10)
             
@@ -74,22 +90,14 @@ private struct MenuSelecaoClasse: View {
                     ForEach(ClassePersonagem.allCases, id: \.self) { classe in
                         if classe != .none {
                             TemplateRadioButton(isMarked: vmclasse.escolha.classePersonagem == classe, title: classe.rawValue) {
-                                withAnimation(.easeOut) {
-                                    vmclasse.setClasse(classe: classe)
-                                    self.showContent.toggle()
-                                }
+                                vmclasse.setClasse(classe: classe)
+                                withAnimation(.easeOut) { self.showContent.toggle() }
                             }
                         }
                     }
                 }
             } label: {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("Classe do personagem")
-                        .font(.system(size: 15, weight: .semibold, design: .default))
-                    Text(vmclasse.escolha.classePersonagem == .none ? "Toque para selecionar..." : vmclasse.escolha.classePersonagem.rawValue)
-                        .font(.system(size: 13, weight: .regular, design: .default))
-                        .fixedSize(horizontal: false, vertical: true)
-                }
+                DisplayTextoBotaoCondicao(titulo: "Classe do Personagem", descricaoTrue: "Toque para selecionar...", descricaoFalse: vmclasse.escolha.classePersonagem.rawValue, condicao: vmclasse.escolha.classePersonagem == .none)
             }.buttonStyle(CustomButtonStyle2())
         }
     }
@@ -97,12 +105,16 @@ private struct MenuSelecaoClasse: View {
 
 private struct PontosDeVidaInfo: View {
     
-    @EnvironmentObject var vmclasse: CriacaoClasseViewModel
+    @Binding private var classe: ClasseEscolha
+    
+    public init(classe: Binding<ClasseEscolha>) {
+        self._classe = classe
+    }
     
     var body: some View {
-        if vmclasse.escolha.classePersonagem != .none {
+        if classe.classePersonagem != .none {
             TemplateContentBackground {
-                DisplayTextoBotao(titulo: "Pontos de Vida Inicial", descricao: "\(vmclasse.escolha.vidaInicial) + Modificador de Constituição")
+                DisplayTextoBotao(titulo: "Pontos de Vida Inicial", descricao: "\(classe.vidaInicial) + Modificador de Constituição")
                     .padding(10)
             }
         }
@@ -131,16 +143,12 @@ private struct BotaoEscolherRiqueza: View {
 
 private struct BotaoEscolherProficiencia: View {
     
-    @Binding private var escolha: ClasseEscolha
-    
-    public init(escolha: Binding<ClasseEscolha>) {
-        self._escolha = escolha
-    }
+    @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
     
     var body: some View {
-        if escolha.classePersonagem != .none {
+        if vmclasse.escolha.classePersonagem != .none {
             CustomNavigationLink {
-                EscolhaProficienciaView(escolha: $escolha)
+                EscolhaProficienciaView().environmentObject(vmclasse)
             } label: {
                 DisplayTextoBotao(titulo: "Proficiências", descricao: "Toque para selecionar...")
             }.buttonStyle(CustomButtonStyle2())
@@ -150,19 +158,20 @@ private struct BotaoEscolherProficiencia: View {
 
 private struct BotaoEscolherEquipamento: View {
     
-    @Binding private var escolha: ClasseEscolha
+    @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
     
-    public init(escolha: Binding<ClasseEscolha>) {
-        self._escolha = escolha
+    public init() {
+        
     }
     
     var body: some View {
-        if escolha.classePersonagem != .none {
+        if vmclasse.escolha.classePersonagem != .none {
             CustomNavigationLink {
-                EscolhaEquipamento(escolha: $escolha)
+                EscolhaEquipamento().environmentObject(vmclasse)
             } label: {
                 DisplayTextoBotao(titulo: "Equipamentos", descricao: "Toque para selecionar...")
-            }.buttonStyle(CustomButtonStyle2())
+            }
+            .buttonStyle(CustomButtonStyle2())
         }
     }
 }
@@ -187,38 +196,6 @@ private struct BotaDetalhesCaracteristicaClasse: View {
             .sheet(isPresented: $showSheet) {
                 DetalhesCaracteristicaClasse(escolha: $escolha)
             }
-        }
-    }
-}
-
-private struct SalvarButton: View {
-    
-    @Binding private var escolha: ClasseEscolha
-    @State private var showAlert: Bool = false
-    private var completion: () -> Void
-    
-    public init(escolha: Binding<ClasseEscolha>, completion: @escaping () -> Void) {
-        self._escolha = escolha
-        self.completion = completion
-    }
-    
-    var body: some View {
-        
-        Button {
-            if escolha.classePersonagem == .none {
-                showAlert.toggle()
-            } else {
-                completion()
-            }
-        } label: {
-            Text("Salvar")
-        }
-        .buttonStyle(CustomButtonStyle5())
-        
-        .alert("Ainda faltam seleções obrigatórias", isPresented: $showAlert) {
-            Button("Ok", role: .cancel) {}
-        } message: {
-            Text("Selecione todas as opções obrigatórias antes de tentar salvar.")
         }
     }
 }
