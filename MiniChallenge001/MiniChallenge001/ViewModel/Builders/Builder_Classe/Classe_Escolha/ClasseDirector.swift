@@ -232,28 +232,44 @@ public class ClasseDirector {
         
         let periciasProficientes: [Pericia] = [.adestrarAnimais, .atletismo, .intimidacao, .natureza, .percepcao, .sobrevivencia]
         
+        // OPCAO GERAL 1
         var opcao1: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipoEstilo(tipo: .marcial, estilo: .cac, nomeExcluso: "")
             
+            // cria lista de itens dentro da opcao
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            // cria as escolhas unicas dentro da opcao
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            // cria a opcao inteira junto com a interna
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
+        // OPCAO GERAL 2
         var opcao2: OpcaoEquipamento {
             var itensEscolha: [[ItemEscolha]] = []
+            var escolhasUnicas: [[EscolhaUnica]] = []
+            
             let armasEscolha2: [String] = BuscaArma.buscaArmaTipo(tipo: .simples, nomeExcluso: "Machadinha")
             
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2, tipo: .arma)]))
             
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            itensEscolha.removeAll()
+            
             for arma in armasEscolha2 {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
+            
+            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
         }
         
         // METODOS //////////////////////////
@@ -318,7 +334,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: ferramenta, quantia: 1, tipo: .ferramenta)]))
             }
             
-            return FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha)
+            return []
         }
         
         var armasIniciais: [ArmaJSON] = []
@@ -340,7 +356,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -349,7 +365,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteDiplomata.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteArtista.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao3: OpcaoEquipamento {
@@ -360,7 +376,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: ferramenta, quantia: 1, tipo: .ferramenta)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////
@@ -377,6 +393,7 @@ public class ClasseDirector {
         builder?.setProfArmas(armasProficientes)
         builder?.setProfArmaduras(armadurasProficientes)
         builder?.setEscolhasProficienciaFerramenta(escolhasProfFerramenta)
+        builder?.setQuantiaEscolhaProfFerramentas(3)
         
         builder?.setOpcoes(opcoes: [opcao1, opcao2, opcao3])
         builder?.setArmasIniciais(armas: armasIniciais)
@@ -429,7 +446,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -442,7 +459,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao3: OpcaoEquipamento {
@@ -451,7 +468,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao4: OpcaoEquipamento {
@@ -462,7 +479,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////
@@ -536,7 +553,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Maça", quantia: 1, tipo: .arma)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Martelo de Guerra", quantia: 1, tipo: .arma)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -546,7 +563,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armaduras)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armaduras)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao3: OpcaoEquipamento {
@@ -559,7 +576,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao4: OpcaoEquipamento {
@@ -568,7 +585,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteSacerdote.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao5: OpcaoEquipamento {
@@ -579,7 +596,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////
@@ -646,7 +663,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -659,7 +676,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao3: OpcaoEquipamento {
@@ -668,7 +685,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao4: OpcaoEquipamento {
@@ -679,7 +696,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////
@@ -740,7 +757,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -753,7 +770,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao3: OpcaoEquipamento {
@@ -762,7 +779,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////
@@ -822,7 +839,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Cota de Malha", quantia: 1, tipo: .armaduras)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Gibão de Peles", quantia: 1, tipo: .armaduras), (item: "Arco Longo", quantia: 1, tipo: .arma), (item: "Flechas", quantia: 20, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -837,7 +854,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 2, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao3: OpcaoEquipamento {
@@ -846,7 +863,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Besta Leve", quantia: 1, tipo: .arma), (item: "Virotes", quantia: 20, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Machadinha", quantia: 2, tipo: .arma)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao4: OpcaoEquipamento {
@@ -855,7 +872,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////
@@ -928,7 +945,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Rapieira", quantia: 1, tipo: .arma)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Longa", quantia: 1, tipo: .arma)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -937,7 +954,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Arco Curto", quantia: 1, tipo: .arma), (item: "Aljava", quantia: 1, tipo: .equipamento), (item: "Flechas", quantia: 20, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Espada Curta", quantia: 1, tipo: .arma)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao3: OpcaoEquipamento {
@@ -947,7 +964,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////
@@ -1023,7 +1040,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Bordão", quantia: 1, tipo: .arma)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Adaga", quantia: 1, tipo: .arma)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -1036,7 +1053,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao3: OpcaoEquipamento {
@@ -1045,7 +1062,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////
@@ -1103,7 +1120,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: ferramenta, quantia: 1, tipo: .ferramenta)]))
             }
             
-            return FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha)
+            return []
         }
         
         let armasIniciais: [ArmaJSON] = BuscaJson.buscaArmaPorNomeQuantidade(nome: "Dardo", quantidade: 10)
@@ -1120,7 +1137,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -1129,7 +1146,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////
@@ -1145,6 +1162,7 @@ public class ClasseDirector {
         builder?.setProfSalvaguarda([.forca, .destreza])
         builder?.setProfArmas(armasProficientes)
         builder?.setEscolhasProficienciaFerramenta(escolhasProfFerramenta)
+        builder?.setQuantiaEscolhaProfFerramentas(1)
         
         builder?.setOpcoes(opcoes: [opcao1, opcao2])
         builder?.setArmasIniciais(armas: armasIniciais)
@@ -1202,7 +1220,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 2, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -1215,7 +1233,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 1, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao3: OpcaoEquipamento {
@@ -1224,7 +1242,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteSacerdote.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao4: OpcaoEquipamento {
@@ -1235,7 +1253,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: equipamento, quantia: 1, tipo: .equipamento)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////
@@ -1300,7 +1318,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Brunea", quantia: 1, tipo: .armaduras)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: "Couro", quantia: 1, tipo: .armaduras)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao2: OpcaoEquipamento {
@@ -1313,7 +1331,7 @@ public class ClasseDirector {
                 itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: arma, quantia: 2, tipo: .arma)]))
             }
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         var opcao3: OpcaoEquipamento {
@@ -1322,7 +1340,7 @@ public class ClasseDirector {
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
             itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
             
-            return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(itensEscolha: itensEscolha))
+            return OpcaoEquipamento(escolhas: [])
         }
         
         // METODOS //////////////////////////

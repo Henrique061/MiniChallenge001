@@ -77,6 +77,11 @@ public class ClasseConcreteBuilder : ClasseBuilder {
         self.classe.profFerramentas = ferramentas
     }
     
+    //MARK: QUANTIA ESCOLHA PROF FERRAMENTA
+    func setQuantiaEscolhaProfFerramentas(_ quantia: Int) {
+        self.classe.quantiaEscolhaProfFerramentas = quantia
+    }
+    
     //MARK: OPCOES FERRAMENTAS
     func setEscolhasProficienciaFerramenta(_ escolhas: [EscolhaOpcao]) {
         self.classe.escolhasProficienciaFerramenta = escolhas

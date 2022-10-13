@@ -13,6 +13,10 @@ public struct OpcaoEquipamento : Codable, Hashable {
 }
 
 public struct EscolhaOpcao : Codable, Hashable {
+    var escolhasUnicas: [EscolhaUnica]
+}
+
+public struct EscolhaUnica : Codable, Hashable {
     var itens: [ItemEscolha]
 }
 
@@ -31,11 +35,21 @@ public class FactoryOpcaoEquipamento : Codable {
         return opcao
     }
     
-    // cria as escolhas de uma opcao
-    public static func criaEscolha(itensEscolha: [[ItemEscolha]]) -> [EscolhaOpcao] {
+    // crias as subopcoes dentro de uma opcao
+    public static func criaEscolha(escolhasUnicas: [[EscolhaUnica]]) -> [EscolhaOpcao] {
         var escolhas: [EscolhaOpcao] = []
+        for escolhaUnica in escolhasUnicas {
+            escolhas.append(EscolhaOpcao(escolhasUnicas: escolhaUnica))
+        }
+        
+        return escolhas
+    }
+    
+    // cria as escolhas DENTRO de uma opcao
+    public static func criaEscolhasUnicas(itensEscolha: [[ItemEscolha]]) -> [EscolhaUnica] {
+        var escolhas: [EscolhaUnica] = []
         for item in itensEscolha {
-            escolhas.append(EscolhaOpcao(itens: item))
+            escolhas.append(EscolhaUnica(itens: item))
         }
         
         return escolhas
