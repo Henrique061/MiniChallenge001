@@ -9,13 +9,16 @@ import SwiftUI
 
 class CriacaoClasseViewModel: ObservableObject {
     @Published var escolha: ClasseEscolha
+    @Published var definidas: ClasseEscolhasDefinidas
     
     public init() {
         self.escolha = ClasseClient.orderClasse(classePersonagem: .none)
+        self.definidas = ClasseEscolhasDefinidas()
     }
     
     public init(ficha: PersonagemFicha) {
         self.escolha = ClasseClient.orderClasse(classePersonagem: ficha.classeFinal.classePersonagem)
+        self.definidas = ClasseEscolhasDefinidas()
     }
     
     public func setClasse(classe: ClassePersonagem) {
@@ -53,7 +56,7 @@ struct SelecaoClasseView: View {
                     PontosDeVidaInfo(classe: $vmclasse.escolha)
                     BotaoEscolherRiqueza().environmentObject(vmclasse)
                     BotaoEscolherProficiencia().environmentObject(vmclasse)
-                    BotaoEscolherEquipamento().environmentObject(vmclasse)
+                    BotaoEscolherEquipamento(classe: vmclasse)//.environmentObject(vmclasse)
                     BotaDetalhesCaracteristicaClasse(escolha: $vmclasse.escolha)
                 }
                 
@@ -158,16 +161,16 @@ private struct BotaoEscolherProficiencia: View {
 
 private struct BotaoEscolherEquipamento: View {
     
-    @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
+    @ObservedObject private var vmclasse: CriacaoClasseViewModel
     
-    public init() {
-        
+    public init(classe: CriacaoClasseViewModel) {
+        self.vmclasse = classe
     }
     
     var body: some View {
         if vmclasse.escolha.classePersonagem != .none {
             CustomNavigationLink {
-                EscolhaEquipamento().environmentObject(vmclasse)
+                EscolhaEquipamento(classe: vmclasse)
             } label: {
                 DisplayTextoBotao(titulo: "Equipamentos", descricao: "Toque para selecionar...")
             }

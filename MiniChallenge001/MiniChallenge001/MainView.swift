@@ -110,23 +110,7 @@ struct LabelFicha: View {
     var body: some View {
         HStack(spacing: 10) {
             
-            ZStack(alignment: .center) {
-                Color.black
-                if let data = ficha.fotoPersonagem, let image = UIImage(data: data){
-                    Image(uiImage: image)
-                        .renderingMode(.original)
-                        .resizable()
-                        .scaledToFill()
-                } else {
-                    Image("ProfilePicture")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(8)
-                }
-            }
-            .frame(width: 80, height: 80, alignment: .center)
-            .clipShape(Circle())
-            .overlay(Circle().stroke(Color("BlackAndWhite"), lineWidth: 1))
+            ImagemPerfil(ficha: $ficha)
             
             VStack(alignment: .leading) {
                 DisplayTextoBotao(titulo: "Nome", descricao: ficha.nomePersonagem)
@@ -136,6 +120,35 @@ struct LabelFicha: View {
         }
         .padding(.leading, -10)
         .padding(.trailing, -20)
+    }
+}
+
+struct ImagemPerfil: View {
+    
+    @Binding private var ficha: PersonagemFicha
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+    }
+    
+    var body: some View {
+        ZStack(alignment: .center) {
+            Color.black
+            if let data = ficha.fotoPersonagem, let image = UIImage(data: data){
+                Image(uiImage: image)
+                    .renderingMode(.original)
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                Image("ProfilePicture")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(8)
+            }
+        }
+        .frame(width: 80, height: 80, alignment: .center)
+        .clipShape(Circle())
+        .overlay(Circle().stroke(Color("InverseButton"), lineWidth: 1))
     }
 }
 

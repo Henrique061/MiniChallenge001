@@ -17,7 +17,7 @@ public enum TipoMoeda: String, Codable {
     case none = "Nenhum"
 }
 
-public struct Moeda: Codable {
+public struct Moeda: Codable, Hashable {
     var quantidade: Int = 0
     var tipo: TipoMoeda = .none
 }

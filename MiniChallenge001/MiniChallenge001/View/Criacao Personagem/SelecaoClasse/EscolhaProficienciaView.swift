@@ -105,22 +105,20 @@ struct SelecionarFerramentas: View {
     
     @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
     @State private var isExpanded: Bool = false
-    @State private var selectionId: [String] = []
+    @State private var selectionId: [FerramentaJSON] = []
     
     var body: some View {
         if !vmclasse.escolha.escolhasProficienciaFerramenta.isEmpty {
             TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-                ForEach(vmclasse.escolha.escolhasProficienciaFerramenta, id: \.self) { opcao in
-                    ForEach(opcao.itens, id: \.self) { item in
-                        TemplateRadioButtonMultipleIdentifier(selectedID: $selectionId, id: item.nomeItem) {
-                            
-                        } content: {
-                            Text(item.nomeItem)
-                        }.frame(height: 40)
+                ForEach(vmclasse.escolha.escolhasProficienciaFerramenta, id: \.id) { ferramenta in
+                    TemplateRadioButtonMultipleIdentifier(selectedID: $selectionId, id: ferramenta, maxSelection: vmclasse.escolha.quantiaEscolhaProfFerramentas) {
+                        
+                    } content: {
+                        Text("\(ferramenta.nome)")
                     }
-                }
+                }.frame(height: 40)
             } header: {
-                DisplayTextoBotao(titulo: "Ferramentas", descricao: "Toque para selecionar...")
+                DisplayTextoBotaoCondicao(titulo: "Ferramentas", descricaoTrue: "Selecione \(vmclasse.escolha.quantiaEscolhaProfFerramentas - selectionId.count) \(vmclasse.escolha.quantiaEscolhaProfFerramentas - selectionId.count > 1 ? "ferramentas" : "ferramenta")...", descricaoFalse: "Ferramentas selecionadas", condicao: selectionId.count < vmclasse.escolha.quantiaEscolhaProfFerramentas)
             }
         }
     }
@@ -142,7 +140,7 @@ struct SelecionarPericias: View {
                 }.frame(height: 40)
             }
         } header: {
-            DisplayTextoBotaoCondicao(titulo: "Perícias", descricaoTrue: "Selecione \(vmclasse.escolha.quantiaProfPericias - selectedID.count) perícias...", descricaoFalse: "Perícias selecionadas", condicao: selectedID.count < vmclasse.escolha.quantiaProfPericias)
+            DisplayTextoBotaoCondicao(titulo: "Perícias", descricaoTrue: "Selecione \(vmclasse.escolha.quantiaProfPericias - selectedID.count) \(vmclasse.escolha.quantiaProfPericias - selectedID.count > 1 ? "perícias" : "perícia")...", descricaoFalse: "Perícias selecionadas", condicao: selectedID.count < vmclasse.escolha.quantiaProfPericias)
         }
     }
 }
