@@ -44,12 +44,21 @@ public class AntecedenteEscolha {
     var variacaoAntecedente: VariacaoAntecedente = .none
     var profPericias: [Pericia] = []
     var profFerramentas: [FerramentaJSON] = []
+    
+    var possuiEscolhaProfFerramentas: Bool = false
     var escolhaProfFerramentas: [String] = []
+    
+    var possuiEscolhaIdioma: Bool = false
     var quantiaEscolhaIdioma: Int = 0
+    
     var equipamentosIniciais: [EquipamentoJSON] = []
     var ferramentasIniciais: [FerramentaJSON] = []
     var armasIniciais: [ArmaJSON] = []
+    
+    var possuiEscolhaEquipamentoInicial: Bool = false
     var escolhaEquipamentoInicial: [String] = []
+    
+    var possuiEscolhaFerramentaInicial: Bool = false
     var escolhaFerramentaInicial: [String] = []
     
     var dinheiroInicial: Moeda = Moeda()

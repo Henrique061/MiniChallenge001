@@ -17,4 +17,14 @@ public class AntecedenteClient : Codable {
         
         return builder.getAntecedenteFinal()
     }
+    
+    public static func orderAntecedenteFinal(_ antecedenteEscolha: AntecedenteEscolha, _ escolhas: AntecedenteEscolhasDefinidas) -> AntecedenteFinal {
+        let director = AntecedenteFinalDirector()
+        let builder = AntecedenteFinalConcreteBuilder()
+        
+        director.newBuilder(antecedenteFinalBuilder: builder)
+        director.makeAntecedenteFinal(antecedenteEscolha, escolhas)
+        
+        return builder.getAntecedenteFinal()
+    }
 }

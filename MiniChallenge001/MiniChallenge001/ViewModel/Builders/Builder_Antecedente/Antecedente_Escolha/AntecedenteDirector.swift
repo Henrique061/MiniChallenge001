@@ -89,8 +89,10 @@ public class AntecedenteDirector {
         
         // METODOS /////////////////////////////
         builder?.setProfPericias(profPericias)
+        builder?.setPossuiEscolhaIdioma(true)
         builder?.setQuantiaEscolhaIdioma(2)
         builder?.setEquipamentoInicial(equipamentoInicial)
+        builder?.setPossuiEscolhaEquipamentoInicial(true)
         builder?.setEscolhaEquipamentoInicial(escolhaEquipamento)
         builder?.setDinheiroInicial(Moeda(quantidade: 15, tipo: .ouro))
     }
@@ -110,9 +112,12 @@ public class AntecedenteDirector {
         // METODOS /////////////////////////////
         builder?.setVariacaoAntecedente(.AG_mercadorGuilda)
         builder?.setProfPericias(profPericias)
+        builder?.setPossuiEscolhaProfFerramentas(true)
         builder?.setEscolhaProfFerramentas(escolhaProfFerramenta)
+        builder?.setPossuiEscolhaIdioma(true)
         builder?.setQuantiaEscolhaIdioma(1)
         builder?.setEquipamentoInicial(equipamentoInicial)
+        builder?.setPossuiEscolhaFerramentaInicial(true)
         builder?.setEscolhaFerramentaInicial(escolhaFerramentaInicial)
         builder?.setDinheiroInicial(Moeda(quantidade: 15, tipo: .ouro))
     }
@@ -136,8 +141,10 @@ public class AntecedenteDirector {
         builder?.setVariacaoAntecedente(.AR_gladiador)
         builder?.setProfPericias(profPericias)
         builder?.setProfFerramentas(profFerramentas)
+        builder?.setPossuiEscolhaProfFerramentas(true)
         builder?.setEscolhaProfFerramentas(escolhaProfFerramenta)
         builder?.setEquipamentoInicial(equipamentoInicial)
+        builder?.setPossuiEscolhaFerramentaInicial(true)
         builder?.setEscolhaFerramentaInicial(escolhaFerramentaInicial)
         builder?.setDinheiroInicial(Moeda(quantidade: 15, tipo: .ouro))
     }
@@ -183,6 +190,7 @@ public class AntecedenteDirector {
         builder?.setVariacaoAntecedente(.CR_espiao)
         builder?.setProfPericias(profPericias)
         builder?.setProfFerramentas(profFerramentas)
+        builder?.setPossuiEscolhaProfFerramentas(true)
         builder?.setEscolhaProfFerramentas(escolhaFerramenta)
         builder?.setEquipamentoInicial(equipamentoInicial)
         builder?.setDinheiroInicial(Moeda(quantidade: 15, tipo: .ouro))
@@ -203,6 +211,7 @@ public class AntecedenteDirector {
         builder?.setVariacaoAntecedente(.ER_outrosEremitas)
         builder?.setProfPericias(profPericias)
         builder?.setProfFerramentas(profFerramentas)
+        builder?.setPossuiEscolhaIdioma(true)
         builder?.setQuantiaEscolhaIdioma(1)
         builder?.setEquipamentoInicial(equipamentoInicial)
         builder?.setDinheiroInicial(Moeda(quantidade: 5, tipo: .ouro))
@@ -224,7 +233,9 @@ public class AntecedenteDirector {
         
         // METODOS /////////////////////////////
         builder?.setProfPericias(profPericias)
+        builder?.setPossuiEscolhaProfFerramentas(true)
         builder?.setEscolhaProfFerramentas(escolhaFerramenta)
+        builder?.setPossuiEscolhaIdioma(true)
         builder?.setQuantiaEscolhaIdioma(1)
         builder?.setEquipamentoInicial(equipamentoInicial)
         builder?.setArmasIniciais(armasIniciais)
@@ -246,8 +257,10 @@ public class AntecedenteDirector {
         
         // METODOS /////////////////////////////
         builder?.setProfPericias(profPericias)
+        builder?.setPossuiEscolhaProfFerramentas(true)
         builder?.setEscolhaProfFerramentas(escolhaProfFerramenta)
         builder?.setEquipamentoInicial(equipamentoInicial)
+        builder?.setPossuiEscolhaFerramentaInicial(true)
         builder?.setEscolhaFerramentaInicial(escolhaFerramentaInicial)
         builder?.setDinheiroInicial(Moeda(quantidade: 10, tipo: .ouro))
     }
@@ -290,7 +303,9 @@ public class AntecedenteDirector {
         // METODOS /////////////////////////////
         builder?.setVariacaoAntecedente(.NO_cavaleiro)
         builder?.setProfPericias(profPericias)
+        builder?.setPossuiEscolhaProfFerramentas(true)
         builder?.setEscolhaProfFerramentas(escolhaFerramenta)
+        builder?.setPossuiEscolhaIdioma(true)
         builder?.setQuantiaEscolhaIdioma(1)
         builder?.setEquipamentoInicial(equipamentoInicial)
         builder?.setDinheiroInicial(Moeda(quantidade: 25, tipo: .ouro))
@@ -325,6 +340,7 @@ public class AntecedenteDirector {
         
         // METODOS /////////////////////////////
         builder?.setProfPericias(profPericias)
+        builder?.setPossuiEscolhaIdioma(true)
         builder?.setQuantiaEscolhaIdioma(2)
         builder?.setEquipamentoInicial(equipamentoInicial)
         builder?.setDinheiroInicial(Moeda(quantidade: 10, tipo: .ouro))
@@ -342,6 +358,7 @@ public class AntecedenteDirector {
         
         // METODOS /////////////////////////////
         builder?.setProfPericias(profPericias)
+        builder?.setPossuiEscolhaProfFerramentas(true)
         builder?.setEscolhaProfFerramentas(escolhaFerramenta)
         builder?.setEquipamentoInicial(equipamentoInicial)
         builder?.setDinheiroInicial(Moeda(quantidade: 10, tipo: .ouro))

@@ -45,9 +45,19 @@ public class AntecedenteConcreteBuilder : AntecedenteBuilder {
         self.antecedente.profFerramentas = ferramentas
     }
     
+    //MARK: POSSUI ESCOLHA PROF FERRAMENTAS
+    func setPossuiEscolhaProfFerramentas(_ possui: Bool) {
+        self.antecedente.possuiEscolhaProfFerramentas = possui
+    }
+    
     //MARK: ESCOLHA PROF FERRAMENTAS
     func setEscolhaProfFerramentas(_ escolhas: [String]) {
         self.antecedente.escolhaProfFerramentas = escolhas
+    }
+    
+    //MARK: POSSUI ESCOLHA IDIOMA
+    func setPossuiEscolhaIdioma(_ possui: Bool) {
+        self.antecedente.possuiEscolhaIdioma = possui
     }
     
     //MARK: QUANTIA ESCOLHA IDIOMA
@@ -70,9 +80,19 @@ public class AntecedenteConcreteBuilder : AntecedenteBuilder {
         self.antecedente.armasIniciais = armas
     }
     
+    //MARK: POSSUI ESCOLHA EQUIPAMENTO
+    func setPossuiEscolhaEquipamentoInicial(_ possui: Bool) {
+        self.antecedente.possuiEscolhaEquipamentoInicial = possui
+    }
+    
     //MARK: ESCOLHA EQUIP INICIAL
     func setEscolhaEquipamentoInicial(_ escolhas: [String]) {
         self.antecedente.escolhaEquipamentoInicial = escolhas
+    }
+    
+    //MARK: POSSUI ESCOLHA FERRAMENTA
+    func setPossuiEscolhaFerramentaInicial(_ possui: Bool) {
+        self.antecedente.possuiEscolhaFerramentaInicial = possui
     }
     
     //MARK: ESCOLHAS FERRA INICIAL

@@ -17,12 +17,22 @@ protocol AntecedenteBuilder {
     func setVariacaoAntecedente(_ variacao: VariacaoAntecedente)
     func setProfPericias(_ pericias: [Pericia])
     func setProfFerramentas(_ ferramentas: [FerramentaJSON])
+    
+    func setPossuiEscolhaProfFerramentas(_ possui: Bool)
     func setEscolhaProfFerramentas(_ escolhas: [String])
+    
+    func setPossuiEscolhaIdioma(_ possui: Bool)
     func setQuantiaEscolhaIdioma(_ quantia: Int)
+    
     func setEquipamentoInicial(_ equipamentos: [EquipamentoJSON])
     func setFerramentasIniciais(_ ferramentas: [FerramentaJSON])
     func setArmasIniciais(_ armas: [ArmaJSON])
+    
+    func setPossuiEscolhaEquipamentoInicial(_ possui: Bool)
     func setEscolhaEquipamentoInicial(_ escolhas: [String])
+    
+    func setPossuiEscolhaFerramentaInicial(_ possui: Bool)
     func setEscolhaFerramentaInicial(_ escolhas: [String])
+    
     func setDinheiroInicial(_ moeda: Moeda)
 }
