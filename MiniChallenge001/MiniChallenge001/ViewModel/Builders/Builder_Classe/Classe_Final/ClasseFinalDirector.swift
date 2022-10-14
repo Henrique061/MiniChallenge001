@@ -76,6 +76,26 @@ public class ClasseFinalDirector {
         //MARK: ARMAS INICIAIS
         var armasIniciais: [ArmaJSON] = classeEscolha.armasIniciais
         armasIniciais.append(contentsOf: self.buscaArmasOpcoes(escolhas))
+        builder?.setArmasIniciais(armasIniciais)
+        
+        //MARK: ARMADURAS INICIAIS
+        var armadurasIniciais: [ArmaduraJSON] = classeEscolha.armadurasIniciais
+        armadurasIniciais.append(contentsOf: self.buscaArmadurasOpcoes(escolhas))
+        builder?.setArmadurasIniciais(armadurasIniciais)
+        
+        //MARK: EQUIPAMENTOS INICIAIS
+        let equipamentosIniciais: [EquipamentoJSON] = self.buscaEquipamentosOpcoes(escolhas, classeEscolha.equipamentosIniciais)
+        builder?.setEquipamentosIniciais(equipamentosIniciais)
+        
+        //MARK: FERRAMENTAS INICIAIS
+        var ferramentasIniciais: [FerramentaJSON] = classeEscolha.ferramentasIniciais
+        ferramentasIniciais.append(contentsOf: self.buscaFerramentasOpcoes(escolhas))
+        builder?.setFerramentasIniciais(ferramentasIniciais)
+        
+        //MARK: PACOTES INICIAIS
+        var pacotesIniciais: [PacoteEquipamento] = classeEscolha.pacotesIniciais
+        pacotesIniciais.append(contentsOf: self.buscaPacotesOpcoes(escolhas))
+        builder?.setPacotesIniciais(pacotesIniciais)
     }
     
     //MARK: BUSCA OPCOES ARMA
@@ -112,20 +132,30 @@ public class ClasseFinalDirector {
     
     //MARK: BUSCA OPCOES EQUIPAMENTO
     // VER EQUIP QUE RETORNA UM ITEM DE QUANTIDADE, VERIFICAR SE JA NAO TEM ESSE MSM EQUIP NO INVENTARIO
-//    private func buscaEquipamentosOpcoes(_ escolhas: ClasseEscolhasDefinidas) -> [EquipamentoJSON] {
-//        let escolhasOpcoes = escolhas.escolhasOpcoesEquip
-//        var retornoJson: [EquipamentoJSON] = []
-//
-//        for escolha in escolhasOpcoes {
-//            for item in escolha.itens {
-//                if item.tipoJson == .arma {
-//                    retornoJson.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: item.nomeItem, quantidade: item.quantia))
-//                }
-//            }
-//        }
-//
-//        return retornoJson
-//    }
+    private func buscaEquipamentosOpcoes(_ escolhas: ClasseEscolhasDefinidas, _ equipamentoAtual: [EquipamentoJSON]) -> [EquipamentoJSON] {
+        let escolhasOpcoes = escolhas.escolhasOpcoesEquip
+        var retornoJson: [EquipamentoJSON] = []
+        retornoJson.append(contentsOf: equipamentoAtual)
+        
+        let nomesEquipamentos: [String] = retornoJson.map({ $0.nome })
+        
+        for escolha in escolhasOpcoes {
+            for item in escolha.itens {
+                if item.tipoJson == .equipamento {
+                    if nomesEquipamentos.contains(item.nomeItem) {
+                        if let i = retornoJson.firstIndex(where: { $0.nome == item.nomeItem }) {
+                            retornoJson[i].quantidade += item.quantia
+                        }
+                    }
+                    else {
+                        retornoJson.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: item.nomeItem, quantidade: item.quantia))
+                    }
+                }
+            }
+        }
+        
+        return retornoJson
+    }
     
     //MARK: BUSCA OPCOES FERRAMENTA
     private func buscaFerramentasOpcoes(_ escolhas: ClasseEscolhasDefinidas) -> [FerramentaJSON] {
@@ -136,6 +166,22 @@ public class ClasseFinalDirector {
             for item in escolha.itens {
                 if item.tipoJson == .arma {
                     retornoJson.append(contentsOf: BuscaJson.buscaFerramentaPorNomeQuantidade(nome: item.nomeItem, quantidade: item.quantia))
+                }
+            }
+        }
+        
+        return retornoJson
+    }
+    
+    //MARK: BUSCA PACOTES
+    private func buscaPacotesOpcoes(_ escolhas: ClasseEscolhasDefinidas) -> [PacoteEquipamento] {
+        let escolhasOpcoes = escolhas.escolhasOpcoesEquip
+        var retornoJson: [PacoteEquipamento] = []
+        
+        for escolha in escolhasOpcoes {
+            for item in escolha.itens {
+                if item.tipoJson == .pacote {
+                    retornoJson.append(PacoteEquipamento(rawValue: item.nomeItem)!)
                 }
             }
         }

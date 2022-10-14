@@ -362,11 +362,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteDiplomata.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteDiplomata.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteArtista.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteArtista.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
@@ -483,11 +483,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
@@ -626,11 +626,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteSacerdote.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteSacerdote.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
@@ -744,11 +744,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
@@ -856,11 +856,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
@@ -969,11 +969,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
@@ -1075,15 +1075,15 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAssaltante.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAssaltante.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
@@ -1192,11 +1192,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteEstudioso.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
@@ -1275,11 +1275,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
@@ -1386,11 +1386,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteSacerdote.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteSacerdote.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))
@@ -1502,11 +1502,11 @@ public class ClasseDirector {
             var itensEscolha: [[ItemEscolha]] = []
             var escolhasUnicas: [[EscolhaUnica]] = []
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteExplorador.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             itensEscolha.removeAll()
             
-            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .equipamento)]))
+            itensEscolha.append(FactoryOpcaoEquipamento.criaItemEscolha(tuplaItens: [(item: PacoteEquipamento.pacoteAventureiro.rawValue, quantia: 1, tipo: .pacote)]))
             escolhasUnicas.append(FactoryOpcaoEquipamento.criaEscolhasUnicas(itensEscolha: itensEscolha))
             
             return FactoryOpcaoEquipamento.criaOpcao(escolhas: FactoryOpcaoEquipamento.criaEscolha(escolhasUnicas: escolhasUnicas))

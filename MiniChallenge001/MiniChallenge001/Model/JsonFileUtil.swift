@@ -117,5 +117,6 @@ public enum BundleFolderName: String, Codable, Hashable {
     case trait = "trait"
     case veiculo = "veiculo"
     
+    case pacote = "pacote"
     case none = "Nenhum"
 }
