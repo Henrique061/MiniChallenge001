@@ -26,14 +26,14 @@ enum AtributoIdentifier: String, Codable, Hashable, CaseIterable {
 struct CriacaoAtributos: View {
     
     @StateObject private var vmatributo: ViewModelAtributo
-    @Binding private var ficha: PersonagemFicha
+    @ObservedObject private var vmficha: NovaFichaViewModel
     @Binding private var popToRoot: Bool
     @State private var tipoDistribuicao: TipoDistribuicao
     @State private var selectedAtributo: Atributo
     
-    public init(ficha: Binding<PersonagemFicha>, popToRoot: Binding<Bool>) {
-        self._vmatributo = StateObject(wrappedValue: ViewModelAtributo(ficha: ficha.wrappedValue))
-        self._ficha = ficha
+    public init(vmficha: NovaFichaViewModel, popToRoot: Binding<Bool>) {
+        self._vmatributo = StateObject(wrappedValue: ViewModelAtributo(ficha: vmficha.ficha))
+        self.vmficha = vmficha
         self._popToRoot = popToRoot
         self.tipoDistribuicao = .livre
         self.selectedAtributo = Atributo(nome: .none, valor: 0)
@@ -62,16 +62,16 @@ struct CriacaoAtributos: View {
                 
                 Button("Criar Personagem") {
                     DispatchQueue.main.async {
-                        self.ficha.pontosAtributos.carisma = self.vmatributo.atributos[0].valor
-                        self.ficha.pontosAtributos.constituicao = self.vmatributo.atributos[1].valor
-                        self.ficha.pontosAtributos.destreza = self.vmatributo.atributos[2].valor
-                        self.ficha.pontosAtributos.forca = self.vmatributo.atributos[3].valor
-                        self.ficha.pontosAtributos.inteligencia = self.vmatributo.atributos[4].valor
-                        self.ficha.pontosAtributos.sabedoria = self.vmatributo.atributos[5].valor
+                        self.vmficha.ficha.pontosAtributos.carisma = self.vmatributo.atributos[0].valor
+                        self.vmficha.ficha.pontosAtributos.constituicao = self.vmatributo.atributos[1].valor
+                        self.vmficha.ficha.pontosAtributos.destreza = self.vmatributo.atributos[2].valor
+                        self.vmficha.ficha.pontosAtributos.forca = self.vmatributo.atributos[3].valor
+                        self.vmficha.ficha.pontosAtributos.inteligencia = self.vmatributo.atributos[4].valor
+                        self.vmficha.ficha.pontosAtributos.sabedoria = self.vmatributo.atributos[5].valor
                         
                         do {
-                            ficha.id = try JsonFileUtil.getNewIdForSheet()
-                            try JsonFileUtil.write(content: ficha)
+                            vmficha.ficha.id = try JsonFileUtil.getNewIdForSheet()
+                            try JsonFileUtil.write(content: vmficha.ficha)
                         } catch {
                             print("UNABLE TO CREATE A NEW ID TO SHEET: \(error.localizedDescription)")
                         }

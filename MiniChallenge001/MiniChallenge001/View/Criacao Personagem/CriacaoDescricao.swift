@@ -10,11 +10,11 @@ import SwiftUI
 
 struct CriacaoDescricao: View {
     
-    @Binding private var ficha: PersonagemFicha
+    @ObservedObject private var vmficha: NovaFichaViewModel
     @Binding private var popToRoot: Bool
     
-    public init(ficha: Binding<PersonagemFicha>, popToRoot: Binding<Bool>) {
-        self._ficha = ficha
+    public init(vmficha: NovaFichaViewModel, popToRoot: Binding<Bool>) {
+        self.vmficha = vmficha
         self._popToRoot = popToRoot
     }
     
@@ -25,13 +25,13 @@ struct CriacaoDescricao: View {
                     Text("Por fim, mas não menos importante, diga-nos como é esse personagem...")
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     
-                    SelecionarImagemCriacao(ficha: $ficha)
-                    AllTextFieldsCriação(ficha: $ficha)
+                    SelecionarImagemCriacao(ficha: $vmficha.ficha)
+                    AllTextFieldsCriação(ficha: $vmficha.ficha)
                     Spacer()
                 }
                 
                 NavigationLink {
-                    CriacaoAtributos(ficha: $ficha, popToRoot: $popToRoot)
+                    CriacaoAtributos(vmficha: vmficha, popToRoot: $popToRoot)
                 } label: {
                     Text("Próximo")
                 }

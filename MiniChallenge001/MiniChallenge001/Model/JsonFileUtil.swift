@@ -55,7 +55,7 @@ class JsonFileUtil {
         var id = 1
         
         for i in arr {
-            let temp = Int(i.split(separator: "_")[1]) ?? id
+            let temp = Int(i) ?? id
             if id <= temp { id += 1 }
         }
         
@@ -63,7 +63,7 @@ class JsonFileUtil {
     }
     
     private static func formatSheetName(name: String, id: Int) -> String {
-        return "\(name)_\(id)".lowercased().replacingOccurrences(of: " ", with: "-")
+        return "\(id)".lowercased().replacingOccurrences(of: " ", with: "-")
     }
     
     public static func write<T:Json>(content: T) throws {

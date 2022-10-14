@@ -28,22 +28,21 @@ class ViewModelEscolhaAntecedente: ObservableObject {
 struct SelecaoAntecedenteView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject private var vmficha: NovaFichaViewModel
+    @ObservedObject private var vmficha: NovaFichaViewModel
     @StateObject private var vmantecedente: ViewModelEscolhaAntecedente
     @State private var showContent: Bool
     
-    public init(ficha: PersonagemFicha) {
-        self._vmantecedente = StateObject(wrappedValue: ViewModelEscolhaAntecedente(ficha: ficha))
-        self._showContent = State(initialValue: ficha.antecedenteFinal != .none)
+    public init(vmficha: NovaFichaViewModel) {
+        self.vmficha = vmficha
+        self._vmantecedente = StateObject(wrappedValue: ViewModelEscolhaAntecedente(ficha: vmficha.ficha))
+        self._showContent = State(initialValue: vmficha.ficha.antecedenteFinal != .none)
     }
     
     var body: some View {
         TemplateTelaPadrao {
             VStack(alignment: .leading, spacing: 10) {
                 ScrollView {
-                    AntecedentePickerView()
-                        .environmentObject(vmantecedente)
-                    
+                    AntecedentePickerView(vmantecedente: vmantecedente)
                     PericiasAntecedenteView(antecedente: $vmantecedente.escolha)
                     ProficienciaFerramentaAntecedenteView(antecedente: $vmantecedente.escolha)
                     EscolhaProficienciaFerramentaAntecedenteView(antecedente: $vmantecedente.escolha)
@@ -74,10 +73,11 @@ struct SelecaoAntecedenteView: View {
 
 private struct AntecedentePickerView: View {
     
-    @EnvironmentObject private var vmantecedente: ViewModelEscolhaAntecedente
+    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
     @State private var isExpanded: Bool
     
-    public init() {
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
         self.isExpanded = false
     }
     
@@ -86,8 +86,8 @@ private struct AntecedentePickerView: View {
             ForEach(AntecedentePersonagem.allCases, id: \.self) { antecedente in
                 if antecedente != .none {
                     TemplateRadioButtonWithIdentifier(selectedID: $vmantecedente.escolha.tipoAntecedente, id: antecedente) {
-                        self.vmantecedente.setAntecedente(antecedente)
                         withAnimation {
+                            self.vmantecedente.setAntecedente(antecedente)
                             self.isExpanded.toggle()
                         }
                     } content: {
