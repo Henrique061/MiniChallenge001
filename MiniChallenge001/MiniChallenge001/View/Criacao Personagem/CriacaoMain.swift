@@ -77,32 +77,20 @@ struct CriacaoMain: View {
                         SelecaoRacaView(ficha: novaFicha.ficha)
                             .environmentObject(novaFicha)
                     } label: {
-<<<<<<< Updated upstream
                         DisplayTextoBotaoCondicao(titulo: "Raça", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.racaFinal.racaPersonagem.rawValue, condicao: novaFicha.ficha.racaFinal.racaPersonagem == .none)
-=======
-                        DisplayTexto(titulo: "Raça do personagem", descricao: "Toque para selecionar...")
->>>>>>> Stashed changes
                     }
                     
                     CustomNavigationLink {
                         SelecaoClasseView(ficha: novaFicha.ficha)
                             .environmentObject(novaFicha)
                     } label: {
-<<<<<<< Updated upstream
                         DisplayTextoBotaoCondicao(titulo: "Classe", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.classeFinal.classePersonagem.rawValue, condicao: novaFicha.ficha.classeFinal.classePersonagem == .none)
-=======
-                        DisplayTexto(titulo: "Classe do personagem", descricao: "Toque para selecionar...")
->>>>>>> Stashed changes
                     }
                     
                     CustomNavigationLink {
                         SelecaoAntecedenteView(vmficha: novaFicha)
                     } label: {
-<<<<<<< Updated upstream
                         DisplayTextoBotaoCondicao(titulo: "Antecedente", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.antecedenteFinal.rawValue, condicao: novaFicha.ficha.antecedenteFinal == .none)
-=======
-                        DisplayTexto(titulo: "Antecedente", descricao: "Toque para selecionar...")
->>>>>>> Stashed changes
                     }
                     
                     MenuSelecaoTendencia()

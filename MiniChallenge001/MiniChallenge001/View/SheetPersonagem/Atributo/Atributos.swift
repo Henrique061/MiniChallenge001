@@ -71,7 +71,7 @@ struct TemplateAtributos: View{
             }
             
             VStack(alignment: .leading, spacing: 3) {
-                DisplayTexto(titulo: titulo1, descricao: descricao1)
+                DisplayTextoBotao(titulo: titulo1, descricao: descricao1)
                     .padding(.vertical, 5)
             }
         }
@@ -236,7 +236,7 @@ struct ToggleVista: View{
             
             HStack{
                 
-                DisplayTexto(titulo: "Pontos Adicionais", descricao: "02").padding(.vertical,5)
+                DisplayTextoBotao(titulo: "Pontos Adicionais", descricao: "02").padding(.vertical,5)
                     .padding(.horizontal,10)
                 Spacer()
                 Toggle("", isOn: $showProficiencias)

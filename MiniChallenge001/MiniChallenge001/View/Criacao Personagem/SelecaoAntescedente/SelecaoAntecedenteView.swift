@@ -97,11 +97,7 @@ private struct AntecedentePickerView: View {
                 }
             }
         } header: {
-<<<<<<< Updated upstream
             DisplayTextoBotaoCondicao(titulo: "Antecedente", descricaoTrue: "Toque para selecionar...", descricaoFalse: vmantecedente.escolha.tipoAntecedente.rawValue, condicao: vmantecedente.escolha.tipoAntecedente == .none)
-=======
-            DisplayTexto(titulo: "Antecedente do Personagem", descricao: selectedAntecedente == .none ? "Toque para selecionar..." : selectedAntecedente.rawValue)
->>>>>>> Stashed changes
         }
     }
 }
@@ -125,11 +121,6 @@ private struct PericiasAntecedenteView: View {
             } header: {
                 DisplayTextoBotao(titulo: "Proficiência em Perícias", descricao: "Toque para detalhes...")
             }
-<<<<<<< Updated upstream
-=======
-        } header: {
-            DisplayTexto(titulo: "Proficiência em Perícias", descricao: "Toque para detalhes...")
->>>>>>> Stashed changes
         }
     }
 }
@@ -153,11 +144,6 @@ private struct ProficienciaFerramentaAntecedenteView: View {
             } header: {
                 DisplayTextoBotao(titulo: "Proficiência em Ferramenta Padrão", descricao: "Toque para detalhes...")
             }
-<<<<<<< Updated upstream
-=======
-        } header: {
-            DisplayTexto(titulo: "Proficiência em Ferramenta Padrão", descricao: "Toque para detalhes...")
->>>>>>> Stashed changes
         }
     }
 }
@@ -187,11 +173,6 @@ private struct EscolhaProficienciaFerramentaAntecedenteView: View {
             } header: {
                 DisplayTextoBotao(titulo: "Proficiência em Ferramenta Selecionável", descricao: "Toque para selecionar...")
             }
-<<<<<<< Updated upstream
-=======
-        } header: {
-            DisplayTexto(titulo: "Proficiência em Ferramenta Selecionável", descricao: "Toque para selecionar...")
->>>>>>> Stashed changes
         }
     }
 }
@@ -215,11 +196,6 @@ private struct EquipamentoAntecedenteView: View {
             } header: {
                 DisplayTextoBotao(titulo: "Equipamento Padrão", descricao: "Toque para detalhes...")
             }
-<<<<<<< Updated upstream
-=======
-        } header: {
-            DisplayTexto(titulo: "Equioamento Padrão", descricao: "Toque para detalhes...")
->>>>>>> Stashed changes
         }
     }
 }
@@ -249,11 +225,6 @@ private struct EscolhaEquipamentoAntecedenteView: View {
             } header: {
                 DisplayTextoBotao(titulo: "Equipamento Selecionável", descricao: "Toque para selecionar...")
             }
-<<<<<<< Updated upstream
-=======
-        } header: {
-            DisplayTexto(titulo: "Equipamento Selecionável", descricao: "Toque para selecionar...")
->>>>>>> Stashed changes
         }
     }
 }
@@ -267,17 +238,11 @@ private struct RiquezaAntecedenteView: View {
     }
     
     var body: some View {
-<<<<<<< Updated upstream
         if antecedente.dinheiroInicial.tipo != .none {
             TemplateContentBackground {
                 DisplayTextoBotao(titulo: "Riqueza", descricao: "\(antecedente.dinheiroInicial.quantidade) \(antecedente.dinheiroInicial.tipo.rawValue)")
                     .padding(10)
             }
-=======
-        TemplateContentBackground {
-            DisplayTexto(titulo: "Riqueza", descricao: "\(antecedente.dinheiroInicial.quantidade) \(antecedente.dinheiroInicial.tipo.rawValue)")
-                .padding(10)
->>>>>>> Stashed changes
         }
     }
 }

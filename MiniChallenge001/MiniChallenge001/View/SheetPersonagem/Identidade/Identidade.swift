@@ -49,7 +49,7 @@ struct identidadeSuperior: View{
     var body: some View{
         TemplateContentBackground{
             VStack(alignment: .leading, spacing: 3){
-                DisplayTexto(titulo: "Nome", descricao: "isso")
+                DisplayTextoBotao(titulo: "Nome", descricao: "isso")
                     .padding(.vertical, 5)
                     .padding(.horizontal,10)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -101,24 +101,24 @@ struct identidadeInferior: View{
         TemplateContentBackground{
             VStack(alignment: .leading, spacing: 3){
                 HStack{
-                    DisplayTexto(titulo: "Raça", descricao: "Gnomo das Rochas")
+                    DisplayTextoBotao(titulo: "Raça", descricao: "Gnomo das Rochas")
                         .padding(.vertical, 5)
                         .padding(.horizontal,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Spacer()
-                    DisplayTexto(titulo: "Tendência", descricao: "Caótico Neutro")
+                    DisplayTextoBotao(titulo: "Tendência", descricao: "Caótico Neutro")
                         .padding(.vertical, 5)
                         .padding(.horizontal,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 Divider()
                 HStack{
-                    DisplayTexto(titulo: "Antecedente", descricao: "Criminal")
+                    DisplayTextoBotao(titulo: "Antecedente", descricao: "Criminal")
                         .padding(.vertical, 5)
                         .padding(.horizontal,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Spacer()
-                    DisplayTexto(titulo: "Pontos de Experiência", descricao: "3456789")
+                    DisplayTextoBotao(titulo: "Pontos de Experiência", descricao: "3456789")
                         .padding(.vertical, 5)
                         .padding(.horizontal,10)
                         .frame(maxWidth: .infinity, alignment: .leading)

@@ -108,11 +108,11 @@ struct SelecaoClasseView: View {
                 
             }.padding(.horizontal, 10)
             
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    NavigationBarTitle("Classe do Personagem")
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        NavigationBarTitle("Classe do Personagem")
+                    }
                 }
-            }
         }
     }
 }
@@ -155,11 +155,7 @@ private struct PontosDeVidaInfo: View {
     var body: some View {
         if classe.classePersonagem != .none {
             TemplateContentBackground {
-<<<<<<< Updated upstream
                 DisplayTextoBotao(titulo: "Pontos de Vida Inicial", descricao: "\(classe.vidaInicial) + Modificador de Constituição")
-=======
-                DisplayTexto(titulo: "Pontos de Vida Inicial", descricao: "\(vmclasse.escolha.vidaInicial) + Modificador de Constituição")
->>>>>>> Stashed changes
                     .padding(10)
             }
         }
@@ -180,14 +176,9 @@ private struct BotaoEscolherRiqueza: View {
             Button {
                 showSheet.toggle()
             } label: {
-<<<<<<< Updated upstream
                 DisplayTextoBotao(titulo: "Riqueza", descricao: "Riqueza atual: \(vmclasse.definidas.escolhaRiqueza.quantidade) \(vmclasse.definidas.escolhaRiqueza.quantidade == 1 ? "Peça de Ouro" : "Peças de Ouro")")
             }
             .buttonStyle(CustomButtonStyle())
-=======
-                DisplayTexto(titulo: "Riqueza", descricao: "Toque para selecionar...")
-            }.buttonStyle(CustomButtonStyle())
->>>>>>> Stashed changes
             
             .sheet(isPresented: $showSheet) {
                 EditarRiquezaView(vmclasse: vmclasse)
@@ -211,11 +202,7 @@ private struct BotaoEscolherProficiencia: View {
             CustomNavigationLink {
                 EscolhaProficienciaView(vmclasse: vmclasse)
             } label: {
-<<<<<<< Updated upstream
                 DisplayTextoBotaoCondicao(titulo: "Proficiências", descricaoTrue: "Toque para selecionar...", descricaoFalse: "Proficiências selecionadas", condicao: optionsAreMissing)
-=======
-                DisplayTexto(titulo: "Proficiências", descricao: "Toque para selecionar...")
->>>>>>> Stashed changes
             }.buttonStyle(CustomButtonStyle2())
         }
     }
@@ -236,14 +223,9 @@ private struct BotaoEscolherEquipamento: View {
             CustomNavigationLink {
                 EscolhaEquipamento(classe: vmclasse)
             } label: {
-<<<<<<< Updated upstream
                 DisplayTextoBotaoCondicao(titulo: "Equipamentos", descricaoTrue: "Toque para selecionar...", descricaoFalse: "Equipamentos selecionados", condicao: optionsAreMissing)
             }
             .buttonStyle(CustomButtonStyle2())
-=======
-                DisplayTexto(titulo: "Equipamentos", descricao: "Toque para selecionar...")
-            }.buttonStyle(CustomButtonStyle2())
->>>>>>> Stashed changes
         }
     }
 }
@@ -262,12 +244,12 @@ private struct BotaDetalhesCaracteristicaClasse: View {
             Button {
                 showSheet.toggle()
             } label: {
-                DisplayTexto(titulo: "Características", descricao: "Toque para mais detalhes...")
+                DisplayTextoBotao(titulo: "Características", descricao: "Toque para mais detalhes...")
             }.buttonStyle(CustomButtonStyle())
             
-            .sheet(isPresented: $showSheet) {
-                DetalhesCaracteristicaClasse(escolha: $escolha)
-            }
+                .sheet(isPresented: $showSheet) {
+                    DetalhesCaracteristicaClasse(escolha: $escolha)
+                }
         }
     }
 }

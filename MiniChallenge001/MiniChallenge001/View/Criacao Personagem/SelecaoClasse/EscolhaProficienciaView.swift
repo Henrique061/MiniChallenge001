@@ -133,11 +133,7 @@ struct SelecionarFerramentas: View {
                     }
                 }.frame(height: 40)
             } header: {
-<<<<<<< Updated upstream
                 DisplayTextoBotaoCondicao(titulo: "Ferramentas", descricaoTrue: "Selecione \(vmclasse.escolha.quantiaEscolhaProfFerramentas - escolhasFerramentas.count) \(vmclasse.escolha.quantiaEscolhaProfFerramentas - escolhasFerramentas.count > 1 ? "ferramentas" : "ferramenta")...", descricaoFalse: "Ferramentas selecionadas", condicao: escolhasFerramentas.count < vmclasse.escolha.quantiaEscolhaProfFerramentas)
-=======
-                DisplayTexto(titulo: "Ferramentas", descricao: "Toque para selecionar...")
->>>>>>> Stashed changes
             }
         }
     }
@@ -164,11 +160,7 @@ struct SelecionarPericias: View {
                 }.frame(height: 40)
             }
         } header: {
-<<<<<<< Updated upstream
             DisplayTextoBotaoCondicao(titulo: "Perícias", descricaoTrue: "Selecione \(vmclasse.escolha.quantiaProfPericias - escolhasPericias.count) \(vmclasse.escolha.quantiaProfPericias - escolhasPericias.count > 1 ? "perícias" : "perícia")...", descricaoFalse: "Perícias selecionadas", condicao: escolhasPericias.count < vmclasse.escolha.quantiaProfPericias)
-=======
-            DisplayTexto(titulo: "Perícias", descricao: "Toque para selecionar...")
->>>>>>> Stashed changes
         }
     }
 }
