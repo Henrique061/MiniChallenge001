@@ -55,8 +55,14 @@ class JsonFileUtil {
         var id = 1
         
         for i in arr {
+<<<<<<< Updated upstream
             let temp = Int(i) ?? id
             if id <= temp { id += 1 }
+=======
+            if i.contains(".DS_Store") { continue }
+                let temp = Int(i.split(separator: "_")[1]) ?? id
+                if id <= temp { id += 1 }
+>>>>>>> Stashed changes
         }
         
         return id

@@ -109,7 +109,7 @@ struct MagiaDetailCell: View {
         Button {
             mostrarDetalhes.toggle()
         } label: {
-            DisplayTextoBotao(titulo: magia.nome, descricao: magia.escola.rawValue)
+            DisplayTexto(titulo: magia.nome, descricao: magia.escola.rawValue)
         }.buttonStyle(CustomButtonStyle2())
         
         

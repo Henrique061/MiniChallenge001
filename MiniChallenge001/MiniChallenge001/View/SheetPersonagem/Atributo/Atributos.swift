@@ -71,7 +71,7 @@ struct TemplateAtributos: View{
             }
             
             VStack(alignment: .leading, spacing: 3) {
-                DisplayTextoBotao(titulo: titulo1, descricao: descricao1)
+                DisplayTexto(titulo: titulo1, descricao: descricao1)
                     .padding(.vertical, 5)
             }
         }
@@ -188,6 +188,11 @@ struct PericiasVista: View{
     public init(toggleIsOn: Binding<Bool>) {
         self._toggleIsOn = toggleIsOn
     }
+    var numeroPericias: [Int] = [2,3,4]
+    var periciasArray: [String] = ["Acrobacia","Arcanismo","Atletismo","Enganação","Furtividade","História","Intuição", "Intimidação","Investigação "]
+    
+    var periciasArray2: [String] = ["Lidar com Animais", "Medicina","Natureza", "Percepção", "Perfomance","Persuasão", "Prestidigitação", "Religião", "Sobrevivência"]
+    
     var body: some View{
         
         
@@ -196,54 +201,24 @@ struct PericiasVista: View{
                 .font(.system(size: 20, weight: .bold, design: .rounded))
                 .frame(alignment: .leading)
             TemplateContentBackground{
+                HStack{
+                    VStack{
+                        ForEach(periciasArray, id: \.self) {i in
+                            TemplateAtributos(titulo1: i, descricao1: "+1", toggleIsOn: $toggleIsOn)
+                            Divider()
+                    }
+                
                 VStack{
-                    HStack{
-                        TemplateAtributos(titulo1: "Acrobacia", descricao1: "+0", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Lidar com Animais", descricao1: "+4", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    
-                    HStack{
-                        TemplateAtributos(titulo1: "Arcanismo", descricao1: "+2", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Medicina", descricao1: "+0", toggleIsOn: $toggleIsOn ).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    
-                    HStack{
-                        TemplateAtributos(titulo1: "Atletismo", descricao1: "+1", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Natureza", descricao1: "+2", toggleIsOn: $toggleIsOn ).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    HStack{
-                        TemplateAtributos(titulo1: "Enganação", descricao1: "+0", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Percepcão", descricao1: "+4", toggleIsOn: $toggleIsOn ).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    
-                    HStack{
-                        TemplateAtributos(titulo1: "Furtividade", descricao1: "+2", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Performace", descricao1: "+0", toggleIsOn: $toggleIsOn ).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    
-                    HStack{
-                        TemplateAtributos(titulo1: "História", descricao1: "+1", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Persuasão", descricao1: "+2", toggleIsOn: $toggleIsOn ).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    HStack{
-                        TemplateAtributos(titulo1: "Intuição", descricao1: "+0", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Prestidigitação", descricao1: "+4", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    
-                    HStack{
-                        TemplateAtributos(titulo1: "Intimidação", descricao1: "+2", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Religião", descricao1: "+0", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    
-                    HStack{
-                        TemplateAtributos(titulo1: "Investigação", descricao1: "+1", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Sobrevivência", descricao1: "+2", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                    }
+                ForEach(periciasArray2, id: \.self) {i in
+                    TemplateAtributos(titulo1: i, descricao1: "+1", toggleIsOn: $toggleIsOn)
+                }
+                }
+                
                 }
             }
         }
     }
-    
+}
 }
 struct ToggleVista: View{
     // @ObservedObject var vmclasse = TemplateFichaPronta()
@@ -261,7 +236,7 @@ struct ToggleVista: View{
             
             HStack{
                 
-                DisplayTextoBotao(titulo: "Pontos Adicionais", descricao: "02").padding(.vertical,5)
+                DisplayTexto(titulo: "Pontos Adicionais", descricao: "02").padding(.vertical,5)
                     .padding(.horizontal,10)
                 Spacer()
                 Toggle("", isOn: $showProficiencias)
@@ -283,24 +258,27 @@ struct ToggleVista: View{
 
 
 
-struct fragPericias: View{
-    @Binding private var mostrarBolinha: Bool
-    public init(mostrarBolinha: Binding<Bool>) {
-        self._mostrarBolinha = mostrarBolinha
-    }
-    
-//    private var textoss = [
+//struct fragPericias: View{
+//    @Binding private var mostrarBolinha: Bool
+//    public init(mostrarBolinha: Binding<Bool>) {
+//        self._mostrarBolinha = mostrarBolinha
+//    }
 //
-//    //TemplateAtributos(titulo1: "sss", descricao1: "sss", mostrarBolinha: $mostrarBolinha)
-//    ]
-     
-    
-    
-    
-    
-    var body: some View{
-        TemplateContentBackground{
-            
-        }
-    }
-}
+////    private var textoss = [
+////
+////    //TemplateAtributos(titulo1: "sss", descricao1: "sss", mostrarBolinha: $mostrarBolinha)
+////    ]
+//
+//
+//
+//
+//
+//    var body: some View{
+//        TemplateContentBackground{
+//
+//        }
+//    }
+//}
+
+
+

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		093F602428F0D5E0006A8911 /* Condicoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F602328F0D5E0006A8911 /* Condicoes.swift */; };
+		093F602628F8940C006A8911 /* Caracteristicas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F602528F8940C006A8911 /* Caracteristicas.swift */; };
 		09B5569228DA6156001466B0 /* Habilidades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568B28DA6154001466B0 /* Habilidades.swift */; };
 		09B5569328DA6156001466B0 /* SheetTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568C28DA6155001466B0 /* SheetTabView.swift */; };
 		09B5569428DA6156001466B0 /* Inventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568D28DA6155001466B0 /* Inventario.swift */; };
@@ -109,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		093F602328F0D5E0006A8911 /* Condicoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condicoes.swift; sourceTree = "<group>"; };
+		093F602528F8940C006A8911 /* Caracteristicas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caracteristicas.swift; sourceTree = "<group>"; };
 		09B5568B28DA6154001466B0 /* Habilidades.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habilidades.swift; sourceTree = "<group>"; };
 		09B5568C28DA6155001466B0 /* SheetTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetTabView.swift; sourceTree = "<group>"; };
 		09B5568D28DA6155001466B0 /* Inventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventario.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				09B5568F28DA6156001466B0 /* Identidade.swift */,
+				093F602528F8940C006A8911 /* Caracteristicas.swift */,
 			);
 			path = Identidade;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				126ABAF728DB3D5200CF5A2E /* ArmaJSON.swift in Sources */,
 				09B5569328DA6156001466B0 /* SheetTabView.swift in Sources */,
 				3DF24F9728E200DF006C0AAE /* PacoteFactory.swift in Sources */,
+				093F602628F8940C006A8911 /* Caracteristicas.swift in Sources */,
 				3D6F868928E0CD830022D0BE /* RacaEscolha.swift in Sources */,
 				3D6F869828E11C160022D0BE /* AntecedenteConcreteBuilder.swift in Sources */,
 				126ABAF428DB3D5200CF5A2E /* MontariaJSON.swift in Sources */,
