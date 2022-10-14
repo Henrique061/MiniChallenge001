@@ -201,8 +201,10 @@ private struct SelecionarImagemCriacao: View {
         .sheet(isPresented: $showImagePicker) {
             ImagePicker { image in
                 if let image = image, let data: Data = image.pngData() {
-                    self.currentImage = Image(uiImage: image)
-                    self.ficha.fotoPersonagem = data
+                    DispatchQueue.main.async {
+                        self.currentImage = Image(uiImage: image)
+                        self.ficha.fotoPersonagem = data
+                    }
                 }
             }
         }

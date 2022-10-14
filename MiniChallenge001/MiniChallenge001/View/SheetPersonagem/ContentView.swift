@@ -10,12 +10,12 @@ import CoreData
 
 struct ContentView: View {
     
-    @Binding private var ficha: PersonagemFicha
+    @ObservedObject private var sheet: SheetsViewModel
     @State private var currentTab: SheetTabView
     
-    public init(ficha: Binding<PersonagemFicha>) {
-        self._ficha = ficha
+    public init(ficha: SheetsViewModel) {
         self.currentTab = .combate
+        self._sheet = ObservedObject(initialValue: ficha)
     }
     
     var body: some View {
@@ -32,7 +32,7 @@ struct ContentView: View {
                     Label("Habilidades", image: currentTab == .habilidades ? "HabilidadesIconOn" : "HabilidadesIconOff")
                 }
             
-            Combate(ficha: $ficha)
+            Combate(sheet: sheet)
                 .tag(SheetTabView.combate)
                 .tabItem {
                     Label("Combate", image: currentTab == .combate ? "CombateIconOn" : "CombateIconOff")

@@ -162,7 +162,7 @@ struct CustomNavigationLink<Destination, Label>: View where Destination: View, L
         } label: {
             label()
         }
-        .buttonStyle(CustomButtonStyle6())
+        .buttonStyle(CustomButtonStyle())
     }
 }
 

@@ -42,43 +42,45 @@ struct CriacaoAtributos: View {
     var body: some View {
         TemplateTelaPadrao {
             VStack(alignment: .leading, spacing: 10) {
-                Text("Os atributos de um personagem são muitos importantes. Distribua-os com sabedoria...")
-                    .font(.system(size: 15, weight: .semibold, design: .default))
-                
-                SelecaoDistribuirAtributo(tipoDistribuicao: $tipoDistribuicao, selectedAtributo: $selectedAtributo)
-                
-                if tipoDistribuicao == .livre {
-                    ListaSelecaoLivreAtributos(selectedAtributo: $selectedAtributo, atributos: $vmatributo.atributos)
-                }
-                
-                if selectedAtributo.nome != .none {
-                    LivreEditAtributo(atributo: $selectedAtributo) { value in
-                        vmatributo.updateAtributoValor(value: value, name: selectedAtributo.nome)
-                        selectedAtributo.valor += value
+                ScrollView {
+                    Text("Os atributos de um personagem são muitos importantes. Distribua-os com sabedoria...")
+                        .font(.system(size: 15, weight: .semibold, design: .default))
+                    
+                    SelecaoDistribuirAtributo(tipoDistribuicao: $tipoDistribuicao, selectedAtributo: $selectedAtributo)
+                    
+                    if tipoDistribuicao == .livre {
+                        ListaSelecaoLivreAtributos(selectedAtributo: $selectedAtributo, atributos: $vmatributo.atributos)
                     }
-                }
-                
-                Spacer()
-                
-                Button("Criar Personagem") {
-                    DispatchQueue.main.async {
-                        self.vmficha.ficha.pontosAtributos.carisma = self.vmatributo.atributos[0].valor
-                        self.vmficha.ficha.pontosAtributos.constituicao = self.vmatributo.atributos[1].valor
-                        self.vmficha.ficha.pontosAtributos.destreza = self.vmatributo.atributos[2].valor
-                        self.vmficha.ficha.pontosAtributos.forca = self.vmatributo.atributos[3].valor
-                        self.vmficha.ficha.pontosAtributos.inteligencia = self.vmatributo.atributos[4].valor
-                        self.vmficha.ficha.pontosAtributos.sabedoria = self.vmatributo.atributos[5].valor
-                        
-                        do {
-                            vmficha.ficha.id = try JsonFileUtil.getNewIdForSheet()
-                            try JsonFileUtil.write(content: vmficha.ficha)
-                        } catch {
-                            print("UNABLE TO CREATE A NEW ID TO SHEET: \(error.localizedDescription)")
+                    
+                    if selectedAtributo.nome != .none {
+                        LivreEditAtributo(atributo: $selectedAtributo) { value in
+                            vmatributo.updateAtributoValor(value: value, name: selectedAtributo.nome)
+                            selectedAtributo.valor += value
                         }
-                        self.popToRoot.toggle()
                     }
+                    
+                    Spacer()
+                    
+                    Button("Criar Personagem") {
+                        DispatchQueue.main.async {
+                            self.vmficha.ficha.pontosAtributos.carisma = self.vmatributo.atributos[0].valor
+                            self.vmficha.ficha.pontosAtributos.constituicao = self.vmatributo.atributos[1].valor
+                            self.vmficha.ficha.pontosAtributos.destreza = self.vmatributo.atributos[2].valor
+                            self.vmficha.ficha.pontosAtributos.forca = self.vmatributo.atributos[3].valor
+                            self.vmficha.ficha.pontosAtributos.inteligencia = self.vmatributo.atributos[4].valor
+                            self.vmficha.ficha.pontosAtributos.sabedoria = self.vmatributo.atributos[5].valor
+                            
+                            do {
+                                vmficha.ficha.id = try JsonFileUtil.getNewIdForSheet()
+                                try JsonFileUtil.write(content: vmficha.ficha)
+                            } catch {
+                                print("UNABLE TO CREATE A NEW ID TO SHEET: \(error.localizedDescription)")
+                            }
+                            self.popToRoot.toggle()
+                        }
+                    }
+                    .buttonStyle(CustomButtonStyle5())
                 }
-                .buttonStyle(CustomButtonStyle5())
             }
             .padding(.horizontal, 10)
             

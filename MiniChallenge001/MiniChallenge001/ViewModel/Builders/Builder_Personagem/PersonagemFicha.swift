@@ -59,7 +59,7 @@ struct ValoresAtributos : Codable {
 }
 
 //MARK: PERSONAGEM FICHA
-public class PersonagemFicha: Json {
+public struct PersonagemFicha: Json {
     var id: Int = 0
     var nome: String = ""
     
