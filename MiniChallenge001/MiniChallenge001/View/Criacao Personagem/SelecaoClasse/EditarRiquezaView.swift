@@ -9,9 +9,13 @@ import SwiftUI
 
 struct EditarRiquezaView: View {
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
+    @StateObject private var vmclasse: CriacaoClasseViewModel
+    @State private var quantidade: Int
     
-    @State private var quantidade: Int = 0
+    public init(vmclasse: CriacaoClasseViewModel) {
+        self._vmclasse = StateObject(wrappedValue: vmclasse)
+        self._quantidade = State(initialValue: vmclasse.definidas.escolhaRiqueza.quantidade)
+    }
     
     var body: some View {
         TemplateSheetView(
@@ -45,18 +49,15 @@ struct EditarRiquezaView: View {
                     Spacer()
                     
                     Button {
+                        self.vmclasse.setRiqueza(moeda: Moeda(quantidade: self.quantidade, tipo: .ouro))
                         dismiss()
                     } label: {
                         Text("Salvar Alteração")
-                    }.buttonStyle(CustomButtonStyle5())
-                }.padding(.horizontal, 10)
+                    }
+                    .buttonStyle(CustomButtonStyle5())
+                }
+                .padding(.horizontal, 10)
             }
-    }
-}
-
-struct EditarRiquezaView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditarRiquezaView()
     }
 }
 

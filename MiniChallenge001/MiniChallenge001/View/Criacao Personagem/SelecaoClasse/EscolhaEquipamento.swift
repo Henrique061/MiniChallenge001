@@ -9,11 +9,28 @@ import SwiftUI
 
 struct EscolhaEquipamento: View {
     
-    @ObservedObject private var vmclasse: CriacaoClasseViewModel
+    @StateObject private var vmclasse: CriacaoClasseViewModel
+    @State private var escolhasEquipamento: [EscolhaUnica]
     @Environment(\.dismiss) private var dismiss
     
+    private var buttonIsDisabled: Bool {
+        var isAllSelected = true
+        for i in self.escolhasEquipamento {
+            if i.itens.isEmpty {
+                isAllSelected = false
+            }
+        }
+        return !isAllSelected
+    }
+    
     public init(classe: CriacaoClasseViewModel) {
-        self.vmclasse = classe
+        self._vmclasse = StateObject(wrappedValue: classe)
+        
+        if classe.definidas.escolhasOpcoesEquip.count < classe.escolha.opcoesEquipamento.count {
+            self._escolhasEquipamento = State(initialValue: Array<EscolhaUnica>(repeating: EscolhaUnica(itens: []), count: classe.escolha.opcoesEquipamento.count))
+        } else {
+            self._escolhasEquipamento = State(initialValue: classe.definidas.escolhasOpcoesEquip)
+        }
     }
     
     var body: some View {
@@ -22,17 +39,18 @@ struct EscolhaEquipamento: View {
                 ScrollView {
                     MostrarItensJson(title: "Equipamentos Iniciais", lista: vmclasse.escolha.armasIniciais)
                     PacotesIniciais(classe: $vmclasse.escolha)
-                    OpcoesEquipamento(escolha: $vmclasse.escolha)
+                    OpcoesEquipamento(classe: vmclasse, selections: $escolhasEquipamento)
                     Spacer()
                 }
                 
                 Button {
-                    
+                    self.vmclasse.setEscolhaEquipamentos(escolhas: self.escolhasEquipamento)
                     dismiss()
                 } label: {
                     Text("Salvar Alterações")
                 }
                 .buttonStyle(CustomButtonStyle5())
+                .disabled(buttonIsDisabled)
             }
             .padding(.horizontal, 10)
             
@@ -70,72 +88,43 @@ private struct PacotesIniciais: View {
 
 private struct OpcoesEquipamento: View {
     
-    @Binding private var escolha: ClasseEscolha
-    @State private var isExpanded: Bool = false
-    @State private var selectedID: [String] = []
+    @ObservedObject private var classe: CriacaoClasseViewModel
+    @Binding private var selections: [EscolhaUnica]
     
-    public init(escolha: Binding<ClasseEscolha>) {
-        self._escolha = escolha
+    public init(classe: CriacaoClasseViewModel, selections: Binding<[EscolhaUnica]>) {
+        self.classe = classe
+        self._selections = selections
     }
     
     var body: some View {
         
-        ForEach(Array(escolha.opcoesEquipamento.enumerated()), id: \.element) { (i, selecao) in
+        ForEach(Array(classe.escolha.opcoesEquipamento.enumerated()), id: \.element) { (i, selecao) in
             
-            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+            TemplateCustomDisclosureGroup2 {
                 
                 ForEach(Array(selecao.escolhas.enumerated()), id: \.element) { (j, unica) in
-                    Text("Opção \(String(UnicodeScalar(65 + j)!))")
-                        .font(.system(size: 13, weight: .bold, design: .default))
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 4)
+                    if selecao.escolhas.count > 1 {
+                        Text("Opção \(String(UnicodeScalar(65 + j)!))")
+                            .font(.system(size: 13, weight: .bold, design: .default))
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 4)
+                    }
                     
-                    ForEach(unica.escolhasUnicas, id: \.self) { opcao in
-                        TemplateRadioButtonWithContent(isMarked: false) {
-                            
+                    ForEach(Array(unica.escolhasUnicas.enumerated()), id: \.element) { (k, opcao) in
+
+                        TemplateRadioButtonWithIdentifier(selectedID: $selections[i], id: opcao) {
+
+                        } content: {
                             ForEach(opcao.itens, id: \.self) { item in
                                 DisplayTextoBotao(titulo: item.nomeItem, descricao: "Quantidade: \(item.quantia)")
                             }
-                            
-                        } completion: {
-                            
                         }
                     }
                 }
-                
             } header: {
-                Text("Escolha \(i + 1)")
+                DisplayTextoBotaoCondicao(titulo: "Escolha \(i + 1)", descricaoTrue: "Escolha uma opção...", descricaoFalse: "Opção selecionada", condicao: self.selections[i].itens.isEmpty )
             }
         }
-        
-        
-//        ForEach(Array(escolha.opcoesEquipamento.enumerated()), id: \.element) { (i, selecao) in
-//
-//            TemplateCustomDisclosureGroup2 {
-//                ForEach(Array(selecao.escolhas.enumerated()), id: \.element) { (j, opcao) in
-//                    Text("Opção \(String(UnicodeScalar(65 + j)!))")
-//                        .font(.system(size: 13, weight: .bold, design: .default))
-//                        .padding(.horizontal, 10)
-//                        .padding(.vertical, 4)
-//
-//                    ForEach(opcao.itens, id: \.self) { item in
-//                        TemplateRadioButtonMultipleIdentifier(selectedID: $selectedID, id: item.nomeItem) {
-//
-//                        } content: {
-//                            VStack(alignment: .leading, spacing: 0) {
-//                                Text(item.nomeItem)
-//                                    .font(.system(size: 13, weight: .regular, design: .default))
-//                                Text("Quantidade: \(item.quantia)")
-//                                    .font(.system(size: 10, weight: .regular, design: .default))
-//                            }.padding(.vertical, 3)
-//                        }
-//                    }
-//                }
-//            } header: {
-//                Text("Escolha \(i + 1)")
-//                    .font(.system(size: 15, weight: .bold, design: .default))
-//            }
-//        }
     }
 }
 

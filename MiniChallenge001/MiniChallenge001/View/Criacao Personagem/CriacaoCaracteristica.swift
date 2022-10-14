@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CriacaoCaracteristica: View {
     
-    @Binding private var ficha: PersonagemFicha
+    @ObservedObject private var vmficha: NovaFichaViewModel
     @Binding private var popToRoot: Bool
     
-    public init(ficha: Binding<PersonagemFicha>, popToRoot: Binding<Bool>) {
-        self._ficha = ficha
+    public init(vmficha: NovaFichaViewModel, popToRoot: Binding<Bool>) {
+        self.vmficha = vmficha
         self._popToRoot = popToRoot
     }
     
@@ -25,24 +25,24 @@ struct CriacaoCaracteristica: View {
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     
                     
-                    CriacaoCaracteristicaButton(title: "Traços de Personalidade", content: $ficha.tracosPersonalidadePersonagem)
-                    CriacaoCaracteristicaButton(title: "Ideais", content: $ficha.ideaisPersonagem)
-                    CriacaoCaracteristicaButton(title: "Vínculo", content: $ficha.vinculoPersonagem)
-                    CriacaoCaracteristicaButton(title: "Defeitos", content: $ficha.defeitosPersonagem)
+                    CriacaoCaracteristicaButton(title: "Traços de Personalidade", content: $vmficha.ficha.tracosPersonalidadePersonagem)
+                    CriacaoCaracteristicaButton(title: "Ideais", content: $vmficha.ficha.ideaisPersonagem)
+                    CriacaoCaracteristicaButton(title: "Vínculo", content: $vmficha.ficha.vinculoPersonagem)
+                    CriacaoCaracteristicaButton(title: "Defeitos", content: $vmficha.ficha.defeitosPersonagem)
                     
-                    EstiloVidaPicker(estiloVida: $ficha.estiloVida)
+                    EstiloVidaPicker(estiloVida: $vmficha.ficha.estiloVida)
                     
                     Spacer()
                 }
                 
                 NavigationLink {
-                    CriacaoDescricao(ficha: $ficha, popToRoot: $popToRoot)
+                    CriacaoDescricao(vmficha: self.vmficha, popToRoot: $popToRoot)
                 } label: {
                     Text("Próximo")
                 }
                 .isDetailLink(false)
                 .buttonStyle(CustomButtonStyle5())
-                .disabled(self.ficha.estiloVida == .none)
+                .disabled(self.vmficha.ficha.estiloVida == .none)
             }
             .padding(.horizontal, 10)
             

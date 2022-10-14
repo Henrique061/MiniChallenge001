@@ -9,26 +9,23 @@ import SwiftUI
 
 struct MainView: View {
     
-    @ObservedObject private var fichas: PersonagemViewModel
+    @ObservedObject private var vmfichas: SheetsViewModel
     
-    @State private var fichaSelecionada: PersonagemFicha
     @State private var mostrarFicha: Bool = false
-    
     @State private var isRoot: Bool = false
     
     public init() {
-        self.fichas = PersonagemViewModel()
-        self.fichaSelecionada = PersonagemFicha()
+        self.vmfichas = SheetsViewModel()
     }
     
     var body: some View {
         NavigationView {
             TemplateTelaPadrao(withPaddings: false) {
                 List {
-                    ForEach($fichas.listaFichas, id: \.id) { ficha in
+                    ForEach(self.$vmfichas.listaFichas, id: \.id) { ficha in
                         Section {
                             Button {
-                                fichaSelecionada = ficha.wrappedValue
+                                self.vmfichas.setSelectedFicha(ficha: ficha.wrappedValue)
                                 mostrarFicha.toggle()
                             } label: {
                                 LabelFicha(ficha: ficha)
@@ -44,7 +41,7 @@ struct MainView: View {
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             Button {
                                 withAnimation(.easeOut) {
-                                    fichas.delete(ficha: ficha.wrappedValue)
+                                    self.vmfichas.delete(ficha: ficha.wrappedValue)
                                 }
                             } label: {
                                 Text("Delete")
@@ -57,7 +54,7 @@ struct MainView: View {
             }
             
             .fullScreenCover(isPresented: $mostrarFicha) {
-                ContentView(ficha: $fichaSelecionada)
+                ContentView(ficha: self.vmfichas)
             }
 
             .navigationBarTitleDisplayMode(.inline)
@@ -82,7 +79,7 @@ struct MainView: View {
         .accentColor(Color("RedTheme"))
         
         .onChange(of: isRoot) { _ in
-            self.fichas.fetch()
+            self.vmfichas.fetch()
         }
     }
 }
@@ -354,11 +351,20 @@ struct CustomButtonStyle5: ButtonStyle {
 struct CustomButtonStyle6: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(10)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .padding(.vertical, 10)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .padding(.horizontal, 10)
+            .foregroundColor(Color("BlackAndWhite"))
             .background(configuration.isPressed ? Color(uiColor: .systemGray3) : Color("ContentBackground"))
-            .clipShape(RoundedRectangle(cornerRadius: 5 ))
-            .fixedSize(horizontal: false, vertical: true)
+    }
+}
+
+struct CustomButtonStyle7: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 20, height: 20, alignment: .center)
+            .foregroundColor(Color("BlackAndWhite"))
+            .opacity(configuration.isPressed ? 0.4 : 1)
     }
 }
 

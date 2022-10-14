@@ -10,7 +10,7 @@ import SwiftUI
 public class NovaFichaViewModel: ObservableObject {
     @Published var ficha: PersonagemFicha
     
-     public init() {
+    public init() {
         self.ficha = PersonagemFicha()
     }
     
@@ -21,9 +21,12 @@ public class NovaFichaViewModel: ObservableObject {
         }
     }
     
-    public func setClasse(classe: ClasseFicha) {
+    public func setClasse(classe: ClasseFicha, escolhas: ClasseEscolhasDefinidas) {
         DispatchQueue.main.async {
             self.ficha.classeFinal = classe
+            self.adicionarOuro(quantidade: escolhas.escolhaRiqueza.quantidade)
+            self.ficha.profPericias += escolhas.escolhaProfPericias
+            self.ficha.profFerramentas += escolhas.escolhaProfFerramentas
             self.objectWillChange.send()
         }
     }
@@ -39,6 +42,14 @@ public class NovaFichaViewModel: ObservableObject {
         DispatchQueue.main.async {
             self.ficha.tendenciaPersonagem = tendencia
             self.objectWillChange.send()
+        }
+    }
+    
+    private func adicionarOuro(quantidade: Int) {
+        for i in 0..<self.ficha.carteira.count {
+            if self.ficha.carteira[i].tipo == .ouro {
+                self.ficha.carteira[i].quantidade += quantidade
+            }
         }
     }
 }
@@ -77,8 +88,7 @@ struct CriacaoMain: View {
                     }
                     
                     CustomNavigationLink {
-                        SelecaoAntecedenteView(ficha: novaFicha.ficha)
-                            .environmentObject(novaFicha)
+                        SelecaoAntecedenteView(vmficha: novaFicha)
                     } label: {
                         DisplayTextoBotaoCondicao(titulo: "Antecedente", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.antecedenteFinal.rawValue, condicao: novaFicha.ficha.antecedenteFinal == .none)
                     }
@@ -88,7 +98,7 @@ struct CriacaoMain: View {
                 }
                 
                 NavigationLink {
-                    CriacaoCaracteristica(ficha: $novaFicha.ficha, popToRoot: $popToRoot)
+                    CriacaoCaracteristica(vmficha: self.novaFicha, popToRoot: $popToRoot)
                 } label: {
                     Text("Próximo")
                 }
@@ -152,7 +162,7 @@ struct CustomNavigationLink<Destination, Label>: View where Destination: View, L
         } label: {
             label()
         }
-        .buttonStyle(CustomButtonStyle6())
+        .buttonStyle(CustomButtonStyle())
     }
 }
 

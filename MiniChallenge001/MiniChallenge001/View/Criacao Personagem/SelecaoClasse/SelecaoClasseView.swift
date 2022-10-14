@@ -22,7 +22,10 @@ class CriacaoClasseViewModel: ObservableObject {
     }
     
     public func setClasse(classe: ClassePersonagem) {
-        self.escolha = ClasseClient.orderClasse(classePersonagem: classe)
+        DispatchQueue.main.async {
+            self.escolha = ClasseClient.orderClasse(classePersonagem: classe)
+            self.definidas = ClasseEscolhasDefinidas()
+        }
     }
     
     public func getCaracteristicas() -> [String] {
@@ -36,6 +39,30 @@ class CriacaoClasseViewModel: ObservableObject {
     public func buildClasseFicha() -> ClasseFicha {
         return ClasseFicha(classePersonagem: self.escolha.classePersonagem, caracteristicasPersonagem: getCaracteristicas(), subclassesPersonagem: self.escolha.subClasses, espacosDeMagia: self.escolha.espacosDeMagia, pontosEspecificosNumerico: self.escolha.pontosEspecificosNumerico, pontosEspecificosTexto: self.escolha.pontosEspecificosTexto)
     }
+    
+    public func setProficienciaPericias(pericias: [Pericia]) {
+        DispatchQueue.main.async {
+            self.definidas.escolhaProfPericias = pericias
+        }
+    }
+    
+    public func setProficientaFerramentas(ferramentas: [FerramentaJSON]) {
+        DispatchQueue.main.async {
+            self.definidas.escolhaProfFerramentas = ferramentas
+        }
+    }
+    
+    public func setRiqueza(moeda: Moeda) {
+        DispatchQueue.main.async {
+            self.definidas.escolhaRiqueza = moeda
+        }
+    }
+    
+    public func setEscolhaEquipamentos(escolhas: [EscolhaUnica]) {
+        DispatchQueue.main.async {
+            self.definidas.escolhasOpcoesEquip = escolhas
+        }
+    }
 }
 
 struct SelecaoClasseView: View {
@@ -43,6 +70,14 @@ struct SelecaoClasseView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var vmficha: NovaFichaViewModel
     @StateObject private var vmclasse: CriacaoClasseViewModel
+    
+    private var periciasAreMissing: Bool {
+        return vmclasse.definidas.escolhaProfFerramentas.count < vmclasse.escolha.quantiaEscolhaProfFerramentas || vmclasse.definidas.escolhaProfPericias.count < vmclasse.escolha.quantiaProfPericias
+    }
+    
+    private var equipamentosAreMissing: Bool {
+        return vmclasse.definidas.escolhasOpcoesEquip.isEmpty
+    }
     
     public init(ficha: PersonagemFicha) {
         self._vmclasse = StateObject(wrappedValue: CriacaoClasseViewModel(ficha: ficha))
@@ -54,20 +89,22 @@ struct SelecaoClasseView: View {
                 ScrollView {
                     MenuSelecaoClasse().environmentObject(vmclasse)
                     PontosDeVidaInfo(classe: $vmclasse.escolha)
-                    BotaoEscolherRiqueza().environmentObject(vmclasse)
-                    BotaoEscolherProficiencia().environmentObject(vmclasse)
-                    BotaoEscolherEquipamento(classe: vmclasse)//.environmentObject(vmclasse)
+                    BotaoEscolherRiqueza(vmclasse: vmclasse)
+                    BotaoEscolherProficiencia(vmclasse: vmclasse, optionsAreMissing: periciasAreMissing)
+                    BotaoEscolherEquipamento(classe: vmclasse, optionsAreMissing: equipamentosAreMissing)
                     BotaDetalhesCaracteristicaClasse(escolha: $vmclasse.escolha)
                 }
                 
                 Button {
-                    self.vmficha.setClasse(classe: vmclasse.buildClasseFicha())
+                    self.vmficha.setClasse(classe: vmclasse.buildClasseFicha(), escolhas: vmclasse.definidas)
                     dismiss()
                 } label: {
                     Text("Salvar Alterações")
                 }
                 .buttonStyle(CustomButtonStyle5())
-                .disabled(vmclasse.escolha.classePersonagem == .none)
+                .disabled(vmclasse.escolha.classePersonagem == .none ||
+                          periciasAreMissing ||
+                          equipamentosAreMissing)
                 
             }.padding(.horizontal, 10)
             
@@ -101,7 +138,8 @@ private struct MenuSelecaoClasse: View {
                 }
             } label: {
                 DisplayTextoBotaoCondicao(titulo: "Classe do Personagem", descricaoTrue: "Toque para selecionar...", descricaoFalse: vmclasse.escolha.classePersonagem.rawValue, condicao: vmclasse.escolha.classePersonagem == .none)
-            }.buttonStyle(CustomButtonStyle2())
+            }
+            .buttonStyle(CustomButtonStyle2())
         }
     }
 }
@@ -126,19 +164,24 @@ private struct PontosDeVidaInfo: View {
 
 private struct BotaoEscolherRiqueza: View {
     
-    @EnvironmentObject var vmclasse: CriacaoClasseViewModel
+    @ObservedObject var vmclasse: CriacaoClasseViewModel
     @State private var showSheet: Bool = false
+    
+    public init(vmclasse: CriacaoClasseViewModel) {
+        self.vmclasse = vmclasse
+    }
     
     var body: some View {
         if vmclasse.escolha.classePersonagem != .none {
             Button {
                 showSheet.toggle()
             } label: {
-                DisplayTextoBotao(titulo: "Riqueza", descricao: "Toque para selecionar...")
-            }.buttonStyle(CustomButtonStyle())
+                DisplayTextoBotao(titulo: "Riqueza", descricao: "Riqueza atual: \(vmclasse.definidas.escolhaRiqueza.quantidade) \(vmclasse.definidas.escolhaRiqueza.quantidade == 1 ? "Peça de Ouro" : "Peças de Ouro")")
+            }
+            .buttonStyle(CustomButtonStyle())
             
             .sheet(isPresented: $showSheet) {
-                EditarRiquezaView()
+                EditarRiquezaView(vmclasse: vmclasse)
             }
         }
     }
@@ -146,14 +189,20 @@ private struct BotaoEscolherRiqueza: View {
 
 private struct BotaoEscolherProficiencia: View {
     
-    @EnvironmentObject private var vmclasse: CriacaoClasseViewModel
+    @ObservedObject private var vmclasse: CriacaoClasseViewModel
+    private var optionsAreMissing: Bool
+    
+    public init(vmclasse: CriacaoClasseViewModel, optionsAreMissing: Bool) {
+        self.vmclasse = vmclasse
+        self.optionsAreMissing = optionsAreMissing
+    }
     
     var body: some View {
         if vmclasse.escolha.classePersonagem != .none {
             CustomNavigationLink {
-                EscolhaProficienciaView().environmentObject(vmclasse)
+                EscolhaProficienciaView(vmclasse: vmclasse)
             } label: {
-                DisplayTextoBotao(titulo: "Proficiências", descricao: "Toque para selecionar...")
+                DisplayTextoBotaoCondicao(titulo: "Proficiências", descricaoTrue: "Toque para selecionar...", descricaoFalse: "Proficiências selecionadas", condicao: optionsAreMissing)
             }.buttonStyle(CustomButtonStyle2())
         }
     }
@@ -162,9 +211,11 @@ private struct BotaoEscolherProficiencia: View {
 private struct BotaoEscolherEquipamento: View {
     
     @ObservedObject private var vmclasse: CriacaoClasseViewModel
+    private var optionsAreMissing: Bool
     
-    public init(classe: CriacaoClasseViewModel) {
+    public init(classe: CriacaoClasseViewModel, optionsAreMissing: Bool) {
         self.vmclasse = classe
+        self.optionsAreMissing = optionsAreMissing
     }
     
     var body: some View {
@@ -172,7 +223,7 @@ private struct BotaoEscolherEquipamento: View {
             CustomNavigationLink {
                 EscolhaEquipamento(classe: vmclasse)
             } label: {
-                DisplayTextoBotao(titulo: "Equipamentos", descricao: "Toque para selecionar...")
+                DisplayTextoBotaoCondicao(titulo: "Equipamentos", descricaoTrue: "Toque para selecionar...", descricaoFalse: "Equipamentos selecionados", condicao: optionsAreMissing)
             }
             .buttonStyle(CustomButtonStyle2())
         }
