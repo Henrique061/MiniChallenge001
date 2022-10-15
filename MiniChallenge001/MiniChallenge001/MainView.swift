@@ -188,7 +188,7 @@ struct TemplateTelaPadrao<Content> : View where Content: View {
                 Divider().padding(.top, withPaddings ? 10 : 0)
             }
         }
-        .frame(alignment: .top)
+        .frame(maxHeight: .infinity, alignment: .top)
     }
 }
 

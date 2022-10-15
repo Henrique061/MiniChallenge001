@@ -9,9 +9,15 @@ import SwiftUI
 
 public class NovaFichaViewModel: ObservableObject {
     @Published var ficha: PersonagemFicha
+    @Published var racaFinal: RacaFinal
+    @Published var classeFinal: ClasseFinal
+    @Published var antecedenteFinal: AntecedenteFinal
     
     public init() {
         self.ficha = PersonagemFicha()
+        self.racaFinal = RacaFinal()
+        self.classeFinal = ClasseFinal()
+        self.antecedenteFinal = AntecedenteFinal()
     }
     
     public func setRaca(raca: RacaFicha) {
@@ -74,8 +80,7 @@ struct CriacaoMain: View {
                     TextFieldCriacao(title: "Nome do personagem", text: $novaFicha.ficha.nomePersonagem)
                     
                     CustomNavigationLink {
-                        SelecaoRacaView(ficha: novaFicha.ficha)
-                            .environmentObject(novaFicha)
+                        SelecaoRacaView(vmficha: self.novaFicha)
                     } label: {
                         DisplayTextoBotaoCondicao(titulo: "Raça", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.racaFinal.racaPersonagem.rawValue, condicao: novaFicha.ficha.racaFinal.racaPersonagem == .none)
                     }
@@ -96,6 +101,7 @@ struct CriacaoMain: View {
                     MenuSelecaoTendencia()
                         .environmentObject(novaFicha)
                 }
+                .frame(maxHeight: .infinity)
                 
                 NavigationLink {
                     CriacaoCaracteristica(vmficha: self.novaFicha, popToRoot: $popToRoot)

@@ -77,13 +77,12 @@ struct MostrarItensJson<Item>: View where Item: Json {
     
     var body: some View {
         TemplateCustomDisclosureGroup(isExpanded: $showContent) {
-            ForEach(lista, id: \.id) { item in
+            ForEach(lista.sorted(by: {$0.nome < $1.nome}), id: \.id) { item in
                 TemplateDisclosureGroupContent(title: item.nome)
             }
         } header: {
-            Text(title)
-                .font(.system(size: 15, weight: .bold, design: .default))
-        }
+            DisplayTextoBotao(titulo: title, descricao: "Toque para detalhes...")
+        }.buttonStyle(CustomButtonStyle2())
     }
 }
 

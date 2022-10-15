@@ -10,12 +10,16 @@ import SwiftUI
 struct DetalhesTracoView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var vmraca: CriacaoRacaViewModel
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
     
     var body: some View {
-        TemplateSheetView(header: DefaultSheetHeader(image: Image("IdentidadeIconOff"), title: "Descrição de Traços Raciais", subtitle: vmraca.subraca.subraca == .none ? vmraca.raca.tipoRaca.rawValue : vmraca.subraca.subraca.rawValue)) {
+        TemplateSheetView(header: DefaultSheetHeader(image: Image("IdentidadeIconOff"), title: "Descrição de Traços Raciais", subtitle: vmraca.raca.possuiSubRaca ? vmraca.escolhasDefinidas.escolhaSubRaca.subracaNome : vmraca.raca.nomeRaca)) {
             ScrollView {
-                ForEach(vmraca.getTracos(), id: \.id) { traco in
+                ForEach(vmraca.tracos, id: \.id) { traco in
                     TemplateDetalheCaracteristica(title: traco.nome, subtitle: "Passiva", description: traco.descricao)
                 }
                 .padding(.horizontal, 10)

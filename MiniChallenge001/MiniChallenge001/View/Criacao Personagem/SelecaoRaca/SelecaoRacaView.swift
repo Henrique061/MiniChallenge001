@@ -9,8 +9,89 @@ import SwiftUI
 
 class CriacaoRacaViewModel: ObservableObject {
     @Published public var raca: RacaEscolha
-    @Published public var subraca: Subraca
+    @Published public var escolhasDefinidas: RacaEscolhasDefinidas
+    @Published public var escolhasAtributos: [AtributosSalvaguarda]
+    @Published public var escolhaProfFerramenta: String
+    @Published public var escolhaMagia: String
     
+    public var buttonIsDisabled: Bool {
+        self.raca.tipoRaca == .none ||
+        self.raca.possuiSubRaca && self.escolhasDefinidas.escolhaSubRaca.subraca == .none ||
+        self.raca.possuiEscolhaProfPericias && self.escolhasDefinidas.escolhaProfPericias.isEmpty ||
+        (self.raca.possuiEscolhaIdioma || self.raca.subracaPossuiEscolhaIdioma) && self.escolhasDefinidas.escolhaIdioma.idioma == .none ||
+        self.raca.possuiEscolhaProfFerramentas && self.escolhaProfFerramenta.isEmpty ||
+        self.raca.possuiEscolhaAtributo && self.escolhasAtributos.isEmpty ||
+        self.raca.subracaEscolhaMagias.subraca != .none && self.raca.possuiSubRaca && escolhaMagia.isEmpty
+    }
+    
+    public var proficienciaFerramentas: [FerramentaJSON] {
+        var proficiencias: [FerramentaJSON] = raca.profFerramentas
+        if raca.possuiSubRaca {
+            proficiencias += raca.subracaProfFerramenta.filter({$0.subraca == self.escolhasDefinidas.escolhaSubRaca.subraca}).first?.ferramentasProficientes ?? []
+        }
+        return proficiencias
+    }
+    
+    public var proficienciaArmas: [ArmaJSON] {
+        var armas: [ArmaJSON] = raca.profArmas
+        if raca.possuiSubRaca {
+            armas += raca.subracaProfArma.filter({$0.subraca == self.escolhasDefinidas.escolhaSubRaca.subraca}).first?.armasProficientes ?? []
+        }
+        return armas
+    }
+    
+    public var proficienciaArmaduras: [ArmaduraJSON] {
+        var armaduras: [ArmaduraJSON] = raca.profArmaduras
+        if raca.possuiSubRaca {
+            armaduras += raca.subracaProfArmaduras.filter({$0.subraca == self.escolhasDefinidas.escolhaSubRaca.subraca}).first?.armadurasProficientes ?? []
+        }
+        return armaduras
+    }
+    
+    public var atributos: String {
+        var descricao = ""
+        for i in self.raca.atributosGanhos {
+            descricao += "+ \(i.pontosGanhos) \(i.atributo.rawValue) "
+        }
+        if self.escolhasDefinidas.escolhaSubRaca.subraca != .none {
+            descricao += "+ \(self.escolhasDefinidas.escolhaSubRaca.atributoGanho.pontosGanhos) \(self.escolhasDefinidas.escolhaSubRaca.atributoGanho.atributo.rawValue)"
+        }
+        return descricao
+    }
+    
+    public var deslocamento: String {
+        if raca.deslocamentoSubraca.isEmpty {
+            return "\(numberFormatter.string(from: NSNumber(value: raca.deslocamento)) ?? "ERROR") metros"
+        }
+        let conjunto = raca.deslocamentoSubraca.filter({$0.subraca == self.escolhasDefinidas.escolhaSubRaca.subraca})
+        return "\(numberFormatter.string(from: NSNumber(value: conjunto[0].deslocamento)) ?? "ERROR") metros"
+    }
+    
+    public var idiomas: String {
+        var idiomas = ""
+        for i in 0..<raca.idiomas.count {
+            if i < raca.idiomas.count - 1 {
+                idiomas += "\(raca.idiomas[i].idioma.rawValue), "
+            } else {
+                idiomas += "\(raca.idiomas[i].idioma.rawValue)"
+            }
+        }
+        return idiomas
+    }
+    
+    public var tracos: [TraitJSON] {
+        let tracos = raca.tracos + self.escolhasDefinidas.escolhaSubRaca.tracosSubraca
+        return tracos.sorted(by: {$0.nome < $1.nome})
+    }
+    
+    public var magias: [MagiaJSON] {
+        var magias: [MagiaJSON] = raca.magiasRecebidas
+        if raca.magiasPorSubraca.subraca == escolhasDefinidas.escolhaSubRaca.subraca {
+            magias += raca.magiasPorSubraca.magias
+        }
+        return magias.sorted(by: {$0.nome < $1.nome})
+    }
+
     private var numberFormatter: NumberFormatter {
         let formatter = NumberFormatter()
         formatter.decimalSeparator = ","
@@ -19,91 +100,60 @@ class CriacaoRacaViewModel: ObservableObject {
         return formatter
     }
     
-    public init() {
-        self.raca = RacaEscolha()
-        self.subraca = Subraca(subraca: .none, tracos: [], atributoGanho: .init())
-    }
-    
-    public init(ficha: PersonagemFicha) {
-        self.raca = RacaClient.orderRaca(ficha.racaFinal.racaPersonagem)
-        self.subraca = Subraca(subraca: .none, tracos: [], atributoGanho: .init())
+    public init(racaFinal: RacaFinal) {
+        self.raca = RacaClient.orderRaca(racaFinal.tipoRaca)
+        self.escolhasDefinidas = RacaEscolhasDefinidas()
+        self.escolhasAtributos = []
+        self.escolhaMagia = ""
+        self.escolhaProfFerramenta = ""
+        
         if self.raca.possuiSubRaca {
-            self.subraca = self.raca.subRacas.filter({$0.subraca == ficha.racaFinal.subracaPersonagem})[0]
+            self.escolhasDefinidas.escolhaSubRaca = self.raca.subRacas.filter({$0.subraca == racaFinal.subRaca})[0]
         }
-    }
-    
-    public func gerarRacaFinal() -> RacaFicha {
-        return RacaFicha(racaPersonagem: raca.tipoRaca, subracaPersonagem: subraca.subraca, tracos: raca.tracos, tracosSubraca: subraca.tracosSubraca)
     }
     
     public func setRaca(tipoRaca: TipoRaca) {
         DispatchQueue.main.async {
             self.raca = RacaClient.orderRaca(tipoRaca)
+            self.escolhasDefinidas = RacaEscolhasDefinidas()
+            self.escolhasAtributos = []
+            self.escolhaProfFerramenta = ""
+            self.escolhaMagia = ""
+            
             if self.raca.possuiSubRaca {
-                self.subraca = self.raca.subRacas[0]
-            } else {
-                self.subraca = Subraca(subraca: .none, tracos: [], atributoGanho: .init())
+                self.escolhasDefinidas.escolhaSubRaca = self.raca.subRacas[0]
             }
         }
     }
     
-    public func getAtributos() -> String {
-        var descricao = ""
-        for i in self.raca.atributosGanhos {
-            descricao += "+ \(i.pontosGanhos) \(i.atributo.rawValue) "
+    public func setSubraca(subraca: Subraca) {
+        DispatchQueue.main.async {
+            self.escolhasDefinidas = RacaEscolhasDefinidas()
+            self.escolhasDefinidas.escolhaSubRaca = subraca
+            self.escolhasAtributos = []
+            self.escolhaProfFerramenta = ""
+            self.escolhaMagia = ""
         }
-        if self.subraca.subraca != .none {
-            descricao += "+ \(subraca.atributoGanho.pontosGanhos) \(subraca.atributoGanho.atributo.rawValue) "
-        }
-        return descricao
-    }
-    
-    public func getDeslocamento() -> String {
-        if raca.deslocamentoSubraca.isEmpty {
-            return "\(numberFormatter.string(from: NSNumber(value: raca.deslocamento)) ?? "ERROR") metros"
-        }
-        
-        let conjunto = raca.deslocamentoSubraca.filter({$0.subraca == subraca.subraca})
-        return "\(numberFormatter.string(from: NSNumber(value: conjunto[0].deslocamento)) ?? "ERROR") metros"
-    }
-    
-    public func getIdiomas() -> String {
-        var aux = ""
-        for i in 0..<raca.idiomas.count {
-            if i < raca.idiomas.count - 1 {
-                aux += "\(raca.idiomas[i].idioma.rawValue), "
-            } else {
-                aux += "\(raca.idiomas[i].idioma.rawValue)"
-            }
-        }
-        return aux
-    }
-    
-    public func getTracos() -> [TraitJSON] {
-        return raca.tracos + subraca.tracosSubraca
     }
 }
 
 struct SelecaoRacaView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject private var vmficha: NovaFichaViewModel
+    @ObservedObject private var vmficha: NovaFichaViewModel
     @StateObject private var vmraca: CriacaoRacaViewModel
     
-    public init(ficha: PersonagemFicha) {
-        self._vmraca = StateObject(wrappedValue: CriacaoRacaViewModel(ficha: ficha))
+    public init(vmficha: NovaFichaViewModel) {
+        self.vmficha = vmficha
+        self._vmraca = StateObject(wrappedValue: CriacaoRacaViewModel(racaFinal: vmficha.racaFinal))
     }
     
     var body: some View {
         TemplateTelaPadrao {
             ScrollView {
                 VStack(spacing: 10) {
-                    RacaPickView().environmentObject(vmraca)
-                    SubracaPickView().environmentObject(vmraca)
-                    AtributosRacaView().environmentObject(vmraca)
-                    DeslocamentoRacaView().environmentObject(vmraca)
-                    IdiomaRacaView().environmentObject(vmraca)
-                    BotaoMostrarTracosRaca().environmentObject(vmraca)
+                    ScreenContent(vmraca: self.vmraca)
+                    ScreenContent2(vmraca: self.vmraca)
                     Spacer()
                 }
             }
@@ -111,13 +161,13 @@ struct SelecaoRacaView: View {
             .padding(.vertical, 10)
             
             Button {
-                self.vmficha.setRaca(raca: vmraca.gerarRacaFinal())
+                
                 dismiss()
             } label: {
                 Text("Salvar")
             }
             .buttonStyle(CustomButtonStyle5())
-            .disabled(vmraca.raca.tipoRaca == .none)
+            .disabled(vmraca.buttonIsDisabled)
             .padding(.horizontal, 10)
         }
         
@@ -129,10 +179,70 @@ struct SelecaoRacaView: View {
     }
 }
 
+private struct ScreenContent: View {
+    
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
+    
+    var body: some View {
+        RacaPickView(vmraca: self.vmraca)
+        SubracaPickView(vmraca: self.vmraca)
+        
+        DeslocamentoRacaView(vmraca: self.vmraca)
+        
+        AtributosRacaView(vmraca: self.vmraca)
+        RacaEscolhaAtributos(vmraca: self.vmraca)
+        
+        IdiomaRacaView(vmraca: self.vmraca)
+        RacaEscolhaIdioma(vmraca: self.vmraca)
+        
+        if self.vmraca.raca.tipoRaca != .none && !self.vmraca.proficienciaArmas.isEmpty {
+            MostrarItensJson(title: "Proficiência em Armas", lista: vmraca.proficienciaArmas)
+        }
+        
+        if self.vmraca.raca.tipoRaca != .none && !self.vmraca.proficienciaArmaduras.isEmpty {
+            MostrarItensJson(title: "Proficiência em Armaduras", lista: vmraca.proficienciaArmaduras)
+        }
+    }
+}
+
+private struct ScreenContent2: View {
+    
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
+    
+    var body: some View {
+        if vmraca.raca.tipoRaca != .none && !vmraca.proficienciaFerramentas.isEmpty {
+            MostrarItensJson(title: "Proficiência em Ferramentas", lista: vmraca.proficienciaFerramentas)
+        }
+        RacaEscolhaProfFerramenta(vmraca: self.vmraca)
+        
+        RacaPericiasPadrao(vmraca: self.vmraca)
+        RacaEscolhaPericia(vmraca: self.vmraca)
+        
+        if vmraca.raca.tipoRaca != .none && !vmraca.magias.isEmpty{
+            MostrarItensJson(title: "Magias Recebidas", lista: vmraca.magias)
+        }
+        RacaEscolhaMagia(vmraca: self.vmraca)
+        
+        BotaoMostrarTracosRaca(vmraca: self.vmraca)
+    }
+}
+
 private struct RacaPickView: View {
     
-    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
     @State private var showContent: Bool = false
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
     
     var body: some View {
         TemplateCustomDisclosureGroup(isExpanded: $showContent) {
@@ -154,28 +264,30 @@ private struct RacaPickView: View {
 
 private struct SubracaPickView: View {
     
-    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
     @State private var showContent: Bool = false
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
     
     var body: some View {
         if vmraca.raca.possuiSubRaca {
+            
             TemplateCustomDisclosureGroup(isExpanded: $showContent) {
                 ForEach(vmraca.raca.subRacas, id: \.self) { subraca in
-                    TemplateRadioButton(isMarked: vmraca.subraca.subraca == subraca.subraca, title: subraca.subraca.rawValue) {
-                        withAnimation(.easeOut) {
-                            vmraca.subraca = subraca
-                            showContent.toggle()
+                    TemplateRadioButtonWithIdentifier(selectedID: $vmraca.escolhasDefinidas.escolhaSubRaca, id: subraca) {
+                        self.vmraca.setSubraca(subraca: subraca)
+                        withAnimation {
+                            self.showContent.toggle()
                         }
+                    } content: {
+                        Text("\(subraca.subracaNome)")
                     }
+                    .frame(height: 40)
                 }
             } header: {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("Sub-Raça do personagem")
-                        .font(.system(size: 15, weight: .semibold, design: .default))
-                    Text(vmraca.subraca.subraca == .none ? "Toque para selecionar..." : vmraca.subraca.subraca.rawValue)
-                        .font(.system(size: 13, weight: .regular, design: .default))
-                        .fixedSize(horizontal: false, vertical: true)
-                }
+                DisplayTextoBotao(titulo: "Sub-Raça", descricao: vmraca.escolhasDefinidas.escolhaSubRaca.subraca == .none ? "Toque para selecionar..." : vmraca.escolhasDefinidas.escolhaSubRaca.subracaNome)
             }
         }
     }
@@ -183,12 +295,16 @@ private struct SubracaPickView: View {
 
 private struct AtributosRacaView: View {
     
-    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
     
     var body: some View {
         if vmraca.raca.tipoRaca != .none  {
             TemplateContentBackground {
-                DisplayTextoBotao(titulo: "Bônus de Atributos", descricao: vmraca.getAtributos())
+                DisplayTextoBotao(titulo: "Bônus de Atributos", descricao: vmraca.atributos)
                     .padding(10)
             }
         }
@@ -197,12 +313,16 @@ private struct AtributosRacaView: View {
 
 private struct DeslocamentoRacaView: View {
     
-    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
     
     var body: some View {
         if vmraca.raca.tipoRaca != .none {
             TemplateContentBackground {
-                DisplayTextoBotao(titulo: "Deslocamento", descricao: vmraca.getDeslocamento())
+                DisplayTextoBotao(titulo: "Deslocamento", descricao: vmraca.deslocamento)
                     .padding(10)
             }
         }
@@ -210,12 +330,17 @@ private struct DeslocamentoRacaView: View {
 }
 
 private struct IdiomaRacaView: View {
-    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
+    
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
     
     var body: some View {
         if vmraca.raca.tipoRaca != .none {
             TemplateContentBackground {
-                DisplayTextoBotao(titulo: "Idiomas", descricao: vmraca.getIdiomas())
+                DisplayTextoBotao(titulo: "Idiomas", descricao: vmraca.idiomas)
                     .padding(10)
             }
         }
@@ -224,8 +349,12 @@ private struct IdiomaRacaView: View {
 
 private struct BotaoMostrarTracosRaca: View {
     
-    @EnvironmentObject private var vmraca: CriacaoRacaViewModel
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
     @State private var showSheet: Bool = false
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
     
     var body: some View {
         if vmraca.raca.tipoRaca != .none {
@@ -236,8 +365,184 @@ private struct BotaoMostrarTracosRaca: View {
             }.buttonStyle(CustomButtonStyle())
             
             .sheet(isPresented: $showSheet) {
-                DetalhesTracoView().environmentObject(vmraca)
+                DetalhesTracoView(vmraca: self.vmraca)
             }
+        }
+    }
+}
+
+private struct RacaEscolhaAtributos: View {
+    
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    @State private var isExpanded: Bool = false
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
+    
+    var body: some View {
+        if vmraca.raca.possuiEscolhaAtributo {
+         
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                
+                ForEach(vmraca.raca.escolhasAtributo, id: \.self) { atributo in
+                    
+                    TemplateRadioButtonMultipleIdentifier(selectedID: $vmraca.escolhasAtributos, id: atributo, maxSelection: vmraca.raca.numEscolhaDeAtributos) {
+                        
+                    } content: {
+                        Text(atributo.rawValue)
+                    }.frame(height: 40)
+                }
+            } header: {
+                DisplayTextoBotaoCondicao(titulo: "Atributos Bônus Selecionáveis", descricaoTrue: "Selecione \(vmraca.raca.numEscolhaDeAtributos - vmraca.escolhasAtributos.count) \(vmraca.escolhasAtributos.count == 1 ? " atributo" : "atributos")...", descricaoFalse: "Atributos selecionados", condicao: vmraca.escolhasAtributos.count < vmraca.raca.numEscolhaDeAtributos)
+            }
+        }
+    }
+}
+
+private struct RacaEscolhaIdioma: View {
+    
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    @State private var isExpanded: Bool = false
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
+    
+    var body: some View {
+        
+        if vmraca.raca.possuiEscolhaIdioma || vmraca.escolhasDefinidas.escolhaSubRaca.subraca == .altoElfo {
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(Idioma.allCases, id: \.self) { idioma in
+                    if idioma != .none && !vmraca.raca.idiomas.contains(where: {$0.idioma == idioma}) {
+                        TemplateRadioButtonWithIdentifier(selectedID: $vmraca.escolhasDefinidas.escolhaIdioma.idioma, id: idioma) {
+                            withAnimation {
+                                isExpanded.toggle()
+                            }
+                        } content: {
+                            Text(idioma.rawValue)
+                        }
+                        .frame(height: 40)
+                    }
+                }
+            } header: {
+                DisplayTextoBotaoCondicao(titulo: "Idioma Adicional", descricaoTrue: "Toque para selecionar...", descricaoFalse: "Idioma selecionado", condicao: vmraca.escolhasDefinidas.escolhaIdioma.idioma == .none)
+            }
+        }
+    }
+}
+
+private struct RacaEscolhaProfFerramenta: View {
+    
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    @State private var isExpanded: Bool = false
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
+    
+    var body: some View {
+        if vmraca.raca.possuiEscolhaProfFerramentas {
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(vmraca.raca.escolhasProfFerramentas, id: \.self) { ferramenta in
+                    TemplateRadioButtonWithIdentifier(selectedID: $vmraca.escolhaProfFerramenta, id: ferramenta) {
+                        withAnimation {
+                            isExpanded.toggle()
+                        }
+                    } content: {
+                        Text(ferramenta)
+                    }
+                    .frame(height: 40)
+                }
+            } header: {
+                DisplayTextoBotaoCondicao(titulo: "Proficiência com Ferramentas", descricaoTrue: "Toque para selecionar...", descricaoFalse: vmraca.escolhaProfFerramenta, condicao: vmraca.escolhaProfFerramenta.isEmpty)
+            }
+        }
+    }
+}
+
+private struct RacaEscolhaPericia: View {
+    
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    @State private var isExpanded: Bool = false
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
+    
+    var body: some View {
+        
+        if vmraca.raca.possuiEscolhaProfPericias {
+            
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(vmraca.raca.escolhasProfPericias, id: \.self) { pericia in
+                    TemplateRadioButtonMultipleIdentifier(selectedID: $vmraca.escolhasDefinidas.escolhaProfPericias, id: pericia, maxSelection: vmraca.raca.quantiaEscolhaPericia) {
+                        
+                    } content: {
+                        Text(pericia.rawValue)
+                    }
+                    .frame(height: 40)
+                }
+            } header: {
+                DisplayTextoBotaoCondicao(titulo: "Perícia Selecionável", descricaoTrue: "Selecione \(vmraca.raca.quantiaEscolhaPericia - vmraca.escolhasDefinidas.escolhaProfPericias.count)", descricaoFalse: "Perícias selecionadas", condicao: vmraca.escolhasDefinidas.escolhaProfPericias.count < vmraca.raca.quantiaEscolhaPericia)
+            }
+
+            
+        }
+        
+    }
+}
+
+private struct RacaEscolhaMagia: View {
+    
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    @State private var isExpanded: Bool = false
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
+    
+    var body: some View {
+        
+        if vmraca.raca.subracaEscolhaMagias.subraca == vmraca.escolhasDefinidas.escolhaSubRaca.subraca && vmraca.raca.subracaEscolhaMagias.subraca != .none {
+            
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(vmraca.raca.subracaEscolhaMagias.magias, id: \.self) { magia in
+                    TemplateRadioButtonWithIdentifier(selectedID: $vmraca.escolhaMagia, id: magia) {
+                        withAnimation {
+                            isExpanded.toggle()
+                        }
+                    } content: {
+                        Text(magia)
+                    }
+                    .frame(height: 40)
+
+                }
+            } header: {
+                DisplayTextoBotaoCondicao(titulo: "Escolha uma magia", descricaoTrue: "Toque para selecionar...", descricaoFalse: "Magia selecionada", condicao: vmraca.escolhaMagia.isEmpty)
+            }
+        }
+    }
+}
+
+private struct RacaPericiasPadrao: View {
+    
+    @ObservedObject private var vmraca: CriacaoRacaViewModel
+    
+    public init(vmraca: CriacaoRacaViewModel) {
+        self.vmraca = vmraca
+    }
+    
+    var body: some View {
+        if !vmraca.raca.profPericias.isEmpty {
+            TemplateCustomDisclosureGroup2 {
+                ForEach(vmraca.raca.profPericias, id: \.self) { pericia in
+                    TemplateDisclosureGroupContent(title: pericia.rawValue)
+                }
+            } header: {
+                DisplayTextoBotao(titulo: "Perícias", descricao: "Toque para detalhes...")
+            }
+
         }
     }
 }
