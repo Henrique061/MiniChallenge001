@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TraitJSON: Json {
+public struct TraitJSON: Json, Hashable, Equatable {
     var id: Int
     var nome: String
     var raca: TipoRaca

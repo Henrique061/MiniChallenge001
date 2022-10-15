@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum TipoFerramenta: String, Codable {
+public enum TipoFerramenta: String, Codable, Hashable {
     case artesao = "Ferramenta de artesão"
     case navegacao = "Ferramenta de navegador"
     case ladrao = "Ferramenta de ladrão"
@@ -19,7 +19,7 @@ public enum TipoFerramenta: String, Codable {
     case veneno = "Kit de venenos"
 }
 
-public struct FerramentaJSON: Json {
+public struct FerramentaJSON: Json, Hashable {
     var id: Int
     var nome: String
     var tipo: TipoFerramenta

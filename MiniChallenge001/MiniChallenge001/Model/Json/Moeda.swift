@@ -13,9 +13,11 @@ public enum TipoMoeda: String, Codable {
     case electro = "Electro"
     case ouro = "Ouro"
     case platina = "Platina"
+    
+    case none = "Nenhum"
 }
 
-public struct Moeda: Codable {
-    var quantidade: Int
-    var tipo: TipoMoeda
+public struct Moeda: Codable, Hashable {
+    var quantidade: Int = 0
+    var tipo: TipoMoeda = .none
 }

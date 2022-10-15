@@ -7,70 +7,56 @@
 
 import Foundation
 
-public enum PacoteEquipamento : String, Codable {
-    case pacoteArtista = "Pacote de Artista"
-    case pacoteAssaltante = "Pacote de Assaltante"
-    case pacoteAventureiro = "Pacote de Aventureiro"
-    case pacoteDiplomata = "Pacote de Diplomata"
-    case pacoteEstudioso = "Pacote de Estudioso"
-    case pacoteExplorador = "Pacote de Explorador"
-    case pacoteSacerdote = "Pacote de Sacerdote"
-}
-
-public enum TipoJSON : String, Codable {
-    case arma = "arma"
-    case armadura = "armaduras"
-    case equipamento = "equipamento"
-    case ferramenta = "ferramenta"
-}
-
-public class OpcaoEquipamento : Codable {
+// Isso daqui poderia ser uma variável
+public struct OpcaoEquipamento : Codable, Hashable {
     var escolhas: [EscolhaOpcao] = []
-    
-    public func getEscolhaEspecifica(indiceEscolha: Int) -> [EscolhaOpcao] {
-        if indiceEscolha > -1 && indiceEscolha <= escolhas.count - 1 {
-            return escolhas
-        }
-        
-        else {
-            print("Indice fornecido, ou eh negativo, ou eh maior que a quantia que o array de escolhas tem")
-        }
-        
-        return []
-    }
 }
 
-public struct EscolhaOpcao : Codable {
+public struct EscolhaOpcao : Codable, Hashable {
+    var escolhasUnicas: [EscolhaUnica]
+}
+
+public struct EscolhaUnica : Codable, Hashable {
     var itens: [ItemEscolha]
 }
 
-public struct ItemEscolha : Codable {
+public struct ItemEscolha : Codable, Hashable {
     var nomeItem: String
     var quantia: Int
-    var tipoJson: TipoJSON
+    var tipoJson: BundleFolderName
 }
 
 //MARK: Factory
 public class FactoryOpcaoEquipamento : Codable {
     // cria uma opcao
     public static func criaOpcao(escolhas: [EscolhaOpcao]) -> OpcaoEquipamento {
-        let opcao = OpcaoEquipamento()
+        var opcao = OpcaoEquipamento()
         opcao.escolhas = escolhas
         return opcao
     }
     
-    // cria as escolhas de uma opcao
-    public static func criaEscolha(itensEscolha: [[ItemEscolha]]) -> [EscolhaOpcao] {
+    // crias as subopcoes dentro de uma opcao
+    public static func criaEscolha(escolhasUnicas: [[EscolhaUnica]]) -> [EscolhaOpcao] {
         var escolhas: [EscolhaOpcao] = []
+        for escolhaUnica in escolhasUnicas {
+            escolhas.append(EscolhaOpcao(escolhasUnicas: escolhaUnica))
+        }
+        
+        return escolhas
+    }
+    
+    // cria as escolhas DENTRO de uma opcao
+    public static func criaEscolhasUnicas(itensEscolha: [[ItemEscolha]]) -> [EscolhaUnica] {
+        var escolhas: [EscolhaUnica] = []
         for item in itensEscolha {
-            escolhas.append(EscolhaOpcao(itens: item))
+            escolhas.append(EscolhaUnica(itens: item))
         }
         
         return escolhas
     }
     
     // cria o item(s) de uma escolha
-    public static func criaItemEscolha(tuplaItens: [(item: String, quantia: Int, tipo: TipoJSON)]) -> [ItemEscolha] {
+    public static func criaItemEscolha(tuplaItens: [(item: String, quantia: Int, tipo: BundleFolderName)]) -> [ItemEscolha] {
         var itensEscolha: [ItemEscolha] = []
         for tuplaItem in tuplaItens {
             itensEscolha.append(ItemEscolha(nomeItem: tuplaItem.item, quantia: tuplaItem.quantia, tipoJson: tuplaItem.tipo))

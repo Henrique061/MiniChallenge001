@@ -7,103 +7,75 @@
 
 import Foundation
 
+public enum PacoteEquipamento : String, Codable {
+    case pacoteArtista = "Pacote de Artista"
+    case pacoteAssaltante = "Pacote de Assaltante"
+    case pacoteAventureiro = "Pacote de Aventureiro"
+    case pacoteDiplomata = "Pacote de Diplomata"
+    case pacoteEstudioso = "Pacote de Estudioso"
+    case pacoteExplorador = "Pacote de Explorador"
+    case pacoteSacerdote = "Pacote de Sacerdote"
+    
+    case none = "Nenhum"
+}
+
 public class PacoteFactory {
     public static func makePacoteArtista() -> [EquipamentoJSON] {
-        var equipamentos: [EquipamentoJSON] = []
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Mochila"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Saco de dormir"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Cantil"))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Vela", quantidade: 5))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Rações de viagem", quantidade: 5))
+        var equipamentos: [EquipamentoJSON] = BuscaJson.buscaEquipamentoPorNomes(nomes: ["Mochila", "Saco de dormir", "Cantil"])
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Vela", quantidade: 5))
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Rações de viagem", quantidade: 5))
         
         return equipamentos
     }
     
     public static func makePacoteAssaltante() -> [EquipamentoJSON] {
-        var equipamentos: [EquipamentoJSON] = []
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Mochila"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Esferas (sacola com 1.000)"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Sino"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Pé de cabra"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Martelo"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Lanterna coberta"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Cantil"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Caixa de fogo"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Corda de cânhamo (15 metros)"))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Óleo", quantidade: 2))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Vela", quantidade: 5))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Rações de viagem", quantidade: 5))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Píton", quantidade: 10))
+        var equipamentos: [EquipamentoJSON] = BuscaJson.buscaEquipamentoPorNomes(nomes: ["Mochila", "Esferas (sacola com 1.000)", "Sino", "Pé de cabra", "Martelo", "Lanterna coberta", "Cantil", "Caixa de fogo", "Corda de cânhamo (15 metros)"])
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Óleo", quantidade: 2))
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Vela", quantidade: 5))
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Rações de viagem", quantidade: 5))
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Píton", quantidade: 10))
         
         
         return equipamentos
     }
     
     public static func makePacoteAventureiro() -> [EquipamentoJSON] {
-        var equipamentos: [EquipamentoJSON] = []
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Mochila"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Pé de cabra"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Martelo"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Caixa de fogo"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Cantil"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Corda de cânhamo (15 metros)"))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Píton", quantidade: 10))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Tocha", quantidade: 10))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Rações de viagem", quantidade: 10))
+        var equipamentos: [EquipamentoJSON] = BuscaJson.buscaEquipamentoPorNomes(nomes: ["Mochila", "Pé de cabra", "Martelo", "Caixa de fogo", "Cantil", "Corda de cânhamo (15 metros)"])
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Píton", quantidade: 10))
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Tocha", quantidade: 10))
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Rações de viagem", quantidade: 10))
         
 
         return equipamentos
     }
     
     public static func makePacoteDiplomata() -> [EquipamentoJSON] {
-        var equipamentos: [EquipamentoJSON] = []
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Baú"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Roupas finas"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Tinta"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Caneta tinteiro"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Lâmpada"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Perfume"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Parafina"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Sabão"))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Óleo", quantidade: 2))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Papel", quantidade: 5))
+        var equipamentos: [EquipamentoJSON] = BuscaJson.buscaEquipamentoPorNomes(nomes: ["Baú", "Roupas finas", "Tinta", "Caneta tinteiro", "Lâmpada", "Perfume", "Parafina", "Sabão"])
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Óleo", quantidade: 2))
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Papel", quantidade: 5))
 
         return equipamentos
     }
     
     public static func makePacoteEstudioso() -> [EquipamentoJSON] {
-        var equipamentos: [EquipamentoJSON] = []
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Mochila"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Livro"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Tinta"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Caneta tinteiro"))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Pergaminho", quantidade: 5))
+        var equipamentos: [EquipamentoJSON] = BuscaJson.buscaEquipamentoPorNomes(nomes: ["Mochila", "Livro", "Tinta", "Caneta tinteiro"])
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Pergaminho", quantidade: 5))
         
         return equipamentos
     }
     
     public static func makePacoteExplorador() -> [EquipamentoJSON] {
-        var equipamentos: [EquipamentoJSON] = []
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Mochila"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Saco de dormir"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Caixa de fogo"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Cantil"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Corda de cânhamo (15 metros)"))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Tocha", quantidade: 10))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Rações de viagem", quantidade: 10))
+        var equipamentos: [EquipamentoJSON] = BuscaJson.buscaEquipamentoPorNomes(nomes: ["Mochila", "Saco de dormir", "Caixa de fogo", "Cantil", "Corda de cânhamo (15 metros)"])
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Tocha", quantidade: 10))
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Rações de viagem", quantidade: 10))
         
         return equipamentos
     }
     
     public static func makePacoteSacerdote() -> [EquipamentoJSON] {
-        var equipamentos: [EquipamentoJSON] = []
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Mochila"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Cobertor de inverno"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Caixa de fogo"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Roupas comuns"))
-        equipamentos.append(BuscaJson.buscaEquipamentoPorNome(nome: "Cantil"))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Vela", quantidade: 10))
-        equipamentos.append(contentsOf: BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Rações de viagem", quantidade: 2))
+        var equipamentos: [EquipamentoJSON] = BuscaJson.buscaEquipamentoPorNomes(nomes: ["Mochila", "Cobertor de inverno", "Caixa de fogo", "Roupas comuns", "Cantil"])
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Vela", quantidade: 10))
+        equipamentos.append(BuscaJson.buscaEquipamentoPorNomeQuantidade(nome: "Rações de viagem", quantidade: 2))
 
 
         return equipamentos
