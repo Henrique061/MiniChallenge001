@@ -98,9 +98,10 @@ public struct PersonagemFicha: Json {
     var classeArmadura: Int = 0
     var iniciativa: Int = 0
     var deslocamento: Float = 0
+    var pontosVidaMaximo: Int = 0
     var pontosVida: Int = 0
     var pontosVidaTemporário: Int = 0
-    var dadoVida: String = ""
+    var dadoVidaMaximo: Int = 0
     var quantiaDadoVida: Int = 0
     var resistenciaMorte: ResistenciaMorte = ResistenciaMorte()
     

@@ -79,6 +79,8 @@
 		3D9BED2F28CFB76200CA1821 /* MiniChallenge001Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED2E28CFB76200CA1821 /* MiniChallenge001Tests.swift */; };
 		3D9BED3928CFB76200CA1821 /* MiniChallenge001UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED3828CFB76200CA1821 /* MiniChallenge001UITests.swift */; };
 		3D9BED3B28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BED3A28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift */; };
+		3D9CD65728FDC45300CD4077 /* PersonagemConcreteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9CD65628FDC45300CD4077 /* PersonagemConcreteBuilder.swift */; };
+		3D9CD65928FDC46300CD4077 /* PersonagemDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9CD65828FDC46300CD4077 /* PersonagemDirector.swift */; };
 		3DB929A528ECA6B20075F0D9 /* RacaFinalDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB929A428ECA6B20075F0D9 /* RacaFinalDirector.swift */; };
 		3DB929AB28ECC0E50075F0D9 /* ClasseFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB929AA28ECC0E50075F0D9 /* ClasseFinal.swift */; };
 		3DB929AD28ECC1120075F0D9 /* ClasseFinalDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB929AC28ECC1120075F0D9 /* ClasseFinalDirector.swift */; };
@@ -184,6 +186,8 @@
 		3D9BED3428CFB76200CA1821 /* MiniChallenge001UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniChallenge001UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9BED3828CFB76200CA1821 /* MiniChallenge001UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge001UITests.swift; sourceTree = "<group>"; };
 		3D9BED3A28CFB76200CA1821 /* MiniChallenge001UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge001UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3D9CD65628FDC45300CD4077 /* PersonagemConcreteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemConcreteBuilder.swift; sourceTree = "<group>"; };
+		3D9CD65828FDC46300CD4077 /* PersonagemDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemDirector.swift; sourceTree = "<group>"; };
 		3DB929A428ECA6B20075F0D9 /* RacaFinalDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaFinalDirector.swift; sourceTree = "<group>"; };
 		3DB929AA28ECC0E50075F0D9 /* ClasseFinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseFinal.swift; sourceTree = "<group>"; };
 		3DB929AC28ECC1120075F0D9 /* ClasseFinalDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseFinalDirector.swift; sourceTree = "<group>"; };
@@ -414,6 +418,8 @@
 			children = (
 				3DF24F8E28E1CCBA006C0AAE /* Escolhas */,
 				3D60C63928DB80FE0051676A /* PersonagemBuilder.swift */,
+				3D9CD65628FDC45300CD4077 /* PersonagemConcreteBuilder.swift */,
+				3D9CD65828FDC46300CD4077 /* PersonagemDirector.swift */,
 				3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */,
 			);
 			path = Builder_Personagem;
@@ -693,6 +699,7 @@
 			files = (
 				09B5569428DA6156001466B0 /* Inventario.swift in Sources */,
 				093F602428F0D5E0006A8911 /* Condicoes.swift in Sources */,
+				3D9CD65928FDC46300CD4077 /* PersonagemDirector.swift in Sources */,
 				3D6F869628E11C070022D0BE /* AntecedenteClient.swift in Sources */,
 				3D6F868728E0CD760022D0BE /* RacaClient.swift in Sources */,
 				3D6F868F28E11B910022D0BE /* BuscaJson.swift in Sources */,
@@ -732,6 +739,7 @@
 				126ABAF328DB3D5200CF5A2E /* VeiculoAquaticoJSON.swift in Sources */,
 				3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */,
 				3D6F869428E11BF70022D0BE /* AntecedenteDirector.swift in Sources */,
+				3D9CD65728FDC45300CD4077 /* PersonagemConcreteBuilder.swift in Sources */,
 				1214FE9028F4DEA400E15113 /* CriacaoAtributos.swift in Sources */,
 				3DB929AD28ECC1120075F0D9 /* ClasseFinalDirector.swift in Sources */,
 				122E948228E21EE100184F88 /* CaracteristicaJSON.swift in Sources */,

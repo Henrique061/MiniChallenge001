@@ -30,7 +30,7 @@ struct Inventario: View {
                     }
                 }
             }
-            
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .principal) {
                     NavigationBarTitle("Inventário")
