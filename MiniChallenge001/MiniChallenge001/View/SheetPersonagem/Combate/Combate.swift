@@ -21,21 +21,22 @@ struct Combate: View {
     
     var body: some View {
         NavigationView {
-            TemplateTelaPadrao(withPaddings: false) {
+            TemplateTelaPadrao() {
                 AreaImagemPerfil(ficha: $sheet.fichaSelecionada)
-                
-                    VStack(alignment: .center, spacing: 10) {
-                        Text("\(sheet.fichaSelecionada.nomePersonagem)")
-                            .font(.system(size: 15, weight: .bold, design: .default))
-                            .padding(.bottom, -8)
-                        Text("\(sheet.fichaSelecionada.classeFinal.classePersonagem.rawValue)")
-                            .font(.system(size: 15, weight: .regular, design: .default))
-                        Button("Alterar Nível") {
-                            
-                        }
-                        .buttonStyle(CustomButtonStyle5())
-                        ScrollView {
-                        
+
+                VStack(alignment: .center, spacing: 10) {
+                    Text("\(sheet.fichaSelecionada.nomePersonagem)")
+                        .font(.system(size: 15, weight: .bold, design: .default))
+                        .padding(.bottom, -8)
+                    Text("\(sheet.fichaSelecionada.classeFinal.classePersonagem.rawValue)")
+                        .font(.system(size: 15, weight: .regular, design: .default))
+
+                    Button("Alterar Nível") {
+
+                    }
+                    .buttonStyle(CustomButtonStyle5())
+
+                    ScrollView {
                         AreaInformacoesGerais(ficha: $sheet.fichaSelecionada)
                         AreaPontosVida(sheet: self.sheet)
                         AreaPontosVidaTemporarios(sheet: self.sheet)
@@ -46,10 +47,9 @@ struct Combate: View {
                     }
                 }
                 .padding(.horizontal, 10)
-                
+
                 Spacer()
             }
-            
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .principal) {
@@ -107,6 +107,7 @@ private struct AreaResistenciaMorte: View {
                 .padding(-10)
             }
             .padding(10)
+            .frame(height: 100)
         }
     }
 }
@@ -235,8 +236,7 @@ private struct AreaDadoVida: View {
                     
                     Text("\(self.sheet.fichaSelecionada.quantiaDadoVida)")
                         .font(.system(size: 25, weight: .bold, design: .default))
-                        .padding(.horizontal, 5)
-                        .scaledToFit()
+                        .padding(.horizontal, 10)
                     
                     TemplateSheetButton(image: Image(systemName: "plus.circle")) {
                         sheet.setDadosVida(value: +1)
@@ -248,6 +248,7 @@ private struct AreaDadoVida: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(10)
+            .frame(height: 100)
         }
     }
 }
@@ -281,6 +282,7 @@ private struct AreaPontosVidaTemporarios: View {
                 }
             }
             .padding(10)
+            .frame(height: 80)
         }
     }
 }
@@ -320,6 +322,7 @@ private struct AreaPontosVida: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(10)
+            .frame(height: 100)
         }
     }
 }
@@ -335,8 +338,24 @@ private struct AreaInformacoesGerais: View {
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
             TemplateInformacao(title: "Armadura", content: "\(ficha.classeArmadura)")
-            TemplateInformacao(title: "Iniciativa", content: "\(ficha.iniciativa)")
+                .frame(height: 80)
+            
+            Menu {
+                ForEach(-10..<31) { num in
+                    Button {
+                        self.ficha.iniciativa  = num
+                    } label: {
+                        Text("\(num)")
+                    }
+                }
+            } label: {
+                TemplateInformacao(title: "Iniciativa", content: "\(ficha.iniciativa < 0 ? "\(ficha.iniciativa)" : "+\(ficha.iniciativa)")")
+            }
+            .foregroundColor(Color("BlackAndWhite"))
+            .frame(height: 80)
+            
             TemplateInformacao(title: "Deslocamento", content: "\(ficha.deslocamento) m")
+                .frame(height: 80)
         }
     }
 }

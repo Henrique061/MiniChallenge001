@@ -96,7 +96,8 @@ struct SelecaoClasseView: View {
                 }
                 
                 Button {
-                    self.vmficha.setClasse(classe: vmclasse.buildClasseFicha(), escolhas: vmclasse.definidas)
+                    let classeFinal = ClasseClient.orderClasseFinal(vmclasse.escolha, vmclasse.definidas)
+                    self.vmficha.setClasse(classe: classeFinal)
                     dismiss()
                 } label: {
                     Text("Salvar Alterações")

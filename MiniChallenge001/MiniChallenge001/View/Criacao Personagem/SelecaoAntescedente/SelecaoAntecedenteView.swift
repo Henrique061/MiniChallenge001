@@ -10,19 +10,72 @@ import SwiftUI
 class ViewModelEscolhaAntecedente: ObservableObject {
     
     @Published public var escolha: AntecedenteEscolha
+    @Published public var definidas: AntecedenteEscolhasDefinidas
+    @Published public var escolhaIdiomas: [Idioma]
+    @Published public var escolhaEquipamento: String
+    @Published public var escolhaProfFerramenta: String
+    @Published public var escolhaFerramenta: String
     
-    public init() {
-        escolha = AntecedenteClient.orderAntecedente(.none)
+    public var buttonIsDisabled: Bool {
+        self.escolha.tipoAntecedente == .none ||
+        self.escolha.possuiEscolhaIdioma && self.escolhaIdiomas.isEmpty ||
+        self.escolha.possuiEscolhaEquipamentoInicial && self.escolhaEquipamento.isEmpty ||
+        self.escolha.possuiEscolhaProfFerramentas && self.escolhaProfFerramenta.isEmpty ||
+        self.escolha.possuiEscolhaFerramentaInicial && self.escolhaFerramenta.isEmpty
     }
     
     public init(ficha: PersonagemFicha) {
         self.escolha = AntecedenteClient.orderAntecedente(ficha.antecedenteFinal)
+        self.definidas = AntecedenteEscolhasDefinidas()
+        self.escolhaIdiomas = []
+        self.escolhaEquipamento = ""
+        self.escolhaProfFerramenta = ""
+        self.escolhaFerramenta = ""
     }
     
     public func setAntecedente(_ antecedente: AntecedentePersonagem) {
-        self.escolha = AntecedenteClient.orderAntecedente(antecedente)
+        DispatchQueue.main.async {
+            self.escolha = AntecedenteClient.orderAntecedente(antecedente)
+            self.definidas = AntecedenteEscolhasDefinidas()
+            self.escolhaIdiomas = []
+            self.escolhaEquipamento = ""
+            self.escolhaProfFerramenta = ""
+            self.escolhaFerramenta = ""
+        }
     }
     
+    public func setEscolhaProfFerramenta() {
+        DispatchQueue.main.async {
+            self.definidas.escolhaProfFerramenta.append(BuscaJson.buscaFerramentaPorNome(nome: self.escolhaProfFerramenta))
+        }
+    }
+    
+    public func setEscolhaEquipamento() {
+        DispatchQueue.main.async {
+            self.definidas.escolhaEquipamentosIniciais.append(BuscaJson.buscaEquipamentoPorNome(nome: self.escolhaEquipamento))
+        }
+    }
+    
+    public func setEscolhaFerramenta() {
+        DispatchQueue.main.async {
+            self.definidas.escolhaFerramentasIniciais.append(BuscaJson.buscaFerramentaPorNome(nome: self.escolhaFerramenta))
+        }
+    }
+    
+    public func setIdiomas() {
+        DispatchQueue.main.async {
+            self.escolhaIdiomas.forEach({self.definidas.escolhaIdiomas.append(IdiomaAlfabeto(idioma: $0, alfabeto: .none, isPadrao: false))})
+        }
+    }
+    
+    public func buildAntecedenteFinal() -> AntecedenteFinal {
+        setEscolhaProfFerramenta()
+        setEscolhaEquipamento()
+        setEscolhaFerramenta()
+        setIdiomas()
+        
+        return AntecedenteClient.orderAntecedenteFinal(self.escolha, self.definidas)
+    }
 }
 
 struct SelecaoAntecedenteView: View {
@@ -42,17 +95,12 @@ struct SelecaoAntecedenteView: View {
         TemplateTelaPadrao {
             VStack(alignment: .leading, spacing: 10) {
                 ScrollView {
-                    AntecedentePickerView(vmantecedente: vmantecedente)
-                    PericiasAntecedenteView(antecedente: $vmantecedente.escolha)
-                    ProficienciaFerramentaAntecedenteView(antecedente: $vmantecedente.escolha)
-                    EscolhaProficienciaFerramentaAntecedenteView(antecedente: $vmantecedente.escolha)
-                    EquipamentoAntecedenteView(antecedente: $vmantecedente.escolha)
-                    EscolhaEquipamentoAntecedenteView(antecedente: $vmantecedente.escolha)
+                    ScreenContent(vmantecedente: vmantecedente)
                     RiquezaAntecedenteView(antecedente: $vmantecedente.escolha)
                 }
                 
                 Button {
-                    self.vmficha.setAntecedente(antecedente: vmantecedente.escolha.tipoAntecedente)
+                    vmficha.setAntecedente(antecedente: self.vmantecedente.buildAntecedenteFinal())
                     dismiss()
                 } label: {
                     Text("Salvar Alteração")
@@ -68,6 +116,27 @@ struct SelecaoAntecedenteView: View {
                 }
             }
         }
+    }
+}
+
+private struct ScreenContent: View {
+    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
+    
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
+    }
+    
+    var body: some View {
+        AntecedentePickerView(vmantecedente: vmantecedente)
+        ProfPericiaAntecedente(vmantecedente: vmantecedente)
+        ProfFerramentaAntecedente(vmantecedente: vmantecedente)
+        EscolhaProfFerramentaAntecedente(vmantecedente: vmantecedente)
+        EscolhaIdiomaAntecedente(vmantecedente: vmantecedente)
+        EquipamentoAntecedente(vmantecedente: vmantecedente)
+        EscolhaEquipamentoAntecedente(vmantecedente: vmantecedente)
+        FerramentaAntecedente(vmantecedente: vmantecedente)
+        EscolhaFerramentaAntecedente(vmantecedente: vmantecedente)
+        ArmaAntecedente(vmantecedente: vmantecedente)
     }
 }
 
@@ -102,129 +171,194 @@ private struct AntecedentePickerView: View {
     }
 }
 
-private struct PericiasAntecedenteView: View {
+private struct ProfFerramentaAntecedente: View {
+    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
     
-    @Binding private var antecedente: AntecedenteEscolha
-    @State private var isExpanded: Bool
-    
-    public init(antecedente: Binding<AntecedenteEscolha>) {
-        self._antecedente = antecedente
-        self.isExpanded = false
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
     }
     
     var body: some View {
-        if !antecedente.profPericias.isEmpty {
-            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-                ForEach(antecedente.profPericias, id: \.self) { pericia in
-                    TemplateDisclosureGroupContent(title: pericia.rawValue)
-                }
-            } header: {
-                DisplayTextoBotao(titulo: "Proficiência em Perícias", descricao: "Toque para detalhes...")
-            }
+        if !vmantecedente.escolha.profFerramentas.isEmpty {
+            MostrarItensJson(title: "Proficiências em Ferramenta", lista: vmantecedente.escolha.profFerramentas)
         }
     }
 }
 
-private struct ProficienciaFerramentaAntecedenteView: View {
+private struct EscolhaProfFerramentaAntecedente: View {
     
-    @Binding private var antecedente: AntecedenteEscolha
+    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
     @State private var isExpanded: Bool
     
-    public init(antecedente: Binding<AntecedenteEscolha>) {
-        self._antecedente = antecedente
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
         self.isExpanded = false
     }
     
     var body: some View {
-        if !antecedente.profFerramentas.isEmpty {
+        if self.vmantecedente.escolha.possuiEscolhaProfFerramentas {
             TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-                ForEach(antecedente.profFerramentas, id: \.id) { ferramenta in
-                    TemplateDisclosureGroupContent(title: ferramenta.nome)
-                }
-            } header: {
-                DisplayTextoBotao(titulo: "Proficiência em Ferramenta Padrão", descricao: "Toque para detalhes...")
-            }
-        }
-    }
-}
-
-private struct EscolhaProficienciaFerramentaAntecedenteView: View {
-    
-    @Binding private var antecedente: AntecedenteEscolha
-    @State private var isExpanded: Bool
-    @State private var selectedFerramenta: String = ""
-    
-    public init(antecedente: Binding<AntecedenteEscolha>) {
-        self._antecedente = antecedente
-        self.isExpanded = false
-    }
-    
-    var body: some View {
-        if !antecedente.escolhaProfFerramentas.isEmpty {
-            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-                ForEach(antecedente.escolhaProfFerramentas, id: \.self) { ferramenta in
-                    TemplateRadioButtonWithIdentifier(selectedID: $selectedFerramenta, id: ferramenta) {
-                        
+                ForEach(self.vmantecedente.escolha.escolhaProfFerramentas, id: \.self) { ferramenta in
+                    TemplateRadioButtonWithIdentifier(selectedID: $vmantecedente.escolhaProfFerramenta, id: ferramenta) {
+                        withAnimation {
+                            isExpanded.toggle()
+                        }
                     } content: {
                         Text(ferramenta)
                     }
                     .frame(height: 40)
                 }
             } header: {
-                DisplayTextoBotao(titulo: "Proficiência em Ferramenta Selecionável", descricao: "Toque para selecionar...")
+                DisplayTextoBotaoCondicao(titulo: "Proficiência em Ferramenta Selecionável", descricaoTrue: "Toque para selecionar...", descricaoFalse: "Proficiência em Ferramenta selecionada", condicao: vmantecedente.escolhaProfFerramenta.isEmpty)
             }
         }
     }
 }
 
-private struct EquipamentoAntecedenteView: View {
+private struct ProfPericiaAntecedente: View {
+    @State private var vmantecedente: ViewModelEscolhaAntecedente
     
-    @Binding private var antecedente: AntecedenteEscolha
-    @State private var isExpanded: Bool
-    
-    public init(antecedente: Binding<AntecedenteEscolha>) {
-        self._antecedente = antecedente
-        self.isExpanded = false
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
     }
     
     var body: some View {
-        if !antecedente.equipamentosIniciais.isEmpty {
-            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-                ForEach(antecedente.equipamentosIniciais, id: \.id) { equipamento in
-                    TemplateDisclosureGroupContent(title: equipamento.nome)
+        if !vmantecedente.escolha.profPericias.isEmpty {
+            TemplateCustomDisclosureGroup2 {
+                ForEach(vmantecedente.escolha.profPericias, id: \.self) { pericia in
+                    TemplateDisclosureGroupContent(title: pericia.rawValue)
                 }
             } header: {
-                DisplayTextoBotao(titulo: "Equipamento Padrão", descricao: "Toque para detalhes...")
+                DisplayTextoBotao(titulo: "Proficiência em Perícias", descricao: "Toque para detalhes...")
+            }
+            
+        }
+    }
+}
+
+private struct EscolhaIdiomaAntecedente: View {
+    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
+    @State private var isExpanded: Bool = false
+    
+    
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
+    }
+    
+    var body: some View {
+        if vmantecedente.escolha.possuiEscolhaIdioma {
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(Idioma.allCases, id: \.self) { idioma in
+                    TemplateRadioButtonMultipleIdentifier(selectedID: $vmantecedente.escolhaIdiomas, id: idioma, maxSelection: vmantecedente.escolha.quantiaEscolhaIdioma) {
+                        
+                    } content: {
+                        Text(idioma.rawValue)
+                    }
+                    .frame(height: 40)
+                }
+            } header: {
+                DisplayTextoBotaoCondicao(titulo: "Idiomas Selecionáveis", descricaoTrue: "Selecione \(vmantecedente.escolha.quantiaEscolhaIdioma - vmantecedente.escolhaIdiomas.count) idiomas", descricaoFalse: "Idiomas selecionados", condicao: vmantecedente.escolhaIdiomas.count < vmantecedente.escolha.quantiaEscolhaIdioma)
             }
         }
     }
 }
 
-private struct EscolhaEquipamentoAntecedenteView: View {
+private struct EquipamentoAntecedente: View {
+    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
     
-    @Binding private var antecedente: AntecedenteEscolha
-    @State private var isExpanded: Bool
-    @State private var selectedEquipamento: String = ""
-    
-    public init(antecedente: Binding<AntecedenteEscolha>) {
-        self._antecedente = antecedente
-        self.isExpanded = false
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
     }
     
     var body: some View {
-        if !antecedente.escolhaEquipamentoInicial.isEmpty {
-            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
-                ForEach(antecedente.escolhaEquipamentoInicial, id: \.self) { equipamento in
-                    TemplateRadioButtonWithIdentifier(selectedID: $selectedEquipamento, id: equipamento) {
-                        
+        if !vmantecedente.escolha.equipamentosIniciais.isEmpty {
+            MostrarItensJson(title: "Equipamentos Iniciais", lista: vmantecedente.escolha.equipamentosIniciais)
+        }
+    }
+}
+
+private struct EscolhaEquipamentoAntecedente: View {
+    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
+    @State private var isExpanded: Bool = false
+    
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
+    }
+    
+    var body: some View {
+        if vmantecedente.escolha.possuiEscolhaEquipamentoInicial {
+            TemplateCustomDisclosureGroup2 {
+                ForEach(vmantecedente.escolha.escolhaEquipamentoInicial, id: \.self) { equipamento in
+                    TemplateRadioButtonWithIdentifier(selectedID: $vmantecedente.escolhaEquipamento, id: equipamento) {
+                        withAnimation {
+                            isExpanded.toggle()
+                        }
                     } content: {
                         Text(equipamento)
                     }
                     .frame(height: 40)
                 }
             } header: {
-                DisplayTextoBotao(titulo: "Equipamento Selecionável", descricao: "Toque para selecionar...")
+                DisplayTextoBotaoCondicao(titulo: "Equipamento Inicial Selecionável", descricaoTrue: "Toque para selecionar...", descricaoFalse: "Equipamento selecionado", condicao: vmantecedente.escolhaEquipamento.isEmpty)
             }
+            
+        }
+    }
+}
+
+private struct FerramentaAntecedente: View {
+    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
+    
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
+    }
+    
+    var body: some View {
+        if !vmantecedente.escolha.ferramentasIniciais.isEmpty {
+            MostrarItensJson(title: "Ferramentas Iniciais", lista: vmantecedente.escolha.ferramentasIniciais)
+        }
+    }
+}
+
+private struct EscolhaFerramentaAntecedente: View {
+    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
+    @State private var isExpanded: Bool = false
+    
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
+        
+    }
+    
+    var body: some View {
+        if vmantecedente.escolha.possuiEscolhaFerramentaInicial {
+            TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+                ForEach(vmantecedente.escolha.escolhaFerramentaInicial, id: \.self) { ferramenta in
+                    TemplateRadioButtonWithIdentifier(selectedID: $vmantecedente.escolhaFerramenta, id: ferramenta) {
+                        withAnimation {
+                            self.isExpanded.toggle()
+                        }
+                    } content: {
+                        Text(ferramenta)
+                    }
+                    .frame(height: 40)
+                }
+            } header: {
+                DisplayTextoBotaoCondicao(titulo: "Ferramenta Inicial Selecionável", descricaoTrue: "Toque para selecionar...", descricaoFalse: "Ferramenta selecionada", condicao: vmantecedente.escolhaFerramenta.isEmpty)
+            }
+        }
+    }
+}
+
+private struct ArmaAntecedente: View {
+    @ObservedObject private var vmantecedente: ViewModelEscolhaAntecedente
+    
+    public init(vmantecedente: ViewModelEscolhaAntecedente) {
+        self.vmantecedente = vmantecedente
+    }
+    
+    var body: some View {
+        if !vmantecedente.escolha.armasIniciais.isEmpty {
+            MostrarItensJson(title: "Armas Iniciais", lista: vmantecedente.escolha.armasIniciais)
         }
     }
 }

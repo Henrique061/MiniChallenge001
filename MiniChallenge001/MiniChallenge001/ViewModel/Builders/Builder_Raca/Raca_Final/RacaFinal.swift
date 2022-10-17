@@ -19,7 +19,7 @@ public struct RacaEscolhasDefinidas : Codable {
 
 //MARK: Raca Final
 // classe para armazenar as infos dadas na escolha da raca para mandar pro personagem final
-public class RacaFinal {
+public struct RacaFinal {
     var tipoRaca: TipoRaca = .none // pega da raca
     var subRaca: TipoSubRaca = .none // pega da subraca
     var atributosAdicionais: [AtributosGanhosRaca] = [] // pega da raca, subraca E escolha

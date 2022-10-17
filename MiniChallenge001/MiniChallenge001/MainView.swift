@@ -21,6 +21,12 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             TemplateTelaPadrao(withPaddings: false) {
+                if vmfichas.listaFichas.isEmpty {
+                    Text("Crie uma ficha para vê-la aqui")
+                        .font(.system(size: 15, weight: .semibold, design: .default))
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
+                
                 List {
                     ForEach(self.$vmfichas.listaFichas, id: \.id) { ficha in
                         Section {
@@ -362,7 +368,7 @@ struct CustomButtonStyle6: ButtonStyle {
 struct CustomButtonStyle7: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(width: 20, height: 20, alignment: .center)
+            .frame(width: 30, height: 30, alignment: .center)
             .foregroundColor(Color("BlackAndWhite"))
             .opacity(configuration.isPressed ? 0.4 : 1)
     }

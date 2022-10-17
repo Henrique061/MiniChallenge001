@@ -15,7 +15,7 @@ public struct ClasseEscolhasDefinidas : Codable {
     var escolhasOpcoesEquip: [EscolhaUnica] = []
 }
 
-public class ClasseFinal {
+public struct ClasseFinal {
     //MARK: CLASSE, VIDA E DINDIN
     var tipoClasse: ClassePersonagem = .none
     var caracteristicasClasse: [CaracteristicaJSON] = []

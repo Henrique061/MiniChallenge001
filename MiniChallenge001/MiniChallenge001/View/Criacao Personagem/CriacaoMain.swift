@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 public class NovaFichaViewModel: ObservableObject {
     @Published var ficha: PersonagemFicha
     @Published var racaFinal: RacaFinal
@@ -20,27 +22,21 @@ public class NovaFichaViewModel: ObservableObject {
         self.antecedenteFinal = AntecedenteFinal()
     }
     
-    public func setRaca(raca: RacaFicha) {
+    public func setRaca(raca: RacaFinal) {
         DispatchQueue.main.async {
-            self.ficha.racaFinal = raca
-            self.objectWillChange.send()
+            self.racaFinal = raca
         }
     }
     
-    public func setClasse(classe: ClasseFicha, escolhas: ClasseEscolhasDefinidas) {
+    public func setClasse(classe: ClasseFinal) {
         DispatchQueue.main.async {
-            self.ficha.classeFinal = classe
-            self.adicionarOuro(quantidade: escolhas.escolhaRiqueza.quantidade)
-            self.ficha.profPericias += escolhas.escolhaProfPericias
-            self.ficha.profFerramentas += escolhas.escolhaProfFerramentas
-            self.objectWillChange.send()
+            self.classeFinal = classe
         }
     }
     
-    public func setAntecedente(antecedente: AntecedentePersonagem) {
+    public func setAntecedente(antecedente: AntecedenteFinal) {
         DispatchQueue.main.async {
-            self.ficha.antecedenteFinal = antecedente
-            self.objectWillChange.send()
+            self.antecedenteFinal = antecedente
         }
     }
     
@@ -50,20 +46,19 @@ public class NovaFichaViewModel: ObservableObject {
             self.objectWillChange.send()
         }
     }
-    
-    private func adicionarOuro(quantidade: Int) {
-        for i in 0..<self.ficha.carteira.count {
-            if self.ficha.carteira[i].tipo == .ouro {
-                self.ficha.carteira[i].quantidade += quantidade
-            }
-        }
-    }
 }
 
 struct CriacaoMain: View {
     
+    private enum FieldsIdentifiers: Int, CaseIterable {
+        case nomeFicha
+        case nomePersonagem
+    }
+    
     @StateObject private var novaFicha: NovaFichaViewModel = NovaFichaViewModel()
     @Binding private var popToRoot: Bool
+    
+    @FocusState private var focusedField: FieldsIdentifiers?
     
     public init(popToRoot: Binding<Bool>) {
         self._popToRoot = popToRoot
@@ -77,29 +72,32 @@ struct CriacaoMain: View {
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     
                     TextFieldCriacao(title: "Nome da ficha", text: $novaFicha.ficha.nome)
+                        .focused($focusedField, equals: .nomeFicha)
                     TextFieldCriacao(title: "Nome do personagem", text: $novaFicha.ficha.nomePersonagem)
+                        .focused($focusedField, equals: .nomePersonagem)
                     
                     CustomNavigationLink {
                         SelecaoRacaView(vmficha: self.novaFicha)
                     } label: {
-                        DisplayTextoBotaoCondicao(titulo: "Raça", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.racaFinal.racaPersonagem.rawValue, condicao: novaFicha.ficha.racaFinal.racaPersonagem == .none)
+                        DisplayTextoBotaoCondicao(titulo: "Raça", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.racaFinal.tipoRaca.rawValue, condicao: novaFicha.racaFinal.tipoRaca == .none)
                     }
                     
                     CustomNavigationLink {
                         SelecaoClasseView(ficha: novaFicha.ficha)
                             .environmentObject(novaFicha)
                     } label: {
-                        DisplayTextoBotaoCondicao(titulo: "Classe", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.classeFinal.classePersonagem.rawValue, condicao: novaFicha.ficha.classeFinal.classePersonagem == .none)
+                        DisplayTextoBotaoCondicao(titulo: "Classe", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.classeFinal.tipoClasse.rawValue, condicao: novaFicha.classeFinal.tipoClasse == .none)
                     }
                     
                     CustomNavigationLink {
                         SelecaoAntecedenteView(vmficha: novaFicha)
                     } label: {
-                        DisplayTextoBotaoCondicao(titulo: "Antecedente", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.ficha.antecedenteFinal.rawValue, condicao: novaFicha.ficha.antecedenteFinal == .none)
+                        DisplayTextoBotaoCondicao(titulo: "Antecedente", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.antecedenteFinal.tipoAntecedente.rawValue, condicao: novaFicha.antecedenteFinal.tipoAntecedente == .none)
                     }
                     
                     MenuSelecaoTendencia()
                         .environmentObject(novaFicha)
+                    
                 }
                 .frame(maxHeight: .infinity)
                 
@@ -112,16 +110,16 @@ struct CriacaoMain: View {
                 .buttonStyle(CustomButtonStyle5())
                 .disabled(novaFicha.ficha.nome.isEmpty ||
                           novaFicha.ficha.nomePersonagem.isEmpty ||
-                          novaFicha.ficha.racaFinal.racaPersonagem == .none ||
-                          novaFicha.ficha.classeFinal.classePersonagem == .none ||
-                          novaFicha.ficha.antecedenteFinal == .none ||
+                          novaFicha.racaFinal.tipoRaca == .none ||
+                          novaFicha.classeFinal.tipoClasse == .none ||
+                          novaFicha.antecedenteFinal.tipoAntecedente == .none ||
                           novaFicha.ficha.tendenciaPersonagem == .none)
                 
             }
             .padding(.horizontal, 10)
         }
         
-        .navigationTitle("Criação de Personagem")
+        .navigationTitle("Criação Personagem")
     }
 }
 
