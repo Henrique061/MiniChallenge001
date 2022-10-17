@@ -13,10 +13,7 @@ class SheetsViewModel: ObservableObject {
     @Published public var fichaSelecionada: PersonagemFicha
     
     public var maximoDadoVida: Int {
-        if fichaSelecionada.pontosAtributos.constituicao.modificador > 0 {
-            return 1 + fichaSelecionada.pontosAtributos.constituicao.modificador
-        }
-        return 1
+        return self.fichaSelecionada.nivel
     }
     
     public init() {
