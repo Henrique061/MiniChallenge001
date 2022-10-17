@@ -30,6 +30,7 @@ struct CriacaoAtributos: View {
     @Binding private var popToRoot: Bool
     @State private var tipoDistribuicao: TipoDistribuicao
     @State private var selectedAtributo: Atributo
+    @State private var showAlert: Bool = false
     
     public init(vmficha: NovaFichaViewModel, popToRoot: Binding<Bool>) {
         self._vmatributo = StateObject(wrappedValue: ViewModelAtributo(vmficha: vmficha))
@@ -55,7 +56,9 @@ struct CriacaoAtributos: View {
                     if selectedAtributo.nome != .none {
                         LivreEditAtributo(atributo: $selectedAtributo) { value in
                             vmatributo.updateAtributoValor(value: value, name: selectedAtributo.nome)
-                            selectedAtributo.valor += value
+                            DispatchQueue.main.async {
+                                self.selectedAtributo.valor = self.vmatributo.atributos.filter({$0.nome == self.selectedAtributo.nome}).first?.valor ?? 0
+                            }
                         }
                     }
                     
@@ -64,7 +67,15 @@ struct CriacaoAtributos: View {
                 
                 Button("Criar Personagem") {
                     DispatchQueue.main.async {
-                        self.popToRoot.toggle()
+                        do {
+                            self.vmficha.ficha.id = try JsonFileUtil.getNewIdForSheet()
+                            try JsonFileUtil.write(content: self.vmficha.ficha)
+                            self.popToRoot.toggle()
+                        } catch {
+                            self.showAlert.toggle()
+                        }
+                        
+                        
                     }
                 }
                 .buttonStyle(CustomButtonStyle5())
@@ -73,6 +84,10 @@ struct CriacaoAtributos: View {
             .padding(.horizontal, 10)
             
             .navigationTitle("Pontos de Atributos")
+            
+            .alert("Erro ao salvar a ficha", isPresented: $showAlert) {
+                Button(role: .cancel, action: {}, label: {Text("OK")})
+            }
         }
     }
 }
@@ -140,7 +155,8 @@ struct ListaSelecaoLivreAtributos: View {
                         
                     } content: {
                         DisplayTextoBotao(titulo: "\(atributo.nome.rawValue) \(atributo.modificador < 0 ? "" : "+")\(atributo.modificador)", descricao: "\(atributo.valor)")
-                    }.frame(height: 50)
+                    }
+                    .frame(height: 50)
                 }
             }
         }
@@ -206,6 +222,15 @@ private class ViewModelAtributo: ObservableObject {
                           Atributo(nome: .sabedoria, valor: 0)]
     }
     
+    public init(ficha: PersonagemFicha) {
+        self.atributos = [Atributo(nome: .carisma, valor: ficha.pontosAtributos.carisma.valor),
+                          Atributo(nome: .constituicao, valor: ficha.pontosAtributos.constituicao.valor),
+                          Atributo(nome: .destreza, valor: ficha.pontosAtributos.destreza.valor),
+                          Atributo(nome: .forca, valor: ficha.pontosAtributos.forca.valor),
+                          Atributo(nome: .inteligencia, valor: ficha.pontosAtributos.inteligencia.valor),
+                          Atributo(nome: .sabedoria, valor: ficha.pontosAtributos.sabedoria.valor)]
+    }
+    
     public init(vmficha: NovaFichaViewModel) {
         self.atributos = [Atributo(nome: .carisma, valor: 0),
                           Atributo(nome: .constituicao, valor: 0),
@@ -223,6 +248,11 @@ private class ViewModelAtributo: ObservableObject {
         DispatchQueue.main.async {
             for i in 0..<self.atributos.count {
                 if self.atributos[i].nome == name {
+                    
+                    if (self.atributos[i].valor + value) > 20 || (self.atributos[i].valor + value) < 0{
+                        return
+                    }
+                    
                     self.atributos[i].valor += value
                     return
                 }
