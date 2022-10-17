@@ -125,19 +125,19 @@ struct AtributosVista: View{
     var body: some View{
         TemplateTabelaAtributo(title: "Atributos") {
             HStack{
-                TemplateAtributos(titulo1: "Força", descricao1: "\(ficha.pontosAtributos)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Inteligência", descricao1: "\(ficha.pontosAtributos.inteligencia)", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Força", descricao1: "\(ficha.pontosAtributos.forca.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Inteligência", descricao1: "\(ficha.pontosAtributos.inteligencia.valor)", toggleIsOn: $toggleIsOn )
             }
             Divider()
 
             HStack{
-                TemplateAtributos(titulo1: "Destreza", descricao1: "\(ficha.pontosAtributos.destreza)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Sabedoria", descricao1: "\(ficha.pontosAtributos.sabedoria)", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Destreza", descricao1: "\(ficha.pontosAtributos.destreza.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Sabedoria", descricao1: "\(ficha.pontosAtributos.sabedoria.valor)", toggleIsOn: $toggleIsOn )
             }
             Divider()
             HStack{
-                TemplateAtributos(titulo1: "Constituição", descricao1: "\(ficha.pontosAtributos.constituicao)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Carisma", descricao1: "\(ficha.pontosAtributos.carisma)", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Constituição", descricao1: "\(ficha.pontosAtributos.constituicao.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Carisma", descricao1: "\(ficha.pontosAtributos.carisma.valor)", toggleIsOn: $toggleIsOn )
             }
         }
 
@@ -176,19 +176,19 @@ struct SalvaguardaVista: View{
                     
                     
             HStack{
-                TemplateAtributos(titulo1: "Força", descricao1: "\(ficha.pontosAtributos.forca)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Inteligência", descricao1: "\(ficha.pontosAtributos.inteligencia)", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Força", descricao1: "\(ficha.pontosAtributos.forca.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Inteligência", descricao1: "\(ficha.pontosAtributos.inteligencia.valor)", toggleIsOn: $toggleIsOn )
             }
             Divider()
 
             HStack{
-                TemplateAtributos(titulo1: "Destreza", descricao1: "\(ficha.pontosAtributos.destreza)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Sabedoria", descricao1: "\(ficha.pontosAtributos.sabedoria)", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Destreza", descricao1: "\(ficha.pontosAtributos.destreza.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Sabedoria", descricao1: "\(ficha.pontosAtributos.sabedoria.valor)", toggleIsOn: $toggleIsOn )
             }
             Divider()
             HStack{
-                TemplateAtributos(titulo1: "Constituição", descricao1: "\(ficha.pontosAtributos.constituicao)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Carisma", descricao1: "\(ficha.pontosAtributos.carisma)", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Constituição", descricao1: "\(ficha.pontosAtributos.constituicao.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Carisma", descricao1: "\(ficha.pontosAtributos.carisma.valor)", toggleIsOn: $toggleIsOn )
             }
                 
         }.padding(.vertical,5)
