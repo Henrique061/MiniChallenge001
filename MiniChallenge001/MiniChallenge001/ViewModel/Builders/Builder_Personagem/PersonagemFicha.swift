@@ -51,11 +51,11 @@ struct Tendencia : Codable {
 //MARK: VALORES ATRIBUTOS
 struct ValoresAtributos : Codable {
     var forca: Atributo = Atributo(nome: .forca, valor: 0)
-    var destreza: Int = 0
-    var constituicao: Int = 0
-    var inteligencia: Int = 0
-    var sabedoria: Int = 0
-    var carisma: Int = 0
+    var destreza: Atributo = Atributo(nome: .destreza, valor: 0)
+    var constituicao: Atributo = Atributo(nome: .constituicao, valor: 0)
+    var inteligencia: Atributo = Atributo(nome: .inteligencia, valor: 0)
+    var sabedoria: Atributo = Atributo(nome: .sabedoria, valor: 0)
+    var carisma: Atributo = Atributo(nome: .carisma, valor: 0)
 }
 
 //MARK: PERSONAGEM FICHA
