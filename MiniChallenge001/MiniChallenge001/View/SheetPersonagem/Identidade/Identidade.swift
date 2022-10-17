@@ -12,6 +12,12 @@ import SwiftUI
 
 struct Identidade: View {
     
+    @ObservedObject private var sheet: SheetsViewModel
+    
+    public init(sheet: SheetsViewModel) {
+        self.sheet = sheet
+    }
+    
     var body: some View {
         NavigationView {
             TemplateTelaPadrao(withPaddings: false){
@@ -21,6 +27,7 @@ struct Identidade: View {
                             .padding(.horizontal, 10)
                         identidadeInferior()
                             .padding(.horizontal, 10)
+                        EstiloVidaPicker(estiloVida: $sheet.fichaSelecionada.estiloVida)
                     }
                     
                     .navigationBarTitleDisplayMode(.inline)
@@ -127,3 +134,6 @@ struct identidadeInferior: View{
     }
 }
 }
+
+
+

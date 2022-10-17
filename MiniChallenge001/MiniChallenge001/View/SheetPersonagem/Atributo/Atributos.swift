@@ -211,11 +211,21 @@ struct PericiasVista: View{
     var body: some View{
         
         TemplateTabelaAtributo(title: "Perícias") {
-            HStack{
-                TemplateAtributos(titulo1: "Acrobacia", descricao1: "\(Pericia.acrobacia)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Lidar com Animais", descricao1: "\(Pericia.adestrarAnimais)", toggleIsOn: $toggleIsOn )
-            }
             
+            
+            HStack{
+                VStack{
+                ForEach(periciasArray, id: \.self) { condicao in
+                    TemplateAtributos(titulo1: condicao, descricao1: "\(Pericia.self)", toggleIsOn: $toggleIsOn)
+                    Divider()
+            }
+                }
+                
+                VStack{
+                    ForEach(periciasArray2, id: \.self) { condicao in
+                        TemplateAtributos(titulo1: condicao, descricao1: "\(Pericia.self)", toggleIsOn: $toggleIsOn)
+                        Divider()
+                }
             Divider()
             HStack{
                 TemplateAtributos(titulo1: "Arcanismo", descricao1: "14", toggleIsOn: $toggleIsOn)
@@ -232,6 +242,8 @@ struct PericiasVista: View{
     }
 
 }
+    }
+}
 struct ToggleVista: View{
     // @ObservedObject var vmclasse = TemplateFichaPronta()
     @Binding private var toggleIsOn: Bool
@@ -247,6 +259,7 @@ struct ToggleVista: View{
             
             
             HStack{
+                
                 
                 DisplayTextoBotao(titulo: "Pontos Adicionais", descricao: "02").padding(.vertical,5)
                     .padding(.horizontal,10)

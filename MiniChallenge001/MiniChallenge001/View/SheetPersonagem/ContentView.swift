@@ -39,7 +39,7 @@ struct ContentView: View {
                     Label("Combate", image: currentTab == .combate ? "CombateIconOn" : "CombateIconOff")
                 }
             
-            Identidade()
+            Identidade(sheet: sheet)
                 .tag(SheetTabView.identidade)
                 .tabItem{
                     Label("Identidade", image: currentTab == .identidade ? "IdentidadeIconOn" : "IdentidadeIconOff")
