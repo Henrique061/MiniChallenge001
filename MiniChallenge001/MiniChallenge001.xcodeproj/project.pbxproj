@@ -26,6 +26,7 @@
 		122E948228E21EE100184F88 /* CaracteristicaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948128E21EE100184F88 /* CaracteristicaJSON.swift */; };
 		122E948428E21F2000184F88 /* TraitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948328E21F2000184F88 /* TraitJSON.swift */; };
 		122E948628E2205300184F88 /* SheetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948528E2205300184F88 /* SheetsViewModel.swift */; };
+		1247FBC128FDE9D0004FF076 /* AlterarNivelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247FBC028FDE9D0004FF076 /* AlterarNivelView.swift */; };
 		12535F4B28E323F60020A005 /* DetalhesTracoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12535F4A28E323F60020A005 /* DetalhesTracoView.swift */; };
 		125B251628EE03DB00B60168 /* EscolhaProficienciaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B251528EE03DB00B60168 /* EscolhaProficienciaView.swift */; };
 		126ABAE128DB38C100CF5A2E /* JsonFileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */; };
@@ -131,6 +132,7 @@
 		122E948128E21EE100184F88 /* CaracteristicaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracteristicaJSON.swift; sourceTree = "<group>"; };
 		122E948328E21F2000184F88 /* TraitJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitJSON.swift; sourceTree = "<group>"; };
 		122E948528E2205300184F88 /* SheetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetsViewModel.swift; sourceTree = "<group>"; };
+		1247FBC028FDE9D0004FF076 /* AlterarNivelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlterarNivelView.swift; sourceTree = "<group>"; };
 		12535F4A28E323F60020A005 /* DetalhesTracoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesTracoView.swift; sourceTree = "<group>"; };
 		125B251528EE03DB00B60168 /* EscolhaProficienciaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolhaProficienciaView.swift; sourceTree = "<group>"; };
 		126ABAE028DB38C100CF5A2E /* JsonFileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonFileUtil.swift; path = MiniChallenge001/Model/JsonFileUtil.swift; sourceTree = SOURCE_ROOT; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				09B5569128DA6156001466B0 /* Combate.swift */,
+				1247FBC028FDE9D0004FF076 /* AlterarNivelView.swift */,
 			);
 			path = Combate;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */,
 				126ABB2D28DD26DF00CF5A2E /* DescricaoMagiaView.swift in Sources */,
 				12CC7ABF28E10E24000AB35B /* SelecaoRacaView.swift in Sources */,
+				1247FBC128FDE9D0004FF076 /* AlterarNivelView.swift in Sources */,
 				3DB929B128ECC13B0075F0D9 /* ClasseFinalBuilder.swift in Sources */,
 				3D40A77928F9D22D00607263 /* AntecedenteFinalBuilder.swift in Sources */,
 				09B5569228DA6156001466B0 /* Habilidades.swift in Sources */,

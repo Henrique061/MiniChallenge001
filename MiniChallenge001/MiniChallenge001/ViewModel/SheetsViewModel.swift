@@ -12,6 +12,13 @@ public class SheetsViewModel: ObservableObject {
     @Published public var listaFichas: [PersonagemFicha] = []
     @Published public var fichaSelecionada: PersonagemFicha
     
+    public var maximoDadoVida: Int {
+        if fichaSelecionada.pontosAtributos.constituicao.modificador > 0 {
+            return 1 + fichaSelecionada.pontosAtributos.constituicao.modificador
+        }
+        return 1
+    }
+    
     public init() {
         self.fichaSelecionada = PersonagemFicha()
         self.fetch()
@@ -48,20 +55,49 @@ public class SheetsViewModel: ObservableObject {
         }
     }
     
+    public func setVidaMaxima(value: Int) {
+        DispatchQueue.main.async {
+            if (self.fichaSelecionada.pontosVidaMaximo + value) < 0 {
+                return
+            }
+            self.fichaSelecionada.pontosVidaMaximo += value
+        }
+    }
+    
+    public func setNivel(value: Int) {
+        DispatchQueue.main.async {
+            if (self.fichaSelecionada.nivel + value) > 20 || (self.fichaSelecionada.nivel + value) < 0 {
+                return
+            }
+            self.fichaSelecionada.nivel += value
+        }
+    }
+    
     public func setPontosVida(value: Int) {
         DispatchQueue.main.async {
+            if (self.fichaSelecionada.pontosVida + value) < 0 || (self.fichaSelecionada.pontosVida + value) > self.fichaSelecionada.pontosVidaMaximo {
+                return
+            }
+            
             self.fichaSelecionada.pontosVida += value
         }
     }
     
     public func setDadosVida(value: Int) {
         DispatchQueue.main.async {
+            if (self.fichaSelecionada.quantiaDadoVida + value) > self.maximoDadoVida || (self.fichaSelecionada.quantiaDadoVida + value) < 0 {
+                return
+            }
             self.fichaSelecionada.quantiaDadoVida += value
         }
     }
     
     public func setPontosVidaTemp(value: Int) {
         DispatchQueue.main.async {
+            if (self.fichaSelecionada.pontosVidaTemporário + value) < 0 {
+                return
+            }
+            
             self.fichaSelecionada.pontosVidaTemporário += value
         }
     }
@@ -89,4 +125,14 @@ public class SheetsViewModel: ObservableObject {
             self.fichaSelecionada.resistenciaMorte = ResistenciaMorte(sucesso: 0, falha: 0)
         }
     }
+    
+    public func saveFicha() -> Bool {
+        do {
+            try JsonFileUtil.write(content: self.fichaSelecionada)
+            return true
+        } catch {
+            return false
+        }
+    }
+    
 }

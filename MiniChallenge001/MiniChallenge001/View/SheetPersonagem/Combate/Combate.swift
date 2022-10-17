@@ -14,6 +14,7 @@ struct Combate: View {
     
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var sheet: SheetsViewModel
+    @State private var showAlterarNivel: Bool = false
     
     public init(sheet: SheetsViewModel) {
         self.sheet = sheet
@@ -32,18 +33,22 @@ struct Combate: View {
                         .font(.system(size: 15, weight: .regular, design: .default))
 
                     Button("Alterar Nível") {
-
+                        self.showAlterarNivel.toggle()
                     }
                     .buttonStyle(CustomButtonStyle5())
 
                     ScrollView {
                         AreaInformacoesGerais(ficha: $sheet.fichaSelecionada)
+                            .frame(minHeight: 80)
                         AreaPontosVida(sheet: self.sheet)
+                            .frame(minHeight: 100)
                         AreaPontosVidaTemporarios(sheet: self.sheet)
+                            .frame(minHeight: 80 )
                         HStack {
                             AreaDadoVida(sheet: self.sheet)
                             AreaResistenciaMorte(sheet: self.sheet)
                         }
+                        .frame(minHeight: 100)
                     }
                 }
                 .padding(.horizontal, 10)
@@ -70,6 +75,11 @@ struct Combate: View {
                     }
                 }
             }
+        }
+        
+        
+        .sheet(isPresented: $showAlterarNivel) {
+            AlterarNivelView(sheet: self.sheet)
         }
     }
 }
@@ -107,7 +117,6 @@ private struct AreaResistenciaMorte: View {
                 .padding(-10)
             }
             .padding(10)
-            .frame(height: 100)
         }
     }
 }
@@ -243,12 +252,11 @@ private struct AreaDadoVida: View {
                     }
                 }
                 Divider().padding(.horizontal, -10)
-                Text("Total: \(sheet.fichaSelecionada.quantiaDadoVida)")
+                Text("Total: \(sheet.maximoDadoVida)")
                     .font(.system(size: 15, weight: .regular, design: .default))
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(10)
-            .frame(height: 100)
         }
     }
 }
@@ -282,7 +290,6 @@ private struct AreaPontosVidaTemporarios: View {
                 }
             }
             .padding(10)
-            .frame(height: 80)
         }
     }
 }
@@ -317,12 +324,11 @@ private struct AreaPontosVida: View {
                 }
                 Divider()
                     .padding(.horizontal, -10)
-                Text("Máximo de Pontos de Vida: \(sheet.fichaSelecionada.pontosVida)")
+                Text("Máximo de Pontos de Vida: \(sheet.fichaSelecionada.pontosVidaMaximo)")
                     .font(.system(size: 15, weight: .regular, design: .default))
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(10)
-            .frame(height: 100)
         }
     }
 }
@@ -338,7 +344,6 @@ private struct AreaInformacoesGerais: View {
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
             TemplateInformacao(title: "Armadura", content: "\(ficha.classeArmadura)")
-                .frame(height: 80)
             
             Menu {
                 ForEach(-10..<31) { num in
@@ -352,10 +357,8 @@ private struct AreaInformacoesGerais: View {
                 TemplateInformacao(title: "Iniciativa", content: "\(ficha.iniciativa < 0 ? "\(ficha.iniciativa)" : "+\(ficha.iniciativa)")")
             }
             .foregroundColor(Color("BlackAndWhite"))
-            .frame(height: 80)
             
             TemplateInformacao(title: "Deslocamento", content: "\(ficha.deslocamento) m")
-                .frame(height: 80)
         }
     }
 }
@@ -444,3 +447,4 @@ private struct TemplateSheetButton: View {
         .buttonStyle(CustomButtonStyle7())
     }
 }
+
