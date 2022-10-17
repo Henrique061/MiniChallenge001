@@ -23,19 +23,19 @@ struct Combate: View {
         NavigationView {
             TemplateTelaPadrao() {
                 AreaImagemPerfil(ficha: $sheet.fichaSelecionada)
-                
+
                 VStack(alignment: .center, spacing: 10) {
                     Text("\(sheet.fichaSelecionada.nomePersonagem)")
                         .font(.system(size: 15, weight: .bold, design: .default))
                         .padding(.bottom, -8)
                     Text("\(sheet.fichaSelecionada.classeFinal.classePersonagem.rawValue)")
                         .font(.system(size: 15, weight: .regular, design: .default))
-                    
+
                     Button("Alterar Nível") {
-                        
+
                     }
                     .buttonStyle(CustomButtonStyle5())
-                    
+
                     ScrollView {
                         AreaInformacoesGerais(ficha: $sheet.fichaSelecionada)
                         AreaPontosVida(sheet: self.sheet)
@@ -47,7 +47,7 @@ struct Combate: View {
                     }
                 }
                 .padding(.horizontal, 10)
-                
+
                 Spacer()
             }
             .navigationBarTitleDisplayMode(.inline)
