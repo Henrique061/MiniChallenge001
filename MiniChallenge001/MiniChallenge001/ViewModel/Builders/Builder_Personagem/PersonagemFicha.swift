@@ -50,7 +50,7 @@ struct Tendencia : Codable {
 
 //MARK: VALORES ATRIBUTOS
 struct ValoresAtributos : Codable {
-    var forca: Int = 0
+    var forca: Atributo = Atributo(nome: .forca, valor: 0)
     var destreza: Int = 0
     var constituicao: Int = 0
     var inteligencia: Int = 0
