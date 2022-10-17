@@ -11,13 +11,11 @@ import SwiftUI
 // Só para atualizar
 
 struct Inventario: View {
-    @State var arr: [String] = Array.init(repeating: "Alguma coisa", count: 15)
-    @State var mochila = Mochila(itens: ["Item 1", "Item 2", "Item 3", "Item 4"])
-    @State var montarias = [
-        Montaria(nome: "Cavalo", mochila: Mochila(itens: ["Item 1", "Item 2", "Item 3", "Item 4"])),
-        Montaria(nome: "Mula", mochila: Mochila(itens: ["Item 1", "Item 2", "Item 3", "Item 4"])),
-        Montaria(nome: "Mastiff", mochila: Mochila(itens: ["Item 1", "Item 2", "Item 3", "Item 4"]))
-    ]
+    @ObservedObject private var sheet: SheetsViewModel
+    
+    public init(sheet: SheetsViewModel) {
+        self.sheet = sheet
+    }
     
     var body: some View {
         NavigationView {
@@ -25,36 +23,17 @@ struct Inventario: View {
                 List {
                     Section {
                         CapacidadeCarga(cargaUtilizada: .constant(10.0), cargaTotal: .constant(20.1))
-                        ForEach($mochila.itens, id: \.self) { item in
-                            Button {
-                                
-                            } label: {
-                                Text(item.wrappedValue)
-                            }
-                        }
+                        MostrarItensJson(title: "Equipamentos", lista: sheet.fichaSelecionada.equipamentos)
                     } header: {
                         Text("Mochila")
                             .font(.system(size: 20, weight: .bold, design: .rounded))
                     }
-                    
-                    ForEach($montarias, id: \.nome) { montaria in
-                        CapacidadeCarga(cargaUtilizada: .constant(50), cargaTotal: .constant(100))
-                        
-                    }
                 }
             }
             
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .principal) {
                     NavigationBarTitle("Inventário")
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button() {
-                        print("Pressed")
-                    } label: {
-                        Image("Carrinho")
-                    }
                 }
             }
         }

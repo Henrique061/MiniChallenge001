@@ -15,7 +15,7 @@ public struct AntecedenteEscolhasDefinidas : Codable {
     var escolhaFerramentasIniciais: [FerramentaJSON] = []
 }
 
-public class AntecedenteFinal : Codable {
+public struct AntecedenteFinal : Codable {
     //MARK: TIPO
     var tipoAntecedente: AntecedentePersonagem = .none
     var tipoVarianteAntecedente: VariacaoAntecedente = .none

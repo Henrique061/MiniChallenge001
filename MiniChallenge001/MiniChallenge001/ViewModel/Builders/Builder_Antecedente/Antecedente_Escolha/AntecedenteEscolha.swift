@@ -38,7 +38,7 @@ public enum VariacaoAntecedente : String, Codable {
     case none = "Nenhum"
 }
 
-public class AntecedenteEscolha {
+public struct AntecedenteEscolha {
     var tipoAntecedente: AntecedentePersonagem = .none
     var nomeAntecente: String = ""
     var variacaoAntecedente: VariacaoAntecedente = .none

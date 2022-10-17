@@ -135,6 +135,22 @@ class CriacaoRacaViewModel: ObservableObject {
             self.escolhaMagia = ""
         }
     }
+    
+    public func prepareEscolhasDefinidas() {
+        DispatchQueue.main.async {
+            var atributosAux: [AtributosGanhosRaca] = []
+            for i in self.escolhasAtributos {
+                atributosAux.append(AtributosGanhosRaca(atributo: i, pontosGanhos: self.raca.valorGanhoEscolhaAtributos))
+            }
+            self.escolhasDefinidas.escolhaAtributos = atributosAux
+            if !self.escolhaProfFerramenta.isEmpty {
+                self.escolhasDefinidas.escolhaProfFerramentasAdicionais.append(BuscaJson.buscaFerramentaPorNome(nome: self.escolhaProfFerramenta))
+            }
+            if !self.escolhaMagia.isEmpty {
+                self.escolhasDefinidas.escolhaMagia.append(BuscaJson.buscaMagiaPorNome(nome: self.escolhaMagia))
+            }
+        }
+    }
 }
 
 struct SelecaoRacaView: View {
@@ -161,7 +177,9 @@ struct SelecaoRacaView: View {
             .padding(.vertical, 10)
             
             Button {
-                
+                self.vmraca.prepareEscolhasDefinidas()
+                let racaFinal = RacaClient.orderPersonagemRaca(vmraca.raca, escolhas: vmraca.escolhasDefinidas)
+                self.vmficha.setRaca(raca: racaFinal)
                 dismiss()
             } label: {
                 Text("Salvar")

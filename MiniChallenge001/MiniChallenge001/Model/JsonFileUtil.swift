@@ -55,8 +55,8 @@ class JsonFileUtil {
         var id = 1
         
         for i in arr {
-            let temp = Int(i) ?? id
-            if id <= temp { id += 1 }
+            let temp = Int(i.split(separator: ".")[0]) ?? id
+            if id <= temp { id = temp + 1 }
         }
         
         return id
