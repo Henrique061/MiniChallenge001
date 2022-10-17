@@ -9,9 +9,10 @@ import Foundation
 
 public struct ClasseFicha : Codable {
     var classePersonagem: ClassePersonagem = .none
-    var caracteristicasPersonagem: [String] = []
+    var caracteristicasPersonagem: [CaracteristicaJSON] = []
     var subclassesPersonagem: [SubClasse] = []
     
+    var magiasConhecidas: [MagiasConhecidas] = []
     var espacosDeMagia: [EspacosDeMagias] = []
     var pontosEspecificosNumerico: [PontoEspecificoNumerico] = []
     var pontosEspecificosTexto: [PontoEspecificoTexto] = []

@@ -100,7 +100,7 @@ public enum SubclassePersonagem : String, Codable {
     case none = "Nenhum"
 }
 
-enum AtributosSalvaguarda : String, Codable {
+public enum AtributosSalvaguarda : String, Codable {
     case forca = "Força"
     case destreza = "Destreza"
     case constituicao = "Constituição"
