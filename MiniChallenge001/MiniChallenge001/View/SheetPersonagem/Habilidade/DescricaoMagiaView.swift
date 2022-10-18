@@ -35,8 +35,10 @@ public struct DetalhesMagia: View {
                 .padding(.horizontal, 10)
             }
             Button(title) {
-                completion()
-                dismiss()
+                withAnimation {
+                    completion()
+                    dismiss()
+                }
             }
             .buttonStyle(CustomButtonStyle5())
             .padding(.bottom, 10)

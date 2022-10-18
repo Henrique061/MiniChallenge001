@@ -15,6 +15,22 @@ struct Habilidades: View {
     @ObservedObject private var sheet: SheetsViewModel
     @State private var textoBusca: String = ""
     
+    private var magiasAprendidas: [[MagiaJSON]] {
+        var temp: [[MagiaJSON]] = []
+        
+        for i in 0..<10 {
+            if textoBusca.isEmpty {
+                let aux = sheet.fichaSelecionada.magias.filter({$0.nivel == i})
+                if !aux.isEmpty { temp.append(aux) }
+            } else {
+                let aux = sheet.fichaSelecionada.magias.filter({$0.nivel == i && $0.nome.contains(textoBusca)})
+                if !aux.isEmpty { temp.append(aux) }
+            }
+        }
+        
+        return temp
+    }
+    
     public init(sheet: SheetsViewModel) {
         self.sheet = sheet
     }
@@ -29,31 +45,43 @@ struct Habilidades: View {
                     Spacer()
                 } else {
                     ScrollView {
-                        LazyVStack {
-                            ForEach(0..<10) { nivel in
-                                let magias = sheet.filterMagiasByLevel(nivel: nivel)
-                                if !magias.isEmpty {
-                                    TemplateContentBackground {
-                                        SecaoNivelMagia {
-                                            LazyVStack(spacing: 0) {
-                                                Divider()
-                                                ForEach(Array(magias.enumerated()), id: \.offset) { index, magia in
-                                                    MagiaDetailCell(magia: magia, title: "Esquecer Habilidade") {
-                                                        sheet.removeMagia(magia: magia)
-                                                    }
-                                                    if (index < magias.count - 1) {
-                                                        Divider()
-                                                    }
-                                                }
-                                            }
-                                        } label: {
-                                            HeaderMagiaSection(nivel)
-                                        }
+                        ForEach(magiasAprendidas, id: \.self) { magias in
+                            TemplateCustomDisclosureGroup2 {
+                                ForEach(magias, id: \.id) { magia in
+                                    MagiaDetailCell(magia: magia, title: "Esquecer Habilidade") {
+                                        self.sheet.removeMagia(magia: magia)
                                     }
                                 }
-                            }
+                            } header: {
+                                HeaderMagiaSection(magias.first?.nivel ?? -1)
+                            }.padding(.horizontal, 10)
                         }
-                        .padding(.horizontal, 10)
+                        
+//                        LazyVStack {
+//                            ForEach(0..<10) { nivel in
+//                                let magias = sheet.filterMagiasByLevel(nivel: nivel)
+//                                if !magias.isEmpty {
+//                                    TemplateContentBackground {
+//                                        SecaoNivelMagia {
+//                                            LazyVStack(spacing: 0) {
+//                                                Divider()
+//                                                ForEach(Array(magias.enumerated()), id: \.offset) { index, magia in
+//                                                    MagiaDetailCell(magia: magia, title: "Esquecer Habilidade") {
+//                                                        sheet.removeMagia(magia: magia)
+//                                                    }
+//                                                    if (index < magias.count - 1) {
+//                                                        Divider()
+//                                                    }
+//                                                }
+//                                            }
+//                                        } label: {
+//                                            HeaderMagiaSection(nivel)
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        }
+                        
                     }
                 }
             }
