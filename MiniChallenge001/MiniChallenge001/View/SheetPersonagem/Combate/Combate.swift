@@ -61,7 +61,7 @@ struct Combate: View {
 
                 
                 .navigationTitle(self.sheet.fichaSelecionada.nome)
-                .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
+                
                 .toolbar{
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
@@ -91,6 +91,7 @@ struct Combate: View {
                         }
                     }
                 }
+                .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
             }
         }
     }

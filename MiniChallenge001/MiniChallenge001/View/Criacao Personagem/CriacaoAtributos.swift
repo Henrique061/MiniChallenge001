@@ -68,6 +68,7 @@ struct CriacaoAtributos: View {
                 Button("Criar Personagem") {
                     DispatchQueue.main.async {
                         do {
+                            self.vmficha.ficha = PersonagemClient.orderPersonagem(raca: self.vmficha.racaFinal, classe: self.vmficha.classeFinal, antecedente: self.vmficha.antecedenteFinal, valoresAtributos: ValoresAtributos(self.vmatributo.atributos))
                             self.vmficha.ficha.id = try JsonFileUtil.getNewIdForSheet()
                             try JsonFileUtil.write(content: self.vmficha.ficha)
                             self.popToRoot.toggle()
