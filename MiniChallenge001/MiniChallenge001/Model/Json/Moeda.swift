@@ -8,11 +8,11 @@
 import Foundation
 
 public enum TipoMoeda: String, Codable {
-    case cobre = "Peça de Cobre"
-    case prata = "Peça de Prata"
-    case electro = "Peça de Electro"
-    case ouro = "Peça de Ouro"
-    case platina = "Peça de Platina"
+    case cobre = "Cobre"
+    case prata = "Prata"
+    case electro = "Electro"
+    case ouro = "Ouro"
+    case platina = "Platina"
     
     case none = "Nenhum"
 }
