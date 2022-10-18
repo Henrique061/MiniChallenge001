@@ -226,17 +226,7 @@ struct PericiasVista: View{
                         TemplateAtributos(titulo1: condicao, descricao1: "\(Pericia.self)", toggleIsOn: $toggleIsOn)
                         Divider()
                 }
-            Divider()
-            HStack{
-                TemplateAtributos(titulo1: "Arcanismo", descricao1: "14", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Medicina", descricao1: "10", toggleIsOn: $toggleIsOn )
-            }
-            Divider()
-            HStack{
-                TemplateAtributos(titulo1: "Atletismo", descricao1: "12", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Natureza", descricao1: "15", toggleIsOn: $toggleIsOn )
-            }
-            
+           
         }
         
     }
