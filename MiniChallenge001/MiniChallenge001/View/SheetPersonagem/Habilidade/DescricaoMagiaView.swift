@@ -11,81 +11,36 @@ import SwiftUI
 public struct DetalhesMagia: View {
     
     @Environment(\.dismiss) private var dismiss
+    private var completion: () -> Void
+    private let title: String
     private let magia: MagiaJSON
     
-    init(magia: MagiaJSON) {
+    public init(magia: MagiaJSON, title: String, completion: @escaping () -> Void) {
         self.magia = magia
+        self.completion = completion
+        self.title = title
     }
     
     public var body: some View {
-        ZStack {
-            Color(uiColor: .systemGray6)
-            VStack {
-                HeaderDetalhesMagia(circulo: (magia.nivel > 0) ? "\(magia.nivel)º Círculo" : "Truque") { dismiss in
-                    if dismiss {
-                        self.dismiss()
+        TemplateSheetView(header: DefaultSheetHeader(image: Image("Habilidades Detalhado"), title: "Descrição da Habilidade", subtitle: (magia.nivel > 0) ? "\(magia.nivel)º Círculo" : "Truque")) {
+            ScrollView {
+                TemplateContentBackground {
+                    VStack(alignment: .leading, spacing: 10) {
+                        DisplayTextoBotao(titulo: magia.nome, descricao: magia.escola.rawValue)
+                        Divider()
+                        CorpoDetalheView(magia: magia)
                     }
+                    .padding(10)
                 }
-                Divider()
-                Form {
-                    TituloDetalheView(titulo: magia.nome, descricao: magia.escola.rawValue)
-                    CorpoDetalheView(magia: magia)
-                        .padding(.bottom, 10)
-                }
-            }
-        }
-    }
-}
-
-struct HeaderDetalhesMagia: View {
-    
-    private let circulo: String
-    private var completion: (_ dismiss: Bool) -> Void
-    
-    init(circulo: String, completion: @escaping (_ dismiss: Bool) -> Void) {
-        self.circulo = circulo
-        self.completion = completion
-    }
-    
-    var body: some View {
-        HStack(alignment: .center) {
-            Image("Habilidades Detalhado")
                 .padding(.horizontal, 10)
-            VStack(alignment: .leading) {
-                Text("Descrição da Habilidade")
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                Text(circulo)
-                    .font(.system(size: 13, weight: .regular, design: .rounded))
             }
-            Spacer()
-            Button {
-                self.completion(true)
-            } label: {
-                CustomBotaoFechar()
-                    .frame(width: 30, height: 30, alignment: .center)
-                    .padding(.trailing, 10)
+            Button(title) {
+                completion()
+                dismiss()
             }
-        }
-        .padding(.horizontal, 10)
-        .padding(.top, 10)
-    }
-}
-
-struct TituloDetalheView: View {
-    private let titulo: String
-    private let descricao: String
-    
-    init(titulo: String, descricao: String) {
-        self.titulo = titulo
-        self.descricao = descricao
-    }
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(titulo)
-                .font(.system(size: 15, weight: .bold, design: .rounded))
-            Text(descricao)
-                .font(.system(size: 13, weight: .regular, design: .rounded))
+            .buttonStyle(CustomButtonStyle5())
+            .padding(.bottom, 10)
+            .padding(.horizontal, 10)
         }
     }
 }
@@ -99,21 +54,10 @@ struct CorpoDetalheView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            TituloDetalheView(titulo: "Tempo Conjuração", descricao: magia.tempoConjuracao)
-            TituloDetalheView(titulo: "Alcance:", descricao: magia.alcance)
-            TituloDetalheView(titulo: "Componentes", descricao: magia.componentes)
-            TituloDetalheView(titulo: "Descrição", descricao: magia.descricao)
-        }
-    }
-}
-
-struct CustomBotaoFechar: View {
-    var body: some View {
-        ZStack(alignment: .center) {
-            Circle()
-                .foregroundColor(Color(uiColor: .systemGray5))
-            Image(systemName: "xmark")
-                .foregroundColor(.black)
+            DisplayTextoBotao(titulo: "Tempo Conjuração", descricao: magia.tempoConjuracao)
+            DisplayTextoBotao(titulo: "Alcance:", descricao: magia.alcance)
+            DisplayTextoBotao(titulo: "Componentes", descricao: magia.componentes)
+            DisplayTextoBotao(titulo: "Descrição", descricao: magia.descricao)
         }
     }
 }

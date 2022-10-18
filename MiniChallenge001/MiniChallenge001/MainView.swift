@@ -14,8 +14,8 @@ struct MainView: View {
     @State private var mostrarFicha: Bool = false
     @State private var isRoot: Bool = false
     
-    public init() {
-        self.vmfichas = SheetsViewModel()
+    public init(vmfichas: SheetsViewModel) {
+        self.vmfichas = vmfichas
     }
     
     var body: some View {
@@ -87,12 +87,6 @@ struct MainView: View {
         .onChange(of: isRoot) { _ in
             self.vmfichas.fetch()
         }
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
     }
 }
 

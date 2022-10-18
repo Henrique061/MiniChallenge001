@@ -290,7 +290,7 @@ private struct AreaPontosVidaTemporarios: View {
                     
                     Text("\(sheet.fichaSelecionada.pontosVidaTemporário)")
                         .font(.system(size: 25, weight: .bold, design: .default))
-                        .scaledToFill()
+                        .padding(.horizontal, 10)
                     
                     TemplateSheetButton(image: Image(systemName: "plus.circle")) {
                         sheet.setPontosVidaTemp(value: +1)
@@ -324,7 +324,7 @@ private struct AreaPontosVida: View {
                     
                     Text("\(sheet.fichaSelecionada.pontosVida)")
                         .font(.system(size: 25, weight: .bold, design: .default))
-                        .padding(.horizontal, 15)
+                        .padding(.horizontal, 10)
                     
                     TemplateSheetButton(image: Image(systemName: "plus.circle")) {
                         self.sheet.setPontosVida(value: +1)
