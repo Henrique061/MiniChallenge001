@@ -51,6 +51,19 @@ public class NovaFichaViewModel: ObservableObject {
             self.perfil.tendencia = tendencia
         }
     }
+    
+    public func createFicha(atributos: [Atributo], completion: @escaping (_ saved: Bool) -> Void) {
+        DispatchQueue.main.async {
+            do {
+                var novaFicha = PersonagemClient.orderPersonagem(raca: self.racaFinal, classe: self.classeFinal, antecedente: self.antecedenteFinal, valoresAtributos: ValoresAtributos(atributos), perfilPersonagem: self.perfil)
+                novaFicha.id = try JsonFileUtil.getNewIdForSheet()
+                try JsonFileUtil.write(content: novaFicha)
+                completion(true)
+            } catch {
+                completion(false)
+            }
+        }
+    }
 }
 
 struct CriacaoMain: View {
