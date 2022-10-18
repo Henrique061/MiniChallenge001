@@ -140,6 +140,11 @@ public class PersonagemConcreteBuilder : PersonagemBuilder {
         self.personagem.pontosAtributos = pontos
     }
     
+    //MARK: IDIOMAS
+    func setIdiomas(_ idiomas: [IdiomaAlfabeto]) {
+        self.personagem.idiomas = idiomas
+    }
+    
     //MARK: PROF SALVAGUARDAS
     func setProfSalvaguardas(_ salvaguardas: [AtributosSalvaguarda]) {
         self.personagem.profSalvaguardas = salvaguardas

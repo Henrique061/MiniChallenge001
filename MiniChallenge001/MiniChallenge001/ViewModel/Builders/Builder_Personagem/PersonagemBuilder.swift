@@ -44,6 +44,7 @@ protocol PersonagemBuilder {
     func setQuantiaDadoVida(_ quantia: Int)
     func setResistenciaMorte(_ resistenciaMorte: ResistenciaMorte)
     func setPontosAtributos(_ pontos: ValoresAtributos)
+    func setIdiomas(_ idiomas: [IdiomaAlfabeto])
     
     //MARK: PROFICIENCIAS
     func setProfSalvaguardas(_ salvaguardas: [AtributosSalvaguarda])
