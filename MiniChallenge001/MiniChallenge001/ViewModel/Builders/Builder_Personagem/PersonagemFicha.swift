@@ -83,6 +83,25 @@ public struct ValoresAtributos : Codable, Hashable {
     }
 }
 
+//MARK: STRUCT PERFIL
+public struct PerfilPersonagem : Codable, Hashable {
+    var foto: Data
+    var nome: String
+    var idade: String
+    var altura: String
+    var peso: String
+    var olhos: String
+    var pele: String
+    var cabelo: String
+    var outros: String
+    var tracosPersonalidade: String
+    var ideais: String
+    var vinculo: String
+    var defeitos: String
+    var tendencia: TipoTendencia
+    var estiloVida: EstiloDeVida
+}
+
 //MARK: PERSONAGEM FICHA
 public struct PersonagemFicha: Json {
     var id: Int = 0
