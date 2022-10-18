@@ -66,17 +66,37 @@ struct CriacaoAtributos: View {
                 }
                 
                 Button("Criar Personagem") {
-                    DispatchQueue.main.async {
-                        do {
-                            self.vmficha.ficha = PersonagemClient.orderPersonagem(raca: self.vmficha.racaFinal, classe: self.vmficha.classeFinal, antecedente: self.vmficha.antecedenteFinal, valoresAtributos: ValoresAtributos(self.vmatributo.atributos))
-                            self.vmficha.ficha.id = try JsonFileUtil.getNewIdForSheet()
-                            try JsonFileUtil.write(content: self.vmficha.ficha)
+//                    DispatchQueue.main.async {
+//                        do {
+//                            var novaFicha = PersonagemClient.orderPersonagem(raca: self.vmficha.racaFinal, classe: self.vmficha.classeFinal, antecedente: self.vmficha.antecedenteFinal, valoresAtributos: ValoresAtributos(self.vmatributo.atributos))
+//                            novaFicha.nome = self.vmficha.ficha.nome
+//                            novaFicha.fotoPersonagem = self.vmficha.ficha.fotoPersonagem
+//                            novaFicha.idadePersonagem = self.vmficha.ficha.idadePersonagem
+//                            novaFicha.alturaPersonagem = self.vmficha.ficha.alturaPersonagem
+//                            novaFicha.pesoPersonagem = self.vmficha.ficha.pesoPersonagem
+//                            novaFicha.olhosPersonagem = self.vmficha.ficha.olhosPersonagem
+//                            novaFicha.pelePersonagem = self.vmficha.ficha.pelePersonagem
+//                            novaFicha.cabeloPersonagem = self.vmficha.ficha.cabeloPersonagem
+//                            novaFicha.outrosPersonagem = self.vmficha.ficha.outrosPersonagem
+//                            novaFicha.tracosPersonalidadePersonagem = self.vmficha.ficha.tracosPersonalidadePersonagem
+//                            novaFicha.ideaisPersonagem = self.vmficha.ficha.ideaisPersonagem
+//                            novaFicha.vinculoPersonagem = self.vmficha.ficha.vinculoPersonagem
+//                            novaFicha.defeitosPersonagem = self.vmficha.ficha.defeitosPersonagem
+//                            novaFicha.tendenciaPersonagem = self.vmficha.ficha.tendenciaPersonagem
+//                            novaFicha.estiloVida = self.vmficha.ficha.estiloVida
+//                            self.vmficha.ficha.id = try JsonFileUtil.getNewIdForSheet()
+//                            try JsonFileUtil.write(content: self.vmficha.ficha)
+//                            self.popToRoot.toggle()
+//                        } catch {
+//                            self.showAlert.toggle()
+//                        }
+//                    }
+                    self.vmficha.createFicha(atributos: vmatributo.atributos) { saved in
+                        if saved {
                             self.popToRoot.toggle()
-                        } catch {
+                        } else {
                             self.showAlert.toggle()
                         }
-                        
-                        
                     }
                 }
                 .buttonStyle(CustomButtonStyle5())

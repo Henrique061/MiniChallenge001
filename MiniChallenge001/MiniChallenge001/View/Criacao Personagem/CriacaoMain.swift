@@ -52,6 +52,35 @@ public class NovaFichaViewModel: ObservableObject {
             self.objectWillChange.send()
         }
     }
+    
+    public func createFicha(atributos: [Atributo], completion: @escaping (_ saved: Bool) -> Void) {
+        DispatchQueue.main.async {
+            do {
+                var novaFicha = PersonagemClient.orderPersonagem(raca: self.racaFinal, classe: self.classeFinal, antecedente: self.antecedenteFinal, valoresAtributos: ValoresAtributos(atributos))
+                novaFicha.nome = self.ficha.nome
+                novaFicha.fotoPersonagem = self.ficha.fotoPersonagem
+                novaFicha.idadePersonagem = self.ficha.idadePersonagem
+                novaFicha.alturaPersonagem = self.ficha.alturaPersonagem
+                novaFicha.pesoPersonagem = self.ficha.pesoPersonagem
+                novaFicha.olhosPersonagem = self.ficha.olhosPersonagem
+                novaFicha.pelePersonagem = self.ficha.pelePersonagem
+                novaFicha.cabeloPersonagem = self.ficha.cabeloPersonagem
+                novaFicha.outrosPersonagem = self.ficha.outrosPersonagem
+                novaFicha.tracosPersonalidadePersonagem = self.ficha.tracosPersonalidadePersonagem
+                novaFicha.ideaisPersonagem = self.ficha.ideaisPersonagem
+                novaFicha.vinculoPersonagem = self.ficha.vinculoPersonagem
+                novaFicha.defeitosPersonagem = self.ficha.defeitosPersonagem
+                novaFicha.tendenciaPersonagem = self.ficha.tendenciaPersonagem
+                novaFicha.estiloVida = self.ficha.estiloVida
+                self.ficha.id = try JsonFileUtil.getNewIdForSheet()
+                try JsonFileUtil.write(content: self.ficha)
+                completion(true)
+            } catch {
+                completion(false)
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 
 struct CriacaoMain: View {

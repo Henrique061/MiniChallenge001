@@ -189,7 +189,7 @@ struct TemplateTelaPadrao<Content> : View where Content: View {
             }
         }
         .frame(maxHeight: .infinity, alignment: .top)
-        .ignoresSafeArea(.keyboard)
+//        .ignoresSafeArea(.keyboard)
     }
 }
 
