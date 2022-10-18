@@ -37,8 +37,7 @@ struct EscolhaEquipamento: View {
         TemplateTelaPadrao {
             VStack(alignment: .leading, spacing: 10) {
                 ScrollView {
-                    MostrarItensJson(title: "Equipamentos Iniciais", lista: vmclasse.escolha.armasIniciais)
-                    PacotesIniciais(classe: $vmclasse.escolha)
+                    ItensIniciais(vmclasse: self.vmclasse)
                     OpcoesEquipamento(classe: vmclasse, selections: $escolhasEquipamento)
                     Spacer()
                 }
@@ -59,6 +58,31 @@ struct EscolhaEquipamento: View {
                     NavigationBarTitle("Equipamentos para \(vmclasse.escolha.classePersonagem.rawValue)")
                 }
             }
+        }
+    }
+}
+
+private struct ItensIniciais: View {
+    
+    @ObservedObject private var vmclasse: CriacaoClasseViewModel
+    
+    public init(vmclasse: CriacaoClasseViewModel) {
+        self.vmclasse = vmclasse
+    }
+    
+    var body: some View {
+        if !self.vmclasse.escolha.equipamentosIniciais.isEmpty {
+            MostrarItensJson(title: "Equipamentos Iniciais", lista: vmclasse.escolha.equipamentosIniciais)
+        }
+        PacotesIniciais(classe: $vmclasse.escolha)
+        if !self.vmclasse.escolha.armasIniciais.isEmpty {
+            MostrarItensJson(title: "Armas Iniciais", lista: vmclasse.escolha.armasIniciais)
+        }
+        if !self.vmclasse.escolha.armadurasIniciais.isEmpty {
+            MostrarItensJson(title: "Armaduras Iniciais", lista: vmclasse.escolha.armadurasIniciais)
+        }
+        if !self.vmclasse.escolha.ferramentasIniciais.isEmpty {
+            MostrarItensJson(title: "Ferramentas Iniciais", lista: vmclasse.escolha.ferramentasIniciais)
         }
     }
 }
