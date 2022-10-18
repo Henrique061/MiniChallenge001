@@ -38,10 +38,8 @@ struct TodasHabilidadesView: View {
         }
         .searchable(text: self.$vmmagias.searchText)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Livro de Habilidades")
         .toolbar {
-            ToolbarItem(placement: .principal) {
-                NavigationBarTitle("Lista de Habilidades")
-            }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
                     Button("Reset") {

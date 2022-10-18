@@ -56,32 +56,6 @@ struct Habilidades: View {
                                 HeaderMagiaSection(magias.first?.nivel ?? -1)
                             }.padding(.horizontal, 10)
                         }
-                        
-//                        LazyVStack {
-//                            ForEach(0..<10) { nivel in
-//                                let magias = sheet.filterMagiasByLevel(nivel: nivel)
-//                                if !magias.isEmpty {
-//                                    TemplateContentBackground {
-//                                        SecaoNivelMagia {
-//                                            LazyVStack(spacing: 0) {
-//                                                Divider()
-//                                                ForEach(Array(magias.enumerated()), id: \.offset) { index, magia in
-//                                                    MagiaDetailCell(magia: magia, title: "Esquecer Habilidade") {
-//                                                        sheet.removeMagia(magia: magia)
-//                                                    }
-//                                                    if (index < magias.count - 1) {
-//                                                        Divider()
-//                                                    }
-//                                                }
-//                                            }
-//                                        } label: {
-//                                            HeaderMagiaSection(nivel)
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-                        
                     }
                 }
             }
@@ -89,10 +63,8 @@ struct Habilidades: View {
             .searchable(text: $textoBusca)
             
             .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Habilidades")
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    NavigationBarTitle("Habilidades")
-                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
                         TodasHabilidadesView(sheet: self.sheet)

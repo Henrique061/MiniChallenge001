@@ -20,26 +20,58 @@ struct Inventario: View {
     var body: some View {
         NavigationView {
             TemplateTelaPadrao {
-                List {
-                    Section {
-                        CapacidadeCarga(cargaUtilizada: .constant(10.0), cargaTotal: .constant(20.1))
-                        MostrarItensJson(title: "Equipamentos", lista: sheet.fichaSelecionada.equipamentos)
-                    } header: {
-                        Text("Mochila")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
-                    }
+                VStack(spacing: 10) {
+                    CapacidadeDeCarga(vmficha: sheet)
+                    SacoDeMoedas(vmficha: sheet)
+                    Spacer()
                 }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar{
-                ToolbarItem(placement: .principal) {
-                    NavigationBarTitle("Inventário")
+                
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Inventário")
+                .toolbar{
                 }
             }
         }
     }
     
     func testeDelete(index: IndexSet) { }
+}
+
+private struct CapacidadeDeCarga: View {
+    
+    @ObservedObject private var vmficha: SheetsViewModel
+    
+    public init(vmficha: SheetsViewModel) {
+        self.vmficha = vmficha
+    }
+    
+    var body: some View {
+        TemplateContentBackground {
+            DisplayTextoBotao(titulo: "Capacidade de Carga", descricao: "* calcular carga / * calcular total")
+                .padding(10)
+        }
+    }
+}
+
+private struct SacoDeMoedas: View {
+    
+    @ObservedObject private var vmficha: SheetsViewModel
+    
+    public init(vmficha: SheetsViewModel) {
+        self.vmficha = vmficha
+    }
+    
+    var body: some View {
+        
+        TemplateCustomDisclosureGroup2 {
+            ForEach(vmficha.fichaSelecionada.carteira, id: \.tipo) { moeda in
+                DisplayTextoBotao(titulo: moeda.tipo.rawValue, descricao: "Quantidade: \(moeda.quantidade)")
+            }
+        } header: {
+            DisplayTextoBotao(titulo: "Saco de Moedas", descricao: "Toque para abrir...")
+                .padding(10)
+        }
+    }
 }
 
 struct InfoMoeda: View {
@@ -51,41 +83,4 @@ struct InfoMoeda: View {
             .lineLimit(1)
             .scaledToFill()
     }
-}
-
-struct CapacidadeCarga: View {
-    
-    @Binding var cargaUtilizada: Float
-    @Binding var cargaTotal: Float
-    
-    private var numberFormatter: NumberFormatter {
-        let formatter = NumberFormatter()
-        formatter.decimalSeparator = ","
-        formatter.maximumFractionDigits = 2
-        formatter.numberStyle = .decimal
-        return formatter
-    }
-    
-    private var cargaFormatada: String {
-        let cargaAtual = numberFormatter.string(from: NSNumber(value: cargaUtilizada))
-        let cargaMaxima = numberFormatter.string(from: NSNumber(value: cargaTotal))
-        return "\(cargaAtual ?? "0,0")kg / \(cargaMaxima ?? "0,0")kg"
-    }
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("Capacidade de Carga")
-                .font(.system(size: 15, weight: .bold, design: .rounded))
-            Text(cargaFormatada)
-        }
-    }
-}
-
-struct Mochila {
-    var itens: [String]
-}
-
-struct Montaria {
-    var nome: String
-    var mochila: Mochila
 }
