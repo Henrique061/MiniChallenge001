@@ -36,10 +36,6 @@ class CriacaoClasseViewModel: ObservableObject {
         return nomes
     }
     
-    public func buildClasseFicha() -> ClasseFicha {
-        return ClasseFicha(classePersonagem: self.escolha.classePersonagem, caracteristicasPersonagem: getCaracteristicas(), subclassesPersonagem: self.escolha.subClasses, espacosDeMagia: self.escolha.espacosDeMagia, pontosEspecificosNumerico: self.escolha.pontosEspecificosNumerico, pontosEspecificosTexto: self.escolha.pontosEspecificosTexto)
-    }
-    
     public func setProficienciaPericias(pericias: [Pericia]) {
         DispatchQueue.main.async {
             self.definidas.escolhaProfPericias = pericias

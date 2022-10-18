@@ -15,6 +15,7 @@ struct Combate: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var sheet: SheetsViewModel
     @State private var showAlterarNivel: Bool = false
+    @State private var showTimerButton: Bool = false
     
     public init(sheet: SheetsViewModel) {
         self.sheet = sheet
@@ -22,7 +23,7 @@ struct Combate: View {
     
     var body: some View {
         NavigationView {
-            TemplateTelaPadrao() {
+            TemplateTelaPadrao(withPaddings: false) {
                 AreaImagemPerfil(ficha: $sheet.fichaSelecionada)
 
                 VStack(alignment: .center, spacing: 10) {
@@ -36,24 +37,27 @@ struct Combate: View {
                         self.showAlterarNivel.toggle()
                     }
                     .buttonStyle(CustomButtonStyle5())
+                    .sheet(isPresented: $showAlterarNivel) {
+                        AlterarNivelView(sheet: self.sheet)
+                    }
 
                     ScrollView {
-                        AreaInformacoesGerais(ficha: $sheet.fichaSelecionada)
-                            .frame(minHeight: 80)
-                        AreaPontosVida(sheet: self.sheet)
+                        VStack {
+                            AreaInformacoesGerais(ficha: $sheet.fichaSelecionada)
+                                .frame(minHeight: 80)
+                            AreaPontosVida(sheet: self.sheet)
+                                .frame(minHeight: 100)
+                            AreaPontosVidaTemporarios(sheet: self.sheet)
+                                .frame(minHeight: 80 )
+                            HStack {
+                                AreaDadoVida(sheet: self.sheet)
+                                AreaResistenciaMorte(sheet: self.sheet)
+                            }
                             .frame(minHeight: 100)
-                        AreaPontosVidaTemporarios(sheet: self.sheet)
-                            .frame(minHeight: 80 )
-                        HStack {
-                            AreaDadoVida(sheet: self.sheet)
-                            AreaResistenciaMorte(sheet: self.sheet)
-                        }
-                        .frame(minHeight: 100)
-                    }
+                        }.padding(.horizontal, 10)
+                    }.padding(.horizontal, -10)
                 }
                 .padding(.horizontal, 10)
-
-                Spacer()
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
@@ -62,6 +66,9 @@ struct Combate: View {
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
+                        DispatchQueue.main.async {
+                            let _ = self.sheet.saveFicha()
+                        }
                         dismiss()
                     } label: {
                         Text("Fichas")
@@ -69,17 +76,18 @@ struct Combate: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button() {
-                        print("Pressed")
+                        self.showTimerButton.toggle()
                     } label: {
                         Image("Temporizador").accentColor(.black)
                     }
+                    .confirmationDialog("Descanso", isPresented: $showTimerButton) {
+                        Button("Descanso curto") {
+                            
+                        }
+                        Button("Cancelar", role: .cancel) {}
+                    }
                 }
             }
-        }
-        
-        
-        .sheet(isPresented: $showAlterarNivel) {
-            AlterarNivelView(sheet: self.sheet)
         }
     }
 }
@@ -282,7 +290,7 @@ private struct AreaPontosVidaTemporarios: View {
                     
                     Text("\(sheet.fichaSelecionada.pontosVidaTemporário)")
                         .font(.system(size: 25, weight: .bold, design: .default))
-                        .scaledToFill()
+                        .padding(.horizontal, 10)
                     
                     TemplateSheetButton(image: Image(systemName: "plus.circle")) {
                         sheet.setPontosVidaTemp(value: +1)
@@ -316,7 +324,7 @@ private struct AreaPontosVida: View {
                     
                     Text("\(sheet.fichaSelecionada.pontosVida)")
                         .font(.system(size: 25, weight: .bold, design: .default))
-                        .padding(.horizontal, 15)
+                        .padding(.horizontal, 10)
                     
                     TemplateSheetButton(image: Image(systemName: "plus.circle")) {
                         self.sheet.setPontosVida(value: +1)
@@ -354,9 +362,15 @@ private struct AreaInformacoesGerais: View {
                     }
                 }
             } label: {
-                TemplateInformacao(title: "Iniciativa", content: "\(ficha.iniciativa < 0 ? "\(ficha.iniciativa)" : "+\(ficha.iniciativa)")")
+                ZStack(alignment: .bottom) {
+                    TemplateInformacao(title: "Iniciativa", content: "\(ficha.iniciativa < 0 ? "\(ficha.iniciativa)" : "+\(ficha.iniciativa)")")
+                    Color("InverseButton")
+                        .frame(height: 5)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+                .foregroundColor(Color("BlackAndWhite"))
             }
-            .foregroundColor(Color("BlackAndWhite"))
+            
             
             TemplateInformacao(title: "Deslocamento", content: "\(ficha.deslocamento) m")
         }

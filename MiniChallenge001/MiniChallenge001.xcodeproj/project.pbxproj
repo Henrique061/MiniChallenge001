@@ -425,8 +425,8 @@
 				3D60C63928DB80FE0051676A /* PersonagemBuilder.swift */,
 				3D9CD65628FDC45300CD4077 /* PersonagemConcreteBuilder.swift */,
 				3D9CD65828FDC46300CD4077 /* PersonagemDirector.swift */,
-				3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */,
 				3D9CD65A28FDD07E00CD4077 /* PersonagemClient.swift */,
+				3DF24F8C28E1CCB0006C0AAE /* PersonagemFicha.swift */,
 			);
 			path = Builder_Personagem;
 			sourceTree = "<group>";
@@ -948,6 +948,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MiniChallenge001/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "In Venture - RPG Sheet";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -978,6 +979,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MiniChallenge001/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "In Venture - RPG Sheet";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

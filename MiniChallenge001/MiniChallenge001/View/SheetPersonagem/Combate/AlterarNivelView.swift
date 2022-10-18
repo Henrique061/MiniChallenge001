@@ -74,6 +74,15 @@ struct AlterarNivelView: View {
                     DispatchQueue.main.async {
                         self.sheet.fichaSelecionada.nivel = self.tempNivel
                         self.sheet.fichaSelecionada.pontosVidaMaximo = self.tempVidaMaxima
+                        
+                        if self.sheet.fichaSelecionada.quantiaDadoVida > self.tempNivel {
+                            self.sheet.fichaSelecionada.quantiaDadoVida = self.tempNivel
+                        }
+                        
+                        if self.sheet.fichaSelecionada.pontosVida > self.tempVidaMaxima {
+                            self.sheet.fichaSelecionada.pontosVida = self.tempVidaMaxima
+                        }
+                        
                         let _ = sheet.saveFicha()
                     }
                     self.dismiss()
@@ -101,6 +110,7 @@ struct AlterarNivelView: View {
                 return
             }
             self.tempVidaMaxima += value
+            
         }
     }
 }

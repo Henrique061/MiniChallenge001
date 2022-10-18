@@ -8,11 +8,71 @@
 import Foundation
 import SwiftUI
 
-class MagiasViewModel: ObservableObject {
+public class MagiasViewModel: ObservableObject {
     
-    @Published var magias: [MagiaJSON] = []
+    @Published public var magias: [MagiaJSON] = []
+    @Published public var filtroNivel: Int
+    @Published public var filtroClasse: ClassePersonagem
+    @Published public var searchText: String
     
-    public init() {
+    public var filteredMagias: [[MagiaJSON]] {
+        var temp: [[MagiaJSON]] = []
+        
+        if self.filtroClasse == .none && self.filtroNivel == -1 {
+            if self.searchText.isEmpty {
+                for i in 0..<10 {
+                    let aux = self.magias.filter({$0.nivel == i}).sorted(by: {$0.nome < $1.nome})
+                    if !aux.isEmpty { temp.append(aux) }
+                }
+            } else {
+                for i in 0..<10 {
+                    let aux = self.magias.filter({$0.nivel == i && $0.nome.contains(self.searchText)}).sorted(by: {$0.nome < $1.nome})
+                    if !aux.isEmpty { temp.append(aux) }
+                }
+            }
+        }
+        
+        if self.filtroClasse == .none && self.filtroNivel > -1 {
+            if self.searchText.isEmpty {
+                let aux = self.magias.filter({$0.nivel == self.filtroNivel}).sorted(by: {$0.nome < $1.nome})
+                if !aux.isEmpty { temp.append(aux) }
+            } else {
+                let aux = self.magias.filter({$0.nivel == self.filtroNivel && $0.nome.contains(self.searchText)}).sorted(by: {$0.nome < $1.nome})
+                if !aux.isEmpty { temp.append(aux) }
+            }
+        }
+        
+        if self.filtroNivel == -1 && self.filtroClasse != .none {
+            if self.searchText.isEmpty {
+                for i in 0..<10 {
+                    let aux = self.magias.filter({$0.nivel == i && $0.classes.contains(self.filtroClasse)})
+                    if !aux.isEmpty { temp.append(aux.sorted(by: {$0.nome < $1.nome})) }
+                }
+            } else {
+                for i in 0..<10 {
+                    let aux = self.magias.filter({$0.nivel == i && $0.classes.contains(self.filtroClasse) && $0.nome.contains(self.searchText)})
+                    if !aux.isEmpty { temp.append(aux.sorted(by: {$0.nome < $1.nome})) }
+                }
+            }
+        }
+        
+        if self.filtroClasse != .none && self.filtroNivel > -1 {
+            if self.searchText.isEmpty {
+                let aux = self.magias.filter({$0.nivel == self.filtroNivel && $0.classes.contains(self.filtroClasse)})
+                if !aux.isEmpty { temp.append(aux.sorted(by: {$0.nome < $1.nome})) }
+            } else {
+                let aux = self.magias.filter({$0.nivel == self.filtroNivel && $0.classes.contains(self.filtroClasse) && $0.nome.contains(self.searchText)})
+                if !aux.isEmpty { temp.append(aux.sorted(by: {$0.nome < $1.nome})) }
+            }
+        }
+        
+        return temp
+    }
+    
+    public init(nivel: Int = -1, classe: ClassePersonagem = .none) {
+        self.filtroNivel = nivel
+        self.filtroClasse = classe
+        self.searchText = ""
         fetchMagias()
     }
     
@@ -22,12 +82,10 @@ class MagiasViewModel: ObservableObject {
         }
     }
     
-    public func filterMagiasByLevel(nivel: Int) -> [MagiaJSON] {
-        let filteredMagias = magias.filter({$0.nivel == nivel})
-        return filteredMagias
-    }
-    
-    public func filterMagiaPerClass(classe: ClassePersonagem) {
-        
+    public func resetFilters(classe: ClassePersonagem) {
+        DispatchQueue.main.async {
+            self.filtroClasse = classe
+            self.filtroNivel = -1
+        }
     }
 }

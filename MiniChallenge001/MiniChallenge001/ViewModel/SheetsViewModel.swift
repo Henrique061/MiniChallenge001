@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public class SheetsViewModel: ObservableObject {
     
@@ -13,10 +14,7 @@ public class SheetsViewModel: ObservableObject {
     @Published public var fichaSelecionada: PersonagemFicha
     
     public var maximoDadoVida: Int {
-        if fichaSelecionada.pontosAtributos.constituicao.modificador > 0 {
-            return 1 + fichaSelecionada.pontosAtributos.constituicao.modificador
-        }
-        return 1
+        return self.fichaSelecionada.nivel
     }
     
     public init() {
@@ -126,9 +124,27 @@ public class SheetsViewModel: ObservableObject {
         }
     }
     
+    public func filterMagiasByLevel(nivel: Int) -> [MagiaJSON] {
+        let filteredMagias = self.fichaSelecionada.magias.filter({$0.nivel == nivel})
+        return filteredMagias.sorted(by: {$0.nome < $1.nome})
+    }
+    
+    public func removeMagia(magia: MagiaJSON) {
+        DispatchQueue.main.async {
+            self.fichaSelecionada.magias.removeAll(where: {$0.id == magia.id})
+        }
+    }
+    
     public func saveFicha() -> Bool {
+        if self.fichaSelecionada.id == 0 { return true }
         do {
             try JsonFileUtil.write(content: self.fichaSelecionada)
+            
+            for i in 0..<self.listaFichas.count {
+                if listaFichas[i].id == fichaSelecionada.id {
+                    listaFichas[i] = fichaSelecionada
+                }
+            }
             return true
         } catch {
             return false

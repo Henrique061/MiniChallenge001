@@ -27,7 +27,7 @@ struct ContentView: View {
                     Label("Inventário", image: currentTab == .inventario ? "InventarioIconOn" : "InventarioIconOff")
                 }
             
-            Habilidades()
+            Habilidades(sheet: sheet)
                 .tag(SheetTabView.habilidades)
                 .tabItem {
                     Label("Habilidades", image: currentTab == .habilidades ? "HabilidadesIconOn" : "HabilidadesIconOff")

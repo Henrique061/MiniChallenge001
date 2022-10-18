@@ -10,11 +10,20 @@ import SwiftUI
 @main
 struct MiniChallenge001App: App {
 
-    // ViewModel (instanciada)
+    @Environment(\.scenePhase) private var scene
+    @StateObject private var vmfichas: SheetsViewModel
+    
+    public init() {
+        self._vmfichas = StateObject(wrappedValue: SheetsViewModel())
+    }
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(vmfichas: vmfichas)
+        }
+        
+        .onChange(of: scene) { _ in
+            let _ = vmfichas.saveFicha()
         }
     }
 }

@@ -198,7 +198,7 @@ struct LivreEditAtributo: View {
     }
 }
 
-struct Atributo: Hashable, Codable {
+public struct Atributo: Hashable, Codable {
     
     public var nome: AtributosSalvaguarda
     public var valor: Int

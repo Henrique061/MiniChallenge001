@@ -49,13 +49,38 @@ struct Tendencia : Codable {
 }
 
 //MARK: VALORES ATRIBUTOS
-struct ValoresAtributos : Codable {
-    var forca: Atributo = Atributo(nome: .forca, valor: 0)
-    var destreza: Atributo = Atributo(nome: .destreza, valor: 0)
-    var constituicao: Atributo = Atributo(nome: .constituicao, valor: 0)
-    var inteligencia: Atributo = Atributo(nome: .inteligencia, valor: 0)
-    var sabedoria: Atributo = Atributo(nome: .sabedoria, valor: 0)
-    var carisma: Atributo = Atributo(nome: .carisma, valor: 0)
+public struct ValoresAtributos : Codable, Hashable {
+    var forca: Atributo
+    var destreza: Atributo
+    var constituicao: Atributo
+    var inteligencia: Atributo
+    var sabedoria: Atributo
+    var carisma: Atributo
+    
+    public init() {
+        self.forca = Atributo(nome: .forca, valor: 0)
+        self.destreza = Atributo(nome: .destreza, valor: 0)
+        self.constituicao = Atributo(nome: .constituicao, valor: 0)
+        self.inteligencia = Atributo(nome: .inteligencia, valor: 0)
+        self.sabedoria = Atributo(nome: .sabedoria, valor: 0)
+        self.carisma = Atributo(nome: .carisma, valor: 0)
+    }
+    
+    public init(_ valores: [Atributo]) {
+        let indexForca: Int = valores.firstIndex(where: { $0.nome == .forca } ) ?? 3
+        let indexDestreza: Int = valores.firstIndex(where: { $0.nome == .destreza } ) ?? 2
+        let indexConstituicao: Int = valores.firstIndex(where: { $0.nome == .constituicao } ) ?? 1
+        let indexInteligencia: Int = valores.firstIndex(where: { $0.nome == .inteligencia } ) ?? 4
+        let indexSabedoria: Int = valores.firstIndex(where: { $0.nome == .sabedoria } ) ?? 5
+        let indexCarisma: Int = valores.firstIndex(where: { $0.nome == .carisma } ) ?? 0
+        
+        self.forca = Atributo(nome: .forca, valor: valores[indexForca].valor)
+        self.destreza = Atributo(nome: .destreza, valor: valores[indexDestreza].valor)
+        self.constituicao = Atributo(nome: .constituicao, valor: valores[indexConstituicao].valor)
+        self.inteligencia = Atributo(nome: .inteligencia, valor: valores[indexInteligencia].valor)
+        self.sabedoria = Atributo(nome: .sabedoria, valor: valores[indexSabedoria].valor)
+        self.carisma = Atributo(nome: .carisma, valor: valores[indexCarisma].valor)
+    }
 }
 
 //MARK: PERSONAGEM FICHA

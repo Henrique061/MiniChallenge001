@@ -18,7 +18,7 @@ public enum EscolaMagia: String, Codable {
     case transmutacao = "Transmutação"
 }
 
-public struct MagiaJSON: Json {
+public struct MagiaJSON: Json, Hashable {
     var id: Int
     var nome: String
     var nivel: Int
