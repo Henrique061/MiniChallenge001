@@ -10,7 +10,6 @@ import SwiftUI
 struct TodasHabilidadesView: View {
     @ObservedObject private var sheet: SheetsViewModel
     @StateObject private var vmmagias: MagiasViewModel
-    @State private var textoBusca: String = ""
     
     public init(sheet: SheetsViewModel) {
         self.sheet = sheet
@@ -37,7 +36,7 @@ struct TodasHabilidadesView: View {
                 }
             }
         }
-        
+        .searchable(text: self.$vmmagias.searchText)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -69,8 +68,6 @@ struct TodasHabilidadesView: View {
                 }
             }
         }
-        
-        .searchable(text: $textoBusca)
     }
     
     private func getFiltroNivelTitle(nivel: Int) -> String {
@@ -83,7 +80,7 @@ struct TodasHabilidadesView: View {
 
 private struct MagiaContentGroup: View {
 
-    @State private var isExpanded: Bool = true
+    @State private var isExpanded: Bool = false
     private var magias: [MagiaJSON]
     private var completion: (_ magia: MagiaJSON) -> Void
     
