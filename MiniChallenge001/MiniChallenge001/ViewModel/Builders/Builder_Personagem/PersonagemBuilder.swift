@@ -46,6 +46,24 @@ protocol PersonagemBuilder {
     func setPontosAtributos(_ pontos: ValoresAtributos)
     func setIdiomas(_ idiomas: [IdiomaAlfabeto])
     
+    //MARK: PERFIL
+    func setNomeFicha(_ nomeFicha: String)
+    func setFoto(_ foto: Data?)
+    func setNomePersonagem(_ nome: String)
+    func setIdade(_ idade: Int)
+    func setAltura(_ altura: Float)
+    func setPeso(_ peso: Float)
+    func setOlhos(_ olhos: String)
+    func setPele(_ pele: String)
+    func setCabelo(_ cabelo: String)
+    func setOutros(_ outros: String)
+    func setTracosPersonalidade(_ tracos: String)
+    func setIdeais(_ ideais: String)
+    func setVinculo(_ vinculo: String)
+    func setDefeitos(_ defeitos: String)
+    func setTendencia(_ tendencia: TipoTendencia)
+    func setEstiloVida(_ estilo: EstiloDeVida)
+    
     //MARK: PROFICIENCIAS
     func setProfSalvaguardas(_ salvaguardas: [AtributosSalvaguarda])
     func setProfPericias(_ pericias: [Pericia])

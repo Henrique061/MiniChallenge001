@@ -15,7 +15,7 @@ public class PersonagemDirector {
     }
     
     //MARK: MAKE PERSONAGEM
-    func makePersonagem(raca: RacaFinal, classe: ClasseFinal, antecedente: AntecedenteFinal, valoresAtributos: ValoresAtributos) {
+    func makePersonagem(raca: RacaFinal, classe: ClasseFinal, antecedente: AntecedenteFinal, valoresAtributos: ValoresAtributos, perfilPersonagem: PerfilPersonagem) {
         //MARK: NIVEL
         builder?.setNivel(1)
         
@@ -93,6 +93,54 @@ public class PersonagemDirector {
         
         //MARK: IDIOMAS
         builder?.setIdiomas(idiomas(raca: raca, antecedente: antecedente))
+        
+        //MARK: NOME FICHA
+        builder?.setNomeFicha(perfilPersonagem.nomeFicha)
+        
+        //MARK: FOTO
+        builder?.setFoto(perfilPersonagem.foto)
+        
+        //MARK: NOME PERSONAGEM
+        builder?.setNomePersonagem(perfilPersonagem.nomePersonagem)
+        
+        //MARK: IDADE
+        builder?.setIdade(Int(perfilPersonagem.idade) ?? 0)
+        
+        //MARK: ALTURA
+        builder?.setAltura(Float(perfilPersonagem.altura) ?? 0.0)
+        
+        //MARK: PESO
+        builder?.setPeso(Float(perfilPersonagem.peso) ?? 0.0)
+        
+        //MARK: OLHOS
+        builder?.setOlhos(perfilPersonagem.olhos)
+        
+        //MARK: PELE
+        builder?.setPele(perfilPersonagem.pele)
+        
+        //MARK: CABELO
+        builder?.setCabelo(perfilPersonagem.cabelo)
+        
+        //MARK: OUTROS
+        builder?.setOutros(perfilPersonagem.outros)
+        
+        //MARK: TRACOS
+        builder?.setTracosPersonalidade(perfilPersonagem.tracosPersonalidade)
+        
+        //MARK: IDEAIS
+        builder?.setIdeais(perfilPersonagem.ideais)
+        
+        //MARK: VINCULO
+        builder?.setVinculo(perfilPersonagem.vinculo)
+        
+        //MARK: DEFEITOS
+        builder?.setDefeitos(perfilPersonagem.defeitos)
+        
+        //MARK: TENDENCIA
+        builder?.setTendencia(perfilPersonagem.tendencia)
+        
+        //MARK: ESTILO VIDA
+        builder?.setEstiloVida(perfilPersonagem.estiloVida)
         
         //MARK: PROF SALVAGUARDAS
         builder?.setProfSalvaguardas(classe.profSalvaguardas)

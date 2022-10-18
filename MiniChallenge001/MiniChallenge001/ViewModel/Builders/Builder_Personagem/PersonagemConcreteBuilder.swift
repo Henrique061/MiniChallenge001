@@ -145,6 +145,86 @@ public class PersonagemConcreteBuilder : PersonagemBuilder {
         self.personagem.idiomas = idiomas
     }
     
+    //MARK: NOME FICHA
+    func setNomeFicha(_ nomeFicha: String) {
+        self.personagem.nome = nomeFicha
+    }
+    
+    //MARK: FOTO
+    func setFoto(_ foto: Data?) {
+        self.personagem.fotoPersonagem = foto
+    }
+    
+    //MARK: NOME PERSONAGEM
+    func setNomePersonagem(_ nome: String) {
+        self.personagem.nomePersonagem = nome
+    }
+    
+    //MARK: IDADE
+    func setIdade(_ idade: Int) {
+        self.personagem.idadePersonagem = idade
+    }
+    
+    //MARK: ALTURA
+    func setAltura(_ altura: Float) {
+        self.personagem.alturaPersonagem = altura
+    }
+    
+    //MARK: PESO
+    func setPeso(_ peso: Float) {
+        self.personagem.pesoPersonagem = peso
+    }
+    
+    //MARK: OLHOS
+    func setOlhos(_ olhos: String) {
+        self.personagem.olhosPersonagem = olhos
+    }
+    
+    //MARK: PELE
+    func setPele(_ pele: String) {
+        self.personagem.pelePersonagem = pele
+    }
+    
+    //MARK: CABELO
+    func setCabelo(_ cabelo: String) {
+        self.personagem.cabeloPersonagem = cabelo
+    }
+    
+    //MARK: OUTROS
+    func setOutros(_ outros: String) {
+        self.personagem.outrosPersonagem = outros
+    }
+    
+    //MARK: TRACOS
+    func setTracosPersonalidade(_ tracos: String) {
+        self.personagem.tracosPersonalidadePersonagem = tracos
+    }
+    
+    //MARK: IDEAIS
+    func setIdeais(_ ideais: String) {
+        self.personagem.ideaisPersonagem = ideais
+    }
+    
+    //MARK: VINCULO
+    func setVinculo(_ vinculo: String) {
+        self.personagem.vinculoPersonagem = vinculo
+    }
+    
+    //MARK: DEFEITOS
+    func setDefeitos(_ defeitos: String) {
+        self.personagem.defeitosPersonagem = defeitos
+    }
+    
+    //MARK: TENDENCIA
+    func setTendencia(_ tendencia: TipoTendencia) {
+        self.personagem.tendenciaPersonagem = tendencia
+    }
+    
+    //MARK: ESTILO VIDA
+    func setEstiloVida(_ estilo: EstiloDeVida) {
+        self.personagem.estiloVida = estilo
+    }
+    
     //MARK: PROF SALVAGUARDAS
     func setProfSalvaguardas(_ salvaguardas: [AtributosSalvaguarda]) {
         self.personagem.profSalvaguardas = salvaguardas
