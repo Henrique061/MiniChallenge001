@@ -16,15 +16,23 @@ struct Atributos: View {
     @State private var showProficiencias: Bool = false
     
     @State var teste = true
+    
+    @ObservedObject private var sheet: SheetsViewModel
+    
+    
+    public init(ficha: SheetsViewModel) {
+        self._sheet = ObservedObject(initialValue: ficha)
+    }
+    
     var body: some View {
         NavigationView{
             TemplateTelaPadrao(withPaddings: false){
             ScrollView{
                 VStack{
                         ToggleVista(toggleIsOn: $toggleIsOn)
-                        AtributosVista(toggleIsOn: $toggleIsOn)
-                        SalvaguardaVista(toggleIsOn: $toggleIsOn)
-                        PericiasVista(toggleIsOn: $toggleIsOn)
+                    AtributosVista(toggleIsOn: $toggleIsOn,   ficha: self.$sheet.fichaSelecionada)
+                    SalvaguardaVista(toggleIsOn: $toggleIsOn, ficha: self.$sheet.fichaSelecionada)
+                    PericiasVista(toggleIsOn: $toggleIsOn,    ficha: self.$sheet.fichaSelecionada)
                     }
                     .padding(.horizontal, 10)
                     .navigationBarTitleDisplayMode(.inline)
@@ -100,41 +108,44 @@ struct TemplateTabelaAtributo<Content>: View where Content: View {
                 VStack(spacing: 0) {
                     content()
                 }
-            }.padding(.vertical, 10)
+            }.padding(.vertical, 5)
         }
     }
 }
 
 struct AtributosVista: View{
     @Binding private var toggleIsOn: Bool
+    @Binding private var ficha: PersonagemFicha
     
-    public init(toggleIsOn: Binding<Bool>) {
+    public init(toggleIsOn: Binding<Bool>, ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
         self._toggleIsOn = toggleIsOn
     }
     
     var body: some View{
         TemplateTabelaAtributo(title: "Atributos") {
             HStack{
-                TemplateAtributos(titulo1: "Força", descricao1: "08", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Inteligência", descricao1: "16", toggleIsOn: $toggleIsOn )
-            }
-            
-            Divider()
-            HStack{
-                TemplateAtributos(titulo1: "Destreza", descricao1: "14", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Sabedoria", descricao1: "10", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Força", descricao1: "\(ficha.pontosAtributos.forca.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Inteligência", descricao1: "\(ficha.pontosAtributos.inteligencia.valor)", toggleIsOn: $toggleIsOn )
             }
             Divider()
+
             HStack{
-                TemplateAtributos(titulo1: "Constituição", descricao1: "12", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Carisma", descricao1: "15", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Destreza", descricao1: "\(ficha.pontosAtributos.destreza.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Sabedoria", descricao1: "\(ficha.pontosAtributos.sabedoria.valor)", toggleIsOn: $toggleIsOn )
+            }
+            Divider()
+            HStack{
+                TemplateAtributos(titulo1: "Constituição", descricao1: "\(ficha.pontosAtributos.constituicao.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Carisma", descricao1: "\(ficha.pontosAtributos.carisma.valor)", toggleIsOn: $toggleIsOn )
             }
         }
+
             Button {
                 print("Button tapped!")
             } label: {
                 Text("Editar Atributos")
-                    
+
             }
             .buttonStyle(CustomButtonStyle5())
         }
@@ -144,49 +155,53 @@ struct AtributosVista: View{
 
 
 
-
 struct SalvaguardaVista: View{
     @Binding private var toggleIsOn: Bool
-    
-    public init(toggleIsOn: Binding<Bool>) {
+    @Binding private var ficha: PersonagemFicha
+    public init(toggleIsOn: Binding<Bool>, ficha: Binding<PersonagemFicha>) {
         self._toggleIsOn = toggleIsOn
+        self._ficha = ficha
     }
     var body: some View{
         
-        VStack{
-            Text("Salva-Guarda")
-                .font(.system(size: 20, weight: .bold, design: .rounded))
-                .frame(alignment: .leading)
+        
             
             
-            TemplateContentBackground{
-                VStack{
+        TemplateTabelaAtributo(title: "Salva-Guarda"){
+            
+        
+            
+        
+              
                     
                     
-                    HStack{
-                        TemplateAtributos(titulo1: "Força", descricao1: "+0", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Inteligência", descricao1: "+4", toggleIsOn: $toggleIsOn ).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    Divider()
-                    HStack{
-                        TemplateAtributos(titulo1: "Destreza", descricao1: "+2", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Sabedoria", descricao1: "+0", toggleIsOn: $toggleIsOn ).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    Divider()
-                    HStack{
-                        TemplateAtributos(titulo1: "Constituição", descricao1: "+1", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                        TemplateAtributos(titulo1: "Carisma", descricao1: "+2", toggleIsOn: $toggleIsOn).frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                }
+            HStack{
+                TemplateAtributos(titulo1: "Força", descricao1: "\(ficha.pontosAtributos.forca.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Inteligência", descricao1: "\(ficha.pontosAtributos.inteligencia.valor)", toggleIsOn: $toggleIsOn )
             }
+            Divider()
+
+            HStack{
+                TemplateAtributos(titulo1: "Destreza", descricao1: "\(ficha.pontosAtributos.destreza.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Sabedoria", descricao1: "\(ficha.pontosAtributos.sabedoria.valor)", toggleIsOn: $toggleIsOn )
+            }
+            Divider()
+            HStack{
+                TemplateAtributos(titulo1: "Constituição", descricao1: "\(ficha.pontosAtributos.constituicao.valor)", toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Carisma", descricao1: "\(ficha.pontosAtributos.carisma.valor)", toggleIsOn: $toggleIsOn )
+            }
+                
+        }.padding(.vertical,5)
         }
     }
-}
+
 
 struct PericiasVista: View{
     @Binding private var toggleIsOn: Bool
-    public init(toggleIsOn: Binding<Bool>) {
+    @Binding private var ficha: PersonagemFicha
+    public init(toggleIsOn: Binding<Bool>, ficha: Binding<PersonagemFicha>) {
         self._toggleIsOn = toggleIsOn
+        self._ficha = ficha
     }
     var numeroPericias: [Int] = [2,3,4]
     var periciasArray: [String] = ["Acrobacia","Arcanismo","Atletismo","Enganação","Furtividade","História","Intuição", "Intimidação","Investigação "]
@@ -195,30 +210,29 @@ struct PericiasVista: View{
     
     var body: some View{
         
-        
-        VStack{
-            Text("Perícias")
-                .font(.system(size: 20, weight: .bold, design: .rounded))
-                .frame(alignment: .leading)
-            TemplateContentBackground{
-                HStack{
-                    VStack{
-                        ForEach(periciasArray, id: \.self) {i in
-                            TemplateAtributos(titulo1: i, descricao1: "+1", toggleIsOn: $toggleIsOn)
-                            Divider()
-                    }
+        TemplateTabelaAtributo(title: "Perícias") {
+            
+            
+            HStack{
+                VStack{
+                ForEach(periciasArray, id: \.self) { condicao in
+                    TemplateAtributos(titulo1: condicao, descricao1: "\(Pericia.self)", toggleIsOn: $toggleIsOn)
+                    Divider()
+            }
+                }
                 
                 VStack{
-                ForEach(periciasArray2, id: \.self) {i in
-                    TemplateAtributos(titulo1: i, descricao1: "+1", toggleIsOn: $toggleIsOn)
+                    ForEach(periciasArray2, id: \.self) { condicao in
+                        TemplateAtributos(titulo1: condicao, descricao1: "\(Pericia.self)", toggleIsOn: $toggleIsOn)
+                        Divider()
                 }
-                }
-                
-                }
-            }
+           
         }
+        
     }
+
 }
+    }
 }
 struct ToggleVista: View{
     // @ObservedObject var vmclasse = TemplateFichaPronta()
@@ -235,6 +249,7 @@ struct ToggleVista: View{
             
             
             HStack{
+                
                 
                 DisplayTextoBotao(titulo: "Pontos Adicionais", descricao: "02").padding(.vertical,5)
                     .padding(.horizontal,10)

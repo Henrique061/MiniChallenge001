@@ -98,7 +98,7 @@ struct TextEditorSheetCaracteristicaPersonagem: View {
     }
 }
 
-private struct EstiloVidaPicker: View {
+struct EstiloVidaPicker: View {
     
     @State private var isExpanded: Bool
     @Binding private var selectedValue: EstiloDeVida
