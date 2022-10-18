@@ -58,33 +58,37 @@ struct Combate: View {
                     }.padding(.horizontal, -10)
                 }
                 .padding(.horizontal, 10)
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar{
-                ToolbarItem(placement: .principal) {
-                    NavigationBarTitle("\(self.sheet.fichaSelecionada.nome)")
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        DispatchQueue.main.async {
-                            let _ = self.sheet.saveFicha()
+
+                
+                .navigationTitle(self.sheet.fichaSelecionada.nome)
+                .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            DispatchQueue.main.async {
+                                let _ = self.sheet.saveFicha()
+                            }
+                            dismiss()
+                        } label: {
+                            Text("Fichas")
                         }
-                        dismiss()
-                    } label: {
-                        Text("Fichas")
                     }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button() {
-                        self.showTimerButton.toggle()
-                    } label: {
-                        Image("Temporizador").accentColor(.black)
-                    }
-                    .confirmationDialog("Descanso", isPresented: $showTimerButton) {
-                        Button("Descanso curto") {
-                            
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button() {
+                            self.showTimerButton.toggle()
+                        } label: {
+                            Image("Temporizador").accentColor(.black)
                         }
-                        Button("Cancelar", role: .cancel) {}
+                        .confirmationDialog("Descanso", isPresented: $showTimerButton) {
+                            Button("Descansar") {
+                                DispatchQueue.main.async {
+                                    self.sheet.fichaSelecionada.pontosVida = self.sheet.fichaSelecionada.pontosVidaMaximo
+                                    self.sheet.fichaSelecionada.quantiaDadoVida = self.sheet.fichaSelecionada.pontosVidaMaximo
+                                    self.sheet.resetResistenciaMorte()
+                                }
+                            }
+                            Button("Cancelar", role: .cancel) {}
+                        }
                     }
                 }
             }

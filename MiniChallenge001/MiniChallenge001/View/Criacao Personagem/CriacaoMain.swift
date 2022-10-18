@@ -9,6 +9,12 @@ import SwiftUI
 
 
 
+public enum FieldsIdentifiers: CaseIterable {
+    case none
+    case nomeFicha
+    case nomePersonagem
+}
+
 public class NovaFichaViewModel: ObservableObject {
     @Published var ficha: PersonagemFicha
     @Published var racaFinal: RacaFinal
@@ -49,11 +55,6 @@ public class NovaFichaViewModel: ObservableObject {
 }
 
 struct CriacaoMain: View {
-    
-    private enum FieldsIdentifiers: Int, CaseIterable {
-        case nomeFicha
-        case nomePersonagem
-    }
     
     @StateObject private var novaFicha: NovaFichaViewModel = NovaFichaViewModel()
     @Binding private var popToRoot: Bool
@@ -99,7 +100,6 @@ struct CriacaoMain: View {
                         .environmentObject(novaFicha)
                     
                 }
-                .frame(maxHeight: .infinity)
                 
                 NavigationLink {
                     CriacaoCaracteristica(vmficha: self.novaFicha, popToRoot: $popToRoot)
@@ -167,6 +167,9 @@ struct CustomNavigationLink<Destination, Label>: View where Destination: View, L
             label()
         }
         .buttonStyle(CustomButtonStyle())
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
 }
 

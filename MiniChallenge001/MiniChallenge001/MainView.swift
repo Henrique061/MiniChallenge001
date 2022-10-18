@@ -63,7 +63,7 @@ struct MainView: View {
                 ContentView(ficha: self.vmfichas)
             }
 
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Fichas")
@@ -189,6 +189,7 @@ struct TemplateTelaPadrao<Content> : View where Content: View {
             }
         }
         .frame(maxHeight: .infinity, alignment: .top)
+        .ignoresSafeArea(.keyboard)
     }
 }
 
