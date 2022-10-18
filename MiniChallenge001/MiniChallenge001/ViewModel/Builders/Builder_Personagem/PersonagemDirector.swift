@@ -91,15 +91,29 @@ public class PersonagemDirector {
         //MARK: PONTOS ATRIBUTOS
         builder?.setPontosAtributos(valoresAtributos)
         
+        //MARK: IDIOMAS
+        builder?.setIdiomas(idiomas(raca: raca, antecedente: antecedente))
+        
         //MARK: PROF SALVAGUARDAS
         builder?.setProfSalvaguardas(classe.profSalvaguardas)
         
         //MARK: PROF PERICIAS
+        builder?.setProfPericias(profPericias(classe: classe, raca: raca, antecedente: antecedente))
         
+        //MARK: PROF ARMAS
+        builder?.setProfArmas(profArmas(classe: classe, raca: raca))
+        
+        //MARK: PROF ARMADURAS
+        builder?.setProfArmadura(profArmaduras(classe: classe, raca: raca))
+        
+        //MARK: PROF FERRAMENTAS
+        builder?.setProfFerramentas(profFerramentas(classe: classe, raca: raca, antecedente: antecedente))
     }
     
+    //MARK: METODOS PRIVADOS
     // //////////////////////////////////////////////////////////////////////////
     
+    //MARK: CLASSE FICHA
     private func classeFicha(_ classe: ClasseFinal) -> ClasseFicha {
         return ClasseFicha(classePersonagem: classe.tipoClasse,
                            caracteristicasPersonagem: classe.caracteristicasClasse,
@@ -110,6 +124,7 @@ public class PersonagemDirector {
                            pontosEspecificosTexto: classe.pontosEspecificosTexto)
     }
     
+    //MARK: RACA FICHA
     private func racaFicha(_ raca: RacaFinal) -> RacaFicha {
         return RacaFicha(racaPersonagem: raca.tipoRaca,
                          subracaPersonagem: raca.subRaca,
@@ -217,9 +232,42 @@ public class PersonagemDirector {
         return classe.vidaInicial + modConstituicao
     }
     
+    //MARK: IDIOMAS
+    private func idiomas(raca: RacaFinal, antecedente: AntecedenteFinal) -> [IdiomaAlfabeto] {
+        var idiomas: [IdiomaAlfabeto] = []
+        idiomas.append(contentsOf: raca.idiomas)
+        
+        if !antecedente.idiomas.isEmpty {
+            for idioma in antecedente.idiomas {
+                if !idiomas.contains(where: { $0.idioma == idioma.idioma }) {
+                    idiomas.append(idioma)
+                }
+            }
+        }
+        
+        return idiomas
+    }
+    
     //MARK: PROF PERICIAS
     private func profPericias(classe: ClasseFinal, raca: RacaFinal, antecedente: AntecedenteFinal) -> [Pericia] {
         var pericias: [Pericia] = []
+        pericias.append(contentsOf: classe.profPericias)
+        
+        if !raca.profPericias.isEmpty {
+            for pericia in raca.profPericias {
+                if !pericias.contains(where: { $0.self == pericia }) {
+                    pericias.append(pericia)
+                }
+            }
+        }
+        
+        if !antecedente.profPericias.isEmpty {
+            for pericia in antecedente.profPericias {
+                if !pericias.contains(where: { $0.self == pericia }) {
+                    pericias.append(pericia)
+                }
+            }
+        }
         
         return pericias
     }
@@ -227,6 +275,15 @@ public class PersonagemDirector {
     //MARK: PROF ARMAS
     private func profArmas(classe: ClasseFinal, raca: RacaFinal) -> [ArmaJSON] {
         var armas: [ArmaJSON] = []
+        armas.append(contentsOf: classe.profArmas)
+        
+        if !raca.profArmas.isEmpty {
+            for arma in raca.profArmas {
+                if !armas.contains(where: { $0.nome == arma.nome }) {
+                    armas.append(arma)
+                }
+            }
+        }
         
         return armas
     }
@@ -234,6 +291,15 @@ public class PersonagemDirector {
     //MARK: PROF ARMADURAS
     private func profArmaduras(classe: ClasseFinal, raca: RacaFinal) -> [ArmaduraJSON] {
         var armaduras: [ArmaduraJSON] = []
+        armaduras.append(contentsOf: classe.profArmaduras)
+        
+        if !raca.profArmaduras.isEmpty {
+            for armadura in raca.profArmaduras {
+                if !armaduras.contains(where: { $0.nome == armadura.nome }) {
+                    armaduras.append(armadura)
+                }
+            }
+        }
         
         return armaduras
     }
@@ -241,6 +307,23 @@ public class PersonagemDirector {
     //MARK: PROF FERRAMENTAS
     private func profFerramentas(classe: ClasseFinal, raca: RacaFinal, antecedente: AntecedenteFinal) -> [FerramentaJSON] {
         var ferramentas: [FerramentaJSON] = []
+        ferramentas.append(contentsOf: classe.profFerramentas)
+        
+        if !raca.profFerramentas.isEmpty {
+            for ferramenta in raca.profFerramentas {
+                if !ferramentas.contains(where: { $0.nome == ferramenta.nome }) {
+                    ferramentas.append(ferramenta)
+                }
+            }
+        }
+        
+        if !antecedente.profFerramentas.isEmpty {
+            for ferramenta in antecedente.profFerramentas {
+                if !ferramentas.contains(where: { $0.nome == ferramenta.nome }) {
+                    ferramentas.append(ferramenta)
+                }
+            }
+        }
         
         return ferramentas
     }

@@ -129,6 +129,7 @@ public struct PersonagemFicha: Json {
     var dadoVidaMaximo: Int = 0
     var quantiaDadoVida: Int = 0
     var resistenciaMorte: ResistenciaMorte = ResistenciaMorte()
+    var condicoes: [String] = []
     
     //MARK: PERFIL
     var fotoPersonagem: Data?
@@ -147,8 +148,9 @@ public struct PersonagemFicha: Json {
     var tendenciaPersonagem: TipoTendencia = .none // leal e bom, essas parada
     var estiloVida: EstiloDeVida = .none
     
-    //MARK: PONTOS ATRIBUTOS
+    //MARK: ATRIBUTOS E IDIOMAS
     var pontosAtributos: ValoresAtributos = ValoresAtributos()
+    var idiomas: [IdiomaAlfabeto] = []
     
     //MARK: PROFICIENCIAS
     var profSalvaguardas: [AtributosSalvaguarda] = []
