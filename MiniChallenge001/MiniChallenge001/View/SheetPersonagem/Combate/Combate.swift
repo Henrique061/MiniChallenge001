@@ -403,7 +403,7 @@ private struct TemplateInformacao: View {
     }
 }
 
-private struct AreaImagemPerfil: View {
+ private struct AreaImagemPerfil: View {
     
     @Binding private var ficha: PersonagemFicha
     
