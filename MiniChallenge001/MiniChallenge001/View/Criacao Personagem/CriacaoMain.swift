@@ -16,13 +16,13 @@ public enum FieldsIdentifiers: CaseIterable {
 }
 
 public class NovaFichaViewModel: ObservableObject {
-    @Published var ficha: PersonagemFicha
+    @Published var perfil: PerfilPersonagem
     @Published var racaFinal: RacaFinal
     @Published var classeFinal: ClasseFinal
     @Published var antecedenteFinal: AntecedenteFinal
     
     public init() {
-        self.ficha = PersonagemFicha()
+        self.perfil = PerfilPersonagem()
         self.racaFinal = RacaFinal()
         self.classeFinal = ClasseFinal()
         self.antecedenteFinal = AntecedenteFinal()
@@ -48,37 +48,7 @@ public class NovaFichaViewModel: ObservableObject {
     
     public func setTendencia(tendencia: TipoTendencia) {
         DispatchQueue.main.async {
-            self.ficha.tendenciaPersonagem = tendencia
-            self.objectWillChange.send()
-        }
-    }
-    
-    public func createFicha(atributos: [Atributo], completion: @escaping (_ saved: Bool) -> Void) {
-        DispatchQueue.main.async {
-            do {
-                var novaFicha = PersonagemClient.orderPersonagem(raca: self.racaFinal, classe: self.classeFinal, antecedente: self.antecedenteFinal, valoresAtributos: ValoresAtributos(atributos))
-                novaFicha.nome = self.ficha.nome
-                novaFicha.fotoPersonagem = self.ficha.fotoPersonagem
-                novaFicha.idadePersonagem = self.ficha.idadePersonagem
-                novaFicha.alturaPersonagem = self.ficha.alturaPersonagem
-                novaFicha.pesoPersonagem = self.ficha.pesoPersonagem
-                novaFicha.olhosPersonagem = self.ficha.olhosPersonagem
-                novaFicha.pelePersonagem = self.ficha.pelePersonagem
-                novaFicha.cabeloPersonagem = self.ficha.cabeloPersonagem
-                novaFicha.outrosPersonagem = self.ficha.outrosPersonagem
-                novaFicha.tracosPersonalidadePersonagem = self.ficha.tracosPersonalidadePersonagem
-                novaFicha.ideaisPersonagem = self.ficha.ideaisPersonagem
-                novaFicha.vinculoPersonagem = self.ficha.vinculoPersonagem
-                novaFicha.defeitosPersonagem = self.ficha.defeitosPersonagem
-                novaFicha.tendenciaPersonagem = self.ficha.tendenciaPersonagem
-                novaFicha.estiloVida = self.ficha.estiloVida
-                self.ficha.id = try JsonFileUtil.getNewIdForSheet()
-                try JsonFileUtil.write(content: self.ficha)
-                completion(true)
-            } catch {
-                completion(false)
-                print(error.localizedDescription)
-            }
+            self.perfil.tendencia = tendencia
         }
     }
 }
@@ -101,9 +71,9 @@ struct CriacaoMain: View {
                     Text("Para começarmos, preencha abaixo os dados de seu peronsagem")
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     
-                    TextFieldCriacao(title: "Nome da ficha", text: $novaFicha.ficha.nome)
+                    TextFieldCriacao(title: "Nome da ficha", text: $novaFicha.perfil.nomeFicha)
                         .focused($focusedField, equals: .nomeFicha)
-                    TextFieldCriacao(title: "Nome do personagem", text: $novaFicha.ficha.nomePersonagem)
+                    TextFieldCriacao(title: "Nome do personagem", text: $novaFicha.perfil.nomePersonagem)
                         .focused($focusedField, equals: .nomePersonagem)
                     
                     CustomNavigationLink {
@@ -113,8 +83,7 @@ struct CriacaoMain: View {
                     }
                     
                     CustomNavigationLink {
-                        SelecaoClasseView(ficha: novaFicha.ficha)
-                            .environmentObject(novaFicha)
+                        SelecaoClasseView(vmficha: novaFicha)
                     } label: {
                         DisplayTextoBotaoCondicao(titulo: "Classe", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.classeFinal.tipoClasse.rawValue, condicao: novaFicha.classeFinal.tipoClasse == .none)
                     }
@@ -125,9 +94,7 @@ struct CriacaoMain: View {
                         DisplayTextoBotaoCondicao(titulo: "Antecedente", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.antecedenteFinal.tipoAntecedente.rawValue, condicao: novaFicha.antecedenteFinal.tipoAntecedente == .none)
                     }
                     
-                    MenuSelecaoTendencia()
-                        .environmentObject(novaFicha)
-                    
+                    MenuSelecaoTendencia(vmficha: self.novaFicha)
                 }
                 
                 NavigationLink {
@@ -137,12 +104,12 @@ struct CriacaoMain: View {
                 }
                 .isDetailLink(false)
                 .buttonStyle(CustomButtonStyle5())
-                .disabled(novaFicha.ficha.nome.isEmpty ||
-                          novaFicha.ficha.nomePersonagem.isEmpty ||
+                .disabled(novaFicha.perfil.nomeFicha.isEmpty ||
+                          novaFicha.perfil.nomePersonagem.isEmpty ||
                           novaFicha.racaFinal.tipoRaca == .none ||
                           novaFicha.classeFinal.tipoClasse == .none ||
                           novaFicha.antecedenteFinal.tipoAntecedente == .none ||
-                          novaFicha.ficha.tendenciaPersonagem == .none)
+                          novaFicha.perfil.tendencia == .none)
                 
             }
             .padding(.horizontal, 10)
@@ -154,27 +121,28 @@ struct CriacaoMain: View {
 
 struct MenuSelecaoTendencia: View {
     
-    @EnvironmentObject private var vmficha: NovaFichaViewModel
+    @ObservedObject private var vmficha: NovaFichaViewModel
     @State private var showContent: Bool
     
-    public init() {
+    public init(vmficha: NovaFichaViewModel) {
+        self.vmficha = vmficha
         self.showContent = false
     }
     
     var body: some View {
         TemplateCustomDisclosureGroup(isExpanded: $showContent) {
             ForEach(TipoTendencia.allCases, id: \.self) { tendencia in
-                if tendencia != .none {
-                    TemplateRadioButton(isMarked: vmficha.ficha.tendenciaPersonagem == tendencia ,title: tendencia.rawValue) {
-                        vmficha.setTendencia(tendencia: tendencia)
-                        withAnimation(.easeOut) {
-                            self.showContent.toggle()
-                        }
+                TemplateRadioButtonWithIdentifier(selectedID: $vmficha.perfil.tendencia, id: tendencia) {
+                    withAnimation {
+                        showContent.toggle()
                     }
-                }
+                } content: {
+                    Text(tendencia.rawValue)
+                }.frame(height: 40)
+
             }
         } header: {
-            DisplayTextoBotaoCondicao(titulo: "Tendência", descricaoTrue: "Toque para selecionar...", descricaoFalse: vmficha.ficha.tendenciaPersonagem.rawValue, condicao: vmficha.ficha.tendenciaPersonagem == .none)
+            DisplayTextoBotaoCondicao(titulo: "Tendência", descricaoTrue: "Toque para selecionar...", descricaoFalse: vmficha.perfil.tendencia.rawValue, condicao: vmficha.perfil.tendencia == .none)
         }
     }
 }

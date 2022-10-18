@@ -25,12 +25,12 @@ struct CriacaoCaracteristica: View {
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     
                     
-                    CriacaoCaracteristicaButton(title: "Traços de Personalidade", content: $vmficha.ficha.tracosPersonalidadePersonagem)
-                    CriacaoCaracteristicaButton(title: "Ideais", content: $vmficha.ficha.ideaisPersonagem)
-                    CriacaoCaracteristicaButton(title: "Vínculo", content: $vmficha.ficha.vinculoPersonagem)
-                    CriacaoCaracteristicaButton(title: "Defeitos", content: $vmficha.ficha.defeitosPersonagem)
+                    CriacaoCaracteristicaButton(title: "Traços de Personalidade", content: $vmficha.perfil.tracosPersonalidade)
+                    CriacaoCaracteristicaButton(title: "Ideais", content: $vmficha.perfil.ideais)
+                    CriacaoCaracteristicaButton(title: "Vínculo", content: $vmficha.perfil.vinculo)
+                    CriacaoCaracteristicaButton(title: "Defeitos", content: $vmficha.perfil.defeitos)
                     
-                    EstiloVidaPicker(estiloVida: $vmficha.ficha.estiloVida)
+                    EstiloVidaPicker(estiloVida: $vmficha.perfil.estiloVida)
                     
                     Spacer()
                 }
@@ -42,7 +42,7 @@ struct CriacaoCaracteristica: View {
                 }
                 .isDetailLink(false)
                 .buttonStyle(CustomButtonStyle5())
-                .disabled(self.vmficha.ficha.estiloVida == .none)
+                .disabled(self.vmficha.perfil.estiloVida == .none)
             }
             .padding(.horizontal, 10)
             
@@ -89,7 +89,7 @@ struct TextEditorSheetCaracteristicaPersonagem: View {
     }
     
     var body: some View {
-        TemplateSheetView(header: DefaultSheetHeader(image: Image("IdentidadeIconOff"), title: "Descrição de Identidade", subtitle: "Traços de Personalidade")) {
+        TemplateSheetView(header: DefaultSheetHeader(image: Image("IdentidadeIconOff"), title: "Descrição de Identidade", subtitle: title)) {
             TextEditor(text: $content)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.horizontal, 10)

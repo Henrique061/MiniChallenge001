@@ -16,8 +16,8 @@ class CriacaoClasseViewModel: ObservableObject {
         self.definidas = ClasseEscolhasDefinidas()
     }
     
-    public init(ficha: PersonagemFicha) {
-        self.escolha = ClasseClient.orderClasse(classePersonagem: ficha.classeFinal.classePersonagem)
+    public init(classe: ClassePersonagem) {
+        self.escolha = ClasseClient.orderClasse(classePersonagem: classe)
         self.definidas = ClasseEscolhasDefinidas()
     }
     
@@ -64,7 +64,7 @@ class CriacaoClasseViewModel: ObservableObject {
 struct SelecaoClasseView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject private var vmficha: NovaFichaViewModel
+    @ObservedObject private var vmficha: NovaFichaViewModel
     @StateObject private var vmclasse: CriacaoClasseViewModel
     
     private var periciasAreMissing: Bool {
@@ -75,8 +75,9 @@ struct SelecaoClasseView: View {
         return vmclasse.definidas.escolhasOpcoesEquip.isEmpty
     }
     
-    public init(ficha: PersonagemFicha) {
-        self._vmclasse = StateObject(wrappedValue: CriacaoClasseViewModel(ficha: ficha))
+    public init(vmficha: NovaFichaViewModel) {
+        self.vmficha = vmficha
+        self._vmclasse = StateObject(wrappedValue: CriacaoClasseViewModel(classe: vmficha.classeFinal.tipoClasse))
     }
     
     var body: some View {

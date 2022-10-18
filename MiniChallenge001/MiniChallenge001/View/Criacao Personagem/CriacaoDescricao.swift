@@ -25,8 +25,8 @@ struct CriacaoDescricao: View {
                     Text("Por fim, mas não menos importante, diga-nos como é esse personagem...")
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     
-                    SelecionarImagemCriacao(ficha: $vmficha.ficha)
-                    AllTextFieldsCriação(ficha: $vmficha.ficha)
+                    SelecionarImagemCriacao(perfil: $vmficha.perfil)
+                    AllTextFieldsCriação(perfil: $vmficha.perfil)
                     Spacer()
                 }
                 
@@ -48,33 +48,36 @@ struct CriacaoDescricao: View {
 
 private struct AllTextFieldsCriação: View {
     
-    @Binding private var ficha: PersonagemFicha
+    @Binding private var perfil: PerfilPersonagem
     
-    public init(ficha: Binding<PersonagemFicha>) {
-        self._ficha = ficha
+    public init(perfil: Binding<PerfilPersonagem>) {
+        self._perfil = perfil
     }
     
     var body: some View {
-        IntegerTextFieldCriacao(title: "Idade", content: $ficha.idadePersonagem)
-        FloatTextFieldCriacao(title: "Altura", content: $ficha.alturaPersonagem)
-        FloatTextFieldCriacao(title: "Peso", content: $ficha.pesoPersonagem)
-        TextFieldCriacao(title: "Olhos", text: $ficha.olhosPersonagem)
-        TextFieldCriacao(title: "Pele", text: $ficha.pelePersonagem)
-        TextFieldCriacao(title: "Cabelo", text: $ficha.cabeloPersonagem)
-        TextFieldCriacao(title: "Outros", text: $ficha.outrosPersonagem)
+        IntegerTextFieldCriacao(title: "Idade (anos)", text: $perfil.idade)
+        IntegerTextFieldCriacao(title: "Altura (cm)", text: $perfil.altura)
+        IntegerTextFieldCriacao(title: "Peso (kg)", text: $perfil.peso)
+        TextFieldCriacao(title: "Olhos", text: $perfil.olhos)
+        TextFieldCriacao(title: "Pele", text: $perfil.pele)
+        TextFieldCriacao(title: "Cabelo", text: $perfil.cabelo)
+        TextFieldCriacao(title: "Outros", text: $perfil.outros)
+        
+        
+        
     }
 }
 
+
+
 private struct IntegerTextFieldCriacao: View {
     
-    @Binding private var content: Int
-    @State private var text: String
+    @Binding private var text: String
     private let title: String
     
-    public init(title: String, content: Binding<Int>) {
+    public init(title: String, text: Binding<String>) {
         self.title = title
-        self._content = content
-        self.text = "\(content.wrappedValue)"
+        self._text = text
     }
     
     
@@ -86,39 +89,6 @@ private struct IntegerTextFieldCriacao: View {
                     .keyboardType(.numberPad)
             }
             .padding(10)
-            
-            .onChange(of: text) { newValue in
-                content = Int(newValue) ?? 0
-            }
-        }
-    }
-}
-
-private struct FloatTextFieldCriacao: View {
-    
-    @Binding private var content: Float
-    @State private var text: String
-    private let title: String
-    
-    public init(title: String, content: Binding<Float>) {
-        self.title = title
-        self._content = content
-        self.text = "\(content.wrappedValue)"
-    }
-    
-    
-    var body: some View {
-        TemplateContentBackground {
-            VStack(alignment: .leading, spacing: 3) {
-                Text(title).font(.system(size: 15, weight: .bold, design: .default))
-                TextField("Toque para digitar...", text: $text)
-                    .keyboardType(.decimalPad)
-            }
-            .padding(10)
-            
-            .onChange(of: text) { newValue in
-                content = Float(newValue) ?? 0
-            }
         }
     }
 }
@@ -145,13 +115,13 @@ struct TextFieldCriacao: View {
 
 private struct SelecionarImagemCriacao: View {
     
-    @Binding private var ficha: PersonagemFicha
+    @Binding private var perfil: PerfilPersonagem
     @State private var showImagePicker: Bool = false
     @State private var currentImage: Image
     
-    public init(ficha: Binding<PersonagemFicha>) {
-        self._ficha = ficha
-        if let data = ficha.fotoPersonagem.wrappedValue {
+    public init(perfil: Binding<PerfilPersonagem>) {
+        self._perfil = perfil
+        if let data = perfil.foto.wrappedValue {
             self.currentImage = Image(uiImage: UIImage(data: data)!)
         } else {
             self.currentImage = Image("ProfilePicture")
@@ -162,7 +132,7 @@ private struct SelecionarImagemCriacao: View {
         VStack {
             ZStack(alignment: .center) {
                 Color.black
-                if ficha.fotoPersonagem != nil {
+                if perfil.foto != nil {
                     currentImage
                         .renderingMode(.original)
                         .resizable()
@@ -203,7 +173,7 @@ private struct SelecionarImagemCriacao: View {
                 if let image = image, let data: Data = image.jpegData(compressionQuality: 1) {
                     DispatchQueue.main.async {
                         self.currentImage = Image(uiImage: image)
-                        self.ficha.fotoPersonagem = data
+                        self.perfil.foto = data
                     }
                 }
             }

@@ -91,13 +91,6 @@ struct CriacaoAtributos: View {
 //                            self.showAlert.toggle()
 //                        }
 //                    }
-                    self.vmficha.createFicha(atributos: vmatributo.atributos) { saved in
-                        if saved {
-                            self.popToRoot.toggle()
-                        } else {
-                            self.showAlert.toggle()
-                        }
-                    }
                 }
                 .buttonStyle(CustomButtonStyle5())
                 

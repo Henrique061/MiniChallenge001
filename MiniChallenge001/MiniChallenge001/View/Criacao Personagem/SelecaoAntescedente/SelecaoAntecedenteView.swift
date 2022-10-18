@@ -24,8 +24,8 @@ class ViewModelEscolhaAntecedente: ObservableObject {
         self.escolha.possuiEscolhaFerramentaInicial && self.escolhaFerramenta.isEmpty
     }
     
-    public init(ficha: PersonagemFicha) {
-        self.escolha = AntecedenteClient.orderAntecedente(ficha.antecedenteFinal)
+    public init(antecedente: AntecedentePersonagem) {
+        self.escolha = AntecedenteClient.orderAntecedente(antecedente)
         self.definidas = AntecedenteEscolhasDefinidas()
         self.escolhaIdiomas = []
         self.escolhaEquipamento = ""
@@ -87,8 +87,8 @@ struct SelecaoAntecedenteView: View {
     
     public init(vmficha: NovaFichaViewModel) {
         self.vmficha = vmficha
-        self._vmantecedente = StateObject(wrappedValue: ViewModelEscolhaAntecedente(ficha: vmficha.ficha))
-        self._showContent = State(initialValue: vmficha.ficha.antecedenteFinal != .none)
+        self._vmantecedente = StateObject(wrappedValue: ViewModelEscolhaAntecedente(antecedente: vmficha.antecedenteFinal.tipoAntecedente))
+        self._showContent = State(initialValue: vmficha.antecedenteFinal.tipoAntecedente != .none)
     }
     
     var body: some View {
