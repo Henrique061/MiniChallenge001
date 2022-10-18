@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class SheetsViewModel: ObservableObject {
+public class SheetsViewModel: ObservableObject {
     
     @Published public var listaFichas: [PersonagemFicha] = []
     @Published public var fichaSelecionada: PersonagemFicha
