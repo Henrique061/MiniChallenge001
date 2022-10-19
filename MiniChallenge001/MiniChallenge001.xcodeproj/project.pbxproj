@@ -59,6 +59,7 @@
 		3D2E653C2900722400372FB4 /* Proficiencias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E653B2900722400372FB4 /* Proficiencias.swift */; };
 		3D2E653E2900863200372FB4 /* AtributosUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E653D2900863200372FB4 /* AtributosUtils.swift */; };
 		3D2E65402900AB9D00372FB4 /* CondicoesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E653F2900AB9D00372FB4 /* CondicoesUtils.swift */; };
+		3D2E65422900BA4700372FB4 /* EditarAtributos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E65412900BA4700372FB4 /* EditarAtributos.swift */; };
 		3D3DC35628DC09F00093BD92 /* ClasseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */; };
 		3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35728DC13880093BD92 /* ClasseDirector.swift */; };
 		3D3DC35D28DC14B30093BD92 /* ClasseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DC35C28DC14B30093BD92 /* ClasseClient.swift */; };
@@ -174,6 +175,7 @@
 		3D2E653B2900722400372FB4 /* Proficiencias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proficiencias.swift; sourceTree = "<group>"; };
 		3D2E653D2900863200372FB4 /* AtributosUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributosUtils.swift; sourceTree = "<group>"; };
 		3D2E653F2900AB9D00372FB4 /* CondicoesUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondicoesUtils.swift; sourceTree = "<group>"; };
+		3D2E65412900BA4700372FB4 /* EditarAtributos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAtributos.swift; sourceTree = "<group>"; };
 		3D3DC35528DC09F00093BD92 /* ClasseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseBuilder.swift; sourceTree = "<group>"; };
 		3D3DC35728DC13880093BD92 /* ClasseDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseDirector.swift; sourceTree = "<group>"; };
 		3D3DC35C28DC14B30093BD92 /* ClasseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseClient.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			children = (
 				09B5568E28DA6155001466B0 /* Atributos.swift */,
 				093F602328F0D5E0006A8911 /* Condicoes.swift */,
+				3D2E65412900BA4700372FB4 /* EditarAtributos.swift */,
 			);
 			path = Atributo;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				126ABAF228DB3D5200CF5A2E /* Moeda.swift in Sources */,
 				3D6F868328E0CD5B0022D0BE /* RacaBuilder.swift in Sources */,
 				1214FE8828F10A7800E15113 /* SelecaoAntecedenteView.swift in Sources */,
+				3D2E65422900BA4700372FB4 /* EditarAtributos.swift in Sources */,
 				126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */,
 				125B251628EE03DB00B60168 /* EscolhaProficienciaView.swift in Sources */,
 				3D28DBA728E62A99005F71AC /* RacaFinalBuilder.swift in Sources */,

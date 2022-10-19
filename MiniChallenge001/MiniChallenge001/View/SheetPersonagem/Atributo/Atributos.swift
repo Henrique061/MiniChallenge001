@@ -134,6 +134,8 @@ struct TemplateTabelaAtributo<Content>: View where Content: View {
 }
 
 struct AtributosVista: View{
+    @State private var mostrarEditarAtt: Bool = false
+    
     @Binding private var toggleIsOn: Bool
     @Binding private var ficha: PersonagemFicha
     
@@ -162,12 +164,14 @@ struct AtributosVista: View{
         }
         
         Button {
-            print("Button tapped!")
+            mostrarEditarAtt.toggle()
         } label: {
             Text("Editar Atributos")
-            
         }
         .buttonStyle(CustomButtonStyle5())
+        .sheet(isPresented: $mostrarEditarAtt) {
+            EditarAtributos(ficha: $ficha)
+        }
     }
 }
 
