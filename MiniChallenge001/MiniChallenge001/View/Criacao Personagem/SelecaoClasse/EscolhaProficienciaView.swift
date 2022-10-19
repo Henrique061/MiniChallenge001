@@ -103,9 +103,8 @@ private struct MostrarSalvaguardas: View {
                 TemplateDisclosureGroupContent(title: item.rawValue)
             }
         } header: {
-            Text(title)
-                .font(.system(size: 15, weight: .bold, design: .default))
-        }
+            DisplayTextoBotao(titulo: title, descricao: "Toque para detalhes...")
+        }.buttonStyle(CustomButtonStyle2())
     }
 }
 

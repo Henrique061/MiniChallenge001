@@ -16,6 +16,7 @@
 		09B5569628DA6156001466B0 /* Identidade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5568F28DA6156001466B0 /* Identidade.swift */; };
 		09B5569728DA6156001466B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569028DA6156001466B0 /* ContentView.swift */; };
 		09B5569828DA6156001466B0 /* Combate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5569128DA6156001466B0 /* Combate.swift */; };
+		120C40BB290079F5001BFF93 /* LojaItens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C40BA290079F5001BFF93 /* LojaItens.swift */; };
 		1214FE8328F09CE800E15113 /* EscolhaEquipamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214FE8228F09CE800E15113 /* EscolhaEquipamento.swift */; };
 		1214FE8528F101D700E15113 /* DetalhesCaracteristicaClasse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214FE8428F101D700E15113 /* DetalhesCaracteristicaClasse.swift */; };
 		1214FE8828F10A7800E15113 /* SelecaoAntecedenteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214FE8728F10A7800E15113 /* SelecaoAntecedenteView.swift */; };
@@ -128,6 +129,7 @@
 		09B5568F28DA6156001466B0 /* Identidade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identidade.swift; sourceTree = "<group>"; };
 		09B5569028DA6156001466B0 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09B5569128DA6156001466B0 /* Combate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combate.swift; sourceTree = "<group>"; };
+		120C40BA290079F5001BFF93 /* LojaItens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LojaItens.swift; sourceTree = "<group>"; };
 		1214FE8228F09CE800E15113 /* EscolhaEquipamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolhaEquipamento.swift; sourceTree = "<group>"; };
 		1214FE8428F101D700E15113 /* DetalhesCaracteristicaClasse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesCaracteristicaClasse.swift; sourceTree = "<group>"; };
 		1214FE8728F10A7800E15113 /* SelecaoAntecedenteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecaoAntecedenteView.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				09B5568D28DA6155001466B0 /* Inventario.swift */,
 				128E333028FF3F72003CF05B /* EditarMoedas.swift */,
 				1218923F28FF8241009ECA84 /* InventarioUtils.swift */,
+				120C40BA290079F5001BFF93 /* LojaItens.swift */,
 			);
 			path = Inventario;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				1214FE8A28F4681D00E15113 /* CriacaoCaracteristica.swift in Sources */,
 				126ABAF328DB3D5200CF5A2E /* VeiculoAquaticoJSON.swift in Sources */,
 				3D60C63B28DB80FE0051676A /* PersonagemBuilder.swift in Sources */,
+				120C40BB290079F5001BFF93 /* LojaItens.swift in Sources */,
 				3D6F869428E11BF70022D0BE /* AntecedenteDirector.swift in Sources */,
 				3D9CD65728FDC45300CD4077 /* PersonagemConcreteBuilder.swift in Sources */,
 				1214FE9028F4DEA400E15113 /* CriacaoAtributos.swift in Sources */,

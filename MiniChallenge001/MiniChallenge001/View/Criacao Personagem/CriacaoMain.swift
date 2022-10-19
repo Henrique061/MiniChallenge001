@@ -220,6 +220,9 @@ struct DisplayTextoBotao: View {
         VStack(alignment: .leading, spacing: 3) {
             Text(titulo)
                 .font(.system(size: 15, weight: .semibold, design: .default))
+                .minimumScaleFactor(0.5)
+                .scaledToFill()
+                .lineLimit(1)
             Text(descricao)
                 .font(.system(size: 13, weight: .regular, design: .default))
                 .fixedSize(horizontal: false, vertical: true)

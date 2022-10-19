@@ -18,7 +18,7 @@ struct Inventario: View {
     }
     
     var body: some View {
-        NavigationView {
+        CustomNavigationView {
             TemplateTelaPadrao {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 10) {
@@ -33,8 +33,19 @@ struct Inventario: View {
                 }
                 
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("Inventário")
                 .toolbar{
+                    ToolbarItem(placement: .principal) {
+                        NavigationBarTitle("Inventário")
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink {
+                            LojaItens(sheet: sheet)
+                        } label: {
+                            Image(systemName: "cart.fill")
+                                .renderingMode(.template)
+                                .foregroundColor(Color("BlackAndWhite"))
+                        }
+                    }
                 }
             }
         }
@@ -120,15 +131,6 @@ private struct ListaEquipamentos: View {
     
     @ObservedObject private var sheet: SheetsViewModel
     
-    private var numberFormatter: NumberFormatter {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.alwaysShowsDecimalSeparator = true
-        numberFormatter.decimalSeparator = ","
-        numberFormatter.maximumFractionDigits = 1
-        numberFormatter.minimumFractionDigits = 1
-        return numberFormatter
-    }
-    
     private var equipamentos: [EquipamentoJSON] {
         return InventarioUtils<EquipamentoJSON>.formatListEquipamentos(equipamentos: sheet.equipamentos)
     }
@@ -153,49 +155,31 @@ private struct ListaEquipamentos: View {
         TemplateCustomDisclosureGroup2(showDivider: false) {
             ForEach(equipamentos, id: \.id) { equipamento in
                 Divider()
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("x\(equipamento.quantidade) \(equipamento.nome)")
-                    HStack {
-                        Text("\(equipamento.categoria.rawValue)")
-                        Spacer()
-                        Text("\(self.numberFormatter.string(from: NSNumber(value: equipamento.peso)) ?? "0,0") kg")
-                    }
-                }.padding(10)
+                ItemCell(nome: equipamento.nome, quantidade: equipamento.quantidade, tipo: equipamento.categoria.rawValue, peso: equipamento.peso)
             }
         } header: {
-            Text("Equipamentos")
+            SingleLineDisclosureTitle(title: "Equipamentos")
         }
         
         TemplateCustomDisclosureGroup2(showDivider: false) {
             ForEach(armas, id: \.item.id) { item in
                 Divider()
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("x\(item.quantidade) \(item.item.nome)")
-                    HStack {
-                        Text("\(item.item.tipo.rawValue) \(item.item.estilo.rawValue)")
-                        Spacer()
-                        Text("\(self.numberFormatter.string(from: NSNumber(value: item.item.peso)) ?? "0,0") kg")
-                    }
-                }.padding(10)
+                ItemCell(nome: item.item.nome, quantidade: item.quantidade, tipo: "\(item.item.tipo.rawValue) \(item.item.estilo.rawValue)", peso: item.item.peso)
             }
         } header: {
-            Text("Armas")
+            SingleLineDisclosureTitle(title: "Armas")
         }
         
         TemplateCustomDisclosureGroup2(showDivider: false) {
             ForEach(armaduras, id: \.item.id) { item in
                 Divider()
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("x\(item.quantidade) \(item.item.nome)")
-                    HStack {
-                        Text("\(item.item.tipo.rawValue)")
-                        Spacer()
-                        Text("\(self.numberFormatter.string(from: NSNumber(value: item.item.peso)) ?? "0,0") kg")
+                ItemCell(nome: item.item.nome, quantidade: item.quantidade, tipo: "\(item.item.tipo.rawValue)", peso: item.item.peso)
+                    .swipeActions {
+                        Button("Alguma coisa") {}
                     }
-                }.padding(10)
             }
         } header: {
-            Text("Armaduras")
+            SingleLineDisclosureTitle(title: "Armaduras")
         }
         
         TemplateCustomDisclosureGroup2(showDivider: false) {
@@ -206,19 +190,77 @@ private struct ListaEquipamentos: View {
             } else {
                 ForEach(ferramentas, id: \.item.id) { item in
                     Divider()
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text("x\(item.quantidade) \(item.item.nome)")
-                        HStack {
-                            Text("\(item.item.tipo.rawValue)")
-                            Spacer()
-                            Text("\(self.numberFormatter.string(from: NSNumber(value: item.item.peso)) ?? "0,0") kg")
+                    ItemCell(nome: item.item.nome, quantidade: item.quantidade, tipo: item.item.tipo.rawValue, peso: item.item.peso)
+                        .swipeActions {
+                            Button("Alguma coisa") {}
                         }
-                    }.padding(10)
                 }
             }
         } header: {
-            Text("Ferramentas")
+            SingleLineDisclosureTitle(title: "Ferramentas")
         }
+    }
+}
+
+struct ItemCell: View {
+    
+    private var nome: String
+    private var quantidade: Int
+    private var tipo: String
+    private var peso: Float
+    
+    private var numberFormatter: NumberFormatter {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.alwaysShowsDecimalSeparator = true
+        numberFormatter.decimalSeparator = ","
+        numberFormatter.maximumFractionDigits = 1
+        numberFormatter.minimumFractionDigits = 1
+        return numberFormatter
+    }
+    
+    public init(nome: String, quantidade: Int, tipo: String, peso: Float) {
+        self.nome = nome
+        self.quantidade = quantidade
+        self.tipo = tipo
+        self.peso = peso
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Text("x\(quantidade) \(nome)")
+                .font(.system(size: 15, weight: .bold, design: .default))
+            HStack {
+                Text("\(tipo)")
+                    .font(.system(size: 13, weight: .regular, design: .default))
+                Spacer()
+                if let peso = numberFormatter.string(from: NSNumber(value: peso)) {
+                    Text("\(peso) kg")
+                        .font(.system(size: 13, weight: .regular, design: .default))
+                } else {
+                    Text("-")
+                        .font(.system(size: 13, weight: .regular, design: .default))
+                }
+            }
+        }
+        .padding(10)
+    }
+}
+
+
+
+struct SingleLineDisclosureTitle: View {
+    
+    private var title: String
+    
+    public init(title: String) {
+        self.title = title
+    }
+    
+    var body: some View {
+        Text(title)
+            .font(.system(size: 20, weight: .bold, design: .rounded))
+            .foregroundColor(Color("BlackAndWhite"))
+            .padding(.vertical, 5)
     }
 }
 

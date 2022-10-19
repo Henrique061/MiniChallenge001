@@ -61,8 +61,10 @@ struct Habilidades: View {
             .searchable(text: $textoBusca)
             
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Habilidades")
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    NavigationBarTitle("Habilidades")
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
                         TodasHabilidadesView(sheet: self.sheet)
