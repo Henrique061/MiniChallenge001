@@ -41,7 +41,7 @@ struct Inventario: View {
                         NavigationLink {
                             LojaItens(sheet: sheet)
                         } label: {
-                            Image(systemName: "cart.fill")
+                            Image(systemName: "bag.fill")
                                 .renderingMode(.template)
                                 .foregroundColor(Color("BlackAndWhite"))
                         }
@@ -58,15 +58,6 @@ private struct CapacidadeDeCarga: View {
     
     @ObservedObject private var vmficha: SheetsViewModel
     
-    private var numberFormatter: NumberFormatter {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.alwaysShowsDecimalSeparator = true
-        numberFormatter.decimalSeparator = ","
-        numberFormatter.maximumFractionDigits = 1
-        numberFormatter.minimumFractionDigits = 1
-        return numberFormatter
-    }
-    
     private var cargaAtual: String {
         var temp: Float = 0
         vmficha.fichaSelecionada.equipamentos.forEach({ temp += $0.peso * Float($0.quantidade) })
@@ -74,12 +65,12 @@ private struct CapacidadeDeCarga: View {
         vmficha.fichaSelecionada.armaduras.forEach({ temp += $0.peso })
         vmficha.fichaSelecionada.ferramentas.forEach({ temp += $0.peso })
         
-        return numberFormatter.string(from: NSNumber(value: temp)) ?? "-"
+        return FormatterUtils.formatarPeso(num: temp)
     }
     
     private var capacidadeCarga: String {
         let capacidade = Float(vmficha.fichaSelecionada.pontosAtributos.forca.valor) * 7.5
-        return numberFormatter.string(from: NSNumber(value: capacidade)) ?? "-"
+        return FormatterUtils.formatarPeso(num: capacidade)
     }
     
     public init(vmficha: SheetsViewModel) {
@@ -88,7 +79,7 @@ private struct CapacidadeDeCarga: View {
     
     var body: some View {
         TemplateContentBackground {
-            DisplayTextoBotao(titulo: "Capacidade de Carga", descricao: "\(cargaAtual) kg / \(capacidadeCarga) kg")
+            DisplayTextoBotao(titulo: "Capacidade de Carga", descricao: "\(cargaAtual) / \(capacidadeCarga) ")
                 .padding(10)
         }
     }
@@ -130,6 +121,9 @@ private struct SacoDeMoedas: View {
 private struct ListaEquipamentos: View {
     
     @ObservedObject private var sheet: SheetsViewModel
+    @State private var selectedArma: ArmaJSON?
+    @State private var selectedFerramenta: FerramentaJSON?
+    @State private var selectedArmadura: ArmaduraJSON?
     
     private var equipamentos: [EquipamentoJSON] {
         return InventarioUtils<EquipamentoJSON>.formatListEquipamentos(equipamentos: sheet.equipamentos)
@@ -162,21 +156,62 @@ private struct ListaEquipamentos: View {
         }
         
         TemplateCustomDisclosureGroup2(showDivider: false) {
-            ForEach(armas, id: \.item.id) { item in
+            if sheet.fichaSelecionada.armas.isEmpty {
                 Divider()
-                ItemCell(nome: item.item.nome, quantidade: item.quantidade, tipo: "\(item.item.tipo.rawValue) \(item.item.estilo.rawValue)", peso: item.item.peso)
+                Text("Não há armas em seu inventário.")
+                    .padding(10)
+            } else {
+                ForEach(armas, id: \.item.id) { item in
+                    Divider()
+                    Button {
+                        self.selectedArma = item.item
+                    } label: {
+                        ItemCell(nome: item.item.nome, quantidade: item.quantidade, tipo: "\(item.item.tipo.rawValue) \(item.item.estilo.rawValue)", peso: item.item.peso)
+                    }
+                }
+                .sheet(item: $selectedArma) { arma in
+                    SheetDescricaoArma(arma: arma, buttonTitle: "Remover do Inventário") {
+                        DispatchQueue.main.async {
+                            for i in 0..<self.sheet.fichaSelecionada.armas.count {
+                                if arma.id == self.sheet.fichaSelecionada.armas[i].id {
+                                    self.sheet.fichaSelecionada.armas.remove(at: i)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }
             }
         } header: {
             SingleLineDisclosureTitle(title: "Armas")
         }
         
         TemplateCustomDisclosureGroup2(showDivider: false) {
-            ForEach(armaduras, id: \.item.id) { item in
+            if sheet.fichaSelecionada.armaduras.isEmpty {
                 Divider()
-                ItemCell(nome: item.item.nome, quantidade: item.quantidade, tipo: "\(item.item.tipo.rawValue)", peso: item.item.peso)
-                    .swipeActions {
-                        Button("Alguma coisa") {}
+                Text("Não há armaduras em seu inventário")
+                    .padding(10)
+            } else {
+                ForEach(armaduras, id: \.item.id) { item in
+                    Divider()
+                    Button {
+                        self.selectedArmadura = item.item
+                    } label: {
+                        ItemCell(nome: item.item.nome, quantidade: item.quantidade, tipo: "\(item.item.tipo.rawValue)", peso: item.item.peso)
                     }
+                }
+                .sheet(item: $selectedArmadura) { armadura in
+                    SheetDescricaoArmadura(armadura: armadura, buttonTitle: "Remover do Inventário") {
+                        DispatchQueue.main.async {
+                            for i in 0..<self.sheet.fichaSelecionada.armaduras.count {
+                                if armadura.id == self.sheet.fichaSelecionada.armaduras[i].id {
+                                    self.sheet.fichaSelecionada.armaduras.remove(at: i)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }
             }
         } header: {
             SingleLineDisclosureTitle(title: "Armaduras")
@@ -190,10 +225,23 @@ private struct ListaEquipamentos: View {
             } else {
                 ForEach(ferramentas, id: \.item.id) { item in
                     Divider()
-                    ItemCell(nome: item.item.nome, quantidade: item.quantidade, tipo: item.item.tipo.rawValue, peso: item.item.peso)
-                        .swipeActions {
-                            Button("Alguma coisa") {}
+                    Button {
+                        self.selectedFerramenta = item.item
+                    } label: {
+                        ItemCell(nome: item.item.nome, quantidade: item.quantidade, tipo: item.item.tipo.rawValue, peso: item.item.peso)
+                    }
+                }
+                .sheet(item: $selectedFerramenta) { ferramenta in
+                    SheetDescricaoFerramenta(ferramenta: ferramenta, buttonTitle: "Remover do Inventário") {
+                        DispatchQueue.main.async {
+                            for i in 0..<sheet.fichaSelecionada.ferramentas.count {
+                                if ferramenta.id == sheet.fichaSelecionada.ferramentas[i].id {
+                                    sheet.fichaSelecionada.ferramentas.remove(at: i)
+                                    return
+                                }
+                            }
                         }
+                    }
                 }
             }
         } header: {
@@ -208,15 +256,6 @@ struct ItemCell: View {
     private var quantidade: Int
     private var tipo: String
     private var peso: Float
-    
-    private var numberFormatter: NumberFormatter {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.alwaysShowsDecimalSeparator = true
-        numberFormatter.decimalSeparator = ","
-        numberFormatter.maximumFractionDigits = 1
-        numberFormatter.minimumFractionDigits = 1
-        return numberFormatter
-    }
     
     public init(nome: String, quantidade: Int, tipo: String, peso: Float) {
         self.nome = nome
@@ -233,16 +272,10 @@ struct ItemCell: View {
                 Text("\(tipo)")
                     .font(.system(size: 13, weight: .regular, design: .default))
                 Spacer()
-                if let peso = numberFormatter.string(from: NSNumber(value: peso)) {
-                    Text("\(peso) kg")
-                        .font(.system(size: 13, weight: .regular, design: .default))
-                } else {
-                    Text("-")
-                        .font(.system(size: 13, weight: .regular, design: .default))
-                }
+                Text(FormatterUtils.formatarPeso(num: peso))
             }
         }
-        .padding(10)
+        .padding(.horizontal, 10)
     }
 }
 
@@ -261,16 +294,5 @@ struct SingleLineDisclosureTitle: View {
             .font(.system(size: 20, weight: .bold, design: .rounded))
             .foregroundColor(Color("BlackAndWhite"))
             .padding(.vertical, 5)
-    }
-}
-
-struct InfoMoeda: View {
-    @State var tipoMoeda: String
-    @State var quantidade: Int
-    
-    var body: some View {
-        Text("\(tipoMoeda): \(quantidade)")
-            .lineLimit(1)
-            .scaledToFill()
     }
 }
