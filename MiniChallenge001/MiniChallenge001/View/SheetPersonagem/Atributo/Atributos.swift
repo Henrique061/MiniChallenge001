@@ -26,10 +26,10 @@ struct Atributos: View {
     
     var body: some View {
         CustomNavigationView {
-            TemplateTelaPadrao(withPaddings: false){
+            TemplateTelaPadrao(withPaddings: false) {
+                ToggleVista(toggleIsOn: $toggleIsOn, ficha: self.$sheet.fichaSelecionada).padding(.horizontal, 10)
                 ScrollView{
                     VStack{
-                        ToggleVista(toggleIsOn: $toggleIsOn, ficha: self.$sheet.fichaSelecionada)
                         AtributosVista(toggleIsOn: $toggleIsOn,   ficha: self.$sheet.fichaSelecionada)
                         SalvaguardaVista(toggleIsOn: $toggleIsOn, ficha: self.$sheet.fichaSelecionada)
                         PericiasVista(toggleIsOn: $toggleIsOn,    ficha: self.$sheet.fichaSelecionada)
