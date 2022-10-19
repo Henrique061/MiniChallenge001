@@ -24,15 +24,27 @@ struct Identidade: View {
                 ScrollView{
                     VStack{
                         HStack{
-                            identidadeSuperior(ficha: $sheet.fichaSelecionada)
+                            IdentidadeSuperior(ficha: $sheet.fichaSelecionada)
                             .padding(.horizontal, 10)
                             
                         }
-                        identidadeInferior()
+                        IdentidadeInferior(ficha: $sheet.fichaSelecionada)
                             .padding(.horizontal, 10)
                         EstiloVidaPicker(estiloVida: $sheet.fichaSelecionada.estiloVida)
                             .padding(.horizontal, 10)
-                        idiomasIdentidade()
+                        IdiomasIdentidade(idiomas: $sheet.fichaSelecionada.idiomas)
+                            .padding(.horizontal, 10)
+                        BotaoInformacoesProficiencias(tituloBotao: "Proficiências", ficha: $sheet.fichaSelecionada)
+                            .padding(.horizontal, 10)
+                        InformacoesPerfil(subtituloSheet: "Traços de Personalidade", descricao: $sheet.fichaSelecionada.tracosPersonalidadePersonagem)
+                            .padding(.horizontal, 10)
+                        InformacoesPerfil(subtituloSheet: "Ideais", descricao: $sheet.fichaSelecionada.ideaisPersonagem)
+                            .padding(.horizontal, 10)
+                        InformacoesPerfil(subtituloSheet: "Vínculo", descricao: $sheet.fichaSelecionada.vinculoPersonagem)
+                            .padding(.horizontal, 10)
+                        InformacoesPerfil(subtituloSheet: "Defeitos", descricao: $sheet.fichaSelecionada.defeitosPersonagem)
+                            .padding(.horizontal, 10)
+                        InformacoesPerfil(subtituloSheet: "Outros", descricao: $sheet.fichaSelecionada.outrosPersonagem)
                             .padding(.horizontal, 10)
                     }
                     
@@ -48,17 +60,17 @@ struct Identidade: View {
                                 Image("Aprimoramento")
                             }
                         }
-                        }
                     }
                 }
             }
         }
     }
+}
 
 
 
 
-struct identidadeSuperior: View{
+struct IdentidadeSuperior: View{
     @Binding private var ficha: PersonagemFicha
     
     public init(ficha: Binding<PersonagemFicha>) {
@@ -68,12 +80,12 @@ struct identidadeSuperior: View{
         TemplateContentBackground{
             HStack{
             VStack(alignment: .leading, spacing: 3){
-                DisplayTextoBotao(titulo: "Nome", descricao: "isso")
+                DisplayTextoBotao(titulo: "Nome", descricao: ficha.nomePersonagem)
                     .padding(.vertical, 5)
                     .padding(.horizontal,10)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Divider()
-                classeNivel(titulo: "Classe e Nível", descricao: "Patrulheiro", nivel: "03")
+                ClasseNivel(titulo: "Classe e Nível", descricao: ficha.classeFinal.classePersonagem.rawValue, nivel: "\(ficha.nivel)")
                     .padding(.vertical, 5)
                     .padding(.horizontal,10)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -89,7 +101,7 @@ struct identidadeSuperior: View{
     
 }
 
-struct classeNivel: View{
+struct ClasseNivel: View{
     
     private var titulo: String
     private var descricao: String
@@ -120,54 +132,116 @@ struct classeNivel: View{
     }
 }
 
-struct identidadeInferior: View{
+struct IdentidadeInferior: View{
+    @Binding private var ficha: PersonagemFicha
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+    }
+    
+    var nomeRaca: String {
+        if ficha.racaFinal.subracaPersonagem == .none {
+            return ficha.racaFinal.racaPersonagem.rawValue
+        } else {
+            return ficha.racaFinal.subracaPersonagem.rawValue
+        }
+    }
+    
     var body:some View{
         TemplateContentBackground{
             VStack(alignment: .leading, spacing: 3){
                 HStack{
-                    DisplayTextoBotao(titulo: "Raça", descricao: "Gnomo das Rochas")
+                    DisplayTextoBotao(titulo: "Raça", descricao: nomeRaca)
                         .padding(.vertical, 5)
                         .padding(.horizontal,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Spacer()
-                    DisplayTextoBotao(titulo: "Tendência", descricao: "Caótico Neutro")
+                    DisplayTextoBotao(titulo: "Tendência", descricao: ficha.tendenciaPersonagem.rawValue)
                         .padding(.vertical, 5)
                         .padding(.horizontal,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 Divider()
                 HStack{
-                    DisplayTextoBotao(titulo: "Antecedente", descricao: "Criminal")
+                    DisplayTextoBotao(titulo: "Antecedente", descricao: ficha.antecedenteFinal.rawValue)
                         .padding(.vertical, 5)
                         .padding(.horizontal,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Spacer()
-                    DisplayTextoBotao(titulo: "Pontos de Experiência", descricao: "3456789")
+                    DisplayTextoBotao(titulo: "Pontos de Experiência", descricao: "\(ficha.experiencica)")
                         .padding(.vertical, 5)
                         .padding(.horizontal,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
+        }
     }
 }
-}
   
-
-  struct idiomasIdentidade: View{
-//    @ObservedObject private var sheet: SheetsViewModel
-//
-//
-//    public init(ficha: SheetsViewModel) {
-//        self._sheet = ObservedObject(initialValue: ficha)
-//    }
+private struct IdiomasIdentidade: View {
+    @Binding private var idiomas: [IdiomaAlfabeto]
+    
+    public init(idiomas: Binding<[IdiomaAlfabeto]>) {
+        self._idiomas = idiomas
+    }
+    
+    var idiomasNomes: String {
+        return ArrayUtils<Any>.formatarIdiomaString(idiomasAlfabeto: idiomas)
+    }
+    
     var body:some View{
-        TemplateContentBackground {
-            
         
-        DisplayTextoBotao(titulo: "Idiomas", descricao: "COMUN E GNOMICO")
+        TemplateContentBackground {
+            DisplayTextoBotao(titulo: "Idiomas", descricao: idiomasNomes)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 10)
         }
+    }
+}
+
+private struct InformacoesPerfil: View {
+    @State private var mostrarDetalhes: Bool = false
+    private var subtituloBotao: String = "Toque para abrir..."
+    
+    @Binding private var descricao: String
+    private var subtituloSheet: String
+    
+    public init(subtituloSheet: String, descricao: Binding<String>) {
+        self._descricao = descricao
+        self.subtituloSheet = subtituloSheet
+    }
+    
+    var body: some View {
+        Button {
+            mostrarDetalhes.toggle()
+        } label: {
+            DisplayTextoBotao(titulo: subtituloSheet, descricao: subtituloBotao)
+                .padding(.vertical, 5)
+        }.buttonStyle(CustomButtonStyle2())
+        .sheet(isPresented: $mostrarDetalhes) {
+            TextEditorSheetCaracteristicaPersonagem(title: subtituloSheet, content: $descricao)
+        }
+    }
+}
+
+private struct BotaoInformacoesProficiencias: View {
+    private var subtituloBotao: String = "Toque para abrir..."
+    
+    @Binding private var ficha: PersonagemFicha
+    private var tituloBotao: String
+    
+    public init(tituloBotao: String, ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+        self.tituloBotao = tituloBotao
+    }
+    
+    var body: some View {
+        NavigationLink {
+            Proficiencias(ficha: $ficha)
+        } label: {
+            DisplayTextoBotao(titulo: tituloBotao, descricao: subtituloBotao)
+                .padding(.vertical, 5)
+        }.buttonStyle(CustomButtonStyle2())
     }
 }
 
@@ -201,7 +275,7 @@ private struct AreaImagemPerfil: View {
                            .padding(.trailing, 5)
                            .padding(.bottom, 5)
                        }
-               }
+                }
        }
    }
 }
