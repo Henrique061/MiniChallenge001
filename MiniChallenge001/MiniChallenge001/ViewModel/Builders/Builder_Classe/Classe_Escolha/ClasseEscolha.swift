@@ -110,7 +110,7 @@ public enum AtributosSalvaguarda : String, Codable {
     case none = "Nenhum"
 }
 
-enum Pericia : String, CaseIterable, Codable {
+public enum Pericia : String, CaseIterable, Codable {
     case acrobacia = "Acrobacia (DES)"
     case adestrarAnimais = "Adestrar Animais (SAB)"
     case arcanismo = "Arcanismo (INT)"
