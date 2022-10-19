@@ -62,11 +62,13 @@ struct TemplateAtributos: View{
     private var toggleIsOn: Binding<Bool>
     private var titulo1: String
     private var descricao1: String
+    private var hasProficiencia: Bool
     
-    public init(titulo1: String, descricao1: String, toggleIsOn: Binding<Bool>) {
+    public init(titulo1: String, descricao1: String, hasProficiencia: Bool, toggleIsOn: Binding<Bool>) {
         self.titulo1 = titulo1
         self.descricao1 = descricao1
         self.toggleIsOn = toggleIsOn
+        self.hasProficiencia = hasProficiencia
         
     }
     
@@ -74,7 +76,7 @@ struct TemplateAtributos: View{
         HStack{
             if toggleIsOn.wrappedValue {
                 Circle()
-                    .accentColor(Color("RedTheme"))
+                    .foregroundColor(hasProficiencia ? Color("RedTheme") : Color(uiColor: .systemGray3))
                     .frame(width: 15, height: 15, alignment: .leading)
             }
             
@@ -88,6 +90,24 @@ struct TemplateAtributos: View{
     }
 }
 
+struct TemplateAtributosSemToggle: View {
+    private var titulo: String
+    private var descricao: String
+    
+    public init(titulo: String, descricao: String) {
+        self.titulo = titulo
+        self.descricao = descricao
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 3) {
+            DisplayTextoBotao(titulo: titulo, descricao: descricao)
+                .padding(.vertical, 5)
+        }
+        .padding(.horizontal, 10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
 
 struct TemplateTabelaAtributo<Content>: View where Content: View {
     
@@ -125,19 +145,19 @@ struct AtributosVista: View{
     var body: some View{
         TemplateTabelaAtributo(title: "Atributos") {
             HStack{
-                TemplateAtributos(titulo1: "Força", descricao1: "\(ficha.pontosAtributos.forca.valor)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Inteligência", descricao1: "\(ficha.pontosAtributos.inteligencia.valor)", toggleIsOn: $toggleIsOn )
+                TemplateAtributosSemToggle(titulo: ficha.pontosAtributos.forca.modificador >= 0 ? "Força +\(ficha.pontosAtributos.forca.modificador)" : "Força \(ficha.pontosAtributos.forca.modificador)", descricao: "\(ficha.pontosAtributos.forca.valor)")
+                TemplateAtributosSemToggle(titulo: ficha.pontosAtributos.inteligencia.modificador >= 0 ? "Inteligência +\(ficha.pontosAtributos.inteligencia.modificador)" : "Inteligência \(ficha.pontosAtributos.inteligencia.modificador)", descricao: "\(ficha.pontosAtributos.inteligencia.valor)")
             }
             Divider()
 
             HStack{
-                TemplateAtributos(titulo1: "Destreza", descricao1: "\(ficha.pontosAtributos.destreza.valor)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Sabedoria", descricao1: "\(ficha.pontosAtributos.sabedoria.valor)", toggleIsOn: $toggleIsOn )
+                TemplateAtributosSemToggle(titulo: ficha.pontosAtributos.destreza.modificador >= 0 ? "Destreza +\(ficha.pontosAtributos.destreza.modificador)" : "Destreza \(ficha.pontosAtributos.destreza.modificador)", descricao: "\(ficha.pontosAtributos.destreza.valor)")
+                TemplateAtributosSemToggle(titulo: ficha.pontosAtributos.sabedoria.modificador >= 0 ? "Sabedoria +\(ficha.pontosAtributos.sabedoria.modificador)" : "Sabedoria \(ficha.pontosAtributos.sabedoria.modificador)", descricao: "\(ficha.pontosAtributos.sabedoria.valor)")
             }
             Divider()
             HStack{
-                TemplateAtributos(titulo1: "Constituição", descricao1: "\(ficha.pontosAtributos.constituicao.valor)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Carisma", descricao1: "\(ficha.pontosAtributos.carisma.valor)", toggleIsOn: $toggleIsOn )
+                TemplateAtributosSemToggle(titulo: ficha.pontosAtributos.constituicao.modificador >= 0 ? "Constituição +\(ficha.pontosAtributos.constituicao.modificador)" : "Constituição \(ficha.pontosAtributos.constituicao.modificador)", descricao: "\(ficha.pontosAtributos.constituicao.valor)")
+                TemplateAtributosSemToggle(titulo: ficha.pontosAtributos.carisma.modificador >= 0 ? "Carisma +\(ficha.pontosAtributos.carisma.modificador)" : "Carisma \(ficha.pontosAtributos.carisma.modificador)", descricao: "\(ficha.pontosAtributos.carisma.valor)")
             }
         }
 
@@ -163,37 +183,26 @@ struct SalvaguardaVista: View{
         self._ficha = ficha
     }
     var body: some View{
-        
-        
-            
-            
         TemplateTabelaAtributo(title: "Salva-Guarda"){
-            
-        
-            
-        
-              
-                    
-                    
             HStack{
-                TemplateAtributos(titulo1: "Força", descricao1: "\(ficha.pontosAtributos.forca.valor)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Inteligência", descricao1: "\(ficha.pontosAtributos.inteligencia.valor)", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Força", descricao1: "\(ficha.pontosAtributos.forca.valor)", hasProficiencia: AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .forca), toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Inteligência", descricao1: "\(ficha.pontosAtributos.inteligencia.valor)", hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .inteligencia), toggleIsOn: $toggleIsOn )
             }
             Divider()
 
             HStack{
-                TemplateAtributos(titulo1: "Destreza", descricao1: "\(ficha.pontosAtributos.destreza.valor)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Sabedoria", descricao1: "\(ficha.pontosAtributos.sabedoria.valor)", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Destreza", descricao1: "\(ficha.pontosAtributos.destreza.valor)", hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .destreza), toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Sabedoria", descricao1: "\(ficha.pontosAtributos.sabedoria.valor)", hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .sabedoria), toggleIsOn: $toggleIsOn )
             }
             Divider()
             HStack{
-                TemplateAtributos(titulo1: "Constituição", descricao1: "\(ficha.pontosAtributos.constituicao.valor)", toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Carisma", descricao1: "\(ficha.pontosAtributos.carisma.valor)", toggleIsOn: $toggleIsOn )
+                TemplateAtributos(titulo1: "Constituição", descricao1: "\(ficha.pontosAtributos.constituicao.valor)", hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .constituicao), toggleIsOn: $toggleIsOn)
+                TemplateAtributos(titulo1: "Carisma", descricao1: "\(ficha.pontosAtributos.carisma.valor)", hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .carisma), toggleIsOn: $toggleIsOn )
             }
                 
         }.padding(.vertical,5)
-        }
     }
+}
 
 
 struct PericiasVista: View{
@@ -204,9 +213,9 @@ struct PericiasVista: View{
         self._ficha = ficha
     }
     var numeroPericias: [Int] = [2,3,4]
-    var periciasArray: [String] = ["Acrobacia","Arcanismo","Atletismo","Enganação","Furtividade","História","Intuição", "Intimidação","Investigação "]
+    var periciasArray: [Pericia] = [.acrobacia, .adestrarAnimais, .arcanismo, .atletismo, .atuacao, .enganacao, .furtividade, .historia, .intimidacao]
     
-    var periciasArray2: [String] = ["Lidar com Animais", "Medicina","Natureza", "Percepção", "Perfomance","Persuasão", "Prestidigitação", "Religião", "Sobrevivência"]
+    var periciasArray2: [Pericia] = [.intuicao, .investigacao, .medicina, .natureza, .percepcao, .persuasao, .prestidigitacao, .religiao, .sobrevivencia]
     
     var body: some View{
         
@@ -215,25 +224,23 @@ struct PericiasVista: View{
             
             HStack{
                 VStack{
-                ForEach(periciasArray, id: \.self) { condicao in
-                    TemplateAtributos(titulo1: condicao, descricao1: "\(Pericia.self)", toggleIsOn: $toggleIsOn)
+                    ForEach(periciasArray, id: \.self) { pericia in
+                        TemplateAtributos(titulo1: pericia.rawValue, descricao1: "\(Pericia.self)", hasProficiencia: ficha.profPericias.contains(pericia), toggleIsOn: $toggleIsOn)
                     Divider()
-            }
+                    }
                 }
                 
                 VStack{
-                    ForEach(periciasArray2, id: \.self) { condicao in
-                        TemplateAtributos(titulo1: condicao, descricao1: "\(Pericia.self)", toggleIsOn: $toggleIsOn)
+                    ForEach(periciasArray2, id: \.self) { pericia in
+                        TemplateAtributos(titulo1: pericia.rawValue, descricao1: "\(Pericia.self)", hasProficiencia: ficha.profPericias.contains(pericia), toggleIsOn: $toggleIsOn)
                         Divider()
+                    }
                 }
-           
+            }
         }
-        
     }
+}
 
-}
-    }
-}
 struct ToggleVista: View{
     // @ObservedObject var vmclasse = TemplateFichaPronta()
     @Binding private var toggleIsOn: Bool
