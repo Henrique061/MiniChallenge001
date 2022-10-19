@@ -19,7 +19,7 @@ struct Identidade: View {
     }
     
     var body: some View {
-        NavigationView {
+        CustomNavigationView {
             TemplateTelaPadrao(withPaddings: false){
                 ScrollView{
                     VStack{

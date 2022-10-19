@@ -25,14 +25,14 @@ struct Atributos: View {
     }
     
     var body: some View {
-        NavigationView{
+        CustomNavigationView {
             TemplateTelaPadrao(withPaddings: false){
-            ScrollView{
-                VStack{
+                ScrollView{
+                    VStack{
                         ToggleVista(toggleIsOn: $toggleIsOn)
-                    AtributosVista(toggleIsOn: $toggleIsOn,   ficha: self.$sheet.fichaSelecionada)
-                    SalvaguardaVista(toggleIsOn: $toggleIsOn, ficha: self.$sheet.fichaSelecionada)
-                    PericiasVista(toggleIsOn: $toggleIsOn,    ficha: self.$sheet.fichaSelecionada)
+                        AtributosVista(toggleIsOn: $toggleIsOn,   ficha: self.$sheet.fichaSelecionada)
+                        SalvaguardaVista(toggleIsOn: $toggleIsOn, ficha: self.$sheet.fichaSelecionada)
+                        PericiasVista(toggleIsOn: $toggleIsOn,    ficha: self.$sheet.fichaSelecionada)
                     }
                     .padding(.horizontal, 10)
                     .navigationBarTitleDisplayMode(.inline)
@@ -149,7 +149,7 @@ struct AtributosVista: View{
                 TemplateAtributosSemToggle(titulo: ficha.pontosAtributos.inteligencia.modificador >= 0 ? "Inteligência +\(ficha.pontosAtributos.inteligencia.modificador)" : "Inteligência \(ficha.pontosAtributos.inteligencia.modificador)", descricao: "\(ficha.pontosAtributos.inteligencia.valor)")
             }
             Divider()
-
+            
             HStack{
                 TemplateAtributosSemToggle(titulo: ficha.pontosAtributos.destreza.modificador >= 0 ? "Destreza +\(ficha.pontosAtributos.destreza.modificador)" : "Destreza \(ficha.pontosAtributos.destreza.modificador)", descricao: "\(ficha.pontosAtributos.destreza.valor)")
                 TemplateAtributosSemToggle(titulo: ficha.pontosAtributos.sabedoria.modificador >= 0 ? "Sabedoria +\(ficha.pontosAtributos.sabedoria.modificador)" : "Sabedoria \(ficha.pontosAtributos.sabedoria.modificador)", descricao: "\(ficha.pontosAtributos.sabedoria.valor)")
@@ -160,16 +160,16 @@ struct AtributosVista: View{
                 TemplateAtributosSemToggle(titulo: ficha.pontosAtributos.carisma.modificador >= 0 ? "Carisma +\(ficha.pontosAtributos.carisma.modificador)" : "Carisma \(ficha.pontosAtributos.carisma.modificador)", descricao: "\(ficha.pontosAtributos.carisma.valor)")
             }
         }
-
-            Button {
-                print("Button tapped!")
-            } label: {
-                Text("Editar Atributos")
-
-            }
-            .buttonStyle(CustomButtonStyle5())
+        
+        Button {
+            print("Button tapped!")
+        } label: {
+            Text("Editar Atributos")
+            
         }
+        .buttonStyle(CustomButtonStyle5())
     }
+}
 
 
 
@@ -189,7 +189,7 @@ struct SalvaguardaVista: View{
                 TemplateAtributos(titulo1: "Inteligência", descricao1: "\(ficha.pontosAtributos.inteligencia.valor)", hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .inteligencia), toggleIsOn: $toggleIsOn )
             }
             Divider()
-
+            
             HStack{
                 TemplateAtributos(titulo1: "Destreza", descricao1: "\(ficha.pontosAtributos.destreza.valor)", hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .destreza), toggleIsOn: $toggleIsOn)
                 TemplateAtributos(titulo1: "Sabedoria", descricao1: "\(ficha.pontosAtributos.sabedoria.valor)", hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .sabedoria), toggleIsOn: $toggleIsOn )
@@ -199,7 +199,7 @@ struct SalvaguardaVista: View{
                 TemplateAtributos(titulo1: "Constituição", descricao1: "\(ficha.pontosAtributos.constituicao.valor)", hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .constituicao), toggleIsOn: $toggleIsOn)
                 TemplateAtributos(titulo1: "Carisma", descricao1: "\(ficha.pontosAtributos.carisma.valor)", hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .carisma), toggleIsOn: $toggleIsOn )
             }
-                
+            
         }.padding(.vertical,5)
     }
 }
@@ -226,7 +226,7 @@ struct PericiasVista: View{
                 VStack{
                     ForEach(periciasArray, id: \.self) { pericia in
                         TemplateAtributos(titulo1: pericia.rawValue, descricao1: "\(Pericia.self)", hasProficiencia: ficha.profPericias.contains(pericia), toggleIsOn: $toggleIsOn)
-                    Divider()
+                        Divider()
                     }
                 }
                 
@@ -251,28 +251,28 @@ struct ToggleVista: View{
     }
     
     var body: some View{
-                VStack{
-                    TemplateTabelaAtributo(title: "Bônus de Proeficiência"){
-            
-            
-            HStack{
+        VStack{
+            TemplateTabelaAtributo(title: "Bônus de Proeficiência"){
                 
                 
-                DisplayTextoBotao(titulo: "Pontos Adicionais", descricao: "02").padding(.vertical,5)
-                    .padding(.horizontal,10)
-                Spacer()
-                Toggle("", isOn: $showProficiencias)
-                    .padding(.vertical,5)
-                    .padding(.horizontal,5)
-                    .labelsHidden()
-                    .tint(Color("RedTheme"))
-                    .onChange(of: showProficiencias, perform: { newValue in
-                        withAnimation {
-                            toggleIsOn = showProficiencias
-                        }
-                    })
-            }
-                    }.padding(.vertical, 10)
+                HStack{
+                    
+                    
+                    DisplayTextoBotao(titulo: "Pontos Adicionais", descricao: "02").padding(.vertical,5)
+                        .padding(.horizontal,10)
+                    Spacer()
+                    Toggle("", isOn: $showProficiencias)
+                        .padding(.vertical,5)
+                        .padding(.horizontal,5)
+                        .labelsHidden()
+                        .tint(Color("RedTheme"))
+                        .onChange(of: showProficiencias, perform: { newValue in
+                            withAnimation {
+                                toggleIsOn = showProficiencias
+                            }
+                        })
+                }
+            }.padding(.vertical, 10)
         }
     }
 }

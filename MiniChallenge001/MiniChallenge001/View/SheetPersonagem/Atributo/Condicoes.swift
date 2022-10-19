@@ -6,25 +6,25 @@ import SwiftUI
 
 struct condicoes: View{
     var body: some View{
-                    TemplateTelaPadrao(withPaddings: false){
-                ScrollView{
-                    VStack(alignment: .leading, spacing: 10) {
-                        estruturaCondicoes()
-                            .padding(.horizontal, 10)
-                        estruturaExaust()
-                            .padding(.horizontal, 10)
-                    }
+        TemplateTelaPadrao(withPaddings: false){
+            ScrollView{
+                VStack(alignment: .leading, spacing: 10) {
+                    estruturaCondicoes()
+                        .padding(.horizontal, 10)
+                    estruturaExaust()
+                        .padding(.horizontal, 10)
                 }
-                        
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        NavigationBarTitle("Condições")
-                    }
+            }
+            
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    NavigationBarTitle("Condições")
                 }
             }
         }
     }
+}
 
 struct estruturaCondicoes: View{
     var condicoesArray: [String] = ["Agarrado","Amedrontado","Atordoado","Caído","Cego","Enfeitiçado","Envenenado","Impedido","Incapacitado", "Inconciente","Invisível", "Paralisado", "Petrificado", "Surdo"]
@@ -45,17 +45,17 @@ struct estruturaCondicoes: View{
 
 struct estruturaExaust: View{
     var exaustaoArray: [String] = [
-    "Exaustão 1","Exaustão 2","Exaustão 3","Exaustão 4","Exaustão 5", ]
+        "Exaustão 1","Exaustão 2","Exaustão 3","Exaustão 4","Exaustão 5", ]
     
     var body: some View{
         TemplateTabelaAtributo(title: "Exaustão") {
-             LazyVStack{
+            LazyVStack{
                 ForEach(exaustaoArray, id: \.self) { condicao in
                     TemplateRadioButton(isMarked: false, title: condicao) {
                         
                     }
                 }
-             }
+            }
         }
     }
 }
