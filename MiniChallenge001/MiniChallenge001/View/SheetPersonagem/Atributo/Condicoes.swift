@@ -8,15 +8,14 @@ struct condicoes: View{
     var body: some View{
                     TemplateTelaPadrao(withPaddings: false){
                 ScrollView{
-                    VStack{
-                        
-                   estruturaCondicoes()
+                    VStack(alignment: .leading, spacing: 10) {
+                        estruturaCondicoes()
+                            .padding(.horizontal, 10)
+                        estruturaExaust()
+                            .padding(.horizontal, 10)
                     }
-                    .padding(.horizontal, 10)
-                    estruturaExaust()
-                        .padding(.vertical,5)
-                    
                 }
+                        
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
@@ -27,33 +26,21 @@ struct condicoes: View{
         }
     }
 
-
-
-
-
-
-
 struct estruturaCondicoes: View{
-    
-    
     var condicoesArray: [String] = ["Agarrado","Amedrontado","Atordoado","Caído","Cego","Enfeitiçado","Envenenado","Impedido","Incapacitado", "Inconciente","Invisível", "Paralisado", "Petrificado", "Surdo"]
     
-    
     var body: some View{
-        TemplateTabelaAtributo(title: "Condicoes"){
+        TemplateTabelaAtributo(title: "Condições"){
             
             LazyVStack{
                 ForEach(condicoesArray, id: \.self) { condicao in
-                    TemplateRadioButton(isMarked: true, title: condicao) {
+                    TemplateRadioButton(isMarked: false, title: condicao) {
                         
                     }
-                
-                
                 }
-            
+            }
         }
     }
-}
 }
 
 struct estruturaExaust: View{
@@ -64,14 +51,11 @@ struct estruturaExaust: View{
         TemplateTabelaAtributo(title: "Exaustão") {
              LazyVStack{
                 ForEach(exaustaoArray, id: \.self) { condicao in
-                    TemplateRadioButton(isMarked: true, title: condicao) {
+                    TemplateRadioButton(isMarked: false, title: condicao) {
                         
                     }
-                
-                
                 }
-            
-        }
+             }
         }
     }
 }
