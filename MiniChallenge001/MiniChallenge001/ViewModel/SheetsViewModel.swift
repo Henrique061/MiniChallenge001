@@ -17,6 +17,18 @@ public class SheetsViewModel: ObservableObject {
         return self.fichaSelecionada.nivel
     }
     
+    public var equipamentos: [EquipamentoJSON] {
+        var temp: [EquipamentoJSON] = []
+        for i in self.fichaSelecionada.equipamentos {
+            if temp.contains(where: {$0.id == i.id}) {
+                temp[temp.firstIndex(where: {$0.id == i.id}) ?? 0].quantidade += i.quantidade
+            } else {
+                temp.append(i)
+            }
+        }
+        return temp.sorted(by: {$0.nome < $1.nome})
+    }
+    
     public init() {
         self.fichaSelecionada = PersonagemFicha()
         self.fetch()

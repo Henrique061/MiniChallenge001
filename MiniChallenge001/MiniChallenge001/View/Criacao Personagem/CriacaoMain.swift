@@ -69,9 +69,10 @@ public class NovaFichaViewModel: ObservableObject {
 struct CriacaoMain: View {
     
     @StateObject private var novaFicha: NovaFichaViewModel = NovaFichaViewModel()
+    @State private var showCancelSheetAlert: Bool = false
     @Binding private var popToRoot: Bool
     
-    @FocusState private var focusedField: FieldsIdentifiers?
+    @FocusState private var focusedField: Bool
     
     public init(popToRoot: Binding<Bool>) {
         self._popToRoot = popToRoot
@@ -85,12 +86,12 @@ struct CriacaoMain: View {
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     
                     TextFieldCriacao(title: "Nome da ficha", text: $novaFicha.perfil.nomeFicha)
-                        .focused($focusedField, equals: .nomeFicha)
+                        .focused($focusedField)
                     TextFieldCriacao(title: "Nome do personagem", text: $novaFicha.perfil.nomePersonagem)
-                        .focused($focusedField, equals: .nomePersonagem)
+                        .focused($focusedField)
                     
                     CustomNavigationLink {
-                        SelecaoRacaView(vmficha: self.novaFicha)
+                        SelecaoRacaView(vmficha: self.novaFicha) { dismissKeyboard() }
                     } label: {
                         DisplayTextoBotaoCondicao(titulo: "Raça", descricaoTrue: "Toque para selecionar...", descricaoFalse: novaFicha.racaFinal.tipoRaca.rawValue, condicao: novaFicha.racaFinal.tipoRaca == .none)
                     }
@@ -123,12 +124,35 @@ struct CriacaoMain: View {
                           novaFicha.classeFinal.tipoClasse == .none ||
                           novaFicha.antecedenteFinal.tipoAntecedente == .none ||
                           novaFicha.perfil.tendencia == .none)
-                
             }
             .padding(.horizontal, 10)
         }
         
         .navigationTitle("Criação Personagem")
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button("Cancelar") {
+                    self.showCancelSheetAlert.toggle()
+                }
+                .alert("Cancelar criação de ficha", isPresented: $showCancelSheetAlert) {
+                    Button(role: .destructive, action: {self.popToRoot.toggle()}, label: {Text("Cancelar criação")})
+                    Button(role: .cancel, action: {}, label: {Text("Continuar criando")})
+                } message: {
+                    Text("Caso você cancele a criação de ficha todas as informações colocadas serão removidas.")
+                }
+
+            }
+        }
+    }
+    
+    private func dismissKeyboard() {
+        if #available(iOS 16.0, *) {
+            self.focusedField = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.focusedField = false
+            }
+        }
     }
 }
 
@@ -432,18 +456,21 @@ struct TemplateCustomDisclosureGroup2<Content, Header>: View where Content: View
     
     @ViewBuilder private var content: () -> Content
     @ViewBuilder private var header: () -> Header
+    private var showDivider: Bool
     
-    
-    public init(@ViewBuilder content: @escaping () -> Content, @ViewBuilder header: @escaping () -> Header) {
+    public init(showDivider: Bool = true, @ViewBuilder content: @escaping () -> Content, @ViewBuilder header: @escaping () -> Header) {
         self.content = content
         self.header = header
+        self.showDivider = showDivider
     }
     
     var body: some View {
         TemplateContentBackground {
             DisclosureGroup {
                 VStack(alignment: .leading, spacing: 0) {
-                    Divider()
+                    if showDivider {
+                        Divider()
+                    }
                     content()
                 }
             } label: {

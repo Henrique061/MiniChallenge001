@@ -16,12 +16,20 @@ class CriacaoRacaViewModel: ObservableObject {
     
     public var buttonIsDisabled: Bool {
         self.raca.tipoRaca == .none ||
+        
         self.raca.possuiSubRaca && self.escolhasDefinidas.escolhaSubRaca.subraca == .none ||
-        self.raca.possuiEscolhaProfPericias && self.escolhasDefinidas.escolhaProfPericias.isEmpty ||
-        (self.raca.possuiEscolhaIdioma || self.raca.subracaPossuiEscolhaIdioma) && self.escolhasDefinidas.escolhaIdioma.idioma == .none ||
+        
+        self.raca.possuiEscolhaProfPericias && self.escolhasDefinidas.escolhaProfPericias.count < self.raca.quantiaEscolhaPericia ||
+        
+        self.raca.possuiEscolhaIdioma && self.escolhasDefinidas.escolhaIdioma.idioma == .none ||
+         
+         self.raca.subracaPossuiEscolhaIdioma && self.escolhasDefinidas.escolhaIdioma.idioma == .none  && self.escolhasDefinidas.escolhaSubRaca.subraca != .elfoFloresta && self.escolhasDefinidas.escolhaSubRaca.subraca != .elfoNegro ||
+        
         self.raca.possuiEscolhaProfFerramentas && self.escolhaProfFerramenta.isEmpty ||
-        self.raca.possuiEscolhaAtributo && self.escolhasAtributos.isEmpty ||
-        self.raca.subracaEscolhaMagias.subraca != .none && self.raca.possuiSubRaca && escolhaMagia.isEmpty
+        
+        self.raca.possuiEscolhaAtributo && self.escolhasAtributos.count < raca.numEscolhaDeAtributos ||
+        
+        self.raca.possuiSubRaca && self.raca.subracaEscolhaMagias.subraca == self.escolhasDefinidas.escolhaSubRaca.subraca && escolhaMagia.isEmpty
     }
     
     public var proficienciaFerramentas: [FerramentaJSON] {
@@ -158,10 +166,12 @@ struct SelecaoRacaView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var vmficha: NovaFichaViewModel
     @StateObject private var vmraca: CriacaoRacaViewModel
+    private var didDismiss: () -> Void
     
-    public init(vmficha: NovaFichaViewModel) {
+    public init(vmficha: NovaFichaViewModel, didDismiss: @escaping () -> Void) {
         self.vmficha = vmficha
         self._vmraca = StateObject(wrappedValue: CriacaoRacaViewModel(racaFinal: vmficha.racaFinal))
+        self.didDismiss = didDismiss
     }
     
     var body: some View {
@@ -193,6 +203,10 @@ struct SelecaoRacaView: View {
             ToolbarItem(placement: .principal) {
                 NavigationBarTitle("Raça do Personagem")
             }
+        }
+        
+        .onDisappear {
+            self.didDismiss()
         }
     }
 }
@@ -494,12 +508,14 @@ private struct RacaEscolhaPericia: View {
             
             TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
                 ForEach(vmraca.raca.escolhasProfPericias, id: \.self) { pericia in
-                    TemplateRadioButtonMultipleIdentifier(selectedID: $vmraca.escolhasDefinidas.escolhaProfPericias, id: pericia, maxSelection: vmraca.raca.quantiaEscolhaPericia) {
-                        
-                    } content: {
-                        Text(pericia.rawValue)
+                    if pericia != .none {
+                        TemplateRadioButtonMultipleIdentifier(selectedID: $vmraca.escolhasDefinidas.escolhaProfPericias, id: pericia, maxSelection: vmraca.raca.quantiaEscolhaPericia) {
+                            
+                        } content: {
+                            Text(pericia.rawValue)
+                        }
+                        .frame(height: 40)
                     }
-                    .frame(height: 40)
                 }
             } header: {
                 DisplayTextoBotaoCondicao(titulo: "Perícia Selecionável", descricaoTrue: "Selecione \(vmraca.raca.quantiaEscolhaPericia - vmraca.escolhasDefinidas.escolhaProfPericias.count)", descricaoFalse: "Perícias selecionadas", condicao: vmraca.escolhasDefinidas.escolhaProfPericias.count < vmraca.raca.quantiaEscolhaPericia)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum TipoMoeda: String, Codable {
+public enum TipoMoeda: String, Codable, Hashable {
     case cobre = "Cobre"
     case prata = "Prata"
     case electro = "Electro"

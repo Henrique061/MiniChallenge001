@@ -22,17 +22,18 @@ struct Combate: View {
     }
     
     var body: some View {
-        NavigationView {
+        CustomNavigationView {
             TemplateTelaPadrao(withPaddings: false) {
+                
                 AreaImagemPerfil(ficha: $sheet.fichaSelecionada)
-
+                
                 VStack(alignment: .center, spacing: 10) {
                     Text("\(sheet.fichaSelecionada.nomePersonagem)")
                         .font(.system(size: 15, weight: .bold, design: .default))
                         .padding(.bottom, -8)
                     Text("\(sheet.fichaSelecionada.classeFinal.classePersonagem.rawValue)")
                         .font(.system(size: 15, weight: .regular, design: .default))
-
+                    
                     Button("Alterar Nível") {
                         self.showAlterarNivel.toggle()
                     }
@@ -40,7 +41,7 @@ struct Combate: View {
                     .sheet(isPresented: $showAlterarNivel) {
                         AlterarNivelView(sheet: self.sheet)
                     }
-
+                    
                     ScrollView {
                         VStack {
                             AreaInformacoesGerais(ficha: $sheet.fichaSelecionada)
@@ -58,40 +59,42 @@ struct Combate: View {
                     }.padding(.horizontal, -10)
                 }
                 .padding(.horizontal, 10)
-
                 
-                .navigationTitle(self.sheet.fichaSelecionada.nome)
-                
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            DispatchQueue.main.async {
-                                let _ = self.sheet.saveFicha()
-                            }
-                            dismiss()
-                        } label: {
-                            Text("Fichas")
+            }
+            .navigationViewStyle(.stack)
+            .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
+            .toolbar{
+                ToolbarItem(placement: .principal, content: {
+                    NavigationBarTitle("\(self.sheet.fichaSelecionada.nome)")
+                        .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
+                })
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        DispatchQueue.main.async {
+                            let _ = self.sheet.saveFicha()
                         }
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button() {
-                            self.showTimerButton.toggle()
-                        } label: {
-                            Image("Temporizador").accentColor(.black)
-                        }
-                        .confirmationDialog("Descanso", isPresented: $showTimerButton) {
-                            Button("Descansar") {
-                                DispatchQueue.main.async {
-                                    self.sheet.fichaSelecionada.pontosVida = self.sheet.fichaSelecionada.pontosVidaMaximo
-                                    self.sheet.fichaSelecionada.quantiaDadoVida = self.sheet.fichaSelecionada.pontosVidaMaximo
-                                    self.sheet.resetResistenciaMorte()
-                                }
-                            }
-                            Button("Cancelar", role: .cancel) {}
-                        }
+                        dismiss()
+                    } label: {
+                        Text("Fichas")
                     }
                 }
-                .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button() {
+                        self.showTimerButton.toggle()
+                    } label: {
+                        Image("Temporizador").accentColor(.black)
+                    }
+                    .confirmationDialog("Descanso", isPresented: $showTimerButton) {
+                        Button("Descansar") {
+                            DispatchQueue.main.async {
+                                self.sheet.fichaSelecionada.pontosVida = self.sheet.fichaSelecionada.pontosVidaMaximo
+                                self.sheet.fichaSelecionada.quantiaDadoVida = self.sheet.fichaSelecionada.pontosVidaMaximo
+                                self.sheet.resetResistenciaMorte()
+                            }
+                        }
+                        Button("Cancelar", role: .cancel) {}
+                    }
+                }
             }
         }
     }
@@ -408,7 +411,7 @@ private struct TemplateInformacao: View {
     }
 }
 
- private struct AreaImagemPerfil: View {
+private struct AreaImagemPerfil: View {
     
     @Binding private var ficha: PersonagemFicha
     

@@ -35,10 +35,8 @@ struct Habilidades: View {
         self.sheet = sheet
     }
     
-    let customGesture = DragGesture(minimumDistance: 100, coordinateSpace: CoordinateSpace.local)
-    
     var body: some View {
-        NavigationView {
+        CustomNavigationView {
             TemplateTelaPadrao(withPaddings: false) {
                 if self.sheet.fichaSelecionada.magias.isEmpty {
                     Text("Nenhuma habilidade aprendida")
