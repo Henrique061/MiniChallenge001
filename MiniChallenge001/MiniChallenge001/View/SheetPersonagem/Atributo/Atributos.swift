@@ -42,7 +42,7 @@ struct Atributos: View {
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
                             NavigationLink {
-                                condicoes()
+                                condicoes(ficha: $sheet.fichaSelecionada)
                             } label: {
                                 Image("Penalidade")
                             }

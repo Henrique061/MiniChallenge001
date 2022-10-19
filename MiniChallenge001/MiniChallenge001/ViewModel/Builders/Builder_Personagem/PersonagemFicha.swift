@@ -149,7 +149,8 @@ public struct PersonagemFicha: Json {
     public var dadoVidaMaximo: Int = 0
     public var quantiaDadoVida: Int = 0
     public var resistenciaMorte: ResistenciaMorte = ResistenciaMorte()
-    public var condicoes: [String] = []
+    public var condicoes: [Condicao] = []
+    public var exaustao: Exaustao = .none
     
     //MARK: PERFIL
     public var fotoPersonagem: Data?

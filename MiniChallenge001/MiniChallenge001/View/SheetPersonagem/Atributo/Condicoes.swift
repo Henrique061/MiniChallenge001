@@ -5,13 +5,19 @@ import SwiftUI
 
 
 struct condicoes: View{
+    @Binding private var ficha: PersonagemFicha
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+    }
+    
     var body: some View{
         TemplateTelaPadrao(withPaddings: false){
             ScrollView{
                 VStack(alignment: .leading, spacing: 10) {
-                    estruturaCondicoes()
+                    estruturaCondicoes(ficha: $ficha)
                         .padding(.horizontal, 10)
-                    estruturaExaust()
+                    estruturaExaust(ficha: $ficha)
                         .padding(.horizontal, 10)
                 }
             }
@@ -27,15 +33,20 @@ struct condicoes: View{
 }
 
 struct estruturaCondicoes: View{
-    var condicoesArray: [String] = ["Agarrado","Amedrontado","Atordoado","Caído","Cego","Enfeitiçado","Envenenado","Impedido","Incapacitado", "Inconciente","Invisível", "Paralisado", "Petrificado", "Surdo"]
+    @Binding private var ficha: PersonagemFicha
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+    }
     
     var body: some View{
         TemplateTabelaAtributo(title: "Condições"){
-            
             LazyVStack{
-                ForEach(condicoesArray, id: \.self) { condicao in
-                    TemplateRadioButton(isMarked: false, title: condicao) {
+                ForEach(Condicao.allCases, id: \.self) { condicao in
+                    TemplateRadioButtonMultipleIdentifier(selectedID: $ficha.condicoes, id: condicao) {
                         
+                    } content: {
+                        Text(condicao.rawValue)
                     }
                 }
             }
@@ -44,15 +55,20 @@ struct estruturaCondicoes: View{
 }
 
 struct estruturaExaust: View{
-    var exaustaoArray: [String] = [
-        "Exaustão 1","Exaustão 2","Exaustão 3","Exaustão 4","Exaustão 5", ]
+    @Binding private var ficha: PersonagemFicha
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+    }
     
     var body: some View{
         TemplateTabelaAtributo(title: "Exaustão") {
             LazyVStack{
-                ForEach(exaustaoArray, id: \.self) { condicao in
-                    TemplateRadioButton(isMarked: false, title: condicao) {
+                ForEach(Exaustao.allCases, id: \.self) { exaustao in
+                    TemplateRadioButtonWithIdentifier(selectedID: $ficha.exaustao, id: exaustao) {
                         
+                    } content: {
+                        Text(exaustao.rawValue)
                     }
                 }
             }
