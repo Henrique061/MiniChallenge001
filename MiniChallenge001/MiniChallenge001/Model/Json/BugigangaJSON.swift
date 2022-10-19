@@ -8,7 +8,7 @@
 import Foundation
 
 public struct BugigangaJSON: Json {
-    var id: Int
-    var nome: String
-    var valor: Int
+    public var id: Int
+    public var nome: String
+    public var valor: Int
 }

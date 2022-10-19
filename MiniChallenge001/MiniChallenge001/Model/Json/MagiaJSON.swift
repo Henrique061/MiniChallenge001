@@ -19,15 +19,15 @@ public enum EscolaMagia: String, Codable {
 }
 
 public struct MagiaJSON: Json, Hashable {
-    var id: Int
-    var nome: String
-    var nivel: Int
-    var classes: [ClassePersonagem]
-    var escola: EscolaMagia
-    var ritual: Bool
-    var tempoConjuracao: String
-    var alcance: String
-    var componentes: String
-    var duracao: String
-    var descricao: String
+    public var id: Int
+    public var nome: String
+    public var nivel: Int
+    public var classes: [ClassePersonagem]
+    public var escola: EscolaMagia
+    public var ritual: Bool
+    public var tempoConjuracao: String
+    public var alcance: String
+    public var componentes: String
+    public var duracao: String
+    public var descricao: String
 }

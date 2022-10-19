@@ -38,8 +38,8 @@ struct LojaItens: View {
 private struct ListaArmasLoja: View {
     
     @ObservedObject private var sheet: SheetsViewModel
-    @State private var showDetail: Bool = false
-    @State private var selectedArma: ArmaJSON = ArmaJSON(id: 0, nome: "", tipo: .marcial, estilo: .cac, preco: Moeda(), dano: Dano(dano: "", tipo: .concussao), peso: 0, propriedades: "")
+//    @State private var showDetail: Bool = false
+    @State private var selectedArma: ArmaJSON?
     
     private var toasArmas: [ArmaJSON] {
         guard let list = JsonFileUtil.getDataFromBundle(folder: .arma, decoder: ArmaJSON.self) as? [ArmaJSON] else { return [] }
@@ -57,7 +57,7 @@ private struct ListaArmasLoja: View {
                     Divider()
                     LojaItemCell(title: arma.nome, quantidade: 1, categoria: "\(arma.tipo.rawValue) \(arma.estilo.rawValue)", preco: arma.preco) {
                         self.selectedArma = arma
-                        showDetail.toggle()
+//                        showDetail.toggle()
                     } completion: {
                         DispatchQueue.main.async {
                             self.sheet.fichaSelecionada.armas.append(arma)
@@ -65,55 +65,52 @@ private struct ListaArmasLoja: View {
                     }
                 }
             }
+            .sheet(item: $selectedArma) { arma in
+                SheetDescricaoArma(arma: arma) {
+                    DispatchQueue.main.async {
+                        self.sheet.fichaSelecionada.armas.append(arma)
+                    }
+                }
+            }
         } header: {
             SingleLineDisclosureTitle(title: "Armas")
         }
-        .sheet(isPresented: $showDetail) {
-            if let selectedArma = selectedArma {
-                SheetDescricaoItemLoja(tipoItem: "Arma") {
-                    TemplateContentBackground {
-                        VStack(alignment: .leading, spacing: 10) {
-                            DisplayTextoBotao(titulo: selectedArma.nome, descricao: "\(selectedArma.tipo.rawValue) \(selectedArma.estilo.rawValue)")
-                            Divider().padding(.horizontal, -10)
-                            DisplayTextoBotao(titulo: "Custo", descricao: "\(selectedArma.preco.quantidade) \(selectedArma.preco.tipo.rawValue)")
-                            DisplayTextoBotao(titulo: "Dano", descricao: "\(selectedArma.dano.dano) \(selectedArma.dano.tipo.rawValue)")
-                            DisplayTextoBotao(titulo: "Peso", descricao: "\(selectedArma.peso)")
-                            DisplayTextoBotao(titulo: "Propriedade", descricao: "\(selectedArma.propriedades)")
-                        }
-                        .padding(10)
-                    }
-                } completion: {
-                    DispatchQueue.main.async {
-                        self.sheet.fichaSelecionada.armas.append(selectedArma)
-                    }
-                }
-                
-            }
-        }
+        
     }
 }
 
-private struct SheetDescricaoItemLoja<Content>: View where Content: View {
+private struct SheetDescricaoArma: View {
     
-    @ViewBuilder private var content: () -> Content
+    @Environment(\.dismiss) private var dismiss
+    private var arma: ArmaJSON
     private var completion: () -> Void
-    private var tipoItem: String
     
-    public init(tipoItem: String, @ViewBuilder content: @escaping () -> Content, completion: @escaping () -> Void) {
-        self.content = content
+    public init(arma: ArmaJSON, completion: @escaping () -> Void) {
+        self.arma = arma
         self.completion = completion
-        self.tipoItem = tipoItem
     }
     
     var body: some View {
-        TemplateSheetView(header: DefaultSheetHeader(image: Image("Saco Detalhado"), title: "Descrição de Item", subtitle: tipoItem)) {
+        TemplateSheetView(header: DefaultSheetHeader(image: Image("Saco Detalhado"), title: "Descrição de Item", subtitle: "Arma")) {
             
             VStack(alignment: .leading, spacing: 10) {
-                content()
+                TemplateContentBackground {
+                    VStack(alignment: .leading, spacing: 10) {
+                        DisplayTextoBotao(titulo: arma.nome, descricao: "\(arma.tipo.rawValue) \(arma.estilo.rawValue)")
+                        Divider().padding(.horizontal, -10)
+                        DisplayTextoBotao(titulo: "Custo", descricao: "\(arma.preco.quantidade) \(arma.preco.tipo.rawValue)")
+                        DisplayTextoBotao(titulo: "Dano", descricao: "\(arma.dano.dano) \(arma.dano.tipo.rawValue)")
+                        DisplayTextoBotao(titulo: "Peso", descricao: "\(arma.peso)")
+                        DisplayTextoBotao(titulo: "Propriedade", descricao: "\(arma.propriedades)")
+                    }
+                    .padding(10)
+                }
                 Spacer()
                 Button("Adicionar ao Inventário") {
                     completion()
-                }.buttonStyle(CustomButtonStyle5())
+                    dismiss()
+                }
+                .buttonStyle(CustomButtonStyle5())
             }
             .padding(.horizontal, 10)
         }

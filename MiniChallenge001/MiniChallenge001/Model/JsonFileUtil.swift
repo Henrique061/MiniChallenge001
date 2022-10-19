@@ -24,9 +24,9 @@ class JsonFileUtil {
         return filesURL
     }
     
-    public static func getDataFromBundle<T:Json>(folder name: BundleFolderName, decoder: T.Type) -> [Json] {
+    public static func getDataFromBundle<T:Json>(folder name: BundleFolderName, decoder: T.Type) -> [any Json] {
         let urls = getFilesURLFromBundle(folder: name.rawValue)
-        var items: [Json] = []
+        var items: [any Json] = []
         for url in urls {
             do {
                 let data = try Data(contentsOf: url)

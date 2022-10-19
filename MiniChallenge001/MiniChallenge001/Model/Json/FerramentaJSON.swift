@@ -20,10 +20,10 @@ public enum TipoFerramenta: String, Codable, Hashable {
 }
 
 public struct FerramentaJSON: Json, Hashable {
-    var id: Int
-    var nome: String
-    var tipo: TipoFerramenta
-    var preco: Moeda
-    var peso: Float
-    var descricao: String
+    public var id: Int
+    public var nome: String
+    public var tipo: TipoFerramenta
+    public var preco: Moeda
+    public var peso: Float
+    public var descricao: String
 }

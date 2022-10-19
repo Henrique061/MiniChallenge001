@@ -8,9 +8,9 @@
 import Foundation
 
 public struct MontariaJSON: Json {
-    var id: Int
-    var nome: String
-    var preco: Moeda
-    var delocamento: Float
-    var capacidadeCarga: Float
+    public var id: Int
+    public var nome: String
+    public var preco: Moeda
+    public var delocamento: Float
+    public var capacidadeCarga: Float
 }

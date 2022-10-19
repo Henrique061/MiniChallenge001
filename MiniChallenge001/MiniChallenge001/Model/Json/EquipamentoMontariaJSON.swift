@@ -8,8 +8,8 @@
 import Foundation
 
 public struct EquipamentoMontariaJSON: Json {
-    var id: Int
-    var nome: String
-    var preco: Moeda
-    var peso: Float
+    public var id: Int
+    public var nome: String
+    public var preco: Moeda
+    public var peso: Float
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 public struct TraitJSON: Json, Hashable, Equatable {
-    var id: Int
-    var nome: String
-    var raca: TipoRaca
-    var subraca: TipoSubRaca?
-    var descricao: String
+    public var id: Int
+    public var nome: String
+    public var raca: TipoRaca
+    public var subraca: TipoSubRaca?
+    public var descricao: String
 }

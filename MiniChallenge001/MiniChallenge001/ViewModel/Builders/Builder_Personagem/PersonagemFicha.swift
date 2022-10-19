@@ -105,33 +105,33 @@ public struct PerfilPersonagem : Codable, Hashable {
 
 //MARK: PERSONAGEM FICHA
 public struct PersonagemFicha: Json {
-    var id: Int = 0
-    var nome: String = ""
+    public var id: Int = 0
+    public var nome: String = ""
     
     init() {
 
     }
     
     //MARK: NÍVEIS
-    var nivel: Int = 1
-    var experiencica: Int = 0
+    public var nivel: Int = 1
+    public var experiencica: Int = 0
     
     //MARK: CLASSES
-    var classeFinal: ClasseFicha = ClasseFicha()
-    var racaFinal: RacaFicha = RacaFicha()
-    var antecedenteFinal: AntecedentePersonagem = .none
+    public var classeFinal: ClasseFicha = ClasseFicha()
+    public var racaFinal: RacaFicha = RacaFicha()
+    public var antecedenteFinal: AntecedentePersonagem = .none
     
     //MARK: INVENTARIO JSON
-    var magias: [MagiaJSON] = []
-    var armas: [ArmaJSON] = []
-    var armaduras: [ArmaduraJSON] = []
-    var equipamentos: [EquipamentoJSON] = []
-    var ferramentas: [FerramentaJSON] = []
-    var montarias: [MontariaJSON] = []
-    var equipamentosMontaria: [EquipamentoMontariaJSON] = []
-    var veiculosAquaticos: [VeiculoAquaticoJSON] = []
-    var bugigangas: [BugigangaJSON] = []
-    var carteira: [Moeda] = [
+    public var magias: [MagiaJSON] = []
+    public var armas: [ArmaJSON] = []
+    public var armaduras: [ArmaduraJSON] = []
+    public var equipamentos: [EquipamentoJSON] = []
+    public var ferramentas: [FerramentaJSON] = []
+    public var montarias: [MontariaJSON] = []
+    public var equipamentosMontaria: [EquipamentoMontariaJSON] = []
+    public var veiculosAquaticos: [VeiculoAquaticoJSON] = []
+    public var bugigangas: [BugigangaJSON] = []
+    public var carteira: [Moeda] = [
         .init(quantidade: 0, tipo: .cobre),
         .init(quantidade: 0, tipo: .prata),
         .init(quantidade: 0, tipo: .electro),
@@ -140,42 +140,42 @@ public struct PersonagemFicha: Json {
     ]
     
     //MARK: PONTOS
-    var classeArmadura: Int = 0
-    var iniciativa: Int = 0
-    var deslocamento: Float = 0
-    var pontosVidaMaximo: Int = 0
-    var pontosVida: Int = 0
-    var pontosVidaTemporário: Int = 0
-    var dadoVidaMaximo: Int = 0
-    var quantiaDadoVida: Int = 0
-    var resistenciaMorte: ResistenciaMorte = ResistenciaMorte()
-    var condicoes: [String] = []
+    public var classeArmadura: Int = 0
+    public var iniciativa: Int = 0
+    public var deslocamento: Float = 0
+    public var pontosVidaMaximo: Int = 0
+    public var pontosVida: Int = 0
+    public var pontosVidaTemporário: Int = 0
+    public var dadoVidaMaximo: Int = 0
+    public var quantiaDadoVida: Int = 0
+    public var resistenciaMorte: ResistenciaMorte = ResistenciaMorte()
+    public var condicoes: [String] = []
     
     //MARK: PERFIL
-    var fotoPersonagem: Data?
-    var nomePersonagem: String = ""
-    var idadePersonagem: Int = 0
-    var alturaPersonagem: Float = 0
-    var pesoPersonagem: Float = 0
-    var olhosPersonagem: String = ""
-    var pelePersonagem: String = ""
-    var cabeloPersonagem: String = ""
-    var outrosPersonagem: String = ""
-    var tracosPersonalidadePersonagem: String = ""
-    var ideaisPersonagem: String = ""
-    var vinculoPersonagem: String = ""
-    var defeitosPersonagem: String = ""
-    var tendenciaPersonagem: TipoTendencia = .none // leal e bom, essas parada
-    var estiloVida: EstiloDeVida = .none
+    public var fotoPersonagem: Data?
+    public var nomePersonagem: String = ""
+    public var idadePersonagem: Int = 0
+    public var alturaPersonagem: Float = 0
+    public var pesoPersonagem: Float = 0
+    public var olhosPersonagem: String = ""
+    public var pelePersonagem: String = ""
+    public var cabeloPersonagem: String = ""
+    public var outrosPersonagem: String = ""
+    public var tracosPersonalidadePersonagem: String = ""
+    public var ideaisPersonagem: String = ""
+    public var vinculoPersonagem: String = ""
+    public var defeitosPersonagem: String = ""
+    public var tendenciaPersonagem: TipoTendencia = .none // leal e bom, essas parada
+    public var estiloVida: EstiloDeVida = .none
     
     //MARK: ATRIBUTOS E IDIOMAS
-    var pontosAtributos: ValoresAtributos = ValoresAtributos()
-    var idiomas: [IdiomaAlfabeto] = []
+    public var pontosAtributos: ValoresAtributos = ValoresAtributos()
+    public var idiomas: [IdiomaAlfabeto] = []
     
     //MARK: PROFICIENCIAS
-    var profSalvaguardas: [AtributosSalvaguarda] = []
+    public var profSalvaguardas: [AtributosSalvaguarda] = []
     var profPericias: [Pericia] = []
-    var profArmas: [ArmaJSON] = [] // ou string, dependendo de como a gente resolvar trabalhar as proficiencias
-    var profArmaduras: [ArmaduraJSON] = []
-    var profFerramentas: [FerramentaJSON] = []
+    public var profArmas: [ArmaJSON] = [] // ou string, dependendo de como a gente resolvar trabalhar as proficiencias
+    public var profArmaduras: [ArmaduraJSON] = []
+    public var profFerramentas: [FerramentaJSON] = []
 }
