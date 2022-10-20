@@ -9,11 +9,12 @@
 
 import Foundation
 import SwiftUI
-   
+
 struct Habilidades: View {
     
     @ObservedObject private var sheet: SheetsViewModel
     @State private var textoBusca: String = ""
+    @State private var showAlert: Bool = false
     
     private var magiasAprendidas: [[MagiaJSON]] {
         var temp: [[MagiaJSON]] = []
@@ -37,26 +38,32 @@ struct Habilidades: View {
     
     var body: some View {
         CustomNavigationView {
-            TemplateTelaPadrao(withPaddings: false) {
-                if self.sheet.fichaSelecionada.magias.isEmpty {
-                    Text("Nenhuma habilidade aprendida")
-                    Spacer()
-                } else {
-                    ScrollView {
-                        ForEach(magiasAprendidas, id: \.self) { magias in
-                            TemplateCustomDisclosureGroup2 {
-                                ForEach(magias, id: \.id) { magia in
-                                    Divider().padding(.horizontal, -10)
-                                    MagiaDetailCell(magia: magia, title: "Esquecer Habilidade") {
-                                        self.sheet.removeMagia(magia: magia)
+            ZStack(alignment: .bottom) {
+                TemplateTelaPadrao(withPaddings: false) {
+                    if self.sheet.fichaSelecionada.magias.isEmpty {
+                        Text("Nenhuma habilidade aprendida")
+                        Spacer()
+                    } else {
+                        ScrollView {
+                            ForEach(magiasAprendidas, id: \.self) { magias in
+                                TemplateCustomDisclosureGroup2 {
+                                    ForEach(magias, id: \.id) { magia in
+                                        Divider().padding(.horizontal, -10)
+                                        MagiaDetailCell(magia: magia, title: "Esquecer Habilidade") {
+                                            self.sheet.removeMagia(magia: magia)
+                                            withAnimation {
+                                                showAlert = true
+                                            }
+                                        }
                                     }
-                                }
-                            } header: {
-                                HeaderMagiaSection(magias.first?.nivel ?? -1)
-                            }.padding(.horizontal, 10)
+                                } header: {
+                                    HeaderMagiaSection(magias.first?.nivel ?? -1)
+                                }.padding(.horizontal, 10)
+                            }
                         }
                     }
                 }
+                CustomAlert(showAlert: $showAlert, message: "Habilidade Esquecida")
             }
             
             .searchable(text: $textoBusca)
@@ -73,7 +80,7 @@ struct Habilidades: View {
                         Image("Habilidade Livro")
                     }
                 }
-            }  
+            }
         }
     }
 }
@@ -136,8 +143,49 @@ struct MagiaDetailCell: View {
         }.buttonStyle(CustomButtonStyle2())
         
         
-        .sheet(isPresented: $mostrarDetalhes) {
-            DetalhesMagia(magia: self.magia, title: self.title, completion: completion)
+            .sheet(isPresented: $mostrarDetalhes) {
+                DetalhesMagia(magia: self.magia, title: self.title, completion: completion)
+            }
+    }
+}
+
+struct CustomAlert: View {
+    
+    @Binding private var showAlert: Bool
+    @State private var opacity: Double = 0
+    private var message: String
+    
+    public init(showAlert: Binding<Bool>, message: String) {
+        self._showAlert = showAlert
+        self.message = message
+    }
+    
+    var body: some View {
+        
+        ZStack(alignment: .center) {
+            Color("InverseButton")
+            Text(message)
+                .padding(.horizontal, 50)
+                .padding(.vertical, 20)
+                .foregroundColor(Color("InverseBlackAndWhite"))
+        }
+        .fixedSize(horizontal: true, vertical: true)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .opacity(opacity)
+        
+        .onChange(of: showAlert) { _ in
+            if showAlert {
+                withAnimation(.easeInOut) {
+                    opacity = 1
+                }
+                
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                    withAnimation(.easeInOut(duration: 1)) {
+                        showAlert = false
+                        opacity = 0
+                    }
+                }
+            }
         }
     }
 }

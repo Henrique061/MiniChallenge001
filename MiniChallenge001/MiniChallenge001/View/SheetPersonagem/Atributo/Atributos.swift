@@ -256,7 +256,7 @@ struct ToggleVista: View{
     
     var body: some View{
         VStack{
-            TemplateTabelaAtributo(title: "Bônus de Proeficiência"){
+            TemplateTabelaAtributo(title: "Bônus de Proficiência"){
                 
                 
                 HStack{

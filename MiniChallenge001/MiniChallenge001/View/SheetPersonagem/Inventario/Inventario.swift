@@ -22,7 +22,7 @@ struct Inventario: View {
             TemplateTelaPadrao {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 10) {
-                        Text("Mochilha")
+                        Text("Mochila")
                             .font(.system(size: 30, weight: .bold, design: .default))
                         CapacidadeDeCarga(vmficha: sheet)
                         SacoDeMoedas(vmficha: sheet)
