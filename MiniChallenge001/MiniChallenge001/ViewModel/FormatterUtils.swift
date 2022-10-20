@@ -13,7 +13,7 @@ public class FormatterUtils {
     public static func formatarPeso(num: Float) -> String {
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 1
-        formatter.maximumFractionDigits = 1
+        formatter.maximumFractionDigits = 3
         formatter.decimalSeparator = ","
         
         let nsnum = NSNumber(value: num)

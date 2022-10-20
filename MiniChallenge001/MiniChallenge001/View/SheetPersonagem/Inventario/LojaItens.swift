@@ -20,6 +20,7 @@ struct LojaItens: View {
         TemplateTelaPadrao(withPaddings: false) {
             ScrollView {
                 VStack(spacing: 10) {
+                    ListaEquipamentoLoja(sheet: sheet)
                     ListaArmasLoja(sheet: sheet)
                     ListaArmadurasLoja(sheet: sheet)
                     ListaFerramentasLoja(sheet: sheet)
@@ -34,6 +35,49 @@ struct LojaItens: View {
                 }
             }
         }
+    }
+}
+
+private struct ListaEquipamentoLoja: View {
+    
+    @ObservedObject private var sheet: SheetsViewModel
+    @State private var selectedEquipamento: EquipamentoJSON?
+    
+    private var todosEquipamentos: [EquipamentoJSON] {
+        guard let list = JsonFileUtil.getDataFromBundle(folder: .equipamento, decoder: EquipamentoJSON.self) as? [EquipamentoJSON] else { return []}
+        return list.sorted(by: {$0.nome < $1.nome})
+    }
+    
+    public init(sheet: SheetsViewModel) {
+        self.sheet = sheet
+    }
+    
+    var body: some View {
+        TemplateCustomDisclosureGroup2(showDivider: false) {
+            ForEach(todosEquipamentos) { equipamento in
+                VStack(spacing: 0) {
+                    Divider()
+                    LojaItemCell(title: equipamento.nome, quantidade: equipamento.quantidade, categoria: equipamento.categoria.rawValue, preco: equipamento.preco) {
+                        selectedEquipamento = equipamento
+                    } completion: {
+                        DispatchQueue.main.async {
+                            sheet.fichaSelecionada.equipamentos.append(equipamento)
+                        }
+                    }
+
+                }
+            }
+            .sheet(item: $selectedEquipamento) { equipamento in
+                SheetDescricaoEquipamento(equipamento: equipamento, buttonTitle: "Adicionar ao Inventário") {
+                    DispatchQueue.main.async {
+                        sheet.fichaSelecionada.equipamentos.append(equipamento)
+                    }
+                }
+            }
+        } header: {
+            SingleLineDisclosureTitle(title: "Equipamentos")
+        }
+
     }
 }
 
@@ -75,7 +119,6 @@ private struct ListaFerramentasLoja: View {
         } header: {
             SingleLineDisclosureTitle(title: "Ferramentas")
         }
-
     }
 }
 
@@ -291,6 +334,46 @@ struct SheetDescricaoArma: View {
     }
 }
 
+struct SheetDescricaoEquipamento: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    private var equipamento: EquipamentoJSON
+    private var buttonTitle: String
+    private var completion: () -> Void
+    
+    public init(equipamento: EquipamentoJSON, buttonTitle: String, completion: @escaping () -> Void) {
+        self.equipamento = equipamento
+        self.buttonTitle = buttonTitle
+        self.completion = completion
+    }
+    
+    var body: some View {
+        TemplateSheetView(header: DefaultSheetHeader(image: Image("Saco Detalhado"), title: "Descrição de Item", subtitle: "Arma")) {
+            
+            VStack(alignment: .leading, spacing: 10) {
+                TemplateContentBackground {
+                    VStack(alignment: .leading, spacing: 10) {
+                        DisplayTextoBotao(titulo: equipamento.nome, descricao: "\(equipamento.categoria.rawValue)")
+                        Divider().padding(.horizontal, -10)
+                        DisplayTextoBotao(titulo: "Custo", descricao: "\(equipamento.preco.quantidade) \(equipamento.preco.tipo.rawValue)")
+                        DisplayTextoBotao(titulo: "Peso", descricao: "\(FormatterUtils.formatarPeso(num: equipamento.peso))")
+                        DisplayTextoBotao(titulo: "Descrição", descricao: "\(equipamento.descricao)")
+                    }
+                    .padding(10)
+                }
+                Spacer()
+                Button(buttonTitle) {
+                    completion()
+                    dismiss()
+                }
+                .buttonStyle(CustomButtonStyle5())
+            }
+            .padding(.horizontal, 10)
+        }
+    }
+    
+}
+
 struct LojaItemCell: View {
     
     private var completion: () -> Void
@@ -340,3 +423,4 @@ struct LojaItemCell: View {
         .frame(height: 50)
     }
 }
+

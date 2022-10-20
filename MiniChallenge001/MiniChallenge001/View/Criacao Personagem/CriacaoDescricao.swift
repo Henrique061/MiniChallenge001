@@ -179,9 +179,6 @@ private struct SelecionarImagemCriacao: View {
             }
         }
     }
-    
-    
-    
 }
 
 

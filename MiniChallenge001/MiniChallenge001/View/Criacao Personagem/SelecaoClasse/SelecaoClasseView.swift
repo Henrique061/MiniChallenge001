@@ -66,6 +66,7 @@ struct SelecaoClasseView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var vmficha: NovaFichaViewModel
     @StateObject private var vmclasse: CriacaoClasseViewModel
+    @State private var notChangedRiqueza: Bool = true
     
     private var periciasAreMissing: Bool {
         return vmclasse.definidas.escolhaProfFerramentas.count < vmclasse.escolha.quantiaEscolhaProfFerramentas || vmclasse.definidas.escolhaProfPericias.count < vmclasse.escolha.quantiaProfPericias
@@ -84,9 +85,9 @@ struct SelecaoClasseView: View {
         TemplateTelaPadrao {
             VStack {
                 ScrollView {
-                    MenuSelecaoClasse().environmentObject(vmclasse)
+                    MenuSelecaoClasse(vmclasse: vmclasse)
                     PontosDeVidaInfo(classe: $vmclasse.escolha)
-                    BotaoEscolherRiqueza(vmclasse: vmclasse)
+                    BotaoEscolherRiqueza(vmclasse: vmclasse, notChangedRiqueza: $notChangedRiqueza)
                     BotaoEscolherProficiencia(vmclasse: vmclasse, optionsAreMissing: periciasAreMissing)
                     BotaoEscolherEquipamento(classe: vmclasse, optionsAreMissing: equipamentosAreMissing)
                     BotaDetalhesCaracteristicaClasse(escolha: $vmclasse.escolha)
@@ -102,7 +103,8 @@ struct SelecaoClasseView: View {
                 .buttonStyle(CustomButtonStyle5())
                 .disabled(vmclasse.escolha.classePersonagem == .none ||
                           periciasAreMissing ||
-                          equipamentosAreMissing)
+                          equipamentosAreMissing ||
+                          notChangedRiqueza)
                 
             }.padding(.horizontal, 10)
             
@@ -111,14 +113,22 @@ struct SelecaoClasseView: View {
                         NavigationBarTitle("Classe do Personagem")
                     }
                 }
+            
+                .onChange(of: vmclasse.escolha.classePersonagem) { _ in
+                    notChangedRiqueza = true
+                }
         }
     }
 }
 
 private struct MenuSelecaoClasse: View {
     
-    @EnvironmentObject var vmclasse: CriacaoClasseViewModel
+    @ObservedObject private var vmclasse: CriacaoClasseViewModel
     @State private var showContent: Bool = false
+    
+    public init(vmclasse: CriacaoClasseViewModel) {
+        self.vmclasse = vmclasse
+    }
     
     var body: some View {
         TemplateContentBackground {
@@ -162,19 +172,23 @@ private struct PontosDeVidaInfo: View {
 
 private struct BotaoEscolherRiqueza: View {
     
-    @ObservedObject var vmclasse: CriacaoClasseViewModel
+    @ObservedObject private var vmclasse: CriacaoClasseViewModel
+    @Binding private var notChangedRiqueza: Bool
     @State private var showSheet: Bool = false
     
-    public init(vmclasse: CriacaoClasseViewModel) {
+    
+    public init(vmclasse: CriacaoClasseViewModel, notChangedRiqueza: Binding<Bool>) {
         self.vmclasse = vmclasse
+        self._notChangedRiqueza = notChangedRiqueza
     }
     
     var body: some View {
         if vmclasse.escolha.classePersonagem != .none {
             Button {
                 showSheet.toggle()
+                self.notChangedRiqueza = false
             } label: {
-                DisplayTextoBotao(titulo: "Riqueza", descricao: "Riqueza atual: \(vmclasse.definidas.escolhaRiqueza.quantidade) \(vmclasse.definidas.escolhaRiqueza.quantidade == 1 ? "Peça de Ouro" : "Peças de Ouro")")
+                DisplayTextoBotaoCondicao(titulo: "Riqueza", descricaoTrue: "Toque para editar...", descricaoFalse: "Riqueza atual: \(vmclasse.definidas.escolhaRiqueza.quantidade) \(vmclasse.definidas.escolhaRiqueza.quantidade == 1 ? "Peça de Ouro" : "Peças de Ouro")", condicao: notChangedRiqueza)
             }
             .buttonStyle(CustomButtonStyle())
             

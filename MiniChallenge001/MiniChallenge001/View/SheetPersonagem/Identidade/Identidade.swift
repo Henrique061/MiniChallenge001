@@ -92,7 +92,7 @@ struct IdentidadeSuperior: View{
                 
                 
             }
-                ImagemPerfil(ficha: $ficha)
+                ImagemPerfilEditavel(ficha: $ficha)
                     .padding(.horizontal,10)
             }
         }
@@ -278,4 +278,72 @@ private struct AreaImagemPerfil: View {
                 }
        }
    }
+}
+
+struct ImagemPerfilEditavel: View {
+    
+    @Binding private var ficha: PersonagemFicha
+    @State private var showImagePicker: Bool = false
+    @State private var currentImage: Image
+    
+    public init(ficha: Binding<PersonagemFicha>) {
+        self._ficha = ficha
+        if let data = ficha.fotoPersonagem.wrappedValue {
+            self.currentImage = Image(uiImage: UIImage(data: data)!)
+        } else {
+            self.currentImage = Image("ProfilePicture")
+        }
+    }
+    
+    var body: some View {
+        VStack {
+            ZStack(alignment: .center) {
+                Color.black
+                if ficha.fotoPersonagem != nil {
+                    currentImage
+                        .renderingMode(.original)
+                        .resizable()
+                        .scaledToFill()
+                } else {
+                    Image("ProfilePicture")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(8)
+                }
+            }
+            .frame(width: 80, height: 80, alignment: .center)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(Color("BlackAndWhite"), lineWidth: 1))
+            .overlay(alignment: .bottomTrailing) {
+                Button {
+                    self.showImagePicker.toggle()
+                } label: {
+                    ZStack(alignment: .center) {
+                        Color.black
+                        Image(systemName: "plus.circle")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 13, height: 13)
+                            .foregroundColor(Color.white)
+                    }
+                    .frame(width: 26, height: 26, alignment: .center)
+                    .clipShape(Circle())
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+        
+        
+        
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker { image in
+                if let image = image, let data: Data = image.jpegData(compressionQuality: 1) {
+                    DispatchQueue.main.async {
+                        self.currentImage = Image(uiImage: image)
+                        self.ficha.fotoPersonagem = data
+                    }
+                }
+            }
+        }
+    }
 }

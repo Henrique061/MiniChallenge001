@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 
 struct EditarAtributos: View {
-    @Binding private var ficha: PersonagemFicha
+    @Environment(\.dismiss) private var dismiss
     @StateObject private var vmatributo: ViewModelAtributo
+    @Binding private var ficha: PersonagemFicha
     @State private var selectedAtributo: Atributo
-//    @Environment(\.dismiss) private var dismiss
     
     public init(ficha: Binding<PersonagemFicha>) {
         self._vmatributo = StateObject(wrappedValue: ViewModelAtributo(ficha: ficha.wrappedValue))
-        self.selectedAtributo = Atributo(nome: .none, valor: 0)
+        self._selectedAtributo = State(initialValue: Atributo(nome: .none, valor: 0))
         self._ficha = ficha
     }
     
@@ -42,7 +42,7 @@ struct EditarAtributos: View {
                     DispatchQueue.main.async {
                         self.ficha.pontosAtributos = ValoresAtributos(self.vmatributo.atributos)
                     }
-//                    dismiss()
+                    dismiss()
                 }
                 .buttonStyle(CustomButtonStyle5())
                 

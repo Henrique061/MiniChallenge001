@@ -124,6 +124,7 @@ private struct ListaEquipamentos: View {
     @State private var selectedArma: ArmaJSON?
     @State private var selectedFerramenta: FerramentaJSON?
     @State private var selectedArmadura: ArmaduraJSON?
+    @State private var selectedEquipamento: EquipamentoJSON?
     
     private var equipamentos: [EquipamentoJSON] {
         return InventarioUtils<EquipamentoJSON>.formatListEquipamentos(equipamentos: sheet.equipamentos)
@@ -147,9 +148,31 @@ private struct ListaEquipamentos: View {
     
     var body: some View {
         TemplateCustomDisclosureGroup2(showDivider: false) {
-            ForEach(equipamentos, id: \.id) { equipamento in
+            if sheet.fichaSelecionada.equipamentos.isEmpty {
                 Divider()
-                ItemCell(nome: equipamento.nome, quantidade: equipamento.quantidade, tipo: equipamento.categoria.rawValue, peso: equipamento.peso)
+                Text("Não há equipamentos em seu inventário.")
+                    .padding(10)
+            } else {
+                ForEach(equipamentos, id: \.id) { equipamento in
+                    Divider()
+                    Button {
+                        selectedEquipamento = equipamento
+                    } label: {
+                        ItemCell(nome: equipamento.nome, quantidade: equipamento.quantidade, tipo: equipamento.categoria.rawValue, peso: equipamento.peso)
+                    }
+                }.sheet(item: $selectedEquipamento) { equipamento in
+                    SheetDescricaoEquipamento(equipamento: equipamento, buttonTitle: "Remover do Inventário") {
+                        DispatchQueue.main.async {
+                            for i in 0..<self.sheet.fichaSelecionada.equipamentos.count {
+                                if equipamento.id == self.sheet.fichaSelecionada.equipamentos[i].id {
+                                    self.sheet.fichaSelecionada.equipamentos.remove(at: i)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }
+                
             }
         } header: {
             SingleLineDisclosureTitle(title: "Equipamentos")
