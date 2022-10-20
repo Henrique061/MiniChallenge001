@@ -80,7 +80,6 @@ struct TodasHabilidadesView: View {
 
 private struct MagiaContentGroup: View {
 
-    @State private var isExpanded: Bool = false
     private var magias: [MagiaJSON]
     private var completion: (_ magia: MagiaJSON) -> Void
     
@@ -90,7 +89,7 @@ private struct MagiaContentGroup: View {
     }
     
     var body: some View {
-        TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+        TemplateCustomDisclosureGroup2(showDivider: false) {
             ForEach(magias, id: \.id) { magia in
                 VStack(spacing: 0) {
                     Divider().padding(.horizontal, -10)

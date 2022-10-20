@@ -99,7 +99,7 @@ public enum SubclassePersonagem : String, Codable, Hashable {
     case none = "Nenhum"
 }
 
-public enum AtributosSalvaguarda : String, Codable, Hashable {
+public enum AtributosSalvaguarda : String, Codable, Hashable, CaseIterable {
     case forca = "Força"
     case destreza = "Destreza"
     case constituicao = "Constituição"

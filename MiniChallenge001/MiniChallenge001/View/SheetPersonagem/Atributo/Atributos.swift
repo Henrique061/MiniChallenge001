@@ -58,7 +58,6 @@ struct Atributos: View {
 
 
 struct TemplateAtributos: View{
-    //private var atributos: Binding<[AtributosSalvaguarda]?>
     private var toggleIsOn: Binding<Bool>
     private var titulo1: String
     private var descricao1: String
@@ -85,8 +84,8 @@ struct TemplateAtributos: View{
                     .padding(.vertical, 5)
             }
         }
-        .padding(.horizontal,10)
         .frame(maxWidth: .infinity, alignment: .leading)
+        .fixedSize(horizontal: false, vertical: true)
     }
 }
 
@@ -178,31 +177,39 @@ struct AtributosVista: View{
 struct SalvaguardaVista: View{
     @Binding private var toggleIsOn: Bool
     @Binding private var ficha: PersonagemFicha
+    
+    private var atributos: [AtributosSalvaguarda] {
+        return AtributosSalvaguarda.allCases
+    }
+    
     public init(toggleIsOn: Binding<Bool>, ficha: Binding<PersonagemFicha>) {
         self._toggleIsOn = toggleIsOn
         self._ficha = ficha
     }
+    
     var body: some View{
         let ptsAtt = ficha.pontosAtributos
         
         TemplateTabelaAtributo(title: "Salva-Guarda"){
-            HStack{
-                TemplateAtributos(titulo1: "Força", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.forca.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.forca, hasProf: ficha.profSalvaguardas.contains(.forca))), hasProficiencia: AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .forca), toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Inteligência", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.inteligencia.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.inteligencia, hasProf: ficha.profSalvaguardas.contains(.inteligencia))), hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .inteligencia), toggleIsOn: $toggleIsOn )
+            VStack(spacing: 0) {
+                HStack{
+                    TemplateAtributos(titulo1: "Força", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.forca.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.forca, hasProf: ficha.profSalvaguardas.contains(.forca))), hasProficiencia: AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .forca), toggleIsOn: $toggleIsOn)
+                    TemplateAtributos(titulo1: "Inteligência", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.inteligencia.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.inteligencia, hasProf: ficha.profSalvaguardas.contains(.inteligencia))), hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .inteligencia), toggleIsOn: $toggleIsOn )
+                }
+                Divider().padding(.horizontal, -10)
+                HStack{
+                    TemplateAtributos(titulo1: "Destreza", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.destreza.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.destreza, hasProf: ficha.profSalvaguardas.contains(.destreza))), hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .destreza), toggleIsOn: $toggleIsOn)
+                    TemplateAtributos(titulo1: "Sabedoria", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.sabedoria.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.sabedoria, hasProf: ficha.profSalvaguardas.contains(.sabedoria))), hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .sabedoria), toggleIsOn: $toggleIsOn )
+                }
+                Divider().padding(.horizontal, -10)
+                HStack{
+                    TemplateAtributos(titulo1: "Constituição", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.constituicao.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.constituicao, hasProf: ficha.profSalvaguardas.contains(.constituicao))), hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .constituicao), toggleIsOn: $toggleIsOn)
+                    TemplateAtributos(titulo1: "Carisma", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.carisma.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.carisma, hasProf: ficha.profSalvaguardas.contains(.carisma))), hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .carisma), toggleIsOn: $toggleIsOn )
+                }
             }
-            Divider()
-            
-            HStack{
-                TemplateAtributos(titulo1: "Destreza", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.destreza.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.destreza, hasProf: ficha.profSalvaguardas.contains(.destreza))), hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .destreza), toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Sabedoria", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.sabedoria.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.sabedoria, hasProf: ficha.profSalvaguardas.contains(.sabedoria))), hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .sabedoria), toggleIsOn: $toggleIsOn )
-            }
-            Divider()
-            HStack{
-                TemplateAtributos(titulo1: "Constituição", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.constituicao.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.constituicao, hasProf: ficha.profSalvaguardas.contains(.constituicao))), hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .constituicao), toggleIsOn: $toggleIsOn)
-                TemplateAtributos(titulo1: "Carisma", descricao1: !toggleIsOn ? AtributosUtils.adicaoSinalTexto(valor: ptsAtt.carisma.modificador) : AtributosUtils.adicaoSinalTexto(valor: AtributosUtils.adicaoBonusProficiencia(ficha: ficha, atributo: ficha.pontosAtributos.carisma, hasProf: ficha.profSalvaguardas.contains(.carisma))), hasProficiencia:  AtributosUtils.possuiProficiencia(atributosProficientes: ficha.profSalvaguardas, atributoAvaliado: .carisma), toggleIsOn: $toggleIsOn )
-            }
-            
-        }.padding(.vertical,5)
+            .padding(.horizontal, 10)
+        }
+        .padding(.vertical, 5)
     }
 }
 
@@ -214,27 +221,23 @@ struct PericiasVista: View{
         self._toggleIsOn = toggleIsOn
         self._ficha = ficha
     }
-    var numeroPericias: [Int] = [2,3,4]
-    var periciasArray: [Pericia] = [.acrobacia, .adestrarAnimais, .arcanismo, .atletismo, .atuacao, .enganacao, .furtividade, .historia, .intimidacao]
     
-    var periciasArray2: [Pericia] = [.intuicao, .investigacao, .medicina, .natureza, .percepcao, .persuasao, .prestidigitacao, .religiao, .sobrevivencia]
+    private var pericia: [Pericia] {
+        return Pericia.allCases
+    }
     
     var body: some View{
-        
         TemplateTabelaAtributo(title: "Perícias") {
-            HStack{
-                VStack{
-                    ForEach(periciasArray, id: \.self) { pericia in
-                        TemplateAtributos(titulo1: pericia.rawValue, descricao1: !toggleIsOn ? AtributosUtils.valorPericia(ficha: ficha, pericia: pericia) : AtributosUtils.valorProfPericia(pericia: pericia, hasProf: ficha.profPericias.contains(pericia), ficha: ficha), hasProficiencia: ficha.profPericias.contains(pericia), toggleIsOn: $toggleIsOn)
+            ForEach(0..<pericia.count/2, id: \.self) { index in
+                VStack(spacing: 0) {
+                    if index > 0 {
                         Divider()
                     }
-                }
-                
-                VStack{
-                    ForEach(periciasArray2, id: \.self) { pericia in
-                        TemplateAtributos(titulo1: pericia.rawValue, descricao1: !toggleIsOn ? AtributosUtils.valorPericia(ficha: ficha, pericia: pericia) : AtributosUtils.valorProfPericia(pericia: pericia, hasProf: ficha.profPericias.contains(pericia), ficha: ficha), hasProficiencia: ficha.profPericias.contains(pericia), toggleIsOn: $toggleIsOn)
-                        Divider()
-                    }
+                    HStack(spacing: 10) {
+                        TemplateAtributos(titulo1: pericia[index].rawValue, descricao1: !toggleIsOn ? AtributosUtils.valorPericia(ficha: ficha, pericia: pericia[index]) : AtributosUtils.valorProfPericia(pericia: pericia[index], hasProf: ficha.profPericias.contains(pericia[index]), ficha: ficha), hasProficiencia: ficha.profPericias.contains(pericia[index]), toggleIsOn: $toggleIsOn)
+                        
+                        TemplateAtributos(titulo1: pericia[index + pericia.count/2].rawValue, descricao1: !toggleIsOn ? AtributosUtils.valorPericia(ficha: ficha, pericia: pericia[index + pericia.count/2]) : AtributosUtils.valorProfPericia(pericia: pericia[index + pericia.count/2], hasProf: ficha.profPericias.contains(pericia[index + pericia.count/2]), ficha: ficha), hasProficiencia: ficha.profPericias.contains(pericia[index + pericia.count/2]), toggleIsOn: $toggleIsOn)
+                    }.padding(.horizontal, 10)
                 }
             }
         }
@@ -242,7 +245,6 @@ struct PericiasVista: View{
 }
 
 struct ToggleVista: View{
-    // @ObservedObject var vmclasse = TemplateFichaPronta()
     @Binding private var toggleIsOn: Bool
     @Binding private var ficha: PersonagemFicha
     @State private var showProficiencias: Bool = false
@@ -258,8 +260,6 @@ struct ToggleVista: View{
                 
                 
                 HStack{
-                    
-                    
                     DisplayTextoBotao(titulo: "Pontos Adicionais", descricao: "\(AtributosUtils.pontosProficiencia(ficha: ficha))").padding(.vertical,5)
                         .padding(.horizontal,10)
                     Spacer()
@@ -278,31 +278,3 @@ struct ToggleVista: View{
         }
     }
 }
-
-
-
-
-//struct fragPericias: View{
-//    @Binding private var mostrarBolinha: Bool
-//    public init(mostrarBolinha: Binding<Bool>) {
-//        self._mostrarBolinha = mostrarBolinha
-//    }
-//
-////    private var textoss = [
-////
-////    //TemplateAtributos(titulo1: "sss", descricao1: "sss", mostrarBolinha: $mostrarBolinha)
-////    ]
-//
-//
-//
-//
-//
-//    var body: some View{
-//        TemplateContentBackground{
-//
-//        }
-//    }
-//}
-
-
-

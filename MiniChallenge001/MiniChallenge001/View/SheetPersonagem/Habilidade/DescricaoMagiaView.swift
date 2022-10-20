@@ -27,7 +27,7 @@ public struct DetalhesMagia: View {
                 TemplateContentBackground {
                     VStack(alignment: .leading, spacing: 10) {
                         DisplayTextoBotao(titulo: magia.nome, descricao: magia.escola.rawValue)
-                        Divider()
+                        Divider().padding(.horizontal, -10)
                         CorpoDetalheView(magia: magia)
                     }
                     .padding(10)

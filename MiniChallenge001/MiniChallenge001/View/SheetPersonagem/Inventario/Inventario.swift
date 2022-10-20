@@ -298,11 +298,8 @@ struct ItemCell: View {
                 Text(FormatterUtils.formatarPeso(num: peso))
             }
         }
-        .padding(.horizontal, 10)
     }
 }
-
-
 
 struct SingleLineDisclosureTitle: View {
     

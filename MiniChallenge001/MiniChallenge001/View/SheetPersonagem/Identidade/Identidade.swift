@@ -168,10 +168,10 @@ struct IdentidadeInferior: View{
                         .padding(.horizontal,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Spacer()
-                    DisplayTextoBotao(titulo: "Pontos de Experiência", descricao: "\(ficha.experiencica)")
-                        .padding(.vertical, 5)
-                        .padding(.horizontal,10)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+//                    DisplayTextoBotao(titulo: "Pontos de Experiência", descricao: "\(ficha.experiencica)")
+//                        .padding(.vertical, 5)
+//                        .padding(.horizontal,10)
+//                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         }

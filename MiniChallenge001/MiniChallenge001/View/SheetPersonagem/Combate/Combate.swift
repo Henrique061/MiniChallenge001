@@ -88,7 +88,7 @@ struct Combate: View {
                         Button("Descansar") {
                             DispatchQueue.main.async {
                                 self.sheet.fichaSelecionada.pontosVida = self.sheet.fichaSelecionada.pontosVidaMaximo
-                                self.sheet.fichaSelecionada.quantiaDadoVida = self.sheet.fichaSelecionada.pontosVidaMaximo
+                                self.sheet.fichaSelecionada.quantiaDadoVida = self.sheet.fichaSelecionada.nivel
                                 self.sheet.resetResistenciaMorte()
                             }
                         }

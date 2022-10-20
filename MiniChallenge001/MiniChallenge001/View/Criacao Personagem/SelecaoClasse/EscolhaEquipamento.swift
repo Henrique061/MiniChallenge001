@@ -123,32 +123,52 @@ private struct OpcoesEquipamento: View {
     var body: some View {
         
         ForEach(Array(classe.escolha.opcoesEquipamento.enumerated()), id: \.element) { (i, selecao) in
-            
-            TemplateCustomDisclosureGroup2 {
-                
-                ForEach(Array(selecao.escolhas.enumerated()), id: \.element) { (j, unica) in
-                    if selecao.escolhas.count > 1 {
-                        Text("Opção \(String(UnicodeScalar(65 + j)!))")
-                            .font(.system(size: 13, weight: .bold, design: .default))
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 4)
-                    }
-                    
-                    ForEach(Array(unica.escolhasUnicas.enumerated()), id: \.element) { (k, opcao) in
-
-                        TemplateRadioButtonWithIdentifier(selectedID: $selections[i], id: opcao) {
-
-                        } content: {
-                            ForEach(opcao.itens, id: \.self) { item in
-                                DisplayTextoBotao(titulo: item.nomeItem, descricao: "Quantidade: \(item.quantia)")
-                            }
-                        }
-                    }
-                }
-            } header: {
-                DisplayTextoBotaoCondicao(titulo: "Escolha \(i + 1)", descricaoTrue: "Escolha uma opção...", descricaoFalse: "Opção selecionada", condicao: self.selections[i].itens.isEmpty )
-            }
+            OpcaoEsquipamentoDisclosure(num: i, escolhas: selecao.escolhas, selections: $selections)
         }
     }
 }
 
+private struct OpcaoEsquipamentoDisclosure: View {
+    
+    @Binding private var selections: [EscolhaUnica]
+    @State private var isExpanded: Bool = false
+    private var num: Int
+    private var escolhas: [EscolhaOpcao]
+    
+    public init(num: Int, escolhas: [EscolhaOpcao], selections: Binding<[EscolhaUnica]>) {
+        self.num = num
+        self.escolhas = escolhas
+        self._selections = selections
+    }
+    
+    var body: some View {
+        
+        TemplateCustomDisclosureGroup(isExpanded: $isExpanded) {
+            ForEach(Array(escolhas.enumerated()), id: \.element) { (j, unica) in
+                if escolhas.count > 1 {
+                    Text("Opção \(String(UnicodeScalar(65 + j)!))")
+                        .font(.system(size: 13, weight: .bold, design: .default))
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                }
+
+                ForEach(Array(unica.escolhasUnicas.enumerated()), id: \.element) { (k, opcao) in
+
+                    TemplateRadioButtonWithIdentifier(selectedID: $selections[num], id: opcao) {
+                        withAnimation {
+                            isExpanded.toggle()
+                        }
+                    } content: {
+                        ForEach(opcao.itens, id: \.self) { item in
+                            DisplayTextoBotao(titulo: item.nomeItem, descricao: "Quantidade: \(item.quantia)")
+                        }
+                    }
+                }
+            }
+        } header: {
+            DisplayTextoBotaoCondicao(titulo: "Escolha \(num + 1)", descricaoTrue: "Escolha uma opção...", descricaoFalse: "Opção selecionada", condicao: self.selections[num].itens.isEmpty )
+        }
+        
+    }
+    
+}

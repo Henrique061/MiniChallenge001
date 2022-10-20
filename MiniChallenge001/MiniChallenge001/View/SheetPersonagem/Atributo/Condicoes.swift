@@ -41,12 +41,16 @@ struct estruturaCondicoes: View{
     
     var body: some View{
         TemplateTabelaAtributo(title: "Condições"){
-            LazyVStack{
-                ForEach(Condicao.allCases, id: \.self) { condicao in
+            LazyVStack(spacing: 0){
+                ForEach(Array(Condicao.allCases.enumerated()), id: \.element) { (index, condicao) in
+                    if index > 0 {
+                        Divider()
+                    }
                     TemplateRadioButtonMultipleIdentifier(selectedID: $ficha.condicoes, id: condicao) {
                         
                     } content: {
                         Text(condicao.rawValue)
+                            .frame(height: 40)
                     }
                 }
             }
@@ -63,12 +67,16 @@ struct estruturaExaust: View{
     
     var body: some View{
         TemplateTabelaAtributo(title: "Exaustão") {
-            LazyVStack{
-                ForEach(Exaustao.allCases, id: \.self) { exaustao in
+            LazyVStack(spacing: 0){
+                ForEach(Array(Exaustao.allCases.enumerated()), id: \.element) { (index, exaustao) in
+                    if index > 0 {
+                        Divider()
+                    }
                     TemplateRadioButtonWithIdentifier(selectedID: $ficha.exaustao, id: exaustao) {
                         
                     } content: {
                         Text(exaustao.rawValue)
+                            .frame(height: 40)
                     }
                 }
             }

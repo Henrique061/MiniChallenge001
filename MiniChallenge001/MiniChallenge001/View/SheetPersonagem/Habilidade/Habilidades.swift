@@ -46,6 +46,7 @@ struct Habilidades: View {
                         ForEach(magiasAprendidas, id: \.self) { magias in
                             TemplateCustomDisclosureGroup2 {
                                 ForEach(magias, id: \.id) { magia in
+                                    Divider().padding(.horizontal, -10)
                                     MagiaDetailCell(magia: magia, title: "Esquecer Habilidade") {
                                         self.sheet.removeMagia(magia: magia)
                                     }

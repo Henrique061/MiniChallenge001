@@ -97,7 +97,7 @@ struct AlterarNivelView: View {
     
     private func setNivel(value: Int) {
         DispatchQueue.main.async {
-            if (self.tempNivel + value) > 20 || (self.tempNivel + value) < 0 {
+            if (self.tempNivel + value) > 20 || (self.tempNivel + value) < 1 {
                 return
             }
             self.tempNivel += value
