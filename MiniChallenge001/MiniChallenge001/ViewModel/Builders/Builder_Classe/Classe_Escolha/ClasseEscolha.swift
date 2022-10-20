@@ -8,30 +8,30 @@
 import Foundation
 
 // MARK: Magias conhecidas de cada classe por nivel
-public struct MagiasConhecidas : Codable {
+public struct MagiasConhecidas : Codable, Hashable {
     var nivel: Int
     var quantiaTruques: Int
     var quantiaMagias: Int
 }
 
 // MARK: Espacos de magia de cada classe por nivel e nivel de circulo magico
-public struct EspacosDeMagias : Codable {
+public struct EspacosDeMagias : Codable, Hashable {
     var nivelPersonagem: Int
     var niveisCirculo: CirculoMagico // cada indice representa 1 nivel de circulo magico
 }
 
-public struct CirculoMagico : Codable {
+public struct CirculoMagico : Codable, Hashable {
     var nivelCirculo: [Int]
     var limiteUsoMagia: [Int]
 }
 
 //MARK: Pontos especificos de classe (chi e furia por exemplo), mostrando um valor numerico ou textual
-struct PontoEspecificoTexto : Codable {
+struct PontoEspecificoTexto : Codable, Hashable {
     var nomeValor: String
     var textoPorNivel: [String]
 }
 
-struct PontoEspecificoNumerico : Codable {
+struct PontoEspecificoNumerico : Codable, Hashable {
     var nomeValor: String
     var valorPorNivel: [Int]
 }
@@ -54,7 +54,7 @@ public enum ClassePersonagem: String, Codable, Hashable, CaseIterable {
 }
 
 //MARK: Enum Subclasse
-public enum SubclassePersonagem : String, Codable {
+public enum SubclassePersonagem : String, Codable, Hashable {
     case BB_caminhoFurioso = "Caminho Furioso"
     case BB_caminhoGuerreiroTotemico = "Caminho do Guerreiro Totêmico"
     case BD_colegioConhecimento = "Colégio do Conhecimento"
@@ -99,7 +99,7 @@ public enum SubclassePersonagem : String, Codable {
     case none = "Nenhum"
 }
 
-public enum AtributosSalvaguarda : String, Codable {
+public enum AtributosSalvaguarda : String, Codable, Hashable {
     case forca = "Força"
     case destreza = "Destreza"
     case constituicao = "Constituição"
@@ -110,7 +110,7 @@ public enum AtributosSalvaguarda : String, Codable {
     case none = "Nenhum"
 }
 
-public enum Pericia : String, CaseIterable, Codable {
+public enum Pericia : String, CaseIterable, Codable, Hashable {
     case acrobacia = "Acrobacia (DES)"
     case adestrarAnimais = "Adestrar Animais (SAB)"
     case arcanismo = "Arcanismo (INT)"
@@ -171,7 +171,7 @@ public class ClasseEscolha {
 }
 
 //MARK: SubClasse
-struct SubClasse : Codable{
+public struct SubClasse : Codable, Hashable {
     var subclasse: SubclassePersonagem = .none
     var subclasseNome: String = ""
     var caracteristicasSubClasse: [CaracteristicaJSON] = [] // COLOCAR CARACTERISTICAS AQUI

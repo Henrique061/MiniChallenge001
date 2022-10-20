@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: Enum Antecedentes
-public enum AntecedentePersonagem : String, Codable, CaseIterable {
+public enum AntecedentePersonagem : String, Codable, CaseIterable, Hashable {
     case acolito = "Acólito"
     case artesaoGuilda = "Artesão de Guilda"
     case artista = "Artista"
@@ -27,7 +27,7 @@ public enum AntecedentePersonagem : String, Codable, CaseIterable {
 }
 
 //MARK: Enum Variacao Antecedentes
-public enum VariacaoAntecedente : String, Codable {
+public enum VariacaoAntecedente : String, Codable, Hashable {
     case AG_mercadorGuilda = "Mercador da Guilda"
     case AR_gladiador = "Gladiador"
     case CR_espiao = "Espião"
@@ -38,7 +38,7 @@ public enum VariacaoAntecedente : String, Codable {
     case none = "Nenhum"
 }
 
-public struct AntecedenteEscolha {
+public struct AntecedenteEscolha: Hashable {
     var tipoAntecedente: AntecedentePersonagem = .none
     var nomeAntecente: String = ""
     var variacaoAntecedente: VariacaoAntecedente = .none

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Json: Codable, Identifiable {
+protocol Json: Codable, Identifiable, Hashable {
     var id: Int { get }
     var nome: String { get }
 }

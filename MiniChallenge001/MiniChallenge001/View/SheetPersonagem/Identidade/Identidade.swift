@@ -55,7 +55,7 @@ struct Identidade: View {
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink {
-                                Caracteristicas()
+                            Caracteristicas(ficha: $sheet.fichaSelecionada)
                             } label: {
                                 Image("Aprimoramento")
                             }

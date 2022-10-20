@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 //MARK: RESISTENCIA MORTE
-public struct ResistenciaMorte : Codable {
+public struct ResistenciaMorte : Codable, Hashable {
     var sucesso: Int = 0
     var falha: Int = 0
 }
 
 //MARK: ESTILO DE VIDA
-public enum EstiloDeVida: String, Codable, CaseIterable {
+public enum EstiloDeVida: String, Codable, CaseIterable, Hashable {
     case miseravel = "Miserável"
     case esqualido = "Esquálido"
     case pobre = "Pobre"
@@ -28,7 +28,7 @@ public enum EstiloDeVida: String, Codable, CaseIterable {
 }
 
 //MARK: ENUM TENDENCIA
-public enum TipoTendencia : String, Codable, CaseIterable {
+public enum TipoTendencia : String, Codable, CaseIterable, Hashable {
     case lealBom = "Leal e Bom"
     case neutroBom = "Neutro e Bom"
     case caoticoBom = "Caótico e Bom"
@@ -43,7 +43,7 @@ public enum TipoTendencia : String, Codable, CaseIterable {
 }
 
 //MARK: STRICT TENDENCIA
-struct Tendencia : Codable {
+struct Tendencia : Codable, Hashable {
     var tipoTendencia: TipoTendencia
     var descricao: String
 }
@@ -120,6 +120,7 @@ public struct PersonagemFicha: Json {
     public var classeFinal: ClasseFicha = ClasseFicha()
     public var racaFinal: RacaFicha = RacaFicha()
     public var antecedenteFinal: AntecedentePersonagem = .none
+    public var subclasse: SubClasse = SubClasse(subclase: .none, caracteristicas: [])
     
     //MARK: INVENTARIO JSON
     public var magias: [MagiaJSON] = []

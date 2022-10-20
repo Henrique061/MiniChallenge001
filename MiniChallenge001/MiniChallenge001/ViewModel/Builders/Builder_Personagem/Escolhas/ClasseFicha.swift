@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ClasseFicha : Codable {
+public struct ClasseFicha : Codable, Hashable {
     var classePersonagem: ClassePersonagem = .none
     var caracteristicasPersonagem: [CaracteristicaJSON] = []
     var subclassesPersonagem: [SubClasse] = []

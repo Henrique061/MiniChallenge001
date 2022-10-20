@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct RacaFicha : Codable {
+public struct RacaFicha : Codable, Hashable {
     var racaPersonagem: TipoRaca = .none
     var subracaPersonagem: TipoSubRaca = .none
     var tracos: [TraitJSON] = []

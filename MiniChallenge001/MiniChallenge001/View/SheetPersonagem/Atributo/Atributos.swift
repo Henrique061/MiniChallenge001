@@ -175,10 +175,6 @@ struct AtributosVista: View{
     }
 }
 
-
-
-
-
 struct SalvaguardaVista: View{
     @Binding private var toggleIsOn: Bool
     @Binding private var ficha: PersonagemFicha

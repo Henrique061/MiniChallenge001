@@ -74,7 +74,7 @@ public enum Alfabeto : String, Codable {
 }
 
 //MARK: Struct Idiomas
-public struct IdiomaAlfabeto : Codable {
+public struct IdiomaAlfabeto : Codable, Hashable {
     var idioma: Idioma = .none
     var alfabeto: Alfabeto = .none
     var isPadrao: Bool = true

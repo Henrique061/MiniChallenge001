@@ -7,24 +7,24 @@
 
 import Foundation
 
-public enum TipoDano: String, Codable {
+public enum TipoDano: String, Codable, Hashable {
     case perfurante = "Perfurante"
     case cortante = "Cortante"
     case concussao = "Concussão"
     case none = "Nenhum"
 }
 
-public enum EstiloArma: String, Codable {
+public enum EstiloArma: String, Codable, Hashable {
     case distancia = "Distância"
     case cac = "Corpo a Corpo"
 }
 
-public enum TipoArma: String, Codable {
+public enum TipoArma: String, Codable, Hashable {
     case simples = "Simples"
     case marcial = "Marcial"
 }
 
-public struct Dano: Codable {
+public struct Dano: Codable, Hashable {
     var dano: String
     var tipo: TipoDano
 }
