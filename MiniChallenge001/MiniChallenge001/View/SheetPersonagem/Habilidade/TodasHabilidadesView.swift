@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+extension Section {
+    
+
+}
+
 struct TodasHabilidadesView: View {
     @ObservedObject private var sheet: SheetsViewModel
     @StateObject private var vmmagias: MagiasViewModel
@@ -14,6 +19,10 @@ struct TodasHabilidadesView: View {
     public init(sheet: SheetsViewModel) {
         self.sheet = sheet
         self._vmmagias = StateObject(wrappedValue: MagiasViewModel(classe: sheet.fichaSelecionada.classeFinal.classePersonagem))
+        var layoutConfig = UICollectionLayoutListConfiguration(appearance: .sidebarPlain)
+        layoutConfig.headerTopPadding = 0
+        let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
+        UICollectionView.appearance().collectionViewLayout = listLayout
     }
     
     var body: some View {
@@ -22,16 +31,43 @@ struct TodasHabilidadesView: View {
                 Text("Nenhuma habilidade encontrada")
                 Spacer()
             } else {
-                ScrollView {
+                List {
                     ForEach(self.vmmagias.filteredMagias, id: \.self) { magias in
-                        MagiaContentGroup(magias: magias) { magia in
-                            withAnimation {
-                                DispatchQueue.main.async {
-                                    self.sheet.fichaSelecionada.magias.append(magia)
-                                    self.vmmagias.magias.removeAll(where: {$0.id == magia.id})
+                        Section {
+                            DisclosureGroup {
+                                ForEach(magias, id: \.id) { magia in
+                                    Button {
+                                        
+                                    } label: {
+                                        DisplayTextoBotao(titulo: magia.nome, descricao: magia.escola.rawValue)
+                                    }
                                 }
+                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                    Button {
+                                        DispatchQueue.main.async {
+                                            withAnimation {
+//                                                self.sheet.fichaSelecionada.magias.append(magia)
+//                                                self.vmmagias.magias.removeAll(where: {$0.id == magia.id})
+                                            }
+                                        }
+                                    } label: {
+                                        Text("Aprender")
+                                    }
+                                }
+                            } label: {
+                                HeaderMagiaSection(magias.first?.nivel ?? -1)
                             }
                         }
+
+
+//                        MagiaContentGroup(magias: magias) { magia in
+//                            withAnimation {
+//                                DispatchQueue.main.async {
+//                                    self.sheet.fichaSelecionada.magias.append(magia)
+//                                    self.vmmagias.magias.removeAll(where: {$0.id == magia.id})
+//                                }
+//                            }
+//                        }
                     }
                 }
             }
@@ -79,7 +115,7 @@ struct TodasHabilidadesView: View {
 }
 
 private struct MagiaContentGroup: View {
-
+    
     private var magias: [MagiaJSON]
     private var completion: (_ magia: MagiaJSON) -> Void
     
@@ -91,16 +127,17 @@ private struct MagiaContentGroup: View {
     var body: some View {
         TemplateCustomDisclosureGroup2(showDivider: false) {
             ForEach(magias, id: \.id) { magia in
-                VStack(spacing: 0) {
-                    Divider().padding(.horizontal, -10)
+//                VStack(spacing: 0) {
+//                    Divider().padding(.horizontal, -10)
                     MagiaDetailCellWithButton(magia: magia) {
                         self.completion(magia)
                     }
-                }
+//                }
             }
         } header: {
             HeaderMagiaSection(magias.first?.nivel ?? -1)
-        }.padding(.horizontal, 10)
+        }
+        .padding(.horizontal, 10)
     }
 }
 

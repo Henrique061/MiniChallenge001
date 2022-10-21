@@ -10,12 +10,12 @@ import SwiftUI
 
 struct EditarAtributos: View {
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var vmatributo: ViewModelAtributo
+    @StateObject private var vmatributo: AtributoViewModel
     @Binding private var ficha: PersonagemFicha
     @State private var selectedAtributo: Atributo
     
     public init(ficha: Binding<PersonagemFicha>) {
-        self._vmatributo = StateObject(wrappedValue: ViewModelAtributo(ficha: ficha.wrappedValue))
+        self._vmatributo = StateObject(wrappedValue: AtributoViewModel(ficha: ficha.wrappedValue))
         self._selectedAtributo = State(initialValue: Atributo(nome: .none, valor: 0))
         self._ficha = ficha
     }

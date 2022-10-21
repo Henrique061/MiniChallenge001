@@ -204,7 +204,7 @@ struct TemplateContentBackground<Content>: View where Content: View{
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 5)
                 .foregroundColor(Color("ContentBackground"))
-            content()
+                content()
         }
         .fixedSize(horizontal: false, vertical: true)
         .clipShape(RoundedRectangle(cornerRadius: 5))

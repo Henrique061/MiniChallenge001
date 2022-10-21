@@ -30,6 +30,10 @@
 		122E948228E21EE100184F88 /* CaracteristicaJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948128E21EE100184F88 /* CaracteristicaJSON.swift */; };
 		122E948428E21F2000184F88 /* TraitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948328E21F2000184F88 /* TraitJSON.swift */; };
 		122E948628E2205300184F88 /* SheetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E948528E2205300184F88 /* SheetsViewModel.swift */; };
+		123CDC40290251770059531B /* AtributoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CDC3F290251770059531B /* AtributoViewModel.swift */; };
+		123CDC42290251E10059531B /* RacaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CDC41290251E10059531B /* RacaViewModel.swift */; };
+		123CDC44290252630059531B /* ClasseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CDC43290252630059531B /* ClasseViewModel.swift */; };
+		123CDC46290252910059531B /* AntecedenteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CDC45290252910059531B /* AntecedenteViewModel.swift */; };
 		1247FBC128FDE9D0004FF076 /* AlterarNivelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247FBC028FDE9D0004FF076 /* AlterarNivelView.swift */; };
 		12535F4B28E323F60020A005 /* DetalhesTracoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12535F4A28E323F60020A005 /* DetalhesTracoView.swift */; };
 		125B251628EE03DB00B60168 /* EscolhaProficienciaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B251528EE03DB00B60168 /* EscolhaProficienciaView.swift */; };
@@ -50,6 +54,7 @@
 		126ABB2D28DD26DF00CF5A2E /* DescricaoMagiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB2C28DD26DF00CF5A2E /* DescricaoMagiaView.swift */; };
 		126ABB3328DE3EE200CF5A2E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3228DE3EE200CF5A2E /* MainView.swift */; };
 		126ABB3D28DF3AF200CF5A2E /* CriacaoMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */; };
+		1282CE1D2902534F006BEEDA /* NovaFichaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1282CE1C2902534F006BEEDA /* NovaFichaViewModel.swift */; };
 		128E333128FF3F72003CF05B /* EditarMoedas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128E333028FF3F72003CF05B /* EditarMoedas.swift */; };
 		12CC7ABF28E10E24000AB35B /* SelecaoRacaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC7ABE28E10E24000AB35B /* SelecaoRacaView.swift */; };
 		12FEBA2828E7A6CB00DBB6EF /* SelecaoClasseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEBA2728E7A6CB00DBB6EF /* SelecaoClasseView.swift */; };
@@ -75,7 +80,7 @@
 		3D6F868528E0CD6B0022D0BE /* RacaConcreteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F868428E0CD6B0022D0BE /* RacaConcreteBuilder.swift */; };
 		3D6F868728E0CD760022D0BE /* RacaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F868628E0CD760022D0BE /* RacaClient.swift */; };
 		3D6F868928E0CD830022D0BE /* RacaEscolha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F868828E0CD830022D0BE /* RacaEscolha.swift */; };
-		3D6F868B28E0D3F00022D0BE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F868A28E0D3F00022D0BE /* ViewModel.swift */; };
+		3D6F868B28E0D3F00022D0BE /* MagiaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F868A28E0D3F00022D0BE /* MagiaViewModel.swift */; };
 		3D6F868D28E0E84D0022D0BE /* RacaDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F868C28E0E84D0022D0BE /* RacaDirector.swift */; };
 		3D6F868F28E11B910022D0BE /* BuscaJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F868E28E11B910022D0BE /* BuscaJson.swift */; };
 		3D6F869228E11BEB0022D0BE /* AntecedenteEscolha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F869128E11BEB0022D0BE /* AntecedenteEscolha.swift */; };
@@ -146,6 +151,10 @@
 		122E948128E21EE100184F88 /* CaracteristicaJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracteristicaJSON.swift; sourceTree = "<group>"; };
 		122E948328E21F2000184F88 /* TraitJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitJSON.swift; sourceTree = "<group>"; };
 		122E948528E2205300184F88 /* SheetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetsViewModel.swift; sourceTree = "<group>"; };
+		123CDC3F290251770059531B /* AtributoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributoViewModel.swift; sourceTree = "<group>"; };
+		123CDC41290251E10059531B /* RacaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaViewModel.swift; sourceTree = "<group>"; };
+		123CDC43290252630059531B /* ClasseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseViewModel.swift; sourceTree = "<group>"; };
+		123CDC45290252910059531B /* AntecedenteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntecedenteViewModel.swift; sourceTree = "<group>"; };
 		1247FBC028FDE9D0004FF076 /* AlterarNivelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlterarNivelView.swift; sourceTree = "<group>"; };
 		12535F4A28E323F60020A005 /* DetalhesTracoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesTracoView.swift; sourceTree = "<group>"; };
 		125B251528EE03DB00B60168 /* EscolhaProficienciaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolhaProficienciaView.swift; sourceTree = "<group>"; };
@@ -166,6 +175,7 @@
 		126ABB2C28DD26DF00CF5A2E /* DescricaoMagiaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescricaoMagiaView.swift; sourceTree = "<group>"; };
 		126ABB3228DE3EE200CF5A2E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		126ABB3C28DF3AF200CF5A2E /* CriacaoMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriacaoMain.swift; sourceTree = "<group>"; };
+		1282CE1C2902534F006BEEDA /* NovaFichaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaFichaViewModel.swift; sourceTree = "<group>"; };
 		128E333028FF3F72003CF05B /* EditarMoedas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarMoedas.swift; sourceTree = "<group>"; };
 		12CC7ABE28E10E24000AB35B /* SelecaoRacaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecaoRacaView.swift; sourceTree = "<group>"; };
 		12FEBA2728E7A6CB00DBB6EF /* SelecaoClasseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecaoClasseView.swift; sourceTree = "<group>"; };
@@ -191,7 +201,7 @@
 		3D6F868428E0CD6B0022D0BE /* RacaConcreteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaConcreteBuilder.swift; sourceTree = "<group>"; };
 		3D6F868628E0CD760022D0BE /* RacaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaClient.swift; sourceTree = "<group>"; };
 		3D6F868828E0CD830022D0BE /* RacaEscolha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaEscolha.swift; sourceTree = "<group>"; };
-		3D6F868A28E0D3F00022D0BE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3D6F868A28E0D3F00022D0BE /* MagiaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiaViewModel.swift; sourceTree = "<group>"; };
 		3D6F868C28E0E84D0022D0BE /* RacaDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaDirector.swift; sourceTree = "<group>"; };
 		3D6F868E28E11B910022D0BE /* BuscaJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscaJson.swift; sourceTree = "<group>"; };
 		3D6F869128E11BEB0022D0BE /* AntecedenteEscolha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntecedenteEscolha.swift; sourceTree = "<group>"; };
@@ -570,11 +580,15 @@
 			isa = PBXGroup;
 			children = (
 				3D3DC35A28DC146A0093BD92 /* Builders */,
-				3D6F868A28E0D3F00022D0BE /* ViewModel.swift */,
+				1282CE1C2902534F006BEEDA /* NovaFichaViewModel.swift */,
+				123CDC3F290251770059531B /* AtributoViewModel.swift */,
+				123CDC41290251E10059531B /* RacaViewModel.swift */,
+				123CDC43290252630059531B /* ClasseViewModel.swift */,
+				123CDC45290252910059531B /* AntecedenteViewModel.swift */,
 				122E948528E2205300184F88 /* SheetsViewModel.swift */,
+				3D6F868A28E0D3F00022D0BE /* MagiaViewModel.swift */,
 				3D6F868E28E11B910022D0BE /* BuscaJson.swift */,
 				3DF24F9628E200DF006C0AAE /* PacoteFactory.swift */,
-				1214FE8D28F4B3D700E15113 /* ImagePicker.swift */,
 				3D79B6AD28FF415F002AA11A /* ArrayUtils.swift */,
 				3D2E653D2900863200372FB4 /* AtributosUtils.swift */,
 				3D2E653F2900AB9D00372FB4 /* CondicoesUtils.swift */,
@@ -589,6 +603,7 @@
 				12FEBA2628E7A59000DBB6EF /* SheetPersonagem */,
 				126ABB3B28DF3A4A00CF5A2E /* Criacao Personagem */,
 				121892412900368A009ECA84 /* CustomNavigationView.swift */,
+				1214FE8D28F4B3D700E15113 /* ImagePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -734,6 +749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09B5569428DA6156001466B0 /* Inventario.swift in Sources */,
+				123CDC42290251E10059531B /* RacaViewModel.swift in Sources */,
 				093F602428F0D5E0006A8911 /* Condicoes.swift in Sources */,
 				3D9CD65928FDC46300CD4077 /* PersonagemDirector.swift in Sources */,
 				3D6F869628E11C070022D0BE /* AntecedenteClient.swift in Sources */,
@@ -762,8 +778,11 @@
 				126ABB3328DE3EE200CF5A2E /* MainView.swift in Sources */,
 				3D6F868D28E0E84D0022D0BE /* RacaDirector.swift in Sources */,
 				09B5569528DA6156001466B0 /* Atributos.swift in Sources */,
+				123CDC46290252910059531B /* AntecedenteViewModel.swift in Sources */,
 				126ABAF228DB3D5200CF5A2E /* Moeda.swift in Sources */,
 				3D6F868328E0CD5B0022D0BE /* RacaBuilder.swift in Sources */,
+				123CDC40290251770059531B /* AtributoViewModel.swift in Sources */,
+				1282CE1D2902534F006BEEDA /* NovaFichaViewModel.swift in Sources */,
 				1214FE8828F10A7800E15113 /* SelecaoAntecedenteView.swift in Sources */,
 				3D2E65422900BA4700372FB4 /* EditarAtributos.swift in Sources */,
 				126ABAFB28DB3D5200CF5A2E /* Json.swift in Sources */,
@@ -787,8 +806,9 @@
 				3DB929AD28ECC1120075F0D9 /* ClasseFinalDirector.swift in Sources */,
 				122E948228E21EE100184F88 /* CaracteristicaJSON.swift in Sources */,
 				3D6F868528E0CD6B0022D0BE /* RacaConcreteBuilder.swift in Sources */,
-				3D6F868B28E0D3F00022D0BE /* ViewModel.swift in Sources */,
+				3D6F868B28E0D3F00022D0BE /* MagiaViewModel.swift in Sources */,
 				3D3DC35828DC13880093BD92 /* ClasseDirector.swift in Sources */,
+				123CDC44290252630059531B /* ClasseViewModel.swift in Sources */,
 				126ABAF928DB3D5200CF5A2E /* BugigangaJSON.swift in Sources */,
 				126ABB2D28DD26DF00CF5A2E /* DescricaoMagiaView.swift in Sources */,
 				3D2E653E2900863200372FB4 /* AtributosUtils.swift in Sources */,
