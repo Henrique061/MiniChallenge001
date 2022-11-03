@@ -1,15 +1,1 @@
-{
-    "id": 23,
-    "nome": "Armadura de Agathys",
-    "nivel": 1,
-    "classes": [
-        "Bruxo"
-    ],
-    "escola": "Abjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Pessoal",
-    "componentes": "Verbal, Somático, Material (um copo de água)",
-    "duracao": "1 hora",
-    "descricao": "Uma força magica protetora envolve você, manifestando-se como um frio espectral que cobre você e seu equipamento. Você ganha 5 pontos de vida temporários pela duração. Se uma criatura atingir você com um ataque corpo-a-corpo enquanto estiver com esses pontos de vida, a criatura sofrerá 5 de dano de frio. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, tanto os pontos de vida temporários quanto o dano de frio aumentam em 5 para cada nível do espaço acima do 1°."
-}
+{"escola":"Abjuração","ritual":false,"classes":["Bruxo"],"id":23,"nivel":1,"duracao":"1 hora","nome":"Armadura de Agathys","tempoConjuracao":"1 ação","alcance":"Pessoal","descricao":"Uma força magica protetora envolve você, manifestando-se como um frio espectral que cobre você e seu equipamento. Você ganha 5 pontos de vida temporários pela duração. Se uma criatura atingir você com um ataque corpo-a-corpo enquanto estiver com esses pontos de vida, a criatura sofrerá 5 de dano de frio.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, tanto os pontos de vida temporários quanto o dano de frio aumentam em 5 para cada nível do espaço acima do 1°.","componentes":"Verbal, Somático, Material (um copo de água)"}

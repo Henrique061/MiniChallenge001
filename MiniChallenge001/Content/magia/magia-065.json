@@ -1,16 +1,1 @@
-{
-    "id": 65,
-    "nome": "Cone de Frio",
-    "nivel": 5,
-    "classes": [
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Evocação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Pessoal (cone de 18 metros)",
-    "componentes": "Verbal, Somático, Material (um pequeno cristal ou cone de vidro)",
-    "duracao": "Instantânea",
-    "descricao": "Uma explosão de ar gelado irrompe das suas mãos. Cada criatura dentro do cone de 18 metros, deve realizar um teste de resistência de Constituição. Uma criatura sofre 8d8 de dano de frio se falhar na resistência, ou metade desse dano se passar. Uma criatura morta por essa magia se torna uma estátua congelada até derreter. Em Níveis Superiores . Se você conjurar essa magia usando um espaço de magia de 6° nível ou superior, o dano aumenta em 1d8 para cada nível do espaço acima do 5°."
-}
+{"escola":"Evocação","ritual":false,"classes":["Feiticeiro","Mago"],"id":65,"nivel":5,"duracao":"Instantânea","nome":"Cone de Frio","tempoConjuracao":"1 ação","alcance":"Pessoal (cone de 18 metros)","descricao":"Uma explosão de ar gelado irrompe das suas mãos. Cada criatura dentro do cone de 18 metros, deve realizar um teste de resistência de Constituição. Uma criatura sofre 8d8 de dano de frio se falhar na resistência, ou metade desse dano se passar.\nUma criatura morta por essa magia se torna uma estátua congelada até derreter.\n\nEm Níveis Superiores: Se você conjurar essa magia usando um espaço de magia de 6° nível ou superior, o dano aumenta em 1d8 para cada nível do espaço acima do 5°.","componentes":"Verbal, Somático, Material (um pequeno cristal ou cone de vidro)"}

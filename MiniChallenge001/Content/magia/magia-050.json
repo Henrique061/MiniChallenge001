@@ -1,18 +1,1 @@
-{
-    "id": 50,
-    "nome": "Cegueira/surdez",
-    "nivel": 2,
-    "classes": [
-        "Bardo",
-        "Clérigo",
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Necromancia",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "9 metros",
-    "componentes": "Verbal",
-    "duracao": "1 minuto",
-    "descricao": "Você pode cegar ou ensurdecer um oponente. Escolha uma criatura que você possa ver dentro do alcance para fazer um teste de resistência de Constituição. Se ela falhar, ficará ou cega ou surda (à sua escolha) pela duração. No final de cada um dos turnos dele, o alvo pode realizar um teste de resistência de Constituição. Se obtiver sucesso, a magia termina. Em Níveis Superiores . Se você conjurar essa magia usando um espaço de magia de 3° nível ou superior, você pode afetar uma criatura adicional para cada nível de espaço acima do 2°."
-}
+{"escola":"Necromancia","ritual":false,"classes":["Bardo","Clérigo","Feiticeiro","Mago"],"id":50,"nivel":2,"duracao":"1 minuto","nome":"Cegueira\/Surdez","tempoConjuracao":"1 ação","alcance":"9 metros","descricao":"Você pode cegar ou ensurdecer um oponente. Escolha uma criatura que você possa ver dentro do alcance para fazer um teste de resistência de Constituição. Se ela falhar, ficará ou cega ou surda (à sua escolha) pela duração. No final de cada um dos turnos dele, o alvo pode realizar um teste de resistência de Constituição. Se obtiver sucesso, a magia termina.\n\nEm Níveis Superiores: Se você conjurar essa magia usando um espaço de magia de 3° nível ou superior, você pode afetar uma criatura adicional para cada nível de espaço acima do 2°.","componentes":"Verbal"}

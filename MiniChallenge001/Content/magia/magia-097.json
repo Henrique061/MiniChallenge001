@@ -1,15 +1,1 @@
-{
-    "id": 97,
-    "nome": "Cúpula Antivida",
-    "nivel": 5,
-    "classes": [
-        "Druida"
-    ],
-    "escola": "Abjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Pessoal (3 metros de raio)",
-    "componentes": "Verbal, Somático",
-    "duracao": "Concentração, até 1 hora",
-    "descricao": "Uma barreira cintilante se estende de você até 3 metros de raio, e se move com você, permanecendo centrada em você e restringindo criaturas diferentes de mortos-vivos e constructos. A barreira mantem-se pela duração. A barreira previna uma criatura afetada de atravessa-la ou alcançar através dela. Uma criatura afetada pode conjurar magias ou realizar ataques à distância ou ataques com armas de haste através da barreira. Se você se mover forçando uma criatura afetada a atravessar a barreira, a magia termina."
-}
+{"escola":"Abjuração","ritual":false,"classes":["Druida"],"id":97,"nivel":5,"duracao":"Concentração, até 1 hora","nome":"Cúpula Antivida","tempoConjuracao":"1 ação","alcance":"Pessoal (3 metros de raio)","descricao":"Uma barreira cintilante se estende de você até 3 metros de raio, e se move com você, permanecendo centrada em você e restringindo criaturas diferentes de mortos-vivos e constructos. A barreira mantem-se pela duração.\nA barreira previna uma criatura afetada de atravessá-la ou alcançar através dela. Uma criatura afetada pode conjurar magias ou realizar ataques à distância ou ataques com armas de haste através da barreira.\nSe você se mover forçando uma criatura afetada a atravessar a barreira, a magia termina.","componentes":"Verbal, Somático"}

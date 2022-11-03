@@ -1,17 +1,1 @@
-{
-    "id": 277,
-    "nome": "Regeneração",
-    "nivel": 7,
-    "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida"
-    ],
-    "escola": "Transmutação",
-    "ritual": false,
-    "tempoConjuracao": "1 minuto",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático, Material (uma conta de oração e águabenta)",
-    "duracao": "1 hora",
-    "descricao": "Você toca uma criatura e estimula sua habilidade de cura natural. O alvo recupera 4d8 + 15 pontos de vida. Pela duração da magia o alvo recupera 1 ponto de vida no início de cada turno dela (10 pontos de vida por minuto). Os membro decepados do corpo do alvo (dedos, pernas, rabos e assim por diante), se tiver algum, são restaurados após 2 minutos. Se você tiver a parte decepada e segura-la contra o topo, a magia, instantaneamente, faz com que o membro se grude ao toco."
-}
+{"escola":"Transmutação","ritual":false,"classes":["Bardo","Clérigo","Druida"],"id":277,"nivel":7,"duracao":"1 hora","nome":"Regeneração","tempoConjuracao":"1 minuto","alcance":"Toque","descricao":"Você toca uma criatura e estimula sua habilidade de cura natural. O alvo recupera 4d8 + 15 pontos de vida. Pela duração da magia o alvo recupera 1 ponto de vida no início de cada turno dela (10 pontos de vida por minuto).\nOs membro decepados do corpo do alvo (dedos, pernas, rabos e assim por diante), se tiver algum, são restaurados após 2 minutos. Se você tiver a parte decepada e segurá-la contra o topo, a magia, instantaneamente, faz com que o membro se grude ao toco.","componentes":"Verbal, Somático, Material (uma conta de oração e água benta)"}

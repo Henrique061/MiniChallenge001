@@ -1,16 +1,1 @@
-{
-    "id": 89,
-    "nome": "Corrente de Relâmpagos",
-    "nivel": 6,
-    "classes": [
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Evocação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "45 metros",
-    "componentes": "Verbal, Somático, Material (um pouco de pelo; um pedaço deâmbar, vidro ou um bastão de cristal; e três pinos deprata)",
-    "duracao": "Instantânea",
-    "descricao": "Você cria um raio elétrico que atinge um alvo, à sua escolha, que você possa ver dentro do alcance. Três raios saltam do alvo para até três outros alvos, cada um a não mais de 9 metros do alvo primário. Um alvo pode ser uma criatura ou um objeto e só pode ser alvo de um único desses rai os. Um alvo deve realizar um teste de resistência de Destreza. O alvo sofre 10d8 de dano elétrico se falhar no teste ou metade desse dano se for bem sucedido. Em Níveis Superiores . Se você conjurar essa magia usando um espaço de magia de 7° nível ou superior, um raio adicional salta do alvo primário para outro alvo para cada nível do espaço acima do 6°."
-}
+{"escola":"Evocação","ritual":false,"classes":["Feiticeiro","Mago"],"id":89,"nivel":6,"duracao":"Instantânea","nome":"Corrente de Relâmpagos","tempoConjuracao":"1 ação","alcance":"45 metros","descricao":"Você cria um raio elétrico que atinge um alvo, à sua escolha, que você possa ver dentro do alcance. Três raios saltam do alvo para até três outros alvos, cada um a não mais de 9 metros do alvo primário. Um alvo pode ser uma criatura ou um objeto e só pode ser alvo de um único desses raios.\nUm alvo deve realizar um teste de resistência de Destreza. O alvo sofre 10d8 de dano elétrico se falhar no teste ou metade desse dano se for bem sucedido.\n\nEm Níveis Superiores: Se você conjurar essa magia usando um espaço de magia de 7° nível ou superior, um raio adicional salta do alvo primário para outro alvo para cada nível do espaço acima do 6°.","componentes":"Verbal, Somático, Material (um pouco de pelo; um pedaço de âmbar, vidro ou um bastão de cristal; e três pinos de prata)"}

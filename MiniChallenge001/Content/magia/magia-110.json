@@ -1,15 +1,1 @@
-{
-    "id": 110,
-    "nome": "Destruição Colérica",
-    "nivel": 1,
-    "classes": [
-        "Paladino"
-    ],
-    "escola": "Evocação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação bônus",
-    "alcance": "Pessoal",
-    "componentes": "Verbal",
-    "duracao": "Concentração, até 1 minuto",
-    "descricao": "Da próxima vez que você atingir com um ataque corpo-a-corpo com arma enquanto essa magia durar, seu ataque causará 1d6 de dano psíquico extra. Além disso, se o alvo for uma criatura, ele deve realizar um teste de resistência de Sabedoria ou ficará amedrontado por você até a magia acabar. Com uma ação, a criatura pode realizar um teste de resistência de Sabedoria contra a CD da magia para se manter resoluto e terminar a magia."
-}
+{"escola":"Evocação","ritual":false,"classes":["Paladino"],"id":110,"nivel":1,"duracao":"Concentração, até 1 minuto","nome":"Destruição Colérica","tempoConjuracao":"1 ação bônus","alcance":"Pessoal","descricao":"Da próxima vez que você atingir com um ataque corpo-a-corpo com arma enquanto essa magia durar, seu ataque causará 1d6 de dano psíquico extra. Além disso, se o alvo for uma criatura, ele deve realizar um teste de resistência de Sabedoria ou ficará amedrontado por você até a magia acabar. Com uma ação, a criatura pode realizar um teste de resistência de Sabedoria contra a CD da magia para se manter resoluto e terminar a magia.","componentes":"Verbal"}

@@ -1,17 +1,1 @@
-{
-    "id": 333,
-    "nome": "Voo",
-    "nivel": 3,
-    "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Transmutação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático, Material (uma pena da asa de qualquerpássaro)",
-    "duracao": "Concentração, até 10 minutos",
-    "descricao": "Você toca uma criatura voluntária. O alvo ganha deslocamento de voo de 18 metros, pela duração. Quando a magia acabar, o alvo cai se ainda estiver no ar, a não ser que ele possa impedir a queda. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 4° nível ou superior, você pode afetar uma criatura adicional para cada nível do espaço acima do 3°."
-}
+{"escola":"Transmutação","ritual":false,"classes":["Bruxo","Feiticeiro","Mago"],"id":333,"nivel":3,"duracao":"Concentração, até 10 minutos","nome":"Voo","tempoConjuracao":"1 ação","alcance":"Toque","descricao":"Você toca uma criatura voluntária. O alvo ganha deslocamento de voo de 18 metros, pela duração. Quando a magia acabar, o alvo cai se ainda estiver no ar, a não ser que ele possa impedir a queda.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 4° nível ou superior, você pode afetar uma criatura adicional para cada nível do espaço acima do 3°.","componentes":"Verbal, Somático, Material (uma pena da asa de qualquer pássaro)"}

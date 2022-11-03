@@ -1,17 +1,1 @@
-{
-    "id": 325,
-    "nome": "Ver o Invisível",
-    "nivel": 2,
-    "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Adivinhação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Pessoal",
-    "componentes": "Verbal, Somático, Material (um pouco de talco e um pó deprata polvilhado)",
-    "duracao": "1 hora",
-    "descricao": "Pela duração, você vê criaturas e objetos invisíveis como se eles fossem visíveis e você pode ver no Plano Etéreo. Criaturas e objetos etéreos parecem espectrais e translúcidos."
-}
+{"escola":"Adivinhação","ritual":false,"classes":["Bardo","Feiticeiro","Mago"],"id":325,"nivel":2,"duracao":"1 hora","nome":"Ver o Invisível","tempoConjuracao":"1 ação","alcance":"Pessoal","descricao":"Pela duração, você vê criaturas e objetos invisíveis como se eles fossem visíveis e você pode ver no Plano Etéreo. Criaturas e objetos etéreos parecem espectrais e translúcidos.","componentes":"Verbal, Somático, Material (um pouco de talco e um pó de prata polvilhado)"}

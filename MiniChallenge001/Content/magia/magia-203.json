@@ -1,16 +1,1 @@
-{
-    "id": 203,
-    "nome": "Mísseis Mágicos",
-    "nivel": 1,
-    "classes": [
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Evocação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "36 metros",
-    "componentes": "Verbal, Somático",
-    "duracao": "Instantânea",
-    "descricao": "Você cria três dardos brilhantes de energia mística. Cada dardo atinge uma criatura, à sua escolha, que você possa ver, dentro do alcance. Um dardo causa 1d4 + 1 de dano de energia ao alvo. Todos os dardos atingem simultaneamente e você pode direciona-los para atingir uma criatura ou várias. 260 Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, a magia cria um dardo adicional para cada nível do espaço acima do 1°."
-}
+{"escola":"Evocação","ritual":false,"classes":["Feiticeiro","Mago"],"id":203,"nivel":1,"duracao":"Instantânea","nome":"Mísseis Mágicos","tempoConjuracao":"1 ação","alcance":"36 metros","descricao":"Você cria três dardos brilhantes de energia mística. Cada dardo atinge uma criatura, à sua escolha, que você possa ver, dentro do alcance. Um dardo causa 1d4 + 1 de dano de energia ao alvo. Todos os dardos atingem simultaneamente e você pode direcioná-los para atingir uma criatura ou várias.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, a magia cria um dardo adicional para cada nível do espaço acima do 1°.","componentes":"Verbal, Somático"}

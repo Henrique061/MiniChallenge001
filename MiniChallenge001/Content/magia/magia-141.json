@@ -1,16 +1,1 @@
-{
-    "id": 141,
-    "nome": "Espada de Mordenkainen",
-    "nivel": 7,
-    "classes": [
-        "Bardo",
-        "Mago"
-    ],
-    "escola": "Evocação",
-    "ritual": false,
-    "tempoConjuracao": "1ação",
-    "alcance": "18 metros",
-    "componentes": "Verbal,Somático,Material (espada de platina em miniatura comcabo e pomo decobre ezincovalendo,nomínimo, 250 po)",
-    "duracao": "Concentração, até 1 minuto.",
-    "descricao": "Você cria um planode energia em formatode espada que flutua dentro do alcance. Ela permanece pela duração. Quando a espada aparece, você realiza um ataque com magia contra um alvo, à sua escolha, a1, 5 metroda espada. Seatingir, o alvo sofre 3d10 de dano de energia. Até amagia acabar, você pode usar uma ação bônus, em cada um dos seus turnos, para mover a espada até 6 metros para um local que você possa ver e repetir esse ataque contra o mesmo alvo ou um diferente."
-}
+{"escola":"Evocação","ritual":false,"classes":["Bardo","Mago"],"id":141,"nivel":7,"duracao":"Concentração, até 1 minuto.","nome":"Espada de Mordenkainen","tempoConjuracao":"1 ação","alcance":"18 metros","descricao":"Você cria um plano de energia em formato de espada que flutua dentro do alcance. Ela permanece pela duração.\nQuando a espada aparece, você realiza um ataque com magia contra um alvo, à sua escolha, a 1,5 metro da espada. Se atingir, o alvo sofre 3d10 de dano de energia. Até a magia acabar, você pode usar uma ação bônus, em cada um dos seus turnos, para mover a espada até 6 metros para um local que você possa ver e repetir esse ataque contra o mesmo alvo ou um diferente.","componentes":"Verbal, Somático, Material (espada de platina em miniatura com cabo e pomo de cobre e zinco valendo, no mínimo, 250 po)"}

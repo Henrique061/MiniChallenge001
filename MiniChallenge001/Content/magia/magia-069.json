@@ -1,15 +1,1 @@
-{
-    "id": 69,
-    "nome": "Conjurar Celestial",
-    "nivel": 7,
-    "classes": [
-        "Clérigo"
-    ],
-    "escola": "Conjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 minuto",
-    "alcance": "27 metros",
-    "componentes": "Verbal, Somático",
-    "duracao": "Concentração, até 1 hora",
-    "descricao": "Você invoca um celestial de nível de desafio 4 ou inferior, que aparece num espaço desocupado, que você possa ver dentro do alcance. O celestial desaparece se cair a 0 pontos de vida ou quando a magia acabar. O celestial é amigável a você e a seus companheiros pela duração. Role a iniciativa para o celestial, que age no seu próprio turno. Ele obedece a quaisquer comandos verbais que você emitir (não requer uma ação sua), contanto que não violem sua tendência. Se você não emitir nenhum comando a ele, ele se defenderá de criaturas hostis, mas no mais, não realizará nenhuma ação. O Mestre possui as estatísticas do celestial. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 9° nível, você invoca um celestial de nível de desafio 5 ou inferior."
-}
+{"escola":"Conjuração","ritual":false,"classes":["Clérigo"],"id":69,"nivel":7,"duracao":"Concentração, até 1 hora","nome":"Conjurar Celestial","tempoConjuracao":"1 minuto","alcance":"27 metros","descricao":"Você invoca um celestial de nível de desafio 4 ou inferior, que aparece num espaço desocupado, que você possa ver dentro do alcance. O celestial desaparece se cair a 0 pontos de vida ou quando a magia acabar.\nO celestial é amigável a você e a seus companheiros pela duração. Role a iniciativa para o celestial, que age no seu próprio turno. Ele obedece a quaisquer comandos verbais que você emitir (não requer uma ação sua), contanto que não violem sua tendência. Se você não emitir nenhum comando a ele, ele se defenderá de criaturas hostis, mas no mais, não realizará nenhuma ação.\nO Mestre possui as estatísticas do celestial.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 9° nível, você invoca um celestial de nível de desafio 5 ou inferior.","componentes":"Verbal, Somático"}

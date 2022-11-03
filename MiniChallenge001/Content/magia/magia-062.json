@@ -1,15 +1,1 @@
-{
-    "id": 62,
-    "nome": "Compulsão",
-    "nivel": 4,
-    "classes": [
-        "Bardo"
-    ],
-    "escola": "Encantamento",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "9 metros",
-    "componentes": "Verbal, Somático",
-    "duracao": "Concentração, até 1 minuto",
-    "descricao": "Criaturas, à sua escolha, que você puder ver dentro do alcance e que puderem ouvir você, devem realizar um teste de resistência de Sabedoria. Um alvo passa automaticamente nesse teste de resistência se ele não puder ser enfeitiçado. Se falhar no teste, um alvo é afetado por essa magia. Até a magia acabar, você pode usar uma ação bônus em cada um dos seus turnos, para designar uma direção horizontal a você. Cada criatura 229 afetada deve se mover, da melhor forma possível, para essa direção no próximo turno dela. Ela pode realizar sua ação antes de se mover. Depois de se mover dessa forma, ela pode realizar outra resistência de Sabedoria para tentar acabar com o efeito. Um alvo não é obrigado a se mover em direção de um perigo obviamente mortal, como uma fogueira ou abismo, mas ele vai provocar ataques de oportunidade por se mover na direção designada."
-}
+{"escola":"Encantamento","ritual":false,"classes":["Bardo"],"id":62,"nivel":4,"duracao":"Concentração, até 1 minuto","nome":"Compulsão","tempoConjuracao":"1 ação","alcance":"9 metros","descricao":"Criaturas, à sua escolha, que você puder ver dentro do alcance e que puderem ouvir você, devem realizar um teste de resistência de Sabedoria. Um alvo passa automaticamente nesse teste de resistência se ele não puder ser enfeitiçado. Se falhar no teste, um alvo é afetado por essa magia. Até a magia acabar, você pode usar uma ação bônus em cada um dos seus turnos, para designar uma direção horizontal a você. Cada criatura afetada deve se mover, da melhor forma possível, para essa direção no próximo turno dela. Ela pode realizar sua ação antes de se mover. Depois de se mover dessa forma, ela pode realizar outra resistência de Sabedoria para tentar acabar com o efeito.\nUm alvo não é obrigado a se mover em direção de um perigo obviamente mortal, como uma fogueira ou abismo, mas ele vai provocar ataques de oportunidade por se mover na direção designada.","componentes":"Verbal, Somático"}

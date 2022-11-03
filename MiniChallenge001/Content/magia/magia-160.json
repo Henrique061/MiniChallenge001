@@ -1,16 +1,1 @@
-{
-    "id": 160,
-    "nome": "Globo de Invulnerabilidade",
-    "nivel": 6,
-    "classes": [
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Abjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Pessoal (3 metros de raio)",
-    "componentes": "Verbal, Somático, Material (uma perola de vidro ou cristalque se despedaça quando a magia termina)",
-    "duracao": "Concentração, até 1 minuto",
-    "descricao": "Uma barreira imóvel, levemente cintilante, surge do nada num raio de 3 metros centrado em você e permanece pela duração. Qualquer magia de 5° nível ou inferior conjurada de fora da barreira não poderá afetar as criaturas ou objetos dentro dela, mesmo que a magia seja conjurada usando um espaço de magia de nível superior. Tais magias podem ter como alvo criaturas e objetos dentro da barreira, mas a magia não produz nenhum efeito neles. Similarmente, a área dentro da barreira é excluída das áreas afetadas por tais magias. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 7° nível ou superior, a barreira bloqueia magias de um nível superior para cada nível do espaço acima do 6°."
-}
+{"escola":"Abjuração","ritual":false,"classes":["Feiticeiro","Mago"],"id":160,"nivel":6,"duracao":"Concentração, até 1 minuto","nome":"Globo de Invulnerabilidade","tempoConjuracao":"1 ação","alcance":"Pessoal (3 metros de raio)","descricao":"Uma barreira imóvel, levemente cintilante, surge do nada num raio de 3 metros centrado em você e permanece pela duração.\nQualquer magia de 5° nível ou inferior conjurada de fora da barreira não poderá afetar as criaturas ou objetos dentro dela, mesmo que a magia seja conjurada usando um espaço de magia de nível superior. Tais magias podem ter como alvo criaturas e objetos dentro da barreira, mas a magia não produz nenhum efeito neles. Similarmente, a área dentro da barreira é excluída das áreas afetadas por tais magias.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 7° nível ou superior, a barreira bloqueia magias de um nível superior para cada nível do espaço acima do 6°.","componentes":"Verbal, Somático, Material (uma perola de vidro ou cristal que se despedaça quando a magia termina)"}

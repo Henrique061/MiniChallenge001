@@ -1,16 +1,1 @@
-{
-    "id": 242,
-    "nome": "Perdição",
-    "nivel": 1,
-    "classes": [
-        "Bardo",
-        "Clérigo"
-    ],
-    "escola": "Encantamento",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "9 metros",
-    "componentes": "Verbal, Somático, Material (uma gota de sangue)",
-    "duracao": "Concentração, até 1 minuto",
-    "descricao": "Até três criaturas, à sua escolha, que você possa ver dentro do alcance, devem realizar um teste de resistência de Carisma. Sempre que um alvo que falhou nessa resistência realizar uma jogada de ataque ou um teste de resistência antes da magia acabar, o alvo deve rolar um d4 e subtrair o valor rolado da jogada de ataque ou teste de resistência. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, você pode afetar uma criatura adicional par a cada nível do espaço acima do 1°."
-}
+{"escola":"Encantamento","ritual":false,"classes":["Bardo","Clérigo"],"id":242,"nivel":1,"duracao":"Concentração, até 1 minuto","nome":"Perdição","tempoConjuracao":"1 ação","alcance":"9 metros","descricao":"Até três criaturas, à sua escolha, que você possa ver dentro do alcance, devem realizar um teste de resistência de Carisma. Sempre que um alvo que falhou nessa resistência realizar uma jogada de ataque ou um teste de resistência antes da magia acabar, o alvo deve rolar um d4 e subtrair o valor rolado da jogada de ataque ou teste de resistência.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, você pode afetar uma criatura adicional para cada nível do espaço acima do 1°.","componentes":"Verbal, Somático, Material (uma gota de sangue)"}

@@ -1,15 +1,1 @@
-{
-    "id": 93,
-    "nome": "Criar Chamas",
-    "nivel": 0,
-    "classes": [
-        "Druida"
-    ],
-    "escola": "Conjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Pessoal",
-    "componentes": "Verbal, Somático",
-    "duracao": "10 minutos",
-    "descricao": "Uma chama tremulante aparece na sua mão. A chama permanece ai pela duração e não machuca nem você nem seu equipamento. A chama emite luz plena num raio de 3 metros e penumbra por 3 metros adicionais. A magia acaba se você dissipa-la usando uma ação ou se conjura- la novamente. Você pode, também, atacar com a chama, no entanto, fazer isso acaba com a magia. Quando você conjura essa magia ou com uma ação em um turno posterior, você pode arremessar a chama numa criatura a até 9 metros de você. Faça um ataque à distância com magia. Se atingir, o alvo sofre 1d8 de dano de fogo. O dano dessa magia aumenta em 1d8 quando você alcança o 5° nível (2d8), 11° nível (3d8) e 17° nível (4d8)."
-}
+{"escola":"Conjuração","ritual":false,"classes":["Druida"],"id":93,"nivel":0,"duracao":"10 minutos","nome":"Criar Chamas","tempoConjuracao":"1 ação","alcance":"Pessoal","descricao":"Uma chama tremulante aparece na sua mão. A chama permanece aí pela duração e não machuca nem você nem seu equipamento. A chama emite luz plena num raio de 3 metros e penumbra por 3 metros adicionais. A magia acaba se você dissipa-la usando uma ação ou se conjurá-la novamente.\nVocê pode, também, atacar com a chama, no entanto, fazer isso acaba com a magia. Quando você conjura essa magia ou com uma ação em um turno posterior, você pode arremessar a chama numa criatura a até 9 metros de você. Faça um ataque à distância com magia. Se atingir, o alvo sofre 1d8 de dano de fogo.\nO dano dessa magia aumenta em 1d8 quando você alcança o 5° nível (2d8), 11° nível (3d8) e 17° nível (4d8).","componentes":"Verbal, Somático"}

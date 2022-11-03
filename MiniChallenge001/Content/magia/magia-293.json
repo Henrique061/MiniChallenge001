@@ -1,16 +1,1 @@
-{
-    "id": 293,
-    "nome": "Santuário",
-    "nivel": 1,
-    "classes": [
-        "Clérigo",
-        "Mago"
-    ],
-    "escola": "Abjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação bônus",
-    "alcance": "9 metros",
-    "componentes": "Verbal, Somático, Material (um pequeno espelho de prata)",
-    "duracao": "1 minuto",
-    "descricao": "Você protege uma criatura, dentro do alcance, contra ataques. Até a magia acabar, qualquer criatura que tentar atacar ou usar magias que causem dano contra criatura protegida deve, primeiro, realizar um teste de resistência de Sabedoria. Se falhar na resistência, a criatura deve escolher um novo alvo ou perderá o ataque ou magia. Essa magia não protege a criatura contra efeitos de área, como a explosão de uma bola de fogo . Se a criatura protegida realizar um ataque ou conjurar uma magia que afete uma criatura inimiga, essa magia acaba."
-}
+{"escola":"Abjuração","ritual":false,"classes":["Clérigo","Mago"],"id":293,"nivel":1,"duracao":"1 minuto","nome":"Santuário","tempoConjuracao":"1 ação bônus","alcance":"9 metros","descricao":"Você protege uma criatura, dentro do alcance, contra ataques. Até a magia acabar, qualquer criatura que tentar atacar ou usar magias que causem dano contra criatura protegida deve, primeiro, realizar um teste de resistência de Sabedoria. Se falhar na resistência, a criatura deve escolher um novo alvo ou perderá o ataque ou magia. Essa magia não protege a criatura contra efeitos de área, como a explosão de uma bola de fogo.\nSe a criatura protegida realizar um ataque ou conjurar uma magia que afete uma criatura inimiga, essa magia acaba.","componentes":"Verbal, Somático, Material (um pequeno espelho de prata)"}

@@ -1,18 +1,1 @@
-{
-    "id": 258,
-    "nome": "Proteção Contra Veneno",
-    "nivel": 2,
-    "classes": [
-        "Clérigo",
-        "Druida",
-        "Paladino",
-        "Patrulheiro"
-    ],
-    "escola": "Abjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático",
-    "duracao": "1 hora",
-    "descricao": "Você toca uma criatura. Se ela estiver envenenada, você neutraliza o veneno. Se mais de um veneno estiver afligindo o alvo, você neutraliza um veneno, que você saiba estar presente, ou neutraliza um aleatório. 273 Pela duração, o alvo terá vantagem em testes de resistência para não envenenado e terá resistência a dano de veneno."
-}
+{"escola":"Abjuração","ritual":false,"classes":["Clérigo","Druida","Paladino","Patrulheiro"],"id":258,"nivel":2,"duracao":"1 hora","nome":"Proteção Contra Veneno","tempoConjuracao":"1 ação","alcance":"Toque","descricao":"Você toca uma criatura e concede a ela uma certa proteção contra a morte.\nA primeira vez que o alvo cair a 0 pontos de vida, como resultado de ter sofrido dano, o alvo, ao invés disso, cai a 1 ponto de vida e a magia termina.\nSe a magia ainda estiver funcionando quando o alvo for afetado por um efeito que poderia matá-lo instantaneamente sem causar dano, o efeito, ao invés disso, não funciona no alvo e a magia termina.\nPela duração, o alvo terá vantagem em testes de resistência para não envenenado e terá resistência a dano de veneno.","componentes":"Verbal, Somático"}

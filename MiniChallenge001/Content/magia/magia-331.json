@@ -1,18 +1,1 @@
-{
-    "id": 331,
-    "nome": "Visão no Escuro",
-    "nivel": 2,
-    "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago",
-        "Patrulheiro"
-    ],
-    "escola": "Transmutação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático, Material (ou um pedaço de cenoura secaou uma ágata)",
-    "duracao": "8 horas",
-    "descricao": "Você toca uma criatura voluntária para conceder a ela a habilidade de ver nas trevas. Pela duração, a criatura terá visão no escuro com alcance de 18 metros."
-}
+{"escola":"Transmutação","ritual":false,"classes":["Druida","Feiticeiro","Mago","Patrulheiro"],"id":331,"nivel":2,"duracao":"8 horas","nome":"Visão no Escuro","tempoConjuracao":"1 ação","alcance":"Toque","descricao":"Você toca uma criatura voluntária para conceder a ela a habilidade de ver nas trevas. Pela duração, a criatura terá visão no escuro com alcance de 18 metros.","componentes":"Verbal, Somático, Material (ou um pedaço de cenoura seca ou uma ágata)"}

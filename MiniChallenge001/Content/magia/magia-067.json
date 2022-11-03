@@ -1,17 +1,1 @@
-{
-    "id": 67,
-    "nome": "Conhecimento Lendário",
-    "nivel": 5,
-    "classes": [
-        "Bardo",
-        "Clérigo",
-        "Mago"
-    ],
-    "escola": "Adivinhação",
-    "ritual": false,
-    "tempoConjuracao": "10 minutos",
-    "alcance": "Pessoal",
-    "componentes": "Verbal, Somático, Material (incenso valendo, no mínimo, 250po, consumido pela magia e quatro tiras de marfimvalendo, no mínimo, 50 po cada)",
-    "duracao": "Instantânea",
-    "descricao": "Nomeie ou descreva uma pessoa, local ou objeto. A magia traz a sua mente um breve resumo do conhecimento significativo sobre a coisa que você nomeou. O conhecimento deve consistir em contos atuais, histórias esquecidas ou, até mesmo, conhecimento secreto que nunca foi amplamente divulgado. Se a coisa que você nomeou não for de importância lendária, você não recebe qualquer informação sofre ela. Quanto mais informação 230 você possuir sobre a coisa, mais precisa e detalhada será a informação que você receberá. A informação que você aprende é precisa, mas pode ser redigida em linguagem figurada. Por exemplo, se você possuir um misterioso machado mágico na mão, a magia pode proporcionar essa informação: “Ai do malfeitor cuja mão toca o machado, até mesmo seu cabo corta a mão dos malignos. Só um verdadeiro Filho da Pedra, adorador e adorado de Moradin, pode despertar os verdadeiros poderes do machado e apenas com a palavra sagrada Rudnogg  nos lábios.”"
-}
+{"escola":"Adivinhação","ritual":false,"classes":["Bardo","Clérigo","Mago"],"id":67,"nivel":5,"duracao":"Instantânea","nome":"Conhecimento Lendário","tempoConjuracao":"10 minutos","alcance":"Pessoal","descricao":"Nomeie ou descreva uma pessoa, local ou objeto. A magia traz a sua mente um breve resumo do conhecimento significativo sobre a coisa que você nomeou. O conhecimento deve consistir em contos atuais, histórias esquecidas ou, até mesmo, conhecimento secreto que nunca foi amplamente divulgado. Se a coisa que você nomeou não for de importância lendária, você não recebe qualquer informação sofre ela. Quanto mais informação você possuir sobre a coisa, mais precisa e detalhada será a informação que você receberá.\nA informação que você aprende é precisa, mas pode ser redigida em linguagem figurada. Por exemplo, se você possuir um misterioso machado mágico na mão, a magia pode proporcionar essa informação: “Ai do malfeitor cuja mão toca o machado, até mesmo seu cabo corta a mão dos malignos. Só um verdadeiro Filho da Pedra, adorador e adorado de Moradin, pode despertar os verdadeiros poderes do machado e apenas com a palavra sagrada Rudnogg nos lábios”","componentes":"Verbal, Somático, Material (incenso valendo, no mínimo, 250po, consumido pela magia e quatro tiras de marfim valendo, no mínimo, 50 po cada)"}

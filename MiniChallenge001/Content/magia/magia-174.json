@@ -1,18 +1,1 @@
-{
-    "id": 174,
-    "nome": "Invisibilidade",
-    "nivel": 2,
-    "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Ilusão",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático, Material (uma pestana envolta em goma-arábica)",
-    "duracao": "Concentração, até 1 hora",
-    "descricao": "Uma criatura que você tocar, se torna invisível até a magia acabar. Qualquer coisa que o alvo esteja vestindo ou carregando fica invisível enquanto estiver de posse do alvo. A magia termina para o alvo caso ele ataque ou conjure uma magia. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 3° nível ou superior, você pode afetar um alvo adicional para cada nível do espaço acima do 2°."
-}
+{"escola":"Ilusão","ritual":false,"classes":["Bardo","Bruxo","Feiticeiro","Mago"],"id":174,"nivel":2,"duracao":"Concentração, até 1 hora","nome":"Invisibilidade","tempoConjuracao":"1 ação","alcance":"Toque","descricao":"Uma criatura que você tocar, se torna invisível até a magia acabar. Qualquer coisa que o alvo esteja vestindo ou carregando fica invisível enquanto estiver de posse do alvo. A magia termina para o alvo caso ele ataque ou conjure uma magia.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 3° nível ou superior, você pode afetar um alvo adicional para cada nível do espaço acima do 2°.","componentes":"Verbal, Somático, Material (uma pestana envolta em goma-arábica)"}

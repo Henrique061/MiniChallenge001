@@ -1,17 +1,1 @@
-{
-    "id": 298,
-    "nome": "Servo Invisível",
-    "nivel": 1,
-    "classes": [
-        "Bardo",
-        "Bruxo",
-        "Mago"
-    ],
-    "escola": "Conjuração",
-    "ritual": true,
-    "tempoConjuracao": "1 ação",
-    "alcance": "18 metros",
-    "componentes": "Verbal, Somático, Material (um pedaço de barbante e umpouco de madeira)",
-    "duracao": "1 hora",
-    "descricao": "Essa magia cria uma força invisível, sem mente e sem forma que realiza tarefas simples, ao seu comando, até a magia acabar. O servo aparece do nada em um espaço desocupado no chão, dentro do alcance. Ele tem CA 10, 1 ponto de vida, Força 2 e não pode atacar. Se ele cair a 0 pontos de vida, a magia acaba. Uma vez em cada um dos seus turnos, com uma ação bônus, você pode comandar, mentalmente, o servo para se mover até 4,5 metros e interagir com um objeto. O servo pode realizar tarefas simples que um serviçal humano faria, como buscar coisas, limpar, consertar, dobrar roupas, acender chamas, servir comida ou derramar vinho. Uma vez que um comando seja dado, o servo realiza a tarefa da melhor forma possível, até completar a tarefa, então esperará o seu próximo comando. Se você comandar o servo a realizar uma tarefa que poderia afasta-lo a mais de 18 metros de você, a magia termina."
-}
+{"escola":"Conjuração","ritual":true,"classes":["Bardo","Bruxo","Mago"],"id":298,"nivel":1,"duracao":"1 hora","nome":"Servo Invisível","tempoConjuracao":"1 ação","alcance":"18 metros","descricao":"Essa magia cria uma força invisível, sem mente e sem forma que realiza tarefas simples, ao seu comando, até a magia acabar. O servo aparece do nada em um espaço desocupado no chão, dentro do alcance. Ele tem CA 10, 1 ponto de vida, Força 2 e não pode atacar. Se ele cair a 0 pontos de vida, a magia acaba.\nUma vez em cada um dos seus turnos, com uma ação bônus, você pode comandar, mentalmente, o servo para se mover até 4,5 metros e interagir com um objeto. O servo pode realizar tarefas simples que um serviçal humano faria, como buscar coisas, limpar, consertar, dobrar roupas, acender chamas, servir comida ou derramar vinho. Uma vez que um comando seja dado, o servo realiza a tarefa da melhor forma possível, até completar a tarefa, então esperará o seu próximo comando.\nSe você comandar o servo a realizar uma tarefa que poderia afasta-lo a mais de 18 metros de você, a magia termina.","componentes":"Verbal, Somático, Material (um pedaço de barbante e um pouco de madeira)"}

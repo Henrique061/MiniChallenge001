@@ -1,15 +1,1 @@
-{
-    "id": 251,
-    "nome": "Proibição",
-    "nivel": 6,
-    "classes": [
-        "Clérigo"
-    ],
-    "escola": "Abjuração",
-    "ritual": true,
-    "tempoConjuracao": "10 minutos",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático, Material (uma borrifada de água benta,incensos raros e pó de rubi valendo, no mínimo,1.000 po)",
-    "duracao": "1 dia",
-    "descricao": "Você cria uma defesa contra viagem mágica que protege até 12.000 metros quadrados de solo até 9 metros de altura do solo. Pela duração, criaturas não conseguem se teletransportar para dentro da área ou usar portais, como os criados pela magia portal , para entrar na área. A magia protege a área contra viagem planar e, portanto, impede criaturas de acessarem a área por meio do Plano Astra, Plano Etéreo, Faéria , Umbra ou pela magia viagem planar . Além disso, a magia causa dano a certos tipos de criatura, à sua escolha, quando a conjurar. Escolha um ou mais dentre os seguintes: celestiais, corruptores, elementais, fadas ou mortos-vivos. Quando uma criatura escolhida entrar na área da magia pela primeira vez em um turno ou começa seu turno nela, a criatura sofre 5d6 de dano radiante ou necrótico (à sua escolha, quando você conjura a magia). Quando você conjura essa magia, você pode definir uma senha. Uma criatura que falar a senha quando entrar na área não sofrerá dano dessa magia. A área da magia não pode sobrepor a área de outra magia proibição . Se você conjurar proibição  a cada dia por 30 dias no mesmo local, a magia durará até ser dissipada, e os componentes materiais serão consumidos apenas na última conjuração."
-}
+{"escola":"Abjuração","ritual":true,"classes":["Clérigo"],"id":251,"nivel":6,"duracao":"1 dia","nome":"Proibição","tempoConjuracao":"10 minutos","alcance":"Toque","descricao":"Você cria uma defesa contra viagem mágica que protege até 12.000 metros quadrados de solo até 9 metros de altura do solo. Pela duração, criaturas não conseguem se teletransportar para dentro da área ou usar portais, como os criados pela magia portal, para entrar na área. A magia protege a área contra viagem planar e, portanto, impede criaturas de acessarem a área por meio do Plano Astra, Plano Etéreo, Faéria, Umbra ou pela magia viagem planar.\nAlém disso, a magia causa dano a certos tipos de criatura, à sua escolha, quando a conjurar. Escolha um ou mais dentre os seguintes: celestiais, corruptores, elementais, fadas ou mortos-vivos. Quando uma criatura escolhida entrar na área da magia pela primeira vez em um turno ou começa seu turno nela, a criatura sofre 5d6 de dano radiante ou necrótico (à sua escolha, quando você conjura a magia).\nQuando você conjura essa magia, você pode definir uma senha. Uma criatura que falar a senha quando entrar na área não sofrerá dano dessa magia.\nA área da magia não pode sobrepor a área de outra magia proibição. Se você conjurar proibição a cada dia por 30 dias no mesmo local, a magia durará até ser dissipada, e os componentes materiais serão consumidos apenas na última conjuração.","componentes":"Verbal, Somático, Material (uma borrifada de água benta, incensos raros e pó de rubi valendo, no mínimo, 1.000 po)"}

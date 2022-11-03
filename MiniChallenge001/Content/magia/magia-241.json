@@ -1,16 +1,1 @@
-{
-    "id": 241,
-    "nome": "Pequena Cabana de Leomund",
-    "nivel": 3,
-    "classes": [
-        "Bardo",
-        "Mago"
-    ],
-    "escola": "Evocação",
-    "ritual": true,
-    "tempoConjuracao": "1 minuto",
-    "alcance": "Pessoal (hemisfério de 3 metros de raio)",
-    "componentes": "Verbal, Somático, Material (uma pequena conta de cristal)",
-    "duracao": "8 horas",
-    "descricao": "Um domo de energia imóvel, de 3 metros de raio, aparece do nada, ao seu redor e acima de você e permanece parado pela duração. A magia termina se você deixar a área. Nove criaturas de tamanho Médio ou menor podem caber dentro do domo com você. A magia falha se a área 269 incluir criaturas maiores ou mais de nove criaturas. Criaturas e objetos dentro do domo quando você conjurou essa magia, podem se mover através dele livremente. Todas as outras criaturas e objetos são bloqueados ao tentarem atravessa-lo. Magias e outros efeitos mágicos não podem se estender através do domo ou serem conjurados através dele. A atmosfera dentro do espaço é confortável e seca, independente do clima do lado de fora. Até a magia acabar, você pode comandar o interior para que fique mal iluminado ou escuro. O domo é opaco do lado de fora, de qualquer cor que você desejar, mas é transparente do lado de dentro."
-}
+{"escola":"Evocação","ritual":true,"classes":["Bardo","Mago"],"id":241,"nivel":3,"duracao":"8 horas","nome":"Pequena Cabana de Leomund","tempoConjuracao":"1 minuto","alcance":"Pessoal (hemisfério de 3 metros de raio)","descricao":"Um domo de energia imóvel, de 3 metros de raio, aparece do nada, ao seu redor e acima de você e permanece parado pela duração. A magia termina se você deixar a área.\nNove criaturas de tamanho Médio ou menor podem caber dentro do domo com você. A magia falha se a área incluir criaturas maiores ou mais de nove criaturas. Criaturas e objetos dentro do domo quando você conjurou essa magia, podem se mover através dele livremente. Todas as outras criaturas e objetos são bloqueados ao tentarem atravessa-lo. Magias e outros efeitos mágicos não podem se estender através do domo ou serem conjurados através dele. A atmosfera dentro do espaço é confortável e seca, independente do clima do lado de fora.\nAté a magia acabar, você pode comandar o interior para que fique mal iluminado ou escuro. O domo é opaco do lado de fora, de qualquer cor que você desejar, mas é transparente do lado de dentro.","componentes":"Verbal, Somático, Material (uma pequena conta de cristal)"}

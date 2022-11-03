@@ -1,16 +1,1 @@
-{
-    "id": 285,
-    "nome": "Ressurreição Verdadeira",
-    "nivel": 9,
-    "classes": [
-        "Clérigo",
-        "Druida"
-    ],
-    "escola": "Necromancia",
-    "ritual": false,
-    "tempoConjuracao": "1 hora",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático, Material (um borrifo de água benta ediamantes valendo, no mínimo, 25.000 po, consumidospela magia)",
-    "duracao": "Instantânea",
-    "descricao": "Você toca uma criatura morta que não esteja assim a mais de 200 anos e que tenha morrido por qualquer motivo, exceto velhice. Se a alma da criatura estiver disposta e livre, o alvo volta a vida com todos os seus pontos de vida. Essa magia fecha todos os ferimentos, neutraliza quaisquer venenos, cura todas as doenças e suspende quaisquer maldições que afligiam a criatura quando ela morreu. A magia recupera órgão e membros danificados ou perdidos.  Essa magia pode, até mesmo, prover um novo corpo, se o original não existir mais, nesse caso, você deve falar onome da criatura. Ela aparece em um espaço desocupado, à sua escolha, a até 3 metros de você."
-}
+{"escola":"Necromancia","ritual":false,"classes":["Clérigo","Druida"],"id":285,"nivel":9,"duracao":"Instantânea","nome":"Ressurreição Verdadeira","tempoConjuracao":"1 hora","alcance":"Toque","descricao":"Você toca uma criatura morta que não esteja assim a mais de 200 anos e que tenha morrido por qualquer motivo, exceto velhice. Se a alma da criatura estiver disposta e livre, o alvo volta a vida com todos os seus pontos de vida.\nEssa magia fecha todos os ferimentos, neutraliza quaisquer venenos, cura todas as doenças e suspende quaisquer maldições que afligiam a criatura quando ela morreu. A magia recupera órgão e membros danificados ou perdidos.\nEssa magia pode, até mesmo, prover um novo corpo, se o original não existir mais, nesse caso, você deve falar o nome da criatura. Ela aparece em um espaço desocupado, à sua escolha, a até 3 metros de você.","componentes":"Verbal, Somático, Material (um borrifo de água benta e diamantes valendo, no mínimo, 25.000 po, consumidos pela magia)"}

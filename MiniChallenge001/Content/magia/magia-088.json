@@ -1,15 +1,1 @@
-{
-    "id": 88,
-    "nome": "Cordão de Flechas",
-    "nivel": 2,
-    "classes": [
-        "Patrulheiro"
-    ],
-    "escola": "Transmutação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "1,5 metro",
-    "componentes": "Verbal, Somático, Material (quatro ou mais flechas ouvirotes)",
-    "duracao": "8 horas",
-    "descricao": "Você enfinca quatro munições não-mágicas – flechas ou virotes de besta – no solo dentro do alcance e conjura 235 magia neles para proteger uma área. Até a magia acabar, sempre que uma criatura diferente de você se aproximar a 9 metros das munições pela primeira vez em um turno ou terminar seu turno na área, uma das munições voa para atingi-la. A criatura deve ser bem sucedida num teste de resistência de Destreza ou sofrerá 1d6 de dano perfurante. A munição, então, é destruída. A magia termina quando não restar nenhuma munição. Quando você conjurar essa magia, você pode designar quaisquer criaturas, à sua escolha, e a magia ignora-as.  Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 3° nível ou superior, a quantidade de munições que você pode afetar aumenta em dois para cada nível do espaço acima do 2°."
-}
+{"escola":"Transmutação","ritual":false,"classes":["Patrulheiro"],"id":88,"nivel":2,"duracao":"8 horas","nome":"Cordão de Flechas","tempoConjuracao":"1 ação","alcance":"1,5 metro","descricao":"Você enfinca quatro munições não-mágicas - flechas ou virotes de besta - no solo dentro do alcance e conjura magia neles para proteger uma área. Até a magia acabar, sempre que uma criatura diferente de você se aproximar a 9 metros das munições pela primeira vez em um turno ou terminar seu turno na área, uma das munições voa para atingí-la. A criatura deve ser bem sucedida num teste de resistência de Destreza ou sofrerá 1d6 de dano perfurante. A munição, então, é destruída. A magia termina quando não restar nenhuma munição.\nQuando você conjurar essa magia, você pode designar quaisquer criaturas, à sua escolha, e a magia ignora-as.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 3° nível ou superior, a quantidade de munições que você pode afetar aumenta em dois para cada nível do espaço acima do 2°.","componentes":"Verbal, Somático, Material (quatro ou mais flechas ou virotes)"}

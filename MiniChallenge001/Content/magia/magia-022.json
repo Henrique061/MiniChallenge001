@@ -1,16 +1,1 @@
-{
-    "id": 22,
-    "nome": "Armadura Arcana",
-    "nivel": 1,
-    "classes": [
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Abjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático, Material (um pedaço de couro curado)",
-    "duracao": "8 horas",
-    "descricao": "Você toca uma criatura voluntária que não esteja vestindo armadura e uma energia mágica protetora a envolve até a magia acabar. A CA base do alvo se torna 13 + o modificador de Destreza dele. A magia acaba se o alvo colocar uma armadura ou se você dissipa-la usando uma ação."
-}
+{"escola":"Abjuração","ritual":false,"classes":["Feiticeiro","Mago"],"id":22,"nivel":1,"duracao":"8 horas","nome":"Armadura Arcana","tempoConjuracao":"1 ação","alcance":"Toque","descricao":"Você toca uma criatura voluntária que não esteja vestindo armadura e uma energia mágica protetora a envolve até a magia acabar. A CA base do alvo se torna 13 + o modificador de Destreza dele. A magia acaba se o alvo colocar uma armadura ou se você dissipa-la usando uma ação.","componentes":"Verbal, Somático, Material (um pedaço de couro curado)"}

@@ -1,18 +1,1 @@
-{
-    "id": 236,
-    "nome": "Passos Longos",
-    "nivel": 1,
-    "classes": [
-        "Bardo",
-        "Druida",
-        "Mago",
-        "Patrulheiro"
-    ],
-    "escola": "Transmutação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático, Material (um pouco de barro)",
-    "duracao": "1 hora",
-    "descricao": "Você toca uma criatura. O deslocamento do alvo aumenta em 3 metros, até a magia acabar. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, você pode afetar uma criatura adicional para cada nível do espaço acima do 1°. 268"
-}
+{"escola":"Transmutação","ritual":false,"classes":["Bardo","Druida","Mago","Patrulheiro"],"id":236,"nivel":1,"duracao":"1 hora","nome":"Passos Longos","tempoConjuracao":"1 ação","alcance":"Toque","descricao":"Você toca uma criatura. O deslocamento do alvo aumenta em 3 metros, até a magia acabar.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, você pode afetar uma criatura adicional para cada nível do espaço acima do 1°.","componentes":"Verbal, Somático, Material (um pouco de barro)"}

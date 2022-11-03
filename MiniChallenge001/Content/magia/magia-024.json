@@ -1,17 +1,1 @@
-{
-    "id": 24,
-    "nome": "Arrombar",
-    "nivel": 2,
-    "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Transmutação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "18 metros",
-    "componentes": "Verbal",
-    "duracao": "Instantânea",
-    "descricao": "Escolha um objeto que você possa ver, dentro do alcance. O objeto pode ser uma porta, uma caixa, um baú ou um par de algemas, um cadeado ou outro objeto que contenha um meio mundano ou mágico que previne o acesso. Um alvo que esteja fechado por uma fechadura mundana ou preso ou barrado torna-se destrancado, destravado ou desbloqueado. Se o objeto tiver múltiplas fechaduras, apenas uma delas é destrancada. Se você escolher um alvo que esteja travado pela magia tranca arcana , essa magia será suprimida por 10 minutos, durante esse período o alvo pode ser aberto e fechado normalmente. Quando você conjurar essa magia, uma batida forte, audível a até 90 metros de distância, emana do objeto alvo."
-}
+{"escola":"Transmutação","ritual":false,"classes":["Bardo","Feiticeiro","Mago"],"id":24,"nivel":2,"duracao":"Instantânea","nome":"Arrombar","tempoConjuracao":"1 ação","alcance":"18 metros","descricao":"Escolha um objeto que você possa ver, dentro do alcance. O objeto pode ser uma porta, uma caixa, um baú ou um par de algemas, um cadeado ou outro objeto que contenha um meio mundano ou mágico que previne o acesso.\nUm alvo que esteja fechado por uma fechadura mundana ou preso ou barrado torna-se destrancado, destravado ou desbloqueado. Se o objeto tiver múltiplas fechaduras, apenas uma delas é destrancada.\nSe você escolher um alvo que esteja travado pela magia tranca arcana, essa magia será suprimida por 10 minutos, durante esse período o alvo pode ser aberto e fechado normalmente.\nQuando você conjurar essa magia, uma batida forte, audível a até 90 metros de distância, emana do objeto alvo.","componentes":"Verbal"}

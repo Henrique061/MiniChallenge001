@@ -1,17 +1,1 @@
-{
-    "id": 129,
-    "nome": "Encontrar Armadilhas",
-    "nivel": 2,
-    "classes": [
-        "Clérigo",
-        "Druida",
-        "Patrulheiro"
-    ],
-    "escola": "Adivinhação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "36 metros",
-    "componentes": "Verbal, Somático",
-    "duracao": "Instantânea",
-    "descricao": "Você sente a presença de qualquer armadilha dentro do alcance a qual você tenha linha de visão. Uma armadilha, para os propósitos dessa magia, inclui qualquer coisa que possa causar um efeito repentino ou inesperado em você, considerado nocivo ou indesejável, que foi especificamente planejado para ser por seu criador. Portanto, a magia sentirá a área afetada pela magia alarme, um  glifo de vigilância ou uma armadilha mecânica de fosso, mas ela não revelará uma fragilidade natural no piso, um teto instável ou um sumidouro escondido. Essa magia apenas revela que existe uma magia presente. Você não descobre a localização de cada armadilha, mas você também descobre a natureza genérica do perigo representando pela armadilha que você sentiu."
-}
+{"escola":"Adivinhação","ritual":false,"classes":["Clérigo","Druida","Patrulheiro"],"id":129,"nivel":2,"duracao":"Instantânea","nome":"Encontrar Armadilhas","tempoConjuracao":"1 ação","alcance":"36 metros","descricao":"Você sente a presença de qualquer armadilha dentro do alcance a qual você tenha linha de visão. Uma armadilha, para os propósitos dessa magia, inclui qualquer coisa que possa causar um efeito repentino ou inesperado em você, considerado nocivo ou indesejável, que foi especificamente planejado para ser por seu criador. Portanto, a magia sentirá a área afetada pela magia alarme, um glifo de vigilância ou uma armadilha mecânica de fosso, mas ela não revelará uma fragilidade natural no piso, um teto instável ou um sumidouro escondido.\nEssa magia apenas revela que existe uma magia presente. Você não descobre a localização de cada armadilha, mas você também descobre a natureza genérica do perigo representando pela armadilha que você sentiu.","componentes":"Verbal, Somático"}

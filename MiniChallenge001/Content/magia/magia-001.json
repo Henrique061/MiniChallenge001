@@ -1,16 +1,1 @@
-{
-    "id": 1,
-    "nome": "Acalmar Emoções",
-    "nivel": 2,
-    "classes": [
-        "Bardo",
-        "Clérigo"
-    ],
-    "escola": "Encantamento",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "18 metros",
-    "componentes": "Verbal, Somático",
-    "duracao": "Concentração, até 1 minuto",
-    "descricao": "Você tenta suprimir emoções fortes em um grupo de pessoas. Cada humanoide em uma esfera de 6 metros de raio, centrada em um ponto que você escolher dentro do alcance, deve realizar um teste de resistência de Carisma; uma criatura pode escolher falhar nesse teste, se desejar. Se uma criatura falhar na resistência, escolha um dentre os dois efeitos a seguir. Você pode suprimir qualquer efeito que esteja deixando a criatura enfeitiçada ou amedrontada. Quando essa magia terminar, qualquer efeito suprimido volta a funcionar, considerando que sua duração não tenha acabado nesse meio tempo. Alternativamente, você pode tornar um alvo indiferente às criaturas que você escolher que forem hostis a ele. Essa indiferença acaba se o alvo for atacado ou ferido por uma magia ou se ele testemunhar qualquer dos seus amigos sendo ferido. Quando a magia terminar, a criatura se tornará hostil novamente, a não ser que o Mestre diga o contrário."
-}
+{"escola":"Encantamento","ritual":false,"classes":["Bardo","Clérigo"],"id":1,"nivel":2,"duracao":"Concentração, até 1 minuto","nome":"Acalmar Emoções","tempoConjuracao":"1 ação","alcance":"18 metros","descricao":"Você tenta suprimir emoções fortes em um grupo de pessoas. Cada humanoide em uma esfera de 6 metros de raio, centrada em um ponto que você escolher dentro do alcance, deve realizar um teste de resistência de Carisma; uma criatura pode escolher falhar nesse teste, se desejar. Se uma criatura falhar na resistência, escolha um dentre os dois efeitos a seguir.\n\n-> Você pode suprimir qualquer efeito que esteja deixando a criatura enfeitiçada ou amedrontada. Quando essa magia terminar, qualquer efeito suprimido volta a funcionar, considerando que sua duração não tenha acabado nesse meio tempo. \n\n-> Alternativamente, você pode tornar um alvo indiferente às criaturas que você escolher que forem hostis a ele. Essa indiferença acaba se o alvo for atacado ou ferido por uma magia ou se ele testemunhar qualquer dos seus amigos sendo ferido. Quando a magia terminar, a criatura se tornará hostil novamente, a não ser que o Mestre diga o contrário.","componentes":"Verbal, Somático"}

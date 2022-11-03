@@ -1,13 +1,1 @@
-{
-    "id": 171,
-    "nome": "Infligir Ferimentos",
-    "nivel": 1,
-    "classes": [],
-    "escola": "Necromancia",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático",
-    "duracao": "Instantânea",
-    "descricao": "Faça um ataque corpo-a-corpo com magia contra uma criatura dentro do alcance. Se atingir, o alvo sofre 3d10 de dano necrótico. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, o dano aumenta em 1d10 para cada nível acima do 1°."
-}
+{"escola":"Necromancia","ritual":false,"classes":[],"id":171,"nivel":1,"duracao":"Instantânea","nome":"Infligir Ferimentos","tempoConjuracao":"1 ação","alcance":"Toque","descricao":"Faça um ataque corpo-a-corpo com magia contra uma criatura dentro do alcance. Se atingir, o alvo sofre 3d10 de dano necrótico.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, o dano aumenta em 1d10 para cada nível acima do 1°.","componentes":"Verbal, Somático"}

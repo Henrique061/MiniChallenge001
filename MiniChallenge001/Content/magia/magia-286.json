@@ -1,17 +1,1 @@
-{
-    "id": 286,
-    "nome": "Restauração Maior",
-    "nivel": 5,
-    "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida"
-    ],
-    "escola": "Abjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático, Material (pó de diamante valendo, nomínimo, 100 po, consumido pela magia)",
-    "duracao": "Instantânea",
-    "descricao": "Você imbui uma criatura que você toca, com energia positiva para desfazer um efeito debilitante. Você pode reduzir a exaustão do alvo em um nível ou remover um dos seguintes do alvo:  Um efeito que enfeitice ou petrifique o alvo Uma maldição, incluindo a sintonização do alvo comum item mágico amaldiçoado Qualquer redução a um dos valores de habilidade doalvo Um efeito que esteja reduzindo o máximo de pontos devida do alvo"
-}
+{"escola":"Abjuração","ritual":false,"classes":["Bardo","Clérigo","Druida"],"id":286,"nivel":5,"duracao":"Instantânea","nome":"Restauração Maior","tempoConjuracao":"1 ação","alcance":"Toque","descricao":"Você imbui uma criatura que você toca, com energia positiva para desfazer um efeito debilitante. Você pode reduzir a exaustão do alvo em um nível ou remover um dos seguintes do alvo:\n\n-> Um efeito que enfeitice ou petrifique o alvo.\n-> Uma maldição, incluindo a sintonização do alvo com um item mágico amaldiçoado.\n-> Qualquer redução a um dos valores de habilidade do alvo.\n-> Um efeito que esteja reduzindo o máximo de pontos de vida do alvo.","componentes":"Verbal, Somático, Material (pó de diamante valendo, no mínimo, 100 po, consumido pela magia)"}

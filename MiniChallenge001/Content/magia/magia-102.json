@@ -1,16 +1,1 @@
-{
-    "id": 102,
-    "nome": "Dança Irresistível de Otto",
-    "nivel": 6,
-    "classes": [
-        "Bardo",
-        "Mago"
-    ],
-    "escola": "Encantamento",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "9 metros",
-    "componentes": "Verbal",
-    "duracao": "Concentração, até 1 minuto",
-    "descricao": "Escolha uma criatura que você possa ver, dentro do alcance. O alvo começa a dançar comicamente no lugar: rodopiando, batendo os pés e saltitando pela duração. As criaturas que não podem ser enfeitiçadas são imunes a essa magia. Uma criatura dançando deve usar todo o seu movimento para dançar sem abandonar seu espaço e tem desvantagem nos testes de resistência de Destreza e nas jogadas de ataque. Enquanto o alvo estiver sob efeito dessa magia, as outras criaturas terão vantagem nas jogadas de ataque contra ele. Com uma ação, uma criatura dançando pode realizar um teste de resistência de Sabedoria para recuperar controle sobre si mesmo. Num sucesso na resistência, a magia acaba. DEDO DA MORTE7° nível de necromancia Tempo de Conjuração: 1 ação Alcance : 18 metros Componentes : V, S  Duração : Instantânea  Você envia energia negativa na direção de uma criatura que você possa ver, dentro do alcance, causando dores severas nela. O alvo deve realizar um teste de resistência de Constituição. Ele sofre 7d8 + 30 de dano necrótico se falhar na resistência, ou metade desse dano se obtiver sucesso. Um humanoide morto por essa magia, se ergue no início do seu próximo turno como um zumbi que está permanentemente sob seu controle, seguindo suas ordens verbais da melhor forma possível."
-}
+{"escola":"Encantamento","ritual":false,"classes":["Bardo","Mago"],"id":102,"nivel":6,"duracao":"Concentração, até 1 minuto","nome":"Dança Irresistível de Otto","tempoConjuracao":"1 ação","alcance":"9 metros","descricao":"Escolha uma criatura que você possa ver, dentro do alcance. O alvo começa a dançar comicamente no lugar: rodopiando, batendo os pés e saltitando pela duração. As criaturas que não podem ser enfeitiçadas são imunes a essa magia.\nUma criatura dançando deve usar todo o seu movimento para dançar sem abandonar seu espaço e tem desvantagem nos testes de resistência de Destreza e nas jogadas de ataque. Enquanto o alvo estiver sob efeito dessa magia, as outras criaturas terão vantagem nas jogadas de ataque contra ele. Com uma ação, uma criatura dançando pode realizar um teste de resistência de Sabedoria para recuperar controle sobre si mesmo. Num sucesso na resistência, a magia acaba.","componentes":"Verbal"}

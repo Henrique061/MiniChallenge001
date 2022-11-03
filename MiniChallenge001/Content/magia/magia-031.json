@@ -1,15 +1,1 @@
-{
-    "id": 31,
-    "nome": "Aura de Vida",
-    "nivel": 4,
-    "classes": [
-        "Paladino"
-    ],
-    "escola": "Abjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Pessoal (9 metros de raio)",
-    "componentes": "Verbal",
-    "duracao": "Concentração, até 10 minutos",
-    "descricao": "Energia de prevenção vital irradia de você em uma aura com 9 metros de raio. Até a magia acabar, a aura se move mantendo-se centrada em você. Todas as criaturas não-hostis na aura (incluindo você) tem resistência a dano necrótico e seu máximo de pontos de vida não pode ser reduzido. Além disso, uma criatura viva não-hostil, recupera 1 ponto de vida quando começa seu turno na aura com 0 pontos de vida."
-}
+{"escola":"Abjuração","ritual":false,"classes":["Paladino"],"id":31,"nivel":4,"duracao":"Concentração, até 10 minutos","nome":"Aura de Vida","tempoConjuracao":"1 ação","alcance":"Pessoal (9 metros de raio)","descricao":"Energia de prevenção vital irradia de você em uma aura com 9 metros de raio. Até a magia acabar, a aura se move mantendo-se centrada em você. Todas as criaturas não-hostis na aura (incluindo você) tem resistência a dano necrótico e seu máximo de pontos de vida não pode ser reduzido. Além disso, uma criatura viva não-hostil, recupera 1 ponto de vida quando começa seu turno na aura com 0 pontos de vida.","componentes":"Verbal"}

@@ -1,16 +1,1 @@
-{
-    "id": 135,
-    "nome": "Escudo da Fé",
-    "nivel": 1,
-    "classes": [
-        "Clérigo",
-        "Paladino"
-    ],
-    "escola": "Abjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação bônus",
-    "alcance": "18 metros",
-    "componentes": "Verbal, Somático, Material (um pequeno pergaminho comalguns textos sagrados escritos nele)",
-    "duracao": "Concentração, até 10 minutos",
-    "descricao": "Um campo cintilante aparece ao redor de uma criatura, à sua escolha, dentro do alcance, concedendo +2 de bônus na CA pela duração."
-}
+{"escola":"Abjuração","ritual":false,"classes":["Clérigo","Paladino"],"id":135,"nivel":1,"duracao":"Concentração, até 10 minutos","nome":"Escudo da Fé","tempoConjuracao":"1 ação bônus","alcance":"18 metros","descricao":"Um campo cintilante aparece ao redor de uma criatura, à sua escolha, dentro do alcance, concedendo +2 de bônus na CA pela duração.","componentes":"Verbal, Somático, Material (um pequeno pergaminho com alguns textos sagrados escritos nele)"}

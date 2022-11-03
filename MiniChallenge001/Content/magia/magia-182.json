@@ -1,15 +1,1 @@
-{
-    "id": 182,
-    "nome": "Ligação Telepática de Rary",
-    "nivel": 5,
-    "classes": [
-        "Mago"
-    ],
-    "escola": "Adivinhação",
-    "ritual": true,
-    "tempoConjuracao": "1 ação",
-    "alcance": "9 metros",
-    "componentes": "Verbal, Somático, Material (pedaços de cascas de ovos dedois tipos diferentes de criatura)",
-    "duracao": "1 hora",
-    "descricao": "Você forja uma ligação telepática entre até oito criaturas voluntárias, à sua escolha, dentro do alcance, ligando psiquicamente cada criatura a todas as outras, pela duração. Criaturas com valores de Inteligência 2 ou menos não são afetadas por essa magia. Até a magia acabar, os alvos podem se comunicar telepaticamente através do elo, independentemente de terem ou não um idioma em comum. A comunicação é possível a qualquer distância, apesar de não se estender a outros planos de existência."
-}
+{"escola":"Adivinhação","ritual":true,"classes":["Mago"],"id":182,"nivel":5,"duracao":"1 hora","nome":"Ligação Telepática de Rary","tempoConjuracao":"1 ação","alcance":"9 metros","descricao":"Você forja uma ligação telepática entre até oito criaturas voluntárias, à sua escolha, dentro do alcance, ligando psiquicamente cada criatura a todas as outras, pela duração. Criaturas com valores de Inteligência 2 ou menos não são afetadas por essa magia.\nAté a magia acabar, os alvos podem se comunicar telepaticamente através do elo, independentemente de terem ou não um idioma em comum. A comunicação é possível a qualquer distância, apesar de não se estender a outros planos de existência.","componentes":"Verbal, Somático, Material (pedaços de cascas de ovos de dois tipos diferentes de criatura)"}

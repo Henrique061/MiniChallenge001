@@ -1,16 +1,1 @@
-{
-    "id": 4,
-    "nome": "Alarme",
-    "nivel": 1,
-    "classes": [
-        "Mago",
-        "Patrulheiro"
-    ],
-    "escola": "Abjuração",
-    "ritual": true,
-    "tempoConjuracao": "1 minuto",
-    "alcance": "9 metros",
-    "componentes": "Verbal, Somático, Material (um pequeno sino e um pequeno fio de prata)",
-    "duracao": "8 horas",
-    "descricao": "Você coloca um alarme para intrusos desavisados. Escolha uma porta, uma janela ou uma área dentro do alcance que não seja maior que 6 metros cúbicos. Até a magia acabar, um alarme alerta você sempre que uma criatura Miúd a ou maior tocarem ou entrarem na área protegida. Quando você conjura a magia, você pode designar as criaturas que não ativarão o alarme. Você também escolhe se o alarme será mental ou audível. Um alarme mental alerta você com um silvo na sua mente, se você estiver a até de 1,5 quilômetro da área protegida. Esse silvo acordará você se você estiver dormindo. Um alarme audível produz o som de um sino de mão por 10 minutos num raio de 18 metros."
-}
+{"escola":"Abjuração","ritual":true,"classes":["Mago","Patrulheiro"],"id":4,"nivel":1,"duracao":"8 horas","nome":"Alarme","tempoConjuracao":"1 minuto","alcance":"9 metros","descricao":"Você coloca um alarme para intrusos desavisados. Escolha uma porta, uma janela ou uma área dentro do alcance que não seja maior que 6 metros cúbicos. Até a magia acabar, um alarme alerta você sempre que uma criatura Miúda ou maior tocarem ou entrarem na área protegida. Quando você conjura a magia, você pode designar as criaturas que não ativarão o alarme. \nVocê também escolhe se o alarme será mental ou audível. Um alarme mental alerta você com um silvo na sua mente, se você estiver a até de 1,5 quilômetro da área protegida. Esse silvo acordará você se você estiver dormindo. Um alarme audível produz o som de um sino de mão por 10 minutos num raio de 18 metros.","componentes":"Verbal, Somático, Material (um pequeno sino e um pequeno fio de prata)"}

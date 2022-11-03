@@ -1,15 +1,1 @@
-{
-    "id": 308,
-    "nome": "Taumaturgia",
-    "nivel": 0,
-    "classes": [
-        "Clérigo"
-    ],
-    "escola": "Transmutação",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "9 metros",
-    "componentes": "Verbal",
-    "duracao": "Até 1 minuto",
-    "descricao": "Você manifesta pequenas maravilhas, um sinal de poder sobrenatural, dentro do alcance. Você cria um dos seguintes efeitos mágicos dentro do alcance:  Sua voz ressoa com o triplo do volume normal por 1minuto. Você provoca tremores inofensivos no solo por 1minuto. Você cria, instantaneamente, um som que se originade um ponto, à sua escolha, dentro do alcance, como obarulho de um trovão, o gralhar de um corvo ousussurros sinistros. Você, instantaneamente, faz uma porta ou janeladestrancada se abrir ou se fechar. Você altera a aparência dos seus olhos por 1 minuto.Se você conjurar essa magia diversas vezes, você pode ter até três dos efeitos de 1 minuto ativos por vez, e você pode dissipar um desses efeitos com uma ação."
-}
+{"escola":"Transmutação","ritual":false,"classes":["Clérigo"],"id":308,"nivel":0,"duracao":"Até 1 minuto","nome":"Taumaturgia","tempoConjuracao":"1 ação","alcance":"9 metros","descricao":"Você manifesta pequenas maravilhas, um sinal de poder sobrenatural, dentro do alcance. Você cria um dos seguintes efeitos mágicos dentro do alcance:\n\n-> Sua voz ressoa com o triplo do volume normal por 1 minuto.\n-> Você provoca tremores inofensivos no solo por 1 minuto.\n-> Você cria, instantaneamente, um som que se origina de um ponto, à sua escolha, dentro do alcance, como o barulho de um trovão, o gralhar de um corvo ou sussurros sinistros.\n-> Você, instantaneamente, faz uma porta ou janela destrancada se abrir ou se fechar.\n-> Você altera a aparência dos seus olhos por 1 minuto.\n\nSe você conjurar essa magia diversas vezes, você pode ter até três dos efeitos de 1 minuto ativos por vez, e você pode dissipar um desses efeitos com uma ação.","componentes":"Verbal"}

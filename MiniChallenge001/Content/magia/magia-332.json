@@ -1,16 +1,1 @@
-{
-    "id": 332,
-    "nome": "Vitalidade Falsa",
-    "nivel": 1,
-    "classes": [
-        "Feiticeiro",
-        "Mago"
-    ],
-    "escola": "Necromancia",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Pessoal",
-    "componentes": "Verbal, Somático, Material (uma pequena quantidade deálcool ou bebidas destiladas)",
-    "duracao": "1 hora",
-    "descricao": "Reforçando-se com uma vitalidade necromântica ilusória, você ganha 1d4 + 4 pontos de vida temporários pela duração. Em Níveis Superiores . Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, você ganha 5 pontos de vida temporários adicionais para cada nível do espaço de magia acima do 1°."
-}
+{"escola":"Necromancia","ritual":false,"classes":["Feiticeiro","Mago"],"id":332,"nivel":1,"duracao":"1 hora","nome":"Vitalidade Falsa","tempoConjuracao":"1 ação","alcance":"Pessoal","descricao":"Reforçando-se com uma vitalidade necromântica ilusória, você ganha 1d4 + 4 pontos de vida temporários pela duração.\n\nEm Níveis Superiores: Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, você ganha 5 pontos de vida temporários adicionais para cada nível do espaço de magia acima do 1°.","componentes":"Verbal, Somático, Material (uma pequena quantidade de álcool ou bebidas destiladas)"}

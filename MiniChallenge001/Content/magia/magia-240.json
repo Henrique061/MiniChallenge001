@@ -1,18 +1,1 @@
-{
-    "id": 240,
-    "nome": "Pele de Pedra",
-    "nivel": 4,
-    "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago",
-        "Patrulheiro"
-    ],
-    "escola": "Abjuração",
-    "ritual": false,
-    "tempoConjuracao": "1 ação",
-    "alcance": "Toque",
-    "componentes": "Verbal, Somático, Material (pó de diamante no valor de 100po, consumido pela magia)",
-    "duracao": "Concentração, até 1 hora",
-    "descricao": "Essa magia transforma a pele de uma criatura voluntária que você tocar em rocha sólida. Até a magia acabar, o alvo tem resistência a dano de concussão, cortante e perfurante não-mágico."
-}
+{"escola":"Abjuração","ritual":false,"classes":["Druida","Feiticeiro","Mago","Patrulheiro"],"id":240,"nivel":4,"duracao":"Concentração, até 1 hora","nome":"Pele de Pedra","tempoConjuracao":"1 ação","alcance":"Toque","descricao":"Essa magia transforma a pele de uma criatura voluntária que você tocar em rocha sólida. Até a magia acabar, o alvo tem resistência a dano de concussão, cortante e perfurante não-mágico.","componentes":"Verbal, Somático, Material (pó de diamante no valor de 100 po, consumido pela magia)"}
