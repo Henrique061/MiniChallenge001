@@ -228,15 +228,15 @@ public class ViewModelAtributo: ObservableObject {
     }
     
     public init(vmficha: NovaFichaViewModel) {
-        self.atributos = [Atributo(nome: .forca, valor: 0),
-                          Atributo(nome: .destreza, valor: 0),
-                          Atributo(nome: .constituicao, valor: 0),
-                          Atributo(nome: .inteligencia, valor: 0),
-                          Atributo(nome: .sabedoria, valor: 0),
-                          Atributo(nome: .carisma, valor: 0)]
+        self.atributos = [Atributo(nome: .forca, valor: 10),
+                          Atributo(nome: .destreza, valor: 10),
+                          Atributo(nome: .constituicao, valor: 10),
+                          Atributo(nome: .inteligencia, valor: 10),
+                          Atributo(nome: .sabedoria, valor: 10),
+                          Atributo(nome: .carisma, valor: 10)]
         
         for i in 0..<self.atributos.count {
-            atributos[i].valor = vmficha.racaFinal.atributosAdicionais.filter({$0.atributo == atributos[i].nome}).first?.pontosGanhos ?? 0
+            atributos[i].valor += vmficha.racaFinal.atributosAdicionais.filter({$0.atributo == atributos[i].nome}).first?.pontosGanhos ?? 0
         }
     }
     

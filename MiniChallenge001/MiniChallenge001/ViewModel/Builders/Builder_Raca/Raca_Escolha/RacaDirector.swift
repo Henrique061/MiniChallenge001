@@ -145,7 +145,7 @@ public class RacaDirector {
         
         let profPericias: [Pericia] = [.percepcao]
         
-        let magiasSubraca: MagiaSubraca = MagiaSubraca(subraca: .elfoNegro, magias: BuscaJson.buscaMagiasPorNomes(nomes: ["Globos de Luz", "Fome de Hadar", "Escuridão"]))
+        let magiasSubraca: MagiaSubraca = MagiaSubraca(subraca: .elfoNegro, magias: BuscaJson.buscaMagiasPorNomes(nomes: ["Globos de Luz", "Fogo das Fadas", "Escuridão"]))
         
         let subracaEscolhaMagia = MagiaEscolhaSubraca(subraca: .altoElfo, magias: BuscaMagia.buscaMagiaClasseNivel(classe: .mago, nivel: 0))
         
@@ -294,7 +294,7 @@ public class RacaDirector {
             ProficienciaFerramentaPorSubraca(subraca: .gnomoRochas, ferramentasProficientes: BuscaJson.buscaFerramentaPorTipo(tipo: .artesao))
         ]
         
-        let magiasSubraca: MagiaSubraca = MagiaSubraca(subraca: .gnomoFloresta, magias: [BuscaJson.buscaMagiaPorNome(nome: "Ilusão Programada")])
+        let magiasSubraca: MagiaSubraca = MagiaSubraca(subraca: .gnomoFloresta, magias: [BuscaJson.buscaMagiaPorNome(nome: "Ilusão Menor")])
         
         // METODOS /////////////////////
         builder?.setPossuiSubraca(true)
